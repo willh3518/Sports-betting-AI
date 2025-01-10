@@ -26,102 +26,86 @@ time.sleep(5)
 props = []
 
 try:
-    # Wait for player containers to load
-    player_containers = WebDriverWait(driver, 20).until(
-        EC.presence_of_all_elements_located((By.CSS_SELECTOR, "div[class*='grid'][class*='grid-rows']"))
+    # Locate all prop filter buttons initially
+    filter_buttons = WebDriverWait(driver, 20).until(
+        EC.presence_of_all_elements_located((By.CSS_SELECTOR, "button.stat"))
     )
-    print(f"Found {len(player_containers)} player containers.")
+    print(f"Found {len(filter_buttons)} filter buttons.")
 
-    for container in player_containers:
+    # Track visited filters
+    visited_filters = set()
+
+    # Loop through each filter button
+    for i in range(len(filter_buttons)):
         try:
-            # Extract player name
-            try:
-                player_name_element = container.find_element(By.CSS_SELECTOR, "h3[id='test-player-name']")
-                player_name = player_name_element.text if player_name_element else "N/A"
-            except Exception as e:
-                player_name = "N/A"
-                print(f"Player Name not found: {e}")
+            # Re-fetch filter buttons dynamically
+            filter_buttons = driver.find_elements(By.CSS_SELECTOR, "button.stat")
+            button = filter_buttons[i]
 
-            # Extract prop value
-            try:
-                prop_value_element = container.find_element(By.CSS_SELECTOR, "div[class='heading-md']")
-                prop_value = prop_value_element.text if prop_value_element else "N/A"
-            except Exception as e:
-                prop_value = "N/A"
-                print(f"Prop Value not found for {player_name}: {e}")
+            # Get the filter name
+            filter_name = button.text.strip()
+            if filter_name in visited_filters:
+                continue  # Skip already visited filters
+            visited_filters.add(filter_name)
 
-            # Extract prop type
-            try:
-                prop_type_element = container.find_element(By.CSS_SELECTOR, "span[class='break-words']")
-                prop_type = prop_type_element.text if prop_type_element else "N/A"
-            except Exception as e:
-                prop_type = "N/A"
-                print(f"Prop Type not found for {player_name}: {e}")
+            print(f"Scraping data for: {filter_name}")
 
-            # Append to data collection
-            props.append({
-                'Player': player_name,
-                'Prop Type': prop_type,
-                'Prop Value': prop_value
-            })
+            # Scroll the button into view
+            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", button)
+            time.sleep(1)  # Allow time for scrolling
+
+            # Click using JavaScript to avoid stale element issues
+            driver.execute_script("arguments[0].click();", button)
+            time.sleep(5)  # Wait for the page to load
+
+            # Wait for the player containers to update
+            player_containers = WebDriverWait(driver, 20).until(
+                EC.presence_of_all_elements_located((By.CSS_SELECTOR, "div[class*='grid'][class*='grid-rows']"))
+            )
+            print(f"Found {len(player_containers)} player containers for {filter_name}.")
+
+            # Scrape data for each player
+            for container in player_containers:
+                try:
+                    # Extract player name
+                    player_name_element = container.find_element(By.CSS_SELECTOR, "h3[id='test-player-name']")
+                    player_name = player_name_element.text if player_name_element else "N/A"
+
+                    # Extract prop value
+                    prop_value_element = container.find_element(By.CSS_SELECTOR, "div[class='heading-md']")
+                    prop_value = prop_value_element.text if prop_value_element else "N/A"
+
+                    # Extract prop type
+                    prop_type_element = container.find_element(By.CSS_SELECTOR, "span[class='break-words']")
+                    prop_type = prop_type_element.text if prop_type_element else "N/A"
+
+                    # Append data
+                    props.append({
+                        'Player': player_name,
+                        'Filter': filter_name,
+                        'Prop Type': prop_type,
+                        'Prop Value': prop_value
+                    })
+                except Exception as e:
+                    print(f"Error extracting data for a player in {filter_name}: {e}")
+
+            # Wait a bit before moving to the next filter
+            time.sleep(3)
+
         except Exception as e:
-            print(f"Error extracting data for a player: {e}")
+            print(f"Error handling filter button {i}: {e}")
 
 except Exception as e:
-    print(f"Error locating player containers: {e}")
+    print(f"Error locating filter buttons: {e}")
 
 # Save data to CSV
 if props:
     df = pd.DataFrame(props)
-    csv_file_path = '/Users/willhart/Downloads/prizepicks_props.csv'
+    csv_file_path = '/Users/willhart/Downloads/prizepicks_all_props.csv'
     df.to_csv(csv_file_path, index=False)
     print(f"Data saved to {csv_file_path}")
 else:
     print("No data collected.")
 
 # Close the browser
-driver.quit()
-
-
-# Handle pop-ups if present
-try:
-    close_button = driver.find_element(By.CLASS_NAME, 'popup-close')
-    close_button.click()
-    time.sleep(1)
-except Exception as e:
-    print(f"No pop-up found: {e}")
-
-'''
-# Wait for a specific element to load
-WebDriverWait(driver, 10).until(
-    EC.presence_of_all_elements_located((By.CLASS_NAME, "sport-category-button"))
-)
-'''
-
-
-# Collect props data
-props = []
-
-# Find sports categories
-sports_buttons = driver.find_elements(By.CLASS_NAME, 'league-icon-old selected-old')  # Update based on HTML structure
-
-# Loop through each sport category
-for sport_button in sports_buttons:
-    sport_button.click()
-    time.sleep(2)
-
-    players = driver.find_elements(By.CLASS_NAME, 'h-16')  # Update based on HTML structure
-    for player in players:
-        player_name = player.find_element(By.CLASS_NAME, 'heading-xs pb-1 text-white').text
-        prop_type = player.find_element(By.CLASS_NAME, 'break-words').text
-        prop_value = player.find_element(By.CLASS_NAME, 'heading-md').text
-
-        props.append({'Player': player_name, 'Prop Type': prop_type, 'Prop Value': prop_value})
-print (props)
-# Convert to DataFrame and export to CSV
-df = pd.DataFrame(props)
-csv_file_path = '/Users/willhart/Downloads/prizepicks_props.csv'
-df.to_csv(csv_file_path, index=False)
-
-# Close browser
 driver.quit()
