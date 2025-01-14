@@ -18,7 +18,7 @@ def fetch_cached_game_logs(player_id):
     if player_id in player_logs_cache:
         return player_logs_cache[player_id]
     else:
-        logs = playergamelog.PlayerGameLog(player_id=player_id, season='2023-24').get_data_frames()[0]
+        logs = playergamelog.PlayerGameLog(player_id=player_id, season='2024-25').get_data_frames()[0]
         player_logs_cache[player_id] = logs
         return logs
 
@@ -79,6 +79,12 @@ def analyze_player_props(player_name, prop_type, prop_value):
             combined = recent_15_games['REB'] + recent_15_games['AST']
             stat_avg = combined.mean()
             over_hits = (combined > prop_value).sum()
+        elif 'Offensive Rebounds' in prop_type:  # Offensive rebounds logic
+            stat_avg = recent_15_games['OREB'].mean()
+            over_hits = (recent_15_games['OREB'] > prop_value).sum()
+        elif 'Defensive Rebounds' in prop_type:  # Defensive rebounds logic
+            stat_avg = recent_15_games['DREB'].mean()
+            over_hits = (recent_15_games['DREB'] > prop_value).sum()
         elif 'Points' in prop_type:
             stat_avg = recent_15_games['PTS'].mean()
             over_hits = (recent_15_games['PTS'] > prop_value).sum()
@@ -201,6 +207,9 @@ def scrape_props(driver):
 def main():
     options = uc.ChromeOptions()
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)")
+    options.add_experimental_option("prefs", {
+        "profile.default_content_setting_values.geolocation": 1  # 2 = Block location, 1 = Allow
+    })
     driver = uc.Chrome(options=options)
 
     url = 'https://app.prizepicks.com/'
