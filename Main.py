@@ -79,10 +79,10 @@ def analyze_player_props(player_name, prop_type, prop_value):
             combined = recent_15_games['REB'] + recent_15_games['AST']
             stat_avg = combined.mean()
             over_hits = (combined > prop_value).sum()
-        elif 'Offensive Rebounds' in prop_type:  # Offensive rebounds logic
+        elif 'Offensive Rebounds' in prop_type:
             stat_avg = recent_15_games['OREB'].mean()
             over_hits = (recent_15_games['OREB'] > prop_value).sum()
-        elif 'Defensive Rebounds' in prop_type:  # Defensive rebounds logic
+        elif 'Defensive Rebounds' in prop_type:
             stat_avg = recent_15_games['DREB'].mean()
             over_hits = (recent_15_games['DREB'] > prop_value).sum()
         elif 'Points' in prop_type:
@@ -104,15 +104,15 @@ def analyze_player_props(player_name, prop_type, prop_value):
             stat_avg = recent_15_games['FG3A'].mean()
             over_hits = (recent_15_games['FG3A'] > prop_value).sum()
         elif 'FG Attempted' in prop_type:
-            stat_avg = recent_15_games['FGA'].mean()  # Replace 'FGA' if column name is different
+            stat_avg = recent_15_games['FGA'].mean()
             over_hits = (recent_15_games['FGA'] > prop_value).sum()
-        elif 'FG Made' in prop_type:  # Logic for Field Goals Made
+        elif 'FG Made' in prop_type:
             stat_avg = recent_15_games['FGM'].mean()
             over_hits = (recent_15_games['FGM'] > prop_value).sum()
         elif 'Free Throws Made' in prop_type:
             stat_avg = recent_15_games['FTM'].mean()
             over_hits = (recent_15_games['FTM'] > prop_value).sum()
-        elif 'Fantasy Score' in prop_type:  # Logic for Fantasy Score
+        elif 'Fantasy Score' in prop_type:
             fantasy_scores = (
                 recent_15_games['PTS'] +
                 1.2 * recent_15_games['REB'] +
@@ -163,6 +163,7 @@ def process_filter(driver, filter_buttons, index):
         logging.error(f"Error processing filter at index {index}: {e}")
         return None
 
+
 def scrape_props(driver):
     all_props = []
     filter_buttons = WebDriverWait(driver, 60).until(
@@ -186,12 +187,23 @@ def scrape_props(driver):
                 prop_value = float(container.find_element(By.CSS_SELECTOR, "div[class='heading-md']").text)
                 prop_type = container.find_element(By.CSS_SELECTOR, "span[class='break-words']").text
 
+                # Extract the opposing team properly
+                opposing_team_element = container.find_element(By.CSS_SELECTOR, "time.text-soClean-140.body-sm")
+                raw_text = opposing_team_element.text.strip()
+
+                # Refine the logic to extract the team abbreviation (exclude 'vs')
+                if "vs" in raw_text:
+                    opposing_team = raw_text.split("vs")[1].strip().split()[0]
+                else:
+                    opposing_team = raw_text.split()[0]  # Fallback for unexpected cases
+
                 stat_avg, over_hits, games_played, likelihood = analyze_player_props(player_name, prop_type, prop_value)
 
                 all_props.append({
                     'Player': player_name,
                     'Prop Type': prop_type,
                     'Prop Value': round(prop_value, 2),
+                    'Opposing Team': opposing_team,
                     'Avg Last 15': stat_avg,
                     'Over Hits': over_hits,
                     'Games Played': games_played,
@@ -203,6 +215,7 @@ def scrape_props(driver):
                 continue
 
     return pd.DataFrame(all_props)
+
 
 def main():
     options = uc.ChromeOptions()
