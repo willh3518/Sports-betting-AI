@@ -12,10 +12,8 @@ from nba_api.stats.endpoints import commonplayerinfo
 # Setup logging for debugging and error reporting
 logging.basicConfig(filename='debug.log', level=logging.DEBUG)
 
-# Player logs cache for efficiency
+# Global caches for efficiency
 player_logs_cache = {}
-
-# Season logs cache to avoid redundant API calls
 season_logs_cache = {}
 
 def fetch_cached_game_logs(player_id, season):
@@ -348,8 +346,8 @@ def scrape_props(driver):
                     player_name, prop_type, prop_value
                 )
 
-                # Call analyze_h2h_props with all required arguments
-                last_15_avg, last_15_hit_rate, past_3_avg, past_3_hit_rate = analyze_h2h_props(
+                # Analyze H2H props (Last 10 games and current season stats)
+                last_10_avg, last_10_hit_rate, season_avg, season_hit_rate = analyze_h2h_props(
                     player_id, opposing_team, prop_type, prop_value
                 )
 
@@ -367,16 +365,15 @@ def scrape_props(driver):
                     'Likelihood (%)': likelihood,
                     'Season Hits': season_hits,
                     'Season Hit %': season_hit_percentage,
-                    'Last 15 H2H Avg': last_15_avg,
-                    'Last 15 H2H Hit Rate (%)': last_15_hit_rate,
-                    'Past 3 Seasons H2H Avg': past_3_avg,
-                    'Past 3 Seasons H2H Hit Rate (%)': past_3_hit_rate
+                    'Last 10 H2H Avg': last_10_avg,
+                    'Last 10 H2H Hit Rate (%)': last_10_hit_rate,
+                    'Current Season H2H Avg': season_avg,
+                    'Current Season H2H Hit Rate (%)': season_hit_rate,
                 })
 
             except Exception as e:
                 print(f"Error processing player container: {e}")
                 continue
-
     return pd.DataFrame(all_props)
 
 def main():
@@ -392,6 +389,10 @@ def main():
     input("Solve CAPTCHA manually and press Enter to continue...")
 
     props_df = scrape_props(driver)
+
+    # Remove duplicates
+    props_df = props_df.drop_duplicates(subset=['Player', 'Prop Type', 'Prop Value', 'Opposing Team'], keep='first')
+
     if not props_df.empty:
         props_df = props_df.sort_values(by='Likelihood (%)', ascending=False)
         props_df.to_csv('prizepicks_sorted.csv', index=False)
