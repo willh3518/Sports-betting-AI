@@ -1,5 +1,5 @@
 import aiohttp
-import asyncio
+import asyncio, unicodedata
 import pandas as pd
 import csv
 import logging
@@ -34,6 +34,13 @@ HEADERS = [
     "Player", "Playing without Injured Player", "Team", "Season Stats",
     "PTS", "REB", "AST", "STL", "BLK", "FGM", "FGA", "3PM", "3PA", "FTM", "FTA", "OREB", "DREB", "TOV"
 ]
+
+def clean_player_name(name):
+    """Removes periods, accents, and ensures proper capitalization."""
+    name = name.strip()
+    name = name.replace(".", "").replace("'", "")  # Remove periods and apostrophes
+    name = unicodedata.normalize("NFKD", name).encode("ASCII", "ignore").decode("utf-8")  # Remove accents
+    return name.title()  # Capitalize properly
 
 # 📌 Step 1: Extract Unique Players from PrizePicks Data
 def extract_unique_players():
@@ -85,7 +92,7 @@ async def fetch_stats(session, player, injured_player):
         logging.warning(f"Skipping self-search: {player} without {injured_player}")
         return {}
 
-    url = f"https://www.statmuse.com/nba/ask?q={player}+in+the+2024-25+season+in+games+without+{injured_player_clean.replace(' ', '+')}"
+    url = f"https://www.statmuse.com/nba/ask?q={player.replace(' ', '+')}+in+the+2024-25+season+in+games+without+{injured_player_clean.replace(' ', '+')}"
 
     async with session.get(url) as response:
         if response.status == 200:
@@ -126,7 +133,7 @@ async def process_players():
         player_queries = []
 
         for _, row in matched_players_df.iterrows():
-            player = row["Player"]
+            player = clean_player_name(row["Player"])
             injured_player = row["Injured Player"]
             team = row["Team"]
 
