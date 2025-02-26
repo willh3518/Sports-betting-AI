@@ -372,7 +372,7 @@ async def save_to_csv(season_stats, prop_results, player_team_mapping):
         # ✅ H2H Stats Row
         if h2h_data.get("GP") != "N/A":
             output_data.append([
-                "", f"H2H vs {opponent_name}", "", "", "", "", h2h_data.get("GP", "N/A"),
+                player, f"H2H vs {opponent_name}", "", "", "", "", h2h_data.get("GP", "N/A"),
                 h2h_data.get("PPG", "N/A"), h2h_data.get("RPG", "N/A"), h2h_data.get("APG", "N/A"),
                 h2h_data.get("SPG", "N/A"), h2h_data.get("BPG", "N/A"), h2h_data.get("FGM", "N/A"),
                 h2h_data.get("FGA", "N/A"), h2h_data.get("3PM", "N/A"), h2h_data.get("3PA", "N/A"),
@@ -388,7 +388,7 @@ async def save_to_csv(season_stats, prop_results, player_team_mapping):
 
         if games_played > 0:
             output_data.append([
-                "", f"Last {len(last_10_data)-1} vs {player_team_mapping.get(player, 'Unknown')}", "", "", "", "",
+                player, f"Last {len(last_10_data)-1} vs {player_team_mapping.get(player, 'Unknown')}", "", "", "", "",
                 len(last_10_data)-1,
                 average_row.get("PTS", "N/A"), average_row.get("REB", "N/A"),
                 average_row.get("AST", "N/A"), average_row.get("STL", "N/A"),
