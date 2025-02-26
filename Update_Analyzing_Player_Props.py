@@ -1,4 +1,5 @@
 import aiohttp, asyncio, csv, os, time, re, random, logging
+import unicodedata
 from bs4 import BeautifulSoup
 import pandas as pd
 from selectolax.parser import HTMLParser
@@ -66,6 +67,12 @@ async def get_proxy():
 
             PROXIES = await load_proxies()
         yield random.choice(PROXIES)
+
+def clean_player_name(name):
+    """Removes periods, accents, and ensures proper capitalization."""
+    name = name.replace(".", "")  # Remove periods
+    name = unicodedata.normalize("NFKD", name).encode("ASCII", "ignore").decode("utf-8")  # Remove accents
+    return name.title()  # Capitalize properly
 
 async def fetch_html(session, url, max_retries=5):
     if url in CACHE:
@@ -198,7 +205,7 @@ async def scrape_h2h_stats(player_name, opposing_team, session):
 async def scrape_last_10_stats(player_name, opposing_team, session):
     """Scrapes Last 10 Matchups stats for a player vs an opponent (individual game logs)."""
     if not opposing_team:
-        return []
+        return [], {}
 
     formatted_player = player_name.replace(" ", "-").lower()
     formatted_team = TEAM_NAME_MAPPING.get(opposing_team, opposing_team).replace(" ", "-").lower()
@@ -206,23 +213,31 @@ async def scrape_last_10_stats(player_name, opposing_team, session):
 
     html = await fetch_html(session, url)
     if not html:
-        return []
+        return [], {}
 
     soup = BeautifulSoup(html, "lxml")
     table = soup.select_one("table")
     if not table:
-        return []
+        return [], {}
 
-    rows = table.select("tr")[1:11]  # Extract only last 10 games (if available)
-    stats_list = []
+    rows = table.select("tr")
+    if len(rows) < 2:
+        return [], {}
 
     headers = [th.get_text(strip=True) for th in table.select("th")]
-    for row in rows:
+
+    # ✅ Extract all game logs, excluding the last row
+    stats_list = []
+    for row in rows[1:-1]:  # Exclude the last row (average stats)
         values = [td.get_text(strip=True) for td in row.select("td")]
         stats = {headers[i]: values[i] for i in range(len(headers))}
         stats_list.append(stats)
 
-    return stats_list
+    # ✅ Extract the last row separately as the **average row**
+    avg_values = [td.get_text(strip=True) for td in rows[-1].select("td")]
+    avg_stats = {headers[i]: avg_values[i] for i in range(len(headers))}
+
+    return stats_list, avg_stats  # ✅ Return both game logs & the average stats
 
 def calculate_last_10_hit_percentage(game_logs, prop_type, threshold):
     """Calculates the percentage of games where a player hit the given prop threshold."""
@@ -341,7 +356,7 @@ async def save_to_csv(season_stats, prop_results, player_team_mapping):
     # ✅ Sort season_stats alphabetically by player name
     sorted_season_stats = sorted(season_stats, key=lambda x: x[0])
 
-    for player, season_data, h2h_data, last_10_data in sorted_season_stats:
+    for player, season_data, h2h_data, last_10_data, avg_stats in sorted_season_stats:
         opponent_name = player_team_mapping.get(player, "Unknown")  # Use team mapping
 
         # ✅ Season Stats Row
@@ -366,18 +381,22 @@ async def save_to_csv(season_stats, prop_results, player_team_mapping):
             ])
 
         # ✅ Handle last 10 matchups correctly
-        games_played = len(last_10_data) if isinstance(last_10_data, list) else 0
+        games_played = len(last_10_data)-1 if isinstance(last_10_data, list) else 0
+
+        # Extract the dictionary where NAME == 'Average'
+        average_row = next((entry for entry in last_10_data if entry.get('NAME') == 'Average'), None)
 
         if games_played > 0:
             output_data.append([
-                "", f"Last {games_played} vs {opponent_name}", "", "", "", "", games_played,
-                last_10_data[-1].get("PTS", "N/A"), last_10_data[-1].get("REB", "N/A"),
-                last_10_data[-1].get("AST", "N/A"), last_10_data[-1].get("STL", "N/A"),
-                last_10_data[-1].get("BLK", "N/A"), last_10_data[-1].get("FGM", "N/A"),
-                last_10_data[-1].get("FGA", "N/A"), last_10_data[-1].get("3PM", "N/A"),
-                last_10_data[-1].get("3PA", "N/A"), last_10_data[-1].get("FTM", "N/A"),
-                last_10_data[-1].get("FTA", "N/A"), last_10_data[-1].get("OREB", "N/A"),
-                last_10_data[-1].get("DREB", "N/A"), last_10_data[-1].get("TOV", "N/A")
+                "", f"Last {len(last_10_data)-1} vs {player_team_mapping.get(player, 'Unknown')}", "", "", "", "",
+                len(last_10_data)-1,
+                average_row.get("PTS", "N/A"), average_row.get("REB", "N/A"),
+                average_row.get("AST", "N/A"), average_row.get("STL", "N/A"),
+                average_row.get("BLK", "N/A"), average_row.get("FGM", "N/A"),
+                average_row.get("FGA", "N/A"), average_row.get("3PM", "N/A"),
+                average_row.get("3PA", "N/A"), average_row.get("FTM", "N/A"),
+                average_row.get("FTA", "N/A"), average_row.get("OREB", "N/A"),
+                average_row.get("DREB", "N/A"), average_row.get("TOV", "N/A")
             ])
 
         # ✅ Prop Results Rows with H2H Prop Hit Value
@@ -455,7 +474,7 @@ async def scrape_and_process(unique_players, player_team_mapping, player_prop_co
             asyncio.gather(
                 scrape_player_stats(player, session),
                 scrape_h2h_stats(player, player_team_mapping.get(player, ""), session),
-                scrape_last_10_stats(player, player_team_mapping.get(player, ""), session)
+                scrape_last_10_stats(player, player_team_mapping.get(player, ""), session)  # OLD LINE TO FIX
             )
             for player in unique_players
         ]
@@ -466,7 +485,7 @@ async def scrape_and_process(unique_players, player_team_mapping, player_prop_co
         ]
 
         last_10_tasks = [
-            scrape_last_10_stats(player, player_team_mapping.get(player, ""), session)
+            scrape_last_10_stats(player, player_team_mapping.get(player, ""), session)  # OLD LINE TO FIX
             for player in unique_players
         ]
 
@@ -478,17 +497,20 @@ async def scrape_and_process(unique_players, player_team_mapping, player_prop_co
         )
 
         # Process player results
-        for player, (season_data, h2h_data, last_10_data) in zip(unique_players, player_results):
-            season_stats.append((player, season_data, h2h_data, last_10_data))
+        for player, (season_data, h2h_data, last_10_result) in zip(unique_players, player_results):
+            last_10_data, avg_stats = last_10_result  # ✅ FIXED: Store the avg stats separately
+            season_stats.append((player, season_data, h2h_data, last_10_data, avg_stats))  # ✅ Added avg_stats
 
         # ✅ FIX: Create season_stats_mapping before using it
-        season_stats_mapping = {player: stats for player, stats, _, _ in season_stats}
+        season_stats_mapping = {player: stats for player, stats, _, _, _ in season_stats}
 
-        # Process last 10 hit percentage
-        game_logs_mapping = {player: logs for player, logs in zip(unique_players, last_10_logs_list)}
+        # ✅ Corrected dictionary comprehension
+        game_logs_mapping = {player: (logs, avg_stats) for player, (logs, avg_stats) in
+                             zip(unique_players, last_10_logs_list)}
 
         for (player, prop, value) in player_prop_combinations:
-            last_10_hit_percentage = calculate_last_10_hit_percentage(game_logs_mapping.get(player, []), prop, value)
+            logs, _ = game_logs_mapping.get(player, ([], {}))  # ✅ Extract only logs, ignore avg_stats
+            last_10_hit_percentage = calculate_last_10_hit_percentage(logs, prop, value)
             last_10_hit_results.append({
                 "Player": player,
                 "Prop": f"{prop} {value}",
@@ -511,7 +533,6 @@ async def scrape_and_process(unique_players, player_team_mapping, player_prop_co
                 "H2H Prop Hit Value": "Yes" if hit_percentage > 50 else "No",  # Keeping H2H logic intact
                 "Last 10 Matchup Hit %": last_10_hit_percentage
             })
-
     return season_stats, prop_results
 
 async def scrape_all_players():
@@ -525,7 +546,7 @@ async def scrape_all_players():
     player_team_mapping = {}
     df = pd.read_csv(INPUT_CSV, dtype={"Prop Value": str})  # Ensures numeric values are read as strings
     for _, row in df.iterrows():
-        player_name = row.get("Player", "").strip()
+        player_name = clean_player_name(row.get("Player", "").strip())
         if "+" in player_name:
             continue
         prop_type = row.get("Prop Type", "").strip()
