@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to PropPilot AI</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff; /* Back to white */
+            color: black; /* Text color back to black */
+        }
+
+        .header-container {
+            background-color: black;
+            color: white;
+            padding: 20px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-logo {
+            width: 250px; /* Increased size */
+            height: auto;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: fadeInLogo 2s ease-in forwards; /* Fade in effect */
+        }
+
+        @keyframes fadeInLogo {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .header-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .content-section {
+            padding: 40px 0;
+            background-color: #ffffff;
+            color: black;
+        }
+
+        /* Sidebar styles */
+        #sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        #sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        #sidebar a:hover {
+            color: #f1f1f1;
+        }
+
+        .menu-btn {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            z-index: 1000;
+            color: white;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#tools">Tools</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Menu Icon -->
+    <div class="menu-btn">☰</div>
+
+    <!-- Header -->
+    <div class="header-container">
+        <img src="{{ url_for('static', filename='images/logo-transparent-png.png') }}" alt="PropPilot AI Logo" class="header-logo">
+        <div class="header-text">
+            Welcome to PropPilot AI - Revolutionizing your betting experience with cutting-edge AI technology.
+        </div>
+    </div>
+
+    <!-- Content Sections -->
+    <div id="about" class="content-section">
+        <div class="container">
+            <h2>About Our AI</h2>
+            <p>Our AI-powered system analyzes thousands of game data points to provide highly accurate predictions. Discover how you can leverage our insights to make informed betting decisions.</p>
+        </div>
+    </div>
+
+    <div id="tools" class="content-section">
+        <div class="container">
+            <h2>Our Tools</h2>
+            <p>Explore the tools and features we offer to help you make the most of your betting strategy, including real-time data analysis, predictive modeling, and more.</p>
+        </div>
+    </div>
+
+    <div id="contact" class="content-section">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need support? Contact our team for more information about how we can help you succeed in sports betting.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer text-center p-3">
+        <p>Copyright © PropPilot AI 2021</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Sidebar toggle
+        document.querySelector('.menu-btn').addEventListener('mouseover', function() {
+            document.getElementById('sidebar').style.width = '250px';
+        });
+        document.getElementById('sidebar').addEventListener('mouseleave', function() {
+            this.style.width = '0';
+        });
+    </script>
+
+</body>
+</html>
