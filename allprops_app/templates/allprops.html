@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Props | PropPilot AI</title>
+
+  <!-- Bootstrap CSS + Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --background: #1f1f1f;
+      --card-bg: rgba(0, 255, 255, 0.1);
+      --text-color: #f5f5f5;
+      --primary: #00ffff;
+      --dropdown-bg: #252525;
+      --dropdown-text: #f5f5f5;
+    }
+
+    [data-theme="light"] {
+      --background: #f5f5f5;
+      --card-bg: rgba(0, 119, 255, 0.05);
+      --text-color: #121212;
+      --primary: #0077ff;
+      --dropdown-bg: #ffffff;
+      --dropdown-text: #121212;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    [data-theme="dark"] .dropdown-menu a {
+      color: #ffffff !important;
+    }
+
+    [data-theme="light"] .dropdown-menu a {
+      color: #121212 !important;
+    }
+
+    .profile-dropdown .username {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      opacity: 0.3;
+      filter: blur(5px);
+    }
+
+    .content-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .header-section {
+      text-align: center;
+      padding: 60px 20px 20px;
+    }
+
+    .header-section h1 {
+      color: var(--primary);
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+
+    .filters-container {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .active-filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .filter-tag {
+      background-color: var(--primary);
+      color: #121212;
+      padding: 5px 10px;
+      border-radius: 15px;
+      display: flex;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+
+    .filter-tag i {
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .prop-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      color: var(--text-color);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      height: 100%;
+    }
+
+    .prop-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(0, 255, 255, 0.2);
+    }
+
+    .track-btn {
+      background-color: var(--primary);
+      color: #121212;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .countdown {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    footer {
+      background-color: #252525;
+      color: #ffffff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backdrop-filter: blur(8px);
+      background-color: rgba(0, 0, 0, 0.6);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .modal-content {
+      background-color: var(--background);
+      color: var(--text-color);
+      width: 90%;           /* Was 80%, now 90% */
+      max-width: 1200px;    /* Was 800px, now 1200px */
+      padding: 40px;        /* More padding for breathing room */
+      border-radius: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+
+    /* Shared Button Styles */
+    .prev-btn,
+    .next-btn {
+      background: var(--primary);
+      color: #121212;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 50%;
+      z-index: 10000;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    /* Prev & Next Buttons */
+    .prev-btn,
+    .next-btn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+
+    .prev-btn {
+      left: 5%;
+    }
+
+    .next-btn {
+      right: 5%;
+    }
+
+    .close-btn {
+      position: absolute;        /* Keep absolute */
+      top: 1px;                 /* Distance from the top of modal */
+      right: 1px;               /* Distance from the right of modal */
+      background: var(--primary);
+      color: #121212;
+      border: none;
+      font-size: 1.25rem;        /* Slightly smaller than prev/next buttons */
+      width: 30px;               /* Uniform width/height for a nice circle */
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10000;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .close-btn:hover {
+      background: #00e6e6;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    }
+
+
+    /* Hover Effects */
+    .prev-btn:hover,
+    .next-btn:hover {
+      background: #00e6e6;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+    }
+
+
+
+    .player-details p {
+      margin: 10px 0;
+    }
+
+    .stat-box {
+      background-color: rgba(0, 255, 255, 0.15);
+      border: 1px solid rgba(0, 255, 255, 0.3);
+      border-radius: 12px;
+      padding: 20px; /* Increased from 15px */
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 255, 255, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+
+    .stat-box:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 255, 255, 0.3);
+    }
+
+    .stat-box h4 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: var(--primary);
+    }
+
+    .stat-box p {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--text-color);
+    }
+
+    .filters-wrapper-box {
+      background-color: rgba(0, 255, 255, 0.05); /* soft box color */
+      border: 1px solid rgba(0, 255, 255, 0.15);
+      border-radius: 12px;
+      max-width: 1200px; /* prevents it from stretching */
+      margin: 0 auto; /* centers it horizontally */
+      padding: 20px 30px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+    }
+
+    .filters-wrapper-box label {
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .filters-wrapper-box .form-check-input {
+      transform: scale(1.2);
+      margin-right: 5px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="particles-js"></div>
+
+  <div class="content-container">
+
+    <!-- Header -->
+    <section class="header-section">
+      <h1>All Props</h1>
+      <p>Explore every AI-powered prop available today!</p>
+    </section>
+
+    <!-- Filters -->
+    <div class="filters-container justify-content-center mb-4">
+
+      <!-- Search Player Input (Above the box) -->
+      <div class="search-player-wrapper mb-3 w-50">
+        <input id="searchInput" type="text" class="form-control w-100" placeholder="Search Player...">
+      </div>
+
+      <!-- Filter Box Wrapper -->
+      <div class="filters-wrapper-box p-4">
+        <label class="form-label text-light mb-3">Filter by Prop Type:</label>
+
+        <div class="d-flex flex-wrap gap-3 justify-content-center">
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Pts+Rebs+Asts" id="filterPRA">
+            <label class="form-check-label text-light" for="filterPRA">Pts+Rebs+Asts</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Rebs+Asts" id="filterRA">
+            <label class="form-check-label text-light" for="filterRA">Rebs+Asts</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Points" id="filterPoints">
+            <label class="form-check-label text-light" for="filterPoints">Points</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Blks+Stls" id="filterBlksStls">
+            <label class="form-check-label text-light" for="filterBlksStls">Blks+Stls</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="3-PT Made" id="filter3PTMade">
+            <label class="form-check-label text-light" for="filter3PTMade">3-PT Made</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Pts+Asts" id="filterPtsAsts">
+            <label class="form-check-label text-light" for="filterPtsAsts">Pts+Asts</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Pts+Rebs" id="filterPtsRebs">
+            <label class="form-check-label text-light" for="filterPtsRebs">Pts+Rebs</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Rebounds" id="filterRebounds">
+            <label class="form-check-label text-light" for="filterRebounds">Rebounds</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Blocked Shots" id="filterBlockedShots">
+            <label class="form-check-label text-light" for="filterBlockedShots">Blocked Shots</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Turnovers" id="filterTurnovers">
+            <label class="form-check-label text-light" for="filterTurnovers">Turnovers</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Assists" id="filterAssists">
+            <label class="form-check-label text-light" for="filterAssists">Assists</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="FG Made" id="filterFGMade">
+            <label class="form-check-label text-light" for="filterFGMade">FG Made</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Defensive Rebounds" id="filterDefReb">
+            <label class="form-check-label text-light" for="filterDefReb">Defensive Rebounds</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="FG Attempted" id="filterFGAttempted">
+            <label class="form-check-label text-light" for="filterFGAttempted">FG Attempted</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Offensive Rebounds" id="filterOffReb">
+            <label class="form-check-label text-light" for="filterOffReb">Offensive Rebounds</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Steals" id="filterSteals">
+            <label class="form-check-label text-light" for="filterSteals">Steals</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="3-PT Attempted" id="filter3PTAttempted">
+            <label class="form-check-label text-light" for="filter3PTAttempted">3-PT Attempted</label>
+          </div>
+          <div><input type="checkbox" class="form-check-input prop-filter" value="Free Throws Made" id="filterFTMade">
+            <label class="form-check-label text-light" for="filterFTMade">Free Throws Made</label>
+          </div>
+        </div>
+
+        <!-- 🔥 NEW: Filter by Team -->
+        <label class="form-label text-light mb-3 mt-4">Filter by Team:</label>
+
+        <div id="teamFilters" class="d-flex flex-wrap gap-3 justify-content-center">
+          <!-- The team checkboxes will be dynamically inserted here by renderTeamFilters() -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Active Filters -->
+    <div id="activeFilters" class="active-filters"></div>
+
+
+    <!-- Props Grid -->
+    <div class="container">
+      <div id="propCards" class="row g-4 justify-content-center"></div>
+    </div>
+
+    <!-- Modal -->
+    <div id="playerModal" class="modal-overlay">
+    <div class="modal-content" style="max-width: 1000px; display: flex; flex-direction: column; align-items: center;">
+    <button class="close-btn" onclick="closeModal()"><i class="bi bi-x-lg"></i></button>
+
+
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; width: 100%;">
+
+      <!-- Player Image and Info -->
+      <div style="flex: 1; min-width: 250px; text-align: center;">
+        <img id="playerImage" src="https://via.placeholder.com/150" alt="Player Image" style="border-radius: 10px; width: 150px; height: 150px; object-fit: cover;">
+        <h2 id="playerName" style="margin-top: 15px;">Player Name</h2>
+        <p id="playerProp"><strong>Prop:</strong> Prop Value</p>
+        <p id="playerTeam"><strong>Team:</strong> Team</p>
+        <p id="playerOpponent"><strong>Opponent:</strong> Opponent Name</p>
+        <p id="projectedMinutes"><strong>Projected Minutes:</strong> --</p>
+        <div id="lineComparisons" style="margin-top: 10px; text-align: left;">
+          <h5 style="color: var(--primary);">📊 Available Lines:</h5>
+          <ul id="lineList" style="padding-left: 20px;"></ul>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div style="flex: 2; min-width: 300px; display: flex; flex-direction: column; gap: 20px;">
+
+        <!-- First Row -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px;">
+          <div class="stat-box" style="flex: 1;">
+            <h4>Season Avg</h4>
+            <p id="seasonAvg">-</p>
+          </div>
+          <div class="stat-box" style="flex: 1;">
+            <h4>Last 5 Games</h4>
+            <p id="last5">-</p>
+          </div>
+          <div class="stat-box" style="flex: 1;">
+            <h4>Last 10 Games</h4>
+            <p id="last10">-</p>
+          </div>
+        </div>
+
+        <!-- Second Row -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px;">
+          <div class="stat-box" style="flex: 1;">
+            <h4>H2H Season Avg</h4>
+            <p id="h2hSeasonAvg">-</p>
+          </div>
+          <div class="stat-box" style="flex: 1;">
+            <h4>Last 10 H2H</h4>
+            <p id="h2hLast10">-</p>
+          </div>
+        </div>
+
+        <!-- Third Row -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px;">
+          <div class="stat-box" style="flex: 1;">
+            <h4>Season Hit %</h4>
+            <p id="seasonHit">-</p>
+          </div>
+          <div class="stat-box" style="flex: 1;">
+            <h4>Last 10 H2H Hit %</h4>
+            <p id="h2hHit">-</p>
+          </div>
+        </div>
+
+        <!-- Fourth Row -->
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px;">
+          <div class="stat-box" style="flex: 1;">
+            <h4>Home/Away</h4>
+            <p id="homeAway">-</p>
+          </div>
+          <div class="stat-box" style="flex: 1;">
+            <h4>Opponent Def Rating</h4>
+            <p id="oppDefRating">-</p>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <button class="prev-btn" onclick="prevPlayer()">&lt;</button>
+    <button class="next-btn" onclick="nextPlayer()">&gt;</button>
+  </div>
+</div>
+
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+      <div class="container">&copy; 2025 PropPilot AI. All rights reserved.</div>
+    </footer>
+  </div>
+
+  <!-- Tracked Bets Modal -->
+  <div id="trackedModal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <h2>Tracked Bets</h2>
+      <div id="trackedList"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script>
+  // Particles background
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 80 },
+      color: { value: "#00FFFF" },
+      shape: { type: "circle" },
+      opacity: { value: 0.3 },
+      size: { value: 3 },
+      move: { enable: true, speed: 1 },
+      line_linked: { enable: true, distance: 150, color: "#00FFFF", opacity: 0.2, width: 1 }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: { onhover: { enable: false } }
+    }
+  });
+
+
+  let currentPlayerIndex = 0;
+  let currentSearch = '';
+  let selectedTeams = [];
+
+  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+
+  // Build trackedBets based on favorites (on page load)
+  let trackedBets = favorites.map(index => players[index]).filter(Boolean);
+
+  // Save it back to localStorage (optional for consistency)
+  localStorage.setItem('trackedBets', JSON.stringify(trackedBets));
+
+
+  const searchInput = document.getElementById('searchInput');
+  const sortSelect = document.getElementById('sortSelect');
+  const activeFiltersDiv = document.getElementById('activeFilters');
+
+  // Search and Sorting
+  searchInput.addEventListener('input', () => {
+    currentSearch = searchInput.value.toLowerCase();
+    applyFilters();
+  });
+
+  let selectedPropTypes = []; // new array to store checked prop types
+
+  function applyFilters() {
+    filteredPlayers = players.filter(player => {
+      const playerName = (player['Player'] || '').toLowerCase();
+      const matchesSearch = playerName.includes(currentSearch);
+
+      const propType = (player['Prop Type'] || '').toLowerCase();
+      const matchesPropType = selectedPropTypes.length === 0 || selectedPropTypes.includes(propType);
+
+      const team = (player['Team'] || '').toUpperCase();
+      const matchesTeam = selectedTeams.length === 0 || selectedTeams.includes(team);
+
+      // 👇 Combine all filters
+      return matchesSearch && matchesPropType && matchesTeam;
+    });
+
+    renderCards();        // Re-render cards after filtering
+    renderActiveFilters(); // Update any active filters UI
+  }
+
+
+  function getStatLabel(propType) {
+    const type = propType.toLowerCase();
+
+    if (type.includes('pts+rebs+asts')) return 'Pts + Rebs + Asts';
+    if (type.includes('pts+asts')) return 'Pts + Asts';
+    if (type.includes('pts+rebs')) return 'Pts + Rebs';
+    if (type.includes('points') || type === 'pts') return 'Points';
+    if (type.includes('rebounds') || type === 'rebs') return 'Rebounds';
+    if (type.includes('assists') || type === 'asts') return 'Assists';
+    if (type.includes('steals')) return 'Steals';
+    if (type.includes('blocks') || type.includes('blks')) return 'Blocks';
+    if (type.includes('turnovers')) return 'Turnovers';
+    if (type.includes('3-pt made')) return '3PT Made';
+    if (type.includes('fg made')) return 'FG Made';
+    if (type.includes('fg attempted')) return 'FG Attempted';
+    if (type.includes('free throws made')) return 'FT Made';
+
+    return propType; // fallback if none match
+  }
+
+  function getStatValueAndLabel(player, propType, timeframe = 'Season Stats') {
+    const type = propType.toLowerCase();
+    const tfKey = timeframe; // 'Season Stats', 'Last 5 Season', etc.
+
+    let value = 'N/A';
+    let label = getStatLabel(propType); // Optional if you have a helper to label headings
+
+    // 🟢 Combo Props
+    if (type.includes('pts+rebs+asts')) {
+      const pts = player[`PPG (${tfKey})`] || 0;
+      const rebs = player[`RPG (${tfKey})`] || 0;
+      const asts = player[`APG (${tfKey})`] || 0;
+      const sum = pts + rebs + asts;
+      value = sum ? `${sum.toFixed(1)} PRA` : 'N/A';
+    } else if (type.includes('pts+asts')) {
+      const pts = player[`PPG (${tfKey})`] || 0;
+      const asts = player[`APG (${tfKey})`] || 0;
+      const sum = pts + asts;
+      value = sum ? `${sum.toFixed(1)} P+A` : 'N/A';
+    } else if (type.includes('pts+rebs')) {
+      const pts = player[`PPG (${tfKey})`] || 0;
+      const rebs = player[`RPG (${tfKey})`] || 0;
+      const sum = pts + rebs;
+      value = sum ? `${sum.toFixed(1)} P+R` : 'N/A';
+    } else if (type.includes('rebs+asts')) {
+      const rebs = player[`RPG (${tfKey})`] || 0;
+      const asts = player[`APG (${tfKey})`] || 0;
+      const sum = rebs + asts;
+      value = sum ? `${sum.toFixed(1)} R+A` : 'N/A';
+    } else if (type.includes('blks+stls')) {
+      const blks = player[`BPG (${tfKey})`] || 0;
+      const stls = player[`SPG (${tfKey})`] || 0;
+      const sum = blks + stls;
+      value = sum ? `${sum.toFixed(1)} B+S` : 'N/A';
+    }
+
+    // 🟢 Individual Stats
+    else if (type.includes('points') || type === 'pts') {
+      const pts = player[`PPG (${tfKey})`];
+      value = pts !== undefined ? `${pts} PPG` : 'N/A';
+    } else if (type.includes('rebounds') || type === 'rebs') {
+      const rebs = player[`RPG (${tfKey})`];
+      value = rebs !== undefined ? `${rebs} RPG` : 'N/A';
+    } else if (type.includes('offensive rebounds')) {
+      const oreb = player[`OREB (${tfKey})`];
+      value = oreb !== undefined ? `${oreb} OREB` : 'N/A';
+    } else if (type.includes('defensive rebounds')) {
+      const dreb = player[`DREB (${tfKey})`];
+      value = dreb !== undefined ? `${dreb} DREB` : 'N/A';
+    } else if (type.includes('assists') || type.includes('asts')) {
+      const asts = player[`APG (${tfKey})`];
+      value = asts !== undefined ? `${asts} APG` : 'N/A';
+    } else if (type.includes('steals')) {
+      const stls = player[`SPG (${tfKey})`];
+      value = stls !== undefined ? `${stls} SPG` : 'N/A';
+    } else if (type.includes('blocks') || type.includes('blks')) {
+      const blks = player[`BPG (${tfKey})`];
+      value = blks !== undefined ? `${blks} BPG` : 'N/A';
+    } else if (type.includes('turnovers') || type.includes('tov')) {
+      const tovs = player[`TPG (${tfKey})`];
+      value = tovs !== undefined ? `${tovs} TPG` : 'N/A';
+    }
+
+    // 🟢 Shooting Stats
+    else if (type.includes('fg made') || type.includes('fgm')) {
+      const fgm = player[`FGM (${tfKey})`];
+      value = fgm !== undefined ? `${fgm} FGM` : 'N/A';
+    } else if (type.includes('fg attempted') || type.includes('fga')) {
+      const fga = player[`FGA (${tfKey})`];
+      value = fga !== undefined ? `${fga} FGA` : 'N/A';
+    } else if (type.includes('3-pt made') || type.includes('3pm')) {
+      const threeMade = player[`3PM (${tfKey})`];
+      value = threeMade !== undefined ? `${threeMade} 3PM` : 'N/A';
+    } else if (type.includes('3-pt attempted') || type.includes('3pa')) {
+      const threeAtt = player[`3PA (${tfKey})`];
+      value = threeAtt !== undefined ? `${threeAtt} 3PA` : 'N/A';
+    } else if (type.includes('free throws made') || type.includes('ftm')) {
+      const ftm = player[`FTM (${tfKey})`];
+      value = ftm !== undefined ? `${ftm} FTM` : 'N/A';
+    } else if (type.includes('free throws attempted') || type.includes('fta')) {
+      const fta = player[`FTA (${tfKey})`];
+      value = fta !== undefined ? `${fta} FTA` : 'N/A';
+    }
+
+    // 🔴 Default fallback
+    return { value, label };
+  }
+
+
+
+  function sortPlayers() {
+    const sortBy = sortSelect.value;
+    if (sortBy === 'confidence') {
+      filteredPlayers.sort((a, b) => parseInt(b.confidence) - parseInt(a.confidence));
+    } else if (sortBy === 'odds') {
+      filteredPlayers.sort((a, b) => parseInt(b.odds) - parseInt(a.odds));
+    } else if (sortBy === 'time') {
+      filteredPlayers.sort((a, b) => new Date(a.time) - new Date(b.time));
+    }
+  }
+
+  function renderActiveFilters() {
+    activeFiltersDiv.innerHTML = '';
+    if (currentSearch) {
+      activeFiltersDiv.innerHTML += `<div class="filter-tag">Search: "${currentSearch}"<i class="bi bi-x-circle-fill ms-1" onclick="clearSearch()"></i></div>`;
+    }
+  }
+
+  function clearSearch() {
+    searchInput.value = '';
+    currentSearch = '';
+    applyFilters();
+  }
+
+  function clearSort() {
+    sortSelect.value = '';
+    applyFilters();
+  }
+
+  function renderCards() {
+    const propCards = document.getElementById('propCards');
+
+    if (!filteredPlayers || filteredPlayers.length === 0) {
+      propCards.innerHTML = `<p class="text-center text-muted">No props available.</p>`;
+      return;
+    }
+
+    let html = ''; // Build all the cards first!
+
+    filteredPlayers.forEach((player, index) => {
+      const playerName = player['Player'] || `Player ${index + 1}`;
+      const playerTeam = player['Team'] || 'N/A';
+      const opposingTeam = player['Opposing Team'] || 'N/A';
+      const propType = player['Prop Type'] || 'N/A';
+      const propValue = player['Prop Value'] || 'N/A';
+
+      const isFavorited = favorites.includes(index);
+
+      html += `
+        <div class="col-md-4 mb-4" onclick="openModal(${index})">
+          <div class="prop-card d-flex flex-column align-items-center text-center">
+
+            <!-- Headshot Image -->
+            <img src="${player['HeadshotURL'] || 'https://via.placeholder.com/150'}"
+                 alt="${playerName} Headshot"
+                 style="border-radius: 10px; width: 120px; height: 120px; object-fit: cover; margin-bottom: 15px;">
+
+            <!-- Player Name -->
+            <h3 style="margin-bottom: 10px;">${playerName}</h3>
+
+            <!-- Info Section -->
+            <div style="width: 100%;">
+              <p><strong>Team:</strong> ${playerTeam}</p>
+              <p><strong>Opponent:</strong> ${opposingTeam}</p>
+              <p><strong>Prop:</strong> ${propType} @ ${propValue}</p>
+            </div>
+
+            <!-- Favorite Icon (Optional) -->
+            <i class="bi ${isFavorited ? 'bi-star-fill' : 'bi-star'} favorite-icon"
+               style="color:${isFavorited ? 'gold' : '#ccc'}; position: absolute; top: 15px; right: 15px;"
+               onclick="toggleFavorite(${index}, event)"></i>
+
+          </div>
+        </div>
+      `;
+    });
+
+    // Inject everything at once
+    propCards.innerHTML = html;
+  }
+
+  function renderTeamFilters(teams) {
+    const teamFiltersContainer = document.getElementById('teamFilters');
+
+    if (!teamFiltersContainer) return;
+
+    // Clear any existing filters first
+    teamFiltersContainer.innerHTML = '';
+
+    teams.forEach(team => {
+      const id = `filterTeam-${team.replace(/\s+/g, '-')}`;
+
+      const checkboxWrapper = document.createElement('div');
+      checkboxWrapper.classList.add('d-flex', 'align-items-center', 'gap-2');
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.className = 'form-check-input team-filter';
+      checkbox.value = team;
+      checkbox.id = id;
+
+      const label = document.createElement('label');
+      label.className = 'form-check-label text-light';
+      label.htmlFor = id;
+      label.innerText = team;
+
+      checkboxWrapper.appendChild(checkbox);
+      checkboxWrapper.appendChild(label);
+      teamFiltersContainer.appendChild(checkboxWrapper);
+
+      // Add event listener to apply filters when toggled
+      checkbox.addEventListener('change', () => {
+        selectedTeams = Array.from(document.querySelectorAll('.team-filter:checked'))
+                             .map(cb => cb.value);
+        applyFilters();
+      });
+    });
+  }
+
+  function toggleFavorite(index, event) {
+    event.stopPropagation();
+
+    if (favorites.includes(index)) {
+      favorites = favorites.filter(fav => fav !== index);
+    } else {
+      favorites.push(index);
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    renderCards();
+  }
+
+
+  function openTrackedModal() {
+    const modal = document.getElementById("trackedModal");
+    const trackedList = document.getElementById("trackedList");
+    trackedList.innerHTML = trackedBets.length === 0
+      ? `<p>No bets tracked yet.</p>`
+      : trackedBets.map((player, index) => `
+          <div class="tracked-bet">
+            <h4>${player['Player'] || 'N/A'}</h4>
+            <p>${player['Prop Type'] || 'N/A'} @ ${player['Prop Value'] || 'N/A'}</p>
+            <button class="track-btn" onclick="removeFromTracker(${index})">Remove</button>
+          </div>
+        `).join('')
+    modal.style.display = "flex";
+  }
+
+  function closeTrackedModal() {
+    document.getElementById("trackedModal").style.display = "none";
+  }
+
+  function removeFromTracker(index) {
+    favorites = favorites.filter(fav => fav !== index);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    openTrackedModal();
+  }
+
+  function updateTrackedCount() {
+    document.getElementById("trackedCount").innerText = trackedBets.length;
+  }
+
+  function initCountdowns() {
+    document.querySelectorAll('.countdown').forEach(el => {
+      const time = new Date(el.getAttribute('data-time')).getTime();
+      const update = () => {
+        const now = new Date().getTime();
+        const distance = time - now;
+        el.querySelector('span').innerText = distance < 0 ? "In Progress!" :
+          `${Math.floor(distance / (1000 * 60 * 60))}h ${Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))}m`;
+      };
+      update();
+      setInterval(update, 60000);
+    });
+  }
+
+  function openModal(index) {
+    currentPlayerIndex = index;
+    populateModal(filteredPlayers[index]);
+    document.getElementById("playerModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("playerModal").style.display = "none";
+  }
+
+  function prevPlayer() {
+    currentPlayerIndex = (currentPlayerIndex - 1 + filteredPlayers.length) % filteredPlayers.length;
+    populateModal(filteredPlayers[currentPlayerIndex]);
+  }
+
+  function nextPlayer() {
+    currentPlayerIndex = (currentPlayerIndex + 1) % filteredPlayers.length;
+    populateModal(filteredPlayers[currentPlayerIndex]);
+  }
+
+
+  function populateModal(player) {
+    console.log("Populating modal with:", player);
+    // ✅ Basic Info
+    document.getElementById("playerImage").src = player['HeadshotURL'] || 'https://via.placeholder.com/150';
+    document.getElementById("playerName").innerText = player['Player'] || 'N/A';
+    document.getElementById("playerProp").innerHTML = `<strong>Prop:</strong> ${player['Prop Type'] || 'N/A'} @ ${player['Prop Value'] || 'N/A'}`;
+    document.getElementById("playerTeam").innerHTML = `<strong>Team:</strong> ${player['Team'] || 'N/A'}`;
+    document.getElementById("playerOpponent").innerHTML = `<strong>Opponent:</strong> ${player['Opposing Team'] || 'N/A'}`;
+    document.getElementById("projectedMinutes").innerHTML = `<strong>Projected Minutes:</strong> ${player['ProjectedMinutes'] || 'N/A'}`;
+    // ⬇️ Populate lines
+    const lineList = document.getElementById("lineList");
+    lineList.innerHTML = ""; // Clear previous lines
+
+    // PrizePicks lines
+    if (player.PrizePicksLines && player.PrizePicksLines.length > 0) {
+      player.PrizePicksLines.forEach(line => {
+        const emoji = line.label.toLowerCase() === 'demon' ? '🧙' :
+                      line.label.toLowerCase() === 'goblin' ? '👹' : '🎯';
+        const li = document.createElement('li');
+        li.innerHTML = `${emoji} <strong>${line.label}:</strong> ${line.line}`;
+        lineList.appendChild(li);
+      });
+    }
+
+    // Underdog lines
+    if (player.UnderdogLines && player.UnderdogLines.length > 0) {
+      player.UnderdogLines.forEach(line => {
+        const li = document.createElement('li');
+        li.innerHTML = `🐶 <strong>Underdog:</strong> ${line.line}`;
+        lineList.appendChild(li);
+      });
+    }
+
+    // If no lines found
+    if (lineList.children.length === 0) {
+      const li = document.createElement('li');
+      li.innerText = "No lines available.";
+      lineList.appendChild(li);
+    }
+
+
+    // ✅ Use getStatValueAndLabel to get values + units
+    const propType = player['Prop Type'] || 'points'; // fallback to 'points' if not provided
+
+    // First row
+    const seasonAvg = getStatValueAndLabel(player, propType, 'Season Stats');
+    const last5Avg = getStatValueAndLabel(player, propType, 'Last 5 Season');
+    const last10Avg = getStatValueAndLabel(player, propType, 'Last 10 Season');
+
+    // Second row
+    const h2hSeasonAvg = getStatValueAndLabel(player, propType, 'H2H Current Season');
+    const h2hLast10Avg = getStatValueAndLabel(player, propType, 'Last 10 H2H');
+
+    // Third row (Hit percentages)
+    const seasonHit = player['Season Hit %'] || 'N/A';
+    const h2hHit = player['Last 10 Hit Percentage'] || 'N/A';
+
+    // Fourth row (Home/Away and Opponent Def Rating)
+    const homeAway = player['Home/Away'] || 'N/A';
+    const oppDefRating = player['Opponent Defensive Rating'] !== undefined
+      ? player['Opponent Defensive Rating']
+      : 'N/A';
+
+    // ✅ Inject values into the modal
+
+    // First Row
+    document.getElementById("seasonAvg").innerText = seasonAvg.value;
+    document.getElementById("last5").innerText = last5Avg.value;
+    document.getElementById("last10").innerText = last10Avg.value;
+
+    // Second Row
+    document.getElementById("h2hSeasonAvg").innerText = h2hSeasonAvg.value;
+    document.getElementById("h2hLast10").innerText = h2hLast10Avg.value;
+
+    // Third Row
+    document.getElementById("seasonHit").innerText = seasonHit;
+    document.getElementById("h2hHit").innerText = h2hHit;
+
+    // Fourth Row
+    document.getElementById("homeAway").innerText = homeAway;
+    document.getElementById("oppDefRating").innerText = oppDefRating;
+  }
+
+
+
+
+  // Theme toggle
+  function toggleTheme() {
+    const html = document.documentElement;
+    const newTheme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+    html.dataset.theme = newTheme;
+    localStorage.setItem('theme', newTheme);
+  }
+
+  // Logout
+  function logout() {
+    localStorage.clear();
+    sessionStorage.clear();
+    window.location.href = "/login";
+  }
+
+  // Load saved theme on DOM ready
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.dataset.theme = savedTheme;
+  });
+
+   // Close modal when clicking outside the content
+  document.getElementById("playerModal").addEventListener("click", function(e) {
+    if (!e.target.closest('.modal-content')) {
+      closeModal();
+    }
+  });
+
+
+  let players = [];            // Master data
+  let filteredPlayers = [];     // Filtered players
+
+  async function fetchPlayerData() {
+    try {
+      const response = await fetch('/api/props');
+      const data = await response.json();
+
+      if (data.error) {
+        console.error('Error fetching player data:', data.error);
+        return;
+      }
+
+      const { props, teams } = data;
+
+      players = props;
+      filteredPlayers = [...players];
+
+      // Update tracked bets if necessary
+      trackedBets = favorites.map(index => players[index]).filter(Boolean);
+      localStorage.setItem('trackedBets', JSON.stringify(trackedBets));
+
+      console.log("Fetched players:", players);
+      console.log("Fetched teams:", teams);
+
+      // ✅ NEW: Render the dynamic team filters
+      renderTeamFilters(teams);
+
+      renderCards();
+    } catch (error) {
+      console.error("Error fetching player data:", error);
+    }
+  }
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.dataset.theme = savedTheme;
+
+    fetchPlayerData(); // Run fetch on load
+
+    // ✅ Add event listeners to prop type checkboxes
+    const propFilters = document.querySelectorAll('.prop-filter');
+    console.log('Checkboxes found:', propFilters.length); // Debug!
+
+    propFilters.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        selectedPropTypes = Array.from(document.querySelectorAll('.prop-filter:checked'))
+                                 .map(cb => cb.value.toLowerCase());
+        applyFilters();
+      });
+    });
+  });
+
+</script>
+</body>
+</html>
