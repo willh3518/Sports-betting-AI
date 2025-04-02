@@ -1,161 +1,437 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to PropPilot AI</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff; /* Back to white */
-            color: black; /* Text color back to black */
-        }
+{% extends 'base.html' %}
 
-        .header-container {
-            background-color: black;
-            color: white;
-            padding: 20px 20px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+{% block title %}Home | PropPilot AI{% endblock %}
 
-        .header-logo {
-            width: 250px; /* Increased size */
-            height: auto;
-            margin-bottom: 20px;
-            opacity: 0;
-            animation: fadeInLogo 2s ease-in forwards; /* Fade in effect */
-        }
+{% block content %}
 
-        @keyframes fadeInLogo {
-            to {
-                opacity: 1;
-            }
-        }
+<!-- Navbar -->
+<nav id="navbar" class="navbar navbar-expand-lg fixed-top" style="
+    background-color: rgba(18, 18, 18, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.1);
+    padding: 15px 30px;
+    z-index: 2000;
+    transition: all 0.3s ease;
+">
+  <a class="navbar-brand text-info fw-bold d-flex align-items-center" href="#" style="font-size: 1.5rem;">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" width="30" height="30" style="margin-right: 10px;">
+    PropPilot AI
+  </a>
 
-        .header-text {
-            font-size: 24px;
-            font-weight: bold;
-        }
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-        .content-section {
-            padding: 40px 0;
-            background-color: #ffffff;
-            color: black;
-        }
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link text-white nav-glow" href="#home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white nav-glow" href="#whyus">Why Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white nav-glow" href="#features">Features</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white nav-glow" href="#pricing">Pricing</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white nav-glow" href="#mission">Our Mission</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-        /* Sidebar styles */
-        #sidebar {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            right: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-        }
+<!-- Hero Section -->
+<section id="home" class="hero d-flex align-items-center justify-content-center text-center text-white" style="
+    height: 100vh;
+    background-color: #121212;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+">
 
-        #sidebar a {
-            padding: 10px 15px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
+  <!-- Particles Background -->
+  <div id="particles-js" style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      filter: blur(5px);
+  "></div>
 
-        #sidebar a:hover {
-            color: #f1f1f1;
-        }
+  <!-- Logo -->
+  <img src="{{ url_for('static', filename='images/logo.png') }}"
+       alt="PropPilot AI Logo"
+       id="logo"
+       style="
+         width: 400px;
+         opacity: 0;
+         position: absolute;
+         top: 30px;
+         left: 50%;
+         transform: translateX(-50%) scale(0.8);
+         transition: transform 1.5s ease, opacity 1.5s ease;
+         filter: drop-shadow(0 0 15px rgba(0, 255, 255, 0.6));
+         z-index: 1000;
+       ">
 
-        .menu-btn {
-            font-size: 30px;
-            cursor: pointer;
-            position: fixed;
-            right: 10px;
-            top: 10px;
-            z-index: 1000;
-            color: white;
-        }
+  <!-- Hero Content -->
+  <div class="hero-content" style="
+      position: absolute;
+      top: 375px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  ">
 
-        footer {
-            background-color: black;
-            color: white;
-        }
-    </style>
-</head>
-<body>
+    <!-- Typing Text with Cursor -->
+    <h1 style="margin: 0;">
+      <span id="typing-text" style="font-size: 2.8rem; font-weight: bold;"></span><span id="cursor" style="font-size: 2.8rem; font-weight: bold;">|</span>
+    </h1>
 
-    <!-- Sidebar -->
-    <div id="sidebar">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#tools">Tools</a>
-        <a href="#contact">Contact</a>
+    <!-- CTA Button -->
+    <div id="cta-button" style="
+        display: none;
+        margin-top: 20px;
+        opacity: 0;
+        transition: opacity 1s ease;">
+      <a href="#whyus" class="btn btn-primary btn-lg px-4 pulse-button">Learn More</a>
     </div>
 
-    <!-- Menu Icon -->
-    <div class="menu-btn">☰</div>
+  </div>
+</section>
 
-    <!-- Header -->
-    <div class="header-container">
-        <img src="{{ url_for('static', filename='images/logo-transparent-png.png') }}" alt="PropPilot AI Logo" class="header-logo">
-        <div class="header-text">
-            Welcome to PropPilot AI - Revolutionizing your betting experience with cutting-edge AI technology.
+<!-- Why PropPilot Section -->
+<section id="whyus" class="py-5 bg-dark text-white text-center">
+  <div class="container">
+    <h2 class="mb-4">Why PropPilot?</h2>
+    <p class="lead mb-5">
+      Our AI model and data transparency helps bettors of all levels to make smarter, more informed decisions by analyzing massive datasets to predict the best player prop bets.
+    </p>
+
+    <div class="row g-4">
+      <!-- AI-Driven Insights -->
+      <div class="col-md-4">
+        <i class="bi bi-cpu-fill display-4 text-primary"></i>
+        <h4 class="mt-3">AI-Driven Insights</h4>
+        <p>Advanced machine learning analyzes historical and real-time data to give you the edge.</p>
+      </div>
+
+      <!-- Data Transparency -->
+      <div class="col-md-4">
+        <i class="bi bi-graph-up-arrow display-4 text-success"></i>
+        <h4 class="mt-3">Data Transparency</h4>
+        <p>We show you the data and trends that power every prediction—no black boxes here.</p>
+      </div>
+
+      <!-- Track Live Lines -->
+      <div class="col-md-4">
+        <i class="bi bi-trophy-fill display-4 text-warning"></i>
+        <h4 class="mt-3">Track Live Lines</h4>
+        <p>Real time line tracking to help you get the best odds.</p>
+      </div>
+    </div>
+
+    <!-- Deep Dive Button -->
+    <div class="mt-5">
+      <a href="/whyus" class="btn btn-primary btn-lg px-4 pulse-button">Click Here For A Deep Dive</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Our Features Section -->
+<section id="features" class="py-5 text-white" style="background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);">
+  <div class="container">
+    <h2 class="mb-4 text-center">Our Features</h2>
+
+    <div class="row g-4">
+
+      <!-- Prop Picks Overview -->
+      <div class="col-md-4">
+        <div class="card bg-secondary text-white h-100">
+          <div class="card-body text-center">
+            <h4 class="card-title">Prop Picks</h4>
+            <p class="card-text">
+              Our AI engine analyzes player prop bets daily, providing high-confidence picks based on historical and real-time data. Perfect for bettors looking for an edge.
+            </p>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <!-- Content Sections -->
-    <div id="about" class="content-section">
-        <div class="container">
-            <h2>About Our AI</h2>
-            <p>Our AI-powered system analyzes thousands of game data points to provide highly accurate predictions. Discover how you can leverage our insights to make informed betting decisions.</p>
+      <!-- Data Display Overview -->
+      <div class="col-md-4">
+        <div class="card bg-secondary text-white h-100">
+          <div class="card-body text-center">
+            <h4 class="card-title">Data Display</h4>
+            <p class="card-text">
+              We provide bettors with complete access to all the data analyzed by our AI model, ensuring full transparency and empowering them to make the most informed decisions possible.
+            </p>
+          </div>
         </div>
-    </div>
+      </div>
 
-    <div id="tools" class="content-section">
-        <div class="container">
-            <h2>Our Tools</h2>
-            <p>Explore the tools and features we offer to help you make the most of your betting strategy, including real-time data analysis, predictive modeling, and more.</p>
+      <!-- Line Tracking Overview -->
+      <div class="col-md-4">
+        <div class="card bg-secondary text-white h-100">
+          <div class="card-body text-center">
+            <h4 class="card-title">Line Tracking</h4>
+            <p class="card-text">
+              Track betting lines in real time to ensure you're securing the most competitive odds available.
+            </p>
+          </div>
         </div>
+      </div>
+
     </div>
 
-    <div id="contact" class="content-section">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>Have questions or need support? Contact our team for more information about how we can help you succeed in sports betting.</p>
-        </div>
+    <!-- Deep Dive Button -->
+    <div class="text-center mt-5">
+      <a href="/features" class="btn btn-primary btn-lg pulse-button">Click Here For A Deep Dive</a>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer text-center p-3">
-        <p>Copyright © PropPilot AI 2021</p>
-    </footer>
+  </div>
+</section>
 
-    <!-- Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Pricing Section -->
+<section id="pricing" class="py-5 text-white text-center" style="background-color: #121212;">
+  <div class="container">
+    <h2 class="mb-4">Pricing</h2>
+    <p class="lead mb-4">Simple and Affordable</p>
 
-    <script>
-        // Sidebar toggle
-        document.querySelector('.menu-btn').addEventListener('mouseover', function() {
-            document.getElementById('sidebar').style.width = '250px';
-        });
-        document.getElementById('sidebar').addEventListener('mouseleave', function() {
-            this.style.width = '0';
-        });
-    </script>
+    <div class="card mx-auto bg-secondary text-white" style="max-width: 400px;">
+      <div class="card-body">
+        <h3 class="card-title">Pro Plan</h3>
+        <p class="card-text display-4 my-3">$9.99<span style="font-size: 1.2rem;">/month</span></p>
+        <ul class="list-unstyled mb-4">
+          <li><i class="bi bi-check-circle-fill text-success"></i> Unlimited Prop Picks</li>
+          <li><i class="bi bi-check-circle-fill text-success"></i> Access to Data Dashboard</li>
+          <li><i class="bi bi-check-circle-fill text-success"></i> Live Line Tracking</li>
+          <li><i class="bi bi-check-circle-fill text-success"></i> Priority Support</li>
+        </ul>
+        <a href="https://discord.gg/BKhBsJD2nc" class="btn btn-primary btn-lg pulse-button">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-</body>
-</html>
+<!-- Our Mission Section -->
+<section id="mission" class="py-5 text-white text-center" style="background: linear-gradient(90deg, #203A43, #0F2027);">
+  <div class="container">
+    <h2 class="mb-4">Our Mission</h2>
+    <p class="lead mb-4">We believe in leveling the playing field.</p>
+
+    <p style="max-width: 800px; margin: 0 auto;">
+      At PropPilot AI, we are passionate about empowering bettors of all experience levels. Our mission is to deliver clear, data-driven insights that takes the guesswork out of prop betting. We’ve combined advanced machine learning with a user-friendly platform to give you the edge you deserve—whether you’re betting for fun or aiming for consistent profits. We're here to make smarter betting accessible to everyone.
+    </p>
+  </div>
+</section>
+
+<!-- Particles.js library -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<!-- Particles.js Config -->
+<script>
+particlesJS('particles-js', {
+  "particles": {
+    "number": {
+      "value": 150,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#00FFFF"
+    },
+    "shape": {
+      "type": "circle"
+    },
+    "opacity": {
+      "value": 0.3
+    },
+    "size": {
+      "value": 3
+    },
+    "line_linked": {
+      "enable": false
+    },
+    "move": {
+      "enable": true,
+      "speed": 3,
+      "direction": "none",
+      "out_mode": "out"
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
+<!-- Hero + Navbar Animations -->
+<script>
+window.onload = function() {
+  const logo = document.getElementById('logo');
+  logo.style.opacity = 1;
+  logo.style.transform = 'translateX(-50%) scale(1)';
+
+  setTimeout(() => {
+    logo.classList.add('float-animation');
+  }, 1500);
+
+  setTimeout(startTyping, 1500);
+  blinkCursor();
+
+  // Parallax logo effect
+  document.addEventListener('mousemove', (e) => {
+    const moveX = (e.clientX - window.innerWidth / 2) * 0.02;
+    const moveY = (e.clientY - window.innerHeight / 2) * 0.02;
+    logo.style.transform = `translate(-50%, 0) translate(${moveX}px, ${moveY}px) scale(1)`;
+  });
+};
+
+const textArray = ["Welcome to PropPilot AI", "The Future of Prop betting"];
+const typingSpeed = 45;
+const delayBetweenLines = 700;
+let textIndex = 0;
+let charIndex = 0;
+
+function startTyping() {
+  if (textIndex < textArray.length) {
+    typeLine();
+  } else {
+    revealCTA();
+  }
+}
+
+function typeLine() {
+  const currentLine = textArray[textIndex];
+  const typingElement = document.getElementById('typing-text');
+
+  if (charIndex < currentLine.length) {
+    typingElement.innerHTML += currentLine.charAt(charIndex);
+    charIndex++;
+    setTimeout(typeLine, typingSpeed);
+  } else {
+    charIndex = 0;
+    textIndex++;
+    if (textIndex < textArray.length) {
+      typingElement.innerHTML += "<br>";
+      setTimeout(startTyping, delayBetweenLines);
+    } else {
+      revealCTA();
+    }
+  }
+}
+
+function revealCTA() {
+  const ctaButton = document.getElementById('cta-button');
+  ctaButton.style.display = 'block';
+  setTimeout(() => {
+    ctaButton.style.opacity = 1;
+  }, 50);
+}
+
+function blinkCursor() {
+  const cursor = document.getElementById('cursor');
+  setInterval(() => {
+    cursor.style.opacity = (cursor.style.opacity === '0') ? '1' : '0';
+  }, 500);
+}
+
+// Navbar shrink on scroll
+window.addEventListener('scroll', function() {
+  const navbar = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    navbar.style.padding = '8px 20px';
+  } else {
+    navbar.style.padding = '15px 30px';
+  }
+});
+</script>
+
+<!-- Smooth Scroll (Optional JavaScript Version) -->
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+</script>
+
+<!-- CSS Animations -->
+<style>
+  @keyframes float {
+    0% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-15px); }
+    100% { transform: translateX(-50%) translateY(0); }
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .nav-glow {
+    position: relative;
+    display: inline-block;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+  }
+
+  .nav-glow::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #00FFFF;
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-glow:hover {
+    color: #00FFFF !important;
+  }
+
+  .nav-glow:hover::after {
+    width: 80%;
+  }
+
+  #typing-text br + * {
+    background: linear-gradient(90deg, #00FFFF, #0077FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .pulse-button {
+    animation: pulse 2s infinite;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); }
+    50% { box-shadow: 0 0 20px rgba(0, 255, 255, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.4); }
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth; /* For CSS smooth scroll fallback */
+  }
+</style>
+
+{% endblock %}
