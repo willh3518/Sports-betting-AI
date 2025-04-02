@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}Features | PropPilot AI{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="hero d-flex align-items-center justify-content-center text-center text-white" style="
+    height: 50vh;
+    background-color: #121212;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Explore Our Features</h1>
+    <p class="lead mt-3">Discover how PropPilot AI can revolutionize your prop betting game.</p>
+  </div>
+</section>
+
+<!-- Prop Picks Section -->
+<section class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='images/prop_picks.png') }}" alt="Prop Picks" class="img-fluid" style="max-height: 300px;">
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold text-info">Prop Picks</h2>
+        <p class="lead mt-3">
+          Our AI engine delivers daily prop betting recommendations with the highest confidence. Using real-time and historical data, we pinpoint the best opportunities to give you the edge.
+        </p>
+        <ul>
+          <li>Daily picks updated in real-time</li>
+          <li>High-confidence recommendations</li>
+          <li>Perfect for beginners and seasoned bettors</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Data Display Section -->
+<section class="py-5 text-white" style="background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);">
+  <div class="container">
+    <div class="row align-items-center flex-md-row-reverse">
+      <div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='images/data_display.png') }}" alt="Data Display" class="img-fluid" style="max-height: 300px;">
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold text-info">Data Display</h2>
+        <p class="lead mt-3">
+          Dive into an intuitive dashboard packed with detailed player stats, betting trends, and historical performance data. Visualize it all in a clear and digestible format.
+        </p>
+        <ul>
+          <li>Interactive charts and graphs</li>
+          <li>Real-time updates</li>
+          <li>Customize views for deeper insights</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bet Tracking Section -->
+<section class="py-5 bg-dark text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center">
+        <img src="{{ url_for('static', filename='images/bet_tracking.png') }}" alt="Bet Tracking" class="img-fluid" style="max-height: 300px;">
+      </div>
+      <div class="col-md-6">
+        <h2 class="fw-bold text-info">Bet Tracking</h2>
+        <p class="lead mt-3">
+          Keep tabs on your betting performance with our advanced tracking tools. Monitor your ROI, analyze your success rate, and refine your strategies over time.
+        </p>
+        <ul>
+          <li>Track bets and outcomes in real-time</li>
+          <li>Analyze ROI and win percentages</li>
+          <li>Improve performance with data-driven insights</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 text-center text-white" style="background-color: #121212;">
+  <div class="container">
+    <h2 class="mb-4">Ready to get started?</h2>
+    <a href="https://discord.gg/BKhBsJD2nc" class="btn btn-primary btn-lg pulse-button px-5">Get Started Now</a>
+  </div>
+</section>
+
+{% endblock %}
