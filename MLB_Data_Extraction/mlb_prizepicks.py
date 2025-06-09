@@ -8,6 +8,7 @@ import os
 import requests
 import pandas as pd
 from datetime import datetime
+from mlb_utils import normalize_name
 
 # ======= CONFIG =======
 API_URL      = "https://api.prizepicks.com/projections"
@@ -73,6 +74,7 @@ def build_player_mapping(data):
                 or attrs.get("name")
                 or f"{attrs.get('first_name','')} {attrs.get('last_name','')}"
             ).strip()
+            name = normalize_name(name)
             position = attrs.get("position", "Unknown")
             mapping[pid] = {"name": name, "position": position, "team": team_code}
     return mapping

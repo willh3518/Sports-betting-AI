@@ -112,6 +112,9 @@ def main():
     data = fetch_lineups()
     df   = pd.DataFrame(data, columns=["Team", "Player", "Position", "Handedness"])
 
+    # — normalize team names —
+    df["Team"] = df["Team"].replace({"D-backs": "Diamondbacks"})
+
     # write into your existing MLB_Prop_Data_CSV folder
     script_dir = os.path.dirname(__file__)
     csv_folder = os.path.abspath(os.path.join(script_dir, "..", "MLB_Prop_Data_CSV"))
