@@ -16,9 +16,19 @@ EXCLUDE_SCRIPTS = {
     "mlb_utils.py"
 }
 
+# Track errors
+error_log = []
+
 def run_script(script_path):
-    print(f"🚀 Running {script_path} ...")
-    subprocess.run(["python", script_path], check=True)
+    print(f" Running {script_path} ...")
+    try:
+        subprocess.run(["python", script_path], check=True)
+        return True
+    except subprocess.CalledProcessError as e:
+        error_message = f"Error in {script_path}: {str(e)}"
+        print(f"ERROR: {error_message}")
+        error_log.append(error_message)
+        return False
 
 if __name__ == "__main__":
     start_time = time.time()
@@ -46,3 +56,14 @@ if __name__ == "__main__":
 
     print("✅ All scripts executed (with proper order).")
     print(f"⏱️ Total time: {time.time() - start_time:.2f} seconds.")
+
+    # Print error summary
+    if error_log:
+        print("\n" + "=" * 50)
+        print(f" ERROR SUMMARY: {len(error_log)} script(s) failed")
+        print("=" * 50)
+        for i, error in enumerate(error_log, 1):
+            print(f" {i}. {error}")
+        print("\nPlease run these scripts individually to fix the issues.")
+    else:
+        print("\n All scripts completed successfully with no errors!")
