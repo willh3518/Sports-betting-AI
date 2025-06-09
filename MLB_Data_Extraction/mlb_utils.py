@@ -7,7 +7,8 @@ import unidecode
 from datetime import datetime, date
 from bs4 import BeautifulSoup
 import requests
-from typing import Optional, Tuple, Dict
+import pandas as pd
+from typing import Optional, Tuple, Dict, List
 
 # Configure Logging
 logging.basicConfig(
@@ -33,7 +34,7 @@ TEAM_ABBREV_MAP = {
     "HOU": "Astros", "KC": "Royals", "LAA": "Angels", "LAD": "Dodgers", "MIA": "Marlins",
     "MIL": "Brewers", "MIN": "Twins", "NYM": "Mets", "NYY": "Yankees", "ATH": "Athletics",
     "PHI": "Phillies", "PIT": "Pirates", "SD": "Padres", "SEA": "Mariners", "SFG": "Giants",
-    "STL": "Cardinals", "TBR": "Rays", "TEX": "Rangers", "TOR": "Blue Jays", "WSN": "Nationals"
+    "STL": "Cardinals", "TBR": "Rays", "TEX": "Rangers", "TOR": "Blue Jays", "WSN": "Nationals", "SDP": "Padres"
 }
 
 # Name corrections for player names
@@ -233,3 +234,12 @@ def extract_pitch_frequency(zone_map_element, zone_name: str) -> Tuple[int, floa
         pct_val = 0.0
 
     return count, pct_val
+
+def filter_players_with_id(df: pd.DataFrame, id_col: str = "mlb_id", player_col: str = "Player", logger: logging.Logger = logging.getLogger()) -> pd.DataFrame:
+    """
+    Logs any players missing id_col, returns df where id_col is not null.
+    """
+    missing: List[str] = df[df[id_col].isna()][player_col].tolist()
+    if missing:
+        logger.warning(f"Missing {id_col} for {len(missing)} players: {missing}")
+    return df[df[id_col].notna()].copy()

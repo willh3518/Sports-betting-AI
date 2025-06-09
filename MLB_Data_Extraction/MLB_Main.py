@@ -11,7 +11,9 @@ PRIZEPICKS_SCRIPT = "mlb_prizepicks.py"
 MERGE_SCRIPTS = {"hitter_stats_merge.py", "pitcher_stats_merge.py"}
 EXCLUDE_SCRIPTS = {
     "Overall_MLB_Stats.py",
-    "MLB_Main.py",  # <-- this script
+    "MLB_Main.py",
+    "Config.py",
+    "mlb_utils.py"
 }
 
 def run_script(script_path):
