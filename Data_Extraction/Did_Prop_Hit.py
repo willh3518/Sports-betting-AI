@@ -19,7 +19,7 @@ logging.basicConfig(
 # File Paths
 input_csv = "../Prop_Data_CSV/prizepicks_data.csv"
 output_csv = "../Prop_Data_CSV/box_scores.csv"
-prop_data_csv = "/Users/willhart/Downloads/did_it_hit.csv"  # The file containing props and 'Hit' column
+prop_data_csv = "/Users/willhart/Downloads/did_it_hit - Sheet1.csv"  # The file containing props and 'Hit' column
 
 STATMUSE_URL_TEMPLATE = "https://www.statmuse.com/nba/ask/{player}-box-score-last-game"
 
@@ -49,7 +49,8 @@ PROP_TYPE_MAPPING = {
     "Pts+Rebs+Asts": ["PTS", "REB", "AST"],
     "Pts+Rebs": ["PTS", "REB"],
     "Pts+Asts": ["PTS", "AST"],
-    "Rebs+Asts": ["REB", "AST"]
+    "Rebs+Asts": ["REB", "AST"],
+    "Blks+Stls": ["BLK", "STL"]
 }
 
 async def fetch_html_with_retries(url, max_retries=5):
@@ -157,9 +158,9 @@ def update_hit_column():
     prop_df = pd.read_csv(prop_data_csv)
     box_scores_df = pd.read_csv(output_csv)
 
-    # Ensure Player name consistency
-    prop_df["Player"] = prop_df["Player"].astype(str).str.strip().str.title()
-    box_scores_df["Player"] = box_scores_df["Player"].astype(str).str.strip().str.title()
+    # ✅ Ensure Player name consistency (clean both prop_df and box_scores_df)
+    prop_df["Player"] = prop_df["Player"].apply(clean_player_name)
+    box_scores_df["Player"] = box_scores_df["Player"].apply(clean_player_name)
 
     def get_stat_value(row):
         """Retrieves the correct stat value from the box score based on the prop type."""
@@ -184,9 +185,10 @@ def update_hit_column():
 
     prop_df["Actual Stat"] = prop_df.apply(get_stat_value, axis=1)
 
-    # Determine if the prop hit (1) or missed (0)
+    # ✅ Determine if the prop hit (1) or missed (0)
     prop_df["Hit"] = prop_df.apply(
-        lambda row: 1 if row["Actual Stat"] >= row["Prop Value"] else 0 if row["Actual Stat"] != -999 else -999, axis=1)
+        lambda row: 1 if row["Actual Stat"] >= row["Prop Value"] else 0 if row["Actual Stat"] != -999 else -999, axis=1
+    )
 
     prop_df.to_csv(prop_data_csv, index=False, encoding="utf-8")
     logging.info(f"✅ Updated '{prop_data_csv}' with actual stats and hit values.")
