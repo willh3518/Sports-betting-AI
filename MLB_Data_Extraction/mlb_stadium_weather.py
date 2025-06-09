@@ -1,30 +1,23 @@
-#!/usr/bin/env python3
-"""
-mlb_stadium_weather.py
-Extract and summarize weather data for MLB home games scheduled for today.
-Uses OpenWeatherMap API to fetch weather forecasts and computes wind effects.
-"""
-
 import os
 import time
+import requests
 import pandas as pd
 from datetime import datetime, date
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from mlb_utils import parse_schedule_date, manual_parse_time, compute_wind_effect, fetch_forecast_weather, TEAM_ABBREV_MAP
 
-# Configuration
+# ───────────────────────────────────────────────────────────────────────────────
+# CONFIGURATION
+# ───────────────────────────────────────────────────────────────────────────────
+
 OWM_API_KEY = "6db6b866a5090601c4b967df2d80d5dc"
 
-# File paths
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-CSV_FOLDER = os.path.join(ROOT, "MLB_Prop_Data_CSV")
-SCHEDULE_CSV = os.path.join(CSV_FOLDER, "mlb_full_schedule.csv")
-ORIENTATION_CSV = os.path.join(CSV_FOLDER, "ballpark_orientation_with_coords.csv")
-PRIZEPICKS_CSV = os.path.join(CSV_FOLDER, "mlb_prizepicks.csv")
-TEAM_MAP_CSV = os.path.join(CSV_FOLDER, "team_abbrev_map.csv")
-OUTPUT_CSV = os.path.join(CSV_FOLDER, "stadium_weather_summary.csv")
+SCHEDULE_CSV    = "../MLB_Prop_Data_CSV/mlb_full_schedule.csv"
+ORIENTATION_CSV = "../MLB_Prop_Data_CSV/ballpark_orientation_with_coords.csv"
+PRIZEPICKS_CSV  = "../MLB_Prop_Data_CSV/mlb_prizepicks.csv"
+TEAM_MAP_CSV    = "../MLB_Prop_Data_CSV/team_abbrev_map.csv"
+OUTPUT_CSV      = "../MLB_Prop_Data_CSV/stadium_weather_summary.csv"
 
-WEATHER_UNITS = "imperial"
+WEATHER_UNITS          = "imperial"
 GEOCODER_PAUSE_SECONDS = 1.0   # (not used here, but kept for reference)
 
 raw_date = input("Enter game date (YYYY-M-D), or leave blank for today: ").strip()
@@ -37,6 +30,123 @@ if raw_date:
         exit(1)
 else:
     TODAY = datetime.now().date()
+
+
+team_abbrev_map = {
+    "ATL": "Braves", "ARI": "Diamondbacks", "BAL": "Orioles", "BOS": "Red Sox", "CHC": "Cubs",
+    "CIN": "Reds", "CLE": "Guardians", "COL": "Rockies", "CHW": "White Sox", "DET": "Tigers",
+    "HOU": "Astros", "KC": "Royals", "LAA": "Angels", "LAD": "Dodgers", "MIA": "Marlins",
+    "MIL": "Brewers", "MIN": "Twins", "NYM": "Mets", "NYY": "Yankees", "ATH": "Athletics",
+    "PHI": "Phillies", "PIT": "Pirates", "SD": "Padres", "SEA": "Mariners", "SFG": "Giants",
+    "STL": "Cardinals", "TBR": "Rays", "TEX": "Rangers", "TOR": "Blue Jays", "WSN": "Nationals", "SDP": "Padres"
+}
+
+# ───────────────────────────────────────────────────────────────────────────────
+# HELPER FUNCTIONS
+# ───────────────────────────────────────────────────────────────────────────────
+
+def parse_schedule_date(col_str: str) -> date:
+    """
+    Parse a string like "Wed 5/28" → date(TODAY.year, 5, 28).
+    Return None on parse failure.
+    """
+    try:
+        md = col_str.strip().split()[-1]  # e.g. "5/28"
+        m_str, d_str = md.split("/")
+        return date(TODAY.year, int(m_str), int(d_str))
+    except Exception:
+        return None
+
+def manual_parse_time(raw_time: str, sched_date: date):
+    """
+    Given something like "Thu 7:10 PM" or "7:10 PM" and a date,
+    return a tuple (datetime, "YYYY-MM-DD hh:mm AM/PM").
+    Return (None, None) on failure.
+    """
+    tokens = raw_time.split()
+    if len(tokens) >= 3 and tokens[0].isalpha() and ":" in tokens[1]:
+        tstr = " ".join(tokens[1:])  # e.g. "7:10 PM"
+    else:
+        tstr = raw_time.strip()
+    try:
+        time_part = tstr.upper()
+        hour_min, ampm = time_part.split()
+        hour_str, min_str = hour_min.split(":")
+        hour = int(hour_str)
+        minute = int(min_str)
+        if ampm == "PM" and hour != 12:
+            hour += 12
+        if ampm == "AM" and hour == 12:
+            hour = 0
+        dt_obj = datetime(sched_date.year, sched_date.month, sched_date.day, hour, minute)
+        game_time_str = dt_obj.strftime("%Y-%m-%d %I:%M %p")
+        return dt_obj, game_time_str
+    except Exception:
+        return None, None
+
+def compute_wind_effect(orientation_deg: float, wind_deg: float) -> (str, str):
+    """
+    Given field orientation (home plate→CF) and wind_deg (where wind is coming from):
+      rel = (wind_deg - orientation_deg + 360) % 360
+
+    • rel in [315..360) ∪ [0..45]   → HEADWIND
+    • rel in [135..225]            → TAILWIND
+    • otherwise                    → CROSSWIND
+
+    Returns (pitcher_note, hitter_note). If wind_deg is None: both "Unknown (no wind data)".
+    """
+    if wind_deg is None:
+        return ("Unknown (no wind data)", "Unknown (no wind data)")
+
+    rel = (wind_deg - orientation_deg + 360) % 360
+    if (rel >= 315) or (rel <= 45):
+        return (
+            "Headwind: balls into the air will be knocked down → helps pitchers.",
+            "Headwind: balls in the air won’t carry → hinders hitters."
+        )
+    if 135 <= rel <= 225:
+        return (
+            "Tailwind: fly balls may carry farther → can hurt pitchers.",
+            "Tailwind: fly balls likely to carry → helps hitters."
+        )
+    return (
+        "Crosswind: pushes balls to foul lines. Neutral-ish for pitchers.",
+        "Crosswind: pushes balls to foul lines. Neutral-ish for hitters."
+    )
+
+def fetch_forecast_weather_session(session, lat: float, lon: float, target_dt: datetime) -> dict:
+    """
+    Use OWM free-tier "5 day / 3 hour" endpoint via requests.Session.
+    Find the forecast entry whose UNIX timestamp is closest to target_dt.
+    Return { temp, humidity, wind_speed, wind_deg } or None if none found.
+    """
+    base_url = "https://api.openweathermap.org/data/2.5/forecast"
+    params = {
+        "lat":   lat,
+        "lon":   lon,
+        "appid": OWM_API_KEY,
+        "units": WEATHER_UNITS
+    }
+    resp = session.get(base_url, params=params, timeout=10)
+    resp.raise_for_status()
+    data = resp.json()
+
+    forecast_list = data.get("list", [])
+    if not forecast_list:
+        return None
+
+    target_unix = int(time.mktime(target_dt.timetuple()))
+    closest = min(forecast_list, key=lambda ent: abs(ent["dt"] - target_unix))
+    return {
+        "temp":       closest["main"].get("temp"),
+        "humidity":   closest["main"].get("humidity"),
+        "wind_speed": closest["wind"].get("speed"),
+        "wind_deg":   closest["wind"].get("deg")
+    }
+
+# ───────────────────────────────────────────────────────────────────────────────
+# MAIN SCRIPT
+# ───────────────────────────────────────────────────────────────────────────────
 
 def main():
     # 1) Load schedule CSV (only Team, Date, Home/Away); parse dates
@@ -67,10 +177,10 @@ def main():
         ORIENTATION_CSV,
         index_col="TEAM",
         dtype={
-            "STADIUM": str,
-            "ORIENTATION_DEGREES": float,
-            "LATITUDE": float,
-            "LONGITUDE": float
+            "STADIUM":             str,
+            "ORIENTATION_DEGREES":  float,
+            "LATITUDE":            float,
+            "LONGITUDE":           float
         }
     )
     required_orient = {"STADIUM", "ORIENTATION_DEGREES", "LATITUDE", "LONGITUDE"}
@@ -95,8 +205,7 @@ def main():
         else:
             raise ValueError(f"Expected ['schedule_abbrev','prize_abbrev'] in {TEAM_MAP_CSV}.")
     else:
-        print(f"Warning: Could not find {TEAM_MAP_CSV}. Using built-in team abbreviation map.")
-        team_map = {k.upper(): v.upper() for k, v in TEAM_ABBREV_MAP.items()}
+        print(f"Warning: Could not find {TEAM_MAP_CSV}. Assuming schedule_abbrev == prize_abbrev.")
 
     # 5) Load PrizePicks CSV (to get each team's start time)
     pp_lookup = {}
@@ -136,104 +245,97 @@ def main():
                 dt_obj = datetime(sched_date.year, sched_date.month, sched_date.day, 19, 0)
                 game_time_str = dt_obj.strftime("%Y-%m-%d %I:%M %p")
 
-        # Get ballpark orientation and coordinates
+        # Check orientation & coords
         if sched_team not in orient_df.index:
-            print(f"Warning: No orientation data for {sched_team}. Skipping.")
+            print(f"Warning: '{sched_team}' not in orientation CSV. Skipping.")
             continue
 
-        orient_row = orient_df.loc[sched_team]
-        stadium = orient_row["STADIUM"]
-        orientation_deg = orient_row["ORIENTATION_DEGREES"]
-        lat = orient_row["LATITUDE"]
-        lon = orient_row["LONGITUDE"]
+        stadium_name = orient_df.at[sched_team, "STADIUM"]
+        orientation  = orient_df.at[sched_team, "ORIENTATION_DEGREES"]
+        lat          = orient_df.at[sched_team, "LATITUDE"]
+        lon          = orient_df.at[sched_team, "LONGITUDE"]
+        if pd.isna(lat) or pd.isna(lon):
+            print(f"Warning: '{stadium_name}' has no coordinates. Skipping '{sched_team}'.")
+            continue
 
         games_to_query.append({
-            "sched_team": sched_team,
-            "prize_team": prize_team,
-            "stadium": stadium,
-            "orientation_deg": orientation_deg,
-            "lat": lat,
-            "lon": lon,
-            "dt_obj": dt_obj,
+            "sched_team":    sched_team,
+            "stadium_name":  stadium_name,
+            "orientation":   orientation,
+            "lat":           lat,
+            "lon":           lon,
+            "dt_obj":        dt_obj,
             "game_time_str": game_time_str
         })
 
-    # 7) Query weather for each game
-    results = []
+    if not games_to_query:
+        print("No valid games to query. Exiting.")
+        return
+
+    # 7) Fetch all weather forecasts in parallel
+    session   = requests.Session()
+    forecasts = {}  # key: index in games_to_query → forecast dict or None
+
     with ThreadPoolExecutor(max_workers=5) as executor:
-        future_to_game = {
-            executor.submit(fetch_forecast_weather, game["lat"], game["lon"], game["dt_obj"]): game
-            for game in games_to_query
+        future_to_index = {
+            executor.submit(
+                fetch_forecast_weather_session,
+                session,
+                game["lat"],
+                game["lon"],
+                game["dt_obj"]
+            ): idx
+            for idx, game in enumerate(games_to_query)
         }
-
-        for future in as_completed(future_to_game):
-            game = future_to_game[future]
+        for future in as_completed(future_to_index):
+            idx = future_to_index[future]
             try:
-                weather = future.result()
-                if weather:
-                    temp = weather.get("temp")
-                    humidity = weather.get("humidity")
-                    wind_speed = weather.get("wind_speed")
-                    wind_deg = weather.get("wind_deg")
+                forecasts[idx] = future.result()
+            except Exception:
+                forecasts[idx] = None
 
-                    pitcher_note, hitter_note = compute_wind_effect(
-                        game["orientation_deg"], wind_deg
-                    )
+    # 8) Build output rows
+    output_rows = []
+    for idx, game in enumerate(games_to_query):
+        sched_team    = game["sched_team"]
+        stadium_name  = game["stadium_name"]
+        orientation   = game["orientation"]
+        lat           = game["lat"]
+        lon           = game["lon"]
+        game_time_str = game["game_time_str"]
+        forecast_wx   = forecasts.get(idx)
 
-                    results.append({
-                        "Team": game["prize_team"],
-                        "Stadium": game["stadium"],
-                        "GameTime": game["game_time_str"],
-                        "Temp": f"{temp:.1f}°F" if temp is not None else "N/A",
-                        "Humidity": f"{humidity}%" if humidity is not None else "N/A",
-                        "WindSpeed": f"{wind_speed} mph" if wind_speed is not None else "N/A",
-                        "WindDirection": f"{wind_deg}°" if wind_deg is not None else "N/A",
-                        "PitcherNote": pitcher_note,
-                        "HitterNote": hitter_note
-                    })
-                else:
-                    results.append({
-                        "Team": game["prize_team"],
-                        "Stadium": game["stadium"],
-                        "GameTime": game["game_time_str"],
-                        "Temp": "N/A",
-                        "Humidity": "N/A",
-                        "WindSpeed": "N/A",
-                        "WindDirection": "N/A",
-                        "PitcherNote": "No weather data available",
-                        "HitterNote": "No weather data available"
-                    })
-            except Exception as e:
-                print(f"Error processing {game['prize_team']}: {e}")
-                results.append({
-                    "Team": game["prize_team"],
-                    "Stadium": game["stadium"],
-                    "GameTime": game["game_time_str"],
-                    "Temp": "Error",
-                    "Humidity": "Error",
-                    "WindSpeed": "Error",
-                    "WindDirection": "Error",
-                    "PitcherNote": f"Error: {str(e)}",
-                    "HitterNote": f"Error: {str(e)}"
-                })
+        if forecast_wx:
+            pitch_note_gt, hit_note_gt = compute_wind_effect(
+                orientation, forecast_wx["wind_deg"]
+            )
+        else:
+            pitch_note_gt, hit_note_gt = ("N/A", "N/A")
 
-    # 8) Write results to CSV
-    if results:
-        df_out = pd.DataFrame(results)
-        os.makedirs(os.path.dirname(OUTPUT_CSV), exist_ok=True)
-        df_out.to_csv(OUTPUT_CSV, index=False)
-        print(f"\nWrote {len(df_out)} stadium weather entries to {OUTPUT_CSV}")
+        output_rows.append({
+            "Team":                          sched_team,
+            "Team Name": team_abbrev_map.get(sched_team, "Unknown"),
+            "Stadium":                       stadium_name,
+            "Orientation (°)":               orientation,
+            "Latitude":                      lat,
+            "Longitude":                     lon,
+            "Game Time":                     game_time_str,
+            "Game-Time Temp (°F)":           (forecast_wx.get("temp")      if forecast_wx else None),
+            "Game-Time Humidity (%)":        (forecast_wx.get("humidity")  if forecast_wx else None),
+            "Game-Time Wind Speed (mph)":    (forecast_wx.get("wind_speed")if forecast_wx else None),
+            "Game-Time Wind Dir (°)":        (forecast_wx.get("wind_deg")  if forecast_wx else None),
+            "Game-Time Effect on Pitchers":  pitch_note_gt,
+            "Game-Time Effect on Hitters":   hit_note_gt,
+        })
 
-        # Print summary to console
-        print("\nWeather Summary:")
-        for r in results:
-            print(f"{r['Team']} @ {r['Stadium']} ({r['GameTime']})")
-            print(f"  Temp: {r['Temp']}, Humidity: {r['Humidity']}, Wind: {r['WindSpeed']} @ {r['WindDirection']}")
-            print(f"  Pitcher: {r['PitcherNote']}")
-            print(f"  Hitter: {r['HitterNote']}")
-            print()
+    # 9) Write results to CSV
+    if not output_rows:
+        print("No stadium/game-time weather data to write. Exiting.")
     else:
-        print("No weather data was collected. Check for errors above.")
+        out_df = pd.DataFrame(output_rows)
+        out_df.to_csv(OUTPUT_CSV, index=False)
+        print(f"Done! Wrote {len(output_rows)} rows to '{OUTPUT_CSV}'.")
+        print(out_df)
 
 if __name__ == "__main__":
     main()
