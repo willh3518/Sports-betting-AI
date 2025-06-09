@@ -1,161 +1,183 @@
-import undetected_chromedriver as uc
-from selenium.common import StaleElementReferenceException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+import os
+import requests
 import pandas as pd
-import time
-import logging
+from datetime import datetime
 
-# Configure logging
-logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+# ======= CONFIG =======
+API_URL = "https://api.prizepicks.com/projections"
+CSV_FILENAME = os.path.join("..", "Prop_Data_CSV", "prizepicks_data.csv")
 
-def process_filter(driver, index):
-    """Click on a filter button and return the filter name, handling stale element issues."""
-    try:
-        # Skip index 0 since the first filter is already clicked
-        if index == 0:
-            return None
+# ======= 1) CONFIGURE REQUEST =======
+cookies = {
+    'rl_page_init_referrer': '%22%24direct%22',
+    '_pxvid': '3758602b-276a-11ef-9fd0-200749dffc2e',
+    'intercom-device-id-qmdeaj0t': 'c1d71880-764c-4cbd-a9f1-e867426b45fa',
+    '__pxvid': '385d6be2-276a-11ef-a698-0242ac120004',
+    '_sp_id.9177': '0bb52ba9-6dbf-4c3c-94df-61bd8bc57c3e.1718052263.3.1718635800.1718539042.101cd900-f834-4704-9fb7-859507be3702',
+    'ajs_anonymous_id': '31e2bf14-53cb-42aa-b28b-8ef373863f36',
+    'ajs_user_id': '7c614406-798b-4b3c-95d9-12e1c0cccc17',
+    'rl_anonymous_id': '%22e87094a3-3f7b-4464-b2b2-652ffc230540%22',
+    'intercom-id-qmdeaj0t': '8b6bc254-1257-4d66-92e9-a263b2f2f76c',
+    'rl_user_id': '%228d53cd68-8574-45d1-811f-67c072846e1d%22',
+    'pxcts': '251a1106-fea9-11ef-aa2c-5d7775896faa',
+    '_pxhd': '6d70a2b6f78b1cfd2110e137d19cfa4d06ebdd1d6688314ec21c9d85b8a4d293:d02fc780-65bc-11e9-b971-bb43e5539738',
+    'rl_trait': '%7B%22id%22%3A%228d53cd68-8574-45d1-811f-67c072846e1d%22%2C%22address%22%3A%221900%20North%20Kenilworth%20Street%22%2C%22allow_tailed_entries%22%3Atrue%2C%22amount_won%22%3A3382.74%2C%22bonus%22%3Anull%2C%22city%22%3A%22Arlington%22%2C%22cohort_tag%22%3A%22shark%22%2C%22confirmed_at%22%3A%222023-03-04T16%3A26%3A59-05%3A00%22%2C%22country_code%22%3A%22US%22%2C%22created_at%22%3A%222023-03-04T16%3A18%3A50-05%3A00%22%2C%22credit%22%3A28.25%2C%22date_of_birth%22%3A%222005-02-27T00%3A00%3A00-05%3A00%22%2C%22default_entry_amount%22%3Anull%2C%22default_entry_type%22%3Anull%2C%22deposited_amount%22%3A280%2C%22device_vibration%22%3Atrue%2C%22email%22%3A%22willboneshart%40gmail.com%22%2C%22entries_won%22%3A130%2C%22first_name%22%3A%22Will%22%2C%22ftd_promo_type%22%3Anull%2C%22full_name%22%3A%22Will%20Hart%22%2C%22has_confirmed_phone_number%22%3Anull%2C%22idology_validation_state%22%3A%22pending%22%2C%22internal_validation_state%22%3A%22pending%22%2C%22invite_code%22%3A%22PR-692NWPA%22%2C%22is_rotogrinders%22%3Anull%2C%22last_agreed_to_terms_at%22%3A%222023-02-06T02%3A22%3A39-05%3A00%22%2C%22last_entry_created_at%22%3A%222023-03-10T19%3A35%3A19Z%22%2C%22last_name%22%3A%22Hart%22%2C%22last_sign_in_state%22%3A%22VA%22%2C%22needs_tid%22%3Afalse%2C%22notifications%22%3Afalse%2C%22number_of_entries%22%3A303%2C%22otp_status%22%3A%22withdrawal_only%22%2C%22payment_service%22%3A%22nuvei%22%2C%22phone_number%22%3Anull%2C%22postal_code%22%3A%2222205%22%2C%22promo%22%3A0%2C%22push_notification_token%22%3A%22E7FF3E621E85DBAEC54F4C6A3A9117462C336A77AB11B24F39E2D1FD110BBAC4%22%2C%22referral_code%22%3A%22PR-NH3X28H%22%2C%22require_kyc_selfie%22%3Afalse%2C%22role%22%3Anull%2C%22show_balance%22%3Atrue%2C%22sms_opt_in%22%3Afalse%2C%22socure_validation_state%22%3A%22passed%22%2C%22state%22%3A%22VA%22%2C%22terms_accepted%22%3Atrue%2C%22tid_validation%22%3A1%2C%22updated_at%22%3A%222023-03-11T03%3A14%3A50-04%3A00%22%2C%22validation_provider%22%3A%22socure%22%2C%22validation_state%22%3A%22passed%22%2C%22verification_image%22%3Anull%2C%22verification_image_reviewed%22%3Afalse%2C%22verified%22%3Atrue%2C%22withdrawable_credit%22%3A47%2C%22bonus_offer%22%3Anull%2C%22free_entries%22%3A%5B%5D%2C%22customerDashLink%22%3A%22https%3A%2F%2Fapi.prizepicks.com%2Fadmin%2Fusers%2F8d53cd68-8574-45d1-811f-67c072846e1d%22%2C%22prize_points%22%3A1000%2C%22weekly_prize_points%22%3A1000%2C%22last_opened_game_mode%22%3A%22pickem%22%2C%22streak_rmg_treatment_notification%22%3Afalse%2C%22last_opened_state%22%3A%22VA%22%2C%22username%22%3Anull%7D'
+}
 
-        # Re-fetch the filter buttons every time before clicking
-        filter_buttons = WebDriverWait(driver, 10).until(
-            EC.presence_of_all_elements_located((By.CSS_SELECTOR, "button.stat"))
-        )
+headers = {
+    'accept': 'application/json',
+    'accept-language': 'en-US,en;q=0.9',
+    'content-type': 'application/json',
+    'dnt': '1',
+    'if-modified-since': 'Mon, 24 Mar 2025 03:33:20 GMT',
+    'origin': 'https://app.prizepicks.com',
+    'priority': 'u=1, i',
+    'referer': 'https://app.prizepicks.com/',
+    'sec-ch-ua': '"Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"macOS"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-site',
+    'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)',
+    'x-device-id': 'aa84b224-c1db-4b2e-91f8-0f6bab083db0',
+    'x-device-info': 'name=,os=mac,osVersion=10.15.7,isSimulator=false,platform=web,appVersion=web',
+}
 
-        if index >= len(filter_buttons):  # Ensure index is within range
-            return None
+params = {
+    'league_id': '7',
+    'per_page': '250',
+    'single_stat': 'true',
+    'in_game': 'true',
+    'state_code': 'VA',
+    'game_mode': 'pickem',
+}
 
-        button = filter_buttons[index]
-        filter_name = button.text.strip()
+# ======= HELPERS =======
+def build_player_mapping(data):
+    mapping = {}
+    for item in data.get("included", []):
+        if item.get("type") in ["new_player", "player"]:
+            pid   = item.get("id")
+            attrs = item.get("attributes", {})
+            # PrizePicks JSON includes 'team' or 'market' with the player's team code
+            team_code = attrs.get("team") or attrs.get("market")
+            name = (attrs.get("full_name") or attrs.get("display_name") or attrs.get("name")
+                    or f"{attrs.get('first_name','')} {attrs.get('last_name','')}").strip()
+            position = attrs.get("position", "Unknown")
+            mapping[pid] = {"name": name, "position": position, "team": team_code}
+    return mapping
 
-        # Scroll into view and click
-        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", button)
-        button.click()
+def build_game_mapping(data):
+    mapping = {}
+    for item in data.get("included", []):
+        if item.get("type") == "game":
+            gid = item.get("id")
+            teams = (item.get("attributes", {})
+                        .get("metadata", {})
+                        .get("game_info", {})
+                        .get("teams", {}))
+            mapping[gid] = {"home": teams.get("home", {}).get("abbreviation"),
+                            "away": teams.get("away", {}).get("abbreviation")}
+    return mapping
 
-        # Wait for content to update after clicking
-        WebDriverWait(driver, 5).until(
-            EC.presence_of_element_located((By.CSS_SELECTOR, "li[class*='grid']"))
-        )
+def extract_props(data, player_map, game_map):
+    rows = []
+    today_abbr = datetime.now().strftime("%a")  # e.g. "Thu"
 
-        return filter_name
+    for proj in data.get("data", []):
+        attrs = proj["attributes"]
+        rel   = proj["relationships"]
 
-    except StaleElementReferenceException:
-        logging.warning(f"Stale element at index {index}, re-fetching buttons and retrying.")
-        return process_filter(driver, index)  # Retry with fresh elements
+        # — 1) Player —
+        pid   = rel.get("new_player", {}).get("data", {}).get("id")
+        info  = player_map.get(pid, {})
+        pname = info.get("name", "Unknown")
+        pos   = info.get("position", "Unknown")
 
-    except Exception as e:
-        logging.warning(f"Skipping filter index {index} due to error: {e}")
-        return None
+        # — 2) Team & Opponent —
+        player_team = info.get("team") or attrs.get("team", "")
+        game_id     = rel.get("game", {}).get("data", {}).get("id")
+        gm          = game_map.get(game_id, {"home":None,"away":None})
+        home, away  = gm["home"], gm["away"]
+        if player_team == home:
+            opponent, home_away = away, "Home"
+        elif player_team == away:
+            opponent, home_away = home, "Away"
+        else:
+            continue  # skip any props where we can't place the team
 
-def scrape_props(driver):
-    """Scrape player prop data from the website."""
-    all_props = []
-    visited_filters = set()
-
-    try:
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_all_elements_located((By.CSS_SELECTOR, "button.stat"))
-        )
-    except Exception:
-        logging.error("Filter buttons not found. Exiting...")
-        return pd.DataFrame()
-
-    filter_buttons = driver.find_elements(By.CSS_SELECTOR, "button.stat")
-
-    for i in range(len(filter_buttons)):
-        filter_name = process_filter(driver, i)
-        if not filter_name or filter_name in visited_filters:
+        # — 3) Prop details & filtering —
+        prop_type = attrs.get("stat_display_name", "")
+        # drop Combo props
+        if "(Combo)" in prop_type:
             continue
 
-        visited_filters.add(filter_name)
+        prop_value = attrs.get("line_score")
+        odds_raw   = attrs.get("odds_type", "").lower()
+        if odds_raw not in ("demon","goblin"):
+            odds_cat = "base"
+        else:
+            # skip demon/goblin
+            continue
 
+        # — 4) Start time & today filter —
+        raw_time = attrs.get("start_time")
+        if not raw_time:
+            continue
         try:
-            player_containers = WebDriverWait(driver, 10).until(
-                EC.presence_of_all_elements_located((By.CSS_SELECTOR, "li[class*='grid']"))
-            )
-        except Exception:
-            logging.warning(f"No player data found for filter: {filter_name}")
+            dt   = datetime.fromisoformat(raw_time)
+            wd   = dt.strftime("%a")
+            tod  = dt.strftime("%-I:%M %p")
+            st   = f"{wd} {tod}"
+        except ValueError:
             continue
 
-        for container in player_containers:
-            try:
-                # Check if both 'More' and 'Less' buttons are present
-                more_button = container.find_element(By.CSS_SELECTOR, "button#test-more")
-                less_button = container.find_element(By.CSS_SELECTOR, "button#test-less")
+        # only include today's games
+        if not st.startswith(today_abbr):
+            continue
 
-                if more_button is None or less_button is None:
-                    logging.info(f"Skipping prop for player as it doesn't have both 'More' and 'Less' options.")
-                    continue
+        # — 5) Append cleaned row —
+        rows.append({
+            "Player":        pname,
+            "Position":      pos,
+            "Team":          player_team,
+            "Prop Type":     prop_type,
+            "Prop Value":    prop_value,
+            "Opposing Team": opponent,
+            "Odds Category": odds_cat,
+            "Start Time":    st
+        })
 
-                player_name = container.find_element(By.CSS_SELECTOR, "h3[id='test-player-name']").text.strip()
-                prop_value = container.find_element(By.CSS_SELECTOR, "div[class='heading-md']").text.strip()
-
-                # Convert prop_value safely
-                try:
-                    prop_value = float(prop_value)
-                except ValueError:
-                    logging.warning(f"Skipping invalid prop value: {prop_value}")
-                    continue
-
-                prop_type = container.find_element(By.CSS_SELECTOR, "span[class='break-words']").text.strip()
-
-                # Extract the opposing team abbreviation
-                raw_text = container.find_element(By.CSS_SELECTOR, "time.text-soClean-140.body-sm").text.strip()
-                opposing_team = raw_text.split("vs")[1].strip().split()[0] if "vs" in raw_text else None
-
-                team_position_text = container.find_element(By.CSS_SELECTOR,
-                                                            "div[id='test-team-position']").text.strip()
-                team = team_position_text.split('-')[0].strip() if '-' in team_position_text else None
-
-                # ✅ Skip any prop that contains "dunk" (case-insensitive)
-                if "dunk" in prop_type.lower() or "fantasy score" in prop_type.lower():
-                    logging.info(
-                        f"Skipping prop '{prop_type}' for player '{player_name}' (unwanted prop type detected).")
-                    continue
-
-                # ✅ Skip any player that contains '+' (indicating a combo player)
-                if "+" in player_name:
-                    logging.info(f"Skipping combo player '{player_name}'.")
-                    continue
-
-                all_props.append({
-                    'Player': player_name,
-                    'Team': team,
-                    'Prop Type': prop_type,
-                    'Prop Value': prop_value,
-                    'Opposing Team': opposing_team,
-                })
-
-            except Exception as e:
-                logging.warning(f"Error processing player container: {e}")
-                continue
-
-    return pd.DataFrame(all_props)
+    return rows
 
 def main():
-    """Main execution function."""
-    options = uc.ChromeOptions()
-    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)")
-    options.add_experimental_option("prefs", {"profile.default_content_setting_values.geolocation": 1})
+    # Fetch data
+    resp = requests.get(API_URL, params=params, cookies=cookies, headers=headers)
+    data = resp.json()
 
-    driver = uc.Chrome(options=options, version_main=133)
+    # Build mappings
+    pmap = build_player_mapping(data)
+    gmap = build_game_mapping(data)
 
-    try:
-        url = 'https://app.prizepicks.com/'
-        driver.get(url)
-        input("Solve CAPTCHA manually and press Enter to continue...")
+    # Extract props
+    rows = extract_props(data, pmap, gmap)
 
-        props_df = scrape_props(driver)
+    # DataFrame
+    df = pd.DataFrame(rows)
 
-        if not props_df.empty:
-            props_df = props_df.sort_values(by='Player', ascending=True)
-            props_df.to_csv('../Prop_Data_CSV/prizepicks_data.csv', index=False)
-            logging.info("Data saved to 'prizepicks_data.csv'.")
-        else:
-            logging.info("No data collected.")
+    # Filter base only
+    df = df[df["Odds Category"] == "base"]
 
-    finally:
-        driver.quit()
+    # Filter combos and today
+    today_abbr = datetime.now().strftime("%a")
+    df = df[~df["Prop Type"].str.contains(r"\(Combo\)")]
+    df = df[df["Start Time"].str.startswith(today_abbr)]
+
+    # Save
+    os.makedirs(os.path.dirname(CSV_FILENAME), exist_ok=True)
+    df.to_csv(CSV_FILENAME, index=False, encoding="utf-8")
+    print(f"Data saved to {CSV_FILENAME}")
 
 if __name__ == "__main__":
     main()

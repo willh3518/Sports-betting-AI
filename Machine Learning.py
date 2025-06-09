@@ -63,7 +63,7 @@ for feature in expected_features:
 
 # Enforce column order to match the trained model
 # We'll also keep Player, Prop Value, and Hit for later (not as model features)
-extra_columns = [col for col in ['Player', 'Prop Value', 'Hit'] if col in data.columns]
+extra_columns = [col for col in ['Player', 'Hit'] if col in data.columns]
 data = data[expected_features + extra_columns]
 
 # 📌 STEP 5: Separate Features and Target Variable
@@ -105,31 +105,52 @@ else:
 
 # 📌 STEP 9: Make Predictions for Today's Props
 if not X_pred.empty:
+    # 9a) Ensure we have a trained model
     if not os.path.exists("model.pkl"):
-        raise FileNotFoundError("❌ No trained model found. Train the model first by uploading processed_data.csv with 'Hit' column.")
+        raise FileNotFoundError(
+            "❌ No trained model found. Train the model first by uploading processed_data.csv with 'Hit' column."
+        )
 
+    # 9b) Load model
     model = joblib.load("model.pkl")
+
+    # 9c) Reorder columns exactly as during training
+    X_pred = X_pred[model.feature_names_in_]
+
+    # 9d) Predict and get probabilities
     predictions = model.predict(X_pred)
     probabilities = model.predict_proba(X_pred)[:, 1]
 
-    # Get prop type columns and convert back to single "Prop Type" column
+    # 9e) Recover the “Prop Type” text from one-hot columns
     prop_type_columns = [col for col in expected_features if col.startswith("Prop Type")]
     prop_types = X_pred[prop_type_columns].idxmax(axis=1).str.replace("Prop Type_", "")
 
+    # 9f) Assemble output DataFrame
     predictions_df = players_pred.copy()
     predictions_df["Prop Type"] = prop_types
     predictions_df["Prediction"] = predictions
     predictions_df["Confidence Score"] = probabilities
 
+    # 9g) De-duplicate exact repeats
+    predictions_df = predictions_df.drop_duplicates(
+        subset=["Player", "Prop Value", "Prop Type"],
+        keep="first"
+    )
+
+    # 9h) Filter out any rows where Prediction == missing_value_marker
+    predictions_df = predictions_df[predictions_df["Prediction"] != missing_value_marker]
+
+    # 9i) Write to CSV files
     predictions_df.to_csv("predictions.csv", index=False)
     print("✅ Predictions saved as 'predictions.csv'.")
 
+    top5_rf = predictions_df.sort_values("Confidence Score", ascending=False).head(5)
+    top5_rf.to_csv("top5_picks_rf.csv", index=False)
+    print("✅ Top 5 RF picks saved as 'top5_picks_rf.csv'.")
+
+    # 9j) Log to TensorBoard
     with writer.as_default():
         tf.summary.scalar("Predictions Made", len(predictions_df), step=0)
+
 else:
     print("⚠️ No new props to predict today.")
-
-# 📌 STEP 10: TensorBoard Instructions
-print("\n🔹 To view TensorBoard logs, run:")
-print("   tensorboard --logdir=logs/")
-print("   Then open http://localhost:6006 in your browser.")
