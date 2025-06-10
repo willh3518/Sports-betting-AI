@@ -19,8 +19,8 @@ logging.basicConfig(
 
 # ——— File paths ———
 INPUT_CSV    = "MLB_Prop_Data_CSV/mlb_prizepicks.csv"
-HITTER_OUT   = "MLB_Prop_Data_CSV/hitter_temp_results.csv"
-PITCHER_OUT  = "MLB_Prop_Data_CSV/pitcher_temp_results.csv"
+HITTER_OUT   = "MLB_Prop_Data_CSV/hitter_boxscore_results.csv"
+PITCHER_OUT  = "MLB_Prop_Data_CSV/pitcher_boxscore_results.csv"
 
 # ——— StatMuse MLB endpoint & UAs ———
 STATMUSE_URL = "https://www.statmuse.com/mlb/ask/{player}-box-score-last-game"
@@ -228,7 +228,7 @@ async def main():
 
     # Re-merge into one file for your model
     combined = pd.concat([hitter_temp, pitcher_temp], ignore_index=True)
-    combined.to_csv("actual_results.csv", index=False)
+    combined.to_csv("MLB_Prop_Data_CSV/merged_hitter_pitcher_results.csv", index=False)
     logging.info("Wrote combined actual_results.csv")
 
 if __name__ == "__main__":
