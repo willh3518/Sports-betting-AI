@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Enter Access Code</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 10%;
+    }
+    input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+    }
+    input[type="submit"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      background-color: #00c853;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔐 Enter Daily Access Code</h1>
+  <form method="POST">
+    <input type="text" name="access_code" placeholder="Enter code" required>
+    <input type="submit" value="Unlock">
+  </form>
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+</body>
+</html>
