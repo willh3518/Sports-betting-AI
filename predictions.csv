@@ -1,0 +1,154 @@
+Player,Prop Value,Prop Type,Prediction,Confidence Score
+Tyrese Haliburton,17.5,points,0,0.98
+Myles Turner,10.0,fg attempted,0,0.98
+Myles Turner,2.5,free throws made,0,0.83
+Myles Turner,4.5,3-pt attempted,0,0.7
+Myles Turner,13.5,points,0,0.9
+Myles Turner,3.0,3-pt attempted,0,0.77
+Myles Turner,20.5,pts+rebs+asts,0,0.84
+Myles Turner,5.5,rebounds,0,0.95
+Myles Turner,19.0,pts+rebs,0,0.97
+Myles Turner,15.0,pts+asts,0,0.95
+Myles Turner,3.5,3-pt attempted,0,0.81
+Myles Turner,4.5,fg made,0,0.94
+Tj Mcconnell,5.5,fg attempted,1,0.16
+Tj Mcconnell,10.5,pts+asts,1,0.1
+Tj Mcconnell,3.5,assists,1,0.15
+Tj Mcconnell,7.0,points,1,0.1
+Tj Mcconnell,13.5,pts+rebs+asts,1,0.14
+Tj Mcconnell,9.5,pts+rebs,1,0.13
+Tj Mcconnell,6.0,rebs+asts,1,0.16
+Luguentz Dort,5.5,3-pt attempted,0,0.62
+Luguentz Dort,7.5,fg attempted,0,0.64
+Luguentz Dort,14.5,pts+rebs+asts,0,0.73
+Luguentz Dort,4.5,rebs+asts,0,0.51
+Luguentz Dort,12.5,pts+rebs,0,0.65
+Luguentz Dort,10.5,pts+asts,0,0.66
+Luguentz Dort,9.5,points,0,0.66
+Kenrich Williams,3.5,pts+asts,1,0.29
+Kenrich Williams,5.5,pts+rebs+asts,1,0.3
+Kenrich Williams,2.5,rebs+asts,1,0.34
+Kenrich Williams,2.5,points,1,0.28
+Jalen Williams,5.0,3-pt attempted,0,0.5
+Jalen Williams,17.5,fg attempted,0,0.59
+Jalen Williams,5.0,assists,0,0.51
+Jalen Williams,6.0,rebounds,0,0.56
+Jalen Williams,11.0,rebs+asts,0,0.47
+Andrew Nembhard,3.5,3-pt attempted,0,0.65
+Andrew Nembhard,8.0,rebs+asts,0,0.82
+Andrew Nembhard,16.0,pts+asts,0,0.93
+Andrew Nembhard,4.0,fg made,0,0.8
+Andrew Nembhard,4.5,assists,0,0.8
+Andrew Nembhard,14.5,pts+rebs,0,0.9
+Andrew Nembhard,11.5,points,0,0.87
+Andrew Nembhard,10.0,fg attempted,0,0.88
+Andrew Nembhard,19.5,pts+rebs+asts,0,0.91
+Aaron Nesmith,5.5,rebs+asts,0,0.55
+Aaron Nesmith,12.5,pts+asts,0,0.87
+Aaron Nesmith,4.5,rebounds,0,0.63
+Aaron Nesmith,0.5,offensive rebounds,0,0.64
+Aaron Nesmith,11.5,points,0,0.84
+Aaron Nesmith,17.5,pts+rebs+asts,0,0.87
+Aaron Nesmith,16.5,pts+rebs,0,0.86
+Aaron Nesmith,5.0,3-pt attempted,1,0.45
+Aaron Nesmith,9.0,fg attempted,0,0.84
+Bennedict Mathurin,6.0,fg attempted,1,0.09
+Bennedict Mathurin,11.0,pts+rebs+asts,1,0.04
+Bennedict Mathurin,8.5,pts+asts,1,0.18
+Bennedict Mathurin,9.5,pts+rebs,1,0.06
+Bennedict Mathurin,2.5,fg made,1,0.23
+Bennedict Mathurin,4.0,3-pt attempted,1,0.1
+Bennedict Mathurin,7.5,points,1,0.04
+Bennedict Mathurin,2.5,3-pt attempted,1,0.2
+Isaiah Joe,4.5,pts+rebs,0,0.46
+Isaiah Joe,3.5,points,0,0.42
+Chet Holmgren,2.0,offensive rebounds,0,0.42
+Chet Holmgren,6.0,fg made,0,0.43
+Chet Holmgren,4.0,3-pt attempted,1,0.41
+Chet Holmgren,26.0,pts+rebs,0,0.58
+Chet Holmgren,9.0,rebounds,0,0.47
+Chet Holmgren,1.5,assists,0,0.45
+Chet Holmgren,11.0,rebs+asts,0,0.48
+Chet Holmgren,12.5,fg attempted,0,0.49
+Chet Holmgren,27.5,pts+rebs+asts,0,0.59
+Chet Holmgren,7.0,defensive rebounds,1,0.34
+Obi Toppin,8.5,points,1,0.25
+Obi Toppin,0.5,offensive rebounds,1,0.22
+Obi Toppin,13.5,pts+rebs+asts,1,0.29
+Obi Toppin,4.5,rebs+asts,1,0.1
+Obi Toppin,10.0,pts+asts,1,0.26
+Obi Toppin,3.0,fg made,1,0.26
+Obi Toppin,3.0,3-pt attempted,1,0.24
+Obi Toppin,7.0,fg attempted,1,0.27
+Obi Toppin,11.5,pts+rebs,1,0.17
+Ben Sheppard,6.5,pts+rebs+asts,1,0.15
+Ben Sheppard,3.0,points,1,0.13
+Ben Sheppard,4.5,pts+asts,1,0.11
+Ben Sheppard,5.5,pts+rebs,1,0.11
+Ben Sheppard,3.0,fg attempted,1,0.08
+Cason Wallace,6.5,points,0,0.49
+Cason Wallace,6.0,fg attempted,0,0.48
+Cason Wallace,10.5,pts+rebs,0,0.53
+Cason Wallace,12.5,pts+rebs+asts,0,0.55
+Cason Wallace,9.0,pts+asts,0,0.54
+Cason Wallace,2.5,fg made,0,0.41
+Pascal Siakam,3.0,3-pt attempted,1,0.1
+Pascal Siakam,16.5,fg attempted,0,0.69
+Pascal Siakam,4.5,3-pt attempted,1,0.06
+Pascal Siakam,29.5,pts+rebs+asts,0,0.9
+Pascal Siakam,1.5,offensive rebounds,0,0.67
+Pascal Siakam,26.0,pts+rebs,0,0.89
+Pascal Siakam,5.0,defensive rebounds,0,0.54
+Pascal Siakam,19.5,points,0,0.88
+Pascal Siakam,22.5,pts+asts,0,0.85
+Pascal Siakam,6.5,rebounds,0,0.5
+Pascal Siakam,9.5,rebs+asts,1,0.36
+Pascal Siakam,3.5,3-pt attempted,1,0.1
+Pascal Siakam,7.5,fg made,0,0.88
+Pascal Siakam,3.5,free throws made,1,0.16
+Pascal Siakam,4.0,3-pt attempted,0,0.52
+Pascal Siakam,3.0,assists,0,0.69
+Tyrese Haliburton,26.5,pts+asts,0,0.98
+Tyrese Haliburton,7.0,3-pt attempted,0,0.84
+Tyrese Haliburton,13.5,rebs+asts,0,0.91
+Tyrese Haliburton,6.5,fg made,0,0.85
+Tyrese Haliburton,3.0,free throws made,1,0.09
+Tyrese Haliburton,14.5,fg attempted,0,0.8
+Tyrese Haliburton,31.5,pts+rebs+asts,0,0.99
+Tyrese Haliburton,9.0,assists,0,0.98
+Tyrese Haliburton,4.5,rebounds,0,0.84
+Tyrese Haliburton,22.5,pts+rebs,0,0.8
+Shai Gilgeous-Alexander,1.5,steals,0,0.48
+Shai Gilgeous-Alexander,11.5,fg made,0,0.42
+Shai Gilgeous-Alexander,40.5,pts+asts,0,0.59
+Shai Gilgeous-Alexander,45.5,pts+rebs+asts,1,0.37
+Shai Gilgeous-Alexander,7.0,assists,0,0.47
+Shai Gilgeous-Alexander,22.5,fg attempted,0,0.6
+Shai Gilgeous-Alexander,12.5,rebs+asts,1,0.4
+Shai Gilgeous-Alexander,4.5,3-pt attempted,0,0.47
+Shai Gilgeous-Alexander,33.5,points,0,0.48
+Shai Gilgeous-Alexander,39.0,pts+rebs,0,0.48
+Shai Gilgeous-Alexander,5.5,rebounds,0,0.46
+Alex Caruso,11.5,pts+rebs,0,0.59
+Alex Caruso,6.0,rebs+asts,0,0.53
+Alex Caruso,3.0,rebounds,0,0.43
+Alex Caruso,6.5,fg attempted,0,0.53
+Alex Caruso,2.5,assists,0,0.44
+Alex Caruso,3.5,3-pt attempted,0,0.41
+Alex Caruso,14.5,pts+rebs+asts,0,0.71
+Alex Caruso,0.5,offensive rebounds,1,0.37
+Alex Caruso,8.0,points,0,0.59
+Alex Caruso,11.0,pts+asts,0,0.58
+Isaiah Hartenstein,7.0,rebounds,1,0.34
+Isaiah Hartenstein,7.5,points,0,0.49
+Isaiah Hartenstein,5.0,defensive rebounds,1,0.3
+Isaiah Hartenstein,2.0,offensive rebounds,1,0.37
+Isaiah Hartenstein,6.0,fg attempted,1,0.39
+Isaiah Hartenstein,9.0,rebs+asts,1,0.39
+Isaiah Hartenstein,9.5,pts+asts,1,0.39
+Isaiah Hartenstein,14.5,pts+rebs,0,0.56
+Isaiah Hartenstein,3.5,fg made,1,0.4
+Isaiah Hartenstein,17.0,pts+rebs+asts,0,0.53
+Thomas Bryant,3.5,pts+asts,1,0.33
+Thomas Bryant,6.5,pts+rebs+asts,0,0.51
+Thomas Bryant,5.5,pts+rebs,1,0.44

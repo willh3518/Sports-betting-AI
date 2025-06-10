@@ -1,0 +1,56 @@
+Player,Position,Team,Prop Type,Prop Value,Opposing Team,Odds Category,Start Time,2B,GIDP,RBI,3B,TB,PA,R,SH,IBB,H,HBP,SF,SB,HR,XBH,SO,AB,CS,BB,ER,GS,SV,ERA,WP,CG,SHO,GF,IP,TBF,DEC,Pitches Thrown,Pitching Outs,Actual Stat,Hit
+luis l ortiz,P,CLE,Pitches Thrown,93.5,CIN,base,Mon 6:40 PM,,,,,,,4,,0,9,0,,,2,,5,,,1,4,1,0,7.71,0,0,0,0,4.2,23,L,88,14,88.0,0
+luis l ortiz,P,CLE,Pitcher Strikeouts,6.0,CIN,base,Mon 6:40 PM,,,,,,,4,,0,9,0,,,2,,5,,,1,4,1,0,7.71,0,0,0,0,4.2,23,L,88,14,5.0,0
+luis l ortiz,P,CLE,Pitcher Strikeouts,6.0,CIN,base,Mon 6:40 PM,,,,,,,4,,0,9,0,,,2,,5,,,1,4,1,0,7.71,0,0,0,0,4.2,23,L,88,14,5.0,0
+luis l ortiz,P,CLE,Pitcher Fantasy Score,31.5,CIN,base,Mon 6:40 PM,,,,,,,4,,0,9,0,,,2,,5,,,1,4,1,0,7.71,0,0,0,0,4.2,23,L,88,14,17.0,0
+luis l ortiz,P,CLE,Pitching Outs,17.5,CIN,base,Mon 6:40 PM,,,,,,,4,,0,9,0,,,2,,5,,,1,4,1,0,7.71,0,0,0,0,4.2,23,L,88,14,14.0,0
+wade miley,P,CIN,Pitcher Strikeouts,2.5,CLE,base,Mon 6:40 PM,,,,,,,3,,0,5,1,,,0,,2,,,4,3,1,0,5.40,0,0,0,0,5.0,21,W,78,15,2.0,0
+eury perez,P,MIA,Pitcher Strikeouts,5.0,PIT,base,Mon 6:40 PM,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,70,9,0.0,0
+mike burrows,P,PIT,Pitcher Strikeouts,4.0,MIA,base,Mon 6:40 PM,,,,,,,2,,0,4,0,,,1,,6,,,3,2,1,0,4.15,0,0,0,0,4.1,20,,66,13,6.0,1
+zack wheeler,P,PHI,Pitcher Fantasy Score,39.5,CHC,base,Mon 6:45 PM,,,,,,,1,,0,3,0,,,1,,7,,,1,1,1,0,1.50,1,0,0,0,6.0,23,,103,18,40.0,1
+zack wheeler,P,PHI,Pitcher Strikeouts,7.0,CHC,base,Mon 6:45 PM,,,,,,,1,,0,3,0,,,1,,7,,,1,1,1,0,1.50,1,0,0,0,6.0,23,,103,18,7.0,1
+zack wheeler,P,PHI,Pitches Thrown,97.5,CHC,base,Mon 6:45 PM,,,,,,,1,,0,3,0,,,1,,7,,,1,1,1,0,1.50,1,0,0,0,6.0,23,,103,18,103.0,1
+matthew boyd,P,CHC,Pitcher Fantasy Score,30.5,PHI,base,Mon 6:45 PM,,,,,,,2,,0,8,0,,,0,,0,,,2,1,1,0,1.50,0,0,0,0,6.0,25,,73,18,19.0,0
+matthew boyd,P,CHC,Pitcher Strikeouts,5.5,PHI,base,Mon 6:45 PM,,,,,,,2,,0,8,0,,,0,,0,,,2,1,1,0,1.50,0,0,0,0,6.0,25,,73,18,0.0,0
+matthew boyd,P,CHC,Pitches Thrown,93.5,PHI,base,Mon 6:45 PM,,,,,,,2,,0,8,0,,,0,,0,,,2,1,1,0,1.50,0,0,0,0,6.0,25,,73,18,73.0,0
+matthew boyd,P,CHC,Pitching Outs,17.5,PHI,base,Mon 6:45 PM,,,,,,,2,,0,8,0,,,0,,0,,,2,1,1,0,1.50,0,0,0,0,6.0,25,,73,18,18.0,1
+shane baz,P,TB,Pitcher Strikeouts,5.0,BOS,base,Mon 7:10 PM,,,,,,,3,,0,3,1,,,0,,5,,,3,3,1,0,5.06,0,0,0,0,5.1,22,,76,16,5.0,1
+shane baz,P,TB,Pitcher Fantasy Score,28.5,BOS,base,Mon 7:10 PM,,,,,,,3,,0,3,1,,,0,,5,,,3,3,1,0,5.06,0,0,0,0,5.1,22,,76,16,22.0,0
+shane baz,P,TB,Earned Runs Allowed,2.5,BOS,base,Mon 7:10 PM,,,,,,,3,,0,3,1,,,0,,5,,,3,3,1,0,5.06,0,0,0,0,5.1,22,,76,16,3.0,1
+shane baz,P,TB,Pitching Outs,16.5,BOS,base,Mon 7:10 PM,,,,,,,3,,0,3,1,,,0,,5,,,3,3,1,0,5.06,0,0,0,0,5.1,22,,76,16,16.0,0
+brayan bello,P,BOS,Earned Runs Allowed,2.5,TB,base,Mon 7:10 PM,,,,,,,4,,0,7,1,,,0,,4,,,1,3,1,0,4.26,0,0,0,0,6.1,27,,82,19,3.0,1
+brayan bello,P,BOS,Pitching Outs,16.5,TB,base,Mon 7:10 PM,,,,,,,4,,0,7,1,,,0,,4,,,1,3,1,0,4.26,0,0,0,0,6.1,27,,82,19,19.0,1
+brayan bello,P,BOS,Pitcher Strikeouts,4.5,TB,base,Mon 7:10 PM,,,,,,,4,,0,7,1,,,0,,4,,,1,3,1,0,4.26,0,0,0,0,6.1,27,,82,19,4.0,0
+brayan bello,P,BOS,Pitcher Fantasy Score,26.5,TB,base,Mon 7:10 PM,,,,,,,4,,0,7,1,,,0,,4,,,1,3,1,0,4.26,0,0,0,0,6.1,27,,82,19,26.0,0
+brayan bello,P,BOS,Pitches Thrown,92.5,TB,base,Mon 7:10 PM,,,,,,,4,,0,7,1,,,0,,4,,,1,3,1,0,4.26,0,0,0,0,6.1,27,,82,19,82.0,0
+chris sale,P,ATL,Pitcher Strikeouts,7.5,MIL,base,Mon 7:40 PM,,,,,,,1,,0,5,0,,,0,,11,,,2,1,1,0,1.29,0,0,0,0,7.0,27,W,103,21,11.0,1
+chris sale,P,ATL,Pitches Thrown,97.5,MIL,base,Mon 7:40 PM,,,,,,,1,,0,5,0,,,0,,11,,,2,1,1,0,1.29,0,0,0,0,7.0,27,W,103,21,103.0,1
+chris sale,P,ATL,Pitcher Fantasy Score,41.5,MIL,base,Mon 7:40 PM,,,,,,,1,,0,5,0,,,0,,11,,,2,1,1,0,1.29,0,0,0,0,7.0,27,W,103,21,61.0,1
+aaron civale,P,MIL,Pitcher Strikeouts,4.0,ATL,base,Mon 7:40 PM,,,,,,,2,,0,5,1,,,1,,5,,,2,2,1,0,3.86,0,0,0,0,4.2,21,L,80,14,5.0,1
+aaron civale,P,MIL,Earned Runs Allowed,2.5,ATL,base,Mon 7:40 PM,,,,,,,2,,0,5,1,,,1,,5,,,2,2,1,0,3.86,0,0,0,0,4.2,21,L,80,14,2.0,0
+aaron civale,P,MIL,Pitcher Fantasy Score,21.5,ATL,base,Mon 7:40 PM,,,,,,,2,,0,5,1,,,1,,5,,,2,2,1,0,3.86,0,0,0,0,4.2,21,L,80,14,23.0,1
+andre pallante,P,STL,Earned Runs Allowed,2.5,TOR,base,Mon 7:45 PM,,,,,,,2,,0,7,0,,,0,,3,,,1,2,1,0,3.00,0,0,0,0,6.0,27,,92,18,2.0,0
+andre pallante,P,STL,Pitches Thrown,90.5,TOR,base,Mon 7:45 PM,,,,,,,2,,0,7,0,,,0,,3,,,1,2,1,0,3.00,0,0,0,0,6.0,27,,92,18,92.0,1
+andre pallante,P,STL,Pitcher Strikeouts,3.0,TOR,base,Mon 7:45 PM,,,,,,,2,,0,7,0,,,0,,3,,,1,2,1,0,3.00,0,0,0,0,6.0,27,,92,18,3.0,1
+andre pallante,P,STL,Pitcher Fantasy Score,23.5,TOR,base,Mon 7:45 PM,,,,,,,2,,0,7,0,,,0,,3,,,1,2,1,0,3.00,0,0,0,0,6.0,27,,92,18,25.0,1
+jose berrios,P,TOR,Pitcher Strikeouts,4.0,STL,base,Mon 7:45 PM,,,,,,,0,,0,4,0,,,0,,1,,,2,0,1,0,0.00,0,0,0,0,6.2,25,,89,20,1.0,0
+jose berrios,P,TOR,Pitcher Fantasy Score,27.5,STL,base,Mon 7:45 PM,,,,,,,0,,0,4,0,,,0,,1,,,2,0,1,0,0.00,0,0,0,0,6.2,25,,89,20,27.0,0
+jose berrios,P,TOR,Pitches Thrown,90.5,STL,base,Mon 7:45 PM,,,,,,,0,,0,4,0,,,0,,1,,,2,0,1,0,0.00,0,0,0,0,6.2,25,,89,20,89.0,0
+yusei kikuchi,P,LAA,Pitching Outs,17.5,OAK,base,Mon 9:38 PM,,,,,,,0,,0,1,0,,,0,,5,,,1,0,1,0,0.00,0,0,0,0,7.1,24,W,104,22,22.0,1
+yusei kikuchi,P,LAA,Earned Runs Allowed,2.5,OAK,base,Mon 9:38 PM,,,,,,,0,,0,1,0,,,0,,5,,,1,0,1,0,0.00,0,0,0,0,7.1,24,W,104,22,0.0,0
+yusei kikuchi,P,LAA,Pitches Thrown,96.5,OAK,base,Mon 9:38 PM,,,,,,,0,,0,1,0,,,0,,5,,,1,0,1,0,0.00,0,0,0,0,7.1,24,W,104,22,104.0,1
+yusei kikuchi,P,LAA,Pitcher Fantasy Score,31.5,OAK,base,Mon 9:38 PM,,,,,,,0,,0,1,0,,,0,,5,,,1,0,1,0,0.00,0,0,0,0,7.1,24,W,104,22,47.0,1
+yusei kikuchi,P,LAA,Pitcher Strikeouts,6.0,OAK,base,Mon 9:38 PM,,,,,,,0,,0,1,0,,,0,,5,,,1,0,1,0,0.00,0,0,0,0,7.1,24,W,104,22,5.0,0
+dustin may,P,LAD,Pitcher Strikeouts,4.5,SD,base,Mon 9:40 PM,,,,,,,6,,0,6,0,,,0,,1,,,4,5,1,0,9.00,0,0,0,0,5.0,25,,89,15,1.0,0
+dustin may,P,LAD,Pitches Thrown,90.5,SD,base,Mon 9:40 PM,,,,,,,6,,0,6,0,,,0,,1,,,4,5,1,0,9.00,0,0,0,0,5.0,25,,89,15,89.0,0
+dustin may,P,LAD,Pitcher Fantasy Score,27.5,SD,base,Mon 9:40 PM,,,,,,,6,,0,6,0,,,0,,1,,,4,5,1,0,9.00,0,0,0,0,5.0,25,,89,15,3.0,0
+nick pivetta,P,SD,Pitcher Fantasy Score,30.5,LAD,base,Mon 9:40 PM,,,,,,,5,,0,8,0,,,1,,3,,,2,4,1,0,9.00,0,0,0,0,4.0,23,,93,12,9.0,0
+nick pivetta,P,SD,Pitcher Strikeouts,6.0,LAD,base,Mon 9:40 PM,,,,,,,5,,0,8,0,,,1,,3,,,2,4,1,0,9.00,0,0,0,0,4.0,23,,93,12,3.0,0
+nick pivetta,P,SD,Pitches Thrown,89.5,LAD,base,Mon 9:40 PM,,,,,,,5,,0,8,0,,,1,,3,,,2,4,1,0,9.00,0,0,0,0,4.0,23,,93,12,93.0,1
+nick pivetta,P,SD,Pitching Outs,17.5,LAD,base,Mon 9:40 PM,,,,,,,5,,0,8,0,,,1,,3,,,2,4,1,0,9.00,0,0,0,0,4.0,23,,93,12,12.0,0
+emerson hancock,P,SEA,Pitcher Strikeouts,3.0,AZ,base,Mon 9:40 PM,,,,,,,2,,0,6,0,,,1,,3,,,3,2,1,0,3.60,0,0,0,0,5.0,23,,85,15,3.0,1
+emerson hancock,P,SEA,Pitcher Fantasy Score,18.5,AZ,base,Mon 9:40 PM,,,,,,,2,,0,6,0,,,1,,3,,,3,2,1,0,3.60,0,0,0,0,5.0,23,,85,15,18.0,0
+emerson hancock,P,SEA,Pitches Thrown,88.5,AZ,base,Mon 9:40 PM,,,,,,,2,,0,6,0,,,1,,3,,,3,2,1,0,3.60,0,0,0,0,5.0,23,,85,15,85.0,0
+merrill kelly,P,AZ,Pitcher Strikeouts,5.5,SEA,base,Mon 9:40 PM,,,,,,,0,,0,4,0,,,0,,7,,,2,0,1,0,0.00,0,0,0,0,6.0,22,,92,18,7.0,1
+merrill kelly,P,AZ,Pitcher Fantasy Score,30.5,SEA,base,Mon 9:40 PM,,,,,,,0,,0,4,0,,,0,,7,,,2,0,1,0,0.00,0,0,0,0,6.0,22,,92,18,43.0,1
+merrill kelly,P,AZ,Pitches Thrown,96.5,SEA,base,Mon 9:40 PM,,,,,,,0,,0,4,0,,,0,,7,,,2,0,1,0,0.00,0,0,0,0,6.0,22,,92,18,92.0,0

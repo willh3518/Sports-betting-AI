@@ -1,0 +1,1820 @@
+2025-06-10 16:05:01,585 - INFO - Starting LLM inference pipeline
+2025-06-10 16:05:01,585 - INFO - Loading predictions from MLB_Results/2025-06-10_mlb_predictions.csv
+2025-06-10 16:05:01,589 - INFO - Loaded 453 predictions
+2025-06-10 16:05:01,590 - INFO - Processing prediction 1/453 for javier baez
+2025-06-10 16:05:01,590 - INFO - Querying LLM...
+2025-06-10 16:05:10,374 - INFO - LLM response received
+2025-06-10 16:05:10,375 - INFO - LLM prediction for javier baez: Over, Agreement: False
+2025-06-10 16:05:10,376 - INFO - Processing prediction 2/453 for riley greene
+2025-06-10 16:05:10,376 - INFO - Querying LLM...
+2025-06-10 16:05:46,198 - INFO - LLM response received
+2025-06-10 16:05:46,198 - INFO - LLM prediction for riley greene: Over, Agreement: True
+2025-06-10 16:05:46,199 - INFO - Processing prediction 3/453 for spencer torkelson
+2025-06-10 16:05:46,199 - INFO - Querying LLM...
+2025-06-10 16:05:52,580 - INFO - LLM response received
+2025-06-10 16:05:52,580 - INFO - LLM prediction for spencer torkelson: Over, Agreement: True
+2025-06-10 16:05:52,580 - INFO - Processing prediction 4/453 for adley rutschman
+2025-06-10 16:05:52,581 - INFO - Querying LLM...
+2025-06-10 16:05:58,785 - INFO - LLM response received
+2025-06-10 16:05:58,786 - INFO - LLM prediction for adley rutschman: Under, Agreement: False
+2025-06-10 16:05:58,786 - INFO - Processing prediction 5/453 for jackson holliday
+2025-06-10 16:05:58,787 - INFO - Querying LLM...
+2025-06-10 16:06:02,425 - INFO - LLM response received
+2025-06-10 16:06:02,425 - INFO - LLM prediction for jackson holliday: Over, Agreement: False
+2025-06-10 16:06:02,427 - INFO - Processing prediction 6/453 for riley greene
+2025-06-10 16:06:02,428 - INFO - Querying LLM...
+2025-06-10 16:06:08,941 - INFO - LLM response received
+2025-06-10 16:06:08,942 - INFO - LLM prediction for riley greene: Over, Agreement: True
+2025-06-10 16:06:08,943 - INFO - Processing prediction 7/453 for spencer torkelson
+2025-06-10 16:06:08,944 - INFO - Querying LLM...
+2025-06-10 16:06:15,911 - INFO - LLM response received
+2025-06-10 16:06:15,912 - INFO - LLM prediction for spencer torkelson: Over, Agreement: Unknown
+2025-06-10 16:06:15,914 - INFO - Processing prediction 8/453 for adley rutschman
+2025-06-10 16:06:15,914 - INFO - Querying LLM...
+2025-06-10 16:06:20,665 - INFO - LLM response received
+2025-06-10 16:06:20,666 - INFO - LLM prediction for adley rutschman: Over, Agreement: Unknown
+2025-06-10 16:06:20,666 - INFO - Processing prediction 9/453 for gunnar henderson
+2025-06-10 16:06:20,667 - INFO - Querying LLM...
+2025-06-10 16:06:39,032 - INFO - LLM response received
+2025-06-10 16:06:39,033 - INFO - LLM prediction for gunnar henderson: Over, Agreement: True
+2025-06-10 16:06:39,033 - INFO - Processing prediction 10/453 for jackson holliday
+2025-06-10 16:06:39,033 - INFO - Querying LLM...
+2025-06-10 16:06:43,950 - INFO - LLM response received
+2025-06-10 16:06:43,950 - INFO - LLM prediction for jackson holliday: Unknown, Agreement: False
+2025-06-10 16:06:43,952 - INFO - Processing prediction 11/453 for gleyber torres
+2025-06-10 16:06:43,952 - INFO - Querying LLM...
+2025-06-10 16:06:50,922 - INFO - LLM response received
+2025-06-10 16:06:50,922 - INFO - LLM prediction for gleyber torres: Over, Agreement: False
+2025-06-10 16:06:50,923 - INFO - Processing prediction 12/453 for jose ramirez
+2025-06-10 16:06:50,923 - INFO - Querying LLM...
+2025-06-10 16:06:56,589 - INFO - LLM response received
+2025-06-10 16:06:56,590 - INFO - LLM prediction for jose ramirez: Over, Agreement: True
+2025-06-10 16:06:56,592 - INFO - Processing prediction 13/453 for steven kwan
+2025-06-10 16:06:56,592 - INFO - Querying LLM...
+2025-06-10 16:07:03,622 - INFO - LLM response received
+2025-06-10 16:07:03,622 - INFO - LLM prediction for steven kwan: Over, Agreement: False
+2025-06-10 16:07:03,623 - INFO - Processing prediction 14/453 for nolan jones
+2025-06-10 16:07:03,623 - INFO - Querying LLM...
+2025-06-10 16:07:06,873 - INFO - LLM response received
+2025-06-10 16:07:06,874 - INFO - LLM prediction for nolan jones: Unknown, Agreement: False
+2025-06-10 16:07:06,875 - INFO - Processing prediction 15/453 for nolan jones
+2025-06-10 16:07:06,875 - INFO - Querying LLM...
+2025-06-10 16:07:15,484 - INFO - LLM response received
+2025-06-10 16:07:15,485 - INFO - LLM prediction for nolan jones: Over, Agreement: False
+2025-06-10 16:07:15,486 - INFO - Processing prediction 16/453 for tyler stephenson
+2025-06-10 16:07:15,487 - INFO - Querying LLM...
+2025-06-10 16:07:19,578 - INFO - LLM response received
+2025-06-10 16:07:19,579 - INFO - LLM prediction for tyler stephenson: Over, Agreement: Unknown
+2025-06-10 16:07:19,580 - INFO - Processing prediction 17/453 for tj friedl
+2025-06-10 16:07:19,580 - INFO - Querying LLM...
+2025-06-10 16:07:24,607 - INFO - LLM response received
+2025-06-10 16:07:24,608 - INFO - LLM prediction for tj friedl: Over, Agreement: Unknown
+2025-06-10 16:07:24,609 - INFO - Processing prediction 18/453 for bo naylor
+2025-06-10 16:07:24,610 - INFO - Querying LLM...
+2025-06-10 16:07:29,403 - INFO - LLM response received
+2025-06-10 16:07:29,403 - INFO - LLM prediction for bo naylor: Over, Agreement: Unknown
+2025-06-10 16:07:29,404 - INFO - Processing prediction 19/453 for bo naylor
+2025-06-10 16:07:29,404 - INFO - Querying LLM...
+2025-06-10 16:07:36,520 - INFO - LLM response received
+2025-06-10 16:07:36,522 - INFO - LLM prediction for bo naylor: Over, Agreement: True
+2025-06-10 16:07:36,522 - INFO - Processing prediction 20/453 for elly de la cruz
+2025-06-10 16:07:36,523 - INFO - Querying LLM...
+2025-06-10 16:07:41,623 - INFO - LLM response received
+2025-06-10 16:07:41,624 - INFO - LLM prediction for elly de la cruz: Over, Agreement: True
+2025-06-10 16:07:41,624 - INFO - Processing prediction 21/453 for johnathan rodriguez
+2025-06-10 16:07:41,624 - INFO - Querying LLM...
+2025-06-10 16:07:46,001 - INFO - LLM response received
+2025-06-10 16:07:46,002 - INFO - LLM prediction for johnathan rodriguez: Over, Agreement: Unknown
+2025-06-10 16:07:46,003 - INFO - Processing prediction 22/453 for johnathan rodriguez
+2025-06-10 16:07:46,003 - INFO - Querying LLM...
+2025-06-10 16:07:52,293 - INFO - LLM response received
+2025-06-10 16:07:52,294 - INFO - LLM prediction for johnathan rodriguez: Under, Agreement: False
+2025-06-10 16:07:52,294 - INFO - Processing prediction 23/453 for lane thomas
+2025-06-10 16:07:52,294 - INFO - Querying LLM...
+2025-06-10 16:07:58,349 - INFO - LLM response received
+2025-06-10 16:07:58,349 - INFO - LLM prediction for lane thomas: Unknown, Agreement: Unknown
+2025-06-10 16:07:58,350 - INFO - Processing prediction 24/453 for carlos santana
+2025-06-10 16:07:58,350 - INFO - Querying LLM...
+2025-06-10 16:08:01,536 - INFO - LLM response received
+2025-06-10 16:08:01,536 - INFO - LLM prediction for carlos santana: Unknown, Agreement: Unknown
+2025-06-10 16:08:01,537 - INFO - Processing prediction 25/453 for gavin lux
+2025-06-10 16:08:01,538 - INFO - Querying LLM...
+2025-06-10 16:08:07,908 - INFO - LLM response received
+2025-06-10 16:08:07,909 - INFO - LLM prediction for gavin lux: Over, Agreement: True
+2025-06-10 16:08:07,910 - INFO - Processing prediction 26/453 for ke'bryan hayes
+2025-06-10 16:08:07,910 - INFO - Querying LLM...
+2025-06-10 16:08:12,044 - INFO - LLM response received
+2025-06-10 16:08:12,044 - INFO - LLM prediction for ke'bryan hayes: Under, Agreement: Unknown
+2025-06-10 16:08:12,045 - INFO - Processing prediction 27/453 for ke'bryan hayes
+2025-06-10 16:08:12,046 - INFO - Querying LLM...
+2025-06-10 16:08:16,440 - INFO - LLM response received
+2025-06-10 16:08:16,440 - INFO - LLM prediction for ke'bryan hayes: Under, Agreement: Unknown
+2025-06-10 16:08:16,441 - INFO - Processing prediction 28/453 for bryan reynolds
+2025-06-10 16:08:16,442 - INFO - Querying LLM...
+2025-06-10 16:08:20,143 - INFO - LLM response received
+2025-06-10 16:08:20,143 - INFO - LLM prediction for bryan reynolds: Over, Agreement: Unknown
+2025-06-10 16:08:20,144 - INFO - Processing prediction 29/453 for andrew mccutchen
+2025-06-10 16:08:20,144 - INFO - Querying LLM...
+2025-06-10 16:08:25,460 - INFO - LLM response received
+2025-06-10 16:08:25,460 - INFO - LLM prediction for andrew mccutchen: Over, Agreement: Unknown
+2025-06-10 16:08:25,461 - INFO - Processing prediction 30/453 for xavier edwards
+2025-06-10 16:08:25,461 - INFO - Querying LLM...
+2025-06-10 16:08:32,279 - INFO - LLM response received
+2025-06-10 16:08:32,279 - INFO - LLM prediction for xavier edwards: Under, Agreement: False
+2025-06-10 16:08:32,280 - INFO - Processing prediction 31/453 for otto lopez
+2025-06-10 16:08:32,280 - INFO - Querying LLM...
+2025-06-10 16:08:35,724 - INFO - LLM response received
+2025-06-10 16:08:35,725 - INFO - LLM prediction for otto lopez: Over, Agreement: False
+2025-06-10 16:08:35,725 - INFO - Processing prediction 32/453 for isiah kiner-falefa
+2025-06-10 16:08:35,725 - INFO - Querying LLM...
+2025-06-10 16:08:40,654 - INFO - LLM response received
+2025-06-10 16:08:40,654 - INFO - LLM prediction for isiah kiner-falefa: Over, Agreement: False
+2025-06-10 16:08:40,655 - INFO - Processing prediction 33/453 for kyle stowers
+2025-06-10 16:08:40,656 - INFO - Querying LLM...
+2025-06-10 16:08:46,175 - INFO - LLM response received
+2025-06-10 16:08:46,175 - INFO - LLM prediction for kyle stowers: Over, Agreement: False
+2025-06-10 16:08:46,175 - INFO - Processing prediction 34/453 for javier sanoja
+2025-06-10 16:08:46,175 - INFO - Querying LLM...
+2025-06-10 16:08:52,144 - INFO - LLM response received
+2025-06-10 16:08:52,145 - INFO - LLM prediction for javier sanoja: Over, Agreement: False
+2025-06-10 16:08:52,146 - INFO - Processing prediction 35/453 for javier sanoja
+2025-06-10 16:08:52,146 - INFO - Querying LLM...
+2025-06-10 16:08:55,380 - INFO - LLM response received
+2025-06-10 16:08:55,381 - INFO - LLM prediction for javier sanoja: Unknown, Agreement: Unknown
+2025-06-10 16:08:55,382 - INFO - Processing prediction 36/453 for adam frazier
+2025-06-10 16:08:55,382 - INFO - Querying LLM...
+2025-06-10 16:09:01,913 - INFO - LLM response received
+2025-06-10 16:09:01,914 - INFO - LLM prediction for adam frazier: Under, Agreement: True
+2025-06-10 16:09:01,915 - INFO - Processing prediction 37/453 for spencer horwitz
+2025-06-10 16:09:01,915 - INFO - Querying LLM...
+2025-06-10 16:09:05,777 - INFO - LLM response received
+2025-06-10 16:09:05,778 - INFO - LLM prediction for spencer horwitz: Unknown, Agreement: Unknown
+2025-06-10 16:09:05,779 - INFO - Processing prediction 38/453 for jose ramirez
+2025-06-10 16:09:05,780 - INFO - Querying LLM...
+2025-06-10 16:09:11,886 - INFO - LLM response received
+2025-06-10 16:09:11,886 - INFO - LLM prediction for jose ramirez: Over, Agreement: False
+2025-06-10 16:09:11,886 - INFO - Processing prediction 39/453 for steven kwan
+2025-06-10 16:09:11,887 - INFO - Querying LLM...
+2025-06-10 16:09:21,099 - INFO - LLM response received
+2025-06-10 16:09:21,100 - INFO - LLM prediction for steven kwan: Over, Agreement: False
+2025-06-10 16:09:21,101 - INFO - Processing prediction 40/453 for jake fraley
+2025-06-10 16:09:21,102 - INFO - Querying LLM...
+2025-06-10 16:09:27,360 - INFO - LLM response received
+2025-06-10 16:09:27,361 - INFO - LLM prediction for jake fraley: Unknown, Agreement: True
+2025-06-10 16:09:27,361 - INFO - Processing prediction 41/453 for tyler stephenson
+2025-06-10 16:09:27,361 - INFO - Querying LLM...
+2025-06-10 16:09:32,085 - INFO - LLM response received
+2025-06-10 16:09:32,086 - INFO - LLM prediction for tyler stephenson: Unknown, Agreement: False
+2025-06-10 16:09:32,087 - INFO - Processing prediction 42/453 for tj friedl
+2025-06-10 16:09:32,088 - INFO - Querying LLM...
+2025-06-10 16:09:34,983 - INFO - LLM response received
+2025-06-10 16:09:34,983 - INFO - LLM prediction for tj friedl: Over, Agreement: Unknown
+2025-06-10 16:09:34,983 - INFO - Processing prediction 43/453 for bo naylor
+2025-06-10 16:09:34,984 - INFO - Querying LLM...
+2025-06-10 16:09:43,130 - INFO - LLM response received
+2025-06-10 16:09:43,131 - INFO - LLM prediction for bo naylor: Under, Agreement: False
+2025-06-10 16:09:43,132 - INFO - Processing prediction 44/453 for will benson
+2025-06-10 16:09:43,132 - INFO - Querying LLM...
+2025-06-10 16:09:49,037 - INFO - LLM response received
+2025-06-10 16:09:49,038 - INFO - LLM prediction for will benson: Over, Agreement: True
+2025-06-10 16:09:49,038 - INFO - Processing prediction 45/453 for spencer steer
+2025-06-10 16:09:49,038 - INFO - Querying LLM...
+2025-06-10 16:10:03,716 - INFO - LLM response received
+2025-06-10 16:10:03,717 - INFO - LLM prediction for spencer steer: Under, Agreement: False
+2025-06-10 16:10:03,718 - INFO - Processing prediction 46/453 for matt mclain
+2025-06-10 16:10:03,719 - INFO - Querying LLM...
+2025-06-10 16:10:08,377 - INFO - LLM response received
+2025-06-10 16:10:08,378 - INFO - LLM prediction for matt mclain: Over, Agreement: False
+2025-06-10 16:10:08,379 - INFO - Processing prediction 47/453 for david fry
+2025-06-10 16:10:08,379 - INFO - Querying LLM...
+2025-06-10 16:10:14,033 - INFO - LLM response received
+2025-06-10 16:10:14,034 - INFO - LLM prediction for david fry: Over, Agreement: False
+2025-06-10 16:10:14,035 - INFO - Processing prediction 48/453 for elly de la cruz
+2025-06-10 16:10:14,036 - INFO - Querying LLM...
+2025-06-10 16:10:22,388 - INFO - LLM response received
+2025-06-10 16:10:22,388 - INFO - LLM prediction for elly de la cruz: Over, Agreement: True
+2025-06-10 16:10:22,389 - INFO - Processing prediction 49/453 for christian encarnacion-strand
+2025-06-10 16:10:22,389 - INFO - Querying LLM...
+2025-06-10 16:10:27,455 - INFO - LLM response received
+2025-06-10 16:10:27,455 - INFO - LLM prediction for christian encarnacion-strand: Over, Agreement: True
+2025-06-10 16:10:27,456 - INFO - Processing prediction 50/453 for johnathan rodriguez
+2025-06-10 16:10:27,456 - INFO - Querying LLM...
+2025-06-10 16:10:33,682 - INFO - LLM response received
+2025-06-10 16:10:33,682 - INFO - LLM prediction for johnathan rodriguez: Over, Agreement: False
+2025-06-10 16:10:33,683 - INFO - Processing prediction 51/453 for angel martinez
+2025-06-10 16:10:33,684 - INFO - Querying LLM...
+2025-06-10 16:10:36,819 - INFO - LLM response received
+2025-06-10 16:10:36,820 - INFO - LLM prediction for angel martinez: Unknown, Agreement: Unknown
+2025-06-10 16:10:36,821 - INFO - Processing prediction 52/453 for carlos santana
+2025-06-10 16:10:36,821 - INFO - Querying LLM...
+2025-06-10 16:10:42,453 - INFO - LLM response received
+2025-06-10 16:10:42,454 - INFO - LLM prediction for carlos santana: Over, Agreement: False
+2025-06-10 16:10:42,455 - INFO - Processing prediction 53/453 for gavin lux
+2025-06-10 16:10:42,455 - INFO - Querying LLM...
+2025-06-10 16:10:50,076 - INFO - LLM response received
+2025-06-10 16:10:50,076 - INFO - LLM prediction for gavin lux: Over, Agreement: False
+2025-06-10 16:10:50,077 - INFO - Processing prediction 54/453 for bryan reynolds
+2025-06-10 16:10:50,077 - INFO - Querying LLM...
+2025-06-10 16:10:54,697 - INFO - LLM response received
+2025-06-10 16:10:54,698 - INFO - LLM prediction for bryan reynolds: Unknown, Agreement: Unknown
+2025-06-10 16:10:54,699 - INFO - Processing prediction 55/453 for oneil cruz
+2025-06-10 16:10:54,699 - INFO - Querying LLM...
+2025-06-10 16:10:58,225 - INFO - LLM response received
+2025-06-10 16:10:58,225 - INFO - LLM prediction for oneil cruz: Under, Agreement: False
+2025-06-10 16:10:58,226 - INFO - Processing prediction 56/453 for jesus sanchez
+2025-06-10 16:10:58,226 - INFO - Querying LLM...
+2025-06-10 16:11:03,389 - INFO - LLM response received
+2025-06-10 16:11:03,389 - INFO - LLM prediction for jesus sanchez: Over, Agreement: False
+2025-06-10 16:11:03,390 - INFO - Processing prediction 57/453 for andrew mccutchen
+2025-06-10 16:11:03,391 - INFO - Querying LLM...
+2025-06-10 16:11:09,172 - INFO - LLM response received
+2025-06-10 16:11:09,173 - INFO - LLM prediction for andrew mccutchen: Unknown, Agreement: Unknown
+2025-06-10 16:11:09,173 - INFO - Processing prediction 58/453 for xavier edwards
+2025-06-10 16:11:09,174 - INFO - Querying LLM...
+2025-06-10 16:11:14,626 - INFO - LLM response received
+2025-06-10 16:11:14,626 - INFO - LLM prediction for xavier edwards: Unknown, Agreement: Unknown
+2025-06-10 16:11:14,627 - INFO - Processing prediction 59/453 for otto lopez
+2025-06-10 16:11:14,627 - INFO - Querying LLM...
+2025-06-10 16:11:21,233 - INFO - LLM response received
+2025-06-10 16:11:21,234 - INFO - LLM prediction for otto lopez: Unknown, Agreement: Unknown
+2025-06-10 16:11:21,235 - INFO - Processing prediction 60/453 for spencer horwitz
+2025-06-10 16:11:21,235 - INFO - Querying LLM...
+2025-06-10 16:11:25,142 - INFO - LLM response received
+2025-06-10 16:11:25,142 - INFO - LLM prediction for spencer horwitz: Over, Agreement: True
+2025-06-10 16:11:25,142 - INFO - Processing prediction 61/453 for kyle schwarber
+2025-06-10 16:11:25,143 - INFO - Querying LLM...
+2025-06-10 16:11:31,814 - INFO - LLM response received
+2025-06-10 16:11:31,815 - INFO - LLM prediction for kyle schwarber: Under, Agreement: False
+2025-06-10 16:11:31,816 - INFO - Processing prediction 62/453 for ian happ
+2025-06-10 16:11:31,817 - INFO - Querying LLM...
+2025-06-10 16:11:34,756 - INFO - LLM response received
+2025-06-10 16:11:34,756 - INFO - LLM prediction for ian happ: Under, Agreement: Unknown
+2025-06-10 16:11:34,757 - INFO - Processing prediction 63/453 for ian happ
+2025-06-10 16:11:34,757 - INFO - Querying LLM...
+2025-06-10 16:11:41,034 - INFO - LLM response received
+2025-06-10 16:11:41,035 - INFO - LLM prediction for ian happ: Over, Agreement: True
+2025-06-10 16:11:41,036 - INFO - Processing prediction 64/453 for jt realmuto
+2025-06-10 16:11:41,036 - INFO - Querying LLM...
+2025-06-10 16:11:47,377 - INFO - LLM response received
+2025-06-10 16:11:47,378 - INFO - LLM prediction for jt realmuto: Over, Agreement: True
+2025-06-10 16:11:47,382 - INFO - Processing prediction 65/453 for seiya suzuki
+2025-06-10 16:11:47,383 - INFO - Querying LLM...
+2025-06-10 16:11:52,512 - INFO - LLM response received
+2025-06-10 16:11:52,513 - INFO - LLM prediction for seiya suzuki: Under, Agreement: True
+2025-06-10 16:11:52,514 - INFO - Processing prediction 66/453 for seiya suzuki
+2025-06-10 16:11:52,514 - INFO - Querying LLM...
+2025-06-10 16:11:57,896 - INFO - LLM response received
+2025-06-10 16:11:57,896 - INFO - LLM prediction for seiya suzuki: Under, Agreement: False
+2025-06-10 16:11:57,896 - INFO - Processing prediction 67/453 for nico hoerner
+2025-06-10 16:11:57,896 - INFO - Querying LLM...
+2025-06-10 16:12:04,299 - INFO - LLM response received
+2025-06-10 16:12:04,299 - INFO - LLM prediction for nico hoerner: Over, Agreement: False
+2025-06-10 16:12:04,299 - INFO - Processing prediction 68/453 for bryson stott
+2025-06-10 16:12:04,300 - INFO - Querying LLM...
+2025-06-10 16:12:13,353 - INFO - LLM response received
+2025-06-10 16:12:13,353 - INFO - LLM prediction for bryson stott: Under, Agreement: True
+2025-06-10 16:12:13,354 - INFO - Processing prediction 69/453 for trea turner
+2025-06-10 16:12:13,354 - INFO - Querying LLM...
+2025-06-10 16:12:22,745 - INFO - LLM response received
+2025-06-10 16:12:22,746 - INFO - LLM prediction for trea turner: Over, Agreement: False
+2025-06-10 16:12:22,746 - INFO - Processing prediction 70/453 for trea turner
+2025-06-10 16:12:22,747 - INFO - Querying LLM...
+2025-06-10 16:12:26,420 - INFO - LLM response received
+2025-06-10 16:12:26,421 - INFO - LLM prediction for trea turner: Over, Agreement: False
+2025-06-10 16:12:26,421 - INFO - Processing prediction 71/453 for dansby swanson
+2025-06-10 16:12:26,421 - INFO - Querying LLM...
+2025-06-10 16:12:31,126 - INFO - LLM response received
+2025-06-10 16:12:31,126 - INFO - LLM prediction for dansby swanson: Over, Agreement: Unknown
+2025-06-10 16:12:31,127 - INFO - Processing prediction 72/453 for michael busch
+2025-06-10 16:12:31,127 - INFO - Querying LLM...
+2025-06-10 16:12:33,273 - INFO - LLM response received
+2025-06-10 16:12:33,273 - INFO - LLM prediction for michael busch: Over, Agreement: Unknown
+2025-06-10 16:12:33,274 - INFO - Processing prediction 73/453 for kyle tucker
+2025-06-10 16:12:33,274 - INFO - Querying LLM...
+2025-06-10 16:12:40,783 - INFO - LLM response received
+2025-06-10 16:12:40,784 - INFO - LLM prediction for kyle tucker: Over, Agreement: True
+2025-06-10 16:12:40,784 - INFO - Processing prediction 74/453 for max kepler
+2025-06-10 16:12:40,785 - INFO - Querying LLM...
+2025-06-10 16:12:48,325 - INFO - LLM response received
+2025-06-10 16:12:48,325 - INFO - LLM prediction for max kepler: Over, Agreement: True
+2025-06-10 16:12:48,326 - INFO - Processing prediction 75/453 for kyle schwarber
+2025-06-10 16:12:48,327 - INFO - Querying LLM...
+2025-06-10 16:12:54,080 - INFO - LLM response received
+2025-06-10 16:12:54,081 - INFO - LLM prediction for kyle schwarber: Over, Agreement: False
+2025-06-10 16:12:54,084 - INFO - Processing prediction 76/453 for nick castellanos
+2025-06-10 16:12:54,084 - INFO - Querying LLM...
+2025-06-10 16:13:03,620 - INFO - LLM response received
+2025-06-10 16:13:03,620 - INFO - LLM prediction for nick castellanos: Over, Agreement: Unknown
+2025-06-10 16:13:03,621 - INFO - Processing prediction 77/453 for ian happ
+2025-06-10 16:13:03,621 - INFO - Querying LLM...
+2025-06-10 16:13:09,278 - INFO - LLM response received
+2025-06-10 16:13:09,278 - INFO - LLM prediction for ian happ: Over, Agreement: False
+2025-06-10 16:13:09,279 - INFO - Processing prediction 78/453 for alec bohm
+2025-06-10 16:13:09,280 - INFO - Querying LLM...
+2025-06-10 16:13:13,401 - INFO - LLM response received
+2025-06-10 16:13:13,401 - INFO - LLM prediction for alec bohm: Over, Agreement: True
+2025-06-10 16:13:13,402 - INFO - Processing prediction 79/453 for seiya suzuki
+2025-06-10 16:13:13,402 - INFO - Querying LLM...
+2025-06-10 16:13:20,953 - INFO - LLM response received
+2025-06-10 16:13:20,954 - INFO - LLM prediction for seiya suzuki: Over, Agreement: Unknown
+2025-06-10 16:13:20,954 - INFO - Processing prediction 80/453 for bryson stott
+2025-06-10 16:13:20,954 - INFO - Querying LLM...
+2025-06-10 16:13:27,811 - INFO - LLM response received
+2025-06-10 16:13:27,812 - INFO - LLM prediction for bryson stott: Unknown, Agreement: False
+2025-06-10 16:13:27,815 - INFO - Processing prediction 81/453 for brandon marsh
+2025-06-10 16:13:27,815 - INFO - Querying LLM...
+2025-06-10 16:13:31,773 - INFO - LLM response received
+2025-06-10 16:13:31,773 - INFO - LLM prediction for brandon marsh: Over, Agreement: False
+2025-06-10 16:13:31,774 - INFO - Processing prediction 82/453 for trea turner
+2025-06-10 16:13:31,774 - INFO - Querying LLM...
+2025-06-10 16:13:39,645 - INFO - LLM response received
+2025-06-10 16:13:39,646 - INFO - LLM prediction for trea turner: Over, Agreement: True
+2025-06-10 16:13:39,646 - INFO - Processing prediction 83/453 for pete crow-armstrong
+2025-06-10 16:13:39,646 - INFO - Querying LLM...
+2025-06-10 16:13:49,452 - INFO - LLM response received
+2025-06-10 16:13:49,453 - INFO - LLM prediction for pete crow-armstrong: Over, Agreement: True
+2025-06-10 16:13:49,453 - INFO - Processing prediction 84/453 for kyle tucker
+2025-06-10 16:13:49,454 - INFO - Querying LLM...
+2025-06-10 16:13:52,942 - INFO - LLM response received
+2025-06-10 16:13:52,942 - INFO - LLM prediction for kyle tucker: Over, Agreement: False
+2025-06-10 16:13:52,943 - INFO - Processing prediction 85/453 for max kepler
+2025-06-10 16:13:52,943 - INFO - Querying LLM...
+2025-06-10 16:14:05,736 - INFO - LLM response received
+2025-06-10 16:14:05,737 - INFO - LLM prediction for max kepler: Over, Agreement: False
+2025-06-10 16:14:05,737 - INFO - Processing prediction 86/453 for yandy diaz
+2025-06-10 16:14:05,737 - INFO - Querying LLM...
+2025-06-10 16:14:09,452 - INFO - LLM response received
+2025-06-10 16:14:09,453 - INFO - LLM prediction for yandy diaz: Unknown, Agreement: Unknown
+2025-06-10 16:14:09,453 - INFO - Processing prediction 87/453 for yandy diaz
+2025-06-10 16:14:09,454 - INFO - Querying LLM...
+2025-06-10 16:14:13,674 - INFO - LLM response received
+2025-06-10 16:14:13,675 - INFO - LLM prediction for yandy diaz: Over, Agreement: False
+2025-06-10 16:14:13,676 - INFO - Processing prediction 88/453 for rafael devers
+2025-06-10 16:14:13,676 - INFO - Querying LLM...
+2025-06-10 16:14:18,033 - INFO - LLM response received
+2025-06-10 16:14:18,033 - INFO - LLM prediction for rafael devers: Over, Agreement: False
+2025-06-10 16:14:18,034 - INFO - Processing prediction 89/453 for rafael devers
+2025-06-10 16:14:18,034 - INFO - Querying LLM...
+2025-06-10 16:14:22,420 - INFO - LLM response received
+2025-06-10 16:14:22,420 - INFO - LLM prediction for rafael devers: Under, Agreement: False
+2025-06-10 16:14:22,421 - INFO - Processing prediction 90/453 for josh lowe
+2025-06-10 16:14:22,421 - INFO - Querying LLM...
+2025-06-10 16:14:26,344 - INFO - LLM response received
+2025-06-10 16:14:26,345 - INFO - LLM prediction for josh lowe: Over, Agreement: False
+2025-06-10 16:14:26,345 - INFO - Processing prediction 91/453 for jarren duran
+2025-06-10 16:14:26,345 - INFO - Querying LLM...
+2025-06-10 16:14:33,127 - INFO - LLM response received
+2025-06-10 16:14:33,127 - INFO - LLM prediction for jarren duran: Over, Agreement: False
+2025-06-10 16:14:33,127 - INFO - Processing prediction 92/453 for jarren duran
+2025-06-10 16:14:33,128 - INFO - Querying LLM...
+2025-06-10 16:14:39,826 - INFO - LLM response received
+2025-06-10 16:14:39,826 - INFO - LLM prediction for jarren duran: Over, Agreement: False
+2025-06-10 16:14:39,826 - INFO - Processing prediction 93/453 for trevor story
+2025-06-10 16:14:39,826 - INFO - Querying LLM...
+2025-06-10 16:14:45,055 - INFO - LLM response received
+2025-06-10 16:14:45,055 - INFO - LLM prediction for trevor story: Unknown, Agreement: False
+2025-06-10 16:14:45,056 - INFO - Processing prediction 94/453 for brandon lowe
+2025-06-10 16:14:45,056 - INFO - Querying LLM...
+2025-06-10 16:14:53,472 - INFO - LLM response received
+2025-06-10 16:14:53,473 - INFO - LLM prediction for brandon lowe: Over, Agreement: Unknown
+2025-06-10 16:14:53,474 - INFO - Processing prediction 95/453 for junior caminero
+2025-06-10 16:14:53,474 - INFO - Querying LLM...
+2025-06-10 16:15:00,703 - INFO - LLM response received
+2025-06-10 16:15:00,703 - INFO - LLM prediction for junior caminero: Under, Agreement: Unknown
+2025-06-10 16:15:00,704 - INFO - Processing prediction 96/453 for junior caminero
+2025-06-10 16:15:00,704 - INFO - Querying LLM...
+2025-06-10 16:15:07,810 - INFO - LLM response received
+2025-06-10 16:15:07,810 - INFO - LLM prediction for junior caminero: Over, Agreement: True
+2025-06-10 16:15:07,811 - INFO - Processing prediction 97/453 for ceddanne rafaela
+2025-06-10 16:15:07,811 - INFO - Querying LLM...
+2025-06-10 16:15:18,034 - INFO - LLM response received
+2025-06-10 16:15:18,034 - INFO - LLM prediction for ceddanne rafaela: Over, Agreement: False
+2025-06-10 16:15:18,034 - INFO - Processing prediction 98/453 for jake mangum
+2025-06-10 16:15:18,034 - INFO - Querying LLM...
+2025-06-10 16:15:22,326 - INFO - LLM response received
+2025-06-10 16:15:22,326 - INFO - LLM prediction for jake mangum: Over, Agreement: False
+2025-06-10 16:15:22,327 - INFO - Processing prediction 99/453 for carlos narvaez
+2025-06-10 16:15:22,327 - INFO - Querying LLM...
+2025-06-10 16:15:28,440 - INFO - LLM response received
+2025-06-10 16:15:28,441 - INFO - LLM prediction for carlos narvaez: Under, Agreement: False
+2025-06-10 16:15:28,443 - INFO - Processing prediction 100/453 for abraham toro
+2025-06-10 16:15:28,443 - INFO - Querying LLM...
+2025-06-10 16:15:34,889 - INFO - LLM response received
+2025-06-10 16:15:34,889 - INFO - LLM prediction for abraham toro: Over, Agreement: True
+2025-06-10 16:15:34,890 - INFO - Processing prediction 101/453 for roman anthony
+2025-06-10 16:15:34,891 - INFO - Querying LLM...
+2025-06-10 16:15:39,784 - INFO - LLM response received
+2025-06-10 16:15:39,784 - INFO - LLM prediction for roman anthony: Under, Agreement: False
+2025-06-10 16:15:39,785 - INFO - Processing prediction 102/453 for pete alonso
+2025-06-10 16:15:39,785 - INFO - Querying LLM...
+2025-06-10 16:15:51,045 - INFO - LLM response received
+2025-06-10 16:15:51,048 - INFO - LLM prediction for pete alonso: Over, Agreement: True
+2025-06-10 16:15:51,049 - INFO - Processing prediction 103/453 for francisco lindor
+2025-06-10 16:15:51,049 - INFO - Querying LLM...
+2025-06-10 16:15:56,540 - INFO - LLM response received
+2025-06-10 16:15:56,540 - INFO - LLM prediction for francisco lindor: Over, Agreement: False
+2025-06-10 16:15:56,540 - INFO - Processing prediction 104/453 for starling marte
+2025-06-10 16:15:56,541 - INFO - Querying LLM...
+2025-06-10 16:16:03,301 - INFO - LLM response received
+2025-06-10 16:16:03,301 - INFO - LLM prediction for starling marte: Over, Agreement: False
+2025-06-10 16:16:03,301 - INFO - Processing prediction 105/453 for cj abrams
+2025-06-10 16:16:03,302 - INFO - Querying LLM...
+2025-06-10 16:16:09,349 - INFO - LLM response received
+2025-06-10 16:16:09,351 - INFO - LLM prediction for cj abrams: Over, Agreement: False
+2025-06-10 16:16:09,352 - INFO - Processing prediction 106/453 for luis garcia
+2025-06-10 16:16:09,352 - INFO - Querying LLM...
+2025-06-10 16:16:18,442 - INFO - LLM response received
+2025-06-10 16:16:18,442 - INFO - LLM prediction for luis garcia: Over, Agreement: False
+2025-06-10 16:16:18,443 - INFO - Processing prediction 107/453 for james wood
+2025-06-10 16:16:18,444 - INFO - Querying LLM...
+2025-06-10 16:16:24,885 - INFO - LLM response received
+2025-06-10 16:16:24,885 - INFO - LLM prediction for james wood: Over, Agreement: True
+2025-06-10 16:16:24,886 - INFO - Processing prediction 108/453 for juan soto
+2025-06-10 16:16:24,886 - INFO - Querying LLM...
+2025-06-10 16:16:32,906 - INFO - LLM response received
+2025-06-10 16:16:32,906 - INFO - LLM prediction for juan soto: Over, Agreement: True
+2025-06-10 16:16:32,908 - INFO - Processing prediction 109/453 for yandy diaz
+2025-06-10 16:16:32,908 - INFO - Querying LLM...
+2025-06-10 16:16:38,275 - INFO - LLM response received
+2025-06-10 16:16:38,275 - INFO - LLM prediction for yandy diaz: Over, Agreement: True
+2025-06-10 16:16:38,276 - INFO - Processing prediction 110/453 for rafael devers
+2025-06-10 16:16:38,276 - INFO - Querying LLM...
+2025-06-10 16:16:42,630 - INFO - LLM response received
+2025-06-10 16:16:42,630 - INFO - LLM prediction for rafael devers: Over, Agreement: False
+2025-06-10 16:16:42,631 - INFO - Processing prediction 111/453 for josh lowe
+2025-06-10 16:16:42,631 - INFO - Querying LLM...
+2025-06-10 16:16:47,841 - INFO - LLM response received
+2025-06-10 16:16:47,841 - INFO - LLM prediction for josh lowe: Over, Agreement: Unknown
+2025-06-10 16:16:47,842 - INFO - Processing prediction 112/453 for jarren duran
+2025-06-10 16:16:47,842 - INFO - Querying LLM...
+2025-06-10 16:16:52,029 - INFO - LLM response received
+2025-06-10 16:16:52,029 - INFO - LLM prediction for jarren duran: Over, Agreement: False
+2025-06-10 16:16:52,030 - INFO - Processing prediction 113/453 for trevor story
+2025-06-10 16:16:52,030 - INFO - Querying LLM...
+2025-06-10 16:16:58,140 - INFO - LLM response received
+2025-06-10 16:16:58,140 - INFO - LLM prediction for trevor story: Over, Agreement: False
+2025-06-10 16:16:58,141 - INFO - Processing prediction 114/453 for brandon lowe
+2025-06-10 16:16:58,141 - INFO - Querying LLM...
+2025-06-10 16:17:02,714 - INFO - LLM response received
+2025-06-10 16:17:02,714 - INFO - LLM prediction for brandon lowe: Under, Agreement: False
+2025-06-10 16:17:02,717 - INFO - Processing prediction 115/453 for jonathan aranda
+2025-06-10 16:17:02,718 - INFO - Querying LLM...
+2025-06-10 16:17:06,798 - INFO - LLM response received
+2025-06-10 16:17:06,798 - INFO - LLM prediction for jonathan aranda: Unknown, Agreement: Unknown
+2025-06-10 16:17:06,798 - INFO - Processing prediction 116/453 for junior caminero
+2025-06-10 16:17:06,799 - INFO - Querying LLM...
+2025-06-10 16:17:18,647 - INFO - LLM response received
+2025-06-10 16:17:18,647 - INFO - LLM prediction for junior caminero: Over, Agreement: False
+2025-06-10 16:17:18,648 - INFO - Processing prediction 117/453 for ceddanne rafaela
+2025-06-10 16:17:18,648 - INFO - Querying LLM...
+2025-06-10 16:17:25,340 - INFO - LLM response received
+2025-06-10 16:17:25,341 - INFO - LLM prediction for ceddanne rafaela: Over, Agreement: True
+2025-06-10 16:17:25,342 - INFO - Processing prediction 118/453 for carlos narvaez
+2025-06-10 16:17:25,342 - INFO - Querying LLM...
+2025-06-10 16:17:31,841 - INFO - LLM response received
+2025-06-10 16:17:31,841 - INFO - LLM prediction for carlos narvaez: Over, Agreement: False
+2025-06-10 16:17:31,842 - INFO - Processing prediction 119/453 for abraham toro
+2025-06-10 16:17:31,842 - INFO - Querying LLM...
+2025-06-10 16:17:36,441 - INFO - LLM response received
+2025-06-10 16:17:36,441 - INFO - LLM prediction for abraham toro: Unknown, Agreement: Unknown
+2025-06-10 16:17:36,442 - INFO - Processing prediction 120/453 for marcelo mayer
+2025-06-10 16:17:36,443 - INFO - Querying LLM...
+2025-06-10 16:17:48,032 - INFO - LLM response received
+2025-06-10 16:17:48,032 - INFO - LLM prediction for marcelo mayer: Over, Agreement: False
+2025-06-10 16:17:48,032 - INFO - Processing prediction 121/453 for pete alonso
+2025-06-10 16:17:48,033 - INFO - Querying LLM...
+2025-06-10 16:17:56,923 - INFO - LLM response received
+2025-06-10 16:17:56,923 - INFO - LLM prediction for pete alonso: Over, Agreement: False
+2025-06-10 16:17:56,924 - INFO - Processing prediction 122/453 for francisco lindor
+2025-06-10 16:17:56,924 - INFO - Querying LLM...
+2025-06-10 16:18:09,325 - INFO - LLM response received
+2025-06-10 16:18:09,325 - INFO - LLM prediction for francisco lindor: Unknown, Agreement: Unknown
+2025-06-10 16:18:09,325 - INFO - Processing prediction 123/453 for starling marte
+2025-06-10 16:18:09,325 - INFO - Querying LLM...
+2025-06-10 16:18:15,576 - INFO - LLM response received
+2025-06-10 16:18:15,576 - INFO - LLM prediction for starling marte: Under, Agreement: False
+2025-06-10 16:18:15,576 - INFO - Processing prediction 124/453 for brandon nimmo
+2025-06-10 16:18:15,576 - INFO - Querying LLM...
+2025-06-10 16:18:21,077 - INFO - LLM response received
+2025-06-10 16:18:21,078 - INFO - LLM prediction for brandon nimmo: Over, Agreement: True
+2025-06-10 16:18:21,078 - INFO - Processing prediction 125/453 for cj abrams
+2025-06-10 16:18:21,079 - INFO - Querying LLM...
+2025-06-10 16:18:24,940 - INFO - LLM response received
+2025-06-10 16:18:24,941 - INFO - LLM prediction for cj abrams: Over, Agreement: Unknown
+2025-06-10 16:18:24,942 - INFO - Processing prediction 126/453 for luis garcia
+2025-06-10 16:18:24,942 - INFO - Querying LLM...
+2025-06-10 16:18:32,838 - INFO - LLM response received
+2025-06-10 16:18:32,839 - INFO - LLM prediction for luis garcia: Unknown, Agreement: Unknown
+2025-06-10 16:18:32,839 - INFO - Processing prediction 127/453 for tyrone taylor
+2025-06-10 16:18:32,839 - INFO - Querying LLM...
+2025-06-10 16:18:38,106 - INFO - LLM response received
+2025-06-10 16:18:38,107 - INFO - LLM prediction for tyrone taylor: Over, Agreement: False
+2025-06-10 16:18:38,108 - INFO - Processing prediction 128/453 for james wood
+2025-06-10 16:18:38,108 - INFO - Querying LLM...
+2025-06-10 16:18:44,289 - INFO - LLM response received
+2025-06-10 16:18:44,291 - INFO - LLM prediction for james wood: Over, Agreement: False
+2025-06-10 16:18:44,293 - INFO - Processing prediction 129/453 for nathaniel lowe
+2025-06-10 16:18:44,295 - INFO - Querying LLM...
+2025-06-10 16:18:50,286 - INFO - LLM response received
+2025-06-10 16:18:50,287 - INFO - LLM prediction for nathaniel lowe: Unknown, Agreement: True
+2025-06-10 16:18:50,287 - INFO - Processing prediction 130/453 for juan soto
+2025-06-10 16:18:50,288 - INFO - Querying LLM...
+2025-06-10 16:18:53,081 - INFO - LLM response received
+2025-06-10 16:18:53,081 - INFO - LLM prediction for juan soto: Over, Agreement: Unknown
+2025-06-10 16:18:53,082 - INFO - Processing prediction 131/453 for byron buxton
+2025-06-10 16:18:53,083 - INFO - Querying LLM...
+2025-06-10 16:18:57,391 - INFO - LLM response received
+2025-06-10 16:18:57,392 - INFO - LLM prediction for byron buxton: Unknown, Agreement: Unknown
+2025-06-10 16:18:57,393 - INFO - Processing prediction 132/453 for carlos correa
+2025-06-10 16:18:57,393 - INFO - Querying LLM...
+2025-06-10 16:19:02,645 - INFO - LLM response received
+2025-06-10 16:19:02,645 - INFO - LLM prediction for carlos correa: Over, Agreement: False
+2025-06-10 16:19:02,646 - INFO - Processing prediction 133/453 for corey seager
+2025-06-10 16:19:02,646 - INFO - Querying LLM...
+2025-06-10 16:19:09,160 - INFO - LLM response received
+2025-06-10 16:19:09,161 - INFO - LLM prediction for corey seager: Under, Agreement: False
+2025-06-10 16:19:09,162 - INFO - Processing prediction 134/453 for marcus semien
+2025-06-10 16:19:09,162 - INFO - Querying LLM...
+2025-06-10 16:19:16,937 - INFO - LLM response received
+2025-06-10 16:19:16,937 - INFO - LLM prediction for marcus semien: Over, Agreement: False
+2025-06-10 16:19:16,938 - INFO - Processing prediction 135/453 for ryan jeffers
+2025-06-10 16:19:16,938 - INFO - Querying LLM...
+2025-06-10 16:19:22,947 - INFO - LLM response received
+2025-06-10 16:19:22,948 - INFO - LLM prediction for ryan jeffers: Over, Agreement: True
+2025-06-10 16:19:22,949 - INFO - Processing prediction 136/453 for josh smith
+2025-06-10 16:19:22,949 - INFO - Querying LLM...
+2025-06-10 16:19:26,345 - INFO - LLM response received
+2025-06-10 16:19:26,345 - INFO - LLM prediction for josh smith: Over, Agreement: False
+2025-06-10 16:19:26,346 - INFO - Processing prediction 137/453 for josh jung
+2025-06-10 16:19:26,346 - INFO - Querying LLM...
+2025-06-10 16:19:29,129 - INFO - LLM response received
+2025-06-10 16:19:29,129 - INFO - LLM prediction for josh jung: Under, Agreement: False
+2025-06-10 16:19:29,131 - INFO - Processing prediction 138/453 for matt wallner
+2025-06-10 16:19:29,131 - INFO - Querying LLM...
+2025-06-10 16:19:56,232 - INFO - LLM response received
+2025-06-10 16:19:56,232 - INFO - LLM prediction for matt wallner: Under, Agreement: False
+2025-06-10 16:19:56,233 - INFO - Processing prediction 139/453 for trevor larnach
+2025-06-10 16:19:56,233 - INFO - Querying LLM...
+2025-06-10 16:20:04,660 - INFO - LLM response received
+2025-06-10 16:20:04,661 - INFO - LLM prediction for trevor larnach: Over, Agreement: False
+2025-06-10 16:20:04,661 - INFO - Processing prediction 140/453 for wyatt langford
+2025-06-10 16:20:04,661 - INFO - Querying LLM...
+2025-06-10 16:20:08,822 - INFO - LLM response received
+2025-06-10 16:20:08,823 - INFO - LLM prediction for wyatt langford: Over, Agreement: True
+2025-06-10 16:20:08,823 - INFO - Processing prediction 141/453 for jake burger
+2025-06-10 16:20:08,823 - INFO - Querying LLM...
+2025-06-10 16:20:18,687 - INFO - LLM response received
+2025-06-10 16:20:18,687 - INFO - LLM prediction for jake burger: Over, Agreement: False
+2025-06-10 16:20:18,687 - INFO - Processing prediction 142/453 for ty france
+2025-06-10 16:20:18,687 - INFO - Querying LLM...
+2025-06-10 16:20:23,296 - INFO - LLM response received
+2025-06-10 16:20:23,296 - INFO - LLM prediction for ty france: Over, Agreement: False
+2025-06-10 16:20:23,297 - INFO - Processing prediction 143/453 for bobby witt
+2025-06-10 16:20:23,298 - INFO - Querying LLM...
+2025-06-10 16:20:27,310 - INFO - LLM response received
+2025-06-10 16:20:27,311 - INFO - LLM prediction for bobby witt: Over, Agreement: False
+2025-06-10 16:20:27,312 - INFO - Processing prediction 144/453 for aaron judge
+2025-06-10 16:20:27,312 - INFO - Querying LLM...
+2025-06-10 16:20:35,130 - INFO - LLM response received
+2025-06-10 16:20:35,131 - INFO - LLM prediction for aaron judge: Unknown, Agreement: True
+2025-06-10 16:20:35,132 - INFO - Processing prediction 145/453 for dj lemahieu
+2025-06-10 16:20:35,132 - INFO - Querying LLM...
+2025-06-10 16:20:40,222 - INFO - LLM response received
+2025-06-10 16:20:40,222 - INFO - LLM prediction for dj lemahieu: Unknown, Agreement: Unknown
+2025-06-10 16:20:40,223 - INFO - Processing prediction 146/453 for vinnie pasquantino
+2025-06-10 16:20:40,223 - INFO - Querying LLM...
+2025-06-10 16:20:45,275 - INFO - LLM response received
+2025-06-10 16:20:45,276 - INFO - LLM prediction for vinnie pasquantino: Over, Agreement: False
+2025-06-10 16:20:45,277 - INFO - Processing prediction 147/453 for salvador perez
+2025-06-10 16:20:45,277 - INFO - Querying LLM...
+2025-06-10 16:20:54,374 - INFO - LLM response received
+2025-06-10 16:20:54,375 - INFO - LLM prediction for salvador perez: Over, Agreement: Unknown
+2025-06-10 16:20:54,376 - INFO - Processing prediction 148/453 for maikel garcia
+2025-06-10 16:20:54,376 - INFO - Querying LLM...
+2025-06-10 16:20:58,064 - INFO - LLM response received
+2025-06-10 16:20:58,064 - INFO - LLM prediction for maikel garcia: Over, Agreement: Unknown
+2025-06-10 16:20:58,065 - INFO - Processing prediction 149/453 for jasson dominguez
+2025-06-10 16:20:58,065 - INFO - Querying LLM...
+2025-06-10 16:21:02,370 - INFO - LLM response received
+2025-06-10 16:21:02,370 - INFO - LLM prediction for jasson dominguez: Over, Agreement: False
+2025-06-10 16:21:02,370 - INFO - Processing prediction 150/453 for ben rice
+2025-06-10 16:21:02,371 - INFO - Querying LLM...
+2025-06-10 16:21:11,662 - INFO - LLM response received
+2025-06-10 16:21:11,663 - INFO - LLM prediction for ben rice: Unknown, Agreement: False
+2025-06-10 16:21:11,663 - INFO - Processing prediction 151/453 for jonathan india
+2025-06-10 16:21:11,664 - INFO - Querying LLM...
+2025-06-10 16:21:19,000 - INFO - LLM response received
+2025-06-10 16:21:19,000 - INFO - LLM prediction for jonathan india: Over, Agreement: True
+2025-06-10 16:21:19,001 - INFO - Processing prediction 152/453 for paul goldschmidt
+2025-06-10 16:21:19,001 - INFO - Querying LLM...
+2025-06-10 16:21:22,713 - INFO - LLM response received
+2025-06-10 16:21:22,715 - INFO - LLM prediction for paul goldschmidt: Over, Agreement: Unknown
+2025-06-10 16:21:22,715 - INFO - Processing prediction 153/453 for cody bellinger
+2025-06-10 16:21:22,716 - INFO - Querying LLM...
+2025-06-10 16:21:25,996 - INFO - LLM response received
+2025-06-10 16:21:25,997 - INFO - LLM prediction for cody bellinger: Over, Agreement: Unknown
+2025-06-10 16:21:25,997 - INFO - Processing prediction 154/453 for christian yelich
+2025-06-10 16:21:25,998 - INFO - Querying LLM...
+2025-06-10 16:21:29,104 - INFO - LLM response received
+2025-06-10 16:21:29,104 - INFO - LLM prediction for christian yelich: Unknown, Agreement: False
+2025-06-10 16:21:29,105 - INFO - Processing prediction 155/453 for ronald acuna
+2025-06-10 16:21:29,105 - INFO - Querying LLM...
+2025-06-10 16:21:37,260 - INFO - LLM response received
+2025-06-10 16:21:37,260 - INFO - LLM prediction for ronald acuna: Under, Agreement: False
+2025-06-10 16:21:37,261 - INFO - Processing prediction 156/453 for austin riley
+2025-06-10 16:21:37,262 - INFO - Querying LLM...
+2025-06-10 16:21:42,462 - INFO - LLM response received
+2025-06-10 16:21:42,462 - INFO - LLM prediction for austin riley: Over, Agreement: False
+2025-06-10 16:21:42,463 - INFO - Processing prediction 157/453 for austin riley
+2025-06-10 16:21:42,463 - INFO - Querying LLM...
+2025-06-10 16:21:51,256 - INFO - LLM response received
+2025-06-10 16:21:51,257 - INFO - LLM prediction for austin riley: Under, Agreement: False
+2025-06-10 16:21:51,257 - INFO - Processing prediction 158/453 for matt olson
+2025-06-10 16:21:51,258 - INFO - Querying LLM...
+2025-06-10 16:21:59,066 - INFO - LLM response received
+2025-06-10 16:21:59,066 - INFO - LLM prediction for matt olson: Over, Agreement: Unknown
+2025-06-10 16:21:59,067 - INFO - Processing prediction 159/453 for matt olson
+2025-06-10 16:21:59,067 - INFO - Querying LLM...
+2025-06-10 16:22:02,364 - INFO - LLM response received
+2025-06-10 16:22:02,364 - INFO - LLM prediction for matt olson: Over, Agreement: False
+2025-06-10 16:22:02,365 - INFO - Processing prediction 160/453 for marcell ozuna
+2025-06-10 16:22:02,365 - INFO - Querying LLM...
+2025-06-10 16:22:08,148 - INFO - LLM response received
+2025-06-10 16:22:08,148 - INFO - LLM prediction for marcell ozuna: Over, Agreement: False
+2025-06-10 16:22:08,150 - INFO - Processing prediction 161/453 for michael harris
+2025-06-10 16:22:08,150 - INFO - Querying LLM...
+2025-06-10 16:22:15,545 - INFO - LLM response received
+2025-06-10 16:22:15,546 - INFO - LLM prediction for michael harris: Under, Agreement: False
+2025-06-10 16:22:15,546 - INFO - Processing prediction 162/453 for brice turang
+2025-06-10 16:22:15,547 - INFO - Querying LLM...
+2025-06-10 16:22:22,057 - INFO - LLM response received
+2025-06-10 16:22:22,058 - INFO - LLM prediction for brice turang: Over, Agreement: True
+2025-06-10 16:22:22,059 - INFO - Processing prediction 163/453 for william contreras
+2025-06-10 16:22:22,059 - INFO - Querying LLM...
+2025-06-10 16:22:27,816 - INFO - LLM response received
+2025-06-10 16:22:27,816 - INFO - LLM prediction for william contreras: Unknown, Agreement: False
+2025-06-10 16:22:27,817 - INFO - Processing prediction 164/453 for ozzie albies
+2025-06-10 16:22:27,818 - INFO - Querying LLM...
+2025-06-10 16:22:33,483 - INFO - LLM response received
+2025-06-10 16:22:33,483 - INFO - LLM prediction for ozzie albies: Over, Agreement: False
+2025-06-10 16:22:33,483 - INFO - Processing prediction 165/453 for ozzie albies
+2025-06-10 16:22:33,483 - INFO - Querying LLM...
+2025-06-10 16:22:38,664 - INFO - LLM response received
+2025-06-10 16:22:38,664 - INFO - LLM prediction for ozzie albies: Over, Agreement: False
+2025-06-10 16:22:38,665 - INFO - Processing prediction 166/453 for sal frelick
+2025-06-10 16:22:38,666 - INFO - Querying LLM...
+2025-06-10 16:22:47,086 - INFO - LLM response received
+2025-06-10 16:22:47,087 - INFO - LLM prediction for sal frelick: Unknown, Agreement: False
+2025-06-10 16:22:47,088 - INFO - Processing prediction 167/453 for joey ortiz
+2025-06-10 16:22:47,088 - INFO - Querying LLM...
+2025-06-10 16:22:55,616 - INFO - LLM response received
+2025-06-10 16:22:55,616 - INFO - LLM prediction for joey ortiz: Over, Agreement: Unknown
+2025-06-10 16:22:55,617 - INFO - Processing prediction 168/453 for joey ortiz
+2025-06-10 16:22:55,617 - INFO - Querying LLM...
+2025-06-10 16:23:00,812 - INFO - LLM response received
+2025-06-10 16:23:00,813 - INFO - LLM prediction for joey ortiz: Under, Agreement: Unknown
+2025-06-10 16:23:00,813 - INFO - Processing prediction 169/453 for jackson chourio
+2025-06-10 16:23:00,813 - INFO - Querying LLM...
+2025-06-10 16:23:03,628 - INFO - LLM response received
+2025-06-10 16:23:03,628 - INFO - LLM prediction for jackson chourio: Over, Agreement: False
+2025-06-10 16:23:03,629 - INFO - Processing prediction 170/453 for nick allen
+2025-06-10 16:23:03,629 - INFO - Querying LLM...
+2025-06-10 16:23:12,466 - INFO - LLM response received
+2025-06-10 16:23:12,467 - INFO - LLM prediction for nick allen: Over, Agreement: False
+2025-06-10 16:23:12,467 - INFO - Processing prediction 171/453 for alex verdugo
+2025-06-10 16:23:12,468 - INFO - Querying LLM...
+2025-06-10 16:23:14,826 - INFO - LLM response received
+2025-06-10 16:23:14,826 - INFO - LLM prediction for alex verdugo: Unknown, Agreement: Unknown
+2025-06-10 16:23:14,827 - INFO - Processing prediction 172/453 for caleb durbin
+2025-06-10 16:23:14,828 - INFO - Querying LLM...
+2025-06-10 16:23:21,453 - INFO - LLM response received
+2025-06-10 16:23:21,454 - INFO - LLM prediction for caleb durbin: Over, Agreement: False
+2025-06-10 16:23:21,455 - INFO - Processing prediction 173/453 for byron buxton
+2025-06-10 16:23:21,455 - INFO - Querying LLM...
+2025-06-10 16:23:27,778 - INFO - LLM response received
+2025-06-10 16:23:27,779 - INFO - LLM prediction for byron buxton: Over, Agreement: False
+2025-06-10 16:23:27,780 - INFO - Processing prediction 174/453 for carlos correa
+2025-06-10 16:23:27,780 - INFO - Querying LLM...
+2025-06-10 16:23:37,143 - INFO - LLM response received
+2025-06-10 16:23:37,143 - INFO - LLM prediction for carlos correa: Over, Agreement: False
+2025-06-10 16:23:37,144 - INFO - Processing prediction 175/453 for corey seager
+2025-06-10 16:23:37,144 - INFO - Querying LLM...
+2025-06-10 16:23:42,198 - INFO - LLM response received
+2025-06-10 16:23:42,198 - INFO - LLM prediction for corey seager: Over, Agreement: True
+2025-06-10 16:23:42,199 - INFO - Processing prediction 176/453 for marcus semien
+2025-06-10 16:23:42,199 - INFO - Querying LLM...
+2025-06-10 16:23:50,606 - INFO - LLM response received
+2025-06-10 16:23:50,607 - INFO - LLM prediction for marcus semien: Over, Agreement: False
+2025-06-10 16:23:50,607 - INFO - Processing prediction 177/453 for josh smith
+2025-06-10 16:23:50,608 - INFO - Querying LLM...
+2025-06-10 16:23:59,383 - INFO - LLM response received
+2025-06-10 16:23:59,384 - INFO - LLM prediction for josh smith: Over, Agreement: False
+2025-06-10 16:23:59,385 - INFO - Processing prediction 178/453 for trevor larnach
+2025-06-10 16:23:59,385 - INFO - Querying LLM...
+2025-06-10 16:24:07,286 - INFO - LLM response received
+2025-06-10 16:24:07,287 - INFO - LLM prediction for trevor larnach: Over, Agreement: False
+2025-06-10 16:24:07,288 - INFO - Processing prediction 179/453 for wyatt langford
+2025-06-10 16:24:07,288 - INFO - Querying LLM...
+2025-06-10 16:24:16,058 - INFO - LLM response received
+2025-06-10 16:24:16,059 - INFO - LLM prediction for wyatt langford: Over, Agreement: False
+2025-06-10 16:24:16,060 - INFO - Processing prediction 180/453 for jake burger
+2025-06-10 16:24:16,060 - INFO - Querying LLM...
+2025-06-10 16:24:19,009 - INFO - LLM response received
+2025-06-10 16:24:19,010 - INFO - LLM prediction for jake burger: Over, Agreement: Unknown
+2025-06-10 16:24:19,010 - INFO - Processing prediction 181/453 for bobby witt
+2025-06-10 16:24:19,010 - INFO - Querying LLM...
+2025-06-10 16:24:28,053 - INFO - LLM response received
+2025-06-10 16:24:28,054 - INFO - LLM prediction for bobby witt: Over, Agreement: False
+2025-06-10 16:24:28,055 - INFO - Processing prediction 182/453 for aaron judge
+2025-06-10 16:24:28,055 - INFO - Querying LLM...
+2025-06-10 16:24:34,013 - INFO - LLM response received
+2025-06-10 16:24:34,013 - INFO - LLM prediction for aaron judge: Over, Agreement: False
+2025-06-10 16:24:34,013 - INFO - Processing prediction 183/453 for vinnie pasquantino
+2025-06-10 16:24:34,013 - INFO - Querying LLM...
+2025-06-10 16:24:38,943 - INFO - LLM response received
+2025-06-10 16:24:38,944 - INFO - LLM prediction for vinnie pasquantino: Under, Agreement: Unknown
+2025-06-10 16:24:38,945 - INFO - Processing prediction 184/453 for salvador perez
+2025-06-10 16:24:38,945 - INFO - Querying LLM...
+2025-06-10 16:24:45,924 - INFO - LLM response received
+2025-06-10 16:24:45,925 - INFO - LLM prediction for salvador perez: Over, Agreement: True
+2025-06-10 16:24:45,925 - INFO - Processing prediction 185/453 for maikel garcia
+2025-06-10 16:24:45,926 - INFO - Querying LLM...
+2025-06-10 16:24:50,280 - INFO - LLM response received
+2025-06-10 16:24:50,280 - INFO - LLM prediction for maikel garcia: Unknown, Agreement: Unknown
+2025-06-10 16:24:50,280 - INFO - Processing prediction 186/453 for jonathan india
+2025-06-10 16:24:50,280 - INFO - Querying LLM...
+2025-06-10 16:24:53,510 - INFO - LLM response received
+2025-06-10 16:24:53,511 - INFO - LLM prediction for jonathan india: Over, Agreement: Unknown
+2025-06-10 16:24:53,512 - INFO - Processing prediction 187/453 for paul goldschmidt
+2025-06-10 16:24:53,512 - INFO - Querying LLM...
+2025-06-10 16:24:59,776 - INFO - LLM response received
+2025-06-10 16:24:59,777 - INFO - LLM prediction for paul goldschmidt: Over, Agreement: True
+2025-06-10 16:24:59,778 - INFO - Processing prediction 188/453 for cody bellinger
+2025-06-10 16:24:59,778 - INFO - Querying LLM...
+2025-06-10 16:25:05,970 - INFO - LLM response received
+2025-06-10 16:25:05,971 - INFO - LLM prediction for cody bellinger: Under, Agreement: False
+2025-06-10 16:25:05,972 - INFO - Processing prediction 189/453 for jac caglianone
+2025-06-10 16:25:05,973 - INFO - Querying LLM...
+2025-06-10 16:25:10,365 - INFO - LLM response received
+2025-06-10 16:25:10,366 - INFO - LLM prediction for jac caglianone: Over, Agreement: False
+2025-06-10 16:25:10,366 - INFO - Processing prediction 190/453 for christian yelich
+2025-06-10 16:25:10,366 - INFO - Querying LLM...
+2025-06-10 16:25:14,581 - INFO - LLM response received
+2025-06-10 16:25:14,582 - INFO - LLM prediction for christian yelich: Under, Agreement: True
+2025-06-10 16:25:14,583 - INFO - Processing prediction 191/453 for ronald acuna
+2025-06-10 16:25:14,583 - INFO - Querying LLM...
+2025-06-10 16:25:18,220 - INFO - LLM response received
+2025-06-10 16:25:18,221 - INFO - LLM prediction for ronald acuna: Over, Agreement: Unknown
+2025-06-10 16:25:18,222 - INFO - Processing prediction 192/453 for austin riley
+2025-06-10 16:25:18,223 - INFO - Querying LLM...
+2025-06-10 16:25:23,009 - INFO - LLM response received
+2025-06-10 16:25:23,009 - INFO - LLM prediction for austin riley: Over, Agreement: Unknown
+2025-06-10 16:25:23,010 - INFO - Processing prediction 193/453 for matt olson
+2025-06-10 16:25:23,011 - INFO - Querying LLM...
+2025-06-10 16:25:29,745 - INFO - LLM response received
+2025-06-10 16:25:29,745 - INFO - LLM prediction for matt olson: Under, Agreement: False
+2025-06-10 16:25:29,746 - INFO - Processing prediction 194/453 for marcell ozuna
+2025-06-10 16:25:29,746 - INFO - Querying LLM...
+2025-06-10 16:25:36,094 - INFO - LLM response received
+2025-06-10 16:25:36,095 - INFO - LLM prediction for marcell ozuna: Over, Agreement: False
+2025-06-10 16:25:36,096 - INFO - Processing prediction 195/453 for brice turang
+2025-06-10 16:25:36,097 - INFO - Querying LLM...
+2025-06-10 16:25:37,682 - INFO - LLM response received
+2025-06-10 16:25:37,682 - INFO - LLM prediction for brice turang: Unknown, Agreement: Unknown
+2025-06-10 16:25:37,683 - INFO - Processing prediction 196/453 for william contreras
+2025-06-10 16:25:37,684 - INFO - Querying LLM...
+2025-06-10 16:25:42,959 - INFO - LLM response received
+2025-06-10 16:25:42,959 - INFO - LLM prediction for william contreras: Over, Agreement: Unknown
+2025-06-10 16:25:42,960 - INFO - Processing prediction 197/453 for jackson chourio
+2025-06-10 16:25:42,960 - INFO - Querying LLM...
+2025-06-10 16:25:52,519 - INFO - LLM response received
+2025-06-10 16:25:52,519 - INFO - LLM prediction for jackson chourio: Over, Agreement: False
+2025-06-10 16:25:52,520 - INFO - Processing prediction 198/453 for vladimir guerrero
+2025-06-10 16:25:52,521 - INFO - Querying LLM...
+2025-06-10 16:25:58,159 - INFO - LLM response received
+2025-06-10 16:25:58,159 - INFO - LLM prediction for vladimir guerrero: Over, Agreement: Unknown
+2025-06-10 16:25:58,159 - INFO - Processing prediction 199/453 for vladimir guerrero
+2025-06-10 16:25:58,160 - INFO - Querying LLM...
+2025-06-10 16:26:01,829 - INFO - LLM response received
+2025-06-10 16:26:01,829 - INFO - LLM prediction for vladimir guerrero: Over, Agreement: True
+2025-06-10 16:26:01,830 - INFO - Processing prediction 200/453 for vladimir guerrero
+2025-06-10 16:26:01,830 - INFO - Querying LLM...
+2025-06-10 16:26:08,980 - INFO - LLM response received
+2025-06-10 16:26:08,981 - INFO - LLM prediction for vladimir guerrero: Under, Agreement: False
+2025-06-10 16:26:08,982 - INFO - Processing prediction 201/453 for vladimir guerrero
+2025-06-10 16:26:08,982 - INFO - Querying LLM...
+2025-06-10 16:26:13,465 - INFO - LLM response received
+2025-06-10 16:26:13,465 - INFO - LLM prediction for vladimir guerrero: Over, Agreement: Unknown
+2025-06-10 16:26:13,465 - INFO - Processing prediction 202/453 for bo bichette
+2025-06-10 16:26:13,465 - INFO - Querying LLM...
+2025-06-10 16:26:19,883 - INFO - LLM response received
+2025-06-10 16:26:19,883 - INFO - LLM prediction for bo bichette: Over, Agreement: True
+2025-06-10 16:26:19,884 - INFO - Processing prediction 203/453 for bo bichette
+2025-06-10 16:26:19,884 - INFO - Querying LLM...
+2025-06-10 16:26:24,498 - INFO - LLM response received
+2025-06-10 16:26:24,498 - INFO - LLM prediction for bo bichette: Over, Agreement: False
+2025-06-10 16:26:24,498 - INFO - Processing prediction 204/453 for nolan gorman
+2025-06-10 16:26:24,498 - INFO - Querying LLM...
+2025-06-10 16:26:29,476 - INFO - LLM response received
+2025-06-10 16:26:29,477 - INFO - LLM prediction for nolan gorman: Under, Agreement: Unknown
+2025-06-10 16:26:29,477 - INFO - Processing prediction 205/453 for nolan gorman
+2025-06-10 16:26:29,478 - INFO - Querying LLM...
+2025-06-10 16:26:33,540 - INFO - LLM response received
+2025-06-10 16:26:33,540 - INFO - LLM prediction for nolan gorman: Over, Agreement: True
+2025-06-10 16:26:33,541 - INFO - Processing prediction 206/453 for ivan herrera
+2025-06-10 16:26:33,541 - INFO - Querying LLM...
+2025-06-10 16:26:41,696 - INFO - LLM response received
+2025-06-10 16:26:41,696 - INFO - LLM prediction for ivan herrera: Over, Agreement: True
+2025-06-10 16:26:41,697 - INFO - Processing prediction 207/453 for brendan donovan
+2025-06-10 16:26:41,697 - INFO - Querying LLM...
+2025-06-10 16:26:44,355 - INFO - LLM response received
+2025-06-10 16:26:44,356 - INFO - LLM prediction for brendan donovan: Over, Agreement: False
+2025-06-10 16:26:44,356 - INFO - Processing prediction 208/453 for brendan donovan
+2025-06-10 16:26:44,357 - INFO - Querying LLM...
+2025-06-10 16:26:48,855 - INFO - LLM response received
+2025-06-10 16:26:48,855 - INFO - LLM prediction for brendan donovan: Over, Agreement: Unknown
+2025-06-10 16:26:48,856 - INFO - Processing prediction 209/453 for alec burleson
+2025-06-10 16:26:48,857 - INFO - Querying LLM...
+2025-06-10 16:27:06,287 - INFO - LLM response received
+2025-06-10 16:27:06,287 - INFO - LLM prediction for alec burleson: Unknown, Agreement: Unknown
+2025-06-10 16:27:06,288 - INFO - Processing prediction 210/453 for willson contreras
+2025-06-10 16:27:06,289 - INFO - Querying LLM...
+2025-06-10 16:27:13,151 - INFO - LLM response received
+2025-06-10 16:27:13,152 - INFO - LLM prediction for willson contreras: Over, Agreement: True
+2025-06-10 16:27:13,153 - INFO - Processing prediction 211/453 for addison barger
+2025-06-10 16:27:13,154 - INFO - Querying LLM...
+2025-06-10 16:27:20,119 - INFO - LLM response received
+2025-06-10 16:27:20,120 - INFO - LLM prediction for addison barger: Under, Agreement: False
+2025-06-10 16:27:20,120 - INFO - Processing prediction 212/453 for nathan lukes
+2025-06-10 16:27:20,120 - INFO - Querying LLM...
+2025-06-10 16:28:15,498 - INFO - LLM response received
+2025-06-10 16:28:15,498 - INFO - LLM prediction for nathan lukes: Under, Agreement: False
+2025-06-10 16:28:15,499 - INFO - Processing prediction 213/453 for masyn winn
+2025-06-10 16:28:15,499 - INFO - Querying LLM...
+2025-06-10 16:28:20,761 - INFO - LLM response received
+2025-06-10 16:28:20,761 - INFO - LLM prediction for masyn winn: Over, Agreement: Unknown
+2025-06-10 16:28:20,762 - INFO - Processing prediction 214/453 for ernie clement
+2025-06-10 16:28:20,762 - INFO - Querying LLM...
+2025-06-10 16:28:28,526 - INFO - LLM response received
+2025-06-10 16:28:28,526 - INFO - LLM prediction for ernie clement: Unknown, Agreement: False
+2025-06-10 16:28:28,527 - INFO - Processing prediction 215/453 for victor scott
+2025-06-10 16:28:28,528 - INFO - Querying LLM...
+2025-06-10 16:28:35,170 - INFO - LLM response received
+2025-06-10 16:28:35,171 - INFO - LLM prediction for victor scott: Over, Agreement: False
+2025-06-10 16:28:35,172 - INFO - Processing prediction 216/453 for victor scott
+2025-06-10 16:28:35,172 - INFO - Querying LLM...
+2025-06-10 16:28:40,652 - INFO - LLM response received
+2025-06-10 16:28:40,653 - INFO - LLM prediction for victor scott: Over, Agreement: False
+2025-06-10 16:28:40,654 - INFO - Processing prediction 217/453 for andres gimenez
+2025-06-10 16:28:40,654 - INFO - Querying LLM...
+2025-06-10 16:28:47,427 - INFO - LLM response received
+2025-06-10 16:28:47,428 - INFO - LLM prediction for andres gimenez: Over, Agreement: False
+2025-06-10 16:28:47,429 - INFO - Processing prediction 218/453 for vladimir guerrero
+2025-06-10 16:28:47,429 - INFO - Querying LLM...
+2025-06-10 16:28:52,826 - INFO - LLM response received
+2025-06-10 16:28:52,826 - INFO - LLM prediction for vladimir guerrero: Over, Agreement: Unknown
+2025-06-10 16:28:52,827 - INFO - Processing prediction 219/453 for vladimir guerrero
+2025-06-10 16:28:52,827 - INFO - Querying LLM...
+2025-06-10 16:28:57,167 - INFO - LLM response received
+2025-06-10 16:28:57,168 - INFO - LLM prediction for vladimir guerrero: Over, Agreement: Unknown
+2025-06-10 16:28:57,168 - INFO - Processing prediction 220/453 for vladimir guerrero
+2025-06-10 16:28:57,169 - INFO - Querying LLM...
+2025-06-10 16:29:01,259 - INFO - LLM response received
+2025-06-10 16:29:01,260 - INFO - LLM prediction for vladimir guerrero: Over, Agreement: True
+2025-06-10 16:29:01,260 - INFO - Processing prediction 221/453 for vladimir guerrero
+2025-06-10 16:29:01,260 - INFO - Querying LLM...
+2025-06-10 16:29:07,791 - INFO - LLM response received
+2025-06-10 16:29:07,791 - INFO - LLM prediction for vladimir guerrero: Over, Agreement: False
+2025-06-10 16:29:07,792 - INFO - Processing prediction 222/453 for george springer
+2025-06-10 16:29:07,792 - INFO - Querying LLM...
+2025-06-10 16:29:12,256 - INFO - LLM response received
+2025-06-10 16:29:12,256 - INFO - LLM prediction for george springer: Unknown, Agreement: Unknown
+2025-06-10 16:29:12,257 - INFO - Processing prediction 223/453 for bo bichette
+2025-06-10 16:29:12,257 - INFO - Querying LLM...
+2025-06-10 16:29:18,529 - INFO - LLM response received
+2025-06-10 16:29:18,529 - INFO - LLM prediction for bo bichette: Over, Agreement: False
+2025-06-10 16:29:18,530 - INFO - Processing prediction 224/453 for nolan arenado
+2025-06-10 16:29:18,530 - INFO - Querying LLM...
+2025-06-10 16:29:20,865 - INFO - LLM response received
+2025-06-10 16:29:20,866 - INFO - LLM prediction for nolan arenado: Over, Agreement: Unknown
+2025-06-10 16:29:20,867 - INFO - Processing prediction 225/453 for nolan gorman
+2025-06-10 16:29:20,867 - INFO - Querying LLM...
+2025-06-10 16:29:23,136 - INFO - LLM response received
+2025-06-10 16:29:23,137 - INFO - LLM prediction for nolan gorman: Over, Agreement: Unknown
+2025-06-10 16:29:23,138 - INFO - Processing prediction 226/453 for ivan herrera
+2025-06-10 16:29:23,138 - INFO - Querying LLM...
+2025-06-10 16:29:30,707 - INFO - LLM response received
+2025-06-10 16:29:30,707 - INFO - LLM prediction for ivan herrera: Over, Agreement: False
+2025-06-10 16:29:30,708 - INFO - Processing prediction 227/453 for alejandro kirk
+2025-06-10 16:29:30,709 - INFO - Querying LLM...
+2025-06-10 16:29:35,859 - INFO - LLM response received
+2025-06-10 16:29:35,859 - INFO - LLM prediction for alejandro kirk: Over, Agreement: Unknown
+2025-06-10 16:29:35,859 - INFO - Processing prediction 228/453 for brendan donovan
+2025-06-10 16:29:35,859 - INFO - Querying LLM...
+2025-06-10 16:29:43,577 - INFO - LLM response received
+2025-06-10 16:29:43,577 - INFO - LLM prediction for brendan donovan: Over, Agreement: Unknown
+2025-06-10 16:29:43,578 - INFO - Processing prediction 229/453 for alec burleson
+2025-06-10 16:29:43,578 - INFO - Querying LLM...
+2025-06-10 16:29:48,817 - INFO - LLM response received
+2025-06-10 16:29:48,817 - INFO - LLM prediction for alec burleson: Over, Agreement: False
+2025-06-10 16:29:48,818 - INFO - Processing prediction 230/453 for willson contreras
+2025-06-10 16:29:48,819 - INFO - Querying LLM...
+2025-06-10 16:29:54,191 - INFO - LLM response received
+2025-06-10 16:29:54,192 - INFO - LLM prediction for willson contreras: Over, Agreement: True
+2025-06-10 16:29:54,192 - INFO - Processing prediction 231/453 for addison barger
+2025-06-10 16:29:54,193 - INFO - Querying LLM...
+2025-06-10 16:30:02,478 - INFO - LLM response received
+2025-06-10 16:30:02,479 - INFO - LLM prediction for addison barger: Over, Agreement: Unknown
+2025-06-10 16:30:02,480 - INFO - Processing prediction 232/453 for masyn winn
+2025-06-10 16:30:02,480 - INFO - Querying LLM...
+2025-06-10 16:30:06,549 - INFO - LLM response received
+2025-06-10 16:30:06,549 - INFO - LLM prediction for masyn winn: Over, Agreement: True
+2025-06-10 16:30:06,550 - INFO - Processing prediction 233/453 for victor scott
+2025-06-10 16:30:06,550 - INFO - Querying LLM...
+2025-06-10 16:30:14,001 - INFO - LLM response received
+2025-06-10 16:30:14,002 - INFO - LLM prediction for victor scott: Over, Agreement: False
+2025-06-10 16:30:14,003 - INFO - Processing prediction 234/453 for jose altuve
+2025-06-10 16:30:14,003 - INFO - Querying LLM...
+2025-06-10 16:30:19,855 - INFO - LLM response received
+2025-06-10 16:30:19,856 - INFO - LLM prediction for jose altuve: Over, Agreement: False
+2025-06-10 16:30:19,857 - INFO - Processing prediction 235/453 for yainer diaz
+2025-06-10 16:30:19,857 - INFO - Querying LLM...
+2025-06-10 16:30:26,213 - INFO - LLM response received
+2025-06-10 16:30:26,214 - INFO - LLM prediction for yainer diaz: Over, Agreement: False
+2025-06-10 16:30:26,215 - INFO - Processing prediction 236/453 for christian walker
+2025-06-10 16:30:26,215 - INFO - Querying LLM...
+2025-06-10 16:30:30,028 - INFO - LLM response received
+2025-06-10 16:30:30,028 - INFO - LLM prediction for christian walker: Over, Agreement: Unknown
+2025-06-10 16:30:30,029 - INFO - Processing prediction 237/453 for isaac paredes
+2025-06-10 16:30:30,030 - INFO - Querying LLM...
+2025-06-10 16:30:33,598 - INFO - LLM response received
+2025-06-10 16:30:33,598 - INFO - LLM prediction for isaac paredes: Under, Agreement: False
+2025-06-10 16:30:33,598 - INFO - Processing prediction 238/453 for tim elko
+2025-06-10 16:30:33,598 - INFO - Querying LLM...
+2025-06-10 16:30:41,424 - INFO - LLM response received
+2025-06-10 16:30:41,425 - INFO - LLM prediction for tim elko: Under, Agreement: Unknown
+2025-06-10 16:30:41,425 - INFO - Processing prediction 239/453 for tim elko
+2025-06-10 16:30:41,425 - INFO - Querying LLM...
+2025-06-10 16:30:47,841 - INFO - LLM response received
+2025-06-10 16:30:47,842 - INFO - LLM prediction for tim elko: Over, Agreement: False
+2025-06-10 16:30:47,843 - INFO - Processing prediction 240/453 for mike tauchman
+2025-06-10 16:30:47,843 - INFO - Querying LLM...
+2025-06-10 16:31:11,419 - INFO - LLM response received
+2025-06-10 16:31:11,419 - INFO - LLM prediction for mike tauchman: Over, Agreement: True
+2025-06-10 16:31:11,420 - INFO - Processing prediction 241/453 for jacob melton
+2025-06-10 16:31:11,421 - INFO - Querying LLM...
+2025-06-10 16:31:14,985 - INFO - LLM response received
+2025-06-10 16:31:14,986 - INFO - LLM prediction for jacob melton: Over, Agreement: True
+2025-06-10 16:31:14,987 - INFO - Processing prediction 242/453 for jacob melton
+2025-06-10 16:31:14,987 - INFO - Querying LLM...
+2025-06-10 16:31:18,503 - INFO - LLM response received
+2025-06-10 16:31:18,503 - INFO - LLM prediction for jacob melton: Under, Agreement: False
+2025-06-10 16:31:18,504 - INFO - Processing prediction 243/453 for jose altuve
+2025-06-10 16:31:18,504 - INFO - Querying LLM...
+2025-06-10 16:31:21,244 - INFO - LLM response received
+2025-06-10 16:31:21,245 - INFO - LLM prediction for jose altuve: Over, Agreement: False
+2025-06-10 16:31:21,247 - INFO - Processing prediction 244/453 for jeremy pena
+2025-06-10 16:31:21,247 - INFO - Querying LLM...
+2025-06-10 16:31:26,612 - INFO - LLM response received
+2025-06-10 16:31:26,613 - INFO - LLM prediction for jeremy pena: Unknown, Agreement: Unknown
+2025-06-10 16:31:26,614 - INFO - Processing prediction 245/453 for yainer diaz
+2025-06-10 16:31:26,614 - INFO - Querying LLM...
+2025-06-10 16:31:32,806 - INFO - LLM response received
+2025-06-10 16:31:32,807 - INFO - LLM prediction for yainer diaz: Under, Agreement: False
+2025-06-10 16:31:32,807 - INFO - Processing prediction 246/453 for christian walker
+2025-06-10 16:31:32,807 - INFO - Querying LLM...
+2025-06-10 16:31:35,668 - INFO - LLM response received
+2025-06-10 16:31:35,668 - INFO - LLM prediction for christian walker: Over, Agreement: False
+2025-06-10 16:31:35,669 - INFO - Processing prediction 247/453 for isaac paredes
+2025-06-10 16:31:35,669 - INFO - Querying LLM...
+2025-06-10 16:31:42,453 - INFO - LLM response received
+2025-06-10 16:31:42,453 - INFO - LLM prediction for isaac paredes: Over, Agreement: False
+2025-06-10 16:31:42,454 - INFO - Processing prediction 248/453 for cam smith
+2025-06-10 16:31:42,455 - INFO - Querying LLM...
+2025-06-10 16:32:00,873 - INFO - LLM response received
+2025-06-10 16:32:00,874 - INFO - LLM prediction for cam smith: Unknown, Agreement: Unknown
+2025-06-10 16:32:00,875 - INFO - Processing prediction 249/453 for chase meidroth
+2025-06-10 16:32:00,875 - INFO - Querying LLM...
+2025-06-10 16:32:03,916 - INFO - LLM response received
+2025-06-10 16:32:03,916 - INFO - LLM prediction for chase meidroth: Over, Agreement: False
+2025-06-10 16:32:03,917 - INFO - Processing prediction 250/453 for mike tauchman
+2025-06-10 16:32:03,917 - INFO - Querying LLM...
+2025-06-10 16:32:10,155 - INFO - LLM response received
+2025-06-10 16:32:10,155 - INFO - LLM prediction for mike tauchman: Over, Agreement: False
+2025-06-10 16:32:10,156 - INFO - Processing prediction 251/453 for jacob melton
+2025-06-10 16:32:10,156 - INFO - Querying LLM...
+2025-06-10 16:32:20,897 - INFO - LLM response received
+2025-06-10 16:32:20,897 - INFO - LLM prediction for jacob melton: Over, Agreement: False
+2025-06-10 16:32:20,898 - INFO - Processing prediction 252/453 for wilmer flores
+2025-06-10 16:32:20,898 - INFO - Querying LLM...
+2025-06-10 16:32:28,854 - INFO - LLM response received
+2025-06-10 16:32:28,854 - INFO - LLM prediction for wilmer flores: Unknown, Agreement: Unknown
+2025-06-10 16:32:28,855 - INFO - Processing prediction 253/453 for wilmer flores
+2025-06-10 16:32:28,855 - INFO - Querying LLM...
+2025-06-10 16:32:32,786 - INFO - LLM response received
+2025-06-10 16:32:32,787 - INFO - LLM prediction for wilmer flores: Under, Agreement: Unknown
+2025-06-10 16:32:32,787 - INFO - Processing prediction 254/453 for ryan mcmahon
+2025-06-10 16:32:32,787 - INFO - Querying LLM...
+2025-06-10 16:32:36,554 - INFO - LLM response received
+2025-06-10 16:32:36,554 - INFO - LLM prediction for ryan mcmahon: Unknown, Agreement: Unknown
+2025-06-10 16:32:36,555 - INFO - Processing prediction 255/453 for brenton doyle
+2025-06-10 16:32:36,556 - INFO - Querying LLM...
+2025-06-10 16:32:41,015 - INFO - LLM response received
+2025-06-10 16:32:41,018 - INFO - LLM prediction for brenton doyle: Over, Agreement: False
+2025-06-10 16:32:41,019 - INFO - Processing prediction 256/453 for casey schmitt
+2025-06-10 16:32:41,019 - INFO - Querying LLM...
+2025-06-10 16:32:47,816 - INFO - LLM response received
+2025-06-10 16:32:47,816 - INFO - LLM prediction for casey schmitt: Over, Agreement: True
+2025-06-10 16:32:47,817 - INFO - Processing prediction 257/453 for hunter goodman
+2025-06-10 16:32:47,817 - INFO - Querying LLM...
+2025-06-10 16:32:54,356 - INFO - LLM response received
+2025-06-10 16:32:54,356 - INFO - LLM prediction for hunter goodman: Over, Agreement: False
+2025-06-10 16:32:54,357 - INFO - Processing prediction 258/453 for tyler fitzgerald
+2025-06-10 16:32:54,358 - INFO - Querying LLM...
+2025-06-10 16:32:58,127 - INFO - LLM response received
+2025-06-10 16:32:58,127 - INFO - LLM prediction for tyler fitzgerald: Under, Agreement: False
+2025-06-10 16:32:58,128 - INFO - Processing prediction 259/453 for jung hoo lee
+2025-06-10 16:32:58,128 - INFO - Querying LLM...
+2025-06-10 16:33:04,689 - INFO - LLM response received
+2025-06-10 16:33:04,689 - INFO - LLM prediction for jung hoo lee: Over, Agreement: False
+2025-06-10 16:33:04,690 - INFO - Processing prediction 260/453 for jung hoo lee
+2025-06-10 16:33:04,690 - INFO - Querying LLM...
+2025-06-10 16:33:09,618 - INFO - LLM response received
+2025-06-10 16:33:09,619 - INFO - LLM prediction for jung hoo lee: Over, Agreement: False
+2025-06-10 16:33:09,620 - INFO - Processing prediction 261/453 for jordan beck
+2025-06-10 16:33:09,620 - INFO - Querying LLM...
+2025-06-10 16:33:15,766 - INFO - LLM response received
+2025-06-10 16:33:15,767 - INFO - LLM prediction for jordan beck: Under, Agreement: False
+2025-06-10 16:33:15,767 - INFO - Processing prediction 262/453 for jordan beck
+2025-06-10 16:33:15,767 - INFO - Querying LLM...
+2025-06-10 16:33:21,799 - INFO - LLM response received
+2025-06-10 16:33:21,800 - INFO - LLM prediction for jordan beck: Over, Agreement: False
+2025-06-10 16:33:21,801 - INFO - Processing prediction 263/453 for jerar encarnacion
+2025-06-10 16:33:21,801 - INFO - Querying LLM...
+2025-06-10 16:33:29,124 - INFO - LLM response received
+2025-06-10 16:33:29,125 - INFO - LLM prediction for jerar encarnacion: Over, Agreement: False
+2025-06-10 16:33:29,126 - INFO - Processing prediction 264/453 for jerar encarnacion
+2025-06-10 16:33:29,126 - INFO - Querying LLM...
+2025-06-10 16:33:33,364 - INFO - LLM response received
+2025-06-10 16:33:33,365 - INFO - LLM prediction for jerar encarnacion: Over, Agreement: False
+2025-06-10 16:33:33,366 - INFO - Processing prediction 265/453 for tyler freeman
+2025-06-10 16:33:33,366 - INFO - Querying LLM...
+2025-06-10 16:33:39,615 - INFO - LLM response received
+2025-06-10 16:33:39,616 - INFO - LLM prediction for tyler freeman: Over, Agreement: True
+2025-06-10 16:33:39,617 - INFO - Processing prediction 266/453 for mike trout
+2025-06-10 16:33:39,617 - INFO - Querying LLM...
+2025-06-10 16:33:45,380 - INFO - LLM response received
+2025-06-10 16:33:45,382 - INFO - LLM prediction for mike trout: Over, Agreement: False
+2025-06-10 16:33:45,383 - INFO - Processing prediction 267/453 for taylor ward
+2025-06-10 16:33:45,383 - INFO - Querying LLM...
+2025-06-10 16:33:54,666 - INFO - LLM response received
+2025-06-10 16:33:54,666 - INFO - LLM prediction for taylor ward: Over, Agreement: True
+2025-06-10 16:33:54,667 - INFO - Processing prediction 268/453 for jo adell
+2025-06-10 16:33:54,668 - INFO - Querying LLM...
+2025-06-10 16:34:00,308 - INFO - LLM response received
+2025-06-10 16:34:00,309 - INFO - LLM prediction for jo adell: Over, Agreement: Unknown
+2025-06-10 16:34:00,311 - INFO - Processing prediction 269/453 for luis rengifo
+2025-06-10 16:34:00,311 - INFO - Querying LLM...
+2025-06-10 16:34:05,686 - INFO - LLM response received
+2025-06-10 16:34:05,687 - INFO - LLM prediction for luis rengifo: Over, Agreement: False
+2025-06-10 16:34:05,687 - INFO - Processing prediction 270/453 for logan o'hoppe
+2025-06-10 16:34:05,688 - INFO - Querying LLM...
+2025-06-10 16:34:33,941 - INFO - LLM response received
+2025-06-10 16:34:33,942 - INFO - LLM prediction for logan o'hoppe: Over, Agreement: Unknown
+2025-06-10 16:34:33,942 - INFO - Processing prediction 271/453 for zach neto
+2025-06-10 16:34:33,942 - INFO - Querying LLM...
+2025-06-10 16:34:39,342 - INFO - LLM response received
+2025-06-10 16:34:39,342 - INFO - LLM prediction for zach neto: Under, Agreement: False
+2025-06-10 16:34:39,343 - INFO - Processing prediction 272/453 for nolan schanuel
+2025-06-10 16:34:39,344 - INFO - Querying LLM...
+2025-06-10 16:34:45,266 - INFO - LLM response received
+2025-06-10 16:34:45,266 - INFO - LLM prediction for nolan schanuel: Over, Agreement: False
+2025-06-10 16:34:45,267 - INFO - Processing prediction 273/453 for mike trout
+2025-06-10 16:34:45,267 - INFO - Querying LLM...
+2025-06-10 16:34:52,020 - INFO - LLM response received
+2025-06-10 16:34:52,021 - INFO - LLM prediction for mike trout: Over, Agreement: False
+2025-06-10 16:34:52,021 - INFO - Processing prediction 274/453 for taylor ward
+2025-06-10 16:34:52,021 - INFO - Querying LLM...
+2025-06-10 16:34:56,982 - INFO - LLM response received
+2025-06-10 16:34:56,983 - INFO - LLM prediction for taylor ward: Under, Agreement: Unknown
+2025-06-10 16:34:56,984 - INFO - Processing prediction 275/453 for jo adell
+2025-06-10 16:34:56,984 - INFO - Querying LLM...
+2025-06-10 16:35:06,839 - INFO - LLM response received
+2025-06-10 16:35:06,840 - INFO - LLM prediction for jo adell: Over, Agreement: True
+2025-06-10 16:35:06,840 - INFO - Processing prediction 276/453 for zach neto
+2025-06-10 16:35:06,840 - INFO - Querying LLM...
+2025-06-10 16:35:11,243 - INFO - LLM response received
+2025-06-10 16:35:11,243 - INFO - LLM prediction for zach neto: Over, Agreement: False
+2025-06-10 16:35:11,244 - INFO - Processing prediction 277/453 for nolan schanuel
+2025-06-10 16:35:11,244 - INFO - Querying LLM...
+2025-06-10 16:35:18,140 - INFO - LLM response received
+2025-06-10 16:35:18,141 - INFO - LLM prediction for nolan schanuel: Under, Agreement: False
+2025-06-10 16:35:18,141 - INFO - Processing prediction 278/453 for freddie freeman
+2025-06-10 16:35:18,141 - INFO - Querying LLM...
+2025-06-10 16:35:37,387 - INFO - LLM response received
+2025-06-10 16:35:37,387 - INFO - LLM prediction for freddie freeman: Over, Agreement: False
+2025-06-10 16:35:37,388 - INFO - Processing prediction 279/453 for max muncy
+2025-06-10 16:35:37,388 - INFO - Querying LLM...
+2025-06-10 16:35:45,789 - INFO - LLM response received
+2025-06-10 16:35:45,789 - INFO - LLM prediction for max muncy: Over, Agreement: False
+2025-06-10 16:35:45,790 - INFO - Processing prediction 280/453 for max muncy
+2025-06-10 16:35:45,790 - INFO - Querying LLM...
+2025-06-10 16:35:49,826 - INFO - LLM response received
+2025-06-10 16:35:49,826 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:35:49,827 - INFO - Processing prediction 281/453 for max muncy
+2025-06-10 16:35:49,827 - INFO - Querying LLM...
+2025-06-10 16:35:52,121 - INFO - LLM response received
+2025-06-10 16:35:52,121 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:35:52,122 - INFO - Processing prediction 282/453 for max muncy
+2025-06-10 16:35:52,123 - INFO - Querying LLM...
+2025-06-10 16:35:55,775 - INFO - LLM response received
+2025-06-10 16:35:55,775 - INFO - LLM prediction for max muncy: Over, Agreement: False
+2025-06-10 16:35:55,776 - INFO - Processing prediction 283/453 for max muncy
+2025-06-10 16:35:55,777 - INFO - Querying LLM...
+2025-06-10 16:36:00,331 - INFO - LLM response received
+2025-06-10 16:36:00,331 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:36:00,332 - INFO - Processing prediction 284/453 for max muncy
+2025-06-10 16:36:00,332 - INFO - Querying LLM...
+2025-06-10 16:36:04,780 - INFO - LLM response received
+2025-06-10 16:36:04,781 - INFO - LLM prediction for max muncy: Over, Agreement: False
+2025-06-10 16:36:04,781 - INFO - Processing prediction 285/453 for max muncy
+2025-06-10 16:36:04,782 - INFO - Querying LLM...
+2025-06-10 16:36:11,243 - INFO - LLM response received
+2025-06-10 16:36:11,244 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:36:11,245 - INFO - Processing prediction 286/453 for max muncy
+2025-06-10 16:36:11,246 - INFO - Querying LLM...
+2025-06-10 16:36:17,173 - INFO - LLM response received
+2025-06-10 16:36:17,174 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:36:17,174 - INFO - Processing prediction 287/453 for max muncy
+2025-06-10 16:36:17,175 - INFO - Querying LLM...
+2025-06-10 16:36:24,050 - INFO - LLM response received
+2025-06-10 16:36:24,050 - INFO - LLM prediction for max muncy: Over, Agreement: False
+2025-06-10 16:36:24,051 - INFO - Processing prediction 288/453 for max muncy
+2025-06-10 16:36:24,051 - INFO - Querying LLM...
+2025-06-10 16:36:29,559 - INFO - LLM response received
+2025-06-10 16:36:29,560 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:36:29,560 - INFO - Processing prediction 289/453 for max muncy
+2025-06-10 16:36:29,560 - INFO - Querying LLM...
+2025-06-10 16:36:39,714 - INFO - LLM response received
+2025-06-10 16:36:39,714 - INFO - LLM prediction for max muncy: Unknown, Agreement: Unknown
+2025-06-10 16:36:39,715 - INFO - Processing prediction 290/453 for max muncy
+2025-06-10 16:36:39,715 - INFO - Querying LLM...
+2025-06-10 16:36:41,880 - INFO - LLM response received
+2025-06-10 16:36:41,880 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:36:41,881 - INFO - Processing prediction 291/453 for max muncy
+2025-06-10 16:36:41,881 - INFO - Querying LLM...
+2025-06-10 16:36:48,153 - INFO - LLM response received
+2025-06-10 16:36:48,154 - INFO - LLM prediction for max muncy: Unknown, Agreement: False
+2025-06-10 16:36:48,155 - INFO - Processing prediction 292/453 for max muncy
+2025-06-10 16:36:48,155 - INFO - Querying LLM...
+2025-06-10 16:36:54,029 - INFO - LLM response received
+2025-06-10 16:36:54,030 - INFO - LLM prediction for max muncy: Under, Agreement: Unknown
+2025-06-10 16:36:54,031 - INFO - Processing prediction 293/453 for max muncy
+2025-06-10 16:36:54,031 - INFO - Querying LLM...
+2025-06-10 16:37:05,990 - INFO - LLM response received
+2025-06-10 16:37:05,991 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:37:05,991 - INFO - Processing prediction 294/453 for max muncy
+2025-06-10 16:37:05,991 - INFO - Querying LLM...
+2025-06-10 16:37:10,541 - INFO - LLM response received
+2025-06-10 16:37:10,541 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:37:10,542 - INFO - Processing prediction 295/453 for max muncy
+2025-06-10 16:37:10,543 - INFO - Querying LLM...
+2025-06-10 16:37:15,816 - INFO - LLM response received
+2025-06-10 16:37:15,816 - INFO - LLM prediction for max muncy: Unknown, Agreement: Unknown
+2025-06-10 16:37:15,817 - INFO - Processing prediction 296/453 for max muncy
+2025-06-10 16:37:15,817 - INFO - Querying LLM...
+2025-06-10 16:37:19,258 - INFO - LLM response received
+2025-06-10 16:37:19,258 - INFO - LLM prediction for max muncy: Over, Agreement: False
+2025-06-10 16:37:19,259 - INFO - Processing prediction 297/453 for max muncy
+2025-06-10 16:37:19,259 - INFO - Querying LLM...
+2025-06-10 16:37:24,043 - INFO - LLM response received
+2025-06-10 16:37:24,043 - INFO - LLM prediction for max muncy: Under, Agreement: Unknown
+2025-06-10 16:37:24,044 - INFO - Processing prediction 298/453 for max muncy
+2025-06-10 16:37:24,044 - INFO - Querying LLM...
+2025-06-10 16:37:31,241 - INFO - LLM response received
+2025-06-10 16:37:31,242 - INFO - LLM prediction for max muncy: Under, Agreement: True
+2025-06-10 16:37:31,243 - INFO - Processing prediction 299/453 for max muncy
+2025-06-10 16:37:31,243 - INFO - Querying LLM...
+2025-06-10 16:37:36,310 - INFO - LLM response received
+2025-06-10 16:37:36,311 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:37:36,312 - INFO - Processing prediction 300/453 for max muncy
+2025-06-10 16:37:36,312 - INFO - Querying LLM...
+2025-06-10 16:37:40,620 - INFO - LLM response received
+2025-06-10 16:37:40,620 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:37:40,621 - INFO - Processing prediction 301/453 for max muncy
+2025-06-10 16:37:40,621 - INFO - Querying LLM...
+2025-06-10 16:37:47,224 - INFO - LLM response received
+2025-06-10 16:37:47,225 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:37:47,225 - INFO - Processing prediction 302/453 for max muncy
+2025-06-10 16:37:47,225 - INFO - Querying LLM...
+2025-06-10 16:37:50,984 - INFO - LLM response received
+2025-06-10 16:37:50,984 - INFO - LLM prediction for max muncy: Under, Agreement: Unknown
+2025-06-10 16:37:50,985 - INFO - Processing prediction 303/453 for max muncy
+2025-06-10 16:37:50,985 - INFO - Querying LLM...
+2025-06-10 16:37:54,557 - INFO - LLM response received
+2025-06-10 16:37:54,557 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:37:54,558 - INFO - Processing prediction 304/453 for max muncy
+2025-06-10 16:37:54,558 - INFO - Querying LLM...
+2025-06-10 16:37:59,156 - INFO - LLM response received
+2025-06-10 16:37:59,156 - INFO - LLM prediction for max muncy: Over, Agreement: False
+2025-06-10 16:37:59,157 - INFO - Processing prediction 305/453 for max muncy
+2025-06-10 16:37:59,158 - INFO - Querying LLM...
+2025-06-10 16:38:05,094 - INFO - LLM response received
+2025-06-10 16:38:05,095 - INFO - LLM prediction for max muncy: Over, Agreement: Unknown
+2025-06-10 16:38:05,096 - INFO - Processing prediction 306/453 for max muncy
+2025-06-10 16:38:05,096 - INFO - Querying LLM...
+2025-06-10 16:38:10,916 - INFO - LLM response received
+2025-06-10 16:38:10,917 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:38:10,918 - INFO - Processing prediction 307/453 for max muncy
+2025-06-10 16:38:10,918 - INFO - Querying LLM...
+2025-06-10 16:39:10,927 - ERROR - LLM query timed out
+2025-06-10 16:39:10,927 - INFO - LLM prediction for max muncy: Unknown, Agreement: Unknown
+2025-06-10 16:39:10,928 - INFO - Processing prediction 308/453 for max muncy
+2025-06-10 16:39:10,928 - INFO - Querying LLM...
+2025-06-10 16:39:14,450 - INFO - LLM response received
+2025-06-10 16:39:14,451 - INFO - LLM prediction for max muncy: Unknown, Agreement: Unknown
+2025-06-10 16:39:14,451 - INFO - Processing prediction 309/453 for max muncy
+2025-06-10 16:39:14,452 - INFO - Querying LLM...
+2025-06-10 16:39:18,186 - INFO - LLM response received
+2025-06-10 16:39:18,187 - INFO - LLM prediction for max muncy: Over, Agreement: Unknown
+2025-06-10 16:39:18,188 - INFO - Processing prediction 310/453 for max muncy
+2025-06-10 16:39:18,188 - INFO - Querying LLM...
+2025-06-10 16:39:30,663 - INFO - LLM response received
+2025-06-10 16:39:30,664 - INFO - LLM prediction for max muncy: Over, Agreement: False
+2025-06-10 16:39:30,664 - INFO - Processing prediction 311/453 for max muncy
+2025-06-10 16:39:30,664 - INFO - Querying LLM...
+2025-06-10 16:39:36,909 - INFO - LLM response received
+2025-06-10 16:39:36,910 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:39:36,910 - INFO - Processing prediction 312/453 for max muncy
+2025-06-10 16:39:36,911 - INFO - Querying LLM...
+2025-06-10 16:39:46,382 - INFO - LLM response received
+2025-06-10 16:39:46,383 - INFO - LLM prediction for max muncy: Over, Agreement: Unknown
+2025-06-10 16:39:46,384 - INFO - Processing prediction 313/453 for max muncy
+2025-06-10 16:39:46,384 - INFO - Querying LLM...
+2025-06-10 16:39:52,723 - INFO - LLM response received
+2025-06-10 16:39:52,723 - INFO - LLM prediction for max muncy: Unknown, Agreement: Unknown
+2025-06-10 16:39:52,724 - INFO - Processing prediction 314/453 for max muncy
+2025-06-10 16:39:52,724 - INFO - Querying LLM...
+2025-06-10 16:39:55,900 - INFO - LLM response received
+2025-06-10 16:39:55,901 - INFO - LLM prediction for max muncy: Over, Agreement: Unknown
+2025-06-10 16:39:55,902 - INFO - Processing prediction 315/453 for max muncy
+2025-06-10 16:39:55,902 - INFO - Querying LLM...
+2025-06-10 16:40:03,475 - INFO - LLM response received
+2025-06-10 16:40:03,476 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:40:03,476 - INFO - Processing prediction 316/453 for max muncy
+2025-06-10 16:40:03,477 - INFO - Querying LLM...
+2025-06-10 16:40:06,259 - INFO - LLM response received
+2025-06-10 16:40:06,260 - INFO - LLM prediction for max muncy: Under, Agreement: Unknown
+2025-06-10 16:40:06,261 - INFO - Processing prediction 317/453 for max muncy
+2025-06-10 16:40:06,261 - INFO - Querying LLM...
+2025-06-10 16:40:18,156 - INFO - LLM response received
+2025-06-10 16:40:18,156 - INFO - LLM prediction for max muncy: Unknown, Agreement: True
+2025-06-10 16:40:18,157 - INFO - Processing prediction 318/453 for max muncy
+2025-06-10 16:40:18,157 - INFO - Querying LLM...
+2025-06-10 16:40:26,248 - INFO - LLM response received
+2025-06-10 16:40:26,248 - INFO - LLM prediction for max muncy: Over, Agreement: Unknown
+2025-06-10 16:40:26,249 - INFO - Processing prediction 319/453 for max muncy
+2025-06-10 16:40:26,249 - INFO - Querying LLM...
+2025-06-10 16:40:30,072 - INFO - LLM response received
+2025-06-10 16:40:30,073 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:40:30,074 - INFO - Processing prediction 320/453 for max muncy
+2025-06-10 16:40:30,074 - INFO - Querying LLM...
+2025-06-10 16:40:35,059 - INFO - LLM response received
+2025-06-10 16:40:35,059 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:40:35,060 - INFO - Processing prediction 321/453 for max muncy
+2025-06-10 16:40:35,060 - INFO - Querying LLM...
+2025-06-10 16:40:39,967 - INFO - LLM response received
+2025-06-10 16:40:39,968 - INFO - LLM prediction for max muncy: Over, Agreement: True
+2025-06-10 16:40:39,969 - INFO - Processing prediction 322/453 for max muncy
+2025-06-10 16:40:39,969 - INFO - Querying LLM...
+2025-06-10 16:40:45,352 - INFO - LLM response received
+2025-06-10 16:40:45,352 - INFO - LLM prediction for max muncy: Over, Agreement: Unknown
+2025-06-10 16:40:45,353 - INFO - Processing prediction 323/453 for max muncy
+2025-06-10 16:40:45,353 - INFO - Querying LLM...
+2025-06-10 16:40:51,204 - INFO - LLM response received
+2025-06-10 16:40:51,204 - INFO - LLM prediction for max muncy: Under, Agreement: False
+2025-06-10 16:40:51,205 - INFO - Processing prediction 324/453 for max muncy
+2025-06-10 16:40:51,205 - INFO - Querying LLM...
+2025-06-10 16:40:54,883 - INFO - LLM response received
+2025-06-10 16:40:54,883 - INFO - LLM prediction for max muncy: Over, Agreement: Unknown
+2025-06-10 16:40:54,884 - INFO - Processing prediction 325/453 for max muncy
+2025-06-10 16:40:54,884 - INFO - Querying LLM...
+2025-06-10 16:41:01,566 - INFO - LLM response received
+2025-06-10 16:41:01,567 - INFO - LLM prediction for max muncy: Over, Agreement: Unknown
+2025-06-10 16:41:01,567 - INFO - Processing prediction 326/453 for max muncy
+2025-06-10 16:41:01,568 - INFO - Querying LLM...
+2025-06-10 16:41:05,238 - INFO - LLM response received
+2025-06-10 16:41:05,239 - INFO - LLM prediction for max muncy: Over, Agreement: Unknown
+2025-06-10 16:41:05,240 - INFO - Processing prediction 327/453 for manny machado
+2025-06-10 16:41:05,240 - INFO - Querying LLM...
+2025-06-10 16:41:11,143 - INFO - LLM response received
+2025-06-10 16:41:11,143 - INFO - LLM prediction for manny machado: Under, Agreement: False
+2025-06-10 16:41:11,144 - INFO - Processing prediction 328/453 for mookie betts
+2025-06-10 16:41:11,144 - INFO - Querying LLM...
+2025-06-10 16:41:18,402 - INFO - LLM response received
+2025-06-10 16:41:18,402 - INFO - LLM prediction for mookie betts: Over, Agreement: True
+2025-06-10 16:41:18,402 - INFO - Processing prediction 329/453 for xander bogaerts
+2025-06-10 16:41:18,403 - INFO - Querying LLM...
+2025-06-10 16:41:33,908 - INFO - LLM response received
+2025-06-10 16:41:33,908 - INFO - LLM prediction for xander bogaerts: Under, Agreement: Unknown
+2025-06-10 16:41:33,908 - INFO - Processing prediction 330/453 for fernando tatis
+2025-06-10 16:41:33,909 - INFO - Querying LLM...
+2025-06-10 16:41:39,010 - INFO - LLM response received
+2025-06-10 16:41:39,010 - INFO - LLM prediction for fernando tatis: Unknown, Agreement: Unknown
+2025-06-10 16:41:39,011 - INFO - Processing prediction 331/453 for shohei ohtani
+2025-06-10 16:41:39,011 - INFO - Querying LLM...
+2025-06-10 16:41:42,678 - INFO - LLM response received
+2025-06-10 16:41:42,679 - INFO - LLM prediction for shohei ohtani: Over, Agreement: False
+2025-06-10 16:41:42,679 - INFO - Processing prediction 332/453 for teoscar hernandez
+2025-06-10 16:41:42,680 - INFO - Querying LLM...
+2025-06-10 16:41:47,567 - INFO - LLM response received
+2025-06-10 16:41:47,568 - INFO - LLM prediction for teoscar hernandez: Over, Agreement: False
+2025-06-10 16:41:47,568 - INFO - Processing prediction 333/453 for tyler wade
+2025-06-10 16:41:47,569 - INFO - Querying LLM...
+2025-06-10 16:41:54,276 - INFO - LLM response received
+2025-06-10 16:41:54,277 - INFO - LLM prediction for tyler wade: Over, Agreement: Unknown
+2025-06-10 16:41:54,278 - INFO - Processing prediction 334/453 for tyler wade
+2025-06-10 16:41:54,278 - INFO - Querying LLM...
+2025-06-10 16:41:59,231 - INFO - LLM response received
+2025-06-10 16:41:59,232 - INFO - LLM prediction for tyler wade: Over, Agreement: Unknown
+2025-06-10 16:41:59,233 - INFO - Processing prediction 335/453 for jackson merrill
+2025-06-10 16:41:59,233 - INFO - Querying LLM...
+2025-06-10 16:42:02,160 - INFO - LLM response received
+2025-06-10 16:42:02,160 - INFO - LLM prediction for jackson merrill: Over, Agreement: Unknown
+2025-06-10 16:42:02,160 - INFO - Processing prediction 336/453 for hyeseong kim
+2025-06-10 16:42:02,161 - INFO - Querying LLM...
+2025-06-10 16:42:07,611 - INFO - LLM response received
+2025-06-10 16:42:07,611 - INFO - LLM prediction for hyeseong kim: Over, Agreement: False
+2025-06-10 16:42:07,612 - INFO - Processing prediction 337/453 for hyeseong kim
+2025-06-10 16:42:07,613 - INFO - Querying LLM...
+2025-06-10 16:42:12,334 - INFO - LLM response received
+2025-06-10 16:42:12,334 - INFO - LLM prediction for hyeseong kim: Over, Agreement: Unknown
+2025-06-10 16:42:12,335 - INFO - Processing prediction 338/453 for lourdes gurriel
+2025-06-10 16:42:12,335 - INFO - Querying LLM...
+2025-06-10 16:42:18,445 - INFO - LLM response received
+2025-06-10 16:42:18,446 - INFO - LLM prediction for lourdes gurriel: Over, Agreement: False
+2025-06-10 16:42:18,447 - INFO - Processing prediction 339/453 for ketel marte
+2025-06-10 16:42:18,447 - INFO - Querying LLM...
+2025-06-10 16:42:24,926 - INFO - LLM response received
+2025-06-10 16:42:24,926 - INFO - LLM prediction for ketel marte: Over, Agreement: False
+2025-06-10 16:42:24,927 - INFO - Processing prediction 340/453 for eugenio suarez
+2025-06-10 16:42:24,927 - INFO - Querying LLM...
+2025-06-10 16:42:32,839 - INFO - LLM response received
+2025-06-10 16:42:32,840 - INFO - LLM prediction for eugenio suarez: Over, Agreement: False
+2025-06-10 16:42:32,841 - INFO - Processing prediction 341/453 for geraldo perdomo
+2025-06-10 16:42:32,842 - INFO - Querying LLM...
+2025-06-10 16:42:42,048 - INFO - LLM response received
+2025-06-10 16:42:42,049 - INFO - LLM prediction for geraldo perdomo: Over, Agreement: Unknown
+2025-06-10 16:42:42,050 - INFO - Processing prediction 342/453 for alek thomas
+2025-06-10 16:42:42,050 - INFO - Querying LLM...
+2025-06-10 16:42:53,104 - INFO - LLM response received
+2025-06-10 16:42:53,104 - INFO - LLM prediction for alek thomas: Over, Agreement: Unknown
+2025-06-10 16:42:53,106 - INFO - Processing prediction 343/453 for jose herrera
+2025-06-10 16:42:53,106 - INFO - Querying LLM...
+2025-06-10 16:42:58,493 - INFO - LLM response received
+2025-06-10 16:42:58,493 - INFO - LLM prediction for jose herrera: Over, Agreement: True
+2025-06-10 16:42:58,494 - INFO - Processing prediction 344/453 for jose herrera
+2025-06-10 16:42:58,495 - INFO - Querying LLM...
+2025-06-10 16:43:07,155 - INFO - LLM response received
+2025-06-10 16:43:07,156 - INFO - LLM prediction for jose herrera: Unknown, Agreement: Unknown
+2025-06-10 16:43:07,157 - INFO - Processing prediction 345/453 for randy arozarena
+2025-06-10 16:43:07,157 - INFO - Querying LLM...
+2025-06-10 16:43:14,676 - INFO - LLM response received
+2025-06-10 16:43:14,676 - INFO - LLM prediction for randy arozarena: Over, Agreement: True
+2025-06-10 16:43:14,677 - INFO - Processing prediction 346/453 for josh naylor
+2025-06-10 16:43:14,677 - INFO - Querying LLM...
+2025-06-10 16:43:22,638 - INFO - LLM response received
+2025-06-10 16:43:22,639 - INFO - LLM prediction for josh naylor: Under, Agreement: False
+2025-06-10 16:43:22,640 - INFO - Processing prediction 347/453 for miles mastrobuoni
+2025-06-10 16:43:22,641 - INFO - Querying LLM...
+2025-06-10 16:43:29,304 - INFO - LLM response received
+2025-06-10 16:43:29,305 - INFO - LLM prediction for miles mastrobuoni: Over, Agreement: False
+2025-06-10 16:43:29,306 - INFO - Processing prediction 348/453 for freddie freeman
+2025-06-10 16:43:29,306 - INFO - Querying LLM...
+2025-06-10 16:43:37,369 - INFO - LLM response received
+2025-06-10 16:43:37,369 - INFO - LLM prediction for freddie freeman: Over, Agreement: False
+2025-06-10 16:43:37,370 - INFO - Processing prediction 349/453 for manny machado
+2025-06-10 16:43:37,370 - INFO - Querying LLM...
+2025-06-10 16:43:44,186 - INFO - LLM response received
+2025-06-10 16:43:44,187 - INFO - LLM prediction for manny machado: Over, Agreement: True
+2025-06-10 16:43:44,188 - INFO - Processing prediction 350/453 for mookie betts
+2025-06-10 16:43:44,188 - INFO - Querying LLM...
+2025-06-10 16:43:48,808 - INFO - LLM response received
+2025-06-10 16:43:48,810 - INFO - LLM prediction for mookie betts: Under, Agreement: Unknown
+2025-06-10 16:43:48,811 - INFO - Processing prediction 351/453 for fernando tatis
+2025-06-10 16:43:48,812 - INFO - Querying LLM...
+2025-06-10 16:43:51,799 - INFO - LLM response received
+2025-06-10 16:43:51,800 - INFO - LLM prediction for fernando tatis: Unknown, Agreement: False
+2025-06-10 16:43:51,801 - INFO - Processing prediction 352/453 for shohei ohtani
+2025-06-10 16:43:51,801 - INFO - Querying LLM...
+2025-06-10 16:43:59,815 - INFO - LLM response received
+2025-06-10 16:43:59,816 - INFO - LLM prediction for shohei ohtani: Over, Agreement: False
+2025-06-10 16:43:59,816 - INFO - Processing prediction 353/453 for jackson merrill
+2025-06-10 16:43:59,816 - INFO - Querying LLM...
+2025-06-10 16:44:10,505 - INFO - LLM response received
+2025-06-10 16:44:10,506 - INFO - LLM prediction for jackson merrill: Over, Agreement: False
+2025-06-10 16:44:10,507 - INFO - Processing prediction 354/453 for julio rodriguez
+2025-06-10 16:44:10,507 - INFO - Querying LLM...
+2025-06-10 16:44:14,387 - INFO - LLM response received
+2025-06-10 16:44:14,387 - INFO - LLM prediction for julio rodriguez: Over, Agreement: False
+2025-06-10 16:44:14,388 - INFO - Processing prediction 355/453 for jp crawford
+2025-06-10 16:44:14,388 - INFO - Querying LLM...
+2025-06-10 16:44:19,201 - INFO - LLM response received
+2025-06-10 16:44:19,202 - INFO - LLM prediction for jp crawford: Over, Agreement: Unknown
+2025-06-10 16:44:19,203 - INFO - Processing prediction 356/453 for cal raleigh
+2025-06-10 16:44:19,204 - INFO - Querying LLM...
+2025-06-10 16:44:24,971 - INFO - LLM response received
+2025-06-10 16:44:24,971 - INFO - LLM prediction for cal raleigh: Unknown, Agreement: False
+2025-06-10 16:44:24,973 - INFO - Processing prediction 357/453 for lourdes gurriel
+2025-06-10 16:44:24,974 - INFO - Querying LLM...
+2025-06-10 16:44:29,779 - INFO - LLM response received
+2025-06-10 16:44:29,780 - INFO - LLM prediction for lourdes gurriel: Under, Agreement: Unknown
+2025-06-10 16:44:29,781 - INFO - Processing prediction 358/453 for corbin carroll
+2025-06-10 16:44:29,781 - INFO - Querying LLM...
+2025-06-10 16:44:34,888 - INFO - LLM response received
+2025-06-10 16:44:34,888 - INFO - LLM prediction for corbin carroll: Over, Agreement: False
+2025-06-10 16:44:34,889 - INFO - Processing prediction 359/453 for ketel marte
+2025-06-10 16:44:34,889 - INFO - Querying LLM...
+2025-06-10 16:44:40,188 - INFO - LLM response received
+2025-06-10 16:44:40,188 - INFO - LLM prediction for ketel marte: Unknown, Agreement: Unknown
+2025-06-10 16:44:40,189 - INFO - Processing prediction 360/453 for eugenio suarez
+2025-06-10 16:44:40,189 - INFO - Querying LLM...
+2025-06-10 16:44:45,210 - INFO - LLM response received
+2025-06-10 16:44:45,210 - INFO - LLM prediction for eugenio suarez: Over, Agreement: False
+2025-06-10 16:44:45,211 - INFO - Processing prediction 361/453 for jorge polanco
+2025-06-10 16:44:45,212 - INFO - Querying LLM...
+2025-06-10 16:44:51,045 - INFO - LLM response received
+2025-06-10 16:44:51,046 - INFO - LLM prediction for jorge polanco: Over, Agreement: False
+2025-06-10 16:44:51,046 - INFO - Processing prediction 362/453 for geraldo perdomo
+2025-06-10 16:44:51,046 - INFO - Querying LLM...
+2025-06-10 16:45:01,214 - INFO - LLM response received
+2025-06-10 16:45:01,215 - INFO - LLM prediction for geraldo perdomo: Over, Agreement: Unknown
+2025-06-10 16:45:01,215 - INFO - Processing prediction 363/453 for randy arozarena
+2025-06-10 16:45:01,215 - INFO - Querying LLM...
+2025-06-10 16:45:15,971 - INFO - LLM response received
+2025-06-10 16:45:15,971 - INFO - LLM prediction for randy arozarena: Over, Agreement: Unknown
+2025-06-10 16:45:15,974 - INFO - Processing prediction 364/453 for josh naylor
+2025-06-10 16:45:15,975 - INFO - Querying LLM...
+2025-06-10 16:45:25,991 - INFO - LLM response received
+2025-06-10 16:45:25,991 - INFO - LLM prediction for josh naylor: Over, Agreement: False
+2025-06-10 16:45:25,992 - INFO - Processing prediction 365/453 for max fried
+2025-06-10 16:45:25,992 - INFO - Querying LLM...
+2025-06-10 16:45:30,654 - INFO - LLM response received
+2025-06-10 16:45:30,655 - INFO - LLM prediction for max fried: Over, Agreement: Unknown
+2025-06-10 16:45:30,656 - INFO - Processing prediction 366/453 for cade povich
+2025-06-10 16:45:30,656 - INFO - Querying LLM...
+2025-06-10 16:45:36,339 - INFO - LLM response received
+2025-06-10 16:45:36,339 - INFO - LLM prediction for cade povich: Over, Agreement: False
+2025-06-10 16:45:36,340 - INFO - Processing prediction 367/453 for cade povich
+2025-06-10 16:45:36,341 - INFO - Querying LLM...
+2025-06-10 16:45:41,260 - INFO - LLM response received
+2025-06-10 16:45:41,260 - INFO - LLM prediction for cade povich: Unknown, Agreement: False
+2025-06-10 16:45:41,261 - INFO - Processing prediction 368/453 for cade povich
+2025-06-10 16:45:41,261 - INFO - Querying LLM...
+2025-06-10 16:45:47,066 - INFO - LLM response received
+2025-06-10 16:45:47,066 - INFO - LLM prediction for cade povich: Under, Agreement: False
+2025-06-10 16:45:47,067 - INFO - Processing prediction 369/453 for andrew abbott
+2025-06-10 16:45:47,068 - INFO - Querying LLM...
+2025-06-10 16:45:50,976 - INFO - LLM response received
+2025-06-10 16:45:50,976 - INFO - LLM prediction for andrew abbott: Over, Agreement: False
+2025-06-10 16:45:50,977 - INFO - Processing prediction 370/453 for andrew abbott
+2025-06-10 16:45:50,977 - INFO - Querying LLM...
+2025-06-10 16:45:56,626 - INFO - LLM response received
+2025-06-10 16:45:56,627 - INFO - LLM prediction for andrew abbott: Over, Agreement: Unknown
+2025-06-10 16:45:56,628 - INFO - Processing prediction 371/453 for andrew abbott
+2025-06-10 16:45:56,628 - INFO - Querying LLM...
+2025-06-10 16:46:01,868 - INFO - LLM response received
+2025-06-10 16:46:01,869 - INFO - LLM prediction for andrew abbott: Under, Agreement: False
+2025-06-10 16:46:01,869 - INFO - Processing prediction 372/453 for andrew abbott
+2025-06-10 16:46:01,869 - INFO - Querying LLM...
+2025-06-10 16:46:07,936 - INFO - LLM response received
+2025-06-10 16:46:07,936 - INFO - LLM prediction for andrew abbott: Under, Agreement: Unknown
+2025-06-10 16:46:07,937 - INFO - Processing prediction 373/453 for slade cecconi
+2025-06-10 16:46:07,938 - INFO - Querying LLM...
+2025-06-10 16:46:12,191 - INFO - LLM response received
+2025-06-10 16:46:12,191 - INFO - LLM prediction for slade cecconi: Under, Agreement: False
+2025-06-10 16:46:12,191 - INFO - Processing prediction 374/453 for slade cecconi
+2025-06-10 16:46:12,191 - INFO - Querying LLM...
+2025-06-10 16:46:21,785 - INFO - LLM response received
+2025-06-10 16:46:21,785 - INFO - LLM prediction for slade cecconi: Over, Agreement: False
+2025-06-10 16:46:21,786 - INFO - Processing prediction 375/453 for slade cecconi
+2025-06-10 16:46:21,786 - INFO - Querying LLM...
+2025-06-10 16:46:35,961 - INFO - LLM response received
+2025-06-10 16:46:35,962 - INFO - LLM prediction for slade cecconi: Over, Agreement: False
+2025-06-10 16:46:35,962 - INFO - Processing prediction 376/453 for sandy alcantara
+2025-06-10 16:46:35,963 - INFO - Querying LLM...
+2025-06-10 16:46:43,972 - INFO - LLM response received
+2025-06-10 16:46:43,973 - INFO - LLM prediction for sandy alcantara: Under, Agreement: False
+2025-06-10 16:46:43,974 - INFO - Processing prediction 377/453 for sandy alcantara
+2025-06-10 16:46:43,974 - INFO - Querying LLM...
+2025-06-10 16:46:49,677 - INFO - LLM response received
+2025-06-10 16:46:49,677 - INFO - LLM prediction for sandy alcantara: Under, Agreement: False
+2025-06-10 16:46:49,677 - INFO - Processing prediction 378/453 for sandy alcantara
+2025-06-10 16:46:49,678 - INFO - Querying LLM...
+2025-06-10 16:46:54,916 - INFO - LLM response received
+2025-06-10 16:46:54,916 - INFO - LLM prediction for sandy alcantara: Over, Agreement: Unknown
+2025-06-10 16:46:54,916 - INFO - Processing prediction 379/453 for mitch keller
+2025-06-10 16:46:54,916 - INFO - Querying LLM...
+2025-06-10 16:47:01,708 - INFO - LLM response received
+2025-06-10 16:47:01,709 - INFO - LLM prediction for mitch keller: Over, Agreement: False
+2025-06-10 16:47:01,710 - INFO - Processing prediction 380/453 for mitch keller
+2025-06-10 16:47:01,710 - INFO - Querying LLM...
+2025-06-10 16:47:04,986 - INFO - LLM response received
+2025-06-10 16:47:04,987 - INFO - LLM prediction for mitch keller: Over, Agreement: False
+2025-06-10 16:47:04,987 - INFO - Processing prediction 381/453 for mitch keller
+2025-06-10 16:47:04,987 - INFO - Querying LLM...
+2025-06-10 16:47:06,838 - INFO - LLM response received
+2025-06-10 16:47:06,838 - INFO - LLM prediction for mitch keller: Unknown, Agreement: False
+2025-06-10 16:47:06,839 - INFO - Processing prediction 382/453 for mitch keller
+2025-06-10 16:47:06,840 - INFO - Querying LLM...
+2025-06-10 16:48:06,848 - ERROR - LLM query timed out
+2025-06-10 16:48:06,850 - INFO - LLM prediction for mitch keller: Unknown, Agreement: Unknown
+2025-06-10 16:48:06,850 - INFO - Processing prediction 383/453 for colin rea
+2025-06-10 16:48:06,850 - INFO - Querying LLM...
+2025-06-10 16:48:15,984 - INFO - LLM response received
+2025-06-10 16:48:15,985 - INFO - LLM prediction for colin rea: Over, Agreement: False
+2025-06-10 16:48:15,985 - INFO - Processing prediction 384/453 for colin rea
+2025-06-10 16:48:15,985 - INFO - Querying LLM...
+2025-06-10 16:48:21,485 - INFO - LLM response received
+2025-06-10 16:48:21,486 - INFO - LLM prediction for colin rea: Under, Agreement: Unknown
+2025-06-10 16:48:21,487 - INFO - Processing prediction 385/453 for colin rea
+2025-06-10 16:48:21,487 - INFO - Querying LLM...
+2025-06-10 16:48:24,270 - INFO - LLM response received
+2025-06-10 16:48:24,271 - INFO - LLM prediction for colin rea: Over, Agreement: Unknown
+2025-06-10 16:48:24,271 - INFO - Processing prediction 386/453 for mick abel
+2025-06-10 16:48:24,271 - INFO - Querying LLM...
+2025-06-10 16:48:33,210 - INFO - LLM response received
+2025-06-10 16:48:33,211 - INFO - LLM prediction for mick abel: Under, Agreement: Unknown
+2025-06-10 16:48:33,211 - INFO - Processing prediction 387/453 for mick abel
+2025-06-10 16:48:33,212 - INFO - Querying LLM...
+2025-06-10 16:49:12,680 - INFO - LLM response received
+2025-06-10 16:49:12,682 - INFO - LLM prediction for mick abel: Over, Agreement: Unknown
+2025-06-10 16:49:12,682 - INFO - Processing prediction 388/453 for mick abel
+2025-06-10 16:49:12,683 - INFO - Querying LLM...
+2025-06-10 16:49:21,129 - INFO - LLM response received
+2025-06-10 16:49:21,129 - INFO - LLM prediction for mick abel: Over, Agreement: False
+2025-06-10 16:49:21,130 - INFO - Processing prediction 389/453 for lucas giolito
+2025-06-10 16:49:21,130 - INFO - Querying LLM...
+2025-06-10 16:49:28,793 - INFO - LLM response received
+2025-06-10 16:49:28,793 - INFO - LLM prediction for lucas giolito: Under, Agreement: False
+2025-06-10 16:49:28,793 - INFO - Processing prediction 390/453 for lucas giolito
+2025-06-10 16:49:28,793 - INFO - Querying LLM...
+2025-06-10 16:49:36,608 - INFO - LLM response received
+2025-06-10 16:49:36,608 - INFO - LLM prediction for lucas giolito: Over, Agreement: False
+2025-06-10 16:49:36,609 - INFO - Processing prediction 391/453 for lucas giolito
+2025-06-10 16:49:36,610 - INFO - Querying LLM...
+2025-06-10 16:49:46,751 - INFO - LLM response received
+2025-06-10 16:49:46,751 - INFO - LLM prediction for lucas giolito: Over, Agreement: False
+2025-06-10 16:49:46,752 - INFO - Processing prediction 392/453 for ryan pepiot
+2025-06-10 16:49:46,752 - INFO - Querying LLM...
+2025-06-10 16:49:50,117 - INFO - LLM response received
+2025-06-10 16:49:50,117 - INFO - LLM prediction for ryan pepiot: Unknown, Agreement: False
+2025-06-10 16:49:50,118 - INFO - Processing prediction 393/453 for ryan pepiot
+2025-06-10 16:49:50,118 - INFO - Querying LLM...
+2025-06-10 16:49:56,868 - INFO - LLM response received
+2025-06-10 16:49:56,869 - INFO - LLM prediction for ryan pepiot: Under, Agreement: False
+2025-06-10 16:49:56,870 - INFO - Processing prediction 394/453 for ryan pepiot
+2025-06-10 16:49:56,870 - INFO - Querying LLM...
+2025-06-10 16:50:06,689 - INFO - LLM response received
+2025-06-10 16:50:06,689 - INFO - LLM prediction for ryan pepiot: Over, Agreement: False
+2025-06-10 16:50:06,690 - INFO - Processing prediction 395/453 for ryan pepiot
+2025-06-10 16:50:06,690 - INFO - Querying LLM...
+2025-06-10 16:50:11,911 - INFO - LLM response received
+2025-06-10 16:50:11,912 - INFO - LLM prediction for ryan pepiot: Over, Agreement: False
+2025-06-10 16:50:11,912 - INFO - Processing prediction 396/453 for ryan pepiot
+2025-06-10 16:50:11,913 - INFO - Querying LLM...
+2025-06-10 16:50:18,402 - INFO - LLM response received
+2025-06-10 16:50:18,402 - INFO - LLM prediction for ryan pepiot: Over, Agreement: False
+2025-06-10 16:50:18,404 - INFO - Processing prediction 397/453 for mackenzie gore
+2025-06-10 16:50:18,404 - INFO - Querying LLM...
+2025-06-10 16:50:21,711 - INFO - LLM response received
+2025-06-10 16:50:21,712 - INFO - LLM prediction for mackenzie gore: Under, Agreement: Unknown
+2025-06-10 16:50:21,713 - INFO - Processing prediction 398/453 for mackenzie gore
+2025-06-10 16:50:21,713 - INFO - Querying LLM...
+2025-06-10 16:50:27,720 - INFO - LLM response received
+2025-06-10 16:50:27,720 - INFO - LLM prediction for mackenzie gore: Over, Agreement: False
+2025-06-10 16:50:27,721 - INFO - Processing prediction 399/453 for mackenzie gore
+2025-06-10 16:50:27,721 - INFO - Querying LLM...
+2025-06-10 16:51:01,486 - INFO - LLM response received
+2025-06-10 16:51:01,487 - INFO - LLM prediction for mackenzie gore: Over, Agreement: Unknown
+2025-06-10 16:51:01,488 - INFO - Processing prediction 400/453 for mackenzie gore
+2025-06-10 16:51:01,489 - INFO - Querying LLM...
+2025-06-10 16:51:08,028 - INFO - LLM response received
+2025-06-10 16:51:08,028 - INFO - LLM prediction for mackenzie gore: Over, Agreement: False
+2025-06-10 16:51:08,030 - INFO - Processing prediction 401/453 for griffin canning
+2025-06-10 16:51:08,030 - INFO - Querying LLM...
+2025-06-10 16:51:14,687 - INFO - LLM response received
+2025-06-10 16:51:14,687 - INFO - LLM prediction for griffin canning: Over, Agreement: False
+2025-06-10 16:51:14,688 - INFO - Processing prediction 402/453 for griffin canning
+2025-06-10 16:51:14,689 - INFO - Querying LLM...
+2025-06-10 16:51:22,432 - INFO - LLM response received
+2025-06-10 16:51:22,432 - INFO - LLM prediction for griffin canning: Under, Agreement: False
+2025-06-10 16:51:22,433 - INFO - Processing prediction 403/453 for griffin canning
+2025-06-10 16:51:22,433 - INFO - Querying LLM...
+2025-06-10 16:51:26,677 - INFO - LLM response received
+2025-06-10 16:51:26,678 - INFO - LLM prediction for griffin canning: Over, Agreement: Unknown
+2025-06-10 16:51:26,678 - INFO - Processing prediction 404/453 for griffin canning
+2025-06-10 16:51:26,679 - INFO - Querying LLM...
+2025-06-10 16:51:32,626 - INFO - LLM response received
+2025-06-10 16:51:32,627 - INFO - LLM prediction for griffin canning: Over, Agreement: Unknown
+2025-06-10 16:51:32,628 - INFO - Processing prediction 405/453 for simeon woods richardson
+2025-06-10 16:51:32,629 - INFO - Querying LLM...
+2025-06-10 16:51:40,406 - INFO - LLM response received
+2025-06-10 16:51:40,407 - INFO - LLM prediction for simeon woods richardson: Over, Agreement: False
+2025-06-10 16:51:40,408 - INFO - Processing prediction 406/453 for simeon woods richardson
+2025-06-10 16:51:40,408 - INFO - Querying LLM...
+2025-06-10 16:51:44,998 - INFO - LLM response received
+2025-06-10 16:51:44,998 - INFO - LLM prediction for simeon woods richardson: Under, Agreement: False
+2025-06-10 16:51:44,999 - INFO - Processing prediction 407/453 for tyler mahle
+2025-06-10 16:51:45,000 - INFO - Querying LLM...
+2025-06-10 16:51:49,635 - INFO - LLM response received
+2025-06-10 16:51:49,636 - INFO - LLM prediction for tyler mahle: Under, Agreement: False
+2025-06-10 16:51:49,636 - INFO - Processing prediction 408/453 for tyler mahle
+2025-06-10 16:51:49,637 - INFO - Querying LLM...
+2025-06-10 16:51:56,512 - INFO - LLM response received
+2025-06-10 16:51:56,513 - INFO - LLM prediction for tyler mahle: Over, Agreement: False
+2025-06-10 16:51:56,514 - INFO - Processing prediction 409/453 for tyler mahle
+2025-06-10 16:51:56,514 - INFO - Querying LLM...
+2025-06-10 16:52:01,721 - INFO - LLM response received
+2025-06-10 16:52:01,722 - INFO - LLM prediction for tyler mahle: Under, Agreement: True
+2025-06-10 16:52:01,722 - INFO - Processing prediction 410/453 for tyler mahle
+2025-06-10 16:52:01,722 - INFO - Querying LLM...
+2025-06-10 16:52:06,222 - INFO - LLM response received
+2025-06-10 16:52:06,222 - INFO - LLM prediction for tyler mahle: Over, Agreement: Unknown
+2025-06-10 16:52:06,223 - INFO - Processing prediction 411/453 for max fried
+2025-06-10 16:52:06,224 - INFO - Querying LLM...
+2025-06-10 16:52:09,533 - INFO - LLM response received
+2025-06-10 16:52:09,533 - INFO - LLM prediction for max fried: Unknown, Agreement: Unknown
+2025-06-10 16:52:09,534 - INFO - Processing prediction 412/453 for max fried
+2025-06-10 16:52:09,534 - INFO - Querying LLM...
+2025-06-10 16:52:16,038 - INFO - LLM response received
+2025-06-10 16:52:16,039 - INFO - LLM prediction for max fried: Over, Agreement: False
+2025-06-10 16:52:16,039 - INFO - Processing prediction 413/453 for max fried
+2025-06-10 16:52:16,039 - INFO - Querying LLM...
+2025-06-10 16:52:19,962 - INFO - LLM response received
+2025-06-10 16:52:19,962 - INFO - LLM prediction for max fried: Under, Agreement: False
+2025-06-10 16:52:19,963 - INFO - Processing prediction 414/453 for noah cameron
+2025-06-10 16:52:19,963 - INFO - Querying LLM...
+2025-06-10 16:52:23,566 - INFO - LLM response received
+2025-06-10 16:52:23,567 - INFO - LLM prediction for noah cameron: Under, Agreement: Unknown
+2025-06-10 16:52:23,567 - INFO - Processing prediction 415/453 for noah cameron
+2025-06-10 16:52:23,568 - INFO - Querying LLM...
+2025-06-10 16:52:27,881 - INFO - LLM response received
+2025-06-10 16:52:27,882 - INFO - LLM prediction for noah cameron: Over, Agreement: False
+2025-06-10 16:52:27,883 - INFO - Processing prediction 416/453 for grant holmes
+2025-06-10 16:52:27,883 - INFO - Querying LLM...
+2025-06-10 16:52:31,851 - INFO - LLM response received
+2025-06-10 16:52:31,851 - INFO - LLM prediction for grant holmes: Over, Agreement: Unknown
+2025-06-10 16:52:31,852 - INFO - Processing prediction 417/453 for grant holmes
+2025-06-10 16:52:31,852 - INFO - Querying LLM...
+2025-06-10 16:52:36,606 - INFO - LLM response received
+2025-06-10 16:52:36,606 - INFO - LLM prediction for grant holmes: Over, Agreement: False
+2025-06-10 16:52:36,607 - INFO - Processing prediction 418/453 for grant holmes
+2025-06-10 16:52:36,607 - INFO - Querying LLM...
+2025-06-10 16:52:38,757 - INFO - LLM response received
+2025-06-10 16:52:38,758 - INFO - LLM prediction for grant holmes: Over, Agreement: Unknown
+2025-06-10 16:52:38,759 - INFO - Processing prediction 419/453 for grant holmes
+2025-06-10 16:52:38,759 - INFO - Querying LLM...
+2025-06-10 16:52:44,626 - INFO - LLM response received
+2025-06-10 16:52:44,626 - INFO - LLM prediction for grant holmes: Under, Agreement: Unknown
+2025-06-10 16:52:44,627 - INFO - Processing prediction 420/453 for quinn priester
+2025-06-10 16:52:44,628 - INFO - Querying LLM...
+2025-06-10 16:52:53,066 - INFO - LLM response received
+2025-06-10 16:52:53,067 - INFO - LLM prediction for quinn priester: Over, Agreement: False
+2025-06-10 16:52:53,067 - INFO - Processing prediction 421/453 for quinn priester
+2025-06-10 16:52:53,068 - INFO - Querying LLM...
+2025-06-10 16:53:08,904 - INFO - LLM response received
+2025-06-10 16:53:08,905 - INFO - LLM prediction for quinn priester: Over, Agreement: False
+2025-06-10 16:53:08,906 - INFO - Processing prediction 422/453 for quinn priester
+2025-06-10 16:53:08,906 - INFO - Querying LLM...
+2025-06-10 16:53:12,657 - INFO - LLM response received
+2025-06-10 16:53:12,657 - INFO - LLM prediction for quinn priester: Unknown, Agreement: False
+2025-06-10 16:53:12,657 - INFO - Processing prediction 423/453 for miles mikolas
+2025-06-10 16:53:12,657 - INFO - Querying LLM...
+2025-06-10 16:53:22,686 - INFO - LLM response received
+2025-06-10 16:53:22,686 - INFO - LLM prediction for miles mikolas: Over, Agreement: False
+2025-06-10 16:53:22,687 - INFO - Processing prediction 424/453 for miles mikolas
+2025-06-10 16:53:22,688 - INFO - Querying LLM...
+2025-06-10 16:53:31,678 - INFO - LLM response received
+2025-06-10 16:53:31,678 - INFO - LLM prediction for miles mikolas: Unknown, Agreement: Unknown
+2025-06-10 16:53:31,678 - INFO - Processing prediction 425/453 for miles mikolas
+2025-06-10 16:53:31,678 - INFO - Querying LLM...
+2025-06-10 16:53:51,367 - INFO - LLM response received
+2025-06-10 16:53:51,367 - INFO - LLM prediction for miles mikolas: Under, Agreement: False
+2025-06-10 16:53:51,367 - INFO - Processing prediction 426/453 for miles mikolas
+2025-06-10 16:53:51,367 - INFO - Querying LLM...
+2025-06-10 16:53:59,529 - INFO - LLM response received
+2025-06-10 16:53:59,530 - INFO - LLM prediction for miles mikolas: Over, Agreement: False
+2025-06-10 16:53:59,530 - INFO - Processing prediction 427/453 for chris bassitt
+2025-06-10 16:53:59,530 - INFO - Querying LLM...
+2025-06-10 16:54:07,623 - INFO - LLM response received
+2025-06-10 16:54:07,624 - INFO - LLM prediction for chris bassitt: Over, Agreement: True
+2025-06-10 16:54:07,625 - INFO - Processing prediction 428/453 for chris bassitt
+2025-06-10 16:54:07,625 - INFO - Querying LLM...
+2025-06-10 16:54:23,432 - INFO - LLM response received
+2025-06-10 16:54:23,433 - INFO - LLM prediction for chris bassitt: Over, Agreement: False
+2025-06-10 16:54:23,434 - INFO - Processing prediction 429/453 for chris bassitt
+2025-06-10 16:54:23,434 - INFO - Querying LLM...
+2025-06-10 16:54:29,370 - INFO - LLM response received
+2025-06-10 16:54:29,370 - INFO - LLM prediction for chris bassitt: Over, Agreement: False
+2025-06-10 16:54:29,371 - INFO - Processing prediction 430/453 for lance mccullers
+2025-06-10 16:54:29,371 - INFO - Querying LLM...
+2025-06-10 16:54:32,713 - INFO - LLM response received
+2025-06-10 16:54:32,713 - INFO - LLM prediction for lance mccullers: Under, Agreement: False
+2025-06-10 16:54:32,714 - INFO - Processing prediction 431/453 for lance mccullers
+2025-06-10 16:54:32,714 - INFO - Querying LLM...
+2025-06-10 16:54:36,486 - INFO - LLM response received
+2025-06-10 16:54:36,487 - INFO - LLM prediction for lance mccullers: Under, Agreement: False
+2025-06-10 16:54:36,488 - INFO - Processing prediction 432/453 for lance mccullers
+2025-06-10 16:54:36,488 - INFO - Querying LLM...
+2025-06-10 16:54:41,024 - INFO - LLM response received
+2025-06-10 16:54:41,025 - INFO - LLM prediction for lance mccullers: Over, Agreement: False
+2025-06-10 16:54:41,027 - INFO - Processing prediction 433/453 for shane smith
+2025-06-10 16:54:41,028 - INFO - Querying LLM...
+2025-06-10 16:54:45,645 - INFO - LLM response received
+2025-06-10 16:54:45,646 - INFO - LLM prediction for shane smith: Over, Agreement: Unknown
+2025-06-10 16:54:45,647 - INFO - Processing prediction 434/453 for shane smith
+2025-06-10 16:54:45,647 - INFO - Querying LLM...
+2025-06-10 16:54:52,451 - INFO - LLM response received
+2025-06-10 16:54:52,451 - INFO - LLM prediction for shane smith: Unknown, Agreement: Unknown
+2025-06-10 16:54:52,452 - INFO - Processing prediction 435/453 for kyle harrison
+2025-06-10 16:54:52,452 - INFO - Querying LLM...
+2025-06-10 16:54:59,701 - INFO - LLM response received
+2025-06-10 16:54:59,701 - INFO - LLM prediction for kyle harrison: Over, Agreement: Unknown
+2025-06-10 16:54:59,702 - INFO - Processing prediction 436/453 for kyle harrison
+2025-06-10 16:54:59,702 - INFO - Querying LLM...
+2025-06-10 16:55:02,815 - INFO - LLM response received
+2025-06-10 16:55:02,816 - INFO - LLM prediction for kyle harrison: Over, Agreement: False
+2025-06-10 16:55:02,817 - INFO - Processing prediction 437/453 for carson palmquist
+2025-06-10 16:55:02,817 - INFO - Querying LLM...
+2025-06-10 16:55:07,457 - INFO - LLM response received
+2025-06-10 16:55:07,458 - INFO - LLM prediction for carson palmquist: Over, Agreement: False
+2025-06-10 16:55:07,459 - INFO - Processing prediction 438/453 for jose soriano
+2025-06-10 16:55:07,460 - INFO - Querying LLM...
+2025-06-10 16:55:10,694 - INFO - LLM response received
+2025-06-10 16:55:10,695 - INFO - LLM prediction for jose soriano: Over, Agreement: False
+2025-06-10 16:55:10,696 - INFO - Processing prediction 439/453 for jose soriano
+2025-06-10 16:55:10,696 - INFO - Querying LLM...
+2025-06-10 16:55:14,662 - INFO - LLM response received
+2025-06-10 16:55:14,663 - INFO - LLM prediction for jose soriano: Under, Agreement: False
+2025-06-10 16:55:14,664 - INFO - Processing prediction 440/453 for jose soriano
+2025-06-10 16:55:14,664 - INFO - Querying LLM...
+2025-06-10 16:55:21,590 - INFO - LLM response received
+2025-06-10 16:55:21,590 - INFO - LLM prediction for jose soriano: Over, Agreement: False
+2025-06-10 16:55:21,591 - INFO - Processing prediction 441/453 for jose soriano
+2025-06-10 16:55:21,591 - INFO - Querying LLM...
+2025-06-10 16:55:27,468 - INFO - LLM response received
+2025-06-10 16:55:27,468 - INFO - LLM prediction for jose soriano: Over, Agreement: Unknown
+2025-06-10 16:55:27,469 - INFO - Processing prediction 442/453 for jose soriano
+2025-06-10 16:55:27,470 - INFO - Querying LLM...
+2025-06-10 16:55:33,066 - INFO - LLM response received
+2025-06-10 16:55:33,066 - INFO - LLM prediction for jose soriano: Unknown, Agreement: Unknown
+2025-06-10 16:55:33,066 - INFO - Processing prediction 443/453 for dylan cease
+2025-06-10 16:55:33,067 - INFO - Querying LLM...
+2025-06-10 16:55:37,063 - INFO - LLM response received
+2025-06-10 16:55:37,063 - INFO - LLM prediction for dylan cease: Under, Agreement: Unknown
+2025-06-10 16:55:37,065 - INFO - Processing prediction 444/453 for dylan cease
+2025-06-10 16:55:37,065 - INFO - Querying LLM...
+2025-06-10 16:55:41,608 - INFO - LLM response received
+2025-06-10 16:55:41,609 - INFO - LLM prediction for dylan cease: Unknown, Agreement: False
+2025-06-10 16:55:41,609 - INFO - Processing prediction 445/453 for dylan cease
+2025-06-10 16:55:41,609 - INFO - Querying LLM...
+2025-06-10 16:55:48,413 - INFO - LLM response received
+2025-06-10 16:55:48,413 - INFO - LLM prediction for dylan cease: Over, Agreement: False
+2025-06-10 16:55:48,414 - INFO - Processing prediction 446/453 for dylan cease
+2025-06-10 16:55:48,414 - INFO - Querying LLM...
+2025-06-10 16:55:55,695 - INFO - LLM response received
+2025-06-10 16:55:55,696 - INFO - LLM prediction for dylan cease: Over, Agreement: False
+2025-06-10 16:55:55,697 - INFO - Processing prediction 447/453 for dylan cease
+2025-06-10 16:55:55,698 - INFO - Querying LLM...
+2025-06-10 16:55:59,817 - INFO - LLM response received
+2025-06-10 16:55:59,818 - INFO - LLM prediction for dylan cease: Over, Agreement: False
+2025-06-10 16:55:59,819 - INFO - Processing prediction 448/453 for brandon pfaadt
+2025-06-10 16:55:59,819 - INFO - Querying LLM...
+2025-06-10 16:56:06,009 - INFO - LLM response received
+2025-06-10 16:56:06,013 - INFO - LLM prediction for brandon pfaadt: Under, Agreement: Unknown
+2025-06-10 16:56:06,013 - INFO - Processing prediction 449/453 for brandon pfaadt
+2025-06-10 16:56:06,014 - INFO - Querying LLM...
+2025-06-10 16:56:14,021 - INFO - LLM response received
+2025-06-10 16:56:14,021 - INFO - LLM prediction for brandon pfaadt: Over, Agreement: False
+2025-06-10 16:56:14,022 - INFO - Processing prediction 450/453 for brandon pfaadt
+2025-06-10 16:56:14,022 - INFO - Querying LLM...
+2025-06-10 16:56:19,050 - INFO - LLM response received
+2025-06-10 16:56:19,051 - INFO - LLM prediction for brandon pfaadt: Under, Agreement: Unknown
+2025-06-10 16:56:19,052 - INFO - Processing prediction 451/453 for brandon pfaadt
+2025-06-10 16:56:19,052 - INFO - Querying LLM...
+2025-06-10 16:56:21,753 - INFO - LLM response received
+2025-06-10 16:56:21,754 - INFO - LLM prediction for brandon pfaadt: Under, Agreement: Unknown
+2025-06-10 16:56:21,755 - INFO - Processing prediction 452/453 for logan evans
+2025-06-10 16:56:21,756 - INFO - Querying LLM...
+2025-06-10 16:56:28,707 - INFO - LLM response received
+2025-06-10 16:56:28,708 - INFO - LLM prediction for logan evans: Over, Agreement: False
+2025-06-10 16:56:28,709 - INFO - Processing prediction 453/453 for logan evans
+2025-06-10 16:56:28,709 - INFO - Querying LLM...
+2025-06-10 16:56:33,189 - INFO - LLM response received
+2025-06-10 16:56:33,190 - INFO - LLM prediction for logan evans: Over, Agreement: False
+2025-06-10 16:56:33,211 - INFO - LLM-enhanced predictions saved to MLB_Results/2025-06-10_mlb_predictions_with_llm.csv
+2025-06-10 16:56:33,215 - INFO - Top picks saved to MLB_Results/2025-06-10_mlb_top_picks_with_llm.csv
+2025-06-10 16:56:33,215 - INFO - Generating 5 betslips with 2 props each
+2025-06-10 16:56:33,223 - INFO - Betslips saved to MLB_Results/2025-06-10_mlb_betslips.json
+2025-06-10 16:56:33,223 - INFO - LLM inference pipeline completed
