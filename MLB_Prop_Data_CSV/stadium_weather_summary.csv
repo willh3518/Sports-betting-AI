@@ -1,0 +1,16 @@
+Team,Team Name,Stadium,Orientation (°),Latitude,Longitude,Game Time,Game-Time Temp (°F),Game-Time Humidity (%),Game-Time Wind Speed (mph),Game-Time Wind Dir (°),Game-Time Effect on Pitchers,Game-Time Effect on Hitters
+BAL,Orioles,Oriole Park at Camden Yards,30.0,39.2839,-76.6217,2025-06-10 06:35 PM,83.59,48,4.12,289,Crosswind: pushes balls to foul lines. Neutral-ish for pitchers.,Crosswind: pushes balls to foul lines. Neutral-ish for hitters.
+BOS,Red Sox,Fenway Park,40.0,42.3467,-71.0972,2025-06-10 07:10 PM,59.88,93,2.28,181,Tailwind: fly balls may carry farther → can hurt pitchers.,Tailwind: fly balls likely to carry → helps hitters.
+CLE,Guardians,Progressive Field,50.0,41.4961,-81.685,2025-06-10 06:40 PM,72.01,58,7.47,237,Tailwind: fly balls may carry farther → can hurt pitchers.,Tailwind: fly balls likely to carry → helps hitters.
+KCR,Royals,Kauffman Stadium,35.0,39.0514,-94.4803,2025-06-10 07:40 PM,83.64,43,3.65,217,Tailwind: fly balls may carry farther → can hurt pitchers.,Tailwind: fly balls likely to carry → helps hitters.
+MIN,Twins,Target Field,25.0,44.9817,-93.2771,2025-06-10 07:40 PM,76.82,46,8.84,205,Tailwind: fly balls may carry farther → can hurt pitchers.,Tailwind: fly balls likely to carry → helps hitters.
+HOU,Astros,Minute Maid Park,48.0,29.7573,-95.3554,2025-06-10 08:10 PM,87.76,62,7.29,121,Crosswind: pushes balls to foul lines. Neutral-ish for pitchers.,Crosswind: pushes balls to foul lines. Neutral-ish for hitters.
+LAA,Angels,Angel Stadium of Anaheim,45.0,33.8003,-117.8827,2025-06-10 09:38 PM,72.77,66,8.08,215,Tailwind: fly balls may carry farther → can hurt pitchers.,Tailwind: fly balls likely to carry → helps hitters.
+NYM,Mets,Citi Field,35.0,40.7571,-73.8458,2025-06-10 07:10 PM,68.95,85,6.35,192,Tailwind: fly balls may carry farther → can hurt pitchers.,Tailwind: fly balls likely to carry → helps hitters.
+PHI,Phillies,Citizens Bank Park,30.0,39.9061,-75.1665,2025-06-10 06:45 PM,77.74,67,7.29,277,Crosswind: pushes balls to foul lines. Neutral-ish for pitchers.,Crosswind: pushes balls to foul lines. Neutral-ish for hitters.
+MIL,Brewers,American Family Field,20.0,43.0286,-87.9711,2025-06-10 07:40 PM,70.65,63,6.82,277,Crosswind: pushes balls to foul lines. Neutral-ish for pitchers.,Crosswind: pushes balls to foul lines. Neutral-ish for hitters.
+PIT,Pirates,PNC Park,33.0,40.4469,-80.0057,2025-06-10 06:40 PM,74.97,59,4.05,307,Crosswind: pushes balls to foul lines. Neutral-ish for pitchers.,Crosswind: pushes balls to foul lines. Neutral-ish for hitters.
+STL,Cardinals,Busch Stadium,26.0,38.6226,-90.1928,2025-06-10 07:45 PM,80.53,51,5.39,333,Crosswind: pushes balls to foul lines. Neutral-ish for pitchers.,Crosswind: pushes balls to foul lines. Neutral-ish for hitters.
+ARI,Diamondbacks,Chase Field,60.0,33.445,-112.0667,2025-06-10 07:00 PM,103.39,10,12.86,267,Tailwind: fly balls may carry farther → can hurt pitchers.,Tailwind: fly balls likely to carry → helps hitters.
+COL,Rockies,Coors Field,30.0,39.7561,-104.9942,2025-06-10 08:40 PM,87.3,19,15.3,198,Tailwind: fly balls may carry farther → can hurt pitchers.,Tailwind: fly balls likely to carry → helps hitters.
+SDP,Padres,Petco Park,37.0,32.7076,-117.1573,2025-06-10 09:40 PM,67.51,74,4.85,262,Tailwind: fly balls may carry farther → can hurt pitchers.,Tailwind: fly balls likely to carry → helps hitters.

@@ -1,0 +1,98 @@
+Opponent Defensive Rating
+Home
+Prop Type_3-pt attempted
+Prop Type_3-pt made
+Prop Type_assists
+Prop Type_blks+stls
+Prop Type_blocked shots
+Prop Type_defensive rebounds
+Prop Type_fg attempted
+Prop Type_fg made
+Prop Type_free throws made
+Prop Type_offensive rebounds
+Prop Type_points
+Prop Type_pts+asts
+Prop Type_pts+rebs
+Prop Type_pts+rebs+asts
+Prop Type_rebounds
+Prop Type_rebs+asts
+Prop Type_steals
+Prop Type_turnovers
+Prop Value
+Season Hit %
+Last 10 Hit Percentage
+GP (Season Stats)
+PPG (Season Stats)
+RPG (Season Stats)
+APG (Season Stats)
+SPG (Season Stats)
+BPG (Season Stats)
+FGM (Season Stats)
+FGA (Season Stats)
+3PM (Season Stats)
+3PA (Season Stats)
+FTM (Season Stats)
+FTA (Season Stats)
+OREB (Season Stats)
+DREB (Season Stats)
+TPG (Season Stats)
+Team_0
+Team_1
+Team_2
+Team_3
+Team_4
+Team_5
+Team_6
+Team_7
+Team_8
+Team_9
+Team_10
+Team_11
+Team_12
+Team_13
+Team_14
+Team_15
+Team_16
+Team_17
+Team_18
+Team_19
+Team_20
+Team_21
+Team_22
+Team_23
+Team_24
+Team_25
+Team_26
+Team_27
+Team_28
+Team_29
+Opponent_0
+Opponent_1
+Opponent_2
+Opponent_3
+Opponent_4
+Opponent_5
+Opponent_6
+Opponent_7
+Opponent_8
+Opponent_9
+Opponent_10
+Opponent_11
+Opponent_12
+Opponent_13
+Opponent_14
+Opponent_15
+Opponent_16
+Opponent_17
+Opponent_18
+Opponent_19
+Opponent_20
+Opponent_21
+Opponent_22
+Opponent_23
+Opponent_24
+Opponent_25
+Opponent_26
+Opponent_27
+Opponent_28
+Opponent_29

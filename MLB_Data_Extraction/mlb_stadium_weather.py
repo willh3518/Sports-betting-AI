@@ -35,7 +35,7 @@ else:
 team_abbrev_map = {
     "ATL": "Braves", "ARI": "Diamondbacks", "BAL": "Orioles", "BOS": "Red Sox", "CHC": "Cubs",
     "CIN": "Reds", "CLE": "Guardians", "COL": "Rockies", "CHW": "White Sox", "DET": "Tigers",
-    "HOU": "Astros", "KC": "Royals", "LAA": "Angels", "LAD": "Dodgers", "MIA": "Marlins",
+    "HOU": "Astros", "KC": "Royals", "KCR": "Royals", "LAA": "Angels", "LAD": "Dodgers", "MIA": "Marlins",
     "MIL": "Brewers", "MIN": "Twins", "NYM": "Mets", "NYY": "Yankees", "ATH": "Athletics",
     "PHI": "Phillies", "PIT": "Pirates", "SD": "Padres", "SEA": "Mariners", "SFG": "Giants",
     "STL": "Cardinals", "TBR": "Rays", "TEX": "Rangers", "TOR": "Blue Jays", "WSN": "Nationals", "SDP": "Padres"

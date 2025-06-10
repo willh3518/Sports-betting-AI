@@ -39,7 +39,7 @@ hitters_only = prizepicks[prizepicks["Position"].str.upper() != "P"].copy()
 team_abbrev_map = {
     "ATL": "Braves", "ARI": "Diamondbacks", "AZ": "Diamondbacks", "BAL": "Orioles", "BOS": "Red Sox", "CHC": "Cubs",
     "CIN": "Reds", "CLE": "Guardians", "COL": "Rockies", "CWS": "White Sox", "DET": "Tigers",
-    "HOU": "Astros", "KC": "Royals", "LAA": "Angels", "LAD": "Dodgers", "MIA": "Marlins",
+    "HOU": "Astros", "KC": "Royals", "KCR": "Royals", "LAA": "Angels", "LAD": "Dodgers", "MIA": "Marlins",
     "MIL": "Brewers", "MIN": "Twins", "NYM": "Mets", "NYY": "Yankees", "ATH": "Athletics",
     "PHI": "Phillies", "PIT": "Pirates", "SD": "Padres", "SEA": "Mariners", "SF": "Giants",
     "STL": "Cardinals", "TB": "Rays", "TEX": "Rangers", "TOR": "Blue Jays", "WSH": "Nationals", "SDP": "Padres"
@@ -126,7 +126,6 @@ base = base.merge(weather, on="Weather Team Name", how="left")
 
 # clean up
 base.drop(columns=["Opposing Team Name"], inplace=True)
-
 
 # create a full team-name column in base so you can merge on it
 base["Team Name"] = base["Team"].map(team_abbrev_map)
