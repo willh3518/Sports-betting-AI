@@ -221,15 +221,15 @@ async def main():
         axis=1
     )
 
+    # Lowercase names
+    hitter_temp["Player"] = hitter_temp["Player"].astype(str).str.lower().str.strip()
+    pitcher_temp["Player"] = pitcher_temp["Player"].astype(str).str.lower().str.strip()
+
     # write out
     hitter_temp.to_csv(HITTER_OUT, index=False)
     pitcher_temp.to_csv(PITCHER_OUT, index=False)
     logging.info(f"Done → {HITTER_OUT}, {PITCHER_OUT}")
 
-    # Re-merge into one file for your model
-    combined = pd.concat([hitter_temp, pitcher_temp], ignore_index=True)
-    combined.to_csv("MLB_Prop_Data_CSV/merged_hitter_pitcher_results.csv", index=False)
-    logging.info("Wrote combined actual_results.csv")
 
 if __name__ == "__main__":
     asyncio.run(main())
