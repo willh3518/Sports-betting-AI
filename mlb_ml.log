@@ -414,3 +414,424 @@ weighted avg       0.83      0.83      0.83        12
 2025-06-11 11:57:07,581 - INFO - All predictions saved to MLB_Results/2025-06-11_mlb_predictions.csv
 2025-06-11 11:57:07,582 - INFO - Top picks saved to MLB_Results/2025-06-11_mlb_top_picks.csv
 2025-06-11 11:57:07,622 - INFO - MLB machine learning pipeline completed
+2025-06-11 14:47:37,300 - INFO - Starting MLB machine learning pipeline
+2025-06-11 14:47:37,300 - INFO - Loading master datasets for prediction...
+2025-06-11 14:47:37,306 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 14:47:37,307 - INFO - Added Hit column to hitter data
+2025-06-11 14:47:37,308 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 14:47:37,308 - INFO - Added Hit column to pitcher data
+2025-06-11 14:47:37,308 - INFO - No hitter training data found at MLB_Prop_Data_CSV/hitter_training_data.csv
+2025-06-11 14:47:37,308 - INFO - No pitcher training data found at MLB_Prop_Data_CSV/pitcher_training_data.csv
+2025-06-11 14:47:37,308 - INFO - Preprocessing hitter data...
+2025-06-11 14:49:28,221 - INFO - Starting MLB machine learning pipeline
+2025-06-11 14:49:28,221 - INFO - Loading master datasets for prediction...
+2025-06-11 14:49:28,226 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 14:49:28,226 - INFO - Added Hit column to hitter data
+2025-06-11 14:49:28,227 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 14:49:28,227 - INFO - Added Hit column to pitcher data
+2025-06-11 14:49:28,227 - INFO - No hitter training data found at MLB_Prop_Data_CSV/hitter_training_data.csv
+2025-06-11 14:49:28,227 - INFO - No pitcher training data found at MLB_Prop_Data_CSV/pitcher_training_data.csv
+2025-06-11 14:49:28,227 - INFO - Preprocessing hitter data...
+2025-06-11 14:49:28,227 - INFO - Performing feature engineering for hitter data...
+2025-06-11 14:49:28,238 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-11 14:49:28,238 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-11 14:49:28,245 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-11 14:49:28,245 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-11 14:49:28,247 - INFO - Converted percentage column Barrel% to float
+2025-06-11 14:49:28,247 - INFO - Converted percentage column Hard Hit % to float
+2025-06-11 14:49:28,267 - INFO - Preprocessing pitcher data...
+2025-06-11 14:49:28,267 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 14:49:28,269 - INFO - Converted percentage column K% to float
+2025-06-11 14:49:28,269 - INFO - Converted percentage column BB% to float
+2025-06-11 14:49:28,269 - INFO - Converted percentage column K-BB% to float
+2025-06-11 14:49:28,270 - INFO - Converted percentage column LOB% to float
+2025-06-11 14:49:28,270 - INFO - Converted percentage column Four Seamer to float
+2025-06-11 14:49:28,270 - INFO - Converted percentage column Sinker to float
+2025-06-11 14:49:28,270 - INFO - Converted percentage column Slider to float
+2025-06-11 14:49:28,271 - INFO - Converted percentage column Curveball to float
+2025-06-11 14:49:28,271 - INFO - Converted percentage column Split Finger to float
+2025-06-11 14:49:28,271 - INFO - Converted percentage column Cutter to float
+2025-06-11 14:49:28,271 - INFO - Converted percentage column Changeup to float
+2025-06-11 14:49:28,272 - INFO - Converted percentage column Knuckle Curve to float
+2025-06-11 14:49:28,272 - INFO - Converted percentage column Sweeper to float
+2025-06-11 14:49:28,272 - INFO - Converted percentage column Slurve to float
+2025-06-11 14:49:28,278 - WARNING - No training data available. Skipping model training.
+2025-06-11 14:49:28,278 - WARNING - No training data available. Skipping model training.
+2025-06-11 14:49:28,288 - ERROR - Error making predictions: list indices must be integers or slices, not str
+2025-06-11 14:49:28,296 - ERROR - Error making predictions: list indices must be integers or slices, not str
+2025-06-11 14:49:28,296 - WARNING - No predictions were generated.
+2025-06-11 14:49:28,296 - INFO - MLB machine learning pipeline completed
+2025-06-11 14:51:54,887 - INFO - Starting MLB machine learning pipeline
+2025-06-11 14:51:54,887 - INFO - Loading master datasets for prediction...
+2025-06-11 14:51:54,892 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 14:51:54,893 - INFO - Added Hit column to hitter data with realistic distribution
+2025-06-11 14:51:54,894 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 14:51:54,894 - INFO - Added Hit column to pitcher data with realistic distribution
+2025-06-11 14:51:54,894 - INFO - No hitter training data found at MLB_Prop_Data_CSV/hitter_training_data.csv
+2025-06-11 14:51:54,894 - INFO - No pitcher training data found at MLB_Prop_Data_CSV/pitcher_training_data.csv
+2025-06-11 14:51:54,897 - INFO - Preprocessing hitter data...
+2025-06-11 14:51:54,898 - INFO - Performing feature engineering for hitter data...
+2025-06-11 14:51:54,905 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-11 14:51:54,906 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-11 14:51:54,913 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-11 14:51:54,914 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-11 14:51:54,915 - INFO - Converted percentage column Barrel% to float
+2025-06-11 14:51:54,915 - INFO - Converted percentage column Hard Hit % to float
+2025-06-11 14:51:54,934 - INFO - Preprocessing pitcher data...
+2025-06-11 14:51:54,934 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 14:51:54,936 - INFO - Converted percentage column K% to float
+2025-06-11 14:51:54,936 - INFO - Converted percentage column BB% to float
+2025-06-11 14:51:54,937 - INFO - Converted percentage column K-BB% to float
+2025-06-11 14:51:54,937 - INFO - Converted percentage column LOB% to float
+2025-06-11 14:51:54,937 - INFO - Converted percentage column Four Seamer to float
+2025-06-11 14:51:54,938 - INFO - Converted percentage column Sinker to float
+2025-06-11 14:51:54,938 - INFO - Converted percentage column Slider to float
+2025-06-11 14:51:54,938 - INFO - Converted percentage column Curveball to float
+2025-06-11 14:51:54,938 - INFO - Converted percentage column Split Finger to float
+2025-06-11 14:51:54,939 - INFO - Converted percentage column Cutter to float
+2025-06-11 14:51:54,939 - INFO - Converted percentage column Changeup to float
+2025-06-11 14:51:54,940 - INFO - Converted percentage column Knuckle Curve to float
+2025-06-11 14:51:54,940 - INFO - Converted percentage column Sweeper to float
+2025-06-11 14:51:54,940 - INFO - Converted percentage column Slurve to float
+2025-06-11 14:51:54,999 - WARNING - Insufficient hitter training data. Need at least 100 samples.
+2025-06-11 15:08:13,738 - INFO - Starting daily prediction pipeline
+2025-06-11 15:08:13,740 - INFO - Loading master datasets for prediction...
+2025-06-11 15:08:13,752 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 15:08:13,755 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 15:08:13,755 - INFO - Preprocessing hitter data...
+2025-06-11 15:08:13,756 - INFO - Performing feature engineering for hitter data...
+2025-06-11 15:08:13,769 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-11 15:08:13,770 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-11 15:08:13,780 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-11 15:08:13,780 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-11 15:08:13,782 - INFO - Converted percentage column Barrel% to float
+2025-06-11 15:08:13,782 - INFO - Converted percentage column Hard Hit % to float
+2025-06-11 15:08:13,805 - INFO - Preprocessing pitcher data...
+2025-06-11 15:08:13,806 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 15:08:13,808 - INFO - Converted percentage column K% to float
+2025-06-11 15:08:13,808 - INFO - Converted percentage column BB% to float
+2025-06-11 15:08:13,808 - INFO - Converted percentage column K-BB% to float
+2025-06-11 15:08:13,809 - INFO - Converted percentage column LOB% to float
+2025-06-11 15:08:13,809 - INFO - Converted percentage column Four Seamer to float
+2025-06-11 15:08:13,809 - INFO - Converted percentage column Sinker to float
+2025-06-11 15:08:13,810 - INFO - Converted percentage column Slider to float
+2025-06-11 15:08:13,810 - INFO - Converted percentage column Curveball to float
+2025-06-11 15:08:13,810 - INFO - Converted percentage column Split Finger to float
+2025-06-11 15:08:13,810 - INFO - Converted percentage column Cutter to float
+2025-06-11 15:08:13,811 - INFO - Converted percentage column Changeup to float
+2025-06-11 15:08:13,811 - INFO - Converted percentage column Knuckle Curve to float
+2025-06-11 15:08:13,811 - INFO - Converted percentage column Sweeper to float
+2025-06-11 15:08:13,812 - INFO - Converted percentage column Slurve to float
+2025-06-11 15:08:13,829 - ERROR - Error making predictions: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Barrel%_norm
+
+2025-06-11 15:08:13,877 - INFO - All predictions saved to MLB_Results/2025-06-11_mlb_predictions.csv
+2025-06-11 15:08:13,878 - INFO - Top picks saved to MLB_Results/2025-06-11_mlb_top_picks.csv
+2025-06-11 15:08:13,879 - INFO - Daily prediction pipeline completed
+2025-06-11 15:10:56,659 - INFO - Starting daily prediction pipeline
+2025-06-11 15:10:56,659 - INFO - Loading master datasets for prediction...
+2025-06-11 15:10:56,666 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 15:10:56,668 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 15:10:56,668 - INFO - Preprocessing hitter data...
+2025-06-11 15:10:56,669 - INFO - Performing feature engineering for hitter data...
+2025-06-11 15:10:56,680 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-11 15:10:56,680 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-11 15:10:56,689 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-11 15:10:56,689 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-11 15:10:56,691 - INFO - Converted percentage column Barrel% to float
+2025-06-11 15:10:56,691 - INFO - Converted percentage column Hard Hit % to float
+2025-06-11 15:10:56,713 - INFO - Preprocessing pitcher data...
+2025-06-11 15:10:56,713 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 15:10:56,715 - INFO - Converted percentage column K% to float
+2025-06-11 15:10:56,715 - INFO - Converted percentage column BB% to float
+2025-06-11 15:10:56,715 - INFO - Converted percentage column K-BB% to float
+2025-06-11 15:10:56,716 - INFO - Converted percentage column LOB% to float
+2025-06-11 15:10:56,716 - INFO - Converted percentage column Four Seamer to float
+2025-06-11 15:10:56,716 - INFO - Converted percentage column Sinker to float
+2025-06-11 15:10:56,717 - INFO - Converted percentage column Slider to float
+2025-06-11 15:10:56,717 - INFO - Converted percentage column Curveball to float
+2025-06-11 15:10:56,717 - INFO - Converted percentage column Split Finger to float
+2025-06-11 15:10:56,717 - INFO - Converted percentage column Cutter to float
+2025-06-11 15:10:56,718 - INFO - Converted percentage column Changeup to float
+2025-06-11 15:10:56,718 - INFO - Converted percentage column Knuckle Curve to float
+2025-06-11 15:10:56,718 - INFO - Converted percentage column Sweeper to float
+2025-06-11 15:10:56,718 - INFO - Converted percentage column Slurve to float
+2025-06-11 15:10:56,735 - ERROR - Error making predictions: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- Barrel%_norm
+
+2025-06-11 15:10:56,782 - INFO - All predictions saved to MLB_Results/2025-06-11_mlb_predictions.csv
+2025-06-11 15:10:56,782 - INFO - Top picks saved to MLB_Results/2025-06-11_mlb_top_picks.csv
+2025-06-11 15:10:56,782 - INFO - Daily prediction pipeline completed
+2025-06-11 15:13:14,297 - INFO - Starting daily prediction pipeline
+2025-06-11 15:13:14,297 - INFO - Loading master datasets for prediction...
+2025-06-11 15:13:14,307 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 15:13:14,309 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 15:13:14,309 - INFO - Preprocessing hitter data...
+2025-06-11 15:13:14,310 - INFO - Performing feature engineering for hitter data...
+2025-06-11 15:13:14,324 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-11 15:13:14,324 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-11 15:13:14,333 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-11 15:13:14,334 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-11 15:13:14,335 - INFO - Converted percentage column Barrel% to float
+2025-06-11 15:13:14,336 - INFO - Converted percentage column Hard Hit % to float
+2025-06-11 15:13:14,360 - INFO - Preprocessing pitcher data...
+2025-06-11 15:13:14,360 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 15:13:14,362 - INFO - Converted percentage column K% to float
+2025-06-11 15:13:14,362 - INFO - Converted percentage column BB% to float
+2025-06-11 15:13:14,363 - INFO - Converted percentage column K-BB% to float
+2025-06-11 15:13:14,363 - INFO - Converted percentage column LOB% to float
+2025-06-11 15:13:14,364 - INFO - Converted percentage column Four Seamer to float
+2025-06-11 15:13:14,364 - INFO - Converted percentage column Sinker to float
+2025-06-11 15:13:14,364 - INFO - Converted percentage column Slider to float
+2025-06-11 15:13:14,364 - INFO - Converted percentage column Curveball to float
+2025-06-11 15:13:14,365 - INFO - Converted percentage column Split Finger to float
+2025-06-11 15:13:14,365 - INFO - Converted percentage column Cutter to float
+2025-06-11 15:13:14,365 - INFO - Converted percentage column Changeup to float
+2025-06-11 15:13:14,366 - INFO - Converted percentage column Knuckle Curve to float
+2025-06-11 15:13:14,366 - INFO - Converted percentage column Sweeper to float
+2025-06-11 15:13:14,366 - INFO - Converted percentage column Slurve to float
+2025-06-11 15:13:14,427 - ERROR - Error making predictions: The feature names should match those that were passed during fit.
+Feature names seen at fit time, yet now missing:
+- BB/9_norm
+- ERA_norm
+- HR/9_norm
+- K/9_norm
+- WHIP_norm
+
+2025-06-11 15:13:14,430 - INFO - All predictions saved to MLB_Results/2025-06-11_mlb_predictions.csv
+2025-06-11 15:13:14,430 - INFO - Top picks saved to MLB_Results/2025-06-11_mlb_top_picks.csv
+2025-06-11 15:13:14,430 - INFO - Daily prediction pipeline completed
+2025-06-11 15:15:03,051 - INFO - Starting daily prediction pipeline
+2025-06-11 15:15:03,052 - INFO - Loading master datasets for prediction...
+2025-06-11 15:15:03,062 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 15:15:03,064 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 15:15:03,064 - INFO - Preprocessing hitter data...
+2025-06-11 15:15:03,065 - INFO - Performing feature engineering for hitter data...
+2025-06-11 15:15:03,080 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-11 15:15:03,080 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-11 15:15:03,089 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-11 15:15:03,090 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-11 15:15:03,091 - INFO - Converted percentage column Barrel% to float
+2025-06-11 15:15:03,092 - INFO - Converted percentage column Hard Hit % to float
+2025-06-11 15:15:03,115 - INFO - Preprocessing pitcher data...
+2025-06-11 15:15:03,115 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 15:15:03,117 - INFO - Converted percentage column K% to float
+2025-06-11 15:15:03,118 - INFO - Converted percentage column BB% to float
+2025-06-11 15:15:03,118 - INFO - Converted percentage column K-BB% to float
+2025-06-11 15:15:03,118 - INFO - Converted percentage column LOB% to float
+2025-06-11 15:15:03,119 - INFO - Converted percentage column Four Seamer to float
+2025-06-11 15:15:03,119 - INFO - Converted percentage column Sinker to float
+2025-06-11 15:15:03,120 - INFO - Converted percentage column Slider to float
+2025-06-11 15:15:03,120 - INFO - Converted percentage column Curveball to float
+2025-06-11 15:15:03,120 - INFO - Converted percentage column Split Finger to float
+2025-06-11 15:15:03,120 - INFO - Converted percentage column Cutter to float
+2025-06-11 15:15:03,121 - INFO - Converted percentage column Changeup to float
+2025-06-11 15:15:03,121 - INFO - Converted percentage column Knuckle Curve to float
+2025-06-11 15:15:03,121 - INFO - Converted percentage column Sweeper to float
+2025-06-11 15:15:03,121 - INFO - Converted percentage column Slurve to float
+2025-06-11 15:15:03,176 - INFO - Generated 402 hitter predictions
+2025-06-11 15:15:03,212 - INFO - Generated 81 pitcher predictions
+2025-06-11 15:15:03,215 - INFO - All predictions saved to MLB_Results/2025-06-11_mlb_predictions.csv
+2025-06-11 15:15:03,216 - INFO - Top picks saved to MLB_Results/2025-06-11_mlb_top_picks.csv
+2025-06-11 15:15:03,216 - INFO - Daily prediction pipeline completed
+2025-06-11 15:24:49,816 - INFO - Starting weekly model training
+2025-06-11 15:24:49,816 - INFO - Updating training data with new results...
+2025-06-11 15:24:49,817 - WARNING - No results file found for yesterday at MLB_Results/2025-06-10_mlb_results.csv
+2025-06-11 15:24:49,817 - INFO - Loading training data...
+2025-06-11 15:24:49,817 - WARNING - No hitter training data found at MLB_Prop_Data_CSV/Training/hitter_training_data.csv
+2025-06-11 15:24:49,817 - WARNING - No pitcher training data found at MLB_Prop_Data_CSV/Training/pitcher_training_data.csv
+2025-06-11 15:24:49,817 - WARNING - No hitter training data available for weekly training
+2025-06-11 15:24:49,818 - WARNING - No pitcher training data available for weekly training
+2025-06-11 15:24:49,818 - INFO - Weekly model training completed
+2025-06-11 15:25:31,810 - INFO - Starting weekly model training
+2025-06-11 15:25:31,811 - INFO - Updating training data with new results...
+2025-06-11 15:25:31,811 - WARNING - No results file found for yesterday at MLB_Results/2025-06-10_mlb_results.csv
+2025-06-11 15:25:31,811 - INFO - Loading training data...
+2025-06-11 15:25:31,812 - WARNING - No hitter training data found at MLB_Prop_Data_CSV/Training/hitter_training_data.csv
+2025-06-11 15:25:31,812 - WARNING - No pitcher training data found at MLB_Prop_Data_CSV/Training/pitcher_training_data.csv
+2025-06-11 15:25:31,812 - WARNING - No hitter training data available for weekly training
+2025-06-11 15:25:31,812 - WARNING - No pitcher training data available for weekly training
+2025-06-11 15:25:31,812 - INFO - Weekly model training completed
+2025-06-11 15:25:55,681 - INFO - Starting weekly model training
+2025-06-11 15:25:55,682 - INFO - Loading training datasets...
+2025-06-11 15:25:55,693 - INFO - Added hitter data from 6:9:25-hitter_training_data.csv. Current shape: (262, 191)
+2025-06-11 15:25:55,702 - INFO - Added hitter data from 6:10:25-hitter_training_data.csv. Current shape: (626, 191)
+2025-06-11 15:25:55,704 - INFO - Added pitcher data from 6:9:25-pitcher_training_data.csv. Current shape: (63, 76)
+2025-06-11 15:25:55,707 - INFO - Added pitcher data from 6:10:25-pitcher_training_data.csv. Current shape: (164, 77)
+2025-06-11 15:25:55,718 - INFO - Removed 3 duplicate pitcher rows
+2025-06-11 15:25:55,719 - INFO - Training hitter model with 626 samples from 2 files
+2025-06-11 15:28:20,249 - INFO - Starting weekly model training
+2025-06-11 15:28:20,249 - INFO - Loading training datasets...
+2025-06-11 15:28:20,258 - INFO - Added hitter data from 6:9:25-hitter_training_data.csv. Current shape: (262, 191)
+2025-06-11 15:28:20,266 - INFO - Added hitter data from 6:10:25-hitter_training_data.csv. Current shape: (626, 191)
+2025-06-11 15:28:20,267 - INFO - Added pitcher data from 6:9:25-pitcher_training_data.csv. Current shape: (63, 76)
+2025-06-11 15:28:20,272 - INFO - Added pitcher data from 6:10:25-pitcher_training_data.csv. Current shape: (164, 77)
+2025-06-11 15:28:20,282 - INFO - Removed 3 duplicate pitcher rows
+2025-06-11 15:28:20,282 - INFO - Training hitter model with 626 samples from 2 files
+2025-06-11 15:28:20,283 - INFO - Dropped non-numeric column: Player
+2025-06-11 15:28:20,283 - INFO - Dropped non-numeric column: Position
+2025-06-11 15:28:20,284 - INFO - Dropped non-numeric column: Team
+2025-06-11 15:28:20,284 - INFO - Dropped non-numeric column: Prop Type
+2025-06-11 15:28:20,284 - INFO - Dropped non-numeric column: Opposing Team
+2025-06-11 15:28:20,284 - INFO - Dropped non-numeric column: Stadium
+2025-06-11 15:28:20,285 - INFO - Dropped non-numeric column: Game-Time Effect on Hitters
+2025-06-11 15:28:20,285 - INFO - Dropped non-numeric column: Odds Category
+2025-06-11 15:28:20,285 - INFO - Dropped non-numeric column: Start Time
+2025-06-11 15:28:20,285 - INFO - Dropped non-numeric column: Full Opposing Team
+2025-06-11 15:28:20,286 - INFO - Dropped non-numeric column: Opposing Pitcher
+2025-06-11 15:28:20,286 - INFO - Dropped non-numeric column: Pitcher Handedness
+2025-06-11 15:28:20,286 - INFO - Dropped non-numeric column: BB%_vs_rhp
+2025-06-11 15:28:20,286 - INFO - Dropped non-numeric column: K%_vs_rhp
+2025-06-11 15:28:20,287 - INFO - Dropped non-numeric column: BB%_vs_lhp
+2025-06-11 15:28:20,287 - INFO - Dropped non-numeric column: K%_vs_lhp
+2025-06-11 15:28:20,288 - INFO - Dropped non-numeric column: Barrel%
+2025-06-11 15:28:20,288 - INFO - Dropped non-numeric column: Hard Hit %
+2025-06-11 15:28:20,288 - INFO - Dropped non-numeric column: Team Name
+2025-06-11 15:28:20,288 - INFO - Dropped non-numeric column: Weather Team Name
+2025-06-11 15:28:20,353 - INFO - Prepared hitter training data with 170 features
+2025-06-11 15:28:44,852 - INFO - Best parameters: {'class_weight': 'balanced_subsample', 'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 4, 'min_samples_split': 10, 'n_estimators': 300}
+2025-06-11 15:28:44,853 - INFO - Best cross-validation score: 0.889
+2025-06-11 15:28:44,853 - INFO - Training pitcher model with 161 samples from 2 files
+2025-06-11 15:28:44,854 - INFO - Dropped non-numeric column: Player
+2025-06-11 15:28:44,854 - INFO - Dropped non-numeric column: Position
+2025-06-11 15:28:44,854 - INFO - Dropped non-numeric column: Team
+2025-06-11 15:28:44,854 - INFO - Dropped non-numeric column: Prop Type
+2025-06-11 15:28:44,855 - INFO - Dropped non-numeric column: Opposing Team
+2025-06-11 15:28:44,855 - INFO - Dropped non-numeric column: Odds Category
+2025-06-11 15:28:44,855 - INFO - Dropped non-numeric column: Start Time
+2025-06-11 15:28:44,855 - INFO - Dropped non-numeric column: K%
+2025-06-11 15:28:44,856 - INFO - Dropped non-numeric column: BB%
+2025-06-11 15:28:44,856 - INFO - Dropped non-numeric column: K-BB%
+2025-06-11 15:28:44,856 - INFO - Dropped non-numeric column: LOB%
+2025-06-11 15:28:44,856 - INFO - Dropped non-numeric column: Four Seamer
+2025-06-11 15:28:44,856 - INFO - Dropped non-numeric column: Slider
+2025-06-11 15:28:44,857 - INFO - Dropped non-numeric column: Sinker
+2025-06-11 15:28:44,857 - INFO - Dropped non-numeric column: Cutter
+2025-06-11 15:28:44,857 - INFO - Dropped non-numeric column: Changeup
+2025-06-11 15:28:44,857 - INFO - Dropped non-numeric column: Curveball
+2025-06-11 15:28:44,857 - INFO - Dropped non-numeric column: Sweeper
+2025-06-11 15:28:44,857 - INFO - Dropped non-numeric column: Split Finger
+2025-06-11 15:28:44,858 - INFO - Dropped non-numeric column: Knuckle Curve
+2025-06-11 15:28:44,858 - INFO - Dropped non-numeric column: Slurve
+2025-06-11 15:28:44,858 - INFO - Dropped non-numeric column: DEC
+2025-06-11 15:28:44,858 - INFO - Dropped non-numeric column: Slow Curve
+2025-06-11 15:28:44,861 - INFO - Prepared pitcher training data with 53 features
+2025-06-11 15:32:45,407 - INFO - Starting weekly model training
+2025-06-11 15:32:45,407 - INFO - Loading training datasets...
+2025-06-11 15:32:45,419 - INFO - Added hitter data from 6:9:25-hitter_training_data.csv. Current shape: (262, 191)
+2025-06-11 15:32:45,427 - INFO - Added hitter data from 6:10:25-hitter_training_data.csv. Current shape: (626, 191)
+2025-06-11 15:32:45,429 - INFO - Added pitcher data from 6:9:25-pitcher_training_data.csv. Current shape: (63, 76)
+2025-06-11 15:32:45,432 - INFO - Added pitcher data from 6:10:25-pitcher_training_data.csv. Current shape: (164, 77)
+2025-06-11 15:32:45,442 - INFO - Removed 3 duplicate pitcher rows
+2025-06-11 15:32:45,442 - INFO - Training hitter model with 626 samples from 2 files
+2025-06-11 15:32:45,443 - INFO - Dropped identifier column: Player
+2025-06-11 15:32:45,444 - INFO - Dropped identifier column: Team
+2025-06-11 15:32:45,446 - INFO - Dropped identifier column: Stadium
+2025-06-11 15:32:45,448 - INFO - Dropped identifier column: Start Time
+2025-06-11 15:32:45,448 - INFO - Dropped identifier column: Full Opposing Team
+2025-06-11 15:32:45,448 - INFO - Dropped identifier column: Opposing Pitcher
+2025-06-11 15:32:45,460 - INFO - Converted percentage column: BB%_vs_rhp
+2025-06-11 15:32:45,460 - INFO - Converted percentage column: K%_vs_rhp
+2025-06-11 15:32:45,472 - INFO - Converted percentage column: BB%_vs_lhp
+2025-06-11 15:32:45,473 - INFO - Converted percentage column: K%_vs_lhp
+2025-06-11 15:32:45,475 - INFO - Converted percentage column: Barrel%
+2025-06-11 15:32:45,475 - INFO - Converted percentage column: Hard Hit %
+2025-06-11 15:32:45,543 - INFO - Encoded categorical column: Prop Type into 0 features
+2025-06-11 15:32:45,543 - INFO - Encoded categorical column: Pitcher Handedness into 0 features
+2025-06-11 15:32:45,543 - INFO - Encoded categorical column: Game-Time Effect on Hitters into 0 features
+2025-06-11 15:32:45,544 - INFO - Encoded categorical column: Odds Category into 0 features
+2025-06-11 15:32:45,544 - INFO - Final hitter training data shape: (626, 180)
+2025-06-11 15:33:10,283 - INFO - Best parameters: {'class_weight': 'balanced_subsample', 'max_depth': 20, 'max_features': 'sqrt', 'min_samples_leaf': 2, 'min_samples_split': 5, 'n_estimators': 200}
+2025-06-11 15:33:10,283 - INFO - Best cross-validation score: 0.880
+2025-06-11 15:33:10,283 - INFO - Training pitcher model with 161 samples from 2 files
+2025-06-11 15:33:10,284 - INFO - Removed 18 rows with NaN in 'Hit' column from pitcher data
+2025-06-11 15:33:10,285 - INFO - Dropped identifier column: Player
+2025-06-11 15:33:10,285 - INFO - Dropped identifier column: Team
+2025-06-11 15:33:10,286 - INFO - Dropped identifier column: Start Time
+2025-06-11 15:33:10,288 - INFO - Converted percentage column: K%
+2025-06-11 15:33:10,288 - INFO - Converted percentage column: BB%
+2025-06-11 15:33:10,288 - INFO - Converted percentage column: K-BB%
+2025-06-11 15:33:10,289 - INFO - Converted percentage column: LOB%
+2025-06-11 15:33:10,289 - INFO - Converted percentage column: Four Seamer
+2025-06-11 15:33:10,290 - INFO - Converted percentage column: Slider
+2025-06-11 15:33:10,290 - INFO - Converted percentage column: Sinker
+2025-06-11 15:33:10,290 - INFO - Converted percentage column: Cutter
+2025-06-11 15:33:10,290 - INFO - Converted percentage column: Changeup
+2025-06-11 15:33:10,291 - INFO - Converted percentage column: Curveball
+2025-06-11 15:33:10,291 - INFO - Converted percentage column: Sweeper
+2025-06-11 15:33:10,291 - INFO - Converted percentage column: Split Finger
+2025-06-11 15:33:10,291 - INFO - Converted percentage column: Knuckle Curve
+2025-06-11 15:33:10,291 - INFO - Converted percentage column: Slurve
+2025-06-11 15:33:10,297 - INFO - Converted percentage column: Slow Curve
+2025-06-11 15:33:10,297 - INFO - Encoded categorical column: Prop Type into 0 features
+2025-06-11 15:33:10,298 - INFO - Encoded categorical column: Odds Category into 0 features
+2025-06-11 15:33:10,298 - INFO - Final pitcher training data shape: (143, 71)
+2025-06-11 15:33:26,515 - INFO - Best parameters: {'class_weight': 'balanced', 'max_depth': 10, 'max_features': 'log2', 'min_samples_leaf': 4, 'min_samples_split': 5, 'n_estimators': 100}
+2025-06-11 15:33:26,515 - INFO - Best cross-validation score: 0.677
+2025-06-11 15:33:26,515 - INFO - Weekly model training completed
+2025-06-11 15:35:38,087 - INFO - Starting daily prediction pipeline
+2025-06-11 15:35:38,088 - INFO - Loading master datasets for prediction...
+2025-06-11 15:35:38,099 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 15:35:38,102 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 15:35:38,102 - INFO - Preprocessing hitter data...
+2025-06-11 15:35:38,102 - INFO - Performing feature engineering for hitter data...
+2025-06-11 15:35:38,115 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-11 15:35:38,116 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-11 15:35:38,124 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-11 15:35:38,125 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-11 15:35:38,126 - INFO - Converted percentage column Barrel% to float
+2025-06-11 15:35:38,127 - INFO - Converted percentage column Hard Hit % to float
+2025-06-11 15:35:38,151 - INFO - Preprocessing pitcher data...
+2025-06-11 15:35:38,151 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 15:35:38,153 - INFO - Converted percentage column K% to float
+2025-06-11 15:35:38,154 - INFO - Converted percentage column BB% to float
+2025-06-11 15:35:38,154 - INFO - Converted percentage column K-BB% to float
+2025-06-11 15:35:38,155 - INFO - Converted percentage column LOB% to float
+2025-06-11 15:35:38,155 - INFO - Converted percentage column Four Seamer to float
+2025-06-11 15:35:38,155 - INFO - Converted percentage column Sinker to float
+2025-06-11 15:35:38,156 - INFO - Converted percentage column Slider to float
+2025-06-11 15:35:38,156 - INFO - Converted percentage column Curveball to float
+2025-06-11 15:35:38,156 - INFO - Converted percentage column Split Finger to float
+2025-06-11 15:35:38,156 - INFO - Converted percentage column Cutter to float
+2025-06-11 15:35:38,157 - INFO - Converted percentage column Changeup to float
+2025-06-11 15:35:38,157 - INFO - Converted percentage column Knuckle Curve to float
+2025-06-11 15:35:38,157 - INFO - Converted percentage column Sweeper to float
+2025-06-11 15:35:38,157 - INFO - Converted percentage column Slurve to float
+2025-06-11 15:35:38,183 - ERROR - Error making predictions: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- EV_norm
+- Pitcher_Handedness_Numeric
+- Wind_Effect_Numeric
+- prop_Hits
+- prop_Hits+Runs+RBIs
+- ...
+Feature names seen at fit time, yet now missing:
+- 2B
+- 3B
+- 4seam_fastball_HardHit%
+- 4seam_fastball_RV100
+- 4seam_fastball_wOBA
+- ...
+
+2025-06-11 15:35:38,184 - INFO - Generated 0 hitter predictions
+2025-06-11 15:35:38,191 - ERROR - Error making predictions: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- BB/9_norm
+- ERA_norm
+- HR/9_norm
+- K/9_norm
+- WHIP_norm
+- ...
+Feature names seen at fit time, yet now missing:
+- 15_day_fastball_spin
+- 15_day_fb_pct
+- 15_day_gb_pct
+- 15_day_ld_pct
+- 30_day_fastball_spin
+- ...
+
+2025-06-11 15:35:38,191 - INFO - Generated 0 pitcher predictions
+2025-06-11 15:35:38,192 - WARNING - No predictions were generated.
+2025-06-11 15:35:38,192 - INFO - Daily prediction pipeline completed

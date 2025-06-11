@@ -358,83 +358,76 @@ def parse_llm_response(response, rf_prediction):
     except Exception as e:
         return "Unknown", "Unknown", f"Error parsing response: {str(e)}", "Unknown"
 
-def generate_betslips(df, num_betslips=5, props_per_betslip=2):
-    """Generate betslips from the predictions"""
-    logger.info(f"Generating {num_betslips} betslips with {props_per_betslip} props each")
+def generate_betslips(df, output_path,num_betslips: int = 3, props_per_betslip: int = 5, min_confidence: float = 0.55):
+    """
+    Build betslips by selecting the highest‐edge props where LLM agrees with RF,
+    diversifying across model types and directions, and write to CSV.
 
-    # Filter to only include rows where LLM agrees with RF
-    agreed_df = df[df['LLM_RF_Agreement'] == 'True'].copy()
+    Each row will have: Betslip, Player, Prop Type, Prop Value,
+    RF_Prediction, RF_Confidence, LLM_Prediction, LLM_Justification.
+    """
+    # 1. Filter to agreed picks above `min_confidence`
+    df = df[df["LLM_RF_Agreement"] == "True"].copy()
+    df = df[df["RF_Confidence"] >= min_confidence]
 
-    if len(agreed_df) < props_per_betslip:
-        logger.warning(
-            f"Not enough agreed predictions to generate betslips. Found {len(agreed_df)}, need at least {props_per_betslip}.")
-        return []
+    if df.empty:
+        logger.warning("No high‐confidence, agreed picks to generate betslips.")
+        return
 
-    # Sort by RF confidence
-    agreed_df = agreed_df.sort_values('RF_Confidence', ascending=False)
+    # 2. Compute “edge” = |confidence – 0.5|
+    df["edge"] = (df["RF_Confidence"] - 0.5).abs()
 
-    # Generate betslips
-    betslips = []
+    # 3. Sort by edge descending
+    df = df.sort_values("edge", ascending=False)
 
-    # First betslip: top confidence picks
-    top_picks = agreed_df.head(props_per_betslip)
-    betslips.append({
-        "name": "Top Confidence Picks",
-        "props": top_picks[['Player', 'Prop Type', 'Prop Value', 'RF_Prediction', 'RF_Confidence', 'LLM_Prediction',
-                            'LLM_Justification']].to_dict('records')
-    })
+    # 4. Build up to N betslips
+    records = []
+    for slip_idx in range(num_betslips):
+        slip_name = f"Betslip #{slip_idx + 1}"
+        # Start with the top remaining pick
+        picked = []
+        available = df.copy()
 
-    # Try to generate diverse betslips
-    # We'll use different strategies:
+        # pick props_per_betslip in a loop, enforcing diversity
+        while len(picked) < props_per_betslip and not available.empty:
+            # strategy: alternate hitter/pitcher and Over/Under
+            last = picked[-1] if picked else None
+            if last:
+                # invert model type or direction for diversity
+                want_type = ("pitcher" if last["Model_Type"] == "hitter" else "hitter")
+                want_dir = ("Under" if last["RF_Prediction"] == 1 else "Over")
+                cand = available[
+                    (available["Model_Type"] == want_type) &
+                    (available["RF_Prediction"].map({1: "Over", 0: "Under"}) == want_dir)
+                    ]
+                if cand.empty:
+                    cand = available
+            else:
+                cand = available
 
-    # 1. Mix of hitter and pitcher props
-    if 'Model_Type' in agreed_df.columns:
-        hitter_props = agreed_df[agreed_df['Model_Type'] == 'hitter'].head(props_per_betslip // 2)
-        pitcher_props = agreed_df[agreed_df['Model_Type'] == 'pitcher'].head(props_per_betslip // 2)
+            # take the top edge pick from candidates
+            pick = cand.iloc[0].to_dict()
+            picked.append(pick)
+            # remove from available
+            available = available.drop(pick["edge"].name if "edge" in pick else available.index[0])
 
-        if len(hitter_props) >= 1 and len(pitcher_props) >= 1:
-            mixed_props = pd.concat([hitter_props, pitcher_props]).head(props_per_betslip)
-            betslips.append({
-                "name": "Mixed Hitter/Pitcher Props",
-                "props": mixed_props[
-                    ['Player', 'Prop Type', 'Prop Value', 'RF_Prediction', 'RF_Confidence', 'LLM_Prediction',
-                     'LLM_Justification']].to_dict('records')
+        # record rows
+        for p in picked:
+            records.append({
+                "Betslip": slip_name,
+                "Player": p["Player"],
+                "Prop Type": p["Prop Type"],
+                "Prop Value": p["Prop Value"],
+                "RF_Prediction": p["RF_Prediction"],
+                "RF_Confidence": p["RF_Confidence"],
+                "LLM_Prediction": p["LLM_Prediction"],
+                "LLM_Justification": p["LLM_Justification"]
             })
 
-    # 2. All Over picks
-    over_picks = agreed_df[agreed_df['RF_Prediction'] == 1].head(props_per_betslip)
-    if len(over_picks) >= props_per_betslip:
-        betslips.append({
-            "name": "All Overs",
-            "props": over_picks[
-                ['Player', 'Prop Type', 'Prop Value', 'RF_Prediction', 'RF_Confidence', 'LLM_Prediction',
-                 'LLM_Justification']].to_dict('records')
-        })
-
-    # 3. All Under picks
-    under_picks = agreed_df[agreed_df['RF_Prediction'] == 0].head(props_per_betslip)
-    if len(under_picks) >= props_per_betslip:
-        betslips.append({
-            "name": "All Unders",
-            "props": under_picks[
-                ['Player', 'Prop Type', 'Prop Value', 'RF_Prediction', 'RF_Confidence', 'LLM_Prediction',
-                 'LLM_Justification']].to_dict('records')
-        })
-
-    # 4. Highest confidence over and under
-    if len(over_picks) >= 1 and len(under_picks) >= 1:
-        balanced_picks = pd.concat([over_picks.head(1), under_picks.head(1)])
-        betslips.append({
-            "name": "Balanced Over/Under",
-            "props": balanced_picks[
-                ['Player', 'Prop Type', 'Prop Value', 'RF_Prediction', 'RF_Confidence', 'LLM_Prediction',
-                 'LLM_Justification']].to_dict('records')
-        })
-
-    # Limit to requested number of betslips
-    betslips = betslips[:num_betslips]
-
-    return betslips
+    # 5. Write out CSV
+    out_df = pd.DataFrame(records)
+    out_df.to_csv(output_path, index=False)
+    logger.info(f"Generated {num_betslips} betslips to {output_path}")
 
 def main():
     """Main function to run the LLM inference pipeline"""
@@ -570,11 +563,7 @@ def main():
         logger.warning(f"Top picks file not found at {TOP_PICKS_PATH}")
 
     # Generate betslips
-    betslips = generate_betslips(df)
-
-    # Save betslips
-    with open(BETSLIPS_PATH, 'w') as f:
-        json.dump(betslips, f, indent=2)
+    generate_betslips(df, BETSLIPS_PATH.replace('.json', '.csv'))
     logger.info(f"Betslips saved to {BETSLIPS_PATH}")
 
     logger.info("LLM inference pipeline completed")
