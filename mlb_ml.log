@@ -256,3 +256,161 @@ weighted avg       0.83      0.83      0.83        12
 2025-06-10 22:27:46,905 - INFO - All predictions saved to MLB_Results/2025-06-10_mlb_predictions.csv
 2025-06-10 22:27:46,906 - INFO - Top picks saved to MLB_Results/2025-06-10_mlb_top_picks.csv
 2025-06-10 22:27:46,908 - INFO - MLB machine learning pipeline completed
+2025-06-11 11:34:18,400 - INFO - Starting MLB machine learning pipeline
+2025-06-11 11:34:18,400 - INFO - Loading master datasets for prediction...
+2025-06-11 11:34:18,405 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 11:34:18,405 - INFO - Added Hit column to hitter data
+2025-06-11 11:34:18,406 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 11:34:18,406 - INFO - Added Hit column to pitcher data
+2025-06-11 11:34:18,406 - INFO - No hitter training data found at MLB_Prop_Data_CSV/hitter_training_data.csv
+2025-06-11 11:34:18,406 - INFO - No pitcher training data found at MLB_Prop_Data_CSV/pitcher_training_data.csv
+2025-06-11 11:34:18,406 - INFO - Preprocessing hitter data...
+2025-06-11 11:34:18,407 - INFO - Performing feature engineering for hitter data...
+2025-06-11 11:34:18,418 - INFO - Preprocessing pitcher data...
+2025-06-11 11:34:18,419 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 11:34:18,423 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:34:18,423 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:34:18,423 - WARNING - No prediction data available for hitter. Skipping predictions.
+2025-06-11 11:34:18,424 - WARNING - No prediction data available for pitcher. Skipping predictions.
+2025-06-11 11:34:18,424 - WARNING - No predictions were generated.
+2025-06-11 11:34:18,424 - INFO - MLB machine learning pipeline completed
+2025-06-11 11:41:41,912 - INFO - Starting MLB machine learning pipeline
+2025-06-11 11:41:41,912 - INFO - Loading master datasets for prediction...
+2025-06-11 11:41:41,916 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 11:41:41,916 - INFO - Added Hit column to hitter data
+2025-06-11 11:41:41,917 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 11:41:41,917 - INFO - Added Hit column to pitcher data
+2025-06-11 11:41:41,917 - INFO - No hitter training data found at MLB_Prop_Data_CSV/hitter_training_data.csv
+2025-06-11 11:41:41,917 - INFO - No pitcher training data found at MLB_Prop_Data_CSV/pitcher_training_data.csv
+2025-06-11 11:41:41,917 - INFO - Preprocessing hitter data...
+2025-06-11 11:41:41,918 - INFO - Performing feature engineering for hitter data...
+2025-06-11 11:41:41,930 - INFO - Preprocessing pitcher data...
+2025-06-11 11:41:41,930 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 11:41:41,935 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:41:41,935 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:41:41,935 - WARNING - No prediction data available for hitter. Skipping predictions.
+2025-06-11 11:41:41,935 - WARNING - No prediction data available for pitcher. Skipping predictions.
+2025-06-11 11:41:41,935 - WARNING - No predictions were generated.
+2025-06-11 11:41:41,935 - INFO - MLB machine learning pipeline completed
+2025-06-11 11:49:33,043 - INFO - Starting MLB machine learning pipeline
+2025-06-11 11:49:33,043 - INFO - Loading master datasets for prediction...
+2025-06-11 11:49:33,047 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 11:49:33,048 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 11:49:33,048 - INFO - No hitter training data found - will proceed with predictions only
+2025-06-11 11:49:33,048 - INFO - No pitcher training data found - will proceed with predictions only
+2025-06-11 11:49:33,048 - INFO - Preprocessing hitter data...
+2025-06-11 11:49:33,048 - WARNING - 'Hit' column missing. Assuming this is a prediction day.
+2025-06-11 11:49:33,048 - INFO - Performing feature engineering for hitter data...
+2025-06-11 11:49:33,061 - INFO - Preprocessing pitcher data...
+2025-06-11 11:49:33,061 - WARNING - 'Hit' column missing. Assuming this is a prediction day.
+2025-06-11 11:49:33,061 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 11:49:33,066 - WARNING - No prediction data available for hitter. Skipping predictions.
+2025-06-11 11:49:33,066 - WARNING - No prediction data available for pitcher. Skipping predictions.
+2025-06-11 11:50:52,257 - INFO - Starting MLB machine learning pipeline
+2025-06-11 11:50:52,258 - INFO - Loading master datasets for prediction...
+2025-06-11 11:50:52,262 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 11:50:52,263 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 11:50:52,263 - INFO - No hitter training data found - will proceed with predictions only
+2025-06-11 11:50:52,264 - INFO - No pitcher training data found - will proceed with predictions only
+2025-06-11 11:50:52,264 - INFO - Preprocessing hitter data...
+2025-06-11 11:50:52,264 - WARNING - 'Hit' column missing. Adding Hit column with default values.
+2025-06-11 11:50:52,264 - INFO - Performing feature engineering for hitter data...
+2025-06-11 11:50:52,276 - INFO - Preprocessing pitcher data...
+2025-06-11 11:50:52,276 - WARNING - 'Hit' column missing. Adding Hit column with default values.
+2025-06-11 11:50:52,276 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 11:50:52,280 - INFO - Making predictions for 402 hitter props using master data
+2025-06-11 11:50:52,519 - ERROR - Error making predictions: index 1 is out of bounds for axis 1 with size 1
+2025-06-11 11:50:52,520 - INFO - Making predictions for 81 pitcher props using master data
+2025-06-11 11:50:52,640 - ERROR - Error making predictions: index 1 is out of bounds for axis 1 with size 1
+2025-06-11 11:52:29,390 - INFO - Starting MLB machine learning pipeline
+2025-06-11 11:52:29,390 - INFO - Loading master datasets for prediction...
+2025-06-11 11:52:29,394 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 11:52:29,394 - INFO - Added Hit column to hitter data
+2025-06-11 11:52:29,395 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 11:52:29,395 - INFO - Added Hit column to pitcher data
+2025-06-11 11:52:29,395 - INFO - No hitter training data found at MLB_Prop_Data_CSV/hitter_training_data.csv
+2025-06-11 11:52:29,395 - INFO - No pitcher training data found at MLB_Prop_Data_CSV/pitcher_training_data.csv
+2025-06-11 11:52:29,396 - INFO - Preprocessing hitter data...
+2025-06-11 11:52:29,396 - INFO - Performing feature engineering for hitter data...
+2025-06-11 11:52:29,408 - INFO - Preprocessing pitcher data...
+2025-06-11 11:52:29,408 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 11:52:29,413 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:52:29,413 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:52:29,413 - WARNING - No prediction data available for hitter. Skipping predictions.
+2025-06-11 11:52:29,413 - WARNING - No prediction data available for pitcher. Skipping predictions.
+2025-06-11 11:52:29,413 - WARNING - No predictions were generated.
+2025-06-11 11:52:29,413 - INFO - MLB machine learning pipeline completed
+2025-06-11 11:53:03,991 - INFO - Starting MLB machine learning pipeline
+2025-06-11 11:53:03,991 - INFO - Loading master datasets for prediction...
+2025-06-11 11:53:03,996 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 11:53:03,997 - INFO - Added Hit column to hitter data
+2025-06-11 11:53:03,997 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 11:53:03,998 - INFO - Added Hit column to pitcher data
+2025-06-11 11:53:03,998 - INFO - No hitter training data found at MLB_Prop_Data_CSV/hitter_training_data.csv
+2025-06-11 11:53:03,998 - INFO - No pitcher training data found at MLB_Prop_Data_CSV/pitcher_training_data.csv
+2025-06-11 11:53:03,998 - INFO - Preprocessing hitter data...
+2025-06-11 11:53:03,998 - INFO - Performing feature engineering for hitter data...
+2025-06-11 11:53:04,010 - INFO - Preprocessing pitcher data...
+2025-06-11 11:53:04,011 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 11:53:04,015 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:53:04,015 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:53:04,015 - WARNING - No prediction data available for hitter. Skipping predictions.
+2025-06-11 11:53:04,015 - WARNING - No prediction data available for pitcher. Skipping predictions.
+2025-06-11 11:53:04,015 - WARNING - No predictions were generated.
+2025-06-11 11:53:04,015 - INFO - MLB machine learning pipeline completed
+2025-06-11 11:54:28,072 - INFO - Starting MLB machine learning pipeline
+2025-06-11 11:54:28,072 - INFO - Loading master datasets for prediction...
+2025-06-11 11:54:28,076 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 11:54:28,076 - INFO - Added Hit column to hitter data
+2025-06-11 11:54:28,077 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 11:54:28,077 - INFO - Added Hit column to pitcher data
+2025-06-11 11:54:28,077 - INFO - No hitter training data found at MLB_Prop_Data_CSV/hitter_training_data.csv
+2025-06-11 11:54:28,077 - INFO - No pitcher training data found at MLB_Prop_Data_CSV/pitcher_training_data.csv
+2025-06-11 11:54:28,077 - INFO - Preprocessing hitter data...
+2025-06-11 11:54:28,078 - INFO - Performing feature engineering for hitter data...
+2025-06-11 11:54:28,089 - INFO - Preprocessing pitcher data...
+2025-06-11 11:54:28,089 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 11:54:28,094 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:54:28,094 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:54:28,094 - INFO - Making predictions for 402 hitter props
+2025-06-11 11:54:28,315 - INFO - Successfully generated predictions for 402 hitter props
+2025-06-11 11:54:28,340 - INFO - Saved hitter model to MLB_Models/mlb_hitter_rf_model.pkl
+2025-06-11 11:54:28,340 - INFO - Making predictions for 81 pitcher props
+2025-06-11 11:54:28,469 - INFO - Successfully generated predictions for 81 pitcher props
+2025-06-11 11:54:28,493 - INFO - Saved pitcher model to MLB_Models/mlb_pitcher_rf_model.pkl
+2025-06-11 11:54:28,495 - INFO - All predictions saved to MLB_Results/2025-06-11_mlb_predictions.csv
+2025-06-11 11:54:28,496 - INFO - Top picks saved to MLB_Results/2025-06-11_mlb_top_picks.csv
+2025-06-11 11:54:28,543 - INFO - MLB machine learning pipeline completed
+2025-06-11 11:57:07,283 - INFO - Starting MLB machine learning pipeline
+2025-06-11 11:57:07,283 - INFO - Loading master datasets for prediction...
+2025-06-11 11:57:07,287 - INFO - Loaded hitter master data with shape: (402, 170)
+2025-06-11 11:57:07,288 - INFO - Added Hit column to hitter data
+2025-06-11 11:57:07,289 - INFO - Loaded pitcher master data with shape: (91, 61)
+2025-06-11 11:57:07,289 - INFO - Added Hit column to pitcher data
+2025-06-11 11:57:07,289 - INFO - No hitter training data found at MLB_Prop_Data_CSV/hitter_training_data.csv
+2025-06-11 11:57:07,289 - INFO - No pitcher training data found at MLB_Prop_Data_CSV/pitcher_training_data.csv
+2025-06-11 11:57:07,289 - INFO - Preprocessing hitter data...
+2025-06-11 11:57:07,289 - INFO - Performing feature engineering for hitter data...
+2025-06-11 11:57:07,302 - INFO - Preprocessing pitcher data...
+2025-06-11 11:57:07,302 - INFO - Performing feature engineering for pitcher data...
+2025-06-11 11:57:07,306 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:57:07,306 - WARNING - No training data available. Skipping model training.
+2025-06-11 11:57:07,306 - INFO - Making predictions for 402 hitter props
+2025-06-11 11:57:07,407 - INFO - Successfully generated predictions for 402 hitter props
+2025-06-11 11:57:07,407 - INFO - Confidence score distribution for hitter:
+2025-06-11 11:57:07,407 - INFO - Mean: 0.551
+2025-06-11 11:57:07,407 - INFO - Std: 0.058
+2025-06-11 11:57:07,407 - INFO - Min: 0.313
+2025-06-11 11:57:07,407 - INFO - Max: 0.666
+2025-06-11 11:57:07,477 - INFO - Saved hitter model to MLB_Models/mlb_hitter_rf_model.pkl
+2025-06-11 11:57:07,477 - INFO - Making predictions for 81 pitcher props
+2025-06-11 11:57:07,566 - INFO - Successfully generated predictions for 81 pitcher props
+2025-06-11 11:57:07,566 - INFO - Confidence score distribution for pitcher:
+2025-06-11 11:57:07,566 - INFO - Mean: 0.554
+2025-06-11 11:57:07,566 - INFO - Std: 0.076
+2025-06-11 11:57:07,566 - INFO - Min: 0.385
+2025-06-11 11:57:07,566 - INFO - Max: 0.722
+2025-06-11 11:57:07,579 - INFO - Saved pitcher model to MLB_Models/mlb_pitcher_rf_model.pkl
+2025-06-11 11:57:07,581 - INFO - All predictions saved to MLB_Results/2025-06-11_mlb_predictions.csv
+2025-06-11 11:57:07,582 - INFO - Top picks saved to MLB_Results/2025-06-11_mlb_top_picks.csv
+2025-06-11 11:57:07,622 - INFO - MLB machine learning pipeline completed

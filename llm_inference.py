@@ -23,6 +23,8 @@ TODAY_DATE = datetime.now().strftime("%Y-%m-%d")
 PREDICTIONS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_predictions.csv")
 TOP_PICKS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_top_picks_with_llm.csv")
 BETSLIPS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_betslips.json")
+# Add this with the other constants at the top of the file
+INSIGHTS_DB_PATH = os.path.join(RESULTS_DIR, "mlb_insights_db.json")
 
 # Master data paths
 MASTER_HITTER_PATH = os.path.join(MLB_DATA_DIR, "master_hitter_dataset.csv")
@@ -70,6 +72,22 @@ def load_predictions():
     except Exception as e:
         logger.error(f"Error loading predictions: {e}")
         return pd.DataFrame()
+
+def load_insights_database():
+    """Load the MLB insights database"""
+    logger.info("Loading MLB insights database...")
+    try:
+        if os.path.exists(INSIGHTS_DB_PATH):
+            with open(INSIGHTS_DB_PATH, 'r') as f:
+                insights_db = json.load(f)
+            logger.info("Successfully loaded MLB insights database")
+            return insights_db
+        else:
+            logger.warning(f"No insights database found at {INSIGHTS_DB_PATH}")
+            return {"hitter": [], "pitcher": []}
+    except Exception as e:
+        logger.error(f"Error loading insights database: {e}")
+        return {"hitter": [], "pitcher": []}
 
 def enrich_predictions_with_master_data(predictions_df, master_hitter, master_pitcher):
     """Enrich predictions with additional data from master files"""
@@ -131,8 +149,8 @@ def enrich_predictions_with_master_data(predictions_df, master_hitter, master_pi
     logger.info(f"Enrichment complete. DataFrame now has {len(enriched_df.columns)} columns")
     return enriched_df
 
-def build_prompt(row):
-    """Build a prompt for the LLM based on the row data"""
+def build_prompt(row, insights_db=None):
+    """Build a prompt for the LLM based on the row data and insights"""
     # Get player name from the Player column
     player_name = row.get('Player', 'Unknown Player')
 
@@ -145,9 +163,9 @@ def build_prompt(row):
     rf_conf = round(row.get('RF_Confidence', 0) * 100, 1)
 
     # Get model type (hitter or pitcher)
-    model_type = row.get('Model_Type', 'unknown')
+    model_type = row.get('Model_Type', 'unknown').lower()
 
-    # Build the full prompt with the new format
+    # Build the base prompt
     prompt = f"""<s>[INST] System: You are a world-class MLB prop betting analyst working alongside an AI model. Your job is to critically evaluate the model's prediction for a player prop bet using detailed statistics and game context.
 
 User: I need your expert analysis on the following MLB prop bet:
@@ -215,7 +233,30 @@ The Random Forest (RF) model you are reviewing is in its **early development sta
 - Park Factor (HR): {row.get('Park_Factor_HR', 'N/A')}
 - Temperature: {row.get('Game-Time Temp (°F)', 'N/A')}°F
 - Wind: {row.get('Game-Time Wind Speed (mph)', 'N/A')} mph
-- Wind Effect: {row.get('Game-Time Effect on Hitters', 'N/A')}
+- Wind Effect: {row.get('Game-Time Effect on Hitters', 'N/A')}"""
+
+    # Add insights section if available
+    if insights_db and model_type in insights_db and insights_db[model_type]:
+        # Get the 3 most recent insights
+        recent_insights = insights_db[model_type][-3:]
+
+        # Add insights section to prompt
+        insights_section = "\n\n---\n\n📈 **Historical Model Insights**"
+
+        for i, insight in enumerate(recent_insights):
+            date = insight.get('date', 'N/A')
+            key_finding = insight.get('strongest_insight', 'N/A')
+            key_factors = insight.get('key_factors', [])
+
+            insights_section += f"\n{i + 1}. **{date}**: {key_finding}"
+
+            if key_factors:
+                insights_section += f"\n   Key factors: {', '.join(key_factors[:3])}"
+
+        prompt += insights_section
+
+    # Complete the prompt
+    prompt += """
 
 ---
 
@@ -410,8 +451,16 @@ def main():
     initial_row_count = len(df)
     logger.info(f"Initial DataFrame shape: {df.shape}")
 
+    # Load insights database
+    insights_db = load_insights_database()
+    logger.info(
+        f"Loaded insights database with {len(insights_db.get('hitter', []))} hitter insights and {len(insights_db.get('pitcher', []))} pitcher insights")
+
     # Load master data
     master_hitter, master_pitcher = load_master_data()
+
+    # Process predictions with insights
+    llm_preds, llm_justifications, llm_agreements, llm_confidences = [], [], [], []
 
     # Enrich predictions with master data
     if not master_hitter.empty or not master_pitcher.empty:
@@ -443,10 +492,11 @@ def main():
 
     for idx, row in df.iterrows():
         player_name = row.get("Player", "Unknown")
-        logger.info(f"Processing prediction {idx + 1}/{len(df)} for {player_name}")
+        model_type = row.get("Model_Type", "unknown").lower()
+        logger.info(f"Processing prediction {idx + 1}/{len(df)} for {player_name} ({model_type})")
 
-        # Build prompt
-        prompt = build_prompt(row)
+        # Build prompt with insights
+        prompt = build_prompt(row, insights_db)
 
         # Query LLM
         response = query_llm(prompt)
@@ -460,13 +510,27 @@ def main():
         llm_justifications.append(justification)
         llm_confidences.append(confidence)
 
-        logger.info(f"LLM prediction for {player_name}: {prediction}, Agreement: {agreement}")
+        logger.info(f"LLM prediction for {player_name}: {prediction}, Agreement: {agreement}, Confidence: {confidence}")
 
     # Add results to DataFrame
     df["LLM_Prediction"] = llm_preds
     df["LLM_RF_Agreement"] = llm_agreements
     df["LLM_Justification"] = llm_justifications
     df["LLM_Confidence"] = llm_confidences
+
+    # Add this right before df.to_csv(PREDICTIONS_PATH, index=False):
+    desired_columns = ['Player', 'Prop Type', 'Prop Value', 'Start Time', 'RF_Prediction',
+                       'RF_Confidence', 'Model_Type', 'LLM_Prediction', 'LLM_RF_Agreement',
+                       'LLM_Confidence', 'LLM_Justification', 'Actual_Stat', 'Actual_Result',
+                       'Reflection']
+
+    # Ensure all desired columns exist (add empty ones if missing)
+    for col in desired_columns:
+        if col not in df.columns:
+            df[col] = None
+
+    # Select only the desired columns in the specified order
+    df = df[desired_columns]
 
     # Overwrite the original predictions CSV with added LLM columns
     df.to_csv(PREDICTIONS_PATH, index=False)
@@ -481,24 +545,29 @@ def main():
 
         for idx, row in top_picks_df.iterrows():
             player_name = row.get("Player", "Unknown")
-            logger.info(f"Processing top pick {idx + 1}/{len(top_picks_df)} for {player_name}")
+            model_type = row.get("Model_Type", "unknown").lower()
+            logger.info(f"Processing top pick {idx + 1}/{len(top_picks_df)} for {player_name} ({model_type})")
 
-            prompt = build_prompt(row)
+            # Build prompt with insights
+            prompt = build_prompt(row, insights_db)
+
             response = query_llm(prompt)
-            prediction, agreement, justification = parse_llm_response(response)
+            prediction, agreement, justification, confidence = parse_llm_response(response, row.get("RF_Prediction", 0))
 
             llm_preds.append(prediction)
             llm_agreements.append(agreement)
             llm_justifications.append(justification)
+            llm_confidences.append(confidence)
 
         top_picks_df["LLM_Prediction"] = llm_preds
         top_picks_df["LLM_RF_Agreement"] = llm_agreements
         top_picks_df["LLM_Justification"] = llm_justifications
+        top_picks_df["LLM_Confidence"] = llm_confidences
 
         top_picks_df.to_csv(TOP_PICKS_PATH, index=False)
         logger.info(f"Updated LLM-enhanced top picks written to: {TOP_PICKS_PATH}")
     else:
-        logger.error(f"Top picks file not found at {TOP_PICKS_PATH}")
+        logger.warning(f"Top picks file not found at {TOP_PICKS_PATH}")
 
     # Generate betslips
     betslips = generate_betslips(df)
