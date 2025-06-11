@@ -318,6 +318,8 @@ def update_accuracy_csv(date, overall_metrics, prop_type_metrics):
         accuracy_df = pd.DataFrame([new_row])
 
     # Save updated CSV
+    # Add this line right before accuracy_df.to_csv(ACCURACY_CSV_PATH, index=False):
+    accuracy_df = accuracy_df.round(3)  # This will round all numeric columns to 3 decimal places
     accuracy_df.to_csv(ACCURACY_CSV_PATH, index=False)
     logger.info(f"Updated accuracy metrics in {ACCURACY_CSV_PATH}")
 
