@@ -205,3 +205,54 @@ weighted avg       0.83      0.83      0.83        12
 2025-06-10 16:01:44,615 - INFO - All predictions saved to MLB_Results/2025-06-10_mlb_predictions.csv
 2025-06-10 16:01:44,616 - INFO - Top picks saved to MLB_Results/2025-06-10_mlb_top_picks.csv
 2025-06-10 16:01:44,618 - INFO - MLB machine learning pipeline completed
+2025-06-10 22:27:46,318 - INFO - Starting MLB machine learning pipeline
+2025-06-10 22:27:46,319 - INFO - Loading master datasets for prediction...
+2025-06-10 22:27:46,323 - INFO - Loaded hitter master data with shape: (364, 170)
+2025-06-10 22:27:46,324 - INFO - Added Hit column to hitter data
+2025-06-10 22:27:46,325 - INFO - Loaded pitcher master data with shape: (101, 62)
+2025-06-10 22:27:46,325 - INFO - Added Hit column to pitcher data
+2025-06-10 22:27:46,329 - INFO - Loaded hitter training data with shape: (262, 191)
+2025-06-10 22:27:46,330 - INFO - Combined hitter data shape: (626, 192)
+2025-06-10 22:27:46,331 - INFO - Loaded pitcher training data with shape: (63, 76)
+2025-06-10 22:27:46,332 - INFO - Combined pitcher data shape: (164, 78)
+2025-06-10 22:27:46,332 - INFO - Preprocessing hitter data...
+2025-06-10 22:27:46,333 - INFO - Performing feature engineering for hitter data...
+2025-06-10 22:27:46,349 - INFO - Preprocessing pitcher data...
+2025-06-10 22:27:46,350 - INFO - Performing feature engineering for pitcher data...
+2025-06-10 22:27:46,355 - INFO - Training model on 262 samples
+2025-06-10 22:27:46,495 - INFO - Model accuracy: 0.85
+2025-06-10 22:27:46,498 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.82      0.74      0.78        19
+         1.0       0.86      0.91      0.89        34
+
+    accuracy                           0.85        53
+   macro avg       0.84      0.82      0.83        53
+weighted avg       0.85      0.85      0.85        53
+
+2025-06-10 22:27:46,499 - INFO - Confusion Matrix:
+[[14  5]
+ [ 3 31]]
+2025-06-10 22:27:46,587 - INFO - Model saved to MLB_Models/mlb_hitter_rf_model.pkl
+2025-06-10 22:27:46,659 - INFO - Training model on 57 samples
+2025-06-10 22:27:46,769 - INFO - Model accuracy: 0.83
+2025-06-10 22:27:46,771 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.86      0.86      0.86         7
+         1.0       0.80      0.80      0.80         5
+
+    accuracy                           0.83        12
+   macro avg       0.83      0.83      0.83        12
+weighted avg       0.83      0.83      0.83        12
+
+2025-06-10 22:27:46,772 - INFO - Confusion Matrix:
+[[6 1]
+ [1 4]]
+2025-06-10 22:27:46,797 - INFO - Model saved to MLB_Models/mlb_pitcher_rf_model.pkl
+2025-06-10 22:27:46,798 - INFO - Making predictions for 364 hitter props
+2025-06-10 22:27:46,855 - INFO - Making predictions for 89 pitcher props
+2025-06-10 22:27:46,905 - INFO - All predictions saved to MLB_Results/2025-06-10_mlb_predictions.csv
+2025-06-10 22:27:46,906 - INFO - Top picks saved to MLB_Results/2025-06-10_mlb_top_picks.csv
+2025-06-10 22:27:46,908 - INFO - MLB machine learning pipeline completed
