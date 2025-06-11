@@ -13,7 +13,8 @@ EXCLUDE_SCRIPTS = {
     "Overall_MLB_Stats.py",
     "MLB_Main.py",
     "Config.py",
-    "mlb_utils.py"
+    "mlb_utils.py",
+    "create_training_data.py"
 }
 
 # Track errors

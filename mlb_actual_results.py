@@ -9,7 +9,6 @@ from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from Data_Extraction.utils import clean_player_name
 from MLB_Data_Extraction.mlb_utils import normalize_name
-import argparse
 
 # ——— Logging ———
 logging.basicConfig(
@@ -65,13 +64,6 @@ def safe_float(x):
         return float(x)
     except:
         return 0.0
-
-# Add this function definition before the main function
-def parse_args():
-    parser = argparse.ArgumentParser(description='MLB Actual Results Scraper')
-    parser.add_argument('--date', type=str, required=True,
-                       help='Date of prediction files to update (YYYY-MM-DD format)')
-    return parser.parse_args()
 
 # Then the update_prediction_files function
 async def update_prediction_files(date_str):
@@ -247,9 +239,7 @@ async def scrape_player(player):
 
 # ─── main pipeline ───
 async def main():
-    # Parse command line arguments
-    args = parse_args()
-    date_str = args.date
+    date_str = input("Enter date (YYYY-MM-DD): ").strip()
 
     if not os.path.exists(INPUT_CSV):
         logging.error(f"Missing {INPUT_CSV}")
