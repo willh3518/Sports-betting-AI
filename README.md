@@ -3,7 +3,7 @@
 <!-- HEADER STYLE: CLASSIC -->
 <div align="center">
 
-<img src="Sports-betting-AI.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
+<img src="sports-betting-ai.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
 
 # SPORTS-BETTING-AI
 
