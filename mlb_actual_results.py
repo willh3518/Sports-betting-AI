@@ -9,6 +9,7 @@ from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 from Data_Extraction.utils import clean_player_name
 from MLB_Data_Extraction.mlb_utils import normalize_name
+import argparse
 
 # ——— Logging ———
 logging.basicConfig(
@@ -64,6 +65,110 @@ def safe_float(x):
         return float(x)
     except:
         return 0.0
+
+# Add this function definition before the main function
+def parse_args():
+    parser = argparse.ArgumentParser(description='MLB Actual Results Scraper')
+    parser.add_argument('--date', type=str, required=True,
+                       help='Date of prediction files to update (YYYY-MM-DD format)')
+    return parser.parse_args()
+
+# Then the update_prediction_files function
+async def update_prediction_files(date_str):
+    """Update prediction files with actual results and stats"""
+    # Define prediction file paths with the provided date format
+    prediction_files = [
+        f"MLB_Results/{date_str}_mlb_predictions.csv",
+        f"MLB_Results/{date_str}_mlb_top_picks.csv"
+    ]
+
+    # Load hitter and pitcher results
+    try:
+        hitter_results = pd.read_csv(HITTER_OUT)
+        pitcher_results = pd.read_csv(PITCHER_OUT)
+
+        # Combine results for easier lookup
+        all_results = pd.concat([hitter_results, pitcher_results])
+
+        # Create lookup dictionaries for actual stats and results
+        stat_lookup = {}
+        result_lookup = {}
+
+        for _, row in all_results.iterrows():
+            player = row['Player']
+            prop_type = row['Prop Type']
+            prop_value = row['Prop Value']
+            key = f"{player}|{prop_type}|{prop_value}"
+
+            stat_lookup[key] = row['Actual Stat']
+            # Convert hit to Over/Under
+            if row['Hit'] == 1:
+                result_lookup[key] = 'Over'
+            elif row['Hit'] == 0:
+                result_lookup[key] = 'Under'
+            else:
+                result_lookup[key] = None
+
+        # Update each prediction file
+        for pred_file in prediction_files:
+            if os.path.exists(pred_file):
+                logging.info(f"Updating prediction file: {pred_file}")
+
+                # Load prediction file
+                pred_df = pd.read_csv(pred_file)
+
+                # Normalize player names to match boxscore results
+                pred_df['Player_Normalized'] = pred_df['Player'].apply(clean_player_name).apply(
+                    normalize_name).str.lower().str.strip()
+
+                # Add Actual_Stat and Actual_Result columns if they don't exist
+                if 'Actual_Stat' not in pred_df.columns:
+                    # Insert Actual_Stat column before Actual_Result if it exists, otherwise at the end
+                    if 'Actual_Result' in pred_df.columns:
+                        actual_result_idx = pred_df.columns.get_loc('Actual_Result')
+                        pred_df.insert(actual_result_idx, 'Actual_Stat', None)
+                    else:
+                        pred_df['Actual_Stat'] = None
+
+                if 'Actual_Result' not in pred_df.columns:
+                    # Add Actual_Result column after LLM_Justification
+                    if 'LLM_Justification' in pred_df.columns:
+                        llm_just_idx = pred_df.columns.get_loc('LLM_Justification')
+                        pred_df.insert(llm_just_idx + 1, 'Actual_Result', None)
+                    else:
+                        pred_df['Actual_Result'] = None
+
+                # Update with actual stats and results
+                for idx, row in pred_df.iterrows():
+                    player = row['Player_Normalized']
+                    prop_type = row['Prop Type']
+                    prop_value = row['Prop Value']
+                    key = f"{player}|{prop_type}|{prop_value}"
+
+                    if key in stat_lookup:
+                        pred_df.at[idx, 'Actual_Stat'] = stat_lookup[key]
+                        pred_df.at[idx, 'Actual_Result'] = result_lookup[key]
+
+                # Drop the temporary normalized player column
+                pred_df = pred_df.drop(columns=['Player_Normalized'])
+
+                # Add Reflection column if it doesn't exist
+                if 'Reflection' not in pred_df.columns:
+                    # Insert Reflection column after Actual_Result
+                    if 'Actual_Result' in pred_df.columns:
+                        actual_result_idx = pred_df.columns.get_loc('Actual_Result')
+                        pred_df.insert(actual_result_idx + 1, 'Reflection', None)
+                    else:
+                        pred_df['Reflection'] = None
+
+                # Save updated prediction file
+                pred_df.to_csv(pred_file, index=False)
+                logging.info(f"Updated {sum(pred_df['Actual_Result'].notna())} results in {pred_file}")
+            else:
+                logging.warning(f"Prediction file not found: {pred_file}")
+
+    except Exception as e:
+        logging.error(f"Error updating prediction files: {e}")
 
 # ─── fantasy scoring ───
 def compute_hitter_score(r):
@@ -142,6 +247,10 @@ async def scrape_player(player):
 
 # ─── main pipeline ───
 async def main():
+    # Parse command line arguments
+    args = parse_args()
+    date_str = args.date
+
     if not os.path.exists(INPUT_CSV):
         logging.error(f"Missing {INPUT_CSV}")
         return
@@ -168,23 +277,23 @@ async def main():
 
     # split into hitter vs pitcher
     hitter_props = [
-        "Hits","Runs","RBIs","Walks","Hitter Strikeouts","Total Bases",
-        "Hits+Runs+RBIs","Hits+Runs","Runs+RBIs","Hitter Fantasy Score"
+        "Hits", "Runs", "RBIs", "Walks", "Hitter Strikeouts", "Total Bases",
+        "Hits+Runs+RBIs", "Hits+Runs", "Runs+RBIs", "Hitter Fantasy Score"
     ]
     pitcher_props = [
-        "Pitcher Strikeouts","Earned Runs Allowed",
-        "Pitches Thrown","Pitching Outs","Pitcher Fantasy Score"
+        "Pitcher Strikeouts", "Earned Runs Allowed",
+        "Pitches Thrown", "Pitching Outs", "Pitcher Fantasy Score"
     ]
 
-    hitter_temp  = merged[merged["Prop Type"].isin(hitter_props)].copy()
+    hitter_temp = merged[merged["Prop Type"].isin(hitter_props)].copy()
     pitcher_temp = merged[merged["Prop Type"].isin(pitcher_props)].copy()
 
     # mappings
     HMAP = {
         "Hits": ["H"], "Runs": ["R"], "RBIs": ["RBI"],
         "Walks": ["BB"], "Hitter Strikeouts": ["SO"],
-        "Total Bases": ["TB"], "Hits+Runs+RBIs": ["H","R","RBI"],
-        "Hits+Runs": ["H","R"], "Runs+RBIs": ["R","RBI"]
+        "Total Bases": ["TB"], "Hits+Runs+RBIs": ["H", "R", "RBI"],
+        "Hits+Runs": ["H", "R"], "Runs+RBIs": ["R", "RBI"]
     }
     PMAP = {
         "Pitcher Strikeouts": ["SO"],
@@ -203,7 +312,7 @@ async def main():
 
     hitter_temp["Actual Stat"] = hitter_temp.apply(h_actual, axis=1)
     hitter_temp["Hit"] = hitter_temp.apply(
-        lambda r: -999 if r["Actual Stat"]==-999.0 else int(r["Actual Stat"]>=safe_float(r["Prop Value"])),
+        lambda r: -999 if r["Actual Stat"] == -999.0 else int(r["Actual Stat"] >= safe_float(r["Prop Value"])),
         axis=1
     )
 
@@ -217,7 +326,7 @@ async def main():
 
     pitcher_temp["Actual Stat"] = pitcher_temp.apply(p_actual, axis=1)
     pitcher_temp["Hit"] = pitcher_temp.apply(
-        lambda r: -999 if r["Actual Stat"]==-999.0 else int(r["Actual Stat"]>=safe_float(r["Prop Value"])),
+        lambda r: -999 if r["Actual Stat"] == -999.0 else int(r["Actual Stat"] >= safe_float(r["Prop Value"])),
         axis=1
     )
 
@@ -228,8 +337,11 @@ async def main():
     # write out
     hitter_temp.to_csv(HITTER_OUT, index=False)
     pitcher_temp.to_csv(PITCHER_OUT, index=False)
-    logging.info(f"Done → {HITTER_OUT}, {PITCHER_OUT}")
 
+    # Update prediction files with actual results
+    await update_prediction_files(date_str)
+
+    logging.info(f"Done → {HITTER_OUT}, {PITCHER_OUT}")
 
 if __name__ == "__main__":
     asyncio.run(main())

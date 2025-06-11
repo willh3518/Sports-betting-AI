@@ -171,7 +171,6 @@ def fetch_todays_props():
 
     return all_props
 
-
 def load_player_stats():
     """Load player stats from files"""
     logger.info("Loading player stats...")
@@ -205,7 +204,6 @@ def load_player_stats():
         park_factors = pd.DataFrame()
 
     return hitter_stats, pitcher_stats, weather, park_factors
-
 
 def prepare_hitter_data(props, hitter_stats, weather, park_factors):
     """Prepare hitter prediction data"""
@@ -318,7 +316,6 @@ def prepare_hitter_data(props, hitter_stats, weather, park_factors):
 
     return hitter_data
 
-
 def prepare_pitcher_data(props, pitcher_stats, weather, park_factors):
     """Prepare pitcher prediction data"""
     logger.info("Preparing pitcher prediction data...")
@@ -430,7 +427,6 @@ def prepare_pitcher_data(props, pitcher_stats, weather, park_factors):
 
     return pitcher_data
 
-
 def main():
     """Main function to prepare MLB prediction data"""
     logger.info("Starting MLB prediction data preparation")
@@ -463,7 +459,6 @@ def main():
     logger.info("MLB prediction data preparation completed")
 
     return hitter_data, pitcher_data
-
 
 if __name__ == "__main__":
     main()

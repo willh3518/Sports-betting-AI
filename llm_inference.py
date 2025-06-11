@@ -18,15 +18,44 @@ logger = logging.getLogger(__name__)
 
 # Config
 RESULTS_DIR = "MLB_Results"
+MLB_DATA_DIR = "MLB_Prop_Data_CSV"
 TODAY_DATE = datetime.now().strftime("%Y-%m-%d")
 PREDICTIONS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_predictions.csv")
-OUTPUT_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_predictions_with_llm.csv")
 TOP_PICKS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_top_picks_with_llm.csv")
 BETSLIPS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_betslips.json")
+
+# Master data paths
+MASTER_HITTER_PATH = os.path.join(MLB_DATA_DIR, "master_hitter_dataset.csv")
+MASTER_PITCHER_PATH = os.path.join(MLB_DATA_DIR, "master_pitcher_dataset.csv")
 
 # Ensure results directory exists
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
+
+def load_master_data():
+    """Load master hitter and pitcher data"""
+    master_hitter = pd.DataFrame()
+    master_pitcher = pd.DataFrame()
+
+    try:
+        if os.path.exists(MASTER_HITTER_PATH):
+            master_hitter = pd.read_csv(MASTER_HITTER_PATH)
+            logger.info(f"Loaded master hitter data with {len(master_hitter)} rows")
+        else:
+            logger.warning(f"Master hitter data not found at {MASTER_HITTER_PATH}")
+    except Exception as e:
+        logger.error(f"Error loading master hitter data: {e}")
+
+    try:
+        if os.path.exists(MASTER_PITCHER_PATH):
+            master_pitcher = pd.read_csv(MASTER_PITCHER_PATH)
+            logger.info(f"Loaded master pitcher data with {len(master_pitcher)} rows")
+        else:
+            logger.warning(f"Master pitcher data not found at {MASTER_PITCHER_PATH}")
+    except Exception as e:
+        logger.error(f"Error loading master pitcher data: {e}")
+
+    return master_hitter, master_pitcher
 
 def load_predictions():
     """Load the predictions CSV file"""
@@ -42,6 +71,65 @@ def load_predictions():
         logger.error(f"Error loading predictions: {e}")
         return pd.DataFrame()
 
+def enrich_predictions_with_master_data(predictions_df, master_hitter, master_pitcher):
+    """Enrich predictions with additional data from master files"""
+    if predictions_df.empty:
+        return predictions_df
+
+    # Check if we have the necessary columns
+    if 'Player' not in predictions_df.columns:
+        logger.warning("No 'Player' column in predictions, skipping enrichment")
+        return predictions_df
+
+    enriched_df = predictions_df.copy()
+
+    # Create a unique identifier for each row before merging
+    enriched_df['row_id'] = range(len(enriched_df))
+
+    # Enrich with hitter data
+    if not master_hitter.empty and 'Player' in master_hitter.columns:
+        logger.info("Enriching with hitter data")
+
+        # Get unique players from master_hitter
+        unique_hitter_data = master_hitter.drop_duplicates(subset=['Player'])
+
+        # Merge on Player column
+        enriched_df = pd.merge(
+            enriched_df,
+            unique_hitter_data,
+            left_on='Player',
+            right_on='Player',
+            how='left',
+            suffixes=('', '_hitter_master')
+        )
+
+    # Enrich with pitcher data
+    if not master_pitcher.empty and 'Player' in master_pitcher.columns:
+        logger.info("Enriching with pitcher data")
+
+        # Get unique players from master_pitcher
+        unique_pitcher_data = master_pitcher.drop_duplicates(subset=['Player'])
+
+        # For pitcher props, merge on Player
+        pitcher_props = enriched_df[enriched_df['Model_Type'] == 'pitcher'].copy()
+        if not pitcher_props.empty:
+            pitcher_props = pd.merge(
+                pitcher_props,
+                unique_pitcher_data,
+                left_on='Player',
+                right_on='Player',
+                how='left',
+                suffixes=('', '_pitcher_master')
+            )
+
+            # Update the enriched dataframe with pitcher data
+            enriched_df.update(pitcher_props)
+
+    # Sort by the original row order and remove the row_id column
+    enriched_df = enriched_df.sort_values('row_id').drop('row_id', axis=1)
+
+    logger.info(f"Enrichment complete. DataFrame now has {len(enriched_df.columns)} columns")
+    return enriched_df
 
 def build_prompt(row):
     """Build a prompt for the LLM based on the row data"""
@@ -59,97 +147,137 @@ def build_prompt(row):
     # Get model type (hitter or pitcher)
     model_type = row.get('Model_Type', 'unknown')
 
-    # Build the stats section based on model type
-    stats_section = ""
-    if model_type == 'hitter':
-        stats_section = f"""
-Key Hitter Stats:
-- AVG vs RHP: {row.get('AVG_vs_rhp', 'N/A')}
-- OBP vs RHP: {row.get('OBP_vs_rhp', 'N/A')}
-- SLG vs RHP: {row.get('SLG_vs_rhp', 'N/A')}
-- OPS vs RHP: {row.get('OPS_vs_rhp', 'N/A')}
-- AVG vs LHP: {row.get('AVG_vs_lhp', 'N/A')}
-- OBP vs LHP: {row.get('OBP_vs_lhp', 'N/A')}
-- SLG vs LHP: {row.get('SLG_vs_lhp', 'N/A')}
-- OPS vs LHP: {row.get('OPS_vs_lhp', 'N/A')}
-- wOBA: {row.get('wOBA', 'N/A')}
-- xwOBA: {row.get('xwOBA', 'N/A')}
-- Barrel%: {row.get('Barrel%', 'N/A')}
-- Hard Hit %: {row.get('Hard Hit %', 'N/A')}
-- EV: {row.get('EV', 'N/A')}
-"""
-    elif model_type == 'pitcher':
-        stats_section = f"""
-Key Pitcher Stats:
-- ERA: {row.get('ERA', 'N/A')}
-- WHIP: {row.get('WHIP', 'N/A')}
-- K/9: {row.get('K/9', 'N/A')}
-- BB/9: {row.get('BB/9', 'N/A')}
-- K/BB: {row.get('K/BB', 'N/A')}
-- HR/9: {row.get('HR/9', 'N/A')}
-- K%: {row.get('K%', 'N/A')}
-- BB%: {row.get('BB%', 'N/A')}
-- AVG Against: {row.get('AVG Against', 'N/A')}
-- 15-day Fastball Velo: {row.get('15_day_fastball_velo', 'N/A')}
-- 15-day Hard Hit %: {row.get('15_day_hard_hit_pct', 'N/A')}
-- 15-day Barrel %: {row.get('15_day_barrel_pct', 'N/A')}
-"""
+    # Build the full prompt with the new format
+    prompt = f"""<s>[INST] System: You are a world-class MLB prop betting analyst working alongside an AI model. Your job is to critically evaluate the model's prediction for a player prop bet using detailed statistics and game context.
 
-    # Game conditions section
-    game_conditions = f"""
-Game Conditions:
-- Park Factor Basic: {row.get('Park_Factor_Basic', 'N/A')}
-- Park Factor HR: {row.get('Park_Factor_HR', 'N/A')}
-- Game-Time Temp: {row.get('Game-Time Temp (°F)', 'N/A')}°F
-- Game-Time Humidity: {row.get('Game-Time Humidity (%)', 'N/A')}%
-- Game-Time Wind Speed: {row.get('Game-Time Wind Speed (mph)', 'N/A')} mph
+User: I need your expert analysis on the following MLB prop bet:
+
+You will be given:
+1. A specific prop bet (e.g. Hits+Runs+RBIs, Total Bases, Fantasy Score, Strikeouts)
+2. The model's Over/Under prediction and confidence level
+3. A complete statistical profile of the player, opponent, and game environment
+
+---
+
+🎯 **Your Tasks**:
+1. Decide whether **you predict Over or Under**
+2. Decide if the model's prediction is **reasonable** based on the data
+3. Give a **short justification (1–3 sentences)** using relevant stats, trends, or conditions
+4. Provide your confidence level in your prediction
+
+🛠️ **Important Note**:  
+The Random Forest (RF) model you are reviewing is in its **early development stage** with limited training data. It may make poor or unreliable predictions, especially on edge cases or new players. Use your own judgment and **do not trust the model blindly**.
+
+---
+
+📌 **Prop Details**
+- **Player**: {player_name}
+- **Prop Line**: {prop_type} at {prop_value}
+- **Model Prediction**: {rf_pred} (Confidence: {rf_conf}%)
+- **Player Type**: {model_type.capitalize()}
+
+---
+
+📊 **Player Stats**
+**Season Averages:**
+- AVG: {row.get('AVG', 'N/A')} | OBP: {row.get('OBP', 'N/A')} | SLG: {row.get('SLG', 'N/A')} | OPS: {row.get('OPS', 'N/A')}
+- wOBA: {row.get('wOBA', 'N/A')} | xwOBA: {row.get('xwOBA', 'N/A')}
+- Barrel %: {row.get('Barrel%', 'N/A')} | Hard Hit %: {row.get('Hard Hit %', 'N/A')}
+
+**Splits:**
+- vs RHP — AVG: {row.get('AVG_vs_rhp', 'N/A')} | OPS: {row.get('OPS_vs_rhp', 'N/A')}
+- vs LHP — AVG: {row.get('AVG_vs_lhp', 'N/A')} | OPS: {row.get('OPS_vs_lhp', 'N/A')}
+
+**Recent Form:**
+- Last 15 Games: {row.get('Last_15_Performance', 'N/A')}
+- Last 30 Games: {row.get('Last_30_Performance', 'N/A')}
+- Home/Away Split: {row.get('Home_Away_Split', 'N/A')}
+
+**Plate Discipline:**
+- K%: {row.get('k_pct_season', 'N/A')} | BB%: {row.get('bb_pct_season', 'N/A')}
+
+---
+
+🧠 **Opponent Info**
+**Pitcher Matchup:**
+- Name: {row.get('Opposing Pitcher', 'N/A')} | Hand: {row.get('Pitcher Handedness', 'N/A')}
+- ERA: {row.get('ERA_pitcher', 'N/A')} | WHIP: {row.get('WHIP_pitcher', 'N/A')} | K/9: {row.get('K/9_pitcher', 'N/A')}
+- BB/9: {row.get('BB/9_pitcher', 'N/A')} | HR/9: {row.get('HR/9_pitcher', 'N/A')}
+- 15-day Hard Hit %: {row.get('15_day_hard_hit_pct_pitcher', 'N/A')}
+
+**If Pitcher Prop: Opposing Team Stats**
+- Team wOBA: {row.get('Team_wOBA', 'N/A')} | Team K%: {row.get('Team_K%', 'N/A')}
+
+---
+
+🌦️ **Game Conditions**
+- Park Factor (Basic): {row.get('Park_Factor_Basic', 'N/A')}
+- Park Factor (HR): {row.get('Park_Factor_HR', 'N/A')}
+- Temperature: {row.get('Game-Time Temp (°F)', 'N/A')}°F
+- Wind: {row.get('Game-Time Wind Speed (mph)', 'N/A')} mph
 - Wind Effect: {row.get('Game-Time Effect on Hitters', 'N/A')}
-"""
-
-    # Build the full prompt
-    prompt = f"""
-You are an expert MLB betting analyst. You will be given:
-1. A player prop (e.g., Hits+Runs+RBIs 0.5)
-2. A summary of stats for the player
-3. A prediction made by a Random Forest model
-
-Your job is to:
-- Determine if the RF prediction is valid (yes/no)
-- Provide your own Over/Under prediction
-- Justify your reasoning clearly
 
 ---
 
-Player: {player_name}
-Prop: {prop_type} at {prop_value}
-RF Prediction: {rf_pred} with confidence {rf_conf}%
-
-{stats_section}
-{game_conditions}
+⚠️ **Guidelines**
+- **Skeptical?** If the model has < 55% confidence, treat its prediction as weak unless the data strongly supports it.
+- If any data is missing, clearly state your assumptions or fallback logic.
+- Don't generalize. Use **specific numbers** to support your call.
+- Critically evaluate ALL relevant factors before making your prediction. Don't fixate on just one stat or trend.
+- Assume the reader is sharp — avoid fluff or filler.
 
 ---
 
-Respond in this exact format:
-LLM_Prediction: Over or Under
-LLM_RF_Agreement: True or False
-LLM_Justification: [brief explanation]
+Example Response:
+LLM_Prediction: Over
+LLM_RF_Agreement: False
+LLM_Confidence: High
+LLM_Justification: Player has a .420 OBP vs LHP and faces a lefty starter with 5.2 BB/9. The 15mph winds blowing out to center also favor hitting conditions.
+
+---
+
+✏️ **Respond ONLY in this exact format**:
+LLM_Prediction: Over or Under  
+LLM_RF_Agreement: True or False  
+LLM_Confidence: High/Medium/Low
+LLM_Justification: [Short reasoning using stats, matchup info, or game conditions]
+[/INST]
 """.strip()
 
     return prompt
-
 
 def query_llm(prompt):
     """Query the LLM using Ollama"""
     logger.info("Querying LLM...")
     try:
+        # Add debug logging to see the prompt being sent
+        logger.debug(f"Sending prompt: {prompt[:100]}...")
+
+        # Use mistral:7b-instruct-v0.2 instead of phi3:mini
         result = subprocess.run(
-            ["ollama", "run", "phi3:mini"],
+            ["ollama", "run", "mistral:latest"],
             input=prompt.encode("utf-8"),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             timeout=60
         )
+
+        # Log stderr if there's any error output
+        if result.stderr:
+            stderr_output = result.stderr.decode("utf-8")
+            if stderr_output.strip():
+                logger.warning(f"LLM stderr output: {stderr_output}")
+
         response = result.stdout.decode("utf-8")
+
+        # Add debug logging to see the response
+        logger.debug(f"Raw response: {response[:100]}...")
+
+        # Check if response is empty
+        if not response.strip():
+            logger.error("Empty response received from LLM")
+            return "Error: Empty response from LLM"
+
         logger.info("LLM response received")
         return response
     except subprocess.TimeoutExpired:
@@ -159,33 +287,35 @@ def query_llm(prompt):
         logger.error(f"Error querying LLM: {e}")
         return f"Error: {str(e)}"
 
-def parse_llm_response(response):
-    """Parse the LLM response to extract prediction, agreement, and justification"""
+def parse_llm_response(response, rf_prediction):
+    """Parse LLM response and derive agreement with RF prediction"""
     try:
         # Extract prediction
         pred_line = [line for line in response.splitlines() if "LLM_Prediction:" in line]
         prediction = "Unknown"
         if pred_line:
-            pred_text = pred_line[0].split("LLM_Prediction:")[-1].strip()
-            prediction = "Over" if "over" in pred_text.lower() else "Under" if "under" in pred_text.lower() else "Unknown"
+            pred_text = pred_line[0].split("LLM_Prediction:")[-1].strip().lower()
+            if "over" in pred_text:
+                prediction = "Over"
+            elif "under" in pred_text:
+                prediction = "Under"
 
-        # Extract agreement
-        agree_line = [line for line in response.splitlines() if "LLM_RF_Agreement:" in line]
-        agreement = "Unknown"
-        if agree_line:
-            agree_text = agree_line[0].split("LLM_RF_Agreement:")[-1].strip()
-            agreement = "True" if "true" in agree_text.lower() else "False" if "false" in agree_text.lower() else "Unknown"
+        # Derive agreement based on match with RF
+        rf_pred_text = "Over" if rf_prediction == 1 else "Under"
+        agreement = "True" if prediction == rf_pred_text else "False"
 
         # Extract justification
         just_line = [line for line in response.splitlines() if "LLM_Justification:" in line]
-        justification = "No justification provided"
-        if just_line:
-            justification = just_line[0].split("LLM_Justification:")[-1].strip()
+        justification = just_line[0].split("LLM_Justification:")[-1].strip() if just_line else "No justification provided"
 
-        return prediction, agreement, justification
+        # Extract confidence (optional — if you're using it)
+        conf_line = [line for line in response.splitlines() if "LLM_Confidence:" in line]
+        confidence = conf_line[0].split("LLM_Confidence:")[-1].strip() if conf_line else "Unknown"
+
+        return prediction, agreement, justification, confidence
+
     except Exception as e:
-        logger.error(f"Error parsing LLM response: {e}")
-        return "Unknown", "Unknown", f"Error parsing response: {str(e)}"
+        return "Unknown", "Unknown", f"Error parsing response: {str(e)}", "Unknown"
 
 def generate_betslips(df, num_betslips=5, props_per_betslip=2):
     """Generate betslips from the predictions"""
@@ -276,8 +406,40 @@ def main():
         logger.error("No predictions to process. Exiting.")
         return
 
+    # Log the initial shape of the DataFrame
+    initial_row_count = len(df)
+    logger.info(f"Initial DataFrame shape: {df.shape}")
+
+    # Load master data
+    master_hitter, master_pitcher = load_master_data()
+
+    # Enrich predictions with master data
+    if not master_hitter.empty or not master_pitcher.empty:
+        df = enrich_predictions_with_master_data(df, master_hitter, master_pitcher)
+
+    # Verify row count hasn't changed
+    if len(df) != initial_row_count:
+        logger.warning(f"Row count changed during enrichment: {initial_row_count} -> {len(df)}")
+        logger.warning("Resetting to original row count")
+        # If row count changed, we need to fix it
+        df = df.drop_duplicates(subset=['Player', 'Prop Type', 'Prop Value', 'Start Time'])
+        if len(df) > initial_row_count:
+            # If still too many rows, take the first initial_row_count rows
+            df = df.head(initial_row_count)
+        elif len(df) < initial_row_count:
+            logger.error(f"Lost rows during enrichment and deduplication. Expected {initial_row_count}, got {len(df)}")
+
+    # Reset index to ensure correct counting
+    df = df.reset_index(drop=True)
+
+    # Log the shape after enrichment
+    logger.info(f"DataFrame shape after enrichment: {df.shape}")
+
+    # Log the actual number of predictions to process
+    logger.info(f"Processing {len(df)} predictions after enrichment")
+
     # Run inference row-by-row with logging
-    llm_preds, llm_justifications, llm_agreements = [], [], []
+    llm_preds, llm_justifications, llm_agreements, llm_confidences = [], [], [], []
 
     for idx, row in df.iterrows():
         player_name = row.get("Player", "Unknown")
@@ -290,12 +452,13 @@ def main():
         response = query_llm(prompt)
 
         # Parse response
-        prediction, agreement, justification = parse_llm_response(response)
+        prediction, agreement, justification, confidence = parse_llm_response(response, row.get("RF_Prediction", 0))
 
         # Store results
         llm_preds.append(prediction)
         llm_agreements.append(agreement)
         llm_justifications.append(justification)
+        llm_confidences.append(confidence)
 
         logger.info(f"LLM prediction for {player_name}: {prediction}, Agreement: {agreement}")
 
@@ -303,15 +466,39 @@ def main():
     df["LLM_Prediction"] = llm_preds
     df["LLM_RF_Agreement"] = llm_agreements
     df["LLM_Justification"] = llm_justifications
+    df["LLM_Confidence"] = llm_confidences
 
-    # Save enhanced predictions
-    df.to_csv(OUTPUT_PATH, index=False)
-    logger.info(f"LLM-enhanced predictions saved to {OUTPUT_PATH}")
+    # Overwrite the original predictions CSV with added LLM columns
+    df.to_csv(PREDICTIONS_PATH, index=False)
+    logger.info(f"LLM-enhanced predictions added to original file: {PREDICTIONS_PATH}")
 
-    # Generate top picks (where LLM agrees with RF)
-    top_picks = df[df["LLM_RF_Agreement"] == "True"].sort_values("RF_Confidence", ascending=False).head(10)
-    top_picks.to_csv(TOP_PICKS_PATH, index=False)
-    logger.info(f"Top picks saved to {TOP_PICKS_PATH}")
+    # Load existing top picks CSV and update it with LLM outputs
+    if os.path.exists(TOP_PICKS_PATH):
+        top_picks_df = pd.read_csv(TOP_PICKS_PATH)
+        logger.info(f"Loaded top picks from {TOP_PICKS_PATH}")
+
+        llm_preds, llm_justifications, llm_agreements, llm_confidences = [], [], [], []
+
+        for idx, row in top_picks_df.iterrows():
+            player_name = row.get("Player", "Unknown")
+            logger.info(f"Processing top pick {idx + 1}/{len(top_picks_df)} for {player_name}")
+
+            prompt = build_prompt(row)
+            response = query_llm(prompt)
+            prediction, agreement, justification = parse_llm_response(response)
+
+            llm_preds.append(prediction)
+            llm_agreements.append(agreement)
+            llm_justifications.append(justification)
+
+        top_picks_df["LLM_Prediction"] = llm_preds
+        top_picks_df["LLM_RF_Agreement"] = llm_agreements
+        top_picks_df["LLM_Justification"] = llm_justifications
+
+        top_picks_df.to_csv(TOP_PICKS_PATH, index=False)
+        logger.info(f"Updated LLM-enhanced top picks written to: {TOP_PICKS_PATH}")
+    else:
+        logger.error(f"Top picks file not found at {TOP_PICKS_PATH}")
 
     # Generate betslips
     betslips = generate_betslips(df)
