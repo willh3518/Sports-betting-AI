@@ -215,13 +215,13 @@ This project aims to enhance sports betting decision-making through automated da
     ├── README.md
     ├── Tracking_Model_accuracy.py
     ├── allprops_app
-    │   ├── __init__.py
+    │   ├── app.py
     │   ├── access_code.txt
     │   ├── access_config.py
     │   ├── app.py
     │   └── templates
     ├── app
-    │   ├── __init__.py
+    │   ├── app.py
     │   ├── models.py
     │   ├── routes
     │   ├── static
