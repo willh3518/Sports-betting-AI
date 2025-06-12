@@ -1,0 +1,39 @@
+2025-06-11 11:38:44,538 - INFO - Starting MLB prediction data preparation
+2025-06-11 11:38:44,538 - INFO - Fetching today's MLB player props...
+2025-06-11 11:38:44,539 - INFO - Saved 48 props to MLB_Props/2025-06-11_mlb_props.csv
+2025-06-11 11:38:44,539 - INFO - Loading player stats...
+2025-06-11 11:38:44,539 - ERROR - Hitter stats not found at MLB_Stats/hitter_stats_merged.csv
+2025-06-11 11:38:44,539 - ERROR - Pitcher stats not found at MLB_Stats/pitcher_stats_merged.csv
+2025-06-11 11:38:44,540 - ERROR - Weather data not found at MLB_Weather/stadium_weather.csv
+2025-06-11 11:38:44,540 - ERROR - Park factors not found at MLB_Stats/park_factors.csv
+2025-06-11 11:38:44,540 - INFO - Preparing hitter prediction data...
+2025-06-11 11:38:44,540 - INFO - Preparing pitcher prediction data...
+2025-06-11 11:38:44,541 - INFO - Saved hitter prediction data with shape (24, 12) to MLB_Prop_Data_CSV/hitter_prediction_data.csv
+2025-06-11 11:38:44,541 - INFO - Saved pitcher prediction data with shape (24, 12) to MLB_Prop_Data_CSV/pitcher_prediction_data.csv
+2025-06-11 11:38:44,541 - INFO - MLB prediction data preparation completed
+2025-06-11 11:52:19,062 - INFO - Starting MLB prediction data preparation
+2025-06-11 11:52:19,062 - INFO - Fetching today's MLB player props...
+2025-06-11 11:52:19,063 - INFO - Saved 48 props to MLB_Props/2025-06-11_mlb_props.csv
+2025-06-11 11:52:19,063 - INFO - Loading player stats...
+2025-06-11 11:52:19,063 - ERROR - Hitter stats not found at MLB_Stats/hitter_stats_merged.csv
+2025-06-11 11:52:19,064 - ERROR - Pitcher stats not found at MLB_Stats/pitcher_stats_merged.csv
+2025-06-11 11:52:19,064 - ERROR - Weather data not found at MLB_Weather/stadium_weather.csv
+2025-06-11 11:52:19,064 - ERROR - Park factors not found at MLB_Stats/park_factors.csv
+2025-06-11 11:52:19,064 - INFO - Preparing hitter prediction data...
+2025-06-11 11:52:19,064 - INFO - Preparing pitcher prediction data...
+2025-06-11 11:52:19,065 - INFO - Saved hitter prediction data with shape (24, 12) to MLB_Prop_Data_CSV/hitter_prediction_data.csv
+2025-06-11 11:52:19,065 - INFO - Saved pitcher prediction data with shape (24, 12) to MLB_Prop_Data_CSV/pitcher_prediction_data.csv
+2025-06-11 11:52:19,065 - INFO - MLB prediction data preparation completed
+2025-06-12 13:27:45,959 - INFO - Starting MLB prediction data preparation
+2025-06-12 13:27:45,959 - INFO - Fetching today's MLB player props...
+2025-06-12 13:27:45,961 - INFO - Saved 48 props to MLB_Props/2025-06-12_mlb_props.csv
+2025-06-12 13:27:45,961 - INFO - Loading player stats...
+2025-06-12 13:27:45,961 - ERROR - Hitter stats not found at MLB_Stats/hitter_stats_merged.csv
+2025-06-12 13:27:45,961 - ERROR - Pitcher stats not found at MLB_Stats/pitcher_stats_merged.csv
+2025-06-12 13:27:45,961 - ERROR - Weather data not found at MLB_Weather/stadium_weather.csv
+2025-06-12 13:27:45,961 - ERROR - Park factors not found at MLB_Stats/park_factors.csv
+2025-06-12 13:27:45,961 - INFO - Preparing hitter prediction data...
+2025-06-12 13:27:45,962 - INFO - Preparing pitcher prediction data...
+2025-06-12 13:27:45,962 - INFO - Saved hitter prediction data with shape (24, 12) to MLB_Prop_Data_CSV/hitter_prediction_data.csv
+2025-06-12 13:27:45,963 - INFO - Saved pitcher prediction data with shape (24, 12) to MLB_Prop_Data_CSV/pitcher_prediction_data.csv
+2025-06-12 13:27:45,963 - INFO - MLB prediction data preparation completed
