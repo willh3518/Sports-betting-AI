@@ -21,9 +21,8 @@ RESULTS_DIR = "MLB_Results"
 MLB_DATA_DIR = "MLB_Prop_Data_CSV"
 TODAY_DATE = datetime.now().strftime("%Y-%m-%d")
 PREDICTIONS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_predictions.csv")
-TOP_PICKS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_top_picks_with_llm.csv")
+TOP_PICKS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_top_picks.csv")
 BETSLIPS_PATH = os.path.join(RESULTS_DIR, f"{TODAY_DATE}_mlb_betslips.json")
-# Add this with the other constants at the top of the file
 INSIGHTS_DB_PATH = os.path.join(RESULTS_DIR, "mlb_insights_db.json")
 
 # Master data paths
@@ -94,65 +93,71 @@ def enrich_predictions_with_master_data(predictions_df, master_hitter, master_pi
     if predictions_df.empty:
         return predictions_df
 
-    # Check if we have the necessary columns
+    # Ensure we have the necessary column
     if 'Player' not in predictions_df.columns:
         logger.warning("No 'Player' column in predictions, skipping enrichment")
         return predictions_df
 
     enriched_df = predictions_df.copy()
 
-    # Create a unique identifier for each row before merging
+    # Create unique row ID for ordering
     enriched_df['row_id'] = range(len(enriched_df))
 
-    # Enrich with hitter data
+    # 1) Enrich with hitter data
     if not master_hitter.empty and 'Player' in master_hitter.columns:
         logger.info("Enriching with hitter data")
-
-        # Get unique players from master_hitter
         unique_hitter_data = master_hitter.drop_duplicates(subset=['Player'])
-
-        # Merge on Player column
         enriched_df = pd.merge(
             enriched_df,
             unique_hitter_data,
-            left_on='Player',
-            right_on='Player',
+            on='Player',
             how='left',
             suffixes=('', '_hitter_master')
         )
 
-    # Enrich with pitcher data
+    # 2) Enrich with pitcher data for pitcher props
     if not master_pitcher.empty and 'Player' in master_pitcher.columns:
-        logger.info("Enriching with pitcher data")
-
-        # Get unique players from master_pitcher
+        logger.info("Enriching with pitcher data for pitcher props")
         unique_pitcher_data = master_pitcher.drop_duplicates(subset=['Player'])
-
-        # For pitcher props, merge on Player
         pitcher_props = enriched_df[enriched_df['Model_Type'] == 'pitcher'].copy()
         if not pitcher_props.empty:
             pitcher_props = pd.merge(
                 pitcher_props,
                 unique_pitcher_data,
-                left_on='Player',
-                right_on='Player',
+                on='Player',
                 how='left',
                 suffixes=('', '_pitcher_master')
             )
-
-            # Update the enriched dataframe with pitcher data
             enriched_df.update(pitcher_props)
 
-    # Sort by the original row order and remove the row_id column
+    # 3) Restore original order and drop helper column
     enriched_df = enriched_df.sort_values('row_id').drop('row_id', axis=1)
+
+    # 4) Merge opposing-pitcher stats onto every row
+    if not master_pitcher.empty and 'Player' in master_pitcher.columns:
+        logger.info("Merging opposing-pitcher stats onto every row")
+        opp = (
+            master_pitcher
+            .drop_duplicates(subset=['Player'])
+            .rename(columns={col: f"Opp_{col}" for col in master_pitcher.columns})
+            .set_index('Opp_Player')
+        )
+        enriched_df = enriched_df.join(
+            opp,
+            on='Opposing Pitcher',
+            how='left'
+        )
 
     logger.info(f"Enrichment complete. DataFrame now has {len(enriched_df.columns)} columns")
     return enriched_df
 
-def build_prompt(row, insights_db=None):
+def build_prompt(row, insights_db=None, pitcher_df=None):
     """Build a prompt for the LLM based on the row data and insights"""
     # Get player name from the Player column
     player_name = row.get('Player', 'Unknown Player')
+
+    # Get opponent pitcher name
+    opponent_pitcher = row.get('Opposing Pitcher', 'Unknown Pitcher')
 
     # Get prop type and value
     prop_type = row.get('Prop Type', 'Unknown Prop')
@@ -164,6 +169,20 @@ def build_prompt(row, insights_db=None):
 
     # Get model type (hitter or pitcher)
     model_type = row.get('Model_Type', 'unknown').lower()
+
+    # Helper function to handle potentially missing values
+    def get_value(key, default='No data'):
+        value = row.get(key)
+        if value is None or value == 'N/A' or value == '' or pd.isna(value):
+            return default
+        return value
+
+    # Helper function to get pitcher stats from the pitcher DataFrame
+    def get_pitcher_stat(stat, default='No data'):
+        val = row.get(f"Opp_{stat}")
+        if pd.isna(val) or val in (None, '', 'N/A'):
+            return default
+        return val
 
     # Build the base prompt
     prompt = f"""<s>[INST] System: You are a world-class MLB prop betting analyst working alongside an AI model. Your job is to critically evaluate the model's prediction for a player prop bet using detailed statistics and game context.
@@ -177,14 +196,18 @@ You will be given:
 
 ---
 
-🎯 **Your Tasks**:
-1. Decide whether **you predict Over or Under**
-2. Decide if the model's prediction is **reasonable** based on the data
-3. Give a **short justification (1–3 sentences)** using relevant stats, trends, or conditions
-4. Provide your confidence level in your prediction
+🎯 **Your Tasks**
+1. State **your** Over/Under pick
+2. Say whether the model’s prediction is **reasonable**
+3. Give a **1-to-3-sentence** justification (≤ 40 words) with concrete stats
+4. Tag your confidence level
 
-🛠️ **Important Note**:  
-The Random Forest (RF) model you are reviewing is in its **early development stage** with limited training data. It may make poor or unreliable predictions, especially on edge cases or new players. Use your own judgment and **do not trust the model blindly**.
+🛠️ **Important**: The RF model is in early development with sparse training data. Treat its output skeptically.
+
+### Reasoning mode
+Think step-by-step **internally**. Do **not** expose your chain-of-thought.  
+When finished, output exactly four comma-separated fields on one line:  
+`LLM_Prediction,LLM_RF_Agreement,LLM_Confidence,LLM_Justification`
 
 ---
 
@@ -197,45 +220,89 @@ The Random Forest (RF) model you are reviewing is in its **early development sta
 ---
 
 📊 **Player Stats**
-**Season Averages:**
-- AVG: {row.get('AVG', 'N/A')} | OBP: {row.get('OBP', 'N/A')} | SLG: {row.get('SLG', 'N/A')} | OPS: {row.get('OPS', 'N/A')}
-- wOBA: {row.get('wOBA', 'N/A')} | xwOBA: {row.get('xwOBA', 'N/A')}
-- Barrel %: {row.get('Barrel%', 'N/A')} | Hard Hit %: {row.get('Hard Hit %', 'N/A')}
 
-**Splits:**
-- vs RHP — AVG: {row.get('AVG_vs_rhp', 'N/A')} | OPS: {row.get('OPS_vs_rhp', 'N/A')}
-- vs LHP — AVG: {row.get('AVG_vs_lhp', 'N/A')} | OPS: {row.get('OPS_vs_lhp', 'N/A')}
+**Season Averages vs RHP:**
+- AVG: {get_value('AVG_vs_rhp')} | OBP: {get_value('OBP_vs_rhp')} | SLG: {get_value('SLG_vs_rhp')} | OPS: {get_value('OPS_vs_rhp')}
 
-**Recent Form:**
-- Last 15 Games: {row.get('Last_15_Performance', 'N/A')}
-- Last 30 Games: {row.get('Last_30_Performance', 'N/A')}
-- Home/Away Split: {row.get('Home_Away_Split', 'N/A')}
+**Season Averages vs LHP:**
+- AVG: {get_value('AVG_vs_lhp')} | OBP: {get_value('OBP_vs_lhp')} | SLG: {get_value('SLG_vs_lhp')} | OPS: {get_value('OPS_vs_lhp')}
 
-**Plate Discipline:**
-- K%: {row.get('k_pct_season', 'N/A')} | BB%: {row.get('bb_pct_season', 'N/A')}
+**Raw Splits (Total Counts):**  
+- vs RHP — AB: {get_value('AB_vs_rhp')} | H: {get_value('H_vs_rhp')} | HR: {get_value('HR_vs_rhp')} | RBI: {get_value('RBI_vs_rhp')} | PA: {get_value('PA_vs_rhp')}  
+- vs LHP — AB: {get_value('AB_vs_lhp')} | H: {get_value('H_vs_lhp')} | HR: {get_value('HR_vs_lhp')} | RBI: {get_value('RBI_vs_lhp')} | PA: {get_value('PA_vs_lhp')}
 
+**Rate & Quality Metrics:**  
+- wOBA vs RHP: {get_value('wOBA_vs_rhp')} | wOBA vs LHP: {get_value('wOBA_vs_lhp')}  
+- xwOBA: {get_value('xwOBA')} | xBA: {get_value('xBA')}  
+- Barrel%: {get_value('Barrel%')} | Hard Hit %: {get_value('Hard Hit %')}  
+- EV (avg exit velocity): {get_value('EV')} mph
+
+**Plate Discipline:**  
+- BB% vs RHP: {get_value('BB%_vs_rhp')} | K% vs RHP: {get_value('K%_vs_rhp')} | ISO vs RHP: {get_value('ISO_vs_rhp')}  
+- BB% vs LHP: {get_value('BB%_vs_lhp')} | K% vs LHP: {get_value('K%_vs_lhp')} | ISO vs LHP: {get_value('ISO_vs_lhp')}  
+
+**Recent Form vs RHP (Last 15 Games):**  
+- AVG: {get_value('AVG_vs_rhp_15')} | OBP: {get_value('OBP_vs_rhp_15')} | SLG: {get_value('SLG_vs_rhp_15')} | OPS: {get_value('OPS_vs_rhp_15')}
+
+**Recent Form vs LHP (Last 15 Games):**  
+- AVG: {get_value('AVG_vs_lhp_15')} | OBP: {get_value('OBP_vs_lhp_15')} | SLG: {get_value('SLG_vs_lhp_15')} | OPS: {get_value('OPS_vs_lhp_15')}
+
+**Pitch-Specific Hard-Hit Metrics:**  
+- 4-seam FB HardHit%: {get_value('4seam_fastball_HardHit%')}  
+- 4-seam FB RV100: {get_value('4seam_fastball_RV100')}  
+- 4-seam FB wOBA: {get_value('4seam_fastball_wOBA')} | 4-seam FB xwOBA: {get_value('4seam_fastball_xwOBA')}
 ---
 
-🧠 **Opponent Info**
+📊 **Opponent Info**
 **Pitcher Matchup:**
-- Name: {row.get('Opposing Pitcher', 'N/A')} | Hand: {row.get('Pitcher Handedness', 'N/A')}
-- ERA: {row.get('ERA_pitcher', 'N/A')} | WHIP: {row.get('WHIP_pitcher', 'N/A')} | K/9: {row.get('K/9_pitcher', 'N/A')}
-- BB/9: {row.get('BB/9_pitcher', 'N/A')} | HR/9: {row.get('HR/9_pitcher', 'N/A')}
-- 15-day Hard Hit %: {row.get('15_day_hard_hit_pct_pitcher', 'N/A')}
+- G–W–L: {get_pitcher_stat('G')}-{get_pitcher_stat('W')}-{get_pitcher_stat('L')} | ERA: {get_pitcher_stat('ERA')}
+- SO: {get_pitcher_stat('SO')} | K/9: {get_pitcher_stat('K/9')} | BB/9: {get_pitcher_stat('BB/9')} | K/BB: {get_pitcher_stat('K/BB')}
+- HR/9: {get_pitcher_stat('HR/9')} | H/9: {get_pitcher_stat('H/9')}
+- K%: {get_pitcher_stat('K%')} | BB%: {get_pitcher_stat('BB%')} | K–BB%: {get_pitcher_stat('K-BB%')}
+- AVG Against: {get_pitcher_stat('AVG Against')} | WHIP: {get_pitcher_stat('WHIP')}
+- BABIP: {get_pitcher_stat('BABIP')} | LOB%: {get_pitcher_stat('LOB%')}
+- ERA-: {get_pitcher_stat('ERA-')} | FIP: {get_pitcher_stat('FIP')} | FIP-: {get_pitcher_stat('FIP-')}
 
-**If Pitcher Prop: Opposing Team Stats**
-- Team wOBA: {row.get('Team_wOBA', 'N/A')} | Team K%: {row.get('Team_K%', 'N/A')}
+**Pitch Mix (Usage %):**
+- Four Seamer: {get_pitcher_stat('Four Seamer')}% | Sinker: {get_pitcher_stat('Sinker')}% | Slider: {get_pitcher_stat('Slider')}% 
+- Curveball: {get_pitcher_stat('Curveball')}% | Changeup: {get_pitcher_stat('Changeup')}% | Cutter: {get_pitcher_stat('Cutter')}%
+- Split Finger: {get_pitcher_stat('Split Finger')}% | Knuckle Curve: {get_pitcher_stat('Knuckle Curve')}%
+- Sweeper: {get_pitcher_stat('Sweeper')}% | Slurve: {get_pitcher_stat('Slurve')}%
+
+**Batted-Ball Profile:**
+- Heart: {get_pitcher_stat('Heart_Count')} ({get_pitcher_stat('Heart_Pct')}%)  
+- Shadow: {get_pitcher_stat('Shadow_Count')} ({get_pitcher_stat('Shadow_Pct')}%)  
+- Chase: {get_pitcher_stat('Chase_Count')} ({get_pitcher_stat('Chase_Pct')}%)  
+- Waste: {get_pitcher_stat('Waste_Count')} ({get_pitcher_stat('Waste_Pct')}%)
+
+**Recent Form (15d):**
+- FB Velo (avg): {get_pitcher_stat('15_day_fastball_velo')} mph | Spin: {get_pitcher_stat('15_day_fastball_spin')} rpm  
+- HardHit%: {get_pitcher_stat('15_day_hard_hit_pct')}% | Barrel%: {get_pitcher_stat('15_day_barrel_pct')}%  
+- GB%: {get_pitcher_stat('15_day_gb_pct')}% | FB%: {get_pitcher_stat('15_day_fb_pct')}% | LD%: {get_pitcher_stat('15_day_ld_pct')}%
+
+**Velocity & Spin (30d):**
+- FB Velo (avg): {get_pitcher_stat('30_day_fastball_velo')} mph | Spin: {get_pitcher_stat('30_day_fastball_spin')} rpm  
+- HardHit%: {get_pitcher_stat('30_day_hard_hit_pct')}% | Barrel%: {get_pitcher_stat('30_day_barrel_pct')}%  
+- GB%: {get_pitcher_stat('30_day_gb_pct')}% | FB%: {get_pitcher_stat('30_day_fb_pct')}% | LD%: {get_pitcher_stat('30_day_ld_pct')}%
 
 ---
 
 🌦️ **Game Conditions**
-- Park Factor (Basic): {row.get('Park_Factor_Basic', 'N/A')}
-- Park Factor (HR): {row.get('Park_Factor_HR', 'N/A')}
-- Temperature: {row.get('Game-Time Temp (°F)', 'N/A')}°F
-- Wind: {row.get('Game-Time Wind Speed (mph)', 'N/A')} mph
-- Wind Effect: {row.get('Game-Time Effect on Hitters', 'N/A')}"""
+- Stadium: {get_value('Stadium')}
+- Park Factor (Basic): {get_value('Park_Factor_Basic')}
+- Park Factor (HR): {get_value('Park_Factor_HR')}
+- Temperature: {get_value('Game-Time Temp (°F)')}°F
+- Wind: {get_value('Game-Time Wind Speed (mph)')} mph {get_value('Game-Time Wind Dir (°)')}°
+- Wind Effect: {get_value('Game-Time Effect on Hitters')}
 
-    # Add insights section if available
+📊 **League Baselines (2025 YTD)**
+- AVG .244 | OBP .316 | SLG .395 | OPS .711
+- wOBA .314 | xwOBA .326
+- Hard-Hit% 40.9 | Barrel% 8.6
+- K% 22.0 | BB% 8.6
+
+"""
+    # Add model type insights section if available
     if insights_db and model_type in insights_db and insights_db[model_type]:
         # Get the 3 most recent insights
         recent_insights = insights_db[model_type][-3:]
@@ -254,6 +321,25 @@ The Random Forest (RF) model you are reviewing is in its **early development sta
                 insights_section += f"\n   Key factors: {', '.join(key_factors[:3])}"
 
         prompt += insights_section
+
+    # Add prop type insights section if available
+    if insights_db and 'prop_types' in insights_db and prop_type in insights_db['prop_types']:
+        # Get the most recent insight for this prop type
+        prop_insights = insights_db['prop_types'][prop_type]
+        latest_insight = prop_insights[-1] if prop_insights else {}
+
+        prop_insights_section = "\n\n---\n\n📊 **Prop Type Insights**"
+
+        if 'key_factors' in latest_insight:
+            prop_insights_section += f"\n**Key Factors**: {latest_insight['key_factors']}"
+
+        if 'pattern_analysis' in latest_insight:
+            prop_insights_section += f"\n**Pattern Analysis**: {latest_insight['pattern_analysis']}"
+
+        if 'strongest_insight' in latest_insight:
+            prop_insights_section += f"\n**Strongest Insight**: {latest_insight['strongest_insight']}"
+
+        prompt += prop_insights_section
 
     # Complete the prompt
     prompt += """
@@ -284,26 +370,19 @@ LLM_Confidence: High/Medium/Low
 LLM_Justification: [Short reasoning using stats, matchup info, or game conditions]
 [/INST]
 """.strip()
-
     return prompt
 
 def query_llm(prompt):
-    """Query the LLM using Ollama"""
     logger.info("Querying LLM...")
     try:
-        # Add debug logging to see the prompt being sent
-        logger.debug(f"Sending prompt: {prompt[:100]}...")
-
-        # Use mistral:7b-instruct-v0.2 instead of phi3:mini
         result = subprocess.run(
             ["ollama", "run", "mistral:latest"],
             input=prompt.encode("utf-8"),
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
-            timeout=60
+            timeout=120
         )
 
-        # Log stderr if there's any error output
         if result.stderr:
             stderr_output = result.stderr.decode("utf-8")
             if stderr_output.strip():
@@ -311,10 +390,6 @@ def query_llm(prompt):
 
         response = result.stdout.decode("utf-8")
 
-        # Add debug logging to see the response
-        logger.debug(f"Raw response: {response[:100]}...")
-
-        # Check if response is empty
         if not response.strip():
             logger.error("Empty response received from LLM")
             return "Error: Empty response from LLM"
@@ -358,14 +433,20 @@ def parse_llm_response(response, rf_prediction):
     except Exception as e:
         return "Unknown", "Unknown", f"Error parsing response: {str(e)}", "Unknown"
 
-def generate_betslips(df, output_path,num_betslips: int = 3, props_per_betslip: int = 5, min_confidence: float = 0.55):
+def generate_betslips(df, output_path, num_betslips: int = 3, props_per_betslip: int = 5, min_confidence: float = 0.55):
     """
     Build betslips by selecting the highest‐edge props where LLM agrees with RF,
     diversifying across model types and directions, and write to CSV.
-
-    Each row will have: Betslip, Player, Prop Type, Prop Value,
-    RF_Prediction, RF_Confidence, LLM_Prediction, LLM_Justification.
     """
+    # Load MLB insights database
+    try:
+        with open('mlb_insights_db.json', 'r') as f:
+            insights_db = json.load(f)
+        logger.info("Successfully loaded MLB insights database")
+    except Exception as e:
+        logger.error(f"Error loading MLB insights database: {e}")
+        insights_db = {"prop_types": {}}
+
     # 1. Filter to agreed picks above `min_confidence`
     df = df[df["LLM_RF_Agreement"] == "True"].copy()
     df = df[df["RF_Confidence"] >= min_confidence]
@@ -374,7 +455,7 @@ def generate_betslips(df, output_path,num_betslips: int = 3, props_per_betslip: 
         logger.warning("No high‐confidence, agreed picks to generate betslips.")
         return
 
-    # 2. Compute “edge” = |confidence – 0.5|
+    # 2. Compute "edge" = |confidence – 0.5|
     df["edge"] = (df["RF_Confidence"] - 0.5).abs()
 
     # 3. Sort by edge descending
@@ -384,45 +465,46 @@ def generate_betslips(df, output_path,num_betslips: int = 3, props_per_betslip: 
     records = []
     for slip_idx in range(num_betslips):
         slip_name = f"Betslip #{slip_idx + 1}"
-        # Start with the top remaining pick
         picked = []
         available = df.copy()
 
-        # pick props_per_betslip in a loop, enforcing diversity
         while len(picked) < props_per_betslip and not available.empty:
-            # strategy: alternate hitter/pitcher and Over/Under
             last = picked[-1] if picked else None
             if last:
-                # invert model type or direction for diversity
                 want_type = ("pitcher" if last["Model_Type"] == "hitter" else "hitter")
                 want_dir = ("Under" if last["RF_Prediction"] == 1 else "Over")
                 cand = available[
                     (available["Model_Type"] == want_type) &
                     (available["RF_Prediction"].map({1: "Over", 0: "Under"}) == want_dir)
-                    ]
+                ]
                 if cand.empty:
                     cand = available
             else:
                 cand = available
 
-            # take the top edge pick from candidates
             pick = cand.iloc[0].to_dict()
             picked.append(pick)
-            # remove from available
-            available = available.drop(pick["edge"].name if "edge" in pick else available.index[0])
 
-        # record rows
-        for p in picked:
-            records.append({
+            # Get relevant insights for the prop type
+            prop_type = pick["Prop Type"]
+            prop_insights = insights_db.get("prop_types", {}).get(prop_type, [])
+            latest_insight = prop_insights[-1] if prop_insights else {}
+
+            # Enhance the pick with insights
+            enhanced_analysis = {
                 "Betslip": slip_name,
-                "Player": p["Player"],
-                "Prop Type": p["Prop Type"],
-                "Prop Value": p["Prop Value"],
-                "RF_Prediction": p["RF_Prediction"],
-                "RF_Confidence": p["RF_Confidence"],
-                "LLM_Prediction": p["LLM_Prediction"],
-                "LLM_Justification": p["LLM_Justification"]
-            })
+                "Player": pick["Player"],
+                "Prop Type": pick["Prop Type"],
+                "Prop Value": pick["Prop Value"],
+                "RF_Prediction": pick["RF_Prediction"],
+                "RF_Confidence": pick["RF_Confidence"],
+                "LLM_Prediction": pick["LLM_Prediction"],
+                "LLM_Justification": pick["LLM_Justification"],
+                "Key_Factors": latest_insight.get("key_factors", "No key factors available"),
+                "Pattern_Analysis": latest_insight.get("pattern_analysis", "No pattern analysis available"),
+                "Strongest_Insight": latest_insight.get("strongest_insight", "No strongest insight available")
+            }
+            records.append(enhanced_analysis)
 
     # 5. Write out CSV
     out_df = pd.DataFrame(records)
@@ -529,46 +611,34 @@ def main():
     df.to_csv(PREDICTIONS_PATH, index=False)
     logger.info(f"LLM-enhanced predictions added to original file: {PREDICTIONS_PATH}")
 
-    # Load existing top picks CSV and update it with LLM outputs
-    if os.path.exists(TOP_PICKS_PATH):
-        top_picks_df = pd.read_csv(TOP_PICKS_PATH)
-        logger.info(f"Loaded top picks from {TOP_PICKS_PATH}")
+    df.to_csv(PREDICTIONS_PATH, index=False)
+    logger.info(f"LLM-enhanced predictions added to original file: {PREDICTIONS_PATH}")
 
-        llm_preds, llm_justifications, llm_agreements, llm_confidences = [], [], [], []
+    # ==== NEW TOP-PICKS SELECTION ====
+    valid_conf = {"High", "Medium"}
+    mask = (
+            (df["LLM_RF_Agreement"] == "True") &
+            (df["RF_Confidence"] >= 0.6) &
+            (df["LLM_Confidence"].isin(valid_conf))
+    )
 
-        for idx, row in top_picks_df.iterrows():
-            player_name = row.get("Player", "Unknown")
-            model_type = row.get("Model_Type", "unknown").lower()
-            logger.info(f"Processing top pick {idx + 1}/{len(top_picks_df)} for {player_name} ({model_type})")
+    top_picks = (
+        df[mask]
+        .sort_values("RF_Confidence", ascending=False)
+        .head(10)
+    )
 
-            # Build prompt with insights
-            prompt = build_prompt(row, insights_db)
-
-            response = query_llm(prompt)
-            prediction, agreement, justification, confidence = parse_llm_response(response, row.get("RF_Prediction", 0))
-
-            llm_preds.append(prediction)
-            llm_agreements.append(agreement)
-            llm_justifications.append(justification)
-            llm_confidences.append(confidence)
-
-        top_picks_df["LLM_Prediction"] = llm_preds
-        top_picks_df["LLM_RF_Agreement"] = llm_agreements
-        top_picks_df["LLM_Justification"] = llm_justifications
-        top_picks_df["LLM_Confidence"] = llm_confidences
-
-        top_picks_df.to_csv(TOP_PICKS_PATH, index=False)
-        logger.info(f"Updated LLM-enhanced top picks written to: {TOP_PICKS_PATH}")
+    if top_picks.empty:
+        logger.warning("No top picks met the RF/LLM agreement & confidence criteria.")
     else:
-        logger.warning(f"Top picks file not found at {TOP_PICKS_PATH}")
+        top_picks.to_csv(TOP_PICKS_PATH, index=False)
+        logger.info(f"Wrote {len(top_picks)} top picks to {TOP_PICKS_PATH}")
 
     # Generate betslips
     generate_betslips(df, BETSLIPS_PATH.replace('.json', '.csv'))
     logger.info(f"Betslips saved to {BETSLIPS_PATH}")
 
     logger.info("LLM inference pipeline completed")
-
-    return df
 
 if __name__ == "__main__":
     main()
