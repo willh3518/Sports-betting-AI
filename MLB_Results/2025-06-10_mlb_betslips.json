@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Top Confidence Picks",
+    "props": [
+      {
+        "Player": "shohei ohtani",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 9.0,
+        "RF_Prediction": 1.0,
+        "RF_Confidence": 0.905,
+        "LLM_Prediction": "Over",
+        "LLM_Justification": "Shohei Otani's xwOBA of 0.447 and recent high Hard Hit % suggest a strong offensive performance. Dylan Cease's pitching data is unavailable, but facing a right-handed hitter (Otani) with above-average stats against RHP might indicate some vulnerability. The tailwind further boosts the fly balls likely to carry, favoring Otani as a hitter. However, given the model's limited training data and missing pitcher statistics, there is some uncertainty in this prediction."
+      },
+      {
+        "Player": "shohei ohtani",
+        "Prop Type": "Total Bases",
+        "Prop Value": 1.5,
+        "RF_Prediction": 1.0,
+        "RF_Confidence": 0.8984999999999999,
+        "LLM_Prediction": "Over",
+        "LLM_Justification": "Shohei Otani has a strong hard hit and barrel percentage against right-handed pitchers. Dylan Cease's 15-day hard hit rate is not available, but his HR/9 might be high given the home run-friendly park. Additionally, favorable game conditions (tailwind) could help extend fly balls, potentially leading to more total bases for Otani."
+      }
+    ]
+  },
+  {
+    "name": "Mixed Hitter/Pitcher Props",
+    "props": [
+      {
+        "Player": "shohei ohtani",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 9.0,
+        "RF_Prediction": 1.0,
+        "RF_Confidence": 0.905,
+        "LLM_Prediction": "Over",
+        "LLM_Justification": "Shohei Otani's xwOBA of 0.447 and recent high Hard Hit % suggest a strong offensive performance. Dylan Cease's pitching data is unavailable, but facing a right-handed hitter (Otani) with above-average stats against RHP might indicate some vulnerability. The tailwind further boosts the fly balls likely to carry, favoring Otani as a hitter. However, given the model's limited training data and missing pitcher statistics, there is some uncertainty in this prediction."
+      },
+      {
+        "Player": "mackenzie gore",
+        "Prop Type": "Pitcher Fantasy Score",
+        "Prop Value": 33.5,
+        "RF_Prediction": 1.0,
+        "RF_Confidence": 0.7256388888888888,
+        "LLM_Prediction": "Over",
+        "LLM_Justification": "The model's prediction has a low confidence level (72.6%), and the player's statistical data is missing, making it difficult to make an informed decision. However, Mackenzie Gore is a pitcher, not a hitter, so his fantasy score is based on his pitching performance. In this case, we would consider factors such as opposing team's offensive stats, park factors, and game conditions. Unfortunately, there's no relevant data provided for these factors to make a reliable prediction."
+      }
+    ]
+  },
+  {
+    "name": "All Overs",
+    "props": [
+      {
+        "Player": "shohei ohtani",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 9.0,
+        "RF_Prediction": 1.0,
+        "RF_Confidence": 0.905,
+        "LLM_Prediction": "Over",
+        "LLM_Justification": "Shohei Otani's xwOBA of 0.447 and recent high Hard Hit % suggest a strong offensive performance. Dylan Cease's pitching data is unavailable, but facing a right-handed hitter (Otani) with above-average stats against RHP might indicate some vulnerability. The tailwind further boosts the fly balls likely to carry, favoring Otani as a hitter. However, given the model's limited training data and missing pitcher statistics, there is some uncertainty in this prediction."
+      },
+      {
+        "Player": "shohei ohtani",
+        "Prop Type": "Total Bases",
+        "Prop Value": 1.5,
+        "RF_Prediction": 1.0,
+        "RF_Confidence": 0.8984999999999999,
+        "LLM_Prediction": "Over",
+        "LLM_Justification": "Shohei Otani has a strong hard hit and barrel percentage against right-handed pitchers. Dylan Cease's 15-day hard hit rate is not available, but his HR/9 might be high given the home run-friendly park. Additionally, favorable game conditions (tailwind) could help extend fly balls, potentially leading to more total bases for Otani."
+      }
+    ]
+  },
+  {
+    "name": "All Unders",
+    "props": [
+      {
+        "Player": "noah cameron",
+        "Prop Type": "Pitching Outs",
+        "Prop Value": 15.5,
+        "RF_Prediction": 0.0,
+        "RF_Confidence": 0.4966825396825393,
+        "LLM_Prediction": "Under",
+        "LLM_Justification": "The model's prediction is under 55% confidence and the player, Noah Cameron, has not provided us with many relevant pitching stats to support an over prediction. However, it's worth noting that facing a mystery pitcher (missing data for ERA, WHIP, K/9, BB/9) may potentially limit opposing batters' opportunities. Nonetheless, given the early stage of the model and the lack of reliable player data, this call should be considered with caution."
+      },
+      {
+        "Player": "noah cameron",
+        "Prop Type": "Pitching Outs",
+        "Prop Value": 15.5,
+        "RF_Prediction": 0.0,
+        "RF_Confidence": 0.4966825396825393,
+        "LLM_Prediction": "Under",
+        "LLM_Justification": "The model's prediction is unreliable with only 49.7% confidence. Noah Cameron's opponent pitcher stats are not provided, which limits our ability to assess the matchup. However, Cameron has a lower batting average vs right-handed pitchers compared to lefties (0.227 vs 0.364). The game conditions seem neutral, and as a pitcher, Cameron's outs prediction doesn't rely heavily on park factors or weather conditions."
+      }
+    ]
+  },
+  {
+    "name": "Balanced Over/Under",
+    "props": [
+      {
+        "Player": "shohei ohtani",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 9.0,
+        "RF_Prediction": 1.0,
+        "RF_Confidence": 0.905,
+        "LLM_Prediction": "Over",
+        "LLM_Justification": "Shohei Otani's xwOBA of 0.447 and recent high Hard Hit % suggest a strong offensive performance. Dylan Cease's pitching data is unavailable, but facing a right-handed hitter (Otani) with above-average stats against RHP might indicate some vulnerability. The tailwind further boosts the fly balls likely to carry, favoring Otani as a hitter. However, given the model's limited training data and missing pitcher statistics, there is some uncertainty in this prediction."
+      },
+      {
+        "Player": "noah cameron",
+        "Prop Type": "Pitching Outs",
+        "Prop Value": 15.5,
+        "RF_Prediction": 0.0,
+        "RF_Confidence": 0.4966825396825393,
+        "LLM_Prediction": "Under",
+        "LLM_Justification": "The model's prediction is under 55% confidence and the player, Noah Cameron, has not provided us with many relevant pitching stats to support an over prediction. However, it's worth noting that facing a mystery pitcher (missing data for ERA, WHIP, K/9, BB/9) may potentially limit opposing batters' opportunities. Nonetheless, given the early stage of the model and the lack of reliable player data, this call should be considered with caution."
+      }
+    ]
+  }
+]
