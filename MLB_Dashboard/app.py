@@ -1,9 +1,10 @@
 # MLB_Dashboard/app.py
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, jsonify
 import pandas as pd
 import os
 import glob
 import math
+import re
 from datetime import datetime, timedelta
 import sys
 
@@ -13,13 +14,11 @@ app = Flask(__name__)
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 # Define paths relative to the project root
-PROJECT_ROOT      = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-MLB_RESULTS_DIR   = os.path.join(PROJECT_ROOT, 'MLB_Results')
+PROJECT_ROOT       = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+MLB_RESULTS_DIR    = os.path.join(PROJECT_ROOT, 'MLB_Results')
 PROP_ACCURACY_FILE = os.path.join(MLB_RESULTS_DIR, 'MLB_Prop_Accuracy.csv')
 
-
 def _safe_int(v):
-    """Return int(v) or None if v is NaN or None."""
     try:
         if v is None or (isinstance(v, float) and math.isnan(v)):
             return None
@@ -28,7 +27,6 @@ def _safe_int(v):
         return None
 
 def _safe_float(v):
-    """Return float(v) or None if v is NaN or None."""
     try:
         if v is None or (isinstance(v, float) and math.isnan(v)):
             return None
@@ -43,106 +41,136 @@ def dashboard():
 @app.route('/api/dashboard-data')
 def dashboard_data():
     try:
-        # accuracy file must exist
+        # ── Load accuracy CSV ───────────────────────────────
         if not os.path.exists(PROP_ACCURACY_FILE):
             return jsonify(success=False,
                            error=f'Accuracy file not found: {PROP_ACCURACY_FILE}')
 
-        # load and sort accuracy
-        df = pd.read_csv(PROP_ACCURACY_FILE)
-        df['Date'] = pd.to_datetime(df['Date'])
-        df = df.sort_values('Date', ascending=False)
+        acc_df = pd.read_csv(PROP_ACCURACY_FILE)
+        acc_df['Date'] = pd.to_datetime(acc_df['Date'])
+        acc_df = acc_df.sort_values('Date', ascending=False)
 
-        # pick yesterday or latest
+        # Pick yesterday's row (or fallback to latest)
         today     = datetime.now().date()
         yesterday = today - timedelta(days=1)
-        ydf       = df[df['Date'].dt.date == yesterday]
-        row       = ydf.iloc[0] if not ydf.empty else df.iloc[0]
+        ydf       = acc_df[acc_df['Date'].dt.date == yesterday]
+        row       = ydf.iloc[0] if not ydf.empty else acc_df.iloc[0]
 
-        # build payload
+        # Build "latest" payload
         latest = {
             'latest_date': row['Date'].strftime('%Y-%m-%d'),
             'overall': {
-                'total':            _safe_int(row.get('Total_Predictions')),
-                'rf_accuracy':      _safe_float(row.get('RF_Accuracy')),
-                'llm_accuracy':     _safe_float(row.get('LLM_Accuracy')),
-                'agreement_accuracy':_safe_float(row.get('Agreement_Accuracy')),
-                'agreement_count':  _safe_int(row.get('Agreement_Count'))
+                'total':              _safe_int(row.get('Total_Predictions')),
+                'rf_accuracy':        _safe_float(row.get('RF_Accuracy')),
+                'llm_accuracy':       _safe_float(row.get('LLM_Accuracy')),
+                'agreement_accuracy': _safe_float(row.get('Agreement_Accuracy')),
+                'agreement_count':    _safe_int(row.get('Agreement_Count')),
             },
             'prop_types': {},
             'historical_data': []
         }
 
-        # prop types
-        props = [
+        # Fill prop_types …
+        prop_list = [
             'Hits+Runs+RBIs','Hitter_Strikeouts','Total_Bases',
             'Hitter_Fantasy_Score','Hits','Walks','Runs',
             'Pitcher_Strikeouts','Pitches_Thrown','Pitching_Outs',
             'Pitcher_Fantasy_Score','Earned_Runs_Allowed'
         ]
-        for p in props:
+        for p in prop_list:
             cnt = row.get(f'{p}_Count')
             if _safe_int(cnt) and _safe_int(cnt) > 0:
                 latest['prop_types'][p] = {
-                    'count':       _safe_int(cnt),
-                    'rf_accuracy': _safe_float(row.get(f'{p}_RF_Accuracy')),
-                    'llm_accuracy':_safe_float(row.get(f'{p}_LLM_Accuracy'))
+                    'count':        _safe_int(cnt),
+                    'rf_accuracy':  _safe_float(row.get(f'{p}_RF_Accuracy')),
+                    'llm_accuracy': _safe_float(row.get(f'{p}_LLM_Accuracy')),
                 }
 
-        # last 30 days history
-        for _, r in df.head(30).iterrows():
+        # Last 30 days of history
+        for _, r in acc_df.head(30).iterrows():
             latest['historical_data'].append({
-                'date':              r['Date'].strftime('%Y-%m-%d'),
-                'total':             _safe_int(r.get('Total_Predictions')),
-                'rf_accuracy':       _safe_float(r.get('RF_Accuracy')),
-                'llm_accuracy':      _safe_float(r.get('LLM_Accuracy')),
-                'agreement_accuracy':_safe_float(r.get('Agreement_Accuracy'))
+                'date':               r['Date'].strftime('%Y-%m-%d'),
+                'total':              _safe_int(r.get('Total_Predictions')),
+                'rf_accuracy':        _safe_float(r.get('RF_Accuracy')),
+                'llm_accuracy':       _safe_float(r.get('LLM_Accuracy')),
+                'agreement_accuracy': _safe_float(r.get('Agreement_Accuracy')),
             })
 
-        # high-confidence correct picks from newest predictions file
-        picks = []
-        pred_files = glob.glob(os.path.join(MLB_RESULTS_DIR, '*_mlb_predictions.csv'))
-        if pred_files:
-            latest_file = sorted(pred_files, reverse=True)[0]
-            pdf = pd.read_csv(latest_file)
-            required = {'RF_Prediction','RF_Confidence','Actual_Result'}
-            if required.issubset(pdf.columns):
-                pdf = pdf[pdf['Actual_Result'].notna()]
-                pdf['RF_Correct'] = (
-                    ((pdf['RF_Prediction']==1)&(pdf['Actual_Result']=='Over')) |
-                    ((pdf['RF_Prediction']==0)&(pdf['Actual_Result']=='Under'))
+        # ── Gather all prior prediction files ─────────────────
+        pred_files = glob.glob(os.path.join(MLB_RESULTS_DIR, "*_mlb_predictions.csv"))
+        dfs = []
+        for path in pred_files:
+            m = re.match(r"(\d{4}-\d{2}-\d{2})_mlb_predictions\.csv$", os.path.basename(path))
+            if not m:
+                continue
+            file_date = datetime.strptime(m.group(1), "%Y-%m-%d").date()
+            if file_date < today:
+                try:
+                    dfs.append(pd.read_csv(path))
+                except Exception:
+                    pass
+
+        # ── Filter & random-sample 5 completed, agreeing, confident picks ──
+        preds = []
+        if dfs:
+            all_preds = pd.concat(dfs, ignore_index=True)
+
+            # drop rows without an Actual_Result
+            completed = all_preds[all_preds['Actual_Result'].notna()].copy()
+
+            # ensure RF_Confidence is numeric, LLM_Confidence lowercase
+            completed['RF_Confidence']  = pd.to_numeric(completed['RF_Confidence'],  errors='coerce')
+            completed['LLM_Confidence'] = completed['LLM_Confidence'].astype(str).str.lower()
+
+            # filter by RF ≥0.6, agreement flag True, LLM confidence medium/high
+            ap = completed[
+                (completed['RF_Confidence'] >= 0.75) &
+                (completed['LLM_RF_Agreement'] == True) &
+                (completed['LLM_Confidence'].isin(['medium', 'high']))
+            ]
+
+            # take all matching rows
+            if not ap.empty:
+                preds = (
+                    ap[[
+                        'Player', 'Prop Type', 'Prop Value',
+                        'RF_Prediction', 'RF_Confidence', 'Actual_Result'
+                    ]]
+                    .rename(columns={
+                        'RF_Prediction': 'Prediction',
+                        'RF_Confidence': 'Confidence',
+                        'Actual_Result': 'Result'
+                    })
+                    .to_dict(orient='records')
                 )
-                hc = pdf[(pdf['RF_Correct']) & (pdf['RF_Confidence']>=0.8)]
-                top = hc.sort_values('RF_Confidence', ascending=False).head(10)
-                top = top.where(pd.notnull(top), None)
-                cols = [
-                    'Player','Prop Type','Prop Value',
-                    'RF_Prediction','RF_Confidence',
-                    'Actual_Stat','Actual_Result','RF_Correct'
-                ]
-                picks = top[cols].to_dict(orient='records')
 
-        latest['recent_predictions'] = picks
+        # … after you build preds …
+        latest['recent_predictions'] = preds
 
-        # ── override latest_date to match the newest predictions file date ──
+        # compute summary
+        total = len(preds)
+        correct = sum(1 for p in preds if p.get('Result') is True)
+        latest['recent_summary'] = {
+            'correct': correct,
+            'total': total
+        }
+
+        # bump `latest_date` to newest prediction-file date (if any)
         pred_dates = []
         for path in pred_files:
-            fn = os.path.basename(path)
-            try:
-                dt = datetime.strptime(fn.split('_')[0], "%Y-%m-%d").date()
-                pred_dates.append(dt)
-            except:
-                continue
+            m = re.match(r"(\d{4}-\d{2}-\d{2})_mlb_predictions\.csv$", os.path.basename(path))
+            if m:
+                try:
+                    pred_dates.append(datetime.strptime(m.group(1), "%Y-%m-%d").date())
+                except:
+                    pass
         if pred_dates:
-            latest_pred_date = max(pred_dates)
-            latest['latest_date'] = latest_pred_date.strftime("%Y-%m-%d")
-        # ──────────────────────────────────────────────────────────────────
+            latest['latest_date'] = max(pred_dates).strftime("%Y-%m-%d")
 
         return jsonify(success=True, data=latest)
 
     except Exception as e:
-        import traceback
-        traceback.print_exc()
+        import traceback; traceback.print_exc()
         return jsonify(success=False, error=str(e))
 
 if __name__ == '__main__':
@@ -152,4 +180,5 @@ if __name__ == '__main__':
         print(f"Warning: MLB_Prop_Accuracy.csv not found at {PROP_ACCURACY_FILE}")
     else:
         print("Found MLB_Prop_Accuracy.csv with data")
+
     app.run(debug=True, port=5001)
