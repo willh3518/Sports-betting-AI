@@ -1,582 +1,284 @@
 Player,Pitch,RV/100,wOBA,xwOBA,Hard Hit %
-Aaron Judge,Sinker,9.1,0.651,0.6,62.2
-Aaron Judge,Changeup,5.0,0.464,0.402,38.1
-Aaron Judge,4-Seam Fastball,4.3,0.571,0.519,68.1
+Aaron Judge,Sinker,8.9,0.651,0.6,62.2
+Aaron Judge,Changeup,5.0,0.471,0.411,38.1
+Aaron Judge,4-Seam Fastball,4.4,0.583,0.531,67.3
 Aaron Judge,Sweeper,3.6,0.519,0.434,27.3
-Aaron Judge,Slider,1.8,0.441,0.39,53.1
-Abraham Toro,4-Seam Fastball,1.6,0.394,0.315,43.3
-Addison Barger,4-Seam Fastball,-0.7,0.333,0.375,51.1
+Aaron Judge,Slider,1.6,0.424,0.375,53.1
+Adam Frazier,Sinker,-0.2,0.337,0.295,35.0
+Adam Frazier,4-Seam Fastball,-0.3,0.363,0.316,22.9
+Adam Frazier,Cutter,-1.1,0.3,0.206,16.7
+Adam Frazier,Slider,-1.6,0.255,0.283,18.5
 Adley Rutschman,Sinker,2.1,0.383,0.365,47.8
 Adley Rutschman,Slider,0.3,0.341,0.349,26.3
+Adley Rutschman,4-Seam Fastball,-0.4,0.314,0.395,48.4
 Adley Rutschman,Curveball,-0.4,0.227,0.323,54.5
 Adley Rutschman,Changeup,-0.5,0.252,0.338,47.1
-Adley Rutschman,4-Seam Fastball,-0.7,0.302,0.39,47.6
-Agustin Ramirez,4-Seam Fastball,0.3,0.392,0.389,62.5
-Agustin Ramirez,Slider,-3.1,0.212,0.216,37.9
-Alec Bohm,Slider,-0.1,0.327,0.341,42.9
-Alec Bohm,4-Seam Fastball,-0.4,0.329,0.351,54.9
-Alec Bohm,Sinker,-1.9,0.28,0.37,60.5
-Alec Burleson,4-Seam Fastball,0.5,0.359,0.37,48.8
-Alejandro Kirk,4-Seam Fastball,1.0,0.392,0.433,55.3
-Alejandro Kirk,Slider,-0.3,0.261,0.274,42.9
-Alejandro Kirk,Sinker,-1.7,0.34,0.375,68.3
-Alek Thomas,4-Seam Fastball,-0.2,0.347,0.393,63.3
-Alex Verdugo,Sinker,0.1,0.362,0.379,62.5
-Alex Verdugo,4-Seam Fastball,-1.4,0.262,0.267,41.3
-Andrew Benintendi,Changeup,0.9,0.322,0.354,29.2
-Andrew Benintendi,4-Seam Fastball,-0.1,0.347,0.411,57.1
+Alec Burleson,4-Seam Fastball,0.2,0.339,0.35,46.5
+Alex Call,4-Seam Fastball,0.1,0.397,0.372,27.8
+Alex Call,Sinker,-0.5,0.336,0.351,28.6
+Andrew Benintendi,Changeup,0.7,0.312,0.344,28.0
+Andrew Benintendi,4-Seam Fastball,-0.4,0.333,0.403,55.6
 Andrew McCutchen,Sinker,0.9,0.395,0.467,64.9
-Andrew McCutchen,Slider,-0.4,0.296,0.349,33.3
+Andrew McCutchen,Slider,-0.6,0.289,0.34,33.3
 Andrew McCutchen,4-Seam Fastball,-1.3,0.291,0.353,50.0
-Andy Pages,4-Seam Fastball,1.8,0.394,0.407,41.0
-Andy Pages,Slider,1.6,0.372,0.303,29.2
-Andy Pages,Sinker,-0.6,0.308,0.334,57.1
-Anthony Volpe,4-Seam Fastball,2.2,0.426,0.402,63.0
+Anthony Volpe,4-Seam Fastball,2.3,0.43,0.4,61.8
 Anthony Volpe,Sinker,0.5,0.431,0.424,57.7
 Anthony Volpe,Slider,-2.3,0.224,0.237,36.4
-Austin Riley,Sinker,3.7,0.515,0.459,55.6
-Austin Riley,Sweeper,3.0,0.436,0.409,50.0
-Austin Riley,4-Seam Fastball,-0.6,0.302,0.331,55.2
-Austin Riley,Slider,-1.5,0.23,0.305,57.1
-Ben Rice,Sinker,5.4,0.486,0.533,62.5
-Ben Rice,Changeup,1.2,0.282,0.394,52.0
-Ben Rice,4-Seam Fastball,-0.3,0.336,0.461,66.7
-Ben Rice,Slider,-0.9,0.266,0.275,50.0
-Bo Bichette,4-Seam Fastball,0.8,0.411,0.414,57.4
-Bo Bichette,Slider,0.7,0.347,0.399,48.9
-Bo Bichette,Sinker,0.4,0.34,0.339,50.9
+Austin Wells,4-Seam Fastball,3.1,0.42,0.406,68.9
+Austin Wells,Changeup,1.1,0.355,0.273,47.6
+Austin Wells,Sinker,-0.4,0.309,0.298,59.1
+Austin Wells,Slider,-1.2,0.245,0.216,31.3
+Ben Rice,Sinker,6.5,0.497,0.542,64.0
+Ben Rice,Changeup,0.9,0.273,0.384,50.0
+Ben Rice,4-Seam Fastball,-0.4,0.336,0.461,66.7
+Ben Rice,Slider,-1.3,0.248,0.263,50.0
 Bobby Witt,Changeup,2.4,0.358,0.372,32.0
-Bobby Witt,4-Seam Fastball,0.6,0.363,0.395,59.3
+Bobby Witt,4-Seam Fastball,0.5,0.358,0.4,60.0
 Bobby Witt,Slider,0.4,0.288,0.332,37.8
-Bobby Witt,Cutter,0.1,0.358,0.395,39.1
+Bobby Witt,Cutter,0.0,0.344,0.381,41.7
 Bobby Witt,Sinker,-0.3,0.368,0.415,66.7
-Brandon Lowe,Changeup,2.3,0.403,0.356,35.1
-Brandon Lowe,4-Seam Fastball,1.8,0.4,0.345,59.4
-Brandon Lowe,Sinker,-2.3,0.284,0.466,59.4
-Brandon Lowe,Slider,-3.3,0.18,0.298,54.2
-Brandon Nimmo,Sinker,3.3,0.473,0.442,61.5
-Brandon Nimmo,Slider,0.1,0.284,0.239,34.6
-Brandon Nimmo,Curveball,-1.5,0.202,0.251,50.0
-Brandon Nimmo,4-Seam Fastball,-2.2,0.256,0.358,49.2
+Brendan Donovan,4-Seam Fastball,1.8,0.455,0.405,39.1
+Brendan Donovan,Slider,0.1,0.31,0.304,48.5
+Brendan Donovan,Curveball,-1.0,0.263,0.342,29.4
+Brendan Donovan,Sinker,-2.0,0.232,0.303,35.1
 Brenton Doyle,Sinker,0.2,0.353,0.37,46.4
-Brenton Doyle,4-Seam Fastball,-1.9,0.244,0.284,52.3
-Brenton Doyle,Slider,-2.2,0.21,0.212,46.4
+Brenton Doyle,4-Seam Fastball,-1.8,0.25,0.28,53.3
+Brenton Doyle,Slider,-1.8,0.231,0.232,48.3
 Brice Turang,Changeup,0.9,0.271,0.333,30.8
 Brice Turang,Curveball,0.7,0.225,0.131,25.0
 Brice Turang,Sinker,0.6,0.391,0.368,37.1
-Brice Turang,4-Seam Fastball,-0.4,0.359,0.395,61.4
+Brice Turang,4-Seam Fastball,-0.4,0.361,0.396,60.9
 Brice Turang,Slider,-0.8,0.247,0.267,42.3
-Brooks Lee,4-Seam Fastball,3.1,0.482,0.411,48.6
-Brooks Lee,Changeup,-1.3,0.232,0.281,25.0
-Brooks Lee,Slider,-4.2,0.096,0.184,42.9
 Bryan Reynolds,Sinker,1.9,0.441,0.472,60.7
 Bryan Reynolds,Changeup,0.0,0.284,0.231,13.3
 Bryan Reynolds,Curveball,-0.3,0.244,0.242,38.1
 Bryan Reynolds,Slider,-0.8,0.272,0.405,58.3
-Bryan Reynolds,4-Seam Fastball,-1.0,0.299,0.421,65.3
+Bryan Reynolds,4-Seam Fastball,-1.1,0.296,0.42,64.7
+Byron Buxton,Slider,1.4,0.354,0.383,66.7
 Byron Buxton,Sinker,0.8,0.381,0.305,46.2
-Byron Buxton,Slider,0.8,0.288,0.318,64.3
-Byron Buxton,4-Seam Fastball,0.6,0.382,0.352,60.6
-CJ Abrams,4-Seam Fastball,0.1,0.368,0.361,38.6
-CJ Abrams,Slider,-1.8,0.219,0.26,30.4
-Cal Raleigh,Sinker,7.2,0.612,0.607,66.7
-Cal Raleigh,Cutter,4.2,0.585,0.49,53.8
-Cal Raleigh,Slider,2.1,0.463,0.37,54.5
-Cal Raleigh,Curveball,1.3,0.377,0.289,43.8
-Cal Raleigh,4-Seam Fastball,0.7,0.353,0.366,45.8
-Cal Raleigh,Changeup,0.3,0.284,0.34,41.9
-Caleb Durbin,Sinker,0.6,0.405,0.328,36.4
-Caleb Durbin,4-Seam Fastball,-2.0,0.263,0.298,22.7
-Cam Smith,Sinker,0.6,0.39,0.344,50.0
+Byron Buxton,4-Seam Fastball,0.7,0.39,0.355,61.8
+Caleb Durbin,Sinker,0.3,0.395,0.325,35.3
+Caleb Durbin,4-Seam Fastball,-2.2,0.254,0.287,22.2
+Cam Smith,Sinker,0.5,0.39,0.344,50.0
 Cam Smith,4-Seam Fastball,-0.7,0.335,0.408,33.3
-Cam Smith,Slider,-2.6,0.144,0.178,31.8
-Carlos Correa,Sinker,0.9,0.368,0.356,42.9
-Carlos Correa,4-Seam Fastball,-0.7,0.318,0.333,52.5
-Carlos Correa,Slider,-1.4,0.276,0.306,40.0
-Carlos Santana,Sinker,1.5,0.417,0.413,66.7
-Carlos Santana,Slider,1.4,0.329,0.295,55.6
-Carlos Santana,Changeup,-0.3,0.262,0.242,55.0
-Carlos Santana,4-Seam Fastball,-0.4,0.307,0.319,35.5
-Carlos Santana,Cutter,-0.4,0.35,0.274,44.4
-Carlos Santana,Curveball,-1.1,0.127,0.168,16.7
-Carson Kelly,Slider,3.0,0.408,0.362,45.0
+Cam Smith,Slider,-2.2,0.166,0.182,33.3
+Carson Kelly,Slider,2.8,0.393,0.349,47.6
 Carson Kelly,Sinker,1.6,0.479,0.456,40.7
-Carson Kelly,4-Seam Fastball,1.0,0.408,0.352,50.0
-Ceddanne Rafaela,Slider,0.7,0.355,0.366,42.9
-Ceddanne Rafaela,4-Seam Fastball,0.6,0.367,0.406,58.5
-Ceddanne Rafaela,Sinker,-2.8,0.243,0.294,48.1
+Carson Kelly,4-Seam Fastball,1.1,0.418,0.357,50.0
 Chase Meidroth,Sinker,1.3,0.463,0.437,53.6
-Chase Meidroth,4-Seam Fastball,1.2,0.417,0.367,37.8
-Chase Meidroth,Slider,-1.1,0.256,0.282,25.0
-Christian Vazquez,4-Seam Fastball,-0.8,0.312,0.316,25.0
+Chase Meidroth,4-Seam Fastball,1.2,0.425,0.37,37.0
+Chase Meidroth,Slider,-1.3,0.248,0.274,24.0
+Christian Walker,4-Seam Fastball,-0.1,0.31,0.308,52.2
+Christian Walker,Slider,-0.1,0.281,0.396,59.3
 Christian Walker,Sinker,-0.2,0.375,0.384,48.7
-Christian Walker,4-Seam Fastball,-0.3,0.297,0.303,51.1
-Christian Walker,Slider,-1.0,0.236,0.354,57.7
-Christian Yelich,Slider,0.6,0.328,0.312,54.2
-Christian Yelich,4-Seam Fastball,-0.2,0.332,0.347,59.0
-Christian Yelich,Cutter,-0.7,0.349,0.379,42.9
-Christian Yelich,Sinker,-1.0,0.29,0.359,43.3
 Cody Bellinger,Changeup,1.6,0.374,0.229,25.0
-Cody Bellinger,Sinker,1.4,0.445,0.398,52.0
-Cody Bellinger,4-Seam Fastball,1.0,0.4,0.435,45.2
-Cody Bellinger,Cutter,0.2,0.339,0.29,42.9
-Cody Bellinger,Slider,-2.7,0.143,0.254,46.2
-Connor Norby,4-Seam Fastball,-0.9,0.314,0.347,40.6
-Connor Norby,Slider,-2.8,0.163,0.213,29.4
-Corbin Carroll,4-Seam Fastball,3.9,0.517,0.488,64.9
-Corbin Carroll,Curveball,2.9,0.476,0.42,52.6
-Corbin Carroll,Sinker,0.5,0.349,0.294,53.6
-Corbin Carroll,Slider,-1.1,0.27,0.35,45.7
-Corey Seager,4-Seam Fastball,-0.2,0.364,0.522,78.6
+Cody Bellinger,Sinker,1.5,0.445,0.398,52.0
+Cody Bellinger,4-Seam Fastball,1.2,0.409,0.437,45.3
+Cody Bellinger,Cutter,-0.1,0.324,0.289,40.0
+Cody Bellinger,Slider,-2.7,0.139,0.25,44.4
+Colt Keith,4-Seam Fastball,0.9,0.367,0.431,61.1
+Colt Keith,Changeup,0.8,0.339,0.352,38.1
+Colt Keith,Sinker,-1.2,0.28,0.351,33.3
+Corey Seager,4-Seam Fastball,-0.2,0.355,0.514,75.9
 Dansby Swanson,Sinker,1.5,0.422,0.43,45.0
 Dansby Swanson,Sweeper,0.1,0.304,0.297,38.9
 Dansby Swanson,Slider,-0.5,0.244,0.197,25.0
-Dansby Swanson,4-Seam Fastball,-1.6,0.304,0.379,61.4
-Dansby Swanson,Changeup,-2.3,0.16,0.221,31.3
-Donovan Solano,4-Seam Fastball,-3.9,0.185,0.238,44.4
-Drake Baldwin,4-Seam Fastball,2.4,0.45,0.376,63.3
-Dylan Moore,Sinker,1.2,0.443,0.462,39.3
-Dylan Moore,4-Seam Fastball,-0.1,0.288,0.296,31.3
-Elly De La Cruz,4-Seam Fastball,1.4,0.428,0.42,65.6
-Elly De La Cruz,Curveball,1.4,0.377,0.346,36.8
-Elly De La Cruz,Slider,-0.4,0.271,0.273,50.0
-Elly De La Cruz,Changeup,-0.7,0.289,0.286,25.0
-Eric Wagaman,Slider,2.0,0.407,0.336,43.5
-Eric Wagaman,4-Seam Fastball,-0.3,0.329,0.37,44.4
-Eric Wagaman,Sinker,-0.5,0.317,0.391,62.2
-Eugenio Suarez,4-Seam Fastball,0.8,0.37,0.403,65.4
-Eugenio Suarez,Sinker,0.4,0.359,0.405,50.0
-Eugenio Suarez,Sweeper,0.4,0.35,0.328,37.5
-Eugenio Suarez,Slider,-0.2,0.239,0.242,20.0
-Fernando Tatis,Slider,3.5,0.436,0.472,54.5
-Fernando Tatis,Sinker,1.6,0.412,0.321,37.0
-Fernando Tatis,4-Seam Fastball,0.8,0.398,0.398,66.7
-Fernando Tatis,Changeup,-3.0,0.13,0.292,61.1
-Francisco Lindor,Sinker,1.9,0.44,0.401,51.9
-Francisco Lindor,Curveball,0.3,0.294,0.279,40.0
-Francisco Lindor,4-Seam Fastball,0.0,0.359,0.379,51.4
-Francisco Lindor,Changeup,-1.0,0.206,0.221,27.3
-Freddie Freeman,Slider,2.8,0.467,0.397,47.1
-Freddie Freeman,4-Seam Fastball,2.3,0.431,0.451,49.3
-Freddie Freeman,Changeup,1.3,0.383,0.319,18.8
-Gabriel Arias,Sinker,0.3,0.368,0.373,45.5
-Gabriel Arias,4-Seam Fastball,-0.1,0.293,0.356,56.7
-Gabriel Arias,Sweeper,-1.2,0.223,0.208,23.5
-Gabriel Arias,Slider,-2.1,0.208,0.231,34.8
-Gavin Sheets,4-Seam Fastball,1.9,0.429,0.363,60.0
-Gavin Sheets,Curveball,0.4,0.324,0.299,53.8
-Gavin Sheets,Changeup,-1.1,0.159,0.301,47.6
-Gavin Sheets,Slider,-2.0,0.193,0.292,52.0
-George Springer,Sinker,2.6,0.443,0.499,51.5
-George Springer,Slider,1.6,0.317,0.379,48.0
-George Springer,Changeup,0.7,0.304,0.313,36.4
-George Springer,4-Seam Fastball,0.3,0.372,0.405,53.7
-Geraldo Perdomo,Slider,1.8,0.361,0.344,37.9
-Geraldo Perdomo,4-Seam Fastball,1.4,0.391,0.385,33.8
-Geraldo Perdomo,Curveball,-0.2,0.302,0.343,11.1
-Geraldo Perdomo,Sinker,-1.0,0.323,0.231,44.8
-Gleyber Torres,Sinker,2.9,0.516,0.482,50.0
-Gleyber Torres,Cutter,1.1,0.39,0.412,25.0
-Gleyber Torres,4-Seam Fastball,0.2,0.342,0.453,47.2
-Gleyber Torres,Sweeper,0.2,0.237,0.246,16.7
+Dansby Swanson,4-Seam Fastball,-1.8,0.296,0.375,62.1
+Dansby Swanson,Changeup,-2.4,0.155,0.215,29.4
+Dillon Dingler,Sinker,4.7,0.548,0.465,46.4
+Dillon Dingler,Slider,0.7,0.355,0.314,32.3
+Dillon Dingler,4-Seam Fastball,-0.4,0.294,0.323,59.3
+Drew Waters,4-Seam Fastball,0.9,0.399,0.339,29.3
+Drew Waters,Changeup,-2.7,0.23,0.236,25.9
+Dylan Carlson,4-Seam Fastball,-1.0,0.313,0.258,21.4
+Gleyber Torres,Sinker,2.8,0.516,0.482,50.0
+Gleyber Torres,Cutter,1.0,0.39,0.412,25.0
+Gleyber Torres,4-Seam Fastball,0.2,0.345,0.451,47.3
+Gleyber Torres,Sweeper,-0.1,0.225,0.236,15.4
 Gleyber Torres,Slider,-0.4,0.3,0.284,29.6
-Gunnar Henderson,Changeup,3.4,0.388,0.317,47.4
-Gunnar Henderson,4-Seam Fastball,0.5,0.378,0.365,69.0
-Gunnar Henderson,Sinker,-1.0,0.339,0.343,45.9
-Gunnar Henderson,Slider,-1.9,0.204,0.223,41.2
-Heliot Ramos,Sweeper,2.0,0.384,0.37,36.8
-Heliot Ramos,4-Seam Fastball,1.5,0.41,0.368,55.0
+Gunnar Henderson,Changeup,3.3,0.388,0.317,47.4
+Gunnar Henderson,4-Seam Fastball,0.5,0.377,0.365,69.0
+Gunnar Henderson,Sinker,-1.1,0.339,0.343,45.9
+Gunnar Henderson,Slider,-1.8,0.204,0.223,41.2
+Heliot Ramos,Sweeper,2.5,0.413,0.381,40.0
+Heliot Ramos,4-Seam Fastball,1.4,0.409,0.367,55.0
 Heliot Ramos,Sinker,1.4,0.397,0.374,45.5
-Heliot Ramos,Slider,-0.1,0.288,0.343,57.6
-Hunter Goodman,Slider,2.9,0.453,0.349,57.5
-Hunter Goodman,Sinker,2.1,0.477,0.435,52.6
-Hunter Goodman,4-Seam Fastball,-0.9,0.276,0.365,53.1
-Hunter Goodman,Sweeper,-2.9,0.185,0.161,25.0
+Heliot Ramos,Slider,0.1,0.3,0.344,55.9
 Ian Happ,Curveball,4.6,0.5,0.463,37.0
 Ian Happ,Sinker,0.9,0.383,0.394,41.2
-Ian Happ,4-Seam Fastball,0.2,0.328,0.34,45.6
-Ian Happ,Changeup,-1.9,0.179,0.245,30.3
-Isaac Paredes,Sweeper,5.7,0.525,0.371,26.7
-Isaac Paredes,4-Seam Fastball,1.3,0.386,0.398,37.3
+Ian Happ,4-Seam Fastball,0.3,0.334,0.34,45.8
+Ian Happ,Changeup,-2.0,0.174,0.239,30.3
+Isaac Collins,4-Seam Fastball,-1.1,0.297,0.253,20.7
+Isaac Paredes,Sweeper,5.8,0.518,0.376,25.0
+Isaac Paredes,4-Seam Fastball,1.4,0.395,0.398,38.2
 Isaac Paredes,Sinker,1.3,0.424,0.342,45.0
 Isaac Paredes,Changeup,1.3,0.357,0.273,33.3
-Isaac Paredes,Slider,-0.6,0.229,0.285,33.3
-Isiah Kiner-Falefa,4-Seam Fastball,1.7,0.44,0.367,33.3
+Isaac Paredes,Slider,-0.7,0.223,0.285,35.5
+Isiah Kiner-Falefa,4-Seam Fastball,1.9,0.445,0.374,33.3
 Isiah Kiner-Falefa,Slider,0.6,0.348,0.254,20.0
-Isiah Kiner-Falefa,Sinker,-0.2,0.343,0.345,25.6
-Ivan Herrera,4-Seam Fastball,2.3,0.415,0.384,44.1
-Ivan Herrera,Sinker,2.0,0.455,0.385,34.6
-JP Crawford,Slider,0.7,0.348,0.393,42.3
-JP Crawford,4-Seam Fastball,0.5,0.382,0.393,25.9
-JP Crawford,Sinker,0.4,0.35,0.308,33.3
-JP Crawford,Cutter,-0.8,0.318,0.234,20.0
-Jackson Chourio,Slider,0.9,0.377,0.328,27.0
-Jackson Chourio,4-Seam Fastball,-0.7,0.328,0.279,44.8
+Isiah Kiner-Falefa,Sinker,-0.4,0.343,0.347,25.0
+Ivan Herrera,4-Seam Fastball,2.4,0.415,0.384,44.1
+Ivan Herrera,Sinker,1.7,0.44,0.372,34.6
+Jackson Chourio,Slider,1.5,0.393,0.318,25.6
+Jackson Chourio,4-Seam Fastball,-0.8,0.328,0.279,44.8
 Jackson Chourio,Sinker,-1.2,0.313,0.348,50.0
 Jackson Chourio,Sweeper,-2.3,0.206,0.222,24.0
-Jackson Holliday,Sinker,1.3,0.39,0.344,51.9
+Jackson Holliday,Sinker,1.2,0.381,0.336,51.9
 Jackson Holliday,Changeup,0.9,0.338,0.29,36.8
 Jackson Holliday,Slider,0.1,0.312,0.29,47.6
-Jackson Holliday,4-Seam Fastball,-0.2,0.362,0.393,53.8
-Jackson Merrill,4-Seam Fastball,-0.5,0.323,0.356,44.8
-Jake Bauers,4-Seam Fastball,-1.9,0.243,0.39,47.6
-Jake Burger,Slider,-0.7,0.265,0.239,38.5
-Jake Burger,Sinker,-1.7,0.31,0.443,62.2
-Jake Burger,4-Seam Fastball,-2.1,0.236,0.353,66.7
-Jake Cronenworth,4-Seam Fastball,-0.1,0.346,0.374,41.7
-Jake Cronenworth,Sinker,-1.6,0.287,0.351,36.8
-Jake Mangum,4-Seam Fastball,0.9,0.406,0.329,42.9
-Jake Meyers,4-Seam Fastball,-0.4,0.338,0.381,50.0
-Jake Meyers,Slider,-0.5,0.33,0.315,24.1
+Jackson Holliday,4-Seam Fastball,-0.1,0.37,0.392,52.8
+Jake Bauers,4-Seam Fastball,-2.6,0.224,0.37,45.8
+Jake Meyers,4-Seam Fastball,-0.6,0.328,0.37,49.0
+Jake Meyers,Slider,-0.6,0.322,0.324,26.7
 Jake Meyers,Sinker,-1.0,0.349,0.306,46.7
-James Wood,4-Seam Fastball,2.7,0.509,0.547,74.5
-James Wood,Slider,2.3,0.442,0.484,58.3
+James Wood,4-Seam Fastball,2.6,0.503,0.539,74.5
+James Wood,Slider,2.4,0.442,0.479,56.0
 James Wood,Curveball,2.0,0.364,0.259,41.7
 James Wood,Changeup,0.7,0.322,0.322,50.0
-James Wood,Sinker,-1.8,0.299,0.288,50.0
-Jarren Duran,Cutter,1.0,0.387,0.373,37.5
-Jarren Duran,Changeup,0.5,0.314,0.299,46.2
-Jarren Duran,4-Seam Fastball,0.4,0.354,0.368,56.5
-Jarren Duran,Sinker,0.2,0.341,0.359,40.0
-Jarren Duran,Slider,-1.7,0.234,0.248,45.2
-Javier Sanoja,4-Seam Fastball,-0.9,0.316,0.351,50.0
-Jeff Mcneil,4-Seam Fastball,3.1,0.466,0.38,33.3
-Jeremy Pena,4-Seam Fastball,4.2,0.507,0.428,58.8
-Jeremy Pena,Sinker,2.8,0.472,0.403,54.9
-Jeremy Pena,Slider,0.2,0.347,0.281,26.1
-Jo Adell,Slider,6.7,0.598,0.49,55.6
-Jo Adell,Sinker,0.6,0.354,0.419,58.1
-Jo Adell,4-Seam Fastball,-1.5,0.265,0.39,45.5
-Joey Ortiz,4-Seam Fastball,0.4,0.318,0.312,38.1
-Joey Ortiz,Sinker,-0.7,0.276,0.322,38.1
+James Wood,Sinker,-1.7,0.31,0.293,51.5
+Javier Baez,4-Seam Fastball,0.2,0.26,0.352,61.1
+Javier Baez,Sinker,-1.1,0.359,0.271,40.0
+Javier Baez,Slider,-1.2,0.29,0.321,44.0
+Jeremy Pena,4-Seam Fastball,4.0,0.499,0.429,59.6
+Jeremy Pena,Sinker,2.7,0.465,0.402,55.8
+Jeremy Pena,Slider,0.7,0.363,0.277,25.5
+Joey Ortiz,4-Seam Fastball,0.3,0.313,0.308,38.1
+Joey Ortiz,Sinker,-0.8,0.276,0.322,38.1
 Joey Ortiz,Slider,-2.0,0.225,0.307,32.3
-Jonah Heim,4-Seam Fastball,-2.5,0.222,0.24,35.0
-Jonathan Aranda,4-Seam Fastball,2.1,0.467,0.392,53.6
-Jonathan Aranda,Slider,1.4,0.353,0.424,59.1
-Jonathan Aranda,Sinker,-0.5,0.327,0.387,59.4
-Jonathan India,Sinker,-0.5,0.32,0.354,44.4
-Jonathan India,4-Seam Fastball,-1.0,0.29,0.354,36.2
-Jonathan India,Slider,-1.4,0.26,0.277,22.6
+Jonathan India,Cutter,0.1,0.255,0.337,47.1
+Jonathan India,Sinker,-0.3,0.329,0.362,43.5
+Jonathan India,4-Seam Fastball,-0.9,0.297,0.364,38.0
+Jonathan India,Slider,-1.3,0.26,0.277,22.6
 Jordan Beck,Sinker,1.8,0.469,0.341,60.9
-Jordan Beck,Slider,1.5,0.346,0.287,30.0
-Jordan Beck,4-Seam Fastball,1.0,0.37,0.408,51.5
-Jordan Westburg,4-Seam Fastball,-2.6,0.237,0.296,52.4
-Jorge Polanco,Changeup,1.1,0.291,0.35,25.8
-Jorge Polanco,4-Seam Fastball,-3.8,0.205,0.352,50.0
-Jorge Soler,Slider,1.7,0.357,0.296,41.7
-Jorge Soler,Sinker,1.1,0.383,0.364,43.3
-Jorge Soler,4-Seam Fastball,0.2,0.325,0.359,50.0
-Jorge Soler,Sweeper,-2.7,0.179,0.172,30.0
+Jordan Beck,Slider,1.7,0.353,0.294,30.0
+Jordan Beck,4-Seam Fastball,1.2,0.38,0.404,55.6
 Jose Altuve,Sinker,0.9,0.415,0.376,39.5
-Jose Altuve,Slider,-0.4,0.324,0.276,22.9
-Jose Altuve,4-Seam Fastball,-0.8,0.33,0.316,38.5
-Jose Herrera,4-Seam Fastball,0.9,0.35,0.294,27.3
-Jose Ramirez,Sinker,6.9,0.561,0.389,47.1
-Jose Ramirez,Curveball,3.0,0.368,0.385,37.5
-Jose Ramirez,4-Seam Fastball,2.1,0.434,0.41,45.5
-Jose Ramirez,Changeup,1.5,0.361,0.351,39.1
-Jose Ramirez,Slider,0.2,0.366,0.391,30.8
-Jose Ramirez,Cutter,-0.6,0.313,0.288,52.9
-Jose Trevino,4-Seam Fastball,-1.3,0.323,0.306,48.3
-Josh Lowe,4-Seam Fastball,2.3,0.458,0.49,68.8
-Josh Naylor,Sinker,3.9,0.464,0.403,53.1
-Josh Naylor,Curveball,1.4,0.35,0.499,43.5
-Josh Naylor,4-Seam Fastball,0.5,0.342,0.336,43.1
-Josh Naylor,Slider,-1.0,0.286,0.295,30.3
-Josh Rojas,4-Seam Fastball,-0.5,0.335,0.319,47.1
-Josh Smith,Slider,1.4,0.381,0.33,38.9
-Josh Smith,Sinker,1.0,0.4,0.386,38.1
-Josh Smith,4-Seam Fastball,-0.9,0.301,0.314,38.6
-Jt Realmuto,4-Seam Fastball,1.1,0.448,0.428,55.8
-Jt Realmuto,Slider,-0.7,0.213,0.28,45.8
-Jt Realmuto,Sinker,-2.0,0.277,0.344,42.1
-Juan Soto,Cutter,5.8,0.602,0.61,60.9
-Juan Soto,4-Seam Fastball,2.0,0.466,0.521,69.1
-Juan Soto,Sinker,0.5,0.35,0.392,41.7
-Juan Soto,Curveball,0.5,0.293,0.409,61.1
-Juan Soto,Slider,0.0,0.256,0.263,51.9
-Juan Soto,Changeup,-0.2,0.289,0.358,35.0
-Julio Rodriguez,4-Seam Fastball,1.8,0.396,0.413,59.5
-Julio Rodriguez,Sinker,1.1,0.403,0.346,45.6
-Julio Rodriguez,Sweeper,0.9,0.3,0.41,38.5
-Julio Rodriguez,Changeup,-1.0,0.261,0.284,23.5
-Julio Rodriguez,Slider,-2.2,0.265,0.288,41.2
-Jung Hoo Lee,Curveball,2.6,0.413,0.366,34.8
+Jose Altuve,Slider,-0.1,0.334,0.287,22.4
+Jose Altuve,4-Seam Fastball,-0.6,0.34,0.326,41.5
+Jose Tena,4-Seam Fastball,0.0,0.383,0.365,55.9
+Jung Hoo Lee,Curveball,2.5,0.413,0.366,34.8
 Jung Hoo Lee,Slider,1.9,0.344,0.369,35.0
 Jung Hoo Lee,Changeup,0.6,0.312,0.303,25.0
 Jung Hoo Lee,Sinker,0.4,0.429,0.29,34.6
-Jung Hoo Lee,4-Seam Fastball,-1.1,0.302,0.37,29.9
-Junior Caminero,Slider,2.8,0.426,0.327,55.2
-Junior Caminero,4-Seam Fastball,2.4,0.395,0.378,61.0
-Junior Caminero,Sinker,0.6,0.416,0.357,56.0
-Junior Caminero,Sweeper,0.1,0.34,0.374,42.9
-Justin Turner,4-Seam Fastball,-1.6,0.268,0.292,34.6
+Jung Hoo Lee,4-Seam Fastball,-0.9,0.312,0.369,30.4
+Justin Turner,4-Seam Fastball,-1.8,0.25,0.294,34.5
 Ke'Bryan Hayes,Slider,0.9,0.349,0.347,51.7
-Ke'Bryan Hayes,4-Seam Fastball,-3.0,0.178,0.257,46.8
-Ke'Bryan Hayes,Sinker,-3.4,0.236,0.334,50.9
-Keibert Ruiz,4-Seam Fastball,-0.3,0.325,0.332,30.8
-Keibert Ruiz,Curveball,-2.6,0.187,0.241,19.0
+Ke'Bryan Hayes,4-Seam Fastball,-2.9,0.186,0.254,45.8
+Ke'Bryan Hayes,Sinker,-3.2,0.246,0.342,50.0
 Kerry Carpenter,Sinker,1.7,0.53,0.536,66.7
-Kerry Carpenter,Changeup,0.1,0.315,0.267,29.4
-Kerry Carpenter,Curveball,-0.1,0.252,0.268,41.2
 Kerry Carpenter,4-Seam Fastball,-0.2,0.328,0.375,51.9
-Ketel Marte,4-Seam Fastball,4.7,0.563,0.603,62.9
-Ketel Marte,Slider,1.7,0.345,0.396,45.0
-Ketel Marte,Changeup,0.7,0.302,0.328,35.0
+Kerry Carpenter,Curveball,-0.2,0.252,0.268,41.2
+Kerry Carpenter,Changeup,-0.6,0.286,0.246,27.0
+Kyle Higashioka,4-Seam Fastball,-1.7,0.279,0.335,41.9
 Kyle Isbel,4-Seam Fastball,-0.5,0.363,0.251,30.2
-Kyle Schwarber,Sinker,3.6,0.504,0.513,66.7
-Kyle Schwarber,Cutter,3.1,0.545,0.417,57.1
-Kyle Schwarber,4-Seam Fastball,3.0,0.479,0.488,63.8
-Kyle Schwarber,Changeup,1.9,0.379,0.406,45.5
-Kyle Schwarber,Curveball,1.0,0.252,0.292,60.0
-Kyle Schwarber,Slider,-2.7,0.178,0.287,48.0
 Kyle Tucker,Sinker,4.2,0.549,0.554,63.3
-Kyle Tucker,Changeup,2.9,0.439,0.357,42.1
-Kyle Tucker,4-Seam Fastball,2.3,0.398,0.467,50.7
-Kyle Tucker,Curveball,0.9,0.352,0.322,54.5
-Kyle Tucker,Slider,-0.3,0.307,0.311,30.0
+Kyle Tucker,Changeup,2.7,0.423,0.345,42.1
+Kyle Tucker,4-Seam Fastball,2.0,0.39,0.46,49.3
+Kyle Tucker,Curveball,0.8,0.352,0.322,54.5
+Kyle Tucker,Slider,-0.4,0.299,0.303,30.0
 Kyle Tucker,Cutter,-1.4,0.313,0.336,31.6
-Lars Nootbaar,Changeup,2.6,0.43,0.364,47.4
+Lars Nootbaar,Changeup,2.5,0.416,0.351,47.4
 Lars Nootbaar,Slider,0.6,0.255,0.257,53.8
-Lars Nootbaar,Sinker,0.3,0.348,0.352,50.0
-Lars Nootbaar,4-Seam Fastball,-0.1,0.326,0.376,54.3
-Logan O'Hoppe,4-Seam Fastball,0.4,0.348,0.357,58.3
-Logan O'Hoppe,Sinker,0.0,0.419,0.368,40.6
-Logan O'Hoppe,Sweeper,-0.3,0.224,0.254,47.6
-Logan O'Hoppe,Slider,-3.1,0.156,0.186,55.6
-Lourdes Gurriel,Slider,1.7,0.413,0.311,54.8
-Lourdes Gurriel,Sinker,1.2,0.409,0.46,58.1
-Lourdes Gurriel,4-Seam Fastball,-0.4,0.32,0.331,39.5
-Luis Arraez,4-Seam Fastball,0.2,0.362,0.273,14.6
-Luis Arraez,Slider,-0.7,0.307,0.249,11.4
-Luis Arraez,Sinker,-2.6,0.206,0.31,12.8
-Luis Rengifo,Slider,-2.0,0.234,0.311,26.9
-Luis Rengifo,4-Seam Fastball,-2.9,0.199,0.312,33.9
-Luis Torrens,4-Seam Fastball,-1.7,0.281,0.431,65.5
+Lars Nootbaar,Sinker,0.2,0.342,0.347,50.0
+Lars Nootbaar,4-Seam Fastball,-0.3,0.32,0.37,53.5
 Maikel Garcia,Sinker,1.2,0.433,0.342,61.5
 Maikel Garcia,Slider,-0.1,0.333,0.346,42.9
-Maikel Garcia,4-Seam Fastball,-0.9,0.294,0.326,43.2
-Manny Machado,Slider,3.6,0.404,0.441,42.2
-Manny Machado,4-Seam Fastball,2.0,0.437,0.5,81.0
-Manny Machado,Sinker,2.0,0.452,0.411,60.4
-Marcell Ozuna,Sinker,2.7,0.489,0.434,52.4
-Marcell Ozuna,4-Seam Fastball,1.7,0.402,0.441,65.4
-Marcell Ozuna,Slider,0.3,0.303,0.319,44.0
-Marcus Semien,Sinker,0.7,0.385,0.404,50.0
-Marcus Semien,4-Seam Fastball,-0.6,0.317,0.333,39.4
-Marcus Semien,Slider,-2.7,0.178,0.292,38.5
-Martin Maldonado,4-Seam Fastball,-1.1,0.241,0.34,36.4
-Masyn Winn,4-Seam Fastball,1.8,0.394,0.37,43.8
+Maikel Garcia,4-Seam Fastball,-0.7,0.302,0.33,44.4
+Masyn Winn,4-Seam Fastball,1.8,0.395,0.377,44.0
 Masyn Winn,Sinker,1.0,0.394,0.388,43.3
-Masyn Winn,Slider,0.6,0.329,0.346,34.2
+Masyn Winn,Slider,0.4,0.322,0.338,33.3
 Masyn Winn,Changeup,-2.9,0.18,0.199,9.5
-Matt Olson,Slider,2.0,0.382,0.441,59.3
-Matt Olson,4-Seam Fastball,1.9,0.437,0.485,63.2
-Matt Olson,Changeup,1.4,0.331,0.343,55.2
-Matt Olson,Sinker,1.1,0.391,0.422,62.5
-Matt Olson,Curveball,-2.7,0.135,0.304,46.2
-Matt Wallner,4-Seam Fastball,2.1,0.463,0.43,60.0
-Max Kepler,4-Seam Fastball,0.2,0.366,0.392,54.5
-Max Kepler,Slider,-1.5,0.227,0.248,40.9
-Max Muncy,Changeup,4.0,0.44,0.443,47.1
-Max Muncy,Sinker,2.0,0.436,0.503,57.1
-Max Muncy,4-Seam Fastball,1.6,0.434,0.424,65.8
-Max Muncy,Curveball,-1.0,0.224,0.251,37.5
-Max Muncy,Cutter,-1.2,0.292,0.339,60.0
-Max Muncy,Slider,-2.2,0.165,0.243,52.6
-Michael Harris,4-Seam Fastball,-2.4,0.265,0.318,49.1
-Michael Harris,Sinker,-3.4,0.247,0.321,42.1
-Michael Harris,Slider,-3.4,0.163,0.303,38.5
-Mike Tauchman,4-Seam Fastball,1.7,0.429,0.41,81.3
-Mike Trout,4-Seam Fastball,0.9,0.38,0.363,52.4
-Mike Trout,Sinker,-3.1,0.208,0.278,36.8
-Mike Yastrzemski,Slider,0.7,0.329,0.296,34.8
+Matt Shaw,Sinker,-0.4,0.35,0.407,19.0
+Matt Shaw,4-Seam Fastball,-2.3,0.227,0.286,36.7
+Michael A Taylor,4-Seam Fastball,-2.5,0.192,0.289,60.0
+Mike Tauchman,4-Seam Fastball,1.5,0.429,0.408,81.3
+Mike Yastrzemski,Slider,1.8,0.374,0.304,36.0
 Mike Yastrzemski,Sinker,0.4,0.382,0.388,57.9
-Mike Yastrzemski,4-Seam Fastball,-2.1,0.241,0.272,45.2
-Mookie Betts,4-Seam Fastball,1.6,0.417,0.458,38.6
-Mookie Betts,Sinker,0.7,0.398,0.362,39.5
-Mookie Betts,Slider,-2.6,0.192,0.282,41.2
-Nathaniel Lowe,Sinker,0.0,0.392,0.35,44.7
-Nathaniel Lowe,Slider,0.0,0.281,0.235,40.9
-Nathaniel Lowe,4-Seam Fastball,-0.9,0.298,0.32,43.1
-Nathaniel Lowe,Cutter,-2.7,0.211,0.273,27.8
-Nick Allen,Slider,0.6,0.324,0.298,7.7
-Nick Allen,4-Seam Fastball,-0.9,0.308,0.286,23.7
-Nick Allen,Sinker,-2.3,0.272,0.304,38.9
-Nick Castellanos,Sinker,4.5,0.518,0.48,50.0
-Nick Castellanos,4-Seam Fastball,0.7,0.374,0.356,55.4
-Nick Castellanos,Sweeper,0.0,0.26,0.202,10.0
-Nick Castellanos,Curveball,-1.1,0.212,0.281,29.2
-Nick Castellanos,Slider,-2.0,0.201,0.246,30.8
-Nico Hoerner,4-Seam Fastball,0.0,0.348,0.312,40.6
+Mike Yastrzemski,4-Seam Fastball,-2.1,0.238,0.269,45.2
+Nico Hoerner,4-Seam Fastball,0.2,0.355,0.316,41.5
 Nico Hoerner,Sinker,-0.6,0.342,0.342,26.0
-Nico Hoerner,Slider,-0.7,0.288,0.295,18.2
-Nolan Arenado,4-Seam Fastball,0.9,0.375,0.345,35.2
+Nico Hoerner,Slider,-0.9,0.281,0.288,18.2
+Nolan Arenado,4-Seam Fastball,0.7,0.366,0.342,35.6
 Nolan Arenado,Slider,-0.4,0.326,0.318,29.0
 Nolan Arenado,Sinker,-2.2,0.263,0.289,46.7
-Nolan Jones,4-Seam Fastball,-1.7,0.245,0.364,52.2
-Nolan Schanuel,Sinker,1.8,0.486,0.374,33.3
-Nolan Schanuel,4-Seam Fastball,1.2,0.42,0.361,30.5
-Nolan Schanuel,Curveball,0.1,0.271,0.401,35.3
-Nolan Schanuel,Changeup,-0.2,0.173,0.185,13.0
-Nolan Schanuel,Slider,-0.3,0.313,0.337,29.2
-Oneil Cruz,4-Seam Fastball,2.5,0.475,0.527,75.0
+Nolan Gorman,4-Seam Fastball,-1.3,0.274,0.35,50.0
+Oneil Cruz,4-Seam Fastball,2.4,0.468,0.521,75.8
 Oneil Cruz,Sinker,1.6,0.397,0.357,52.4
-Oneil Cruz,Slider,1.0,0.364,0.362,45.0
+Oneil Cruz,Slider,0.9,0.364,0.362,45.0
 Oneil Cruz,Changeup,0.6,0.322,0.383,64.7
-Oneil Cruz,Curveball,-2.7,0.103,0.125,38.5
-Otto Lopez,4-Seam Fastball,-0.1,0.375,0.431,47.6
-Otto Lopez,Slider,-0.7,0.288,0.358,30.8
-Otto Lopez,Sinker,-0.7,0.358,0.439,56.0
-Ozzie Albies,4-Seam Fastball,-0.3,0.301,0.331,32.8
-Ozzie Albies,Slider,-0.5,0.293,0.319,31.6
-Ozzie Albies,Changeup,-0.6,0.288,0.266,25.6
-Ozzie Albies,Curveball,-1.9,0.139,0.17,15.0
-Ozzie Albies,Sinker,-2.4,0.255,0.254,37.0
-Paul Goldschmidt,Slider,1.6,0.336,0.381,46.4
-Paul Goldschmidt,Sinker,0.8,0.395,0.349,41.5
-Paul Goldschmidt,4-Seam Fastball,-0.5,0.334,0.378,46.7
-Pete Alonso,Sinker,3.9,0.525,0.494,45.7
-Pete Alonso,Curveball,1.5,0.313,0.403,60.0
-Pete Alonso,Slider,1.4,0.402,0.428,41.9
-Pete Alonso,4-Seam Fastball,0.8,0.4,0.403,66.7
-Pete Alonso,Sweeper,-0.8,0.278,0.331,59.1
-Rafael Devers,Slider,4.0,0.499,0.488,50.0
-Rafael Devers,4-Seam Fastball,1.3,0.419,0.435,59.4
-Rafael Devers,Cutter,0.7,0.402,0.4,58.8
-Rafael Devers,Sinker,-1.1,0.287,0.321,51.9
-Rafael Devers,Changeup,-1.4,0.237,0.338,50.0
-Ramon Laureano,4-Seam Fastball,2.2,0.432,0.433,58.8
-Ramon Laureano,Sinker,-0.3,0.415,0.322,44.0
-Randy Arozarena,Changeup,1.7,0.378,0.33,37.5
-Randy Arozarena,Sinker,0.3,0.385,0.364,40.0
-Randy Arozarena,Sweeper,0.1,0.278,0.31,50.0
-Randy Arozarena,4-Seam Fastball,0.0,0.326,0.413,69.4
-Randy Arozarena,Slider,0.0,0.338,0.278,31.3
-Rhys Hoskins,Sinker,2.2,0.492,0.454,50.0
-Rhys Hoskins,4-Seam Fastball,0.9,0.366,0.363,56.3
-Rhys Hoskins,Slider,0.5,0.314,0.242,33.3
+Oneil Cruz,Curveball,-2.6,0.103,0.125,38.5
+Paul Goldschmidt,Slider,1.4,0.32,0.366,44.8
+Paul Goldschmidt,Sinker,0.5,0.387,0.354,42.9
+Paul Goldschmidt,4-Seam Fastball,-0.4,0.342,0.38,47.5
+Pedro Pages,Slider,-0.5,0.305,0.248,41.7
+Pedro Pages,Sinker,-1.3,0.301,0.306,35.3
+Pedro Pages,4-Seam Fastball,-1.3,0.271,0.254,30.4
+Pete Crow-Armstrong,Changeup,3.3,0.408,0.445,51.5
+Pete Crow-Armstrong,Slider,3.2,0.397,0.266,40.0
+Pete Crow-Armstrong,Curveball,1.2,0.37,0.248,23.1
+Pete Crow-Armstrong,4-Seam Fastball,-0.2,0.301,0.338,54.0
+Rhys Hoskins,Sinker,2.9,0.525,0.486,51.4
+Rhys Hoskins,4-Seam Fastball,0.8,0.361,0.358,57.1
+Rhys Hoskins,Slider,0.4,0.314,0.242,33.3
 Rhys Hoskins,Sweeper,-2.4,0.084,0.189,20.0
+Riley Greene,Curveball,3.7,0.467,0.389,68.4
 Riley Greene,4-Seam Fastball,0.6,0.377,0.354,35.7
-Riley Greene,Sinker,-0.1,0.35,0.272,43.3
-Riley Greene,Changeup,-0.2,0.276,0.276,55.6
+Riley Greene,Changeup,-0.1,0.284,0.29,51.7
+Riley Greene,Sinker,-0.2,0.342,0.268,41.9
 Riley Greene,Slider,-0.9,0.288,0.329,47.1
-Ryan Jeffers,Slider,1.4,0.392,0.426,47.1
-Ryan Jeffers,4-Seam Fastball,1.0,0.382,0.416,55.1
-Ryan Jeffers,Sinker,-3.7,0.199,0.239,44.8
-Ryan O'Hearn,4-Seam Fastball,2.8,0.485,0.511,56.1
+Ryan Mcmahon,4-Seam Fastball,1.8,0.392,0.44,54.8
+Ryan Mcmahon,Cutter,1.2,0.454,0.373,36.4
+Ryan Mcmahon,Sinker,0.0,0.331,0.419,66.7
+Ryan Mcmahon,Changeup,-0.8,0.25,0.349,30.8
+Ryan Mcmahon,Slider,-1.4,0.247,0.316,44.4
+Ryan O'Hearn,4-Seam Fastball,2.8,0.484,0.509,55.9
 Ryan O'Hearn,Sinker,-0.2,0.361,0.395,53.6
 Ryan O'Hearn,Slider,-0.8,0.282,0.246,50.0
-Ryan O'Hearn,Changeup,-1.3,0.179,0.222,42.1
+Ryan O'Hearn,Changeup,-1.4,0.179,0.222,42.1
 Sal Frelick,Slider,2.2,0.412,0.43,36.0
-Sal Frelick,4-Seam Fastball,-0.1,0.351,0.319,31.4
+Sal Frelick,4-Seam Fastball,-0.2,0.343,0.317,30.6
 Sal Frelick,Cutter,-1.6,0.25,0.283,37.5
 Sal Frelick,Sinker,-1.9,0.269,0.256,25.0
-Salvador Perez,Sinker,-0.5,0.316,0.414,51.3
-Salvador Perez,4-Seam Fastball,-1.3,0.298,0.38,54.9
+Salvador Perez,Sinker,0.2,0.352,0.435,52.5
+Salvador Perez,4-Seam Fastball,-1.4,0.294,0.381,55.8
 Salvador Perez,Slider,-3.3,0.134,0.283,50.0
 Salvador Perez,Changeup,-3.3,0.166,0.248,21.1
-Santiago Espinal,Sinker,0.5,0.398,0.312,27.0
-Santiago Espinal,Slider,-0.2,0.271,0.237,29.0
-Santiago Espinal,4-Seam Fastball,-2.6,0.227,0.284,27.8
 Seiya Suzuki,Sinker,1.1,0.447,0.436,53.8
-Seiya Suzuki,4-Seam Fastball,0.9,0.369,0.428,63.5
-Seiya Suzuki,Slider,0.6,0.3,0.249,35.3
-Seiya Suzuki,Curveball,0.3,0.256,0.346,30.0
-Seiya Suzuki,Sweeper,-2.4,0.154,0.208,35.7
-Shohei Ohtani,Curveball,5.1,0.447,0.424,66.7
-Shohei Ohtani,Sinker,4.2,0.539,0.484,54.5
-Shohei Ohtani,4-Seam Fastball,2.3,0.446,0.506,73.4
-Shohei Ohtani,Cutter,1.8,0.452,0.464,72.2
-Shohei Ohtani,Slider,1.6,0.437,0.504,55.2
-Shohei Ohtani,Changeup,-0.7,0.236,0.314,51.9
-Spencer Horwitz,4-Seam Fastball,-1.4,0.263,0.316,38.9
-Spencer Steer,Sinker,-0.5,0.33,0.305,27.6
-Spencer Steer,4-Seam Fastball,-1.3,0.269,0.282,38.3
-Spencer Steer,Slider,-2.8,0.171,0.206,31.3
-Spencer Torkelson,4-Seam Fastball,3.3,0.465,0.468,58.0
+Seiya Suzuki,4-Seam Fastball,0.9,0.366,0.417,63.0
+Seiya Suzuki,Slider,0.5,0.3,0.249,35.3
+Seiya Suzuki,Curveball,0.2,0.256,0.346,30.0
+Seiya Suzuki,Sweeper,-2.3,0.154,0.208,35.7
+Spencer Horwitz,4-Seam Fastball,-0.8,0.288,0.32,42.1
+Spencer Torkelson,4-Seam Fastball,3.3,0.458,0.461,58.0
 Spencer Torkelson,Changeup,3.1,0.455,0.404,44.4
 Spencer Torkelson,Slider,1.2,0.355,0.326,52.4
-Spencer Torkelson,Sinker,0.2,0.348,0.406,40.0
+Spencer Torkelson,Sinker,-0.1,0.336,0.393,39.0
 Spencer Torkelson,Sweeper,-3.0,0.146,0.152,13.3
-TJ Friedl,Slider,2.4,0.362,0.273,33.3
-TJ Friedl,Changeup,2.2,0.417,0.333,35.3
-TJ Friedl,4-Seam Fastball,1.4,0.418,0.352,30.7
-TJ Friedl,Sinker,-2.0,0.281,0.254,15.8
-Taylor Ward,Sinker,4.1,0.541,0.474,61.3
-Taylor Ward,Slider,-0.2,0.249,0.239,33.3
-Taylor Ward,4-Seam Fastball,-0.3,0.313,0.41,55.9
-Taylor Ward,Sweeper,-1.8,0.197,0.13,27.8
-Taylor Ward,Cutter,-4.2,0.114,0.235,21.1
-Tommy Edman,Changeup,2.0,0.331,0.275,40.0
-Tommy Edman,4-Seam Fastball,0.2,0.346,0.372,37.3
-Trea Turner,Sinker,1.6,0.408,0.349,50.0
-Trea Turner,Slider,1.2,0.362,0.277,29.4
-Trea Turner,Curveball,0.7,0.321,0.283,22.7
-Trea Turner,4-Seam Fastball,0.4,0.384,0.356,45.3
-Trea Turner,Changeup,-1.9,0.208,0.258,47.6
-Trevor Larnach,Changeup,3.8,0.423,0.397,26.3
-Trevor Larnach,Sinker,1.1,0.395,0.309,55.2
-Trevor Larnach,4-Seam Fastball,-0.2,0.322,0.385,44.6
-Trevor Larnach,Curveball,-0.6,0.258,0.171,55.6
-Trevor Larnach,Slider,-0.8,0.289,0.218,46.7
-Trevor Story,Slider,0.6,0.319,0.359,38.7
-Trevor Story,Sinker,0.0,0.367,0.402,64.9
-Trevor Story,4-Seam Fastball,-1.8,0.216,0.265,46.6
-Ty France,Sinker,1.5,0.398,0.335,44.4
-Ty France,4-Seam Fastball,0.6,0.384,0.414,30.0
-Ty France,Slider,-1.1,0.25,0.424,62.9
-Ty France,Cutter,-2.8,0.231,0.266,26.1
-Tyler Fitzgerald,Slider,-0.9,0.256,0.224,8.0
-Tyler Fitzgerald,4-Seam Fastball,-1.9,0.3,0.365,42.3
-Tyrone Taylor,4-Seam Fastball,1.4,0.417,0.346,35.9
-Tyrone Taylor,Slider,1.1,0.347,0.431,44.0
-Tyrone Taylor,Sinker,-0.8,0.358,0.363,50.0
-Tyrone Taylor,Sweeper,-4.9,0.108,0.249,35.0
-Victor Scott,4-Seam Fastball,2.6,0.487,0.401,46.7
+Tyler Fitzgerald,Slider,-1.1,0.25,0.22,7.7
+Tyler Fitzgerald,4-Seam Fastball,-2.1,0.292,0.357,40.7
+Victor Caratini,4-Seam Fastball,-0.6,0.318,0.365,45.9
+Victor Scott,4-Seam Fastball,2.5,0.477,0.392,45.5
 Victor Scott,Sinker,-0.1,0.361,0.339,26.9
 Victor Scott,Slider,-1.8,0.217,0.218,20.0
 Victor Scott,Changeup,-2.0,0.238,0.194,27.8
 Vinnie Pasquantino,Slider,3.4,0.498,0.391,45.0
-Vinnie Pasquantino,4-Seam Fastball,0.9,0.381,0.385,46.3
+Vinnie Pasquantino,4-Seam Fastball,0.8,0.381,0.385,46.3
 Vinnie Pasquantino,Changeup,0.7,0.289,0.296,37.1
-Vinnie Pasquantino,Curveball,-1.6,0.227,0.272,58.8
-Vinnie Pasquantino,Sinker,-2.6,0.246,0.255,51.9
-Vladimir Guerrero,4-Seam Fastball,2.2,0.446,0.466,63.0
-Vladimir Guerrero,Sinker,2.2,0.443,0.394,52.3
-Vladimir Guerrero,Slider,2.0,0.363,0.413,48.8
-Vladimir Guerrero,Changeup,0.7,0.333,0.388,50.0
-Will Smith,Slider,3.8,0.475,0.378,50.0
-Will Smith,4-Seam Fastball,0.3,0.337,0.391,53.7
-Will Smith,Sinker,-0.9,0.319,0.353,51.6
-William Contreras,4-Seam Fastball,0.7,0.391,0.367,43.9
-William Contreras,Sinker,-0.2,0.349,0.378,42.4
-William Contreras,Slider,-0.3,0.293,0.294,27.5
-Willson Contreras,Slider,1.6,0.389,0.419,39.5
-Willson Contreras,4-Seam Fastball,0.6,0.351,0.453,53.8
-Willson Contreras,Sinker,-0.6,0.323,0.29,35.6
+Vinnie Pasquantino,Curveball,-1.9,0.213,0.261,52.6
+Vinnie Pasquantino,Sinker,-2.4,0.258,0.267,51.9
+William Contreras,4-Seam Fastball,0.5,0.377,0.353,43.9
+William Contreras,Sinker,-0.3,0.349,0.378,42.4
+William Contreras,Slider,-0.4,0.288,0.29,26.8
+Willson Contreras,Slider,1.6,0.389,0.418,39.5
+Willson Contreras,4-Seam Fastball,0.9,0.359,0.454,52.5
+Willson Contreras,Sinker,-0.4,0.334,0.287,37.0
 Willy Adames,Sinker,0.7,0.337,0.296,24.1
-Willy Adames,4-Seam Fastball,-0.4,0.306,0.364,53.3
-Willy Adames,Slider,-0.8,0.26,0.256,33.3
-Wilmer Flores,Sweeper,3.3,0.518,0.301,18.2
-Wilmer Flores,Sinker,0.9,0.386,0.331,42.3
+Willy Adames,4-Seam Fastball,-0.2,0.321,0.376,53.8
+Willy Adames,Slider,-0.6,0.273,0.269,31.8
+Wilmer Flores,Sweeper,3.4,0.511,0.298,23.1
+Wilmer Flores,Sinker,0.8,0.386,0.331,42.3
 Wilmer Flores,Changeup,0.3,0.34,0.369,31.8
 Wilmer Flores,Slider,0.1,0.32,0.257,16.7
 Wilmer Flores,4-Seam Fastball,0.0,0.343,0.307,25.0
-Wyatt Langford,Slider,0.9,0.313,0.489,44.4
-Wyatt Langford,4-Seam Fastball,0.8,0.38,0.41,52.9
-Wyatt Langford,Sinker,0.8,0.375,0.353,53.3
-Xander Bogaerts,Slider,3.6,0.468,0.395,34.6
-Xander Bogaerts,Changeup,0.9,0.358,0.251,38.9
-Xander Bogaerts,4-Seam Fastball,-1.1,0.299,0.358,52.5
-Xander Bogaerts,Sinker,-2.5,0.221,0.286,28.2
-Xavier Edwards,4-Seam Fastball,-0.8,0.331,0.335,41.2
-Yainer Diaz,Slider,1.2,0.307,0.434,44.1
-Yainer Diaz,4-Seam Fastball,0.0,0.314,0.364,58.1
-Yandy Diaz,4-Seam Fastball,2.1,0.405,0.469,61.8
-Yandy Diaz,Slider,-0.1,0.321,0.348,60.7
-Yandy Diaz,Sinker,-2.0,0.243,0.317,47.3
-Zach Neto,Sweeper,1.5,0.405,0.329,36.8
-Zach Neto,4-Seam Fastball,0.5,0.401,0.471,54.8
-Zach Neto,Sinker,-0.2,0.35,0.353,41.2
-Zach Neto,Slider,-0.4,0.257,0.301,44.0
+Yainer Diaz,Slider,0.9,0.293,0.433,45.7
+Yainer Diaz,4-Seam Fastball,0.2,0.331,0.368,59.1
