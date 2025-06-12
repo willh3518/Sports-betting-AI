@@ -79,7 +79,6 @@
 
             <!-- Middle column - chart + history table -->
             <div class="col-md-5">
-                <!-- Removed full-height so table shows -->
                 <div class="chart-container">
                     <h5>Historical Performance</h5>
                     <canvas id="historical-chart"></canvas>
@@ -101,14 +100,24 @@
             <!-- Right column -->
             <div class="col-md-4">
                 <div class="table-container full-height">
-                    <h5>Recent High Confidence Predictions</h5>
+                    <h5>
+                      Recent High Confidence Predictions
+                      (Random Forest Confidence > 75%, RF & LLM Agree, LLM Confidence ≥ Medium)
+                    </h5>
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th>Player</th><th>Prop</th><th>Value</th><th>Pred</th><th>Conf</th><th>Result</th>
+                                <th>Player</th><th>Prop</th><th>Value</th>
+                                <th>Pred</th><th>Conf</th><th>Result</th>
                             </tr>
                         </thead>
                         <tbody id="recent-predictions-table"></tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="5" class="text-end"><strong>Correct:</strong></td>
+                                <td id="recent-predictions-summary">-- / --</td>
+                            </tr>
+                        </tfoot>
                     </table>
                 </div>
             </div>
