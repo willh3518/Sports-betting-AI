@@ -20,10 +20,19 @@ body {
 }
 
 .dashboard-title {
-    font-size: 24px;
+    font-size: 2.5rem;
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 0.5rem 0;
     color: #333;
+    text-align: center !important;
+}
+
+.sub-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+    color: #333;
+    text-align: center;
 }
 
 .date-label {
@@ -123,8 +132,14 @@ body {
 }
 
 .table-container.prop-types {
-    max-height: 300px;
+    /* make the box taller so you don’t have to scroll */
+    max-height: 450px;
     overflow-y: auto;
+}
+
+/* slightly larger text so rows fit more comfortably */
+.table-container.prop-types .table {
+    font-size: 14px;
 }
 
 .table {
