@@ -1,11 +1,22 @@
-Player,MLB_ID,Four Seamer,Slider,Curveball,Changeup,Sinker,Knuckle Curve,Cutter,Slurve,Slow Curve,Sweeper,Split Finger
-Antonio Senzatela,622608,53.1%,22.5%,11.5%,9.0%,4.0%,N/A,N/A,N/A,N/A,N/A,N/A
-Hayden Birdsong,806185,40.7%,27.1%,14.0%,18.2%,N/A,N/A,N/A,N/A,N/A,N/A,N/A
-Tarik Skubal,669373,28.0%,12.5%,N/A,30.7%,26.7%,2.1%,N/A,N/A,N/A,N/A,N/A
-Seth Lugo,607625,23.3%,4.4%,17.1%,10.6%,16.6%,N/A,10.9%,9.1%,6.0%,1.6%,0.5%
-Will Warren,701542,37.1%,N/A,6.4%,14.4%,18.4%,N/A,N/A,N/A,N/A,23.7%,N/A
-Sonny Gray,543243,19.2%,1.0%,17.0%,7.3%,21.5%,N/A,12.8%,N/A,N/A,21.2%,N/A
-Jameson Taillon,592791,39.3%,N/A,15.1%,11.4%,5.0%,N/A,12.7%,N/A,N/A,16.6%,N/A
-Andrew Heaney,571760,45.3%,14.8%,4.9%,18.0%,10.2%,N/A,N/A,N/A,6.8%,N/A,N/A
-Framber Valdez,664285,0.8%,3.2%,32.5%,17.1%,46.3%,N/A,N/A,N/A,N/A,N/A,N/A
-Davis Martin,663436,30.5%,8.8%,2.9%,23.1%,9.0%,N/A,25.6%,N/A,N/A,N/A,N/A
+Player,MLB_ID,Four Seamer,Changeup,Slider,Curveball,Sinker,Cutter,Split Finger,Sweeper,Knuckle Curve,Slurve
+Matthew Boyd,571510,46.9%,23.4%,16.9%,9.7%,3.1%,N/A,N/A,N/A,N/A,N/A
+Mike Burrows,681347,39.2%,26.5%,20.6%,13.7%,N/A,N/A,N/A,N/A,N/A,N/A
+Tyler Anderson,542881,39.0%,33.2%,2.9%,0.4%,2.5%,22.0%,N/A,N/A,N/A,N/A
+Tomoyuki Sugano,608372,16.6%,N/A,N/A,10.7%,12.3%,16.0%,26.0%,18.3%,N/A,N/A
+Cristopher Sanchez,650911,N/A,34.5%,16.8%,N/A,48.7%,N/A,N/A,N/A,N/A,N/A
+Bowden Francis,670102,57.7%,N/A,5.4%,14.0%,0.2%,N/A,22.7%,N/A,N/A,N/A
+Drew Rasmussen,656876,33.5%,N/A,N/A,4.9%,25.2%,30.1%,N/A,6.3%,N/A,N/A
+Tylor Megill,656731,42.6%,7.0%,24.5%,6.3%,19.5%,N/A,N/A,N/A,N/A,N/A
+Spencer Strider,675911,54.5%,6.2%,34.1%,5.3%,N/A,N/A,N/A,N/A,N/A,N/A
+Chase Dollander,801403,55.2%,10.5%,0.5%,19.8%,N/A,14.0%,N/A,N/A,N/A,N/A
+Andre Pallante,669467,48.6%,N/A,25.5%,N/A,14.6%,N/A,N/A,N/A,11.4%,N/A
+Jose Quintana,500779,8.5%,23.3%,N/A,12.1%,47.9%,N/A,N/A,N/A,N/A,8.3%
+Joe Ryan,657746,54.4%,N/A,5.0%,0.6%,9.7%,N/A,15.4%,14.8%,N/A,N/A
+Hunter Brown,686613,36.2%,14.2%,5.7%,N/A,24.0%,3.9%,N/A,N/A,16.0%,N/A
+Michael Lorenzen,547179,26.1%,18.4%,11.2%,13.9%,12.5%,10.6%,N/A,7.4%,N/A,N/A
+Zac Gallen,668678,46.6%,14.2%,8.7%,N/A,N/A,7.2%,N/A,N/A,23.3%,N/A
+Carlos Rodon,607074,41.0%,15.6%,28.6%,6.5%,8.3%,N/A,N/A,N/A,N/A,N/A
+George Kirby,669923,33.4%,N/A,23.5%,N/A,24.6%,N/A,9.1%,N/A,9.4%,N/A
+Tanner Bibee,676440,30.8%,13.2%,N/A,4.1%,14.1%,20.3%,N/A,17.5%,N/A,N/A
+Clayton Kershaw,477132,38.7%,N/A,39.2%,17.4%,N/A,N/A,4.8%,N/A,N/A,N/A
+Landen Roupp,694738,0.2%,14.7%,N/A,39.6%,38.4%,7.1%,N/A,N/A,N/A,N/A

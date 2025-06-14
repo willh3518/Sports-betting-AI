@@ -1,0 +1,98 @@
+[
+  {
+    "legs": [
+      {
+        "Player": "riley greene",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 6.5,
+        "Stake": 1,
+        "payout_multiplier": 3,
+        "win_probability": 0.79
+      },
+      {
+        "Player": "tyler fitzgerald",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 5.5,
+        "Stake": 1,
+        "payout_multiplier": 3,
+        "win_probability": 0.65
+      },
+      {
+        "Player": "isaac collins",
+        "Prop Type": "Total Bases",
+        "Prop Value": 0.5,
+        "Stake": 1,
+        "payout_multiplier": 3,
+        "win_probability": 0.61
+      }
+    ],
+    "stake": 3,
+    "payout_multiplier": 27,
+    "win_probability": 0.29541,
+    "expected_return": 8.13523
+  },
+  {
+    "legs": [
+      {
+        "Player": "javier baez",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 3.5,
+        "Stake": 1,
+        "payout_multiplier": 3,
+        "win_probability": 0.7
+      },
+      {
+        "Player": "kyle isbel",
+        "Prop Type": "Hitter Strikeouts",
+        "Prop Value": 0.5,
+        "Stake": 1,
+        "payout_multiplier": 3,
+        "win_probability": 0.64
+      },
+      {
+        "Player": "isaac collins",
+        "Prop Type": "Total Bases",
+        "Prop Value": 0.5,
+        "Stake": 1,
+        "payout_multiplier": 3,
+        "win_probability": 0.61
+      }
+    ],
+    "stake": 3,
+    "payout_multiplier": 27,
+    "win_probability": 0.2854,
+    "expected_return": 7.6952
+  },
+  {
+    "legs": [
+      {
+        "Player": "riley greene",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 6.5,
+        "Stake": 1,
+        "payout_multiplier": 3,
+        "win_probability": 0.79
+      },
+      {
+        "Player": "tyler fitzgerald",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 5.5,
+        "Stake": 1,
+        "payout_multiplier": 3,
+        "win_probability": 0.65
+      },
+      {
+        "Player": "kyle isbel",
+        "Prop Type": "Hitter Strikeouts",
+        "Prop Value": 0.5,
+        "Stake": 1,
+        "payout_multiplier": 3,
+        "win_probability": 0.64
+      }
+    ],
+    "stake": 3,
+    "payout_multiplier": 27,
+    "win_probability": 0.2189,
+    "expected_return": 5.4427
+  }
+]

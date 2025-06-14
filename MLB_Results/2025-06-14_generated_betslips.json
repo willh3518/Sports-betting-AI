@@ -1,0 +1,75 @@
+[
+  {
+    "legs": [
+      {
+        "Player": "max muncy",
+        "Prop Type": "Walks",
+        "Prop Value": 0.5,
+        "RF_Confidence": 0.9,
+        "Pick": "Over"
+      },
+      {
+        "Player": "geraldo perdomo",
+        "Prop Type": "Hits+Runs+RBIs",
+        "Prop Value": 1.5,
+        "RF_Confidence": 0.86,
+        "Pick": "Over"
+      }
+    ],
+    "stake": 20.0,
+    "payout_multiplier": 3,
+    "win_probability": 0.774,
+    "expected_return": 46.44
+  },
+  {
+    "legs": [
+      {
+        "Player": "julio rodriguez",
+        "Prop Type": "Hits+Runs+RBIs",
+        "Prop Value": 1.5,
+        "RF_Confidence": 0.79,
+        "Pick": "Over"
+      },
+      {
+        "Player": "aaron judge",
+        "Prop Type": "Total Bases",
+        "Prop Value": 1.5,
+        "RF_Confidence": 0.79,
+        "Pick": "Over"
+      },
+      {
+        "Player": "jung hoo lee",
+        "Prop Type": "Hits+Runs+RBIs",
+        "Prop Value": 1.5,
+        "RF_Confidence": 0.79,
+        "Pick": "Over"
+      }
+    ],
+    "stake": 15.0,
+    "payout_multiplier": 6,
+    "win_probability": 0.493,
+    "expected_return": 44.34
+  },
+  {
+    "legs": [
+      {
+        "Player": "corbin carroll",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 8.5,
+        "RF_Confidence": 0.7824,
+        "Pick": "Over"
+      },
+      {
+        "Player": "ronald acuna",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 9.5,
+        "RF_Confidence": 0.77,
+        "Pick": "Over"
+      }
+    ],
+    "stake": 15.0,
+    "payout_multiplier": 3,
+    "win_probability": 0.6022,
+    "expected_return": 27.1
+  }
+]

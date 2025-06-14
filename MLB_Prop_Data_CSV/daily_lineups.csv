@@ -1,71 +1,211 @@
 Team,Player,Position,Handedness
+Marlins,Jesús Sánchez,RF,left
+Marlins,Agustín Ramírez,C,right
+Marlins,Liam Hicks,DH,left
+Marlins,Otto Lopez,SS,right
+Marlins,Kyle Stowers,LF,left
+Marlins,Eric Wagaman,1B,right
+Marlins,Dane Myers,CF,right
+Marlins,Connor Norby,3B,right
+Marlins,Javier Sanoja,2B,right
+Marlins,Cade Gibson,LHP,left
 Nationals,CJ Abrams,SS,left
+Nationals,Amed Rosario,3B,right
 Nationals,James Wood,LF,left
-Nationals,Luis García Jr.,2B,left
 Nationals,Nathaniel Lowe,1B,left
-Nationals,Josh Bell,DH,switch
 Nationals,Alex Call,RF,right
-Nationals,José Tena,3B,left
-Nationals,Keibert Ruiz,C,switch
+Nationals,Josh Bell,DH,switch
+Nationals,Luis García Jr.,2B,left
 Nationals,Robert Hassell III,CF,left
-Nationals,Michael Soroka,RHP,right
+Nationals,Riley Adams,C,right
+Nationals,Trevor Williams,RHP,right
+Reds,TJ Friedl,CF,left
+Reds,Gavin Lux,3B,left
+Reds,Elly De La Cruz,SS,switch
+Reds,Tyler Stephenson,DH,right
+Reds,Will Benson,LF,left
+Reds,Spencer Steer,1B,right
+Reds,Jose Trevino,C,right
+Reds,Jake Fraley,RF,left
+Reds,Matt McLain,2B,right
+Reds,Brady Singer,RHP,right
+Tigers,Parker Meadows,CF,left
+Tigers,Gleyber Torres,2B,right
+Tigers,Kerry Carpenter,RF,left
+Tigers,Riley Greene,DH,left
+Tigers,Dillon Dingler,C,right
+Tigers,Colt Keith,1B,left
+Tigers,Wenceel Pérez,LF,switch
+Tigers,Javier Báez,3B,right
+Tigers,Trey Sweeney,SS,left
+Tigers,Jack Flaherty,RHP,right
+Pirates,Oneil Cruz,CF,left
+Pirates,Andrew McCutchen,DH,right
+Pirates,Bryan Reynolds,RF,switch
+Pirates,Nick Gonzales,2B,right
+Pirates,Ke'Bryan Hayes,3B,right
+Pirates,Henry Davis,C,right
+Pirates,Jared Triolo,1B,right
+Pirates,Tommy Pham,LF,right
+Pirates,Isiah Kiner-Falefa,SS,right
+Pirates,Mike Burrows,RHP,right
+Cubs,Ian Happ,LF,switch
+Cubs,Kyle Tucker,RF,left
+Cubs,Seiya Suzuki,DH,right
+Cubs,Pete Crow-Armstrong,CF,left
+Cubs,Dansby Swanson,SS,right
+Cubs,Michael Busch,1B,left
+Cubs,Carson Kelly,C,right
+Cubs,Nico Hoerner,2B,right
+Cubs,Matt Shaw,3B,right
+Cubs,Matthew Boyd,LHP,left
+Angels,Zach Neto,SS,right
+Angels,Nolan Schanuel,1B,left
+Angels,Mike Trout,DH,right
+Angels,Taylor Ward,LF,right
+Angels,Logan O'Hoppe,C,right
+Angels,Jo Adell,CF,right
+Angels,LaMonte Wade Jr.,RF,left
+Angels,Luis Rengifo,3B,switch
+Angels,Christian Moore,2B,right
+Angels,Tyler Anderson,LHP,left
+Orioles,Jackson Holliday,2B,left
+Orioles,Adley Rutschman,C,switch
+Orioles,Gunnar Henderson,SS,left
+Orioles,Jordan Westburg,3B,right
+Orioles,Ryan O'Hearn,RF,left
+Orioles,Ramón Laureano,LF,right
+Orioles,Gary Sánchez,DH,right
+Orioles,Cedric Mullins,CF,left
+Orioles,Coby Mayo,1B,right
+Orioles,Tomoyuki Sugano,RHP,right
+Blue Jays,Bo Bichette,SS,right
+Blue Jays,Vladimir Guerrero Jr.,1B,right
+Blue Jays,Alejandro Kirk,DH,right
+Blue Jays,George Springer,RF,right
+Blue Jays,Ernie Clement,3B,right
+Blue Jays,Davis Schneider,2B,right
+Blue Jays,Myles Straw,CF,right
+Blue Jays,Jonatan Clase,LF,switch
+Blue Jays,Tyler Heineman,C,switch
+Blue Jays,Bowden Francis,RHP,right
+Phillies,Trea Turner,SS,right
+Phillies,Kyle Schwarber,DH,left
+Phillies,Alec Bohm,3B,right
+Phillies,Nick Castellanos,RF,right
+Phillies,Max Kepler,LF,left
+Phillies,J.T. Realmuto,C,right
+Phillies,Bryson Stott,2B,left
+Phillies,Otto Kemp,1B,right
+Phillies,Brandon Marsh,CF,left
+Phillies,Cristopher Sánchez,LHP,left
+White Sox,Mike Tauchman,RF,left
+White Sox,Chase Meidroth,SS,right
+White Sox,Andrew Benintendi,LF,left
+White Sox,Miguel Vargas,3B,right
+White Sox,Kyle Teel,DH,left
+White Sox,Luis Robert Jr.,CF,right
+White Sox,Ryan Noda,1B,left
+White Sox,Edgar Quero,C,switch
+White Sox,Josh Rojas,2B,left
+White Sox,Mike Vasil,RHP,right
+Rangers,Josh Smith,DH,left
+Rangers,Wyatt Langford,CF,right
+Rangers,Corey Seager,SS,left
+Rangers,Marcus Semien,2B,right
+Rangers,Jake Burger,1B,right
+Rangers,Josh Jung,3B,right
+Rangers,Adolis García,RF,right
+Rangers,Jonah Heim,C,switch
+Rangers,Sam Haggerty,LF,switch
+Rangers,Jacob deGrom,RHP,right
+Athletics,Lawrence Butler,RF,left
+Athletics,Jacob Wilson,SS,right
+Athletics,Brent Rooker,DH,right
+Athletics,Tyler Soderstrom,LF,left
+Athletics,Max Muncy,3B,right
+Athletics,Nick Kurtz,1B,left
+Athletics,Luis Urías,2B,right
+Athletics,Willie MacIver,C,right
+Athletics,Denzel Clarke,CF,right
+Athletics,Jacob Lopez,LHP,left
+Royals,Maikel Garcia,3B,right
+Royals,Bobby Witt Jr.,SS,right
+Royals,Vinnie Pasquantino,DH,left
+Royals,Salvador Perez,1B,right
+Royals,Mark Canha,LF,right
+Royals,Nick Loftin,2B,right
+Royals,Jac Caglianone,RF,left
+Royals,Freddy Fermin,C,right
+Royals,Drew Waters,CF,switch
+Royals,Michael Lorenzen,RHP,right
+Rays,Josh Lowe,RF,left
+Rays,Brandon Lowe,2B,left
+Rays,Yandy Díaz,1B,right
+Rays,Jonathan Aranda,DH,left
+Rays,Junior Caminero,3B,right
+Rays,Jake Mangum,LF,switch
+Rays,Matt Thaiss,C,left
+Rays,Kameron Misner,CF,left
+Rays,Taylor Walls,SS,switch
+Rays,Drew Rasmussen,RHP,right
 Mets,Francisco Lindor,SS,switch
 Mets,Brandon Nimmo,LF,left
 Mets,Juan Soto,RF,left
 Mets,Pete Alonso,1B,right
-Mets,Jeff McNeil,2B,left
+Mets,Jeff McNeil,CF,left
 Mets,Starling Marte,DH,right
-Mets,Brett Baty,3B,left
-Mets,Tyrone Taylor,CF,right
-Mets,Francisco Alvarez,C,right
-Mets,Kodai Senga,RHP,right
-Rangers,Josh Smith,SS,left
-Rangers,Wyatt Langford,LF,right
-Rangers,Corey Seager,DH,left
-Rangers,Marcus Semien,2B,right
-Rangers,Evan Carter,CF,left
-Rangers,Jake Burger,1B,right
-Rangers,Josh Jung,3B,right
-Rangers,Adolis García,RF,right
-Rangers,Kyle Higashioka,C,right
-Rangers,Patrick Corbin,LHP,left
+Mets,Brett Baty,2B,left
+Mets,Luis Torrens,C,right
+Mets,Ronny Mauricio,3B,switch
+Mets,Tylor Megill,RHP,right
 Twins,Byron Buxton,CF,right
-Twins,Ryan Jeffers,C,right
+Twins,Trevor Larnach,DH,left
+Twins,Willi Castro,LF,switch
+Twins,Matt Wallner,RF,left
 Twins,Carlos Correa,SS,right
+Twins,Brooks Lee,3B,switch
 Twins,Ty France,1B,right
-Twins,Royce Lewis,DH,right
-Twins,Willi Castro,RF,switch
-Twins,Brooks Lee,2B,switch
-Twins,Jonah Bride,3B,right
-Twins,Harrison Bader,LF,right
-Twins,Bailey Ober,RHP,right
-Giants,Jung Hoo Lee,CF,left
-Giants,Willy Adames,SS,right
-Giants,Heliot Ramos,LF,right
-Giants,Wilmer Flores,DH,right
-Giants,Mike Yastrzemski,RF,left
-Giants,Dominic Smith,1B,left
-Giants,Casey Schmitt,3B,right
-Giants,Tyler Fitzgerald,2B,right
-Giants,Logan Porter,C,right
-Giants,Hayden Birdsong,RHP,right
-Rockies,Jordan Beck,DH,right
+Twins,Kody Clemens,2B,left
+Twins,Christian Vázquez,C,right
+Twins,Joe Ryan,RHP,right
+Astros,Jeremy Peña,SS,right
+Astros,Yainer Diaz,C,right
+Astros,Jose Altuve,LF,right
+Astros,Christian Walker,1B,right
+Astros,Victor Caratini,DH,switch
+Astros,Jake Meyers,CF,right
+Astros,Cam Smith,RF,right
+Astros,Mauricio Dubón,3B,right
+Astros,Brendan Rodgers,2B,right
+Astros,Hunter Brown,RHP,right
 Rockies,Sam Hilliard,LF,left
 Rockies,Thairo Estrada,2B,right
+Rockies,Hunter Goodman,C,right
 Rockies,Ryan McMahon,3B,left
 Rockies,Brenton Doyle,CF,right
-Rockies,Mickey Moniak,RF,left
-Rockies,Orlando Arcia,1B,right
+Rockies,Mickey Moniak,DH,left
 Rockies,Ryan Ritter,SS,right
-Rockies,Braxton Fulford,C,right
-Rockies,Antonio Senzatela,RHP,right
-Tigers,Tarik Skubal,LHP,left
-Orioles,Keegan Akin,LHP,left
-Yankees,Will Warren,RHP,right
-Royals,Seth Lugo,RHP,right
-Cardinals,Sonny Gray,RHP,right
-Brewers,Jacob Misiorowski,RHP,right
-Pirates,Andrew Heaney,LHP,left
-Cubs,Jameson Taillon,RHP,right
-White Sox,Davis Martin,RHP,right
-Astros,Framber Valdez,LHP,left
+Rockies,Kyle Farmer,1B,right
+Rockies,Tyler Freeman,RF,right
+Rockies,Chase Dollander,RHP,right
+Braves,Ronald Acuña Jr.,RF,right
+Braves,Alex Verdugo,LF,left
+Braves,Austin Riley,3B,right
+Braves,Matt Olson,1B,left
+Braves,Marcell Ozuna,DH,right
+Braves,Drake Baldwin,C,left
+Braves,Ozzie Albies,2B,switch
+Braves,Michael Harris II,CF,left
+Braves,Nick Allen,SS,right
+Braves,Spencer Strider,RHP,right
+Cardinals,Andre Pallante,RHP,right
+Brewers,Jose Quintana,LHP,left
+Padres,Ryan Bergert,RHP,right
+Diamondbacks,Zac Gallen,RHP,right
+Yankees,Carlos Rodón,LHP,left
+Red Sox,Hunter Dobbins,RHP,right
+Guardians,Tanner Bibee,RHP,right
+Mariners,George Kirby,RHP,right
+Giants,Landen Roupp,RHP,right
+Dodgers,Clayton Kershaw,LHP,left

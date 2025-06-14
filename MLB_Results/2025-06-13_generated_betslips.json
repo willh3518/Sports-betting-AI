@@ -1,0 +1,53 @@
+[
+  {
+    "legs": [
+      {
+        "Player": "geraldo perdomo",
+        "Prop Type": "Hits+Runs+RBIs",
+        "Prop Value": 1.5,
+        "RF_Confidence": 0.92,
+        "Pick": "Over"
+      },
+      {
+        "Player": "wyatt langford",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 6.5,
+        "RF_Confidence": 0.88,
+        "Pick": "Over"
+      }
+    ],
+    "stake": 10.0,
+    "payout_multiplier": 3,
+    "win_probability": 0.8096,
+    "expected_return": 24.29
+  },
+  {
+    "legs": [
+      {
+        "Player": "lourdes gurriel",
+        "Prop Type": "Hitter Fantasy Score",
+        "Prop Value": 5.0,
+        "RF_Confidence": 0.83,
+        "Pick": "Over"
+      },
+      {
+        "Player": "marcus semien",
+        "Prop Type": "Hits+Runs+RBIs",
+        "Prop Value": 1.5,
+        "RF_Confidence": 0.81,
+        "Pick": "Over"
+      },
+      {
+        "Player": "dominic canzone",
+        "Prop Type": "Hits",
+        "Prop Value": 0.5,
+        "RF_Confidence": 0.8,
+        "Pick": "Over"
+      }
+    ],
+    "stake": 15.0,
+    "payout_multiplier": 6,
+    "win_probability": 0.5322,
+    "expected_return": 47.8
+  }
+]

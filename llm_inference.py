@@ -4,6 +4,7 @@ import json
 import os
 from datetime import datetime
 import logging
+from openai import OpenAI
 
 # Configure logging
 logging.basicConfig(
@@ -15,6 +16,7 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
 
 # Config
 RESULTS_DIR = "MLB_Results"
@@ -433,84 +435,6 @@ def parse_llm_response(response, rf_prediction):
     except Exception as e:
         return "Unknown", "Unknown", f"Error parsing response: {str(e)}", "Unknown"
 
-def generate_betslips(df, output_path, num_betslips: int = 3, props_per_betslip: int = 5, min_confidence: float = 0.55):
-    """
-    Build betslips by selecting the highest‐edge props where LLM agrees with RF,
-    diversifying across model types and directions, and write to CSV.
-    """
-    # Load MLB insights database
-    try:
-        with open('mlb_insights_db.json', 'r') as f:
-            insights_db = json.load(f)
-        logger.info("Successfully loaded MLB insights database")
-    except Exception as e:
-        logger.error(f"Error loading MLB insights database: {e}")
-        insights_db = {"prop_types": {}}
-
-    # 1. Filter to agreed picks above `min_confidence`
-    df = df[df["LLM_RF_Agreement"] == "True"].copy()
-    df = df[df["RF_Confidence"] >= min_confidence]
-
-    if df.empty:
-        logger.warning("No high‐confidence, agreed picks to generate betslips.")
-        return
-
-    # 2. Compute "edge" = |confidence – 0.5|
-    df["edge"] = (df["RF_Confidence"] - 0.5).abs()
-
-    # 3. Sort by edge descending
-    df = df.sort_values("edge", ascending=False)
-
-    # 4. Build up to N betslips
-    records = []
-    for slip_idx in range(num_betslips):
-        slip_name = f"Betslip #{slip_idx + 1}"
-        picked = []
-        available = df.copy()
-
-        while len(picked) < props_per_betslip and not available.empty:
-            last = picked[-1] if picked else None
-            if last:
-                want_type = ("pitcher" if last["Model_Type"] == "hitter" else "hitter")
-                want_dir = ("Under" if last["RF_Prediction"] == 1 else "Over")
-                cand = available[
-                    (available["Model_Type"] == want_type) &
-                    (available["RF_Prediction"].map({1: "Over", 0: "Under"}) == want_dir)
-                ]
-                if cand.empty:
-                    cand = available
-            else:
-                cand = available
-
-            pick = cand.iloc[0].to_dict()
-            picked.append(pick)
-
-            # Get relevant insights for the prop type
-            prop_type = pick["Prop Type"]
-            prop_insights = insights_db.get("prop_types", {}).get(prop_type, [])
-            latest_insight = prop_insights[-1] if prop_insights else {}
-
-            # Enhance the pick with insights
-            enhanced_analysis = {
-                "Betslip": slip_name,
-                "Player": pick["Player"],
-                "Prop Type": pick["Prop Type"],
-                "Prop Value": pick["Prop Value"],
-                "RF_Prediction": pick["RF_Prediction"],
-                "RF_Confidence": pick["RF_Confidence"],
-                "LLM_Prediction": pick["LLM_Prediction"],
-                "LLM_Justification": pick["LLM_Justification"],
-                "Key_Factors": latest_insight.get("key_factors", "No key factors available"),
-                "Pattern_Analysis": latest_insight.get("pattern_analysis", "No pattern analysis available"),
-                "Strongest_Insight": latest_insight.get("strongest_insight", "No strongest insight available")
-            }
-            records.append(enhanced_analysis)
-
-    # 5. Write out CSV
-    out_df = pd.DataFrame(records)
-    out_df.to_csv(output_path, index=False)
-    logger.info(f"Generated {num_betslips} betslips to {output_path}")
-
 def main():
     """Main function to run the LLM inference pipeline"""
     logger.info("Starting LLM inference pipeline")
@@ -634,9 +558,6 @@ def main():
         top_picks.to_csv(TOP_PICKS_PATH, index=False)
         logger.info(f"Wrote {len(top_picks)} top picks to {TOP_PICKS_PATH}")
 
-    # Generate betslips
-    generate_betslips(df, BETSLIPS_PATH.replace('.json', '.csv'))
-    logger.info(f"Betslips saved to {BETSLIPS_PATH}")
 
     logger.info("LLM inference pipeline completed")
 

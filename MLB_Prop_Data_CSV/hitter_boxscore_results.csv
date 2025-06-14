@@ -1,364 +1,305 @@
-Player,Position,Team,Prop Type,Prop Value,Opposing Team,Odds Category,Start Time,CS,3B,TB,IBB,PA,SF,HR,SH,AB,2B,R,GIDP,BB,HBP,H,SB,SO,XBH,RBI,ERA,GS,WP,IP,DEC,ER,GF,SV,TBF,SHO,CG,Pitches Thrown,Pitching Outs,Actual Stat,Hit
-ke'bryan hayes,IF,PIT,Hitter Strikeouts,0.5,MIA,base,Wed 12:35 PM,0,0,2,0,3,0,0,0,3,0,1,0,0,0,2,2,1,0,0,,,,,,,,,,,,0,0,1.0,1
-ke'bryan hayes,IF,PIT,Hits+Runs+RBIs,1.5,MIA,base,Wed 12:35 PM,0,0,2,0,3,0,0,0,3,0,1,0,0,0,2,2,1,0,0,,,,,,,,,,,,0,0,3.0,1
-bryan reynolds,OF,PIT,Runs,0.5,MIA,base,Wed 12:35 PM,0,0,0,0,4,0,0,0,3,0,1,0,1,0,0,0,1,0,0,,,,,,,,,,,,0,0,1.0,1
-oneil cruz,OF,PIT,Walks,0.5,MIA,base,Wed 12:35 PM,0,0,1,0,4,0,0,0,3,0,1,1,1,0,1,1,1,0,0,,,,,,,,,,,,0,0,1.0,1
-oneil cruz,OF,PIT,Total Bases,1.5,MIA,base,Wed 12:35 PM,0,0,1,0,4,0,0,0,3,0,1,1,1,0,1,1,1,0,0,,,,,,,,,,,,0,0,1.0,0
-nick fortes,C,MIA,Total Bases,0.5,PIT,base,Wed 12:35 PM,0,0,2,0,2,0,0,0,2,0,0,0,0,0,2,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
-nick fortes,C,MIA,Hits,0.5,PIT,base,Wed 12:35 PM,0,0,2,0,2,0,0,0,2,0,0,0,0,0,2,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
-andrew mccutchen,OF,PIT,Runs,0.5,MIA,base,Wed 12:35 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,1,1,3,,,,,,,,,,,,0,0,1.0,1
-nick gonzales,IF,PIT,Hitter Strikeouts,0.5,MIA,base,Wed 12:35 PM,0,0,1,0,4,0,0,0,3,0,0,0,1,0,1,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-xavier edwards,IF,MIA,Hitter Strikeouts,0.5,PIT,base,Wed 12:35 PM,0,0,0,0,5,0,0,0,4,0,0,0,1,0,0,0,1,0,0,,,,,,,,,,,,0,0,1.0,1
-otto lopez,IF,MIA,Hits+Runs+RBIs,1.5,PIT,base,Wed 12:35 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-otto lopez,IF,MIA,Hitter Strikeouts,0.5,PIT,base,Wed 12:35 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,2.0,1
-isiah kiner-falefa,IF,PIT,Hits+Runs+RBIs,1.5,MIA,base,Wed 12:35 PM,0,0,0,0,3,0,0,0,1,0,0,0,1,1,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-connor norby,IF,MIA,Hits+Runs+RBIs,1.5,PIT,base,Wed 12:35 PM,0,0,2,0,4,0,0,0,4,0,0,0,0,0,2,0,1,0,0,,,,,,,,,,,,0,0,2.0,1
-javier sanoja,IF,MIA,Total Bases,0.5,PIT,base,Wed 12:35 PM,0,0,2,0,2,0,0,1,1,1,0,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,2.0,1
-javier sanoja,IF,MIA,Hits,0.5,PIT,base,Wed 12:35 PM,0,0,2,0,2,0,0,1,1,1,0,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,1.0,1
-eric wagaman,IF,MIA,Hits+Runs+RBIs,1.5,PIT,base,Wed 12:35 PM,0,0,0,0,4,0,0,0,3,0,1,0,1,0,0,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-agustin ramirez,C,MIA,Hits+Runs+RBIs,1.5,PIT,base,Wed 12:35 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-spencer horwitz,IF,PIT,Hits+Runs+RBIs,1.5,MIA,base,Wed 12:35 PM,0,0,2,0,4,0,0,0,4,1,0,0,0,0,1,0,2,1,0,,,,,,,,,,,,0,0,1.0,0
-ke'bryan hayes,IF,PIT,Hitter Fantasy Score,3.0,MIA,base,Wed 12:35 PM,0,0,2,0,3,0,0,0,3,0,1,0,0,0,2,2,1,0,0,,,,,,,,,,,,0,0,18.0,1
-bryan reynolds,OF,PIT,Hitter Fantasy Score,6.0,MIA,base,Wed 12:35 PM,0,0,0,0,4,0,0,0,3,0,1,0,1,0,0,0,1,0,0,,,,,,,,,,,,0,0,4.0,0
-oneil cruz,OF,PIT,Hitter Fantasy Score,9.5,MIA,base,Wed 12:35 PM,0,0,1,0,4,0,0,0,3,0,1,1,1,0,1,1,1,0,0,,,,,,,,,,,,0,0,12.0,1
-andrew mccutchen,OF,PIT,Hitter Fantasy Score,5.0,MIA,base,Wed 12:35 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,1,1,3,,,,,,,,,,,,0,0,18.0,1
-otto lopez,IF,MIA,Hitter Fantasy Score,6.5,PIT,base,Wed 12:35 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-isiah kiner-falefa,IF,PIT,Hitter Fantasy Score,3.0,MIA,base,Wed 12:35 PM,0,0,0,0,3,0,0,0,1,0,0,0,1,1,0,0,0,0,0,,,,,,,,,,,,0,0,4.0,1
-connor norby,IF,MIA,Hitter Fantasy Score,4.5,PIT,base,Wed 12:35 PM,0,0,2,0,4,0,0,0,4,0,0,0,0,0,2,0,1,0,0,,,,,,,,,,,,0,0,6.0,1
-eric wagaman,IF,MIA,Hitter Fantasy Score,5.0,PIT,base,Wed 12:35 PM,0,0,0,0,4,0,0,0,3,0,1,0,1,0,0,0,0,0,0,,,,,,,,,,,,0,0,4.0,0
-agustin ramirez,C,MIA,Hitter Fantasy Score,5.5,PIT,base,Wed 12:35 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-spencer horwitz,IF,PIT,Hitter Fantasy Score,5.5,MIA,base,Wed 12:35 PM,0,0,2,0,4,0,0,0,4,1,0,0,0,0,1,0,2,1,0,,,,,,,,,,,,0,0,5.0,0
-heriberto hernandez,OF,MIA,Hitter Fantasy Score,5.5,PIT,base,Wed 12:35 PM,0,0,6,0,4,0,1,0,4,1,1,0,0,0,2,0,1,2,1,,,,,,,,,,,,0,0,19.0,1
-kyle schwarber,DH,PHI,Runs,0.5,CHC,base,Wed 1:05 PM,0,0,4,0,4,0,1,0,3,0,2,0,1,0,1,1,1,1,1,,,,,,,,,,,,0,0,2.0,1
-kyle schwarber,DH,PHI,Hits+Runs+RBIs,1.5,CHC,base,Wed 1:05 PM,0,0,4,0,4,0,1,0,3,0,2,0,1,0,1,1,1,1,1,,,,,,,,,,,,0,0,4.0,1
-kyle schwarber,DH,PHI,Walks,0.5,CHC,base,Wed 1:05 PM,0,0,4,0,4,0,1,0,3,0,2,0,1,0,1,1,1,1,1,,,,,,,,,,,,0,0,1.0,1
-nick castellanos,OF,PHI,Hits+Runs+RBIs,1.5,CHC,base,Wed 1:05 PM,0,1,3,0,4,0,0,0,4,0,0,0,0,0,1,0,3,1,0,,,,,,,,,,,,0,0,1.0,0
-ian happ,OF,CHC,Hits+Runs+RBIs,1.5,PHI,base,Wed 1:05 PM,0,0,2,0,4,0,0,0,4,1,1,0,0,0,1,0,2,1,0,,,,,,,,,,,,0,0,2.0,1
-jt realmuto,C,PHI,Hits+Runs+RBIs,1.5,CHC,base,Wed 1:05 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,1,0,1,,,,,,,,,,,,0,0,2.0,1
-alec bohm,IF,PHI,Hitter Strikeouts,0.5,CHC,base,Wed 1:05 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,0,1,4,,,,,,,,,,,,0,0,0.0,0
-seiya suzuki,OF,CHC,Runs,0.5,PHI,base,Wed 1:05 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-seiya suzuki,OF,CHC,Total Bases,1.5,PHI,base,Wed 1:05 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,1.0,0
-nico hoerner,IF,CHC,Hits+Runs+RBIs,1.5,PHI,base,Wed 1:05 PM,0,0,3,0,4,0,0,0,4,1,0,0,0,0,2,0,1,1,1,,,,,,,,,,,,0,0,3.0,1
-trea turner,IF,PHI,Runs,0.5,CHC,base,Wed 1:05 PM,0,0,3,0,4,0,0,0,3,1,2,0,1,0,2,1,0,1,0,,,,,,,,,,,,0,0,2.0,1
-dansby swanson,IF,CHC,Hits+Runs+RBIs,1.5,PHI,base,Wed 1:05 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,0
-kyle tucker,OF,CHC,Hits+Runs+RBIs,1.5,PHI,base,Wed 1:05 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,2,0,1,,,,,,,,,,,,0,0,1.0,0
-kyle tucker,OF,CHC,Runs,0.5,PHI,base,Wed 1:05 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,2,0,1,,,,,,,,,,,,0,0,0.0,0
-justin turner,IF,CHC,Hitter Strikeouts,0.5,PHI,base,Wed 1:05 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-carson kelly,C,CHC,Hits+Runs+RBIs,1.5,PHI,base,Wed 1:05 PM,0,0,3,0,4,0,0,0,4,1,1,0,0,0,2,0,0,1,0,,,,,,,,,,,,0,0,3.0,1
-kyle schwarber,DH,PHI,Hitter Fantasy Score,7.0,CHC,base,Wed 1:05 PM,0,0,4,0,4,0,1,0,3,0,2,0,1,0,1,1,1,1,1,,,,,,,,,,,,0,0,23.0,1
-nick castellanos,OF,PHI,Hitter Fantasy Score,5.0,CHC,base,Wed 1:05 PM,0,1,3,0,4,0,0,0,4,0,0,0,0,0,1,0,3,1,0,,,,,,,,,,,,0,0,8.0,1
-ian happ,OF,CHC,Hitter Fantasy Score,5.5,PHI,base,Wed 1:05 PM,0,0,2,0,4,0,0,0,4,1,1,0,0,0,1,0,2,1,0,,,,,,,,,,,,0,0,7.0,1
-alec bohm,IF,PHI,Hitter Fantasy Score,5.5,CHC,base,Wed 1:05 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,0,1,4,,,,,,,,,,,,0,0,23.0,1
-seiya suzuki,OF,CHC,Hitter Fantasy Score,5.5,PHI,base,Wed 1:05 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,3.0,0
-trea turner,IF,PHI,Hitter Fantasy Score,8.0,CHC,base,Wed 1:05 PM,0,0,3,0,4,0,0,0,3,1,2,0,1,0,2,1,0,1,0,,,,,,,,,,,,0,0,19.0,1
-dansby swanson,IF,CHC,Hitter Fantasy Score,5.0,PHI,base,Wed 1:05 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,3.0,0
-kyle tucker,OF,CHC,Hitter Fantasy Score,7.5,PHI,base,Wed 1:05 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,2,0,1,,,,,,,,,,,,0,0,2.0,0
-max kepler,OF,PHI,Hitter Fantasy Score,4.5,CHC,base,Wed 1:05 PM,0,0,2,0,4,0,0,0,3,1,1,0,1,0,1,0,1,1,1,,,,,,,,,,,,0,0,11.0,1
-justin turner,IF,CHC,Hitter Fantasy Score,4.0,PHI,base,Wed 1:05 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
-carson kelly,C,CHC,Hitter Fantasy Score,4.5,PHI,base,Wed 1:05 PM,0,0,3,0,4,0,0,0,4,1,1,0,0,0,2,0,0,1,0,,,,,,,,,,,,0,0,10.0,1
-jose ramirez,IF,CLE,Total Bases,1.5,CIN,base,Wed 1:10 PM,0,0,2,0,5,0,0,0,4,1,1,1,0,1,1,1,0,1,1,,,,,,,,,,,,0,0,2.0,1
-nolan jones,OF,CLE,Hits,0.5,CIN,base,Wed 1:10 PM,1,0,0,0,4,0,0,0,2,0,0,0,1,1,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-nolan jones,OF,CLE,Total Bases,0.5,CIN,base,Wed 1:10 PM,1,0,0,0,4,0,0,0,2,0,0,0,1,1,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-tj friedl,OF,CIN,Hits+Runs+RBIs,1.5,CLE,base,Wed 1:10 PM,0,0,4,0,4,0,1,0,3,0,1,0,1,0,1,0,1,1,1,,,,,,,,,,,,0,0,3.0,1
-spencer steer,IF,CIN,Hits+Runs+RBIs,1.5,CLE,base,Wed 1:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-lane thomas,OF,CLE,Runs,0.5,CIN,base,Wed 1:10 PM,0,0,6,0,5,0,1,0,5,0,2,0,0,0,3,0,1,1,3,,,,,,,,,,,,0,0,2.0,1
-lane thomas,OF,CLE,Hits+Runs+RBIs,1.5,CIN,base,Wed 1:10 PM,0,0,6,0,5,0,1,0,5,0,2,0,0,0,3,0,1,1,3,,,,,,,,,,,,0,0,8.0,1
-carlos santana,IF,CLE,Hits+Runs+RBIs,1.5,CIN,base,Wed 1:10 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,0,1,4,,,,,,,,,,,,0,0,6.0,1
-jose trevino,C,CIN,Hits+Runs+RBIs,1.5,CLE,base,Wed 1:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-garrett hampson,OF,CIN,Hits,0.5,CLE,base,Wed 1:10 PM,0,0,0,0,3,0,0,0,3,0,0,1,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-garrett hampson,OF,CIN,Total Bases,0.5,CLE,base,Wed 1:10 PM,0,0,0,0,3,0,0,0,3,0,0,1,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-jose ramirez,IF,CLE,Hitter Fantasy Score,7.5,CIN,base,Wed 1:10 PM,0,0,2,0,5,0,0,0,4,1,1,1,0,1,1,1,0,1,1,,,,,,,,,,,,0,0,16.0,1
-tj friedl,OF,CIN,Hitter Fantasy Score,6.5,CLE,base,Wed 1:10 PM,0,0,4,0,4,0,1,0,3,0,1,0,1,0,1,0,1,1,1,,,,,,,,,,,,0,0,16.0,1
-gabriel arias,IF,CLE,Hitter Fantasy Score,4.5,CIN,base,Wed 1:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,3,0,0,,,,,,,,,,,,0,0,0.0,0
-spencer steer,IF,CIN,Hitter Fantasy Score,4.5,CLE,base,Wed 1:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-david fry,IF,CLE,Hitter Fantasy Score,4.5,CIN,base,Wed 1:10 PM,0,0,0,0,2,0,0,0,1,0,1,0,1,0,0,0,1,0,0,,,,,,,,,,,,0,0,4.0,0
-elly de la cruz,IF,CIN,Hitter Fantasy Score,7.5,CLE,base,Wed 1:10 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,0,1,1,,,,,,,,,,,,0,0,17.0,1
-christian encarnacion-strand,IF,CIN,Hitter Fantasy Score,5.0,CLE,base,Wed 1:10 PM,0,0,0,0,4,0,0,0,3,0,0,0,0,1,0,0,2,0,0,,,,,,,,,,,,0,0,2.0,0
-santiago espinal,IF,CIN,Hitter Fantasy Score,5.0,CLE,base,Wed 1:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
-carlos santana,IF,CLE,Hitter Fantasy Score,4.5,CIN,base,Wed 1:10 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,0,1,4,,,,,,,,,,,,0,0,20.0,1
-jose trevino,C,CIN,Hitter Fantasy Score,4.0,CLE,base,Wed 1:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-connor joe,OF,CIN,Hitter Fantasy Score,3.5,CLE,base,Wed 1:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-christian yelich,OF,MIL,Hits+Runs+RBIs,1.5,ATL,base,Wed 2:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,3,0,0,,,,,,,,,,,,0,0,1.0,0
-ronald acuna,OF,ATL,Total Bases,1.5,MIL,base,Wed 2:10 PM,0,0,6,0,5,0,1,0,5,0,1,0,0,0,3,0,0,1,2,,,,,,,,,,,,0,0,6.0,1
-austin riley,IF,ATL,Total Bases,1.5,MIL,base,Wed 2:10 PM,0,0,1,0,5,0,0,0,4,0,1,0,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,0
-austin riley,IF,ATL,Runs,0.5,MIL,base,Wed 2:10 PM,0,0,1,0,5,0,0,0,4,0,1,0,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,1
-matt olson,IF,ATL,Runs,0.5,MIL,base,Wed 2:10 PM,0,0,1,0,5,0,0,0,4,0,0,0,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-matt olson,IF,ATL,Hits+Runs+RBIs,1.5,MIL,base,Wed 2:10 PM,0,0,1,0,5,0,0,0,4,0,0,0,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,0
-marcell ozuna,DH,ATL,Hits+Runs+RBIs,1.5,MIL,base,Wed 2:10 PM,0,0,1,0,5,0,0,0,4,0,1,1,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,2.0,1
-michael harris,OF,ATL,Hits+Runs+RBIs,1.5,MIL,base,Wed 2:10 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,2,1,2,,,,,,,,,,,,0,0,4.0,1
-ozzie albies,IF,ATL,Hitter Strikeouts,0.5,MIL,base,Wed 2:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,1,,,,,,,,,,,,0,0,2.0,1
-joey ortiz,IF,MIL,Total Bases,0.5,ATL,base,Wed 2:10 PM,0,0,0,0,3,0,0,0,3,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-joey ortiz,IF,MIL,Hitter Strikeouts,0.5,ATL,base,Wed 2:10 PM,0,0,0,0,3,0,0,0,3,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,1.0,1
-joey ortiz,IF,MIL,Hits,0.5,ATL,base,Wed 2:10 PM,0,0,0,0,3,0,0,0,3,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-rhys hoskins,IF,MIL,Hits,0.5,ATL,base,Wed 2:10 PM,0,0,4,0,3,0,1,0,3,0,1,0,0,0,1,0,1,1,1,,,,,,,,,,,,0,0,1.0,1
-rhys hoskins,IF,MIL,Total Bases,0.5,ATL,base,Wed 2:10 PM,0,0,4,0,3,0,1,0,3,0,1,0,0,0,1,0,1,1,1,,,,,,,,,,,,0,0,4.0,1
-jake bauers,IF,MIL,Total Bases,0.5,ATL,base,Wed 2:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-jake bauers,IF,MIL,Hits,0.5,ATL,base,Wed 2:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-jackson chourio,OF,MIL,Hits+Runs+RBIs,1.5,ATL,base,Wed 2:10 PM,0,1,3,0,4,0,0,0,4,0,0,1,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,1.0,0
-eric haase,C,MIL,Total Bases,0.5,ATL,base,Wed 2:10 PM,0,0,2,0,3,0,0,0,3,1,0,0,0,0,1,0,2,1,1,,,,,,,,,,,,0,0,2.0,1
-eric haase,C,MIL,Hits+Runs+RBIs,0.5,ATL,base,Wed 2:10 PM,0,0,2,0,3,0,0,0,3,1,0,0,0,0,1,0,2,1,1,,,,,,,,,,,,0,0,2.0,1
-drake baldwin,C,ATL,Hits+Runs+RBIs,1.5,MIL,base,Wed 2:10 PM,0,0,1,0,5,0,0,0,5,0,0,0,0,0,1,0,3,0,1,,,,,,,,,,,,0,0,2.0,1
-nick allen,IF,ATL,Total Bases,0.5,MIL,base,Wed 2:10 PM,0,0,1,0,4,0,0,0,3,0,2,0,1,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
-nick allen,IF,ATL,Hits,0.5,MIL,base,Wed 2:10 PM,0,0,1,0,4,0,0,0,3,0,2,0,1,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
-alex verdugo,OF,ATL,Total Bases,0.5,MIL,base,Wed 2:10 PM,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-alex verdugo,OF,ATL,Hitter Strikeouts,0.5,MIL,base,Wed 2:10 PM,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,2.0,1
-alex verdugo,OF,ATL,Hits,0.5,MIL,base,Wed 2:10 PM,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-caleb durbin,IF,MIL,Hitter Strikeouts,0.5,ATL,base,Wed 2:10 PM,0,0,0,0,3,0,0,0,3,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,1.0,1
-christian yelich,OF,MIL,Hitter Fantasy Score,5.5,ATL,base,Wed 2:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,3,0,0,,,,,,,,,,,,0,0,3.0,0
-ronald acuna,OF,ATL,Hitter Fantasy Score,9.5,MIL,base,Wed 2:10 PM,0,0,6,0,5,0,1,0,5,0,1,0,0,0,3,0,0,1,2,,,,,,,,,,,,0,0,22.0,1
-austin riley,IF,ATL,Hitter Fantasy Score,6.5,MIL,base,Wed 2:10 PM,0,0,1,0,5,0,0,0,4,0,1,0,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,7.0,1
-matt olson,IF,ATL,Hitter Fantasy Score,6.5,MIL,base,Wed 2:10 PM,0,0,1,0,5,0,0,0,4,0,0,0,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,5.0,0
-marcell ozuna,DH,ATL,Hitter Fantasy Score,5.5,MIL,base,Wed 2:10 PM,0,0,1,0,5,0,0,0,4,0,1,1,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,7.0,1
-brice turang,IF,MIL,Hitter Fantasy Score,6.0,ATL,base,Wed 2:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,3.0,0
-william contreras,C,MIL,Hitter Fantasy Score,5.0,ATL,base,Wed 2:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,3,0,0,,,,,,,,,,,,0,0,0.0,0
-ozzie albies,IF,ATL,Hitter Fantasy Score,4.5,MIL,base,Wed 2:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,1,,,,,,,,,,,,0,0,5.0,1
-sal frelick,OF,MIL,Hitter Fantasy Score,4.5,ATL,base,Wed 2:10 PM,0,0,1,0,3,0,0,0,3,0,1,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,1
-rhys hoskins,IF,MIL,Hitter Fantasy Score,4.5,ATL,base,Wed 2:10 PM,0,0,4,0,3,0,1,0,3,0,1,0,0,0,1,0,1,1,1,,,,,,,,,,,,0,0,14.0,1
-jackson chourio,OF,MIL,Hitter Fantasy Score,6.0,ATL,base,Wed 2:10 PM,0,1,3,0,4,0,0,0,4,0,0,1,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,8.0,1
-vladimir guerrero,IF,TOR,Hitter Strikeouts,0.5,STL,base,Wed 2:15 PM,0,0,2,0,5,0,0,0,5,0,1,0,0,0,2,1,0,0,1,,,,,,,,,,,,0,0,0.0,0
-vladimir guerrero,IF,TOR,Runs,0.5,STL,base,Wed 2:15 PM,0,0,2,0,5,0,0,0,5,0,1,0,0,0,2,1,0,0,1,,,,,,,,,,,,0,0,1.0,1
-george springer,OF,TOR,Hits+Runs+RBIs,1.5,STL,base,Wed 2:15 PM,0,0,1,0,4,1,0,0,3,0,0,0,0,0,1,0,0,0,1,,,,,,,,,,,,0,0,2.0,1
-bo bichette,IF,TOR,Hitter Strikeouts,0.5,STL,base,Wed 2:15 PM,0,0,1,0,5,1,0,0,3,0,0,0,1,0,1,0,1,0,2,,,,,,,,,,,,0,0,1.0,1
-bo bichette,IF,TOR,Runs,0.5,STL,base,Wed 2:15 PM,0,0,1,0,5,1,0,0,3,0,0,0,1,0,1,0,1,0,2,,,,,,,,,,,,0,0,0.0,0
-bo bichette,IF,TOR,Total Bases,1.5,STL,base,Wed 2:15 PM,0,0,1,0,5,1,0,0,3,0,0,0,1,0,1,0,1,0,2,,,,,,,,,,,,0,0,1.0,0
-nolan arenado,IF,STL,Hits+Runs+RBIs,1.5,TOR,base,Wed 2:15 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-ivan herrera,C,STL,Hits+Runs+RBIs,1.5,TOR,base,Wed 2:15 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-lars nootbaar,OF,STL,Hits+Runs+RBIs,1.5,TOR,base,Wed 2:15 PM,0,0,0,0,5,0,0,0,5,0,0,0,0,0,0,0,4,0,0,,,,,,,,,,,,0,0,0.0,0
-alec burleson,IF,STL,Hits+Runs+RBIs,1.5,TOR,base,Wed 2:15 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-willson contreras,IF,STL,Hits+Runs+RBIs,1.5,TOR,base,Wed 2:15 PM,0,0,3,0,4,0,0,0,3,1,0,0,0,1,2,0,1,1,1,,,,,,,,,,,,0,0,3.0,1
-addison barger,IF,TOR,Total Bases,0.5,STL,base,Wed 2:15 PM,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-addison barger,IF,TOR,Hits,0.5,STL,base,Wed 2:15 PM,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-victor scott,OF,STL,Hits,0.5,TOR,base,Wed 2:15 PM,0,0,2,0,4,0,0,0,4,0,0,0,0,0,2,1,0,0,0,,,,,,,,,,,,0,0,2.0,1
-victor scott,OF,STL,Total Bases,0.5,TOR,base,Wed 2:15 PM,0,0,2,0,4,0,0,0,4,0,0,0,0,0,2,1,0,0,0,,,,,,,,,,,,0,0,2.0,1
-vladimir guerrero,IF,TOR,Hitter Fantasy Score,7.0,STL,base,Wed 2:15 PM,0,0,2,0,5,0,0,0,5,0,1,0,0,0,2,1,0,0,1,,,,,,,,,,,,0,0,15.0,1
-george springer,OF,TOR,Hitter Fantasy Score,6.5,STL,base,Wed 2:15 PM,0,0,1,0,4,1,0,0,3,0,0,0,0,0,1,0,0,0,1,,,,,,,,,,,,0,0,5.0,0
-bo bichette,IF,TOR,Hitter Fantasy Score,7.0,STL,base,Wed 2:15 PM,0,0,1,0,5,1,0,0,3,0,0,0,1,0,1,0,1,0,2,,,,,,,,,,,,0,0,9.0,1
-nolan arenado,IF,STL,Hitter Fantasy Score,4.5,TOR,base,Wed 2:15 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
-ivan herrera,C,STL,Hitter Fantasy Score,5.0,TOR,base,Wed 2:15 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,2,0,0,,,,,,,,,,,,0,0,2.0,0
-lars nootbaar,OF,STL,Hitter Fantasy Score,6.0,TOR,base,Wed 2:15 PM,0,0,0,0,5,0,0,0,5,0,0,0,0,0,0,0,4,0,0,,,,,,,,,,,,0,0,0.0,0
-alejandro kirk,C,TOR,Hitter Fantasy Score,5.5,STL,base,Wed 2:15 PM,0,0,2,0,5,0,0,0,5,0,0,0,0,0,2,0,1,0,0,,,,,,,,,,,,0,0,6.0,1
-alec burleson,IF,STL,Hitter Fantasy Score,4.5,TOR,base,Wed 2:15 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,1,0,0,,,,,,,,,,,,0,0,2.0,0
-willson contreras,IF,STL,Hitter Fantasy Score,5.0,TOR,base,Wed 2:15 PM,0,0,3,0,4,0,0,0,3,1,0,0,0,1,2,0,1,1,1,,,,,,,,,,,,0,0,12.0,1
-addison barger,IF,TOR,Hitter Fantasy Score,6.0,STL,base,Wed 2:15 PM,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-masyn winn,IF,STL,Hitter Fantasy Score,5.0,TOR,base,Wed 2:15 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,1
-julio rodriguez,OF,SEA,Total Bases,1.5,AZ,base,Wed 3:40 PM,0,0,5,0,4,0,0,0,4,2,1,0,0,0,3,0,0,2,0,,,,,,,,,,,,0,0,5.0,1
-julio rodriguez,OF,SEA,Runs,0.5,AZ,base,Wed 3:40 PM,0,0,5,0,4,0,0,0,4,2,1,0,0,0,3,0,0,2,0,,,,,,,,,,,,0,0,1.0,1
-dylan moore,IF,SEA,Hits,0.5,AZ,base,Wed 3:40 PM,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-dylan moore,IF,SEA,Total Bases,0.5,AZ,base,Wed 3:40 PM,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-jp crawford,IF,SEA,Hits+Runs+RBIs,1.5,AZ,base,Wed 3:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-cal raleigh,C,SEA,Hits+Runs+RBIs,1.5,AZ,base,Wed 3:40 PM,1,0,1,0,4,0,0,0,3,0,0,0,1,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-lourdes gurriel,OF,AZ,Hits+Runs+RBIs,1.5,SEA,base,Wed 3:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-corbin carroll,OF,AZ,Runs,0.5,SEA,base,Wed 3:40 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
-corbin carroll,OF,AZ,Total Bases,1.5,SEA,base,Wed 3:40 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-eugenio suarez,IF,AZ,Hits+Runs+RBIs,1.5,SEA,base,Wed 3:40 PM,0,0,6,0,4,0,1,0,4,0,1,0,0,0,3,0,1,1,4,,,,,,,,,,,,0,0,8.0,1
-geraldo perdomo,IF,AZ,Hits+Runs+RBIs,1.5,SEA,base,Wed 3:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-alek thomas,OF,AZ,Hitter Strikeouts,0.5,SEA,base,Wed 3:40 PM,0,0,2,0,4,0,0,0,4,1,0,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
-alek thomas,OF,AZ,Hits+Runs+RBIs,1.5,SEA,base,Wed 3:40 PM,0,0,2,0,4,0,0,0,4,1,0,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,1.0,0
-jose herrera,C,AZ,Total Bases,0.5,SEA,base,Wed 3:40 PM,0,0,0,0,3,0,0,1,2,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-jose herrera,C,AZ,Hits,0.5,SEA,base,Wed 3:40 PM,0,0,0,0,3,0,0,1,2,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-randy arozarena,OF,SEA,Hits+Runs+RBIs,1.5,AZ,base,Wed 3:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-donovan solano,IF,SEA,Hits,0.5,AZ,base,Wed 3:40 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,0,1,1,,,,,,,,,,,,0,0,2.0,1
-donovan solano,IF,SEA,Total Bases,0.5,AZ,base,Wed 3:40 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,0,1,1,,,,,,,,,,,,0,0,5.0,1
-julio rodriguez,OF,SEA,Hitter Fantasy Score,7.5,AZ,base,Wed 3:40 PM,0,0,5,0,4,0,0,0,4,2,1,0,0,0,3,0,0,2,0,,,,,,,,,,,,0,0,15.0,1
-jp crawford,IF,SEA,Hitter Fantasy Score,5.5,AZ,base,Wed 3:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-lourdes gurriel,OF,AZ,Hitter Fantasy Score,4.5,SEA,base,Wed 3:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-corbin carroll,OF,AZ,Hitter Fantasy Score,6.5,SEA,base,Wed 3:40 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
-ketel marte,IF,AZ,Hitter Fantasy Score,5.5,SEA,base,Wed 3:40 PM,0,0,2,0,4,0,0,0,4,0,1,0,0,0,2,0,0,0,0,,,,,,,,,,,,0,0,8.0,1
-eugenio suarez,IF,AZ,Hitter Fantasy Score,4.5,SEA,base,Wed 3:40 PM,0,0,6,0,4,0,1,0,4,0,1,0,0,0,3,0,1,1,4,,,,,,,,,,,,0,0,26.0,1
-jorge polanco,IF,SEA,Hitter Fantasy Score,5.0,AZ,base,Wed 3:40 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,1,,,,,,,,,,,,0,0,5.0,1
-geraldo perdomo,IF,AZ,Hitter Fantasy Score,5.5,SEA,base,Wed 3:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-randy arozarena,OF,SEA,Hitter Fantasy Score,5.5,AZ,base,Wed 3:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-josh naylor,IF,AZ,Hitter Fantasy Score,5.0,SEA,base,Wed 3:40 PM,0,0,2,0,4,0,0,0,3,0,1,0,1,0,2,0,1,0,0,,,,,,,,,,,,0,0,10.0,1
-mike trout,OF,LAA,Runs,0.5,OAK,base,Wed 4:07 PM,0,0,2,0,4,0,0,0,3,0,1,0,1,0,2,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
-mike trout,OF,LAA,Total Bases,1.5,OAK,base,Wed 4:07 PM,0,0,2,0,4,0,0,0,3,0,1,0,1,0,2,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
-taylor ward,OF,LAA,Runs,0.5,OAK,base,Wed 4:07 PM,0,0,0,0,4,0,0,0,3,0,1,1,0,1,0,0,2,0,1,,,,,,,,,,,,0,0,1.0,1
-jo adell,OF,LAA,Hits+Runs+RBIs,1.5,OAK,base,Wed 4:07 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,2,1,2,,,,,,,,,,,,0,0,4.0,1
-luis rengifo,IF,LAA,Hits+Runs+RBIs,1.5,OAK,base,Wed 4:07 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,0
-logan o'hoppe,C,LAA,Hits+Runs+RBIs,1.5,OAK,base,Wed 4:07 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-zach neto,IF,LAA,Total Bases,1.5,OAK,base,Wed 4:07 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,0
-nolan schanuel,IF,LAA,Hits+Runs+RBIs,1.5,OAK,base,Wed 4:07 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,1.0,0
-nolan schanuel,IF,LAA,Hitter Strikeouts,0.5,OAK,base,Wed 4:07 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,2.0,1
-jorge soler,OF,LAA,Runs,0.5,OAK,base,Wed 4:07 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,2,0,2,,,,,,,,,,,,0,0,1.0,1
-mike trout,OF,LAA,Hitter Fantasy Score,7.0,OAK,base,Wed 4:07 PM,0,0,2,0,4,0,0,0,3,0,1,0,1,0,2,0,0,0,0,,,,,,,,,,,,0,0,10.0,1
-taylor ward,OF,LAA,Hitter Fantasy Score,5.0,OAK,base,Wed 4:07 PM,0,0,0,0,4,0,0,0,3,0,1,1,0,1,0,0,2,0,1,,,,,,,,,,,,0,0,6.0,1
-zach neto,IF,LAA,Hitter Fantasy Score,7.0,OAK,base,Wed 4:07 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,5.0,0
-nolan schanuel,IF,LAA,Hitter Fantasy Score,5.0,OAK,base,Wed 4:07 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,3.0,0
-freddie freeman,IF,LAD,Runs,0.5,SD,base,Wed 4:10 PM,0,0,1,0,5,0,0,0,4,0,1,0,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,1
-freddie freeman,IF,LAD,Total Bases,1.5,SD,base,Wed 4:10 PM,0,0,1,0,5,0,0,0,4,0,1,0,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,0
-max muncy,IF,LAD,Hits+Runs+RBIs,1.5,SD,base,Wed 4:10 PM,0,0,2,0,4,0,0,0,3,0,0,0,1,0,2,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
-max muncy,IF,LAD,Runs,0.5,SD,base,Wed 4:10 PM,0,0,2,0,4,0,0,0,3,0,0,0,1,0,2,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-will smith,C,LAD,Hits+Runs+RBIs,1.5,SD,base,Wed 4:10 PM,0,0,2,0,5,0,0,0,4,0,1,0,1,0,2,0,1,0,1,,,,,,,,,,,,0,0,4.0,1
-mookie betts,IF,LAD,Runs,0.5,SD,base,Wed 4:10 PM,0,0,1,0,5,0,0,0,5,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-xander bogaerts,IF,SD,Hits+Runs+RBIs,1.5,LAD,base,Wed 4:10 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,2.0,1
-andy pages,OF,LAD,Hits+Runs+RBIs,1.5,SD,base,Wed 4:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,0
-shohei ohtani,P/DH,LAD,Hits+Runs+RBIs,2.5,SD,base,Wed 4:10 PM,0,1,3,0,5,0,0,0,5,0,1,0,0,0,1,0,2,1,0,,,,,,,,,,,,0,0,2.0,0
-jackson merrill,OF,SD,Hits+Runs+RBIs,1.5,LAD,base,Wed 4:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,0
-tommy edman,OF,LAD,Hits+Runs+RBIs,1.5,SD,base,Wed 4:10 PM,0,0,1,0,4,0,0,0,3,0,0,0,1,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-martin maldonado,C,SD,Hits+Runs+RBIs,0.5,LAD,base,Wed 4:10 PM,0,0,0,0,2,0,0,0,1,0,0,0,1,0,0,0,0,0,1,,,,,,,,,,,,0,0,1.0,1
-freddie freeman,IF,LAD,Hitter Fantasy Score,8.0,SD,base,Wed 4:10 PM,0,0,1,0,5,0,0,0,4,0,1,0,1,0,1,0,1,0,0,,,,,,,,,,,,0,0,7.0,0
-manny machado,IF,SD,Hitter Fantasy Score,8.0,LAD,base,Wed 4:10 PM,0,0,0,0,4,0,0,0,4,0,1,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,2.0,0
-jake cronenworth,IF,SD,Hitter Fantasy Score,4.5,LAD,base,Wed 4:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,3.0,0
-mookie betts,IF,LAD,Hitter Fantasy Score,8.0,SD,base,Wed 4:10 PM,0,0,1,0,5,0,0,0,5,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,3.0,0
-fernando tatis,OF,SD,Hitter Fantasy Score,8.5,LAD,base,Wed 4:10 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
-shohei ohtani,P/DH,LAD,Hitter Fantasy Score,9.5,SD,base,Wed 4:10 PM,0,1,3,0,5,0,0,0,5,0,1,0,0,0,1,0,2,1,0,,,,,,,,,,,,0,0,10.0,1
-jackson merrill,OF,SD,Hitter Fantasy Score,6.5,LAD,base,Wed 4:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,3.0,0
-luis arraez,IF,SD,Hitter Fantasy Score,5.0,LAD,base,Wed 4:10 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
-gavin sheets,IF,SD,Hitter Fantasy Score,4.5,LAD,base,Wed 4:10 PM,0,0,1,0,4,1,0,0,3,0,0,0,0,0,1,0,0,0,1,,,,,,,,,,,,0,0,5.0,1
-riley greene,OF,DET,Hits+Runs+RBIs,1.5,BAL,base,Wed 6:35 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-adley rutschman,C,BAL,Hitter Strikeouts,0.5,DET,base,Wed 6:35 PM,0,0,3,0,5,0,0,0,4,1,2,0,1,0,2,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
-adley rutschman,C,BAL,Hits+Runs+RBIs,1.5,DET,base,Wed 6:35 PM,0,0,3,0,5,0,0,0,4,1,2,0,1,0,2,0,0,1,0,,,,,,,,,,,,0,0,4.0,1
-gunnar henderson,IF,BAL,Total Bases,1.5,DET,base,Wed 6:35 PM,0,0,2,0,5,0,0,0,3,0,1,0,2,0,2,1,1,0,1,,,,,,,,,,,,0,0,2.0,1
-gunnar henderson,IF,BAL,Runs,0.5,DET,base,Wed 6:35 PM,0,0,2,0,5,0,0,0,3,0,1,0,2,0,2,1,1,0,1,,,,,,,,,,,,0,0,1.0,1
-ryan o'hearn,IF,BAL,Hits+Runs+RBIs,1.5,DET,base,Wed 6:35 PM,0,0,1,0,5,0,0,0,5,0,1,1,0,0,1,0,0,0,2,,,,,,,,,,,,0,0,4.0,1
-jordan westburg,IF,BAL,Hitter Strikeouts,0.5,DET,base,Wed 6:35 PM,0,0,6,0,5,0,1,0,4,1,1,0,1,0,2,0,2,2,3,,,,,,,,,,,,0,0,2.0,1
-jordan westburg,IF,BAL,Hits+Runs+RBIs,1.5,DET,base,Wed 6:35 PM,0,0,6,0,5,0,1,0,4,1,1,0,1,0,2,0,2,2,3,,,,,,,,,,,,0,0,6.0,1
-parker meadows,OF,DET,Hits+Runs+RBIs,1.5,BAL,base,Wed 6:35 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,3,0,0,,,,,,,,,,,,0,0,0.0,0
-jackson holliday,IF,BAL,Runs,0.5,DET,base,Wed 6:35 PM,0,0,2,0,5,0,0,0,5,0,1,0,0,0,2,1,2,0,0,,,,,,,,,,,,0,0,1.0,1
-gleyber torres,IF,DET,Hits+Runs+RBIs,1.5,BAL,base,Wed 6:35 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-ramon laureano,OF,BAL,Hits+Runs+RBIs,1.5,DET,base,Wed 6:35 PM,0,0,2,0,4,0,0,0,4,0,1,0,0,0,2,0,1,0,0,,,,,,,,,,,,0,0,3.0,1
-riley greene,OF,DET,Hitter Fantasy Score,6.5,BAL,base,Wed 6:35 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
-spencer torkelson,IF,DET,Hitter Fantasy Score,5.5,BAL,base,Wed 6:35 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,5.0,0
-adley rutschman,C,BAL,Hitter Fantasy Score,5.5,DET,base,Wed 6:35 PM,0,0,3,0,5,0,0,0,4,1,2,0,1,0,2,0,0,1,0,,,,,,,,,,,,0,0,14.0,1
-gunnar henderson,IF,BAL,Hitter Fantasy Score,6.5,DET,base,Wed 6:35 PM,0,0,2,0,5,0,0,0,3,0,1,0,2,0,2,1,1,0,1,,,,,,,,,,,,0,0,19.0,1
-kerry carpenter,OF,DET,Hitter Fantasy Score,5.5,BAL,base,Wed 6:35 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-ryan o'hearn,IF,BAL,Hitter Fantasy Score,5.5,DET,base,Wed 6:35 PM,0,0,1,0,5,0,0,0,5,0,1,1,0,0,1,0,0,0,2,,,,,,,,,,,,0,0,9.0,1
-jackson holliday,IF,BAL,Hitter Fantasy Score,6.5,DET,base,Wed 6:35 PM,0,0,2,0,5,0,0,0,5,0,1,0,0,0,2,1,2,0,0,,,,,,,,,,,,0,0,13.0,1
-gleyber torres,IF,DET,Hitter Fantasy Score,5.5,BAL,base,Wed 6:35 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
-yandy diaz,IF,TB,Total Bases,1.5,BOS,base,Wed 7:10 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,0,1,2,,,,,,,,,,,,0,0,5.0,1
-yandy diaz,IF,TB,Runs,0.5,BOS,base,Wed 7:10 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,0,1,2,,,,,,,,,,,,0,0,1.0,1
-rafael devers,IF,BOS,Total Bases,1.5,TB,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,3,0,0,0,0,1,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-rafael devers,IF,BOS,Runs,0.5,TB,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,3,0,0,0,0,1,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-rafael devers,IF,BOS,RBIs,0.5,TB,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,3,0,0,0,0,1,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-josh lowe,OF,TB,Runs,0.5,BOS,base,Wed 7:10 PM,0,0,0,0,5,0,0,0,5,0,0,0,0,0,0,1,2,0,1,,,,,,,,,,,,0,0,0.0,0
-josh lowe,OF,TB,Total Bases,1.5,BOS,base,Wed 7:10 PM,0,0,0,0,5,0,0,0,5,0,0,0,0,0,0,1,2,0,1,,,,,,,,,,,,0,0,0.0,0
-trevor story,IF,BOS,Hits+Runs+RBIs,1.5,TB,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-brandon lowe,IF,TB,Runs,0.5,BOS,base,Wed 7:10 PM,0,0,3,0,4,0,0,0,4,1,1,0,0,0,2,0,0,1,0,,,,,,,,,,,,0,0,1.0,1
-jonathan aranda,IF,TB,Runs,0.5,BOS,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,2,0,0,0,0,2,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-junior caminero,IF,TB,Total Bases,1.5,BOS,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-ceddanne rafaela,IF,BOS,Hits+Runs+RBIs,1.5,TB,base,Wed 7:10 PM,0,0,3,0,3,0,0,0,3,1,0,0,0,0,2,1,0,1,0,,,,,,,,,,,,0,0,2.0,1
-jake mangum,OF,TB,Hitter Strikeouts,0.5,BOS,base,Wed 7:10 PM,0,0,2,0,4,0,0,0,4,0,1,0,0,0,2,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-abraham toro,IF,BOS,Hitter Strikeouts,0.5,TB,base,Wed 7:10 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,1,1,1,,,,,,,,,,,,0,0,1.0,1
-roman anthony,OF,BOS,Hits+Runs+RBIs,1.5,TB,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-pete alonso,IF,NYM,Total Bases,1.5,WSH,base,Wed 7:10 PM,0,0,2,0,4,0,0,0,2,1,0,0,1,1,1,0,0,1,1,,,,,,,,,,,,0,0,2.0,1
-pete alonso,IF,NYM,Runs,0.5,WSH,base,Wed 7:10 PM,0,0,2,0,4,0,0,0,2,1,0,0,1,1,1,0,0,1,1,,,,,,,,,,,,0,0,0.0,0
-francisco lindor,IF,NYM,Hitter Strikeouts,0.5,WSH,base,Wed 7:10 PM,0,0,2,0,4,0,0,0,4,1,1,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
-francisco lindor,IF,NYM,Total Bases,1.5,WSH,base,Wed 7:10 PM,0,0,2,0,4,0,0,0,4,1,1,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,2.0,1
-keibert ruiz,C,WSH,Hits+Runs+RBIs,1.5,NYM,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-brandon nimmo,OF,NYM,Runs,0.5,WSH,base,Wed 7:10 PM,0,0,8,0,4,0,2,0,3,0,3,0,1,0,2,0,0,2,2,,,,,,,,,,,,0,0,3.0,1
-jeff mcneil,IF,NYM,Hits+Runs+RBIs,1.5,WSH,base,Wed 7:10 PM,0,0,1,0,4,0,0,0,4,0,0,1,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-ronny mauricio,IF,NYM,Hits+Runs+RBIs,1.5,WSH,base,Wed 7:10 PM,0,0,0,0,3,0,0,0,2,0,0,0,0,1,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-tyrone taylor,OF,NYM,Hitter Strikeouts,0.5,WSH,base,Wed 7:10 PM,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-luis torrens,C,NYM,Hits+Runs+RBIs,1.5,WSH,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-amed rosario,OF,WSH,Hits+Runs+RBIs,1.5,NYM,base,Wed 7:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-yandy diaz,IF,TB,Hitter Fantasy Score,6.5,BOS,base,Wed 7:10 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,0,1,2,,,,,,,,,,,,0,0,19.0,1
-rafael devers,IF,BOS,Hitter Fantasy Score,7.5,TB,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,3,0,0,0,0,1,0,0,1,0,0,,,,,,,,,,,,0,0,2.0,0
-josh lowe,OF,TB,Hitter Fantasy Score,6.5,BOS,base,Wed 7:10 PM,0,0,0,0,5,0,0,0,5,0,0,0,0,0,0,1,2,0,1,,,,,,,,,,,,0,0,7.0,1
-jarren duran,OF,BOS,Hitter Fantasy Score,8.5,TB,base,Wed 7:10 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,2,1,1,,,,,,,,,,,,0,0,14.0,1
-brandon lowe,IF,TB,Hitter Fantasy Score,6.5,BOS,base,Wed 7:10 PM,0,0,3,0,4,0,0,0,4,1,1,0,0,0,2,0,0,1,0,,,,,,,,,,,,0,0,10.0,1
-jonathan aranda,IF,TB,Hitter Fantasy Score,5.5,BOS,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,2,0,0,0,0,2,0,0,1,0,0,,,,,,,,,,,,0,0,4.0,0
-junior caminero,IF,TB,Hitter Fantasy Score,5.5,BOS,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,1,0,0,,,,,,,,,,,,0,0,2.0,0
-marcelo mayer,IF,BOS,Hitter Fantasy Score,4.5,TB,base,Wed 7:10 PM,0,0,8,0,4,0,2,0,4,0,2,0,0,0,2,0,2,2,2,,,,,,,,,,,,0,0,28.0,1
-roman anthony,OF,BOS,Hitter Fantasy Score,4.5,TB,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-pete alonso,IF,NYM,Hitter Fantasy Score,6.5,WSH,base,Wed 7:10 PM,0,0,2,0,4,0,0,0,2,1,0,0,1,1,1,0,0,1,1,,,,,,,,,,,,0,0,11.0,1
-francisco lindor,IF,NYM,Hitter Fantasy Score,7.5,WSH,base,Wed 7:10 PM,0,0,2,0,4,0,0,0,4,1,1,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,7.0,0
-cj abrams,IF,WSH,Hitter Fantasy Score,5.5,NYM,base,Wed 7:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-james wood,OF,WSH,Hitter Fantasy Score,5.5,NYM,base,Wed 7:10 PM,0,0,2,0,4,0,0,0,4,0,0,0,0,0,2,0,2,0,0,,,,,,,,,,,,0,0,6.0,1
-nathaniel lowe,IF,WSH,Hitter Fantasy Score,5.0,NYM,base,Wed 7:10 PM,0,0,0,0,3,0,0,0,3,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-juan soto,OF,NYM,Hitter Fantasy Score,8.0,WSH,base,Wed 7:10 PM,0,0,5,0,4,0,1,0,4,0,1,0,0,0,2,0,2,1,2,,,,,,,,,,,,0,0,19.0,1
-amed rosario,OF,WSH,Hitter Fantasy Score,5.5,NYM,base,Wed 7:10 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
-bobby witt,IF,KC,Runs,0.5,NYY,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-bobby witt,IF,KC,Total Bases,1.5,NYY,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-aaron judge,OF,NYY,Hits+Runs+RBIs,2.5,KC,base,Wed 7:40 PM,0,0,4,0,5,0,1,0,4,0,1,0,1,0,1,1,2,1,1,,,,,,,,,,,,0,0,3.0,1
-aaron judge,OF,NYY,Total Bases,1.5,KC,base,Wed 7:40 PM,0,0,4,0,5,0,1,0,4,0,1,0,1,0,1,1,2,1,1,,,,,,,,,,,,0,0,4.0,1
-dj lemahieu,IF,NYY,Hits+Runs+RBIs,1.5,KC,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,3,0,1,1,1,0,1,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
-dj lemahieu,IF,NYY,Hitter Strikeouts,0.5,KC,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,3,0,1,1,1,0,1,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-kyle isbel,OF,KC,Hitter Strikeouts,0.5,NYY,base,Wed 7:40 PM,0,0,0,0,2,0,0,0,1,0,0,0,1,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-salvador perez,C,KC,Hits+Runs+RBIs,1.5,NYY,base,Wed 7:40 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,1,1,2,,,,,,,,,,,,0,0,4.0,1
-maikel garcia,IF,KC,Hits+Runs+RBIs,1.5,NYY,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-anthony volpe,IF,NYY,Hits+Runs+RBIs,1.5,KC,base,Wed 7:40 PM,0,0,2,0,4,0,0,0,4,1,1,0,0,0,1,0,2,1,1,,,,,,,,,,,,0,0,3.0,1
-ben rice,IF,NYY,Runs,0.5,KC,base,Wed 7:40 PM,0,0,1,0,5,0,0,0,5,0,0,0,0,0,1,1,1,0,1,,,,,,,,,,,,0,0,0.0,0
-jonathan india,IF,KC,Hits+Runs+RBIs,1.5,NYY,base,Wed 7:40 PM,0,0,3,0,5,0,0,0,4,1,0,0,1,0,2,0,0,1,0,,,,,,,,,,,,0,0,2.0,1
-jonathan india,IF,KC,Runs,0.5,NYY,base,Wed 7:40 PM,0,0,3,0,5,0,0,0,4,1,0,0,1,0,2,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
-cody bellinger,OF,NYY,Hitter Strikeouts,0.5,KC,base,Wed 7:40 PM,0,1,3,0,4,0,0,0,4,0,1,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
-cody bellinger,OF,NYY,Hits+Runs+RBIs,1.5,KC,base,Wed 7:40 PM,0,1,3,0,4,0,0,0,4,0,1,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,2.0,1
-jac caglianone,IF,KC,Hits+Runs+RBIs,1.5,NYY,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,1.0,0
-john rave,OF,KC,Hits,0.5,NYY,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,1.0,1
-john rave,OF,KC,Total Bases,0.5,NYY,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,1.0,1
-byron buxton,OF,MIN,Total Bases,1.5,TEX,base,Wed 7:40 PM,0,0,7,0,4,0,1,0,3,1,1,0,1,0,3,1,0,2,3,,,,,,,,,,,,0,0,7.0,1
-byron buxton,OF,MIN,Runs,0.5,TEX,base,Wed 7:40 PM,0,0,7,0,4,0,1,0,3,1,1,0,1,0,3,1,0,2,3,,,,,,,,,,,,0,0,1.0,1
-carlos correa,IF,MIN,Hits+Runs+RBIs,1.5,TEX,base,Wed 7:40 PM,0,0,3,0,4,0,0,0,4,1,0,1,0,0,2,0,1,1,1,,,,,,,,,,,,0,0,3.0,1
-corey seager,IF,TEX,Hits+Runs+RBIs,1.5,MIN,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-marcus semien,IF,TEX,Hits+Runs+RBIs,1.5,MIN,base,Wed 7:40 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,0,1,1,,,,,,,,,,,,0,0,3.0,1
-ryan jeffers,C,MIN,Hits+Runs+RBIs,1.5,TEX,base,Wed 7:40 PM,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-jonah heim,C,TEX,Total Bases,0.5,MIN,base,Wed 7:40 PM,0,0,3,0,3,0,0,0,3,1,1,0,0,0,2,0,0,1,0,,,,,,,,,,,,0,0,3.0,1
-jonah heim,C,TEX,Hits,0.5,MIN,base,Wed 7:40 PM,0,0,3,0,3,0,0,0,3,1,1,0,0,0,2,0,0,1,0,,,,,,,,,,,,0,0,2.0,1
-matt wallner,OF,MIN,Runs,0.5,TEX,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,4,0,1,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,1.0,1
-christian vazquez,C,MIN,Hitter Strikeouts,0.5,TEX,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,3,0,1,0,1,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-trevor larnach,OF,MIN,Hits+Runs+RBIs,1.5,TEX,base,Wed 7:40 PM,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-evan carter,OF,TEX,Total Bases,0.5,MIN,base,Wed 7:40 PM,1,0,3,0,4,0,0,0,3,1,0,0,1,0,2,1,0,1,0,,,,,,,,,,,,0,0,3.0,1
-wyatt langford,OF,TEX,Hits+Runs+RBIs,1.5,MIN,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,3,0,0,,,,,,,,,,,,0,0,0.0,0
-wyatt langford,OF,TEX,Runs,0.5,MIN,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,3,0,0,,,,,,,,,,,,0,0,0.0,0
-brooks lee,IF,MIN,Hitter Strikeouts,0.5,TEX,base,Wed 7:40 PM,0,0,3,0,4,0,0,0,4,1,1,0,0,0,2,0,1,1,0,,,,,,,,,,,,0,0,1.0,1
-jake burger,IF,TEX,Hits+Runs+RBIs,1.5,MIN,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,2,0,0,,,,,,,,,,,,0,0,0.0,0
-ty france,IF,MIN,Hits+Runs+RBIs,1.5,TEX,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,2.0,1
-ty france,IF,MIN,Hitter Strikeouts,0.5,TEX,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,4,0,1,0,0,0,1,0,1,0,0,,,,,,,,,,,,0,0,1.0,1
-bobby witt,IF,KC,Hitter Fantasy Score,8.5,NYY,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-aaron judge,OF,NYY,Hitter Fantasy Score,9.0,KC,base,Wed 7:40 PM,0,0,4,0,5,0,1,0,4,0,1,0,1,0,1,1,2,1,1,,,,,,,,,,,,0,0,21.0,1
-vinnie pasquantino,IF,KC,Hitter Fantasy Score,5.5,NYY,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,3,0,1,0,1,0,1,0,0,0,0,,,,,,,,,,,,0,0,7.0,1
-salvador perez,C,KC,Hitter Fantasy Score,4.5,NYY,base,Wed 7:40 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,1,1,2,,,,,,,,,,,,0,0,16.0,1
-maikel garcia,IF,KC,Hitter Fantasy Score,5.5,NYY,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
-jonathan india,IF,KC,Hitter Fantasy Score,5.5,NYY,base,Wed 7:40 PM,0,0,3,0,5,0,0,0,4,1,0,0,1,0,2,0,0,1,0,,,,,,,,,,,,0,0,10.0,1
-paul goldschmidt,IF,NYY,Hitter Fantasy Score,5.5,KC,base,Wed 7:40 PM,0,0,2,0,5,0,0,0,5,0,1,0,0,0,2,0,1,0,2,,,,,,,,,,,,0,0,12.0,1
-cody bellinger,OF,NYY,Hitter Fantasy Score,5.5,KC,base,Wed 7:40 PM,0,1,3,0,4,0,0,0,4,0,1,0,0,0,1,0,0,1,0,,,,,,,,,,,,0,0,10.0,1
-jac caglianone,IF,KC,Hitter Fantasy Score,4.5,NYY,base,Wed 7:40 PM,0,0,1,0,4,0,0,0,4,0,0,0,0,0,1,0,2,0,0,,,,,,,,,,,,0,0,3.0,0
-byron buxton,OF,MIN,Hitter Fantasy Score,6.5,TEX,base,Wed 7:40 PM,0,0,7,0,4,0,1,0,3,1,1,0,1,0,3,1,0,2,3,,,,,,,,,,,,0,0,33.0,1
-carlos correa,IF,MIN,Hitter Fantasy Score,5.5,TEX,base,Wed 7:40 PM,0,0,3,0,4,0,0,0,4,1,0,1,0,0,2,0,1,1,1,,,,,,,,,,,,0,0,10.0,1
-corey seager,IF,TEX,Hitter Fantasy Score,7.5,MIN,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,3,0,0,0,1,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
-marcus semien,IF,TEX,Hitter Fantasy Score,6.0,MIN,base,Wed 7:40 PM,0,0,4,0,4,0,1,0,4,0,1,0,0,0,1,0,0,1,1,,,,,,,,,,,,0,0,14.0,1
-josh smith,IF,TEX,Hitter Fantasy Score,6.5,MIN,base,Wed 7:40 PM,0,0,3,0,4,0,0,0,4,1,0,0,0,0,2,0,0,1,1,,,,,,,,,,,,0,0,10.0,1
-trevor larnach,OF,MIN,Hitter Fantasy Score,5.0,TEX,base,Wed 7:40 PM,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
-wyatt langford,OF,TEX,Hitter Fantasy Score,7.0,MIN,base,Wed 7:40 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,3,0,0,,,,,,,,,,,,0,0,0.0,0
-jeremy pena,IF,HOU,Total Bases,1.5,CWS,base,Wed 8:10 PM,0,0,3,0,4,0,0,0,4,1,1,0,0,0,2,1,0,1,1,,,,,,,,,,,,0,0,3.0,1
-jake meyers,OF,HOU,Hits+Runs+RBIs,1.5,CWS,base,Wed 8:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-yainer diaz,C,HOU,Total Bases,1.5,CWS,base,Wed 8:10 PM,0,0,3,0,5,0,0,0,4,1,2,0,1,0,2,0,1,1,0,,,,,,,,,,,,0,0,3.0,1
-yainer diaz,C,HOU,Hitter Strikeouts,0.5,CWS,base,Wed 8:10 PM,0,0,3,0,5,0,0,0,4,1,2,0,1,0,2,0,1,1,0,,,,,,,,,,,,0,0,1.0,1
-andrew benintendi,OF,CWS,Hits+Runs+RBIs,1.5,HOU,base,Wed 8:10 PM,0,0,2,0,4,0,0,0,4,1,0,0,0,0,1,0,1,1,0,,,,,,,,,,,,0,0,1.0,0
-christian walker,IF,HOU,Hits+Runs+RBIs,1.5,CWS,base,Wed 8:10 PM,0,0,7,0,4,0,1,0,4,1,1,0,0,0,3,0,1,2,4,,,,,,,,,,,,0,0,8.0,1
-christian walker,IF,HOU,Runs,0.5,CWS,base,Wed 8:10 PM,0,0,7,0,4,0,1,0,4,1,1,0,0,0,3,0,1,2,4,,,,,,,,,,,,0,0,1.0,1
-isaac paredes,IF,HOU,Runs,0.5,CWS,base,Wed 8:10 PM,0,0,5,0,5,0,0,0,5,2,1,0,0,0,3,0,1,2,2,,,,,,,,,,,,0,0,1.0,1
-cam smith,IF,HOU,Hits+Runs+RBIs,1.5,CWS,base,Wed 8:10 PM,0,0,3,0,4,0,0,0,4,1,2,0,0,0,2,0,1,1,0,,,,,,,,,,,,0,0,4.0,1
-chase meidroth,IF,CWS,Hits+Runs+RBIs,1.5,HOU,base,Wed 8:10 PM,0,0,1,0,2,0,0,0,2,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
-josh rojas,IF,CWS,Hits,0.5,HOU,base,Wed 8:10 PM,0,0,2,0,2,0,0,0,2,0,1,0,0,0,2,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
-josh rojas,IF,CWS,Total Bases,0.5,HOU,base,Wed 8:10 PM,0,0,2,0,2,0,0,0,2,0,1,0,0,0,2,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
-tim elko,IF,CWS,Hits,0.5,HOU,base,Wed 8:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,3,0,0,,,,,,,,,,,,0,0,0.0,0
-tim elko,IF,CWS,Total Bases,0.5,HOU,base,Wed 8:10 PM,0,0,0,0,4,0,0,0,4,0,0,0,0,0,0,0,3,0,0,,,,,,,,,,,,0,0,0.0,0
-mike tauchman,OF,CWS,Hits+Runs+RBIs,1.5,HOU,base,Wed 8:10 PM,0,0,0,0,3,0,0,0,3,0,0,0,0,0,0,0,1,0,1,,,,,,,,,,,,0,0,1.0,0
-jose altuve,OF,HOU,Hitter Fantasy Score,6.5,CWS,base,Wed 8:10 PM,0,0,3,0,4,0,0,0,4,1,2,0,0,0,2,0,0,1,1,,,,,,,,,,,,0,0,14.0,1
-jeremy pena,IF,HOU,Hitter Fantasy Score,7.5,CWS,base,Wed 8:10 PM,0,0,3,0,4,0,0,0,4,1,1,0,0,0,2,1,0,1,1,,,,,,,,,,,,0,0,17.0,1
-yainer diaz,C,HOU,Hitter Fantasy Score,5.0,CWS,base,Wed 8:10 PM,0,0,3,0,5,0,0,0,4,1,2,0,1,0,2,0,1,1,0,,,,,,,,,,,,0,0,14.0,1
-christian walker,IF,HOU,Hitter Fantasy Score,5.0,CWS,base,Wed 8:10 PM,0,0,7,0,4,0,1,0,4,1,1,0,0,0,3,0,1,2,4,,,,,,,,,,,,0,0,28.0,1
-isaac paredes,IF,HOU,Hitter Fantasy Score,5.5,CWS,base,Wed 8:10 PM,0,0,5,0,5,0,0,0,5,2,1,0,0,0,3,0,1,2,2,,,,,,,,,,,,0,0,19.0,1
-chase meidroth,IF,CWS,Hitter Fantasy Score,5.0,HOU,base,Wed 8:10 PM,0,0,1,0,2,0,0,0,2,0,0,0,0,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
-mike tauchman,OF,CWS,Hitter Fantasy Score,5.0,HOU,base,Wed 8:10 PM,0,0,0,0,3,0,0,0,3,0,0,0,0,0,0,0,1,0,1,,,,,,,,,,,,0,0,2.0,0
-mike yastrzemski,OF,SF,Hits+Runs+RBIs,1.5,COL,base,Wed 8:40 PM,0,0,3,0,5,0,0,0,5,1,0,0,0,0,2,0,1,1,3,,,,,,,,,,,,0,0,5.0,1
-wilmer flores,IF,SF,Total Bases,1.5,COL,base,Wed 8:40 PM,0,0,1,0,5,1,0,0,3,0,0,0,1,0,1,0,1,0,1,,,,,,,,,,,,0,0,1.0,0
-wilmer flores,IF,SF,Runs,0.5,COL,base,Wed 8:40 PM,0,0,1,0,5,1,0,0,3,0,0,0,1,0,1,0,1,0,1,,,,,,,,,,,,0,0,0.0,0
-brenton doyle,OF,COL,Hits+Runs+RBIs,1.5,SF,base,Wed 8:40 PM,0,0,2,0,5,0,0,0,4,0,1,0,1,0,2,1,2,0,0,,,,,,,,,,,,0,0,3.0,1
-casey schmitt,IF,SF,Hitter Strikeouts,0.5,COL,base,Wed 8:40 PM,0,0,2,0,5,0,0,0,4,0,1,0,1,0,2,0,2,0,2,,,,,,,,,,,,0,0,2.0,1
-casey schmitt,IF,SF,Total Bases,1.5,COL,base,Wed 8:40 PM,0,0,2,0,5,0,0,0,4,0,1,0,1,0,2,0,2,0,2,,,,,,,,,,,,0,0,2.0,1
-hunter goodman,C,COL,Hits+Runs+RBIs,1.5,SF,base,Wed 8:40 PM,0,0,8,0,5,0,1,0,5,2,2,0,0,0,3,0,1,3,2,,,,,,,,,,,,0,0,7.0,1
-tyler fitzgerald,IF,SF,Runs,0.5,COL,base,Wed 8:40 PM,1,0,1,0,5,0,0,1,4,0,0,0,0,0,1,0,0,0,1,,,,,,,,,,,,0,0,0.0,0
-jung hoo lee,OF,SF,Total Bases,1.5,COL,base,Wed 8:40 PM,0,1,3,0,5,0,0,0,3,0,3,0,2,0,1,0,0,1,0,,,,,,,,,,,,0,0,3.0,1
-jung hoo lee,OF,SF,Hits+Runs+RBIs,2.5,COL,base,Wed 8:40 PM,0,1,3,0,5,0,0,0,3,0,3,0,2,0,1,0,0,1,0,,,,,,,,,,,,0,0,4.0,1
-jordan beck,OF,COL,Runs,0.5,SF,base,Wed 8:40 PM,0,0,2,0,5,0,0,0,4,0,1,0,1,0,2,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
-jerar encarnacion,OF,SF,Runs,0.5,COL,base,Wed 8:40 PM,0,0,0,0,3,0,0,0,3,0,0,1,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-jerar encarnacion,OF,SF,Total Bases,1.5,COL,base,Wed 8:40 PM,0,0,0,0,3,0,0,0,3,0,0,1,0,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
-willy adames,IF,SF,Total Bases,1.5,COL,base,Wed 8:40 PM,0,0,7,0,5,1,1,0,4,1,3,0,0,0,3,0,0,2,3,,,,,,,,,,,,0,0,7.0,1
-thairo estrada,IF,COL,Hits+Runs+RBIs,1.5,SF,base,Wed 8:40 PM,0,0,1,0,5,0,0,0,5,0,1,0,0,0,1,0,0,0,1,,,,,,,,,,,,0,0,3.0,1
-keston hiura,IF,COL,Hits,0.5,SF,base,Wed 8:40 PM,0,0,1,0,3,0,0,0,3,0,0,0,0,0,1,0,0,0,1,,,,,,,,,,,,0,0,1.0,1
-keston hiura,IF,COL,Hitter Strikeouts,1.5,SF,base,Wed 8:40 PM,0,0,1,0,3,0,0,0,3,0,0,0,0,0,1,0,0,0,1,,,,,,,,,,,,0,0,0.0,0
-keston hiura,IF,COL,Total Bases,0.5,SF,base,Wed 8:40 PM,0,0,1,0,3,0,0,0,3,0,0,0,0,0,1,0,0,0,1,,,,,,,,,,,,0,0,1.0,1
-wilmer flores,IF,SF,Hitter Fantasy Score,7.0,COL,base,Wed 8:40 PM,0,0,1,0,5,1,0,0,3,0,0,0,1,0,1,0,1,0,1,,,,,,,,,,,,0,0,7.0,1
-heliot ramos,OF,SF,Hitter Fantasy Score,8.5,COL,base,Wed 8:40 PM,0,0,3,0,5,0,0,0,4,1,2,0,1,0,2,0,1,1,0,,,,,,,,,,,,0,0,14.0,1
-jung hoo lee,OF,SF,Hitter Fantasy Score,8.5,COL,base,Wed 8:40 PM,0,1,3,0,5,0,0,0,3,0,3,0,2,0,1,0,0,1,0,,,,,,,,,,,,0,0,18.0,1
-willy adames,IF,SF,Hitter Fantasy Score,7.5,COL,base,Wed 8:40 PM,0,0,7,0,5,1,1,0,4,1,3,0,0,0,3,0,0,2,3,,,,,,,,,,,,0,0,30.0,1
+Player,Position,Team,Prop Type,Prop Value,Opposing Team,Odds Category,Start Time,TB,CS,SH,3B,2B,BB,RBI,SO,IBB,AB,HR,R,PA,SB,H,SF,HBP,GIDP,XBH,SHO,CG,IP,GS,GF,ER,SV,ERA,TBF,WP,DEC,Pitches Thrown,Pitching Outs,Actual Stat,Hit
+bryan reynolds,OF,PIT,Hits+Runs+RBIs,1.5,CHC,base,Fri 2:20 PM,2,0,0,0,1,0,0,1,0,4,0,0,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,1.0,0
+oneil cruz,OF,PIT,Hits+Runs+RBIs,1.5,CHC,base,Fri 2:20 PM,1,0,0,0,0,0,1,0,0,5,0,0,5,1,1,0,0,1,0,,,,,,,,,,,,0,0,2.0,1
+andrew mccutchen,OF,PIT,Hits+Runs+RBIs,1.5,CHC,base,Fri 2:20 PM,0,0,0,0,0,0,0,2,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+henry davis,C,PIT,Total Bases,0.5,CHC,base,Fri 2:20 PM,2,0,0,0,1,1,0,1,0,3,0,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,2.0,1
+adam frazier,IF,PIT,Hitter Strikeouts,0.5,CHC,base,Fri 2:20 PM,1,1,0,0,0,0,0,1,0,4,0,1,4,1,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+reese mcguire,C,CHC,Total Bases,0.5,PIT,base,Fri 2:20 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+reese mcguire,C,CHC,Hits,0.5,PIT,base,Fri 2:20 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+ke'bryan hayes,IF,PIT,Hitter Fantasy Score,3.5,CHC,base,Fri 2:20 PM,1,0,0,0,0,0,0,2,0,4,0,0,4,1,1,0,0,0,0,,,,,,,,,,,,0,0,8.0,1
+bryan reynolds,OF,PIT,Hitter Fantasy Score,5.5,CHC,base,Fri 2:20 PM,2,0,0,0,1,0,0,1,0,4,0,0,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,5.0,0
+oneil cruz,OF,PIT,Hitter Fantasy Score,8.5,CHC,base,Fri 2:20 PM,1,0,0,0,0,0,1,0,0,5,0,0,5,1,1,0,0,1,0,,,,,,,,,,,,0,0,10.0,1
+ian happ,OF,CHC,Hitter Fantasy Score,5.0,PIT,base,Fri 2:20 PM,1,0,0,0,0,2,0,0,0,3,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,7.0,1
+seiya suzuki,OF,CHC,Hitter Fantasy Score,4.5,PIT,base,Fri 2:20 PM,2,0,0,0,0,0,0,1,0,5,0,0,5,0,2,0,0,0,0,,,,,,,,,,,,0,0,6.0,1
+andrew mccutchen,OF,PIT,Hitter Fantasy Score,5.0,CHC,base,Fri 2:20 PM,0,0,0,0,0,0,0,2,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+henry davis,C,PIT,Hitter Fantasy Score,3.0,CHC,base,Fri 2:20 PM,2,0,0,0,1,1,0,1,0,3,0,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,9.0,1
+nick gonzales,IF,PIT,Hitter Fantasy Score,4.5,CHC,base,Fri 2:20 PM,0,0,0,0,0,1,0,0,0,3,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,2.0,0
+pete crow-armstrong,OF,CHC,Hitter Fantasy Score,4.5,PIT,base,Fri 2:20 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,1,1,0,0,0,0,,,,,,,,,,,,0,0,8.0,1
+isiah kiner-falefa,IF,PIT,Hitter Fantasy Score,3.5,CHC,base,Fri 2:20 PM,0,0,1,0,0,0,1,0,0,2,0,0,4,0,0,1,0,0,0,,,,,,,,,,,,0,0,2.0,0
+kyle tucker,OF,CHC,Hitter Fantasy Score,5.5,PIT,base,Fri 2:20 PM,2,0,0,0,1,1,0,0,0,4,0,1,5,0,1,0,0,0,1,,,,,,,,,,,,0,0,9.0,1
+adam frazier,IF,PIT,Hitter Fantasy Score,4.5,CHC,base,Fri 2:20 PM,1,1,0,0,0,0,0,1,0,4,0,1,4,1,1,0,0,0,0,,,,,,,,,,,,0,0,10.0,1
+spencer horwitz,IF,PIT,Hitter Fantasy Score,5.5,CHC,base,Fri 2:20 PM,1,0,0,0,0,1,0,0,0,3,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+george springer,OF,TOR,Hits+Runs+RBIs,1.5,PHI,base,Fri 6:45 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
+bo bichette,IF,TOR,Total Bases,1.5,PHI,base,Fri 6:45 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+kyle schwarber,DH,PHI,Walks,0.5,TOR,base,Fri 6:45 PM,4,0,0,0,0,1,3,2,0,4,1,1,5,0,1,0,0,0,1,,,,,,,,,,,,0,0,1.0,1
+kyle schwarber,DH,PHI,Runs,0.5,TOR,base,Fri 6:45 PM,4,0,0,0,0,1,3,2,0,4,1,1,5,0,1,0,0,0,1,,,,,,,,,,,,0,0,1.0,1
+kyle schwarber,DH,PHI,Hits+Runs+RBIs,1.5,TOR,base,Fri 6:45 PM,4,0,0,0,0,1,3,2,0,4,1,1,5,0,1,0,0,0,1,,,,,,,,,,,,0,0,5.0,1
+nick castellanos,OF,PHI,Hits+Runs+RBIs,1.5,TOR,base,Fri 6:45 PM,0,0,0,0,0,1,0,2,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+alejandro kirk,C,TOR,Hitter Strikeouts,0.5,PHI,base,Fri 6:45 PM,2,0,0,0,0,0,0,0,0,4,0,0,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+alejandro kirk,C,TOR,Hits+Runs+RBIs,1.5,PHI,base,Fri 6:45 PM,2,0,0,0,0,0,0,0,0,4,0,0,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+alec bohm,IF,PHI,Hitter Strikeouts,0.5,TOR,base,Fri 6:45 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+trea turner,IF,PHI,Runs,0.5,TOR,base,Fri 6:45 PM,1,0,0,0,0,1,1,0,0,4,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+davis schneider,OF,TOR,Hits,0.5,PHI,base,Fri 6:45 PM,1,0,0,0,0,1,0,1,0,2,0,0,3,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+davis schneider,OF,TOR,Total Bases,0.5,PHI,base,Fri 6:45 PM,1,0,0,0,0,1,0,1,0,2,0,0,3,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+ernie clement,IF,TOR,Hits+Runs+RBIs,1.5,PHI,base,Fri 6:45 PM,1,0,0,0,0,0,0,0,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+andres gimenez,IF,TOR,Hitter Strikeouts,0.5,PHI,base,Fri 6:45 PM,0,0,0,0,0,1,0,0,0,2,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+max kepler,OF,PHI,Hits+Runs+RBIs,1.5,TOR,base,Fri 6:45 PM,2,0,0,0,1,0,0,1,0,4,0,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,2.0,1
+otto kemp,IF,PHI,Total Bases,0.5,TOR,base,Fri 6:45 PM,3,0,0,0,1,0,1,1,0,4,0,0,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,3.0,1
+keibert ruiz,C,WSH,Hits+Runs+RBIs,1.5,MIA,base,Fri 6:45 PM,3,0,0,0,0,0,1,0,0,5,0,0,5,0,3,0,0,0,0,,,,,,,,,,,,0,0,4.0,1
+cj abrams,IF,WSH,Runs,0.5,MIA,base,Fri 6:45 PM,3,0,0,0,0,0,0,2,0,6,0,3,6,0,3,0,0,0,0,,,,,,,,,,,,0,0,3.0,1
+luis garcia,IF,WSH,Hitter Strikeouts,0.5,MIA,base,Fri 6:45 PM,1,0,0,0,0,0,0,2,0,5,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+dane myers,OF,MIA,Hitter Strikeouts,0.5,WSH,base,Fri 6:45 PM,4,0,0,0,1,0,2,2,0,5,0,1,5,0,3,0,0,0,1,,,,,,,,,,,,0,0,2.0,1
+xavier edwards,IF,MIA,Hitter Strikeouts,0.5,WSH,base,Fri 6:45 PM,3,1,0,0,0,1,1,1,0,5,0,1,6,0,3,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+otto lopez,IF,MIA,Hitter Strikeouts,0.5,WSH,base,Fri 6:45 PM,2,0,0,0,0,0,0,0,0,5,0,2,5,0,2,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+james wood,OF,WSH,Walks,0.5,MIA,base,Fri 6:45 PM,7,0,0,0,1,0,4,1,0,5,1,3,5,0,3,0,0,0,2,,,,,,,,,,,,0,0,0.0,0
+james wood,OF,WSH,Runs,0.5,MIA,base,Fri 6:45 PM,7,0,0,0,1,0,4,1,0,5,1,3,5,0,3,0,0,0,2,,,,,,,,,,,,0,0,3.0,1
+james wood,OF,WSH,Hits+Runs+RBIs,1.5,MIA,base,Fri 6:45 PM,7,0,0,0,1,0,4,1,0,5,1,3,5,0,3,0,0,0,2,,,,,,,,,,,,0,0,10.0,1
+josh bell,IF,WSH,Hits+Runs+RBIs,1.5,MIA,base,Fri 6:45 PM,1,0,0,0,0,1,1,1,0,4,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,1
+connor norby,IF,MIA,Hits+Runs+RBIs,1.5,WSH,base,Fri 6:45 PM,0,0,0,0,0,1,1,1,0,4,0,1,5,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+nathaniel lowe,IF,WSH,Hits+Runs+RBIs,1.5,MIA,base,Fri 6:45 PM,1,0,0,0,0,1,2,1,0,4,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,1
+eric wagaman,IF,MIA,Hits+Runs+RBIs,1.5,WSH,base,Fri 6:45 PM,3,0,0,0,1,0,3,1,0,5,0,1,5,0,2,0,0,1,1,,,,,,,,,,,,0,0,6.0,1
+heriberto hernandez,OF,MIA,Hits+Runs+RBIs,1.5,WSH,base,Fri 6:45 PM,1,0,0,0,0,1,0,1,0,3,0,1,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+vladimir guerrero,IF,TOR,Hitter Fantasy Score,7.0,PHI,base,Fri 6:45 PM,0,0,0,0,0,1,0,1,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+george springer,OF,TOR,Hitter Fantasy Score,5.5,PHI,base,Fri 6:45 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
+bo bichette,IF,TOR,Hitter Fantasy Score,6.5,PHI,base,Fri 6:45 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+kyle schwarber,DH,PHI,Hitter Fantasy Score,6.0,TOR,base,Fri 6:45 PM,4,0,0,0,0,1,3,2,0,4,1,1,5,0,1,0,0,0,1,,,,,,,,,,,,0,0,20.0,1
+nick castellanos,OF,PHI,Hitter Fantasy Score,4.5,TOR,base,Fri 6:45 PM,0,0,0,0,0,1,0,2,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+alejandro kirk,C,TOR,Hitter Fantasy Score,5.5,PHI,base,Fri 6:45 PM,2,0,0,0,0,0,0,0,0,4,0,0,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,6.0,1
+alec bohm,IF,PHI,Hitter Fantasy Score,5.5,TOR,base,Fri 6:45 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+trea turner,IF,PHI,Hitter Fantasy Score,7.5,TOR,base,Fri 6:45 PM,1,0,0,0,0,1,1,0,0,4,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,9.0,1
+otto kemp,IF,PHI,Hitter Fantasy Score,3.0,TOR,base,Fri 6:45 PM,3,0,0,0,1,0,1,1,0,4,0,0,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,10.0,1
+cj abrams,IF,WSH,Hitter Fantasy Score,7.0,MIA,base,Fri 6:45 PM,3,0,0,0,0,0,0,2,0,6,0,3,6,0,3,0,0,0,0,,,,,,,,,,,,0,0,15.0,1
+luis garcia,IF,WSH,Hitter Fantasy Score,6.0,MIA,base,Fri 6:45 PM,1,0,0,0,0,0,0,2,0,5,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+otto lopez,IF,MIA,Hitter Fantasy Score,5.5,WSH,base,Fri 6:45 PM,2,0,0,0,0,0,0,0,0,5,0,2,5,0,2,0,0,0,0,,,,,,,,,,,,0,0,10.0,1
+james wood,OF,WSH,Hitter Fantasy Score,7.0,MIA,base,Fri 6:45 PM,7,0,0,0,1,0,4,1,0,5,1,3,5,0,3,0,0,0,2,,,,,,,,,,,,0,0,32.0,1
+nathaniel lowe,IF,WSH,Hitter Fantasy Score,5.5,MIA,base,Fri 6:45 PM,1,0,0,0,0,1,2,1,0,4,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,9.0,1
+cedric mullins,OF,BAL,Hits+Runs+RBIs,1.5,LAA,base,Fri 7:05 PM,0,0,0,0,0,1,0,1,0,2,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+taylor ward,OF,LAA,Hits+Runs+RBIs,1.5,BAL,base,Fri 7:05 PM,0,0,0,0,0,0,1,2,0,3,0,1,4,0,0,0,1,1,0,,,,,,,,,,,,0,0,2.0,1
+adley rutschman,C,BAL,Runs,0.5,LAA,base,Fri 7:05 PM,1,0,0,0,0,1,0,0,0,3,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+gunnar henderson,IF,BAL,Total Bases,1.5,LAA,base,Fri 7:05 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,1,0,,,,,,,,,,,,0,0,1.0,0
+gunnar henderson,IF,BAL,Hits+Runs+RBIs,2.5,LAA,base,Fri 7:05 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,1,0,,,,,,,,,,,,0,0,1.0,0
+ramon urias,IF,BAL,Hitter Strikeouts,0.5,LAA,base,Fri 7:05 PM,1,0,0,0,0,0,0,1,0,3,0,0,3,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+logan o'hoppe,C,LAA,Hits+Runs+RBIs,1.5,BAL,base,Fri 7:05 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,1,0,,,,,,,,,,,,0,0,1.0,0
+zach neto,IF,LAA,Runs,0.5,BAL,base,Fri 7:05 PM,0,0,0,0,0,1,0,2,0,3,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
+ryan o'hearn,IF,BAL,Hitter Strikeouts,0.5,LAA,base,Fri 7:05 PM,6,0,0,0,1,0,1,0,0,4,1,1,4,0,2,0,0,1,2,,,,,,,,,,,,0,0,0.0,0
+jordan westburg,IF,BAL,Hitter Strikeouts,0.5,LAA,base,Fri 7:05 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+colton cowser,OF,BAL,Hits+Runs+RBIs,1.5,LAA,base,Fri 7:05 PM,0,0,0,0,0,1,0,1,0,2,0,0,3,0,0,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
+nolan schanuel,IF,LAA,Walks,0.5,BAL,base,Fri 7:05 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+ramon laureano,OF,BAL,Hits+Runs+RBIs,1.5,LAA,base,Fri 7:05 PM,4,0,0,0,0,1,1,1,1,3,1,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,3.0,1
+mike trout,OF,LAA,Hitter Fantasy Score,7.5,BAL,base,Fri 7:05 PM,1,0,0,0,0,0,0,2,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+taylor ward,OF,LAA,Hitter Fantasy Score,5.5,BAL,base,Fri 7:05 PM,0,0,0,0,0,0,1,2,0,3,0,1,4,0,0,0,1,1,0,,,,,,,,,,,,0,0,6.0,1
+adley rutschman,C,BAL,Hitter Fantasy Score,5.5,LAA,base,Fri 7:05 PM,1,0,0,0,0,1,0,0,0,3,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+gunnar henderson,IF,BAL,Hitter Fantasy Score,7.0,LAA,base,Fri 7:05 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,1,0,,,,,,,,,,,,0,0,3.0,0
+zach neto,IF,LAA,Hitter Fantasy Score,7.5,BAL,base,Fri 7:05 PM,0,0,0,0,0,1,0,2,0,3,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,2.0,0
+nolan schanuel,IF,LAA,Hitter Fantasy Score,6.5,BAL,base,Fri 7:05 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+jorge soler,OF,LAA,Hitter Fantasy Score,5.0,BAL,base,Fri 7:05 PM,1,0,0,0,0,0,0,3,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+mike trout,OF,LAA,Walks,0.5,BAL,base,Fri 7:08 PM,1,0,0,0,0,0,0,2,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+yandy diaz,IF,TB,Hits+Runs+RBIs,1.5,NYM,base,Fri 7:10 PM,5,0,0,0,0,0,2,0,0,4,1,1,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,5.0,1
+pete alonso,IF,NYM,Hits+Runs+RBIs,1.5,TB,base,Fri 7:10 PM,0,0,0,0,0,1,0,1,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+francisco lindor,IF,NYM,Hits+Runs+RBIs,1.5,TB,base,Fri 7:10 PM,0,0,0,0,0,1,0,0,0,3,0,1,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+josh lowe,OF,TB,Hits+Runs+RBIs,1.5,NYM,base,Fri 7:10 PM,0,0,0,0,0,0,1,2,0,5,0,0,5,1,0,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+brandon nimmo,OF,NYM,Hits+Runs+RBIs,1.5,TB,base,Fri 7:10 PM,5,0,0,0,0,0,1,0,0,4,1,1,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,4.0,1
+taylor walls,IF,TB,Hits,0.5,NYM,base,Fri 7:10 PM,1,1,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+taylor walls,IF,TB,Total Bases,0.5,NYM,base,Fri 7:10 PM,1,1,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+brett baty,IF,NYM,Hits,0.5,TB,base,Fri 7:10 PM,1,0,0,0,0,0,0,2,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+brett baty,IF,NYM,Total Bases,0.5,TB,base,Fri 7:10 PM,1,0,0,0,0,0,0,2,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+francisco alvarez,C,NYM,Hits,0.5,TB,base,Fri 7:10 PM,0,0,0,0,0,1,0,1,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+francisco alvarez,C,NYM,Total Bases,0.5,TB,base,Fri 7:10 PM,0,0,0,0,0,1,0,1,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+ronny mauricio,IF,NYM,Total Bases,0.5,TB,base,Fri 7:10 PM,0,0,0,0,0,0,0,1,0,2,0,0,3,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
+ronny mauricio,IF,NYM,Hits,0.5,TB,base,Fri 7:10 PM,0,0,0,0,0,0,0,1,0,2,0,0,3,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
+juan soto,OF,NYM,Hits+Runs+RBIs,1.5,TB,base,Fri 7:10 PM,2,0,0,0,1,1,0,1,0,3,0,1,4,1,1,0,0,0,1,,,,,,,,,,,,0,0,2.0,1
+danny jansen,C,TB,Hits,0.5,NYM,base,Fri 7:10 PM,1,0,0,0,0,0,0,2,0,3,0,0,3,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+danny jansen,C,TB,Total Bases,0.5,NYM,base,Fri 7:10 PM,1,0,0,0,0,0,0,2,0,3,0,0,3,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+kameron misner,OF,TB,Hits,0.5,NYM,base,Fri 7:10 PM,0,0,0,0,0,1,0,2,0,2,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+kameron misner,OF,TB,Total Bases,0.5,NYM,base,Fri 7:10 PM,0,0,0,0,0,1,0,2,0,2,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+rafael devers,IF,BOS,Runs,0.5,NYY,base,Fri 7:10 PM,1,0,0,0,0,1,0,1,1,4,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+aaron judge,OF,NYY,Runs,0.5,BOS,base,Fri 7:10 PM,4,0,0,0,0,0,1,3,0,4,1,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,1.0,1
+jarren duran,OF,BOS,Runs,0.5,NYY,base,Fri 7:10 PM,0,0,0,0,0,0,0,1,0,2,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jarren duran,OF,BOS,Total Bases,1.5,NYY,base,Fri 7:10 PM,0,0,0,0,0,0,0,1,0,2,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+trevor story,IF,BOS,Hits+Runs+RBIs,1.5,NYY,base,Fri 7:10 PM,1,0,0,0,0,0,0,0,0,4,0,1,4,1,1,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+rob refsnyder,OF,BOS,Hits+Runs+RBIs,1.5,NYY,base,Fri 7:10 PM,1,0,0,0,0,1,0,0,0,2,0,0,3,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+austin wells,C,NYY,Total Bases,0.5,BOS,base,Fri 7:10 PM,0,0,0,0,0,0,0,2,0,3,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+austin wells,C,NYY,Hits,0.5,BOS,base,Fri 7:10 PM,0,0,0,0,0,0,0,2,0,3,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+trent grisham,OF,NYY,Hitter Strikeouts,1.5,BOS,base,Fri 7:10 PM,1,0,0,0,0,1,0,1,0,3,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+jazz chisholm,IF,NYY,Hitter Strikeouts,1.5,BOS,base,Fri 7:10 PM,0,0,0,0,0,2,0,0,0,1,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jazz chisholm,IF,NYY,Hits,0.5,BOS,base,Fri 7:10 PM,0,0,0,0,0,2,0,0,0,1,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jazz chisholm,IF,NYY,Total Bases,0.5,BOS,base,Fri 7:10 PM,0,0,0,0,0,2,0,0,0,1,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+cody bellinger,OF,NYY,Hits+Runs+RBIs,1.5,BOS,base,Fri 7:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+abraham toro,IF,BOS,Hitter Strikeouts,0.5,NYY,base,Fri 7:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+abraham toro,IF,BOS,Hits+Runs+RBIs,1.5,NYY,base,Fri 7:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+riley greene,OF,DET,Hits+Runs+RBIs,1.5,CIN,base,Fri 7:10 PM,0,0,0,0,0,2,0,2,0,2,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jake fraley,OF,CIN,Hitter Strikeouts,0.5,DET,base,Fri 7:10 PM,0,0,0,0,0,1,0,1,0,2,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+tj friedl,OF,CIN,Hits+Runs+RBIs,1.5,DET,base,Fri 7:10 PM,4,0,0,0,0,1,1,1,0,3,1,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,3.0,1
+kerry carpenter,OF,DET,Hits+Runs+RBIs,1.5,CIN,base,Fri 7:10 PM,0,0,0,0,0,0,0,2,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+zach mckinstry,IF,DET,Hitter Strikeouts,0.5,CIN,base,Fri 7:10 PM,2,0,0,0,0,0,0,1,0,4,0,1,4,1,2,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+elly de la cruz,IF,CIN,Hits+Runs+RBIs,1.5,DET,base,Fri 7:10 PM,5,0,0,0,0,0,1,0,0,4,1,1,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,4.0,1
+christian encarnacion-strand,IF,CIN,Hits+Runs+RBIs,1.5,DET,base,Fri 7:10 PM,0,0,0,0,0,0,0,2,0,3,0,0,4,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
+parker meadows,OF,DET,Hits+Runs+RBIs,1.5,CIN,base,Fri 7:10 PM,4,0,0,0,0,0,3,2,0,4,1,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,5.0,1
+gleyber torres,IF,DET,Hits+Runs+RBIs,1.5,CIN,base,Fri 7:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+gleyber torres,IF,DET,Hitter Strikeouts,0.5,CIN,base,Fri 7:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+yandy diaz,IF,TB,Hitter Fantasy Score,5.5,NYM,base,Fri 7:10 PM,5,0,0,0,0,0,2,0,0,4,1,1,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,19.0,1
+pete alonso,IF,NYM,Hitter Fantasy Score,6.5,TB,base,Fri 7:10 PM,0,0,0,0,0,1,0,1,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+francisco lindor,IF,NYM,Hitter Fantasy Score,7.0,TB,base,Fri 7:10 PM,0,0,0,0,0,1,0,0,0,3,0,1,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,4.0,0
+josh lowe,OF,TB,Hitter Fantasy Score,5.5,NYM,base,Fri 7:10 PM,0,0,0,0,0,0,1,2,0,5,0,0,5,1,0,0,0,0,0,,,,,,,,,,,,0,0,7.0,1
+brandon nimmo,OF,NYM,Hitter Fantasy Score,5.5,TB,base,Fri 7:10 PM,5,0,0,0,0,0,1,0,0,4,1,1,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,17.0,1
+jeff mcneil,IF,NYM,Hitter Fantasy Score,4.5,TB,base,Fri 7:10 PM,4,0,0,0,0,0,3,0,0,2,1,1,3,0,1,0,1,0,1,,,,,,,,,,,,0,0,20.0,1
+brandon lowe,IF,TB,Hitter Fantasy Score,5.5,NYM,base,Fri 7:10 PM,3,0,0,0,1,0,0,0,0,4,0,1,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,10.0,1
+brett baty,IF,NYM,Hitter Fantasy Score,3.5,TB,base,Fri 7:10 PM,1,0,0,0,0,0,0,2,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+jonathan aranda,IF,TB,Hitter Fantasy Score,5.0,NYM,base,Fri 7:10 PM,0,0,0,0,0,0,0,1,0,2,0,0,4,0,0,0,2,0,0,,,,,,,,,,,,0,0,4.0,0
+francisco alvarez,C,NYM,Hitter Fantasy Score,3.0,TB,base,Fri 7:10 PM,0,0,0,0,0,1,0,1,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+junior caminero,IF,TB,Hitter Fantasy Score,4.5,NYM,base,Fri 7:10 PM,0,0,0,0,0,1,0,1,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+juan soto,OF,NYM,Hitter Fantasy Score,7.5,TB,base,Fri 7:10 PM,2,0,0,0,1,1,0,1,0,3,0,1,4,1,1,0,0,0,1,,,,,,,,,,,,0,0,14.0,1
+rafael devers,IF,BOS,Hitter Fantasy Score,6.5,NYY,base,Fri 7:10 PM,1,0,0,0,0,1,0,1,1,4,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+aaron judge,OF,NYY,Hitter Fantasy Score,7.5,BOS,base,Fri 7:10 PM,4,0,0,0,0,0,1,3,0,4,1,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,14.0,1
+jarren duran,OF,BOS,Hitter Fantasy Score,7.5,NYY,base,Fri 7:10 PM,0,0,0,0,0,0,0,1,0,2,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+paul goldschmidt,IF,NYY,Hitter Fantasy Score,5.5,BOS,base,Fri 7:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+cody bellinger,OF,NYY,Hitter Fantasy Score,5.5,BOS,base,Fri 7:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+javier baez,IF,DET,Hitter Fantasy Score,3.5,CIN,base,Fri 7:10 PM,2,0,0,0,0,0,0,1,0,4,0,1,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,8.0,1
+riley greene,OF,DET,Hitter Fantasy Score,5.5,CIN,base,Fri 7:10 PM,0,0,0,0,0,2,0,2,0,2,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,4.0,0
+spencer torkelson,IF,DET,Hitter Fantasy Score,5.0,CIN,base,Fri 7:10 PM,0,0,0,0,0,1,0,1,0,3,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,2.0,0
+tj friedl,OF,CIN,Hitter Fantasy Score,5.5,DET,base,Fri 7:10 PM,4,0,0,0,0,1,1,1,0,3,1,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,16.0,1
+kerry carpenter,OF,DET,Hitter Fantasy Score,5.5,CIN,base,Fri 7:10 PM,0,0,0,0,0,0,0,2,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+elly de la cruz,IF,CIN,Hitter Fantasy Score,7.5,DET,base,Fri 7:10 PM,5,0,0,0,0,0,1,0,0,4,1,1,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,17.0,1
+gleyber torres,IF,DET,Hitter Fantasy Score,5.5,CIN,base,Fri 7:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+ronald acuna,OF,ATL,Hits+Runs+RBIs,2.5,COL,base,Fri 7:15 PM,4,0,0,0,1,1,0,0,0,4,0,2,5,1,3,0,0,0,1,,,,,,,,,,,,0,0,5.0,1
+matt olson,IF,ATL,Total Bases,1.5,COL,base,Fri 7:15 PM,4,0,0,0,1,0,3,0,0,4,0,3,5,0,3,1,0,1,1,,,,,,,,,,,,0,0,4.0,1
+matt olson,IF,ATL,Walks,0.5,COL,base,Fri 7:15 PM,4,0,0,0,1,0,3,0,0,4,0,3,5,0,3,1,0,1,1,,,,,,,,,,,,0,0,0.0,0
+eli white,OF,ATL,Hits+Runs+RBIs,1.5,COL,base,Fri 7:15 PM,1,0,0,0,0,0,0,0,0,1,0,1,1,0,1,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+mickey moniak,OF,COL,Hits,0.5,ATL,base,Fri 7:15 PM,3,0,0,0,1,1,0,0,0,3,0,0,4,0,2,0,0,0,1,,,,,,,,,,,,0,0,2.0,1
+ronald acuna,OF,ATL,Hitter Fantasy Score,9.5,COL,base,Fri 7:15 PM,4,0,0,0,1,1,0,0,0,4,0,2,5,1,3,0,0,0,1,,,,,,,,,,,,0,0,22.0,1
+austin riley,IF,ATL,Hitter Fantasy Score,6.5,COL,base,Fri 7:15 PM,1,0,0,0,0,0,0,3,0,5,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+matt olson,IF,ATL,Hitter Fantasy Score,6.5,COL,base,Fri 7:15 PM,4,0,0,0,1,0,3,0,0,4,0,3,5,0,3,1,0,1,1,,,,,,,,,,,,0,0,23.0,1
+marcell ozuna,DH,ATL,Hitter Fantasy Score,5.5,COL,base,Fri 7:15 PM,4,0,0,0,0,0,4,2,0,4,1,1,5,0,1,1,0,0,1,,,,,,,,,,,,0,0,20.0,1
+ryan mcmahon,IF,COL,Hitter Fantasy Score,5.0,ATL,base,Fri 7:15 PM,7,0,0,0,1,1,3,1,0,4,1,1,5,0,3,0,0,0,2,,,,,,,,,,,,0,0,28.0,1
+brenton doyle,OF,COL,Hitter Fantasy Score,5.0,ATL,base,Fri 7:15 PM,0,0,0,0,0,0,0,1,0,5,0,0,5,0,0,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
+hunter goodman,C,COL,Hitter Fantasy Score,5.0,ATL,base,Fri 7:15 PM,2,0,0,0,0,0,1,2,0,5,0,1,5,0,2,0,0,0,0,,,,,,,,,,,,0,0,10.0,1
+jordan beck,OF,COL,Hitter Fantasy Score,5.5,ATL,base,Fri 7:15 PM,1,0,0,0,0,1,0,2,0,4,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+thairo estrada,IF,COL,Hitter Fantasy Score,5.0,ATL,base,Fri 7:15 PM,2,0,0,0,0,0,0,1,0,5,0,0,5,0,2,0,0,1,0,,,,,,,,,,,,0,0,6.0,1
+corey seager,IF,TEX,Total Bases,1.5,CWS,base,Fri 8:05 PM,0,0,0,0,0,2,0,1,0,3,0,0,5,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+marcus semien,IF,TEX,Hits+Runs+RBIs,1.5,CWS,base,Fri 8:05 PM,1,0,0,0,0,0,0,0,0,5,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+marcus semien,IF,TEX,Hitter Strikeouts,0.5,CWS,base,Fri 8:05 PM,1,0,0,0,0,0,0,0,0,5,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jonah heim,C,TEX,Hitter Strikeouts,0.5,CWS,base,Fri 8:05 PM,3,0,0,0,1,0,0,0,0,3,0,1,3,0,2,0,0,0,1,,,,,,,,,,,,0,0,0.0,0
+josh smith,IF,TEX,Hits+Runs+RBIs,1.5,CWS,base,Fri 8:05 PM,5,0,0,0,0,1,1,0,0,5,1,3,6,0,2,0,0,0,1,,,,,,,,,,,,0,0,6.0,1
+josh smith,IF,TEX,Runs,0.5,CWS,base,Fri 8:05 PM,5,0,0,0,0,1,1,0,0,5,1,3,6,0,2,0,0,0,1,,,,,,,,,,,,0,0,3.0,1
+josh jung,IF,TEX,Hits+Runs+RBIs,1.5,CWS,base,Fri 8:05 PM,4,0,0,0,1,1,0,0,0,5,0,1,6,0,3,0,0,0,1,,,,,,,,,,,,0,0,4.0,1
+wyatt langford,OF,TEX,Runs,0.5,CWS,base,Fri 8:05 PM,5,0,0,0,0,2,3,2,0,4,1,2,6,0,2,0,0,0,1,,,,,,,,,,,,0,0,2.0,1
+miguel vargas,IF,CWS,Hits,0.5,TEX,base,Fri 8:05 PM,7,0,0,1,2,1,0,0,0,4,0,2,5,1,3,0,0,0,3,,,,,,,,,,,,0,0,3.0,1
+miguel vargas,IF,CWS,Total Bases,0.5,TEX,base,Fri 8:05 PM,7,0,0,1,2,1,0,0,0,4,0,2,5,1,3,0,0,0,3,,,,,,,,,,,,0,0,7.0,1
+jake burger,IF,TEX,Hits+Runs+RBIs,1.5,CWS,base,Fri 8:05 PM,6,0,0,0,0,0,3,1,0,6,1,2,6,0,3,0,0,0,1,,,,,,,,,,,,0,0,8.0,1
+kyle teel,C,CWS,Hits,0.5,TEX,base,Fri 8:05 PM,0,0,0,0,0,1,0,2,0,2,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+kyle teel,C,CWS,Total Bases,0.5,TEX,base,Fri 8:05 PM,0,0,0,0,0,1,0,2,0,2,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+corey seager,IF,TEX,Hitter Fantasy Score,6.5,CWS,base,Fri 8:05 PM,0,0,0,0,0,2,0,1,0,3,0,0,5,0,0,0,0,0,0,,,,,,,,,,,,0,0,4.0,0
+marcus semien,IF,TEX,Hitter Fantasy Score,5.5,CWS,base,Fri 8:05 PM,1,0,0,0,0,0,0,0,0,5,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+adolis garcia,OF,TEX,Hitter Fantasy Score,3.5,CWS,base,Fri 8:05 PM,4,0,0,0,0,2,3,0,0,4,1,2,6,0,1,0,0,0,1,,,,,,,,,,,,0,0,24.0,1
+josh smith,IF,TEX,Hitter Fantasy Score,5.5,CWS,base,Fri 8:05 PM,5,0,0,0,0,1,1,0,0,5,1,3,6,0,2,0,0,0,1,,,,,,,,,,,,0,0,23.0,1
+wyatt langford,OF,TEX,Hitter Fantasy Score,6.5,CWS,base,Fri 8:05 PM,5,0,0,0,0,2,3,2,0,4,1,2,6,0,2,0,0,0,1,,,,,,,,,,,,0,0,27.0,1
+byron buxton,OF,MIN,Runs,0.5,HOU,base,Fri 8:10 PM,0,0,0,0,0,1,0,1,0,2,0,1,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+byron buxton,OF,MIN,Total Bases,1.5,HOU,base,Fri 8:10 PM,0,0,0,0,0,1,0,1,0,2,0,1,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jose altuve,OF,HOU,Hitter Strikeouts,0.5,MIN,base,Fri 8:10 PM,4,0,0,0,2,1,2,0,0,3,0,1,4,1,2,0,0,0,2,,,,,,,,,,,,0,0,0.0,0
+jose altuve,OF,HOU,Hits+Runs+RBIs,1.5,MIN,base,Fri 8:10 PM,4,0,0,0,2,1,2,0,0,3,0,1,4,1,2,0,0,0,2,,,,,,,,,,,,0,0,5.0,1
+ryan jeffers,C,MIN,Hits+Runs+RBIs,1.5,HOU,base,Fri 8:10 PM,0,0,0,0,0,1,0,2,0,4,0,0,5,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jake meyers,OF,HOU,Hits+Runs+RBIs,1.5,MIN,base,Fri 8:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+christian walker,IF,HOU,Hits+Runs+RBIs,1.5,MIN,base,Fri 8:10 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+ty france,IF,MIN,Hits+Runs+RBIs,1.5,HOU,base,Fri 8:10 PM,1,0,0,0,0,0,0,1,0,4,0,1,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+jonah bride,IF,MIN,Hits,0.5,HOU,base,Fri 8:10 PM,0,0,0,0,0,1,0,2,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jonah bride,IF,MIN,Total Bases,0.5,HOU,base,Fri 8:10 PM,0,0,0,0,0,1,0,2,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+bobby witt,IF,KC,Runs,0.5,OAK,base,Fri 8:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+bobby witt,IF,KC,Total Bases,1.5,OAK,base,Fri 8:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+bobby witt,IF,KC,Hitter Strikeouts,0.5,OAK,base,Fri 8:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+salvador perez,C,KC,Hits+Runs+RBIs,1.5,OAK,base,Fri 8:10 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+maikel garcia,IF,KC,Hitter Strikeouts,0.5,OAK,base,Fri 8:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jac caglianone,IF,KC,Hits+Runs+RBIs,1.5,OAK,base,Fri 8:10 PM,0,0,0,0,0,0,0,2,0,4,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
+christian yelich,OF,MIL,Runs,0.5,STL,base,Fri 8:10 PM,2,0,0,0,0,0,0,1,0,4,0,0,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+lars nootbaar,OF,STL,Walks,0.5,MIL,base,Fri 8:10 PM,0,0,0,0,0,1,0,0,0,3,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,1.0,1
+brice turang,IF,MIL,Hitter Strikeouts,0.5,STL,base,Fri 8:10 PM,2,0,0,0,0,0,1,0,0,4,0,1,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+brice turang,IF,MIL,Hits+Runs+RBIs,1.5,STL,base,Fri 8:10 PM,2,0,0,0,0,0,1,0,0,4,0,1,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,4.0,1
+sal frelick,OF,MIL,Hits+Runs+RBIs,1.5,STL,base,Fri 8:10 PM,3,0,0,0,0,0,2,0,0,4,0,1,4,0,3,0,0,0,0,,,,,,,,,,,,0,0,6.0,1
+rhys hoskins,IF,MIL,Hits+Runs+RBIs,1.5,STL,base,Fri 8:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
+byron buxton,OF,MIN,Hitter Fantasy Score,6.5,HOU,base,Fri 8:10 PM,0,0,0,0,0,1,0,1,0,2,0,1,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,4.0,0
+carlos correa,IF,MIN,Hitter Fantasy Score,5.5,HOU,base,Fri 8:10 PM,1,0,0,0,0,0,1,0,0,3,0,0,3,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+jose altuve,OF,HOU,Hitter Fantasy Score,6.5,MIN,base,Fri 8:10 PM,4,0,0,0,2,1,2,0,0,3,0,1,4,1,2,0,0,0,2,,,,,,,,,,,,0,0,23.0,1
+jeremy pena,IF,HOU,Hitter Fantasy Score,7.5,MIN,base,Fri 8:10 PM,2,0,0,0,0,0,0,0,0,4,0,1,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,8.0,1
+jake meyers,OF,HOU,Hitter Fantasy Score,4.5,MIN,base,Fri 8:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+yainer diaz,C,HOU,Hitter Fantasy Score,5.5,MIN,base,Fri 8:10 PM,4,0,0,0,1,0,1,0,0,4,0,0,4,0,3,0,0,0,1,,,,,,,,,,,,0,0,13.0,1
+christian walker,IF,HOU,Hitter Fantasy Score,5.0,MIN,base,Fri 8:10 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+cam smith,IF,HOU,Hitter Fantasy Score,3.0,MIN,base,Fri 8:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+bobby witt,IF,KC,Hitter Fantasy Score,7.5,OAK,base,Fri 8:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+vinnie pasquantino,IF,KC,Hitter Fantasy Score,6.5,OAK,base,Fri 8:10 PM,1,0,0,0,0,0,0,0,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+salvador perez,C,KC,Hitter Fantasy Score,5.0,OAK,base,Fri 8:10 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+maikel garcia,IF,KC,Hitter Fantasy Score,6.5,OAK,base,Fri 8:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jonathan india,IF,KC,Hitter Fantasy Score,5.5,OAK,base,Fri 8:10 PM,1,0,0,0,0,0,0,0,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+jac caglianone,IF,KC,Hitter Fantasy Score,5.0,OAK,base,Fri 8:10 PM,0,0,0,0,0,0,0,2,0,4,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,0.0,0
+christian yelich,OF,MIL,Hitter Fantasy Score,6.5,STL,base,Fri 8:10 PM,2,0,0,0,0,0,0,1,0,4,0,0,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,6.0,0
+nolan arenado,IF,STL,Hitter Fantasy Score,4.0,MIL,base,Fri 8:10 PM,1,0,0,0,0,0,0,0,0,3,0,0,3,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+nolan gorman,IF,STL,Hitter Fantasy Score,2.5,MIL,base,Fri 8:10 PM,0,0,0,0,0,1,0,1,0,2,0,0,3,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+lars nootbaar,OF,STL,Hitter Fantasy Score,5.5,MIL,base,Fri 8:10 PM,0,0,0,0,0,1,0,0,0,3,0,0,4,0,0,0,0,1,0,,,,,,,,,,,,0,0,2.0,0
+alec burleson,IF,STL,Hitter Fantasy Score,4.5,MIL,base,Fri 8:10 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+william contreras,C,MIL,Hitter Fantasy Score,5.0,STL,base,Fri 8:10 PM,0,0,0,0,0,0,0,2,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+willson contreras,IF,STL,Hitter Fantasy Score,4.5,MIL,base,Fri 8:10 PM,1,0,0,0,0,1,0,1,0,3,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,1
+masyn winn,IF,STL,Hitter Fantasy Score,5.0,MIL,base,Fri 8:10 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jackson chourio,OF,MIL,Hitter Fantasy Score,6.0,STL,base,Fri 8:10 PM,4,0,0,0,0,0,2,0,0,4,1,1,4,0,1,0,0,1,1,,,,,,,,,,,,0,0,16.0,1
+manny machado,IF,SD,Total Bases,1.5,AZ,base,Fri 9:40 PM,0,0,0,0,0,0,0,1,0,4,0,1,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jake cronenworth,IF,SD,Hits+Runs+RBIs,1.5,AZ,base,Fri 9:40 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+xander bogaerts,IF,SD,Hits+Runs+RBIs,1.5,AZ,base,Fri 9:40 PM,1,0,0,0,0,0,0,1,0,4,0,1,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+fernando tatis,OF,SD,Total Bases,1.5,AZ,base,Fri 9:40 PM,0,0,0,0,0,1,0,0,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+lourdes gurriel,OF,AZ,Hitter Strikeouts,0.5,SD,base,Fri 9:40 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+corbin carroll,OF,AZ,Total Bases,1.5,SD,base,Fri 9:40 PM,1,0,0,0,0,0,0,0,0,4,0,1,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+ketel marte,IF,AZ,Runs,0.5,SD,base,Fri 9:40 PM,2,0,0,0,0,0,0,0,0,4,0,1,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+ketel marte,IF,AZ,Hitter Strikeouts,0.5,SD,base,Fri 9:40 PM,2,0,0,0,0,0,0,0,0,4,0,1,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+ketel marte,IF,AZ,Walks,0.5,SD,base,Fri 9:40 PM,2,0,0,0,0,0,0,0,0,4,0,1,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+eugenio suarez,IF,AZ,Hits+Runs+RBIs,1.5,SD,base,Fri 9:40 PM,6,0,0,0,0,0,4,1,0,4,1,1,4,0,3,0,0,0,1,,,,,,,,,,,,0,0,8.0,1
+gabriel moreno,C,AZ,Hits+Runs+RBIs,1.5,SD,base,Fri 9:40 PM,4,0,0,0,0,0,3,1,0,4,1,1,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,5.0,1
+geraldo perdomo,IF,AZ,Hitter Strikeouts,0.5,SD,base,Fri 9:40 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+geraldo perdomo,IF,AZ,Hits+Runs+RBIs,1.5,SD,base,Fri 9:40 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+alek thomas,OF,AZ,Hitter Strikeouts,0.5,SD,base,Fri 9:40 PM,2,0,0,0,1,0,0,0,0,4,0,0,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,0.0,0
+alek thomas,OF,AZ,Hits+Runs+RBIs,1.5,SD,base,Fri 9:40 PM,2,0,0,0,1,0,0,0,0,4,0,0,4,0,1,0,0,0,1,,,,,,,,,,,,0,0,1.0,0
+tyler wade,IF,SD,Total Bases,0.5,AZ,base,Fri 9:40 PM,0,0,0,0,0,1,0,1,0,1,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+tyler wade,IF,SD,Hits,0.5,AZ,base,Fri 9:40 PM,0,0,0,0,0,1,0,1,0,1,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jackson merrill,OF,SD,Total Bases,1.5,AZ,base,Fri 9:40 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+luis arraez,IF,SD,Total Bases,1.5,AZ,base,Fri 9:40 PM,0,0,0,0,0,1,0,0,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+gavin sheets,IF,SD,Hits+Runs+RBIs,1.5,AZ,base,Fri 9:40 PM,1,0,0,0,0,0,1,0,0,3,0,0,4,0,1,1,0,0,0,,,,,,,,,,,,0,0,2.0,1
+manny machado,IF,SD,Hitter Fantasy Score,7.0,AZ,base,Fri 9:40 PM,0,0,0,0,0,0,0,1,0,4,0,1,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+fernando tatis,OF,SD,Hitter Fantasy Score,8.0,AZ,base,Fri 9:40 PM,0,0,0,0,0,1,0,0,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+lourdes gurriel,OF,AZ,Hitter Fantasy Score,5.0,SD,base,Fri 9:40 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+corbin carroll,OF,AZ,Hitter Fantasy Score,8.5,SD,base,Fri 9:40 PM,1,0,0,0,0,0,0,0,0,4,0,1,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+ketel marte,IF,AZ,Hitter Fantasy Score,7.5,SD,base,Fri 9:40 PM,2,0,0,0,0,0,0,0,0,4,0,1,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,8.0,1
+eugenio suarez,IF,AZ,Hitter Fantasy Score,4.5,SD,base,Fri 9:40 PM,6,0,0,0,0,0,4,1,0,4,1,1,4,0,3,0,0,0,1,,,,,,,,,,,,0,0,26.0,1
+geraldo perdomo,IF,AZ,Hitter Fantasy Score,5.5,SD,base,Fri 9:40 PM,0,0,0,0,0,0,0,1,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+jackson merrill,OF,SD,Hitter Fantasy Score,7.0,AZ,base,Fri 9:40 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+luis arraez,IF,SD,Hitter Fantasy Score,6.0,AZ,base,Fri 9:40 PM,0,0,0,0,0,1,0,0,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+josh naylor,IF,AZ,Hitter Fantasy Score,5.0,SD,base,Fri 9:40 PM,2,0,0,0,0,1,0,1,0,3,0,1,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,10.0,1
+mike yastrzemski,OF,SF,Hits,0.5,LAD,base,Fri 10:10 PM,1,0,0,0,0,2,0,1,0,3,0,2,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+mike yastrzemski,OF,SF,Total Bases,0.5,LAD,base,Fri 10:10 PM,1,0,0,0,0,2,0,1,0,3,0,2,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+will smith,C,LAD,Hits+Runs+RBIs,1.5,SF,base,Fri 10:10 PM,2,0,0,0,0,1,1,1,0,4,0,1,5,0,2,0,0,0,0,,,,,,,,,,,,0,0,4.0,1
+andy pages,OF,LAD,Hits+Runs+RBIs,1.5,SF,base,Fri 10:10 PM,1,0,0,0,0,0,0,1,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,0
+casey schmitt,IF,SF,Total Bases,0.5,LAD,base,Fri 10:10 PM,1,0,0,0,0,1,0,1,0,4,0,0,5,0,1,0,0,1,0,,,,,,,,,,,,0,0,1.0,1
+casey schmitt,IF,SF,Hits,0.5,LAD,base,Fri 10:10 PM,1,0,0,0,0,1,0,1,0,4,0,0,5,0,1,0,0,1,0,,,,,,,,,,,,0,0,1.0,1
+tyler fitzgerald,IF,SF,Total Bases,0.5,LAD,base,Fri 10:10 PM,0,0,0,0,0,0,1,0,0,3,0,0,4,0,0,1,0,1,0,,,,,,,,,,,,0,0,0.0,0
+tyler fitzgerald,IF,SF,Hits,0.5,LAD,base,Fri 10:10 PM,0,0,0,0,0,0,1,0,0,3,0,0,4,0,0,1,0,1,0,,,,,,,,,,,,0,0,0.0,0
+teoscar hernandez,OF,LAD,Hits+Runs+RBIs,1.5,SF,base,Fri 10:10 PM,4,0,0,0,0,0,3,2,0,5,1,1,5,0,1,0,0,0,1,,,,,,,,,,,,0,0,5.0,1
+willy adames,IF,SF,Total Bases,0.5,LAD,base,Fri 10:10 PM,1,0,0,0,0,1,0,2,0,4,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+willy adames,IF,SF,Hits,0.5,LAD,base,Fri 10:10 PM,1,0,0,0,0,1,0,2,0,4,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,1.0,1
+dominic smith,IF,SF,Total Bases,0.5,LAD,base,Fri 10:10 PM,6,0,0,0,0,1,3,1,0,4,1,2,5,0,3,0,0,0,1,,,,,,,,,,,,0,0,6.0,1
+dominic smith,IF,SF,Hits,0.5,LAD,base,Fri 10:10 PM,6,0,0,0,0,1,3,1,0,4,1,2,5,0,3,0,0,0,1,,,,,,,,,,,,0,0,3.0,1
+andrew knizner,C,SF,Total Bases,0.5,LAD,base,Fri 10:10 PM,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+andrew knizner,C,SF,Hits,0.5,LAD,base,Fri 10:10 PM,0,0,0,0,0,0,0,0,0,2,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+julio rodriguez,OF,SEA,Hits+Runs+RBIs,1.5,CLE,base,Fri 10:10 PM,5,0,0,0,2,0,0,0,0,4,0,1,4,0,3,0,0,0,2,,,,,,,,,,,,0,0,4.0,1
+jose ramirez,IF,CLE,Hits+Runs+RBIs,1.5,SEA,base,Fri 10:10 PM,2,0,0,0,1,0,1,0,0,4,0,1,5,1,1,0,1,1,1,,,,,,,,,,,,0,0,3.0,1
+steven kwan,OF,CLE,Hits+Runs+RBIs,1.5,SEA,base,Fri 10:10 PM,0,0,0,0,0,1,0,0,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+nolan jones,OF,CLE,Total Bases,0.5,SEA,base,Fri 10:10 PM,0,1,0,0,0,1,0,1,0,2,0,0,4,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
+nolan jones,OF,CLE,Hits,0.5,SEA,base,Fri 10:10 PM,0,1,0,0,0,1,0,1,0,2,0,0,4,0,0,0,1,0,0,,,,,,,,,,,,0,0,0.0,0
+bo naylor,C,CLE,Hits,0.5,SEA,base,Fri 10:10 PM,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+bo naylor,C,CLE,Total Bases,0.5,SEA,base,Fri 10:10 PM,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+dominic canzone,OF,SEA,Total Bases,0.5,CLE,base,Fri 10:10 PM,0,0,0,0,0,1,0,1,0,1,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+dominic canzone,OF,SEA,Hits,0.5,CLE,base,Fri 10:10 PM,0,0,0,0,0,1,0,1,0,1,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+angel martinez,OF,CLE,Hits+Runs+RBIs,1.5,SEA,base,Fri 10:10 PM,3,0,0,0,0,0,1,1,0,4,0,3,4,0,3,0,0,0,0,,,,,,,,,,,,0,0,7.0,1
+rowdy tellez,IF,SEA,Total Bases,0.5,CLE,base,Fri 10:10 PM,5,0,0,0,0,0,1,1,0,5,1,1,5,0,2,0,0,1,1,,,,,,,,,,,,0,0,5.0,1
+rowdy tellez,IF,SEA,Hits,0.5,CLE,base,Fri 10:10 PM,5,0,0,0,0,0,1,1,0,5,1,1,5,0,2,0,0,1,1,,,,,,,,,,,,0,0,2.0,1
+cole young,IF,SEA,Hits,0.5,CLE,base,Fri 10:10 PM,2,0,0,0,0,0,0,1,0,4,0,0,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+cole young,IF,SEA,Total Bases,0.5,CLE,base,Fri 10:10 PM,2,0,0,0,0,0,0,1,0,4,0,0,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,2.0,1
+wilmer flores,IF,SF,Hitter Fantasy Score,4.5,LAD,base,Fri 10:10 PM,3,0,0,0,1,0,0,1,0,5,0,1,5,0,2,0,0,0,1,,,,,,,,,,,,0,0,10.0,1
+freddie freeman,IF,LAD,Hitter Fantasy Score,6.5,SF,base,Fri 10:10 PM,1,0,0,0,0,1,0,1,0,4,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,7.0,1
+mookie betts,IF,LAD,Hitter Fantasy Score,6.5,SF,base,Fri 10:10 PM,1,0,0,0,0,0,0,1,0,5,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,3.0,0
+heliot ramos,OF,SF,Hitter Fantasy Score,5.0,LAD,base,Fri 10:10 PM,1,0,0,0,0,1,2,2,0,4,0,0,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,9.0,1
+shohei ohtani,P/DH,LAD,Hitter Fantasy Score,9.5,SF,base,Fri 10:10 PM,3,0,0,1,0,0,0,2,0,5,0,1,5,0,1,0,0,0,1,,,,,,,,,,,,0,0,10.0,1
+jung hoo lee,OF,SF,Hitter Fantasy Score,5.5,LAD,base,Fri 10:10 PM,1,0,0,0,0,1,0,0,0,4,0,1,5,0,1,0,0,0,0,,,,,,,,,,,,0,0,7.0,1
+julio rodriguez,OF,SEA,Hitter Fantasy Score,7.5,CLE,base,Fri 10:10 PM,5,0,0,0,2,0,0,0,0,4,0,1,4,0,3,0,0,0,2,,,,,,,,,,,,0,0,15.0,1
+jose ramirez,IF,CLE,Hitter Fantasy Score,6.5,SEA,base,Fri 10:10 PM,2,0,0,0,1,0,1,0,0,4,0,1,5,1,1,0,1,1,1,,,,,,,,,,,,0,0,16.0,1
+steven kwan,OF,CLE,Hitter Fantasy Score,5.5,SEA,base,Fri 10:10 PM,0,0,0,0,0,1,0,0,0,3,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,2.0,0
+jp crawford,IF,SEA,Hitter Fantasy Score,5.5,CLE,base,Fri 10:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+cal raleigh,C,SEA,Hitter Fantasy Score,6.5,CLE,base,Fri 10:10 PM,1,1,0,0,0,1,0,0,0,3,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,0
+jorge polanco,IF,SEA,Hitter Fantasy Score,5.0,CLE,base,Fri 10:10 PM,1,0,0,0,0,0,1,0,0,4,0,0,4,0,1,0,0,0,0,,,,,,,,,,,,0,0,5.0,1
+randy arozarena,OF,SEA,Hitter Fantasy Score,5.0,CLE,base,Fri 10:10 PM,0,0,0,0,0,0,0,0,0,4,0,0,4,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+rowdy tellez,IF,SEA,Hitter Fantasy Score,4.5,CLE,base,Fri 10:10 PM,5,0,0,0,0,0,1,1,0,5,1,1,5,0,2,0,0,1,1,,,,,,,,,,,,0,0,17.0,1
+ben williamson,IF,SEA,Hitter Fantasy Score,3.0,CLE,base,Fri 10:10 PM,0,0,0,0,0,0,0,1,0,2,0,0,2,0,0,0,0,0,0,,,,,,,,,,,,0,0,0.0,0
+cole young,IF,SEA,Hitter Fantasy Score,3.0,CLE,base,Fri 10:10 PM,2,0,0,0,0,0,0,1,0,4,0,0,4,0,2,0,0,0,0,,,,,,,,,,,,0,0,6.0,1
