@@ -7,6 +7,7 @@ import math
 import re
 from datetime import datetime, timedelta
 import sys
+import json
 
 app = Flask(__name__)
 
@@ -18,6 +19,7 @@ PROJECT_ROOT       = os.path.abspath(os.path.join(os.path.dirname(__file__), '..
 MLB_RESULTS_DIR    = os.path.join(PROJECT_ROOT, 'MLB_Results')
 PROP_ACCURACY_FILE = os.path.join(MLB_RESULTS_DIR, 'MLB_Prop_Accuracy.csv')
 
+
 def _safe_int(v):
     try:
         if v is None or (isinstance(v, float) and math.isnan(v)):
@@ -25,6 +27,7 @@ def _safe_int(v):
         return int(v)
     except Exception:
         return None
+
 
 def _safe_float(v):
     try:
@@ -38,6 +41,22 @@ def _safe_float(v):
 def dashboard():
     return render_template('dashboard.html')
 
+@app.route('/api/mlb-insights')
+def mlb_insights():
+    """
+    Return just the 'prop_types' section of your mlb_insights_db.json
+    so the front end can populate the dropdown.
+    """
+    INSIGHTS_FILE = os.path.join(MLB_RESULTS_DIR, 'mlb_insights_db.json')
+    try:
+        with open(INSIGHTS_FILE, 'r') as f:
+            data = json.load(f)
+        prop_types = data.get('prop_types', {})
+        return jsonify(success=True, insights=prop_types)
+    except Exception as e:
+        app.logger.error(f"Error loading MLB insights: {e}")
+        return jsonify(success=False, error=str(e)), 500
+
 @app.route('/api/dashboard-data')
 def dashboard_data():
     try:
@@ -50,13 +69,15 @@ def dashboard_data():
         acc_df['Date'] = pd.to_datetime(acc_df['Date'])
         acc_df = acc_df.sort_values('Date', ascending=False)
 
-        # Pick yesterday's row (or fallback to latest)
-        today     = datetime.now().date()
-        yesterday = today - timedelta(days=1)
-        ydf       = acc_df[acc_df['Date'].dt.date == yesterday]
-        row       = ydf.iloc[0] if not ydf.empty else acc_df.iloc[0]
+        # Always use the most recent completed day < today for "Last Night's Performance"
+        today = datetime.now().date()
+        completed_days = acc_df[acc_df['Date'].dt.date < today]
+        if not completed_days.empty:
+            row = completed_days.iloc[0]
+        else:
+            row = acc_df.iloc[0]  # fallback: latest row if all dates are in the future (shouldn't happen)
 
-        # Build "latest" payload
+        # Build "latest" payload (the "last night's" box on dashboard)
         latest = {
             'latest_date': row['Date'].strftime('%Y-%m-%d'),
             'overall': {
@@ -70,7 +91,7 @@ def dashboard_data():
             'historical_data': []
         }
 
-        # Fill prop_types …
+        # Fill prop_types (accuracy breakdown by prop)
         prop_list = [
             'Hits+Runs+RBIs','Hitter_Strikeouts','Total_Bases',
             'Hitter_Fantasy_Score','Hits','Walks','Runs',
@@ -86,7 +107,7 @@ def dashboard_data():
                     'llm_accuracy': _safe_float(row.get(f'{p}_LLM_Accuracy')),
                 }
 
-        # Last 30 days of history
+        # Last 30 days of history for the bar chart
         for _, r in acc_df.head(30).iterrows():
             latest['historical_data'].append({
                 'date':               r['Date'].strftime('%Y-%m-%d'),
@@ -95,6 +116,21 @@ def dashboard_data():
                 'llm_accuracy':       _safe_float(r.get('LLM_Accuracy')),
                 'agreement_accuracy': _safe_float(r.get('Agreement_Accuracy')),
             })
+
+        # ── Load today's generated betslips ───────────────────────
+        bets_file = os.path.join(
+            MLB_RESULTS_DIR,
+            f"{today}_generated_betslips.json"
+        )
+        if os.path.exists(bets_file):
+            try:
+                with open(bets_file, 'r') as bf:
+                    latest['betslips'] = json.load(bf)
+            except Exception as e:
+                app.logger.error(f"Error loading betslips {bets_file}: {e}")
+                latest['betslips'] = []
+        else:
+            latest['betslips'] = []
 
         # ── Gather all prior prediction files ─────────────────
         pred_files = glob.glob(os.path.join(MLB_RESULTS_DIR, "*_mlb_predictions.csv"))
@@ -110,26 +146,19 @@ def dashboard_data():
                 except Exception:
                     pass
 
-        # ── Filter & random-sample 5 completed, agreeing, confident picks ──
+        # ── Filter & sample recent high confidence predictions ──
         preds = []
         if dfs:
             all_preds = pd.concat(dfs, ignore_index=True)
-
-            # drop rows without an Actual_Result
             completed = all_preds[all_preds['Actual_Result'].notna()].copy()
-
-            # ensure RF_Confidence is numeric, LLM_Confidence lowercase
             completed['RF_Confidence']  = pd.to_numeric(completed['RF_Confidence'],  errors='coerce')
             completed['LLM_Confidence'] = completed['LLM_Confidence'].astype(str).str.lower()
 
-            # filter by RF ≥0.6, agreement flag True, LLM confidence medium/high
             ap = completed[
                 (completed['RF_Confidence'] >= 0.75) &
                 (completed['LLM_RF_Agreement'] == True) &
                 (completed['LLM_Confidence'].isin(['medium', 'high']))
             ]
-
-            # take all matching rows
             if not ap.empty:
                 preds = (
                     ap[[
@@ -144,18 +173,12 @@ def dashboard_data():
                     .to_dict(orient='records')
                 )
 
-        # … after you build preds …
         latest['recent_predictions'] = preds
-
-        # compute summary
         total = len(preds)
         correct = sum(1 for p in preds if p.get('Result') is True)
-        latest['recent_summary'] = {
-            'correct': correct,
-            'total': total
-        }
+        latest['recent_summary'] = {'correct': correct, 'total': total}
 
-        # bump `latest_date` to newest prediction-file date (if any)
+        # bump `latest_date` to newest prediction-file date (if any, for info/display)
         pred_dates = []
         for path in pred_files:
             m = re.match(r"(\d{4}-\d{2}-\d{2})_mlb_predictions\.csv$", os.path.basename(path))
