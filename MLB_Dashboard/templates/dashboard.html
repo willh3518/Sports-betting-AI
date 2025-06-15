@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>MLB Dashboard</title>
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,112 +17,80 @@
     <div class="row header-row">
       <div class="col-12">
         <h1 class="dashboard-title">
-          MLB Dashboard
-          <span id="last-updated" style="display:none"></span>
+          MLB Dashboard <span id="last-updated" style="display:none"></span>
         </h1>
       </div>
     </div>
 
-    <!-- Main content area -->
     <div class="row main-content">
-
       <!-- Left column -->
       <div class="col-md-3">
         <h2 class="sub-title">Last Night's Performance</h2>
         <div id="last-night-date" class="text-muted mb-3"></div>
-
-        <!-- Metrics cards -->
-        <div class="row">
-          <div class="col-12">
-            <div class="metric-card overall">
-              <div class="metric-label">Random Forest Model</div>
-              <div class="metric-value" id="rf-accuracy">--</div>
-              <div class="metric-details">
-                <span id="total-predictions">--</span> predictions
-              </div>
-            </div>
-          </div>
+        <!-- RF, LLM, Agreement cards… -->
+        <div class="metric-card overall mb-3">
+          <div class="metric-label">Random Forest Model</div>
+          <div class="metric-value" id="rf-accuracy">--</div>
+          <div class="metric-details"><span id="total-predictions">--</span> predictions</div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="metric-card llm">
-              <div class="metric-label">LLM Model</div>
-              <div class="metric-value" id="llm-accuracy">--</div>
-              <div class="metric-details">
-                <span id="total-predictions-llm">--</span> predictions
-              </div>
-            </div>
-          </div>
+        <div class="metric-card llm mb-3">
+          <div class="metric-label">LLM Model</div>
+          <div class="metric-value" id="llm-accuracy">--</div>
+          <div class="metric-details"><span id="total-predictions-llm">--</span> predictions</div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="metric-card agreement">
-              <div class="metric-label">Model Agreement</div>
-              <div class="metric-value" id="agreement-accuracy">--</div>
-              <div class="metric-details">
-                <span id="agreement-count">--</span> agreements
-              </div>
-            </div>
-          </div>
+        <div class="metric-card agreement mb-3">
+          <div class="metric-label">Model Agreement</div>
+          <div class="metric-value" id="agreement-accuracy">--</div>
+          <div class="metric-details"><span id="agreement-count">--</span> agreements</div>
         </div>
 
         <!-- Prop type table -->
-        <div class="row">
-          <div class="col-12">
-            <div class="table-container prop-types">
-              <h5>Prop Type Accuracy</h5>
-              <table class="table table-sm">
-                <thead>
-                  <tr><th>Prop Type</th><th>RF</th><th>LLM</th></tr>
-                </thead>
-                <tbody id="prop-types-table"></tbody>
-              </table>
-            </div>
-          </div>
+        <div class="table-container prop-types">
+          <h5>Prop Type Accuracy</h5>
+          <table class="table table-sm">
+            <thead>
+              <tr><th>Prop Type</th><th>RF</th><th>LLM</th></tr>
+            </thead>
+            <tbody id="prop-types-table"></tbody>
+          </table>
         </div>
       </div>
 
-      <!-- Middle column - chart + history + betslips -->
+      <!-- Middle column -->
       <div class="col-md-5">
-        <div class="chart-container">
+        <!-- Historical chart -->
+        <div class="chart-container mb-4">
           <h5>Historical Performance</h5>
           <canvas id="historical-chart"></canvas>
         </div>
-
-        <div class="table-container mt-3" style="max-height:200px; overflow-y:auto;">
+        <!-- History table -->
+        <div class="table-container mb-4" style="max-height:200px; overflow-y:auto;">
           <h5>All Dates History</h5>
           <table class="table table-sm">
             <thead>
-              <tr>
-                <th>Date</th><th>Total</th><th>RF %</th><th>LLM %</th><th>Agree %</th>
-              </tr>
+              <tr><th>Date</th><th>Total</th><th>RF %</th><th>LLM %</th><th>Agree %</th></tr>
             </thead>
             <tbody id="historical-table-body"></tbody>
           </table>
         </div>
 
-        <!-- Updated Betslips Card UI -->
-        <div class="table-container mt-3">
-  <h5>Today's Betslips</h5>
-  <div id="betslips-card-container" class="betslips-card-container"></div>
+        <!-- Today's Betslips + Insights -->
+        <div class="table-container">
+          <h5>Today's Betslips</h5>
+          <div id="betslips-card-container" class="betslips-card-container"></div>
 
-  <!-- MLB Insights Dropdown -->
           <div class="mt-3">
             <label for="insights-select" class="form-label">View Prop-Type Insights:</label>
-            <select id="insights-select" class="form-select">
+            <select id="insights-select" class="form-select mb-2">
               <option value="" selected>Select a prop type</option>
             </select>
 
-            <label for="insights-date-select" class="form-label mt-2">Select Date:</label>
-            <select id="insights-date-select" class="form-select" disabled>
-              <option value="" selected>Select a date</option>
+            <!-- NEW: date picker -->
+            <label for="insights-date-select" class="form-label">Select Insight Date:</label>
+            <select id="insights-date-select" class="form-select mb-2 d-none">
+            <option value="" selected>Select a date</option>
             </select>
-
-            <div
-              id="insights-display"
-              class="mt-2 alert alert-secondary d-none"
-              style="white-space: pre-wrap;"
-            ></div>
+            <div id="insights-display" class="alert alert-secondary d-none" style="white-space: pre-wrap;"></div>
           </div>
         </div>
       </div>
@@ -130,16 +98,10 @@
       <!-- Right column -->
       <div class="col-md-4">
         <div class="table-container full-height">
-          <h5>
-            Recent High Confidence Predictions
-            (Random Forest Confidence > 75%, RF & LLM Agree, LLM Confidence ≥ Medium)
-          </h5>
+          <h5>Recent High Confidence Predictions<br/><small>(RF ≥75%, RF & LLM Agree, LLM ≥Medium)</small></h5>
           <table class="table table-sm">
             <thead>
-              <tr>
-                <th>Player</th><th>Prop</th><th>Value</th>
-                <th>Pred</th><th>Conf</th><th>Result</th>
-              </tr>
+              <tr><th>Player</th><th>Prop</th><th>Value</th><th>Pred</th><th>Conf</th><th>Result</th></tr>
             </thead>
             <tbody id="recent-predictions-table"></tbody>
             <tfoot>
@@ -151,10 +113,8 @@
           </table>
         </div>
       </div>
-
     </div>
 
-    <!-- Status message -->
     <div id="status-message" class="status-message"></div>
   </div>
 

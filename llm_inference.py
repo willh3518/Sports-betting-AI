@@ -4,7 +4,6 @@ import json
 import os
 from datetime import datetime
 import logging
-from openai import OpenAI
 
 # Configure logging
 logging.basicConfig(
@@ -16,7 +15,6 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
-
 
 # Config
 RESULTS_DIR = "MLB_Results"

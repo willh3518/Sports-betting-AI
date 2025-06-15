@@ -1,207 +1,156 @@
-# MLB_Dashboard/app.py
-from flask import Flask, render_template, jsonify
-import pandas as pd
-import os
 import glob
-import math
-import re
-from datetime import datetime, timedelta
+import os
 import sys
+import math
 import json
+import pandas as pd
+from flask import Flask, render_template, jsonify
 
 app = Flask(__name__)
-
-# Add parent directory to path to access project files
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+MLB_RESULTS_DIR = os.path.join(os.path.dirname(__file__), '..', 'MLB_Results')
 
-# Define paths relative to the project root
-PROJECT_ROOT       = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-MLB_RESULTS_DIR    = os.path.join(PROJECT_ROOT, 'MLB_Results')
-PROP_ACCURACY_FILE = os.path.join(MLB_RESULTS_DIR, 'MLB_Prop_Accuracy.csv')
+def find_latest_predictions_file():
+    pattern = os.path.join(MLB_RESULTS_DIR, "*_mlb_predictions.csv")
+    files = glob.glob(pattern)
+    return max(files) if files else None
 
-
-def _safe_int(v):
-    try:
-        if v is None or (isinstance(v, float) and math.isnan(v)):
-            return None
-        return int(v)
-    except Exception:
-        return None
-
-
-def _safe_float(v):
-    try:
-        if v is None or (isinstance(v, float) and math.isnan(v)):
-            return None
-        return float(v)
-    except Exception:
-        return None
+def _sanitize_records(records):
+    """
+    Replace any NaN/Inf in a list of dicts with None so JSON stays valid.
+    """
+    clean_list = []
+    for rec in records:
+        clean = {}
+        for k, v in rec.items():
+            if isinstance(v, float) and (math.isnan(v) or math.isinf(v)):
+                clean[k] = None
+            else:
+                clean[k] = v
+        clean_list.append(clean)
+    return clean_list
 
 @app.route('/')
 def dashboard():
     return render_template('dashboard.html')
 
-@app.route('/api/mlb-insights')
-def mlb_insights():
-    """
-    Return just the 'prop_types' section of your mlb_insights_db.json
-    so the front end can populate the dropdown.
-    """
-    INSIGHTS_FILE = os.path.join(MLB_RESULTS_DIR, 'mlb_insights_db.json')
-    try:
-        with open(INSIGHTS_FILE, 'r') as f:
-            data = json.load(f)
-        prop_types = data.get('prop_types', {})
-        return jsonify(success=True, insights=prop_types)
-    except Exception as e:
-        app.logger.error(f"Error loading MLB insights: {e}")
-        return jsonify(success=False, error=str(e)), 500
-
 @app.route('/api/dashboard-data')
 def dashboard_data():
-    try:
-        # ── Load accuracy CSV ───────────────────────────────
-        if not os.path.exists(PROP_ACCURACY_FILE):
-            return jsonify(success=False,
-                           error=f'Accuracy file not found: {PROP_ACCURACY_FILE}')
+    # ── Load accuracy summary CSV ───────────────────────────────
+    acc_path = os.path.join(MLB_RESULTS_DIR, "MLB_Prop_Accuracy.csv")
+    if not os.path.exists(acc_path):
+        return jsonify(success=False, error="MLB_Prop_Accuracy.csv not found"), 500
+    acc_df = pd.read_csv(acc_path)
 
-        acc_df = pd.read_csv(PROP_ACCURACY_FILE)
-        acc_df['Date'] = pd.to_datetime(acc_df['Date'])
-        acc_df = acc_df.sort_values('Date', ascending=False)
-
-        # Always use the most recent completed day < today for "Last Night's Performance"
-        today = datetime.now().date()
-        completed_days = acc_df[acc_df['Date'].dt.date < today]
-        if not completed_days.empty:
-            row = completed_days.iloc[0]
-        else:
-            row = acc_df.iloc[0]  # fallback: latest row if all dates are in the future (shouldn't happen)
-
-        # Build "latest" payload (the "last night's" box on dashboard)
-        latest = {
-            'latest_date': row['Date'].strftime('%Y-%m-%d'),
-            'overall': {
-                'total':              _safe_int(row.get('Total_Predictions')),
-                'rf_accuracy':        _safe_float(row.get('RF_Accuracy')),
-                'llm_accuracy':       _safe_float(row.get('LLM_Accuracy')),
-                'agreement_accuracy': _safe_float(row.get('Agreement_Accuracy')),
-                'agreement_count':    _safe_int(row.get('Agreement_Count')),
-            },
-            'prop_types': {},
-            'historical_data': []
+    # ── 1) Historical performance (one row per date) ────────────
+    history = [
+        {
+            'date': row['Date'],
+            'total': int(row['Total_Predictions']),
+            'rf_accuracy': float(row['RF_Accuracy']),
+            'llm_accuracy': float(row['LLM_Accuracy']),
+            'agreement_accuracy': float(row['Agreement_Accuracy'])
         }
+        for _, row in acc_df.iterrows()
+    ]
 
-        # Fill prop_types (accuracy breakdown by prop)
-        prop_list = [
-            'Hits+Runs+RBIs','Hitter_Strikeouts','Total_Bases',
-            'Hitter_Fantasy_Score','Hits','Walks','Runs',
-            'Pitcher_Strikeouts','Pitches_Thrown','Pitching_Outs',
-            'Pitcher_Fantasy_Score','Earned_Runs_Allowed'
-        ]
-        for p in prop_list:
-            cnt = row.get(f'{p}_Count')
-            if _safe_int(cnt) and _safe_int(cnt) > 0:
-                latest['prop_types'][p] = {
-                    'count':        _safe_int(cnt),
-                    'rf_accuracy':  _safe_float(row.get(f'{p}_RF_Accuracy')),
-                    'llm_accuracy': _safe_float(row.get(f'{p}_LLM_Accuracy')),
-                }
+    # ── 2) Overall metrics from the latest date ─────────────────
+    latest_acc = acc_df.iloc[-1]
+    latest_date = latest_acc['Date']
+    overall = {
+        'total': int(latest_acc['Total_Predictions']),
+        'rf_accuracy': float(latest_acc['RF_Accuracy']),
+        'llm_accuracy': float(latest_acc['LLM_Accuracy']),
+        'agreement_accuracy': float(latest_acc['Agreement_Accuracy']),
+        'agreement_count': int(latest_acc['Agreement_Count'])
+    }
 
-        # Last 30 days of history for the bar chart
-        for _, r in acc_df.head(30).iterrows():
-            latest['historical_data'].append({
-                'date':               r['Date'].strftime('%Y-%m-%d'),
-                'total':              _safe_int(r.get('Total_Predictions')),
-                'rf_accuracy':        _safe_float(r.get('RF_Accuracy')),
-                'llm_accuracy':       _safe_float(r.get('LLM_Accuracy')),
-                'agreement_accuracy': _safe_float(r.get('Agreement_Accuracy')),
-            })
-
-        # ── Load today's generated betslips ───────────────────────
-        bets_file = os.path.join(
-            MLB_RESULTS_DIR,
-            f"{today}_generated_betslips.json"
-        )
-        if os.path.exists(bets_file):
-            try:
-                with open(bets_file, 'r') as bf:
-                    latest['betslips'] = json.load(bf)
-            except Exception as e:
-                app.logger.error(f"Error loading betslips {bets_file}: {e}")
-                latest['betslips'] = []
-        else:
-            latest['betslips'] = []
-
-        # ── Gather all prior prediction files ─────────────────
-        pred_files = glob.glob(os.path.join(MLB_RESULTS_DIR, "*_mlb_predictions.csv"))
-        dfs = []
-        for path in pred_files:
-            m = re.match(r"(\d{4}-\d{2}-\d{2})_mlb_predictions\.csv$", os.path.basename(path))
-            if not m:
+    # ── 3) Prop-Type summary from accuracy CSV ──────────────────
+    prop_types = {}
+    for col in acc_df.columns:
+        if col.endswith('_Count') and col != 'Total_Predictions':
+            prop = col[:-6]  # trim "_Count"
+            if prop == 'Agreement':
                 continue
-            file_date = datetime.strptime(m.group(1), "%Y-%m-%d").date()
-            if file_date < today:
-                try:
-                    dfs.append(pd.read_csv(path))
-                except Exception:
-                    pass
+            prop_types[prop] = {
+                'count': int(latest_acc[f'{prop}_Count']),
+                'rf_accuracy': float(latest_acc.get(f'{prop}_RF_Accuracy', 0)),
+                'llm_accuracy': float(latest_acc.get(f'{prop}_LLM_Accuracy', 0))
+            }
 
-        # ── Filter & sample recent high confidence predictions ──
-        preds = []
-        if dfs:
-            all_preds = pd.concat(dfs, ignore_index=True)
-            completed = all_preds[all_preds['Actual_Result'].notna()].copy()
-            completed['RF_Confidence']  = pd.to_numeric(completed['RF_Confidence'],  errors='coerce')
-            completed['LLM_Confidence'] = completed['LLM_Confidence'].astype(str).str.lower()
+    # ── 4) Recent High-Confidence Predictions (from ALL top-picks files) ──
+    recent_predictions = []
+    top_pattern = os.path.join(MLB_RESULTS_DIR, "*_mlb_top_picks.csv")
+    top_files = sorted(glob.glob(top_pattern))
+    if top_files:
+        # read and tag every file with its date
+        df_list = []
+        for fpath in top_files:
+            try:
+                tmp = pd.read_csv(fpath)
+            except Exception as e:
+                app.logger.warning(f"Skipping top-picks file {fpath}: {e}")
+                continue
 
-            ap = completed[
-                (completed['RF_Confidence'] >= 0.75) &
-                (completed['LLM_RF_Agreement'] == True) &
-                (completed['LLM_Confidence'].isin(['medium', 'high']))
+            # derive date from filename and add as a column so we can sort/display
+            date_tag = os.path.basename(fpath).split('_')[0]  # e.g. "2025-06-13"
+            tmp['Date'] = date_tag
+            df_list.append(tmp)
+
+        if df_list:
+            all_tops = pd.concat(df_list, ignore_index=True)
+
+            # drop any rows without a real result
+            if 'Actual_Result' in all_tops.columns:
+                all_tops = all_tops[all_tops['Actual_Result'].notnull()]
+            else:
+                all_tops['Actual_Result'] = None
+
+            # keep only the columns your UI expects
+            desired = [
+                'Date',
+                'Player', 'Prop Type', 'Prop Value', 'Start Time',
+                'RF_Prediction', 'RF_Confidence',
+                'Model_Type',
+                'LLM_Prediction', 'LLM_RF_Agreement', 'LLM_Confidence', 'LLM_Justification',
+                'Actual_Stat', 'Actual_Result', 'Reflection'
             ]
-            if not ap.empty:
-                preds = (
-                    ap[[
-                        'Player', 'Prop Type', 'Prop Value',
-                        'RF_Prediction', 'RF_Confidence', 'Actual_Result'
-                    ]]
-                    .rename(columns={
-                        'RF_Prediction': 'Prediction',
-                        'RF_Confidence': 'Confidence',
-                        'Actual_Result': 'Result'
-                    })
-                    .to_dict(orient='records')
-                )
+            available = [c for c in desired if c in all_tops.columns]
+            all_tops = all_tops[available]
 
-        latest['recent_predictions'] = preds
-        total = len(preds)
-        correct = sum(1 for p in preds if p.get('Result') is True)
-        latest['recent_summary'] = {'correct': correct, 'total': total}
+            # sort by Date (ascending) then take the last 20 entries
+            all_tops = all_tops.sort_values('Date').tail(20)
 
-        # bump `latest_date` to newest prediction-file date (if any, for info/display)
-        pred_dates = []
-        for path in pred_files:
-            m = re.match(r"(\d{4}-\d{2}-\d{2})_mlb_predictions\.csv$", os.path.basename(path))
-            if m:
-                try:
-                    pred_dates.append(datetime.strptime(m.group(1), "%Y-%m-%d").date())
-                except:
-                    pass
-        if pred_dates:
-            latest['latest_date'] = max(pred_dates).strftime("%Y-%m-%d")
+            recent_predictions = _sanitize_records(all_tops.to_dict(orient='records'))
 
-        return jsonify(success=True, data=latest)
+    # ── 5) Today's Betslips ───────────────────────────────────────
+    betslips = []
+    if top_files:
+        try:
+            slips = pd.read_csv(top_files[-1]).to_dict(orient='records')
+            betslips = _sanitize_records(slips)
+        except:
+            pass
 
+    return jsonify(success=True, data={
+        'latest_date': latest_date,
+        'overall': overall,
+        'prop_types': prop_types,
+        'recent_predictions': recent_predictions,
+        'historical_data': history,
+        'betslips': betslips
+    })\
+
+@app.route('/api/mlb-insights')
+def mlb_insights():
+    INSIGHTS_JSON = os.path.join(MLB_RESULTS_DIR, "mlb_insights_db.json")
+    try:
+        with open(INSIGHTS_JSON, 'r') as f:
+            db = json.load(f)
+        return jsonify(success=True, insights=db.get('prop_types', {}))
     except Exception as e:
-        import traceback; traceback.print_exc()
-        return jsonify(success=False, error=str(e))
+        app.logger.error(f"Error loading insights: {e}")
+        return jsonify(success=False, error=str(e)), 500
 
 if __name__ == '__main__':
-    if not os.path.exists(MLB_RESULTS_DIR):
-        print(f"Warning: MLB_Results directory not found at {MLB_RESULTS_DIR}")
-    elif not os.path.exists(PROP_ACCURACY_FILE):
-        print(f"Warning: MLB_Prop_Accuracy.csv not found at {PROP_ACCURACY_FILE}")
-    else:
-        print("Found MLB_Prop_Accuracy.csv with data")
-
     app.run(debug=True, port=5001)
