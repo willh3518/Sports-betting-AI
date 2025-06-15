@@ -1,4 +1,5 @@
 import glob
+from datetime import datetime
 import os
 import sys
 import math
@@ -9,6 +10,7 @@ from flask import Flask, render_template, jsonify
 app = Flask(__name__)
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 MLB_RESULTS_DIR = os.path.join(os.path.dirname(__file__), '..', 'MLB_Results')
+XGB_CSV_PATH = os.path.join(MLB_RESULTS_DIR, "xgboost_accuracy.csv")
 
 def find_latest_predictions_file():
     pattern = os.path.join(MLB_RESULTS_DIR, "*_mlb_predictions.csv")
@@ -92,7 +94,6 @@ def dashboard_data():
                 app.logger.warning(f"Skipping top-picks file {fpath}: {e}")
                 continue
 
-            # derive date from filename and add as a column so we can sort/display
             date_tag = os.path.basename(fpath).split('_')[0]  # e.g. "2025-06-13"
             tmp['Date'] = date_tag
             df_list.append(tmp)
@@ -106,7 +107,6 @@ def dashboard_data():
             else:
                 all_tops['Actual_Result'] = None
 
-            # keep only the columns your UI expects
             desired = [
                 'Date',
                 'Player', 'Prop Type', 'Prop Value', 'Start Time',
@@ -118,28 +118,57 @@ def dashboard_data():
             available = [c for c in desired if c in all_tops.columns]
             all_tops = all_tops[available]
 
-            # sort by Date (ascending) then take the last 20 entries
             all_tops = all_tops.sort_values('Date').tail(20)
 
             recent_predictions = _sanitize_records(all_tops.to_dict(orient='records'))
 
     # ── 5) Today's Betslips ───────────────────────────────────────
     betslips = []
-    if top_files:
+    today = datetime.now().strftime('%Y-%m-%d')
+    betslips_path = os.path.join(MLB_RESULTS_DIR, f"{today}_generated_betslips.json")
+    if os.path.exists(betslips_path):
         try:
-            slips = pd.read_csv(top_files[-1]).to_dict(orient='records')
-            betslips = _sanitize_records(slips)
-        except:
-            pass
+            with open(betslips_path, 'r') as f:
+                betslips = json.load(f)
+        except Exception as e:
+            app.logger.warning(f"Could not load betslips: {e}")
 
+    # --- 6) XGBoost Only Accuracy Summary (headline + prop-type breakdown) ---
+    xgb_metrics = []
+    xgb_by_prop = {}
+
+    if os.path.exists(XGB_CSV_PATH):
+        xgb_df = pd.read_csv(XGB_CSV_PATH)
+        # 6A. Headline stats, all columns (for overall table)
+        xgb_metrics = xgb_df.fillna("").to_dict(orient="records")
+
+        # 6B. Prop-type breakdown for dropdown/table
+        prop_type_fields = [
+            "Hits+Runs+RBIs", "Hitter_Fantasy_Score", "Hits", "Total_Bases", "Runs",
+            "Walks", "Hitter_Strikeouts", "Earned_Runs_Allowed", "Pitches_Thrown",
+            "Pitcher_Strikeouts", "Pitcher_Fantasy_Score", "Pitching_Outs"
+        ]
+        for prop in prop_type_fields:
+            safe = prop.replace(" ", "_")
+            xgb_by_prop[prop] = []
+            for _, row in xgb_df.iterrows():
+                xgb_by_prop[prop].append({
+                    "date": row["Date"],
+                    "xgb_accuracy": row.get(f"{prop}_XGB_Accuracy", None),
+                    "xgb_correct": row.get(f"{prop}_XGB_Correct", None),
+                    "count": row.get(f"{prop}_XGB_Total", None),
+                })
+    # ...and in your return statement:
     return jsonify(success=True, data={
         'latest_date': latest_date,
         'overall': overall,
         'prop_types': prop_types,
         'recent_predictions': recent_predictions,
         'historical_data': history,
-        'betslips': betslips
-    })\
+        'betslips': betslips,
+        'xgb_comparison': xgb_metrics,  # All columns, all rows (for table)
+        'xgb_by_prop': xgb_by_prop,  # Per-prop-type, for prop type comparison section
+    })
 
 @app.route('/api/mlb-insights')
 def mlb_insights():

@@ -71,7 +71,9 @@ async def update_prediction_files(date_str):
     # Define prediction file paths with the provided date format
     prediction_files = [
         f"MLB_Results/{date_str}_mlb_predictions.csv",
-        f"MLB_Results/{date_str}_mlb_top_picks.csv"
+        f"MLB_Results/{date_str}_mlb_top_picks.csv",
+        f"MLB_Results/{date_str}_mlb_xgb_predictions.csv",
+        f"MLB_Results/{date_str}_mlb_xgb_top_picks.csv"
     ]
 
     # Load hitter and pitcher results
@@ -110,8 +112,14 @@ async def update_prediction_files(date_str):
                 pred_df = pd.read_csv(pred_file)
 
                 # Normalize player names to match boxscore results
-                pred_df['Player_Normalized'] = pred_df['Player'].apply(clean_player_name).apply(
-                    normalize_name).str.lower().str.strip()
+                pred_df['Player_Normalized'] = (
+                    pred_df['Player']
+                    .astype(str)
+                    .apply(clean_player_name)
+                    .apply(normalize_name)
+                    .str.lower()
+                    .str.strip()
+                )
 
                 # Add Actual_Stat and Actual_Result columns if they don't exist
                 if 'Actual_Stat' not in pred_df.columns:

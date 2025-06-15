@@ -1,392 +1,403 @@
 Player,Position,Team,Prop Type,Prop Value,Opposing Team,Odds Category,Start Time
-Javier Baez,IF,DET,Hits+Runs+RBIs,1.5,CIN,base,Sat 1:10 PM
-Tyler Stephenson,C,CIN,Hits,0.5,DET,base,Sat 1:10 PM
-Tyler Stephenson,C,CIN,Total Bases,0.5,DET,base,Sat 1:10 PM
-Will Benson,OF,CIN,Hits+Runs+RBIs,0.5,DET,base,Sat 1:10 PM
-Spencer Steer,IF,CIN,Hits+Runs+RBIs,0.5,DET,base,Sat 1:10 PM
-Matt McLain,IF,CIN,Hits+Runs+RBIs,0.5,DET,base,Sat 1:10 PM
-Elly De La Cruz,IF,CIN,Hits,0.5,DET,base,Sat 1:10 PM
-Elly De La Cruz,IF,CIN,Total Bases,0.5,DET,base,Sat 1:10 PM
-Dillon Dingler,C,DET,Hits,0.5,CIN,base,Sat 1:10 PM
-Gavin Lux,IF,CIN,Hits+Runs+RBIs,0.5,DET,base,Sat 1:10 PM
-Oneil Cruz,OF,PIT,Hitter Strikeouts,1.5,CHC,base,Sat 2:20 PM
-Ian Happ,OF,CHC,Hits+Runs+RBIs,1.5,PIT,base,Sat 2:20 PM
-Nico Hoerner,IF,CHC,Hits+Runs+RBIs,1.5,PIT,base,Sat 2:20 PM
-Henry Davis,C,PIT,Total Bases,0.5,CHC,base,Sat 2:20 PM
-Jared Triolo,IF,PIT,Hits,0.5,CHC,base,Sat 2:20 PM
-Pete Crow-Armstrong,OF,CHC,Hits+Runs+RBIs,1.5,PIT,base,Sat 2:20 PM
-Matthew Boyd,P,CHC,Hits Allowed,4.5,PIT,base,Sat 2:20 PM
-Matthew Boyd,P,CHC,Earned Runs Allowed,1.5,PIT,base,Sat 2:20 PM
-Matthew Boyd,P,CHC,Pitches Thrown,92.5,PIT,base,Sat 2:20 PM
-Matthew Boyd,P,CHC,Pitcher Strikeouts,6.0,PIT,base,Sat 2:20 PM
-Matthew Boyd,P,CHC,Pitcher Fantasy Score,37.5,PIT,base,Sat 2:20 PM
-Kyle Tucker,OF,CHC,Walks,0.5,PIT,base,Sat 2:20 PM
-Kyle Tucker,OF,CHC,Runs,0.5,PIT,base,Sat 2:20 PM
-Kyle Tucker,OF,CHC,Hits+Runs+RBIs,1.5,PIT,base,Sat 2:20 PM
-Mike Burrows,P,PIT,Pitcher Strikeouts,4.0,CHC,base,Sat 2:20 PM
-Ke'Bryan Hayes,IF,PIT,Hitter Fantasy Score,4.5,CHC,base,Sat 2:20 PM
-Bryan Reynolds,OF,PIT,Hitter Fantasy Score,5.0,CHC,base,Sat 2:20 PM
-Oneil Cruz,OF,PIT,Hitter Fantasy Score,7.5,CHC,base,Sat 2:20 PM
-Ian Happ,OF,CHC,Hitter Fantasy Score,6.5,PIT,base,Sat 2:20 PM
-Seiya Suzuki,OF,CHC,Hitter Fantasy Score,6.5,PIT,base,Sat 2:20 PM
-Nico Hoerner,IF,CHC,Hitter Fantasy Score,3.5,PIT,base,Sat 2:20 PM
-Dansby Swanson,IF,CHC,Hitter Fantasy Score,5.5,PIT,base,Sat 2:20 PM
-Andrew McCutchen,OF,PIT,Hitter Fantasy Score,4.5,CHC,base,Sat 2:20 PM
-Henry Davis,C,PIT,Hitter Fantasy Score,3.0,CHC,base,Sat 2:20 PM
-Nick Gonzales,IF,PIT,Hitter Fantasy Score,4.5,CHC,base,Sat 2:20 PM
-Jared Triolo,IF,PIT,Hitter Fantasy Score,3.5,CHC,base,Sat 2:20 PM
-Michael Busch,IF,CHC,Hitter Fantasy Score,4.5,PIT,base,Sat 2:20 PM
-Pete Crow-Armstrong,OF,CHC,Hitter Fantasy Score,6.5,PIT,base,Sat 2:20 PM
-Isiah Kiner-Falefa,IF,PIT,Hitter Fantasy Score,3.0,CHC,base,Sat 2:20 PM
-Kyle Tucker,OF,CHC,Hitter Fantasy Score,7.0,PIT,base,Sat 2:20 PM
-Matt Shaw,IF,CHC,Hitter Fantasy Score,3.0,PIT,base,Sat 2:20 PM
-Luis Robert,OF,CWS,Total Bases,0.5,TEX,base,Sat 4:05 PM
-Corey Seager,IF,TEX,Total Bases,1.5,CWS,base,Sat 4:05 PM
-Marcus Semien,IF,TEX,Hits+Runs+RBIs,1.5,CWS,base,Sat 4:05 PM
-Marcus Semien,IF,TEX,Hitter Strikeouts,0.5,CWS,base,Sat 4:05 PM
-Jonah Heim,C,TEX,Hitter Strikeouts,0.5,CWS,base,Sat 4:05 PM
-Josh Smith,IF,TEX,Runs,0.5,CWS,base,Sat 4:05 PM
-Jacob Degrom,P,TEX,Walks Allowed,1.5,CWS,base,Sat 4:05 PM
-Jacob Degrom,P,TEX,Pitcher Fantasy Score,40.5,CWS,base,Sat 4:05 PM
-Jacob Degrom,P,TEX,Pitcher Strikeouts,7.0,CWS,base,Sat 4:05 PM
-Wyatt Langford,OF,TEX,Runs,0.5,CWS,base,Sat 4:05 PM
-Miguel Vargas,IF,CWS,Total Bases,0.5,TEX,base,Sat 4:05 PM
-Josh Rojas,IF,CWS,Hits+Runs+RBIs,0.5,TEX,base,Sat 4:05 PM
-Kyle Teel,C,CWS,Total Bases,0.5,TEX,base,Sat 4:05 PM
-Kyle Teel,C,CWS,Hits,0.5,TEX,base,Sat 4:05 PM
-Mike Trout,OF,LAA,Hits+Runs+RBIs,1.5,BAL,base,Sat 4:05 PM
-Adley Rutschman,C,BAL,Hits+Runs+RBIs,1.5,LAA,base,Sat 4:05 PM
-Tyler Anderson,P,LAA,Pitcher Strikeouts,4.5,BAL,base,Sat 4:05 PM
-Zach Neto,IF,LAA,Hits+Runs+RBIs,1.5,BAL,base,Sat 4:05 PM
-Ryan O'Hearn,IF,BAL,Hitter Strikeouts,0.5,LAA,base,Sat 4:05 PM
-Nolan Schanuel,IF,LAA,Hits+Runs+RBIs,1.5,BAL,base,Sat 4:05 PM
-Tomoyuki Sugano,P,BAL,Hits Allowed,5.5,LAA,base,Sat 4:05 PM
-Tomoyuki Sugano,P,BAL,Pitcher Strikeouts,4.0,LAA,base,Sat 4:05 PM
-Ramon Laureano,OF,BAL,Hits+Runs+RBIs,1.5,LAA,base,Sat 4:05 PM
-Vladimir Guerrero,IF,TOR,Hits+Runs+RBIs,1.5,PHI,base,Sat 4:05 PM
-George Springer,OF,TOR,Hits+Runs+RBIs,1.5,PHI,base,Sat 4:05 PM
-Kyle Schwarber,DH,PHI,Hits+Runs+RBIs,1.5,TOR,base,Sat 4:05 PM
-Kyle Schwarber,DH,PHI,Runs,0.5,TOR,base,Sat 4:05 PM
-Alejandro Kirk,C,TOR,Hitter Strikeouts,0.5,PHI,base,Sat 4:05 PM
-Alejandro Kirk,C,TOR,Hits+Runs+RBIs,1.5,PHI,base,Sat 4:05 PM
-Bryson Stott,IF,PHI,Hitter Strikeouts,0.5,TOR,base,Sat 4:05 PM
-Cristopher Sanchez,P,PHI,Hits Allowed,5.5,TOR,base,Sat 4:05 PM
-Cristopher Sanchez,P,PHI,Walks Allowed,1.5,TOR,base,Sat 4:05 PM
-Cristopher Sanchez,P,PHI,Pitcher Strikeouts,5.0,TOR,base,Sat 4:05 PM
-Trea Turner,IF,PHI,Runs,0.5,TOR,base,Sat 4:05 PM
-Davis Schneider,OF,TOR,Hits,0.5,PHI,base,Sat 4:05 PM
-Davis Schneider,OF,TOR,Total Bases,0.5,PHI,base,Sat 4:05 PM
-Ernie Clement,IF,TOR,Hits+Runs+RBIs,1.5,PHI,base,Sat 4:05 PM
-Bowden Francis,P,TOR,Pitcher Strikeouts,4.0,PHI,base,Sat 4:05 PM
-Corey Seager,IF,TEX,Hitter Fantasy Score,6.5,CWS,base,Sat 4:05 PM
-Marcus Semien,IF,TEX,Hitter Fantasy Score,5.5,CWS,base,Sat 4:05 PM
-Adolis Garcia,OF,TEX,Hitter Fantasy Score,3.5,CWS,base,Sat 4:05 PM
-Josh Smith,IF,TEX,Hitter Fantasy Score,7.0,CWS,base,Sat 4:05 PM
-Josh Jung,IF,TEX,Hitter Fantasy Score,4.5,CWS,base,Sat 4:05 PM
-Andrew Benintendi,OF,CWS,Hitter Fantasy Score,4.5,TEX,base,Sat 4:05 PM
-Wyatt Langford,OF,TEX,Hitter Fantasy Score,6.5,CWS,base,Sat 4:05 PM
-Miguel Vargas,IF,CWS,Hitter Fantasy Score,4.5,TEX,base,Sat 4:05 PM
-Chase Meidroth,IF,CWS,Hitter Fantasy Score,5.0,TEX,base,Sat 4:05 PM
-Mike Tauchman,OF,CWS,Hitter Fantasy Score,4.5,TEX,base,Sat 4:05 PM
-Mike Trout,OF,LAA,Hitter Fantasy Score,6.5,BAL,base,Sat 4:05 PM
-Taylor Ward,OF,LAA,Hitter Fantasy Score,5.0,BAL,base,Sat 4:05 PM
-Jo Adell,OF,LAA,Hitter Fantasy Score,4.5,BAL,base,Sat 4:05 PM
-Adley Rutschman,C,BAL,Hitter Fantasy Score,5.0,LAA,base,Sat 4:05 PM
-Luis Rengifo,IF,LAA,Hitter Fantasy Score,3.5,BAL,base,Sat 4:05 PM
-Gunnar Henderson,IF,BAL,Hitter Fantasy Score,7.0,LAA,base,Sat 4:05 PM
-Ramon Urias,IF,BAL,Hitter Fantasy Score,3.5,LAA,base,Sat 4:05 PM
-Logan O'Hoppe,C,LAA,Hitter Fantasy Score,4.5,BAL,base,Sat 4:05 PM
-Zach Neto,IF,LAA,Hitter Fantasy Score,6.0,BAL,base,Sat 4:05 PM
-Nolan Schanuel,IF,LAA,Hitter Fantasy Score,5.0,BAL,base,Sat 4:05 PM
-Jackson Holliday,IF,BAL,Hitter Fantasy Score,6.5,LAA,base,Sat 4:05 PM
-Dylan Carlson,OF,BAL,Hitter Fantasy Score,3.5,LAA,base,Sat 4:05 PM
-Vladimir Guerrero,IF,TOR,Hitter Fantasy Score,6.5,PHI,base,Sat 4:05 PM
-George Springer,OF,TOR,Hitter Fantasy Score,5.5,PHI,base,Sat 4:05 PM
-Bo Bichette,IF,TOR,Hitter Fantasy Score,6.5,PHI,base,Sat 4:05 PM
-Kyle Schwarber,DH,PHI,Hitter Fantasy Score,7.0,TOR,base,Sat 4:05 PM
-Nick Castellanos,OF,PHI,Hitter Fantasy Score,5.0,TOR,base,Sat 4:05 PM
-Jt Realmuto,C,PHI,Hitter Fantasy Score,4.5,TOR,base,Sat 4:05 PM
-Alejandro Kirk,C,TOR,Hitter Fantasy Score,5.5,PHI,base,Sat 4:05 PM
-Alec Bohm,IF,PHI,Hitter Fantasy Score,5.0,TOR,base,Sat 4:05 PM
-Bryson Stott,IF,PHI,Hitter Fantasy Score,4.5,TOR,base,Sat 4:05 PM
-Brandon Marsh,OF,PHI,Hitter Fantasy Score,3.5,TOR,base,Sat 4:05 PM
-Trea Turner,IF,PHI,Hitter Fantasy Score,8.0,TOR,base,Sat 4:05 PM
-Davis Schneider,OF,TOR,Hitter Fantasy Score,4.5,PHI,base,Sat 4:05 PM
-Ernie Clement,IF,TOR,Hitter Fantasy Score,5.0,PHI,base,Sat 4:05 PM
-Max Kepler,OF,PHI,Hitter Fantasy Score,4.5,TOR,base,Sat 4:05 PM
-Myles Straw,OF,TOR,Hitter Fantasy Score,3.5,PHI,base,Sat 4:05 PM
-Jonatan Clase,OF,TOR,Hitter Fantasy Score,3.5,PHI,base,Sat 4:05 PM
-Otto Kemp,IF,PHI,Hitter Fantasy Score,3.0,TOR,base,Sat 4:05 PM
-Yandy Diaz,IF,TB,Hits+Runs+RBIs,1.5,NYM,base,Sat 4:10 PM
-Pete Alonso,IF,NYM,Hits+Runs+RBIs,1.5,TB,base,Sat 4:10 PM
-Francisco Lindor,IF,NYM,Hits+Runs+RBIs,1.5,TB,base,Sat 4:10 PM
-Josh Lowe,OF,TB,Hits+Runs+RBIs,1.5,NYM,base,Sat 4:10 PM
-Brandon Nimmo,OF,NYM,Hits+Runs+RBIs,1.5,TB,base,Sat 4:10 PM
-Drew Rasmussen,P,TB,Walks Allowed,1.5,NYM,base,Sat 4:10 PM
-Drew Rasmussen,P,TB,Hits Allowed,4.5,NYM,base,Sat 4:10 PM
-Brett Baty,IF,NYM,Hits,0.5,TB,base,Sat 4:10 PM
-Brett Baty,IF,NYM,Total Bases,0.5,TB,base,Sat 4:10 PM
-Tylor Megill,P,NYM,Pitcher Strikeouts,6.0,TB,base,Sat 4:10 PM
-Juan Soto,OF,NYM,Hits+Runs+RBIs,1.5,TB,base,Sat 4:10 PM
-Austin Riley,IF,ATL,Runs,0.5,COL,base,Sat 4:10 PM
-Spencer Strider,P,ATL,Pitcher Strikeouts,8.0,COL,base,Sat 4:10 PM
-Matt Olson,IF,ATL,Walks,0.5,COL,base,Sat 4:10 PM
-Marcell Ozuna,DH,ATL,Runs,0.5,COL,base,Sat 4:10 PM
-Michael Harris,OF,ATL,Hitter Strikeouts,0.5,COL,base,Sat 4:10 PM
-Sam Hilliard,OF,COL,Hits,0.5,ATL,base,Sat 4:10 PM
-Sam Hilliard,OF,COL,Total Bases,0.5,ATL,base,Sat 4:10 PM
-Ozzie Albies,IF,ATL,Hits+Runs+RBIs,1.5,COL,base,Sat 4:10 PM
-Ozzie Albies,IF,ATL,Hitter Strikeouts,0.5,COL,base,Sat 4:10 PM
-Brenton Doyle,OF,COL,Total Bases,0.5,ATL,base,Sat 4:10 PM
-Hunter Goodman,C,COL,Hitter Strikeouts,1.5,ATL,base,Sat 4:10 PM
-Kyle Farmer,IF,COL,Total Bases,0.5,ATL,base,Sat 4:10 PM
-Kyle Farmer,IF,COL,Hits,0.5,ATL,base,Sat 4:10 PM
-Nick Allen,IF,ATL,Hitter Strikeouts,0.5,COL,base,Sat 4:10 PM
-Chase Dollander,P,COL,Pitcher Strikeouts,4.0,ATL,base,Sat 4:10 PM
-Mickey Moniak,OF,COL,Total Bases,0.5,ATL,base,Sat 4:10 PM
-Alex Verdugo,OF,ATL,Hitter Strikeouts,0.5,COL,base,Sat 4:10 PM
-Tyler Freeman,OF,COL,Hitter Strikeouts,0.5,ATL,base,Sat 4:10 PM
-Ryan Ritter,IF,COL,Total Bases,0.5,ATL,base,Sat 4:10 PM
-Ryan Ritter,IF,COL,Hits,0.5,ATL,base,Sat 4:10 PM
-Nolan Arenado,IF,STL,Hits+Runs+RBIs,1.5,MIL,base,Sat 4:10 PM
-Nolan Gorman,IF,STL,Total Bases,0.5,MIL,base,Sat 4:10 PM
-Nolan Gorman,IF,STL,Hits,0.5,MIL,base,Sat 4:10 PM
-Ivan Herrera,C,STL,Hits+Runs+RBIs,1.5,MIL,base,Sat 4:10 PM
-Lars Nootbaar,OF,STL,Hits+Runs+RBIs,1.5,MIL,base,Sat 4:10 PM
-Andre Pallante,P,STL,Pitches Thrown,90.5,MIL,base,Sat 4:10 PM
-Andre Pallante,P,STL,Earned Runs Allowed,2.5,MIL,base,Sat 4:10 PM
-Andre Pallante,P,STL,Hits Allowed,5.5,MIL,base,Sat 4:10 PM
-Andre Pallante,P,STL,Pitcher Strikeouts,3.5,MIL,base,Sat 4:10 PM
-Andre Pallante,P,STL,Pitching Outs,16.5,MIL,base,Sat 4:10 PM
-Andre Pallante,P,STL,Pitcher Fantasy Score,22.5,MIL,base,Sat 4:10 PM
-Brice Turang,IF,MIL,Runs,0.5,STL,base,Sat 4:10 PM
-William Contreras,C,MIL,Hits+Runs+RBIs,1.5,STL,base,Sat 4:10 PM
-Willson Contreras,IF,STL,Hits+Runs+RBIs,1.5,MIL,base,Sat 4:10 PM
-Sal Frelick,OF,MIL,Hits+Runs+RBIs,1.5,STL,base,Sat 4:10 PM
-Masyn Winn,IF,STL,Hits+Runs+RBIs,1.5,MIL,base,Sat 4:10 PM
-Victor Scott,OF,STL,Total Bases,0.5,MIL,base,Sat 4:10 PM
-Victor Scott,OF,STL,Hits,0.5,MIL,base,Sat 4:10 PM
-Jose Quintana,P,MIL,Pitching Outs,16.5,STL,base,Sat 4:10 PM
-Jose Quintana,P,MIL,Pitcher Strikeouts,4.0,STL,base,Sat 4:10 PM
-Jose Quintana,P,MIL,Pitcher Fantasy Score,23.5,STL,base,Sat 4:10 PM
-Yohel Pozo,C,STL,Hitter Strikeouts,0.5,MIL,base,Sat 4:10 PM
-Jeremy Pena,IF,HOU,Hits+Runs+RBIs,1.5,MIN,base,Sat 4:10 PM
-Joe Ryan,P,MIN,Pitcher Fantasy Score,36.5,HOU,base,Sat 4:10 PM
-Joe Ryan,P,MIN,Pitches Thrown,92.5,HOU,base,Sat 4:10 PM
-Joe Ryan,P,MIN,Pitcher Strikeouts,6.5,HOU,base,Sat 4:10 PM
-Hunter Brown,P,HOU,Pitches Thrown,93.5,MIN,base,Sat 4:10 PM
-Hunter Brown,P,HOU,Pitcher Strikeouts,7.0,MIN,base,Sat 4:10 PM
-Hunter Brown,P,HOU,Pitcher Fantasy Score,39.5,MIN,base,Sat 4:10 PM
-Matt Wallner,OF,MIN,Hits,0.5,HOU,base,Sat 4:10 PM
-Matt Wallner,OF,MIN,Total Bases,0.5,HOU,base,Sat 4:10 PM
-Yainer Diaz,C,HOU,Hits+Runs+RBIs,1.5,MIN,base,Sat 4:10 PM
-Christian Vazquez,C,MIN,Total Bases,0.5,HOU,base,Sat 4:10 PM
-Brendan Rodgers,IF,HOU,Hits+Runs+RBIs,0.5,MIN,base,Sat 4:10 PM
-Brendan Rodgers,IF,HOU,Total Bases,0.5,MIN,base,Sat 4:10 PM
-Brendan Rodgers,IF,HOU,Hits,0.5,MIN,base,Sat 4:10 PM
-Kody Clemens,IF,MIN,Hits,0.5,HOU,base,Sat 4:10 PM
-Kody Clemens,IF,MIN,Total Bases,0.5,HOU,base,Sat 4:10 PM
-Bobby Witt,IF,KC,Hits+Runs+RBIs,2.5,OAK,base,Sat 4:10 PM
-Vinnie Pasquantino,IF,KC,Hitter Strikeouts,0.5,OAK,base,Sat 4:10 PM
-Freddy Fermin,C,KC,Hits+Runs+RBIs,1.5,OAK,base,Sat 4:10 PM
-Freddy Fermin,C,KC,Hitter Strikeouts,0.5,OAK,base,Sat 4:10 PM
-Salvador Perez,C,KC,Runs,0.5,OAK,base,Sat 4:10 PM
-Salvador Perez,C,KC,Total Bases,1.5,OAK,base,Sat 4:10 PM
-Maikel Garcia,IF,KC,Total Bases,1.5,OAK,base,Sat 4:10 PM
-Nick Loftin,IF,KC,Hitter Strikeouts,0.5,OAK,base,Sat 4:10 PM
-Nick Loftin,IF,KC,Hits+Runs+RBIs,1.5,OAK,base,Sat 4:10 PM
-Michael Lorenzen,P,KC,Walks Allowed,1.5,OAK,base,Sat 4:10 PM
-Michael Lorenzen,P,KC,Pitches Thrown,91.5,OAK,base,Sat 4:10 PM
-Michael Lorenzen,P,KC,Pitching Outs,17.5,OAK,base,Sat 4:10 PM
-Michael Lorenzen,P,KC,Pitcher Strikeouts,4.5,OAK,base,Sat 4:10 PM
-Michael Lorenzen,P,KC,Hits Allowed,5.5,OAK,base,Sat 4:10 PM
-Mark Canha,OF,KC,Hits+Runs+RBIs,1.5,OAK,base,Sat 4:10 PM
-Jac Caglianone,IF,KC,Hits+Runs+RBIs,1.5,OAK,base,Sat 4:10 PM
-Yandy Diaz,IF,TB,Hitter Fantasy Score,5.5,NYM,base,Sat 4:10 PM
-Pete Alonso,IF,NYM,Hitter Fantasy Score,6.5,TB,base,Sat 4:10 PM
-Francisco Lindor,IF,NYM,Hitter Fantasy Score,7.5,TB,base,Sat 4:10 PM
-Josh Lowe,OF,TB,Hitter Fantasy Score,5.5,NYM,base,Sat 4:10 PM
-Brandon Nimmo,OF,NYM,Hitter Fantasy Score,5.5,TB,base,Sat 4:10 PM
-Jeff Mcneil,IF,NYM,Hitter Fantasy Score,4.5,TB,base,Sat 4:10 PM
-Brandon Lowe,IF,TB,Hitter Fantasy Score,5.0,NYM,base,Sat 4:10 PM
-Taylor Walls,IF,TB,Hitter Fantasy Score,3.5,NYM,base,Sat 4:10 PM
-Brett Baty,IF,NYM,Hitter Fantasy Score,4.0,TB,base,Sat 4:10 PM
-Jonathan Aranda,IF,TB,Hitter Fantasy Score,5.0,NYM,base,Sat 4:10 PM
-Junior Caminero,IF,TB,Hitter Fantasy Score,4.5,NYM,base,Sat 4:10 PM
-Juan Soto,OF,NYM,Hitter Fantasy Score,7.5,TB,base,Sat 4:10 PM
-Kameron Misner,OF,TB,Hitter Fantasy Score,3.5,NYM,base,Sat 4:10 PM
-Jake Mangum,OF,TB,Hitter Fantasy Score,4.5,NYM,base,Sat 4:10 PM
-Matt Thaiss,C,TB,Hitter Fantasy Score,3.5,NYM,base,Sat 4:10 PM
-Ronald Acuna,OF,ATL,Hitter Fantasy Score,9.5,COL,base,Sat 4:10 PM
-Austin Riley,IF,ATL,Hitter Fantasy Score,6.5,COL,base,Sat 4:10 PM
-Matt Olson,IF,ATL,Hitter Fantasy Score,7.5,COL,base,Sat 4:10 PM
-Marcell Ozuna,DH,ATL,Hitter Fantasy Score,6.0,COL,base,Sat 4:10 PM
-Ryan Mcmahon,IF,COL,Hitter Fantasy Score,3.5,ATL,base,Sat 4:10 PM
-Michael Harris,OF,ATL,Hitter Fantasy Score,4.0,COL,base,Sat 4:10 PM
-Ozzie Albies,IF,ATL,Hitter Fantasy Score,4.5,COL,base,Sat 4:10 PM
-Brenton Doyle,OF,COL,Hitter Fantasy Score,4.5,ATL,base,Sat 4:10 PM
-Hunter Goodman,C,COL,Hitter Fantasy Score,4.5,ATL,base,Sat 4:10 PM
-Drake Baldwin,C,ATL,Hitter Fantasy Score,4.5,COL,base,Sat 4:10 PM
-Nick Allen,IF,ATL,Hitter Fantasy Score,3.0,COL,base,Sat 4:10 PM
-Alex Verdugo,OF,ATL,Hitter Fantasy Score,5.5,COL,base,Sat 4:10 PM
-Thairo Estrada,IF,COL,Hitter Fantasy Score,4.5,ATL,base,Sat 4:10 PM
-Christian Yelich,OF,MIL,Hitter Fantasy Score,6.5,STL,base,Sat 4:10 PM
-Nolan Arenado,IF,STL,Hitter Fantasy Score,4.5,MIL,base,Sat 4:10 PM
-Ivan Herrera,C,STL,Hitter Fantasy Score,5.0,MIL,base,Sat 4:10 PM
-Lars Nootbaar,OF,STL,Hitter Fantasy Score,5.5,MIL,base,Sat 4:10 PM
-Alec Burleson,IF,STL,Hitter Fantasy Score,4.5,MIL,base,Sat 4:10 PM
-William Contreras,C,MIL,Hitter Fantasy Score,5.5,STL,base,Sat 4:10 PM
-Willson Contreras,IF,STL,Hitter Fantasy Score,5.0,MIL,base,Sat 4:10 PM
-Sal Frelick,OF,MIL,Hitter Fantasy Score,5.5,STL,base,Sat 4:10 PM
-Masyn Winn,IF,STL,Hitter Fantasy Score,5.5,MIL,base,Sat 4:10 PM
-Joey Ortiz,IF,MIL,Hitter Fantasy Score,3.0,STL,base,Sat 4:10 PM
-Rhys Hoskins,IF,MIL,Hitter Fantasy Score,5.0,STL,base,Sat 4:10 PM
-Jackson Chourio,OF,MIL,Hitter Fantasy Score,6.5,STL,base,Sat 4:10 PM
-Isaac Collins,OF,MIL,Hitter Fantasy Score,3.5,STL,base,Sat 4:10 PM
-Byron Buxton,OF,MIN,Hitter Fantasy Score,6.5,HOU,base,Sat 4:10 PM
-Carlos Correa,IF,MIN,Hitter Fantasy Score,4.5,HOU,base,Sat 4:10 PM
-Jose Altuve,OF,HOU,Hitter Fantasy Score,6.0,MIN,base,Sat 4:10 PM
-Jeremy Pena,IF,HOU,Hitter Fantasy Score,7.0,MIN,base,Sat 4:10 PM
-Jake Meyers,OF,HOU,Hitter Fantasy Score,3.5,MIN,base,Sat 4:10 PM
-Matt Wallner,OF,MIN,Hitter Fantasy Score,4.5,HOU,base,Sat 4:10 PM
-Yainer Diaz,C,HOU,Hitter Fantasy Score,5.0,MIN,base,Sat 4:10 PM
-Christian Vazquez,C,MIN,Hitter Fantasy Score,3.0,HOU,base,Sat 4:10 PM
-Trevor Larnach,OF,MIN,Hitter Fantasy Score,5.0,HOU,base,Sat 4:10 PM
-Willi Castro,IF,MIN,Hitter Fantasy Score,4.5,HOU,base,Sat 4:10 PM
-Victor Caratini,C,HOU,Hitter Fantasy Score,4.5,MIN,base,Sat 4:10 PM
-Brooks Lee,IF,MIN,Hitter Fantasy Score,4.5,HOU,base,Sat 4:10 PM
-Christian Walker,IF,HOU,Hitter Fantasy Score,4.5,MIN,base,Sat 4:10 PM
-Ty France,IF,MIN,Hitter Fantasy Score,4.0,HOU,base,Sat 4:10 PM
-Cam Smith,IF,HOU,Hitter Fantasy Score,4.0,MIN,base,Sat 4:10 PM
-Kody Clemens,IF,MIN,Hitter Fantasy Score,3.5,HOU,base,Sat 4:10 PM
-Bobby Witt,IF,KC,Hitter Fantasy Score,8.5,OAK,base,Sat 4:10 PM
-Vinnie Pasquantino,IF,KC,Hitter Fantasy Score,5.5,OAK,base,Sat 4:10 PM
-Freddy Fermin,C,KC,Hitter Fantasy Score,3.0,OAK,base,Sat 4:10 PM
-Salvador Perez,C,KC,Hitter Fantasy Score,5.5,OAK,base,Sat 4:10 PM
-Drew Waters,OF,KC,Hitter Fantasy Score,3.5,OAK,base,Sat 4:10 PM
-Maikel Garcia,IF,KC,Hitter Fantasy Score,6.5,OAK,base,Sat 4:10 PM
-Mark Canha,OF,KC,Hitter Fantasy Score,4.5,OAK,base,Sat 4:10 PM
-Jac Caglianone,IF,KC,Hitter Fantasy Score,4.5,OAK,base,Sat 4:10 PM
-Manny Machado,IF,SD,Runs,0.5,AZ,base,Sat 7:15 PM
-Manny Machado,IF,SD,Total Bases,1.5,AZ,base,Sat 7:15 PM
-Xander Bogaerts,IF,SD,Hits+Runs+RBIs,1.5,AZ,base,Sat 7:15 PM
-Fernando Tatis,OF,SD,Total Bases,1.5,AZ,base,Sat 7:15 PM
-Zac Gallen,P,AZ,Pitcher Fantasy Score,28.5,SD,base,Sat 7:15 PM
-Zac Gallen,P,AZ,Pitches Thrown,93.5,SD,base,Sat 7:15 PM
-Zac Gallen,P,AZ,Earned Runs Allowed,2.5,SD,base,Sat 7:15 PM
-Zac Gallen,P,AZ,Pitcher Strikeouts,4.0,SD,base,Sat 7:15 PM
-Lourdes Gurriel,OF,AZ,Hitter Strikeouts,0.5,SD,base,Sat 7:15 PM
-Corbin Carroll,OF,AZ,Hits+Runs+RBIs,2.5,SD,base,Sat 7:15 PM
-Ketel Marte,IF,AZ,Runs,0.5,SD,base,Sat 7:15 PM
-Ketel Marte,IF,AZ,Hitter Strikeouts,0.5,SD,base,Sat 7:15 PM
-Gabriel Moreno,C,AZ,Hitter Strikeouts,0.5,SD,base,Sat 7:15 PM
-Gabriel Moreno,C,AZ,Hits+Runs+RBIs,1.5,SD,base,Sat 7:15 PM
-Geraldo Perdomo,IF,AZ,Hits+Runs+RBIs,1.5,SD,base,Sat 7:15 PM
-Alek Thomas,OF,AZ,Hits+Runs+RBIs,1.5,SD,base,Sat 7:15 PM
-Tyler Wade,IF,SD,Total Bases,0.5,AZ,base,Sat 7:15 PM
-Tyler Wade,IF,SD,Hits,0.5,AZ,base,Sat 7:15 PM
-Jackson Merrill,OF,SD,Total Bases,1.5,AZ,base,Sat 7:15 PM
-Luis Arraez,IF,SD,Total Bases,1.5,AZ,base,Sat 7:15 PM
-Ryan Bergert,P,SD,Pitcher Strikeouts,3.0,AZ,base,Sat 7:15 PM
-Ryan Bergert,P,SD,Pitching Outs,14.5,AZ,base,Sat 7:15 PM
-Ryan Bergert,P,SD,Hits Allowed,5.5,AZ,base,Sat 7:15 PM
-Aaron Judge,OF,NYY,Total Bases,1.5,BOS,base,Sat 7:15 PM
-DJ LeMahieu,IF,NYY,Hitter Strikeouts,0.5,BOS,base,Sat 7:15 PM
-DJ LeMahieu,IF,NYY,Hits+Runs+RBIs,1.5,BOS,base,Sat 7:15 PM
-Jarren Duran,OF,BOS,Hits+Runs+RBIs,1.5,NYY,base,Sat 7:15 PM
-Carlos Rodon,P,NYY,Pitcher Strikeouts,7.0,BOS,base,Sat 7:15 PM
-Carlos Rodon,P,NYY,Pitches Thrown,94.5,BOS,base,Sat 7:15 PM
-Carlos Rodon,P,NYY,Hits Allowed,4.5,BOS,base,Sat 7:15 PM
-Carlos Rodon,P,NYY,Pitcher Fantasy Score,39.5,BOS,base,Sat 7:15 PM
-Anthony Volpe,IF,NYY,Hits+Runs+RBIs,1.5,BOS,base,Sat 7:15 PM
-Austin Wells,C,NYY,Hits+Runs+RBIs,1.5,BOS,base,Sat 7:15 PM
-Jazz Chisholm,IF,NYY,Hits+Runs+RBIs,1.5,BOS,base,Sat 7:15 PM
-Cody Bellinger,OF,NYY,Total Bases,1.5,BOS,base,Sat 7:15 PM
-Kristian Campbell,IF,BOS,Total Bases,0.5,NYY,base,Sat 7:15 PM
-Hunter Dobbins,P,BOS,Earned Runs Allowed,2.5,NYY,base,Sat 7:15 PM
-Hunter Dobbins,P,BOS,Pitcher Strikeouts,4.0,NYY,base,Sat 7:15 PM
-Roman Anthony,OF,BOS,Total Bases,0.5,NYY,base,Sat 7:15 PM
-Manny Machado,IF,SD,Hitter Fantasy Score,6.5,AZ,base,Sat 7:15 PM
-Jake Cronenworth,IF,SD,Hitter Fantasy Score,4.5,AZ,base,Sat 7:15 PM
-Xander Bogaerts,IF,SD,Hitter Fantasy Score,4.5,AZ,base,Sat 7:15 PM
-Fernando Tatis,OF,SD,Hitter Fantasy Score,7.5,AZ,base,Sat 7:15 PM
-Lourdes Gurriel,OF,AZ,Hitter Fantasy Score,5.0,SD,base,Sat 7:15 PM
-Corbin Carroll,OF,AZ,Hitter Fantasy Score,8.5,SD,base,Sat 7:15 PM
-Ketel Marte,IF,AZ,Hitter Fantasy Score,6.5,SD,base,Sat 7:15 PM
-Eugenio Suarez,IF,AZ,Hitter Fantasy Score,4.5,SD,base,Sat 7:15 PM
-Geraldo Perdomo,IF,AZ,Hitter Fantasy Score,5.5,SD,base,Sat 7:15 PM
-Alek Thomas,OF,AZ,Hitter Fantasy Score,3.5,SD,base,Sat 7:15 PM
-Jackson Merrill,OF,SD,Hitter Fantasy Score,6.5,AZ,base,Sat 7:15 PM
-Luis Arraez,IF,SD,Hitter Fantasy Score,6.0,AZ,base,Sat 7:15 PM
-Pavin Smith,OF,AZ,Hitter Fantasy Score,3.5,SD,base,Sat 7:15 PM
-Jose Herrera,C,AZ,Hitter Fantasy Score,3.0,SD,base,Sat 7:15 PM
-Josh Naylor,IF,AZ,Hitter Fantasy Score,5.5,SD,base,Sat 7:15 PM
-Gavin Sheets,IF,SD,Hitter Fantasy Score,4.5,AZ,base,Sat 7:15 PM
-Rafael Devers,IF,BOS,Hitter Fantasy Score,5.5,NYY,base,Sat 7:15 PM
-Aaron Judge,OF,NYY,Hitter Fantasy Score,9.5,BOS,base,Sat 7:15 PM
-Jarren Duran,OF,BOS,Hitter Fantasy Score,7.5,NYY,base,Sat 7:15 PM
-Rob Refsnyder,OF,BOS,Hitter Fantasy Score,4.5,NYY,base,Sat 7:15 PM
-Anthony Volpe,IF,NYY,Hitter Fantasy Score,5.0,BOS,base,Sat 7:15 PM
-Jasson Dominguez,OF,NYY,Hitter Fantasy Score,5.5,BOS,base,Sat 7:15 PM
-Ceddanne Rafaela,IF,BOS,Hitter Fantasy Score,3.5,NYY,base,Sat 7:15 PM
-Trent Grisham,OF,NYY,Hitter Fantasy Score,6.5,BOS,base,Sat 7:15 PM
-Ben Rice,IF,NYY,Hitter Fantasy Score,6.5,BOS,base,Sat 7:15 PM
-Cody Bellinger,OF,NYY,Hitter Fantasy Score,6.5,BOS,base,Sat 7:15 PM
-Kristian Campbell,IF,BOS,Hitter Fantasy Score,3.5,NYY,base,Sat 7:15 PM
-Carlos Narvaez,C,BOS,Hitter Fantasy Score,4.5,NYY,base,Sat 7:15 PM
-Abraham Toro,IF,BOS,Hitter Fantasy Score,4.5,NYY,base,Sat 7:15 PM
-Julio Rodriguez,OF,SEA,Hits+Runs+RBIs,1.5,CLE,base,Sat 9:40 PM
-George Kirby,P,SEA,Pitcher Fantasy Score,33.5,CLE,base,Sat 9:40 PM
-George Kirby,P,SEA,Pitches Thrown,94.5,CLE,base,Sat 9:40 PM
-George Kirby,P,SEA,Pitcher Strikeouts,5.5,CLE,base,Sat 9:40 PM
-Jose Ramirez,IF,CLE,Hits+Runs+RBIs,1.5,SEA,base,Sat 9:40 PM
-Jose Ramirez,IF,CLE,Hitter Strikeouts,0.5,SEA,base,Sat 9:40 PM
-Steven Kwan,OF,CLE,Hits+Runs+RBIs,1.5,SEA,base,Sat 9:40 PM
-Nolan Jones,OF,CLE,Hits,0.5,SEA,base,Sat 9:40 PM
-Nolan Jones,OF,CLE,Total Bases,0.5,SEA,base,Sat 9:40 PM
-Bo Naylor,C,CLE,Total Bases,0.5,SEA,base,Sat 9:40 PM
-Bo Naylor,C,CLE,Hits,0.5,SEA,base,Sat 9:40 PM
-Tanner Bibee,P,CLE,Pitcher Fantasy Score,31.5,SEA,base,Sat 9:40 PM
-Tanner Bibee,P,CLE,Pitcher Strikeouts,5.5,SEA,base,Sat 9:40 PM
-Tanner Bibee,P,CLE,Pitches Thrown,95.5,SEA,base,Sat 9:40 PM
-Cole Young,IF,SEA,Hits,0.5,CLE,base,Sat 9:40 PM
-Cole Young,IF,SEA,Total Bases,0.5,CLE,base,Sat 9:40 PM
-Julio Rodriguez,OF,SEA,Hitter Fantasy Score,7.0,CLE,base,Sat 9:40 PM
-Jose Ramirez,IF,CLE,Hitter Fantasy Score,6.5,SEA,base,Sat 9:40 PM
-Steven Kwan,OF,CLE,Hitter Fantasy Score,5.5,SEA,base,Sat 9:40 PM
-JP Crawford,IF,SEA,Hitter Fantasy Score,5.5,CLE,base,Sat 9:40 PM
-Cal Raleigh,C,SEA,Hitter Fantasy Score,7.5,CLE,base,Sat 9:40 PM
-Dominic Canzone,OF,SEA,Hitter Fantasy Score,3.5,CLE,base,Sat 9:40 PM
-Jorge Polanco,IF,SEA,Hitter Fantasy Score,4.5,CLE,base,Sat 9:40 PM
-Randy Arozarena,OF,SEA,Hitter Fantasy Score,5.0,CLE,base,Sat 9:40 PM
-Carlos Santana,IF,CLE,Hitter Fantasy Score,4.5,SEA,base,Sat 9:40 PM
-Rowdy Tellez,IF,SEA,Hitter Fantasy Score,3.5,CLE,base,Sat 9:40 PM
-Ben Williamson,IF,SEA,Hitter Fantasy Score,3.0,CLE,base,Sat 9:40 PM
-Cole Young,IF,SEA,Hitter Fantasy Score,3.5,CLE,base,Sat 9:40 PM
-Mike Yastrzemski,OF,SF,Total Bases,0.5,LAD,base,Sat 10:10 PM
-Max Muncy,IF,LAD,Walks,0.5,SF,base,Sat 10:10 PM
-Clayton Kershaw,P,LAD,Pitcher Fantasy Score,23.5,SF,base,Sat 10:10 PM
-Clayton Kershaw,P,LAD,Hits Allowed,4.5,SF,base,Sat 10:10 PM
-Clayton Kershaw,P,LAD,Pitcher Strikeouts,4.5,SF,base,Sat 10:10 PM
-Mookie Betts,IF,LAD,Runs,0.5,SF,base,Sat 10:10 PM
-Andy Pages,OF,LAD,Hitter Strikeouts,0.5,SF,base,Sat 10:10 PM
-Shohei Ohtani,P/DH,LAD,Hits+Runs+RBIs,2.5,SF,base,Sat 10:10 PM
-Shohei Ohtani,P/DH,LAD,Walks,0.5,SF,base,Sat 10:10 PM
-Teoscar Hernandez,OF,LAD,Hits+Runs+RBIs,1.5,SF,base,Sat 10:10 PM
-Jung Hoo Lee,OF,SF,Hits+Runs+RBIs,1.5,LAD,base,Sat 10:10 PM
-Jung Hoo Lee,OF,SF,Hitter Strikeouts,0.5,LAD,base,Sat 10:10 PM
-Tommy Edman,OF,LAD,Hits+Runs+RBIs,1.5,SF,base,Sat 10:10 PM
-Landen Roupp,P,SF,Pitcher Fantasy Score,19.5,LAD,base,Sat 10:10 PM
-Landen Roupp,P,SF,Pitcher Strikeouts,4.0,LAD,base,Sat 10:10 PM
-Willy Adames,IF,SF,Hits+Runs+RBIs,1.5,LAD,base,Sat 10:10 PM
-Wilmer Flores,IF,SF,Hitter Fantasy Score,5.0,LAD,base,Sat 10:10 PM
-Freddie Freeman,IF,LAD,Hitter Fantasy Score,7.0,SF,base,Sat 10:10 PM
-Max Muncy,IF,LAD,Hitter Fantasy Score,5.0,SF,base,Sat 10:10 PM
-Will Smith,C,LAD,Hitter Fantasy Score,4.5,SF,base,Sat 10:10 PM
-Mookie Betts,IF,LAD,Hitter Fantasy Score,7.0,SF,base,Sat 10:10 PM
-Heliot Ramos,OF,SF,Hitter Fantasy Score,5.5,LAD,base,Sat 10:10 PM
-Andy Pages,OF,LAD,Hitter Fantasy Score,4.5,SF,base,Sat 10:10 PM
-Shohei Ohtani,P/DH,LAD,Hitter Fantasy Score,9.5,SF,base,Sat 10:10 PM
-Teoscar Hernandez,OF,LAD,Hitter Fantasy Score,6.0,SF,base,Sat 10:10 PM
-Jung Hoo Lee,OF,SF,Hitter Fantasy Score,6.5,LAD,base,Sat 10:10 PM
-Willy Adames,IF,SF,Hitter Fantasy Score,6.0,LAD,base,Sat 10:10 PM
+Javier Baez,IF,DET,Hitter Strikeouts,0.5,CIN,base,Sun 12:05 PM
+Javier Baez,IF,DET,Hits+Runs+RBIs,1.5,CIN,base,Sun 12:05 PM
+Riley Greene,OF,DET,Hits+Runs+RBIs,1.5,CIN,base,Sun 12:05 PM
+Spencer Torkelson,IF,DET,Runs,0.5,CIN,base,Sun 12:05 PM
+TJ Friedl,OF,CIN,Hits+Runs+RBIs,1.5,DET,base,Sun 12:05 PM
+Zach Mckinstry,IF,DET,Hitter Strikeouts,0.5,CIN,base,Sun 12:05 PM
+Elly De La Cruz,IF,CIN,Hits+Runs+RBIs,1.5,DET,base,Sun 12:05 PM
+Christian Encarnacion-Strand,IF,CIN,Hits+Runs+RBIs,1.5,DET,base,Sun 12:05 PM
+Sawyer Gipson-Long,P,DET,Pitcher Strikeouts,4.0,CIN,base,Sun 12:05 PM
+Wenceel Perez,OF,DET,Hitter Strikeouts,0.5,CIN,base,Sun 12:05 PM
+Wenceel Perez,OF,DET,Hits+Runs+RBIs,1.5,CIN,base,Sun 12:05 PM
+Gleyber Torres,IF,DET,Walks,0.5,CIN,base,Sun 12:05 PM
+Gleyber Torres,IF,DET,Runs,0.5,CIN,base,Sun 12:05 PM
+Wade Miley,P,CIN,Earned Runs Allowed,2.5,DET,base,Sun 12:05 PM
+Wade Miley,P,CIN,Hits Allowed,5.5,DET,base,Sun 12:05 PM
+Jahmai Jones,OF,DET,Runs,0.5,CIN,base,Sun 12:05 PM
+Javier Baez,IF,DET,Hitter Fantasy Score,3.5,CIN,base,Sun 12:05 PM
+Riley Greene,OF,DET,Hitter Fantasy Score,6.5,CIN,base,Sun 12:05 PM
+Spencer Torkelson,IF,DET,Hitter Fantasy Score,4.5,CIN,base,Sun 12:05 PM
+TJ Friedl,OF,CIN,Hitter Fantasy Score,5.5,DET,base,Sun 12:05 PM
+Will Benson,OF,CIN,Hitter Fantasy Score,4.5,DET,base,Sun 12:05 PM
+Spencer Steer,IF,CIN,Hitter Fantasy Score,4.5,DET,base,Sun 12:05 PM
+Zach Mckinstry,IF,DET,Hitter Fantasy Score,4.5,CIN,base,Sun 12:05 PM
+Matt McLain,IF,CIN,Hitter Fantasy Score,3.5,DET,base,Sun 12:05 PM
+Elly De La Cruz,IF,CIN,Hitter Fantasy Score,7.5,DET,base,Sun 12:05 PM
+Parker Meadows,OF,DET,Hitter Fantasy Score,3.5,CIN,base,Sun 12:05 PM
+Dillon Dingler,C,DET,Hitter Fantasy Score,5.0,CIN,base,Sun 12:05 PM
+Gleyber Torres,IF,DET,Hitter Fantasy Score,6.5,CIN,base,Sun 12:05 PM
+Bo Bichette,IF,TOR,Hits+Runs+RBIs,1.5,PHI,base,Sun 1:35 PM
+Kyle Schwarber,DH,PHI,Hits+Runs+RBIs,1.5,TOR,base,Sun 1:35 PM
+Kyle Schwarber,DH,PHI,Runs,0.5,TOR,base,Sun 1:35 PM
+Kyle Schwarber,DH,PHI,Walks,0.5,TOR,base,Sun 1:35 PM
+Nick Castellanos,OF,PHI,Hits+Runs+RBIs,1.5,TOR,base,Sun 1:35 PM
+Jt Realmuto,C,PHI,Hits+Runs+RBIs,1.5,TOR,base,Sun 1:35 PM
+Alejandro Kirk,C,TOR,Hitter Strikeouts,0.5,PHI,base,Sun 1:35 PM
+Zack Wheeler,P,PHI,Pitcher Strikeouts,6.5,TOR,base,Sun 1:35 PM
+Jose Berrios,P,TOR,Pitcher Strikeouts,4.5,PHI,base,Sun 1:35 PM
+Jose Berrios,P,TOR,Hits Allowed,5.5,PHI,base,Sun 1:35 PM
+Jose Berrios,P,TOR,Earned Runs Allowed,2.5,PHI,base,Sun 1:35 PM
+Bryson Stott,IF,PHI,Hitter Strikeouts,0.5,TOR,base,Sun 1:35 PM
+Trea Turner,IF,PHI,Runs,0.5,TOR,base,Sun 1:35 PM
+Alan Roden,OF,TOR,Hits,0.5,PHI,base,Sun 1:35 PM
+Alan Roden,OF,TOR,Total Bases,0.5,PHI,base,Sun 1:35 PM
+Jonatan Clase,OF,TOR,Hits+Runs+RBIs,0.5,PHI,base,Sun 1:35 PM
+Ronald Acuna,OF,ATL,Hits+Runs+RBIs,2.5,COL,base,Sun 1:35 PM
+Matt Olson,IF,ATL,Runs,0.5,COL,base,Sun 1:35 PM
+Marcell Ozuna,DH,ATL,Runs,0.5,COL,base,Sun 1:35 PM
+Austin Gomber,P,COL,Hits Allowed,5.5,ATL,base,Sun 1:35 PM
+Austin Gomber,P,COL,Pitcher Strikeouts,3.5,ATL,base,Sun 1:35 PM
+Michael Harris,OF,ATL,Hits+Runs+RBIs,1.5,COL,base,Sun 1:35 PM
+Michael Harris,OF,ATL,Hitter Strikeouts,0.5,COL,base,Sun 1:35 PM
+Sam Hilliard,OF,COL,Hitter Strikeouts,1.5,ATL,base,Sun 1:35 PM
+Sean Murphy,C,ATL,Hits+Runs+RBIs,1.5,COL,base,Sun 1:35 PM
+Eli White,OF,ATL,Hits+Runs+RBIs,1.5,COL,base,Sun 1:35 PM
+Grant Holmes,P,ATL,Hits Allowed,4.5,COL,base,Sun 1:35 PM
+Grant Holmes,P,ATL,Pitcher Strikeouts,7.0,COL,base,Sun 1:35 PM
+Keston Hiura,IF,COL,Total Bases,0.5,ATL,base,Sun 1:35 PM
+Keston Hiura,IF,COL,Hits+Runs+RBIs,0.5,ATL,base,Sun 1:35 PM
+Ryan Ritter,IF,COL,Hits,0.5,ATL,base,Sun 1:35 PM
+Ryan Ritter,IF,COL,Total Bases,0.5,ATL,base,Sun 1:35 PM
+Rafael Devers,IF,BOS,Hits+Runs+RBIs,1.5,NYY,base,Sun 1:35 PM
+Aaron Judge,OF,NYY,Total Bases,1.5,BOS,base,Sun 1:35 PM
+Aaron Judge,OF,NYY,Hits+Runs+RBIs,2.5,BOS,base,Sun 1:35 PM
+DJ LeMahieu,IF,NYY,Hits+Runs+RBIs,1.5,BOS,base,Sun 1:35 PM
+DJ LeMahieu,IF,NYY,Hitter Strikeouts,0.5,BOS,base,Sun 1:35 PM
+Jarren Duran,OF,BOS,Hits+Runs+RBIs,1.5,NYY,base,Sun 1:35 PM
+Brayan Bello,P,BOS,Pitching Outs,15.5,NYY,base,Sun 1:35 PM
+Brayan Bello,P,BOS,Pitcher Strikeouts,4.0,NYY,base,Sun 1:35 PM
+Brayan Bello,P,BOS,Pitches Thrown,89.5,NYY,base,Sun 1:35 PM
+Brayan Bello,P,BOS,Hits Allowed,5.5,NYY,base,Sun 1:35 PM
+Austin Wells,C,NYY,Hits+Runs+RBIs,1.5,BOS,base,Sun 1:35 PM
+Trent Grisham,OF,NYY,Runs,0.5,BOS,base,Sun 1:35 PM
+Trent Grisham,OF,NYY,Hits+Runs+RBIs,1.5,BOS,base,Sun 1:35 PM
+Ben Rice,IF,NYY,Total Bases,1.5,BOS,base,Sun 1:35 PM
+Romy Gonzalez,IF,BOS,Hits+Runs+RBIs,1.5,NYY,base,Sun 1:35 PM
+Max Fried,P,NYY,Pitcher Strikeouts,6.0,BOS,base,Sun 1:35 PM
+Max Fried,P,NYY,Pitches Thrown,94.5,BOS,base,Sun 1:35 PM
+Cody Bellinger,OF,NYY,Total Bases,1.5,BOS,base,Sun 1:35 PM
+Cody Bellinger,OF,NYY,Hitter Strikeouts,0.5,BOS,base,Sun 1:35 PM
+Mike Trout,OF,LAA,Walks,0.5,BAL,base,Sun 1:35 PM
+Mike Trout,OF,LAA,Hits+Runs+RBIs,1.5,BAL,base,Sun 1:35 PM
+Taylor Ward,OF,LAA,Hits+Runs+RBIs,1.5,BAL,base,Sun 1:35 PM
+Adley Rutschman,C,BAL,Hits+Runs+RBIs,1.5,LAA,base,Sun 1:35 PM
+Luis Rengifo,IF,LAA,Hitter Strikeouts,0.5,BAL,base,Sun 1:35 PM
+Luis Rengifo,IF,LAA,Hits+Runs+RBIs,1.5,BAL,base,Sun 1:35 PM
+Gunnar Henderson,IF,BAL,Hits+Runs+RBIs,1.5,LAA,base,Sun 1:35 PM
+Ramon Urias,IF,BAL,Hits+Runs+RBIs,1.5,LAA,base,Sun 1:35 PM
+Zach Neto,IF,LAA,Runs,0.5,BAL,base,Sun 1:35 PM
+Jordan Westburg,IF,BAL,Hits+Runs+RBIs,1.5,LAA,base,Sun 1:35 PM
+Nolan Schanuel,IF,LAA,Hits+Runs+RBIs,1.5,BAL,base,Sun 1:35 PM
+Jackson Holliday,IF,BAL,Hits+Runs+RBIs,1.5,LAA,base,Sun 1:35 PM
+Cade Povich,P,BAL,Earned Runs Allowed,2.5,LAA,base,Sun 1:35 PM
+Cade Povich,P,BAL,Pitcher Strikeouts,5.0,LAA,base,Sun 1:35 PM
+Yusei Kikuchi,P,LAA,Hits Allowed,5.5,BAL,base,Sun 1:35 PM
+Yusei Kikuchi,P,LAA,Earned Runs Allowed,2.5,BAL,base,Sun 1:35 PM
+Yusei Kikuchi,P,LAA,Pitcher Strikeouts,6.0,BAL,base,Sun 1:35 PM
+Ramon Laureano,OF,BAL,Hits+Runs+RBIs,1.5,LAA,base,Sun 1:35 PM
+Nick Fortes,C,MIA,Hits,0.5,WSH,base,Sun 1:35 PM
+Nick Fortes,C,MIA,Hitter Strikeouts,0.5,WSH,base,Sun 1:35 PM
+Nick Fortes,C,MIA,Total Bases,0.5,WSH,base,Sun 1:35 PM
+CJ Abrams,IF,WSH,Runs,0.5,MIA,base,Sun 1:35 PM
+Mackenzie Gore,P,WSH,Pitches Thrown,94.5,MIA,base,Sun 1:35 PM
+Mackenzie Gore,P,WSH,Pitcher Strikeouts,7.0,MIA,base,Sun 1:35 PM
+Mackenzie Gore,P,WSH,Hits Allowed,4.5,MIA,base,Sun 1:35 PM
+Mackenzie Gore,P,WSH,Walks Allowed,1.5,MIA,base,Sun 1:35 PM
+Luis Garcia,IF,WSH,Hits+Runs+RBIs,1.5,MIA,base,Sun 1:35 PM
+Eury Perez,P,MIA,Pitcher Strikeouts,5.0,WSH,base,Sun 1:35 PM
+Xavier Edwards,IF,MIA,Hits+Runs+RBIs,1.5,WSH,base,Sun 1:35 PM
+Otto Lopez,IF,MIA,Hits+Runs+RBIs,1.5,WSH,base,Sun 1:35 PM
+James Wood,OF,WSH,Hits+Runs+RBIs,1.5,MIA,base,Sun 1:35 PM
+James Wood,OF,WSH,Runs,0.5,MIA,base,Sun 1:35 PM
+James Wood,OF,WSH,Walks,0.5,MIA,base,Sun 1:35 PM
+Nathaniel Lowe,IF,WSH,Hits+Runs+RBIs,1.5,MIA,base,Sun 1:35 PM
+Heriberto Hernandez,OF,MIA,Hits,0.5,WSH,base,Sun 1:35 PM
+Heriberto Hernandez,OF,MIA,Total Bases,0.5,WSH,base,Sun 1:35 PM
+Vladimir Guerrero,IF,TOR,Hitter Fantasy Score,5.5,PHI,base,Sun 1:35 PM
+George Springer,OF,TOR,Hitter Fantasy Score,4.5,PHI,base,Sun 1:35 PM
+Bo Bichette,IF,TOR,Hitter Fantasy Score,5.5,PHI,base,Sun 1:35 PM
+Kyle Schwarber,DH,PHI,Hitter Fantasy Score,6.0,TOR,base,Sun 1:35 PM
+Nick Castellanos,OF,PHI,Hitter Fantasy Score,5.0,TOR,base,Sun 1:35 PM
+Jt Realmuto,C,PHI,Hitter Fantasy Score,4.5,TOR,base,Sun 1:35 PM
+Alejandro Kirk,C,TOR,Hitter Fantasy Score,4.5,PHI,base,Sun 1:35 PM
+Alec Bohm,IF,PHI,Hitter Fantasy Score,5.0,TOR,base,Sun 1:35 PM
+Trea Turner,IF,PHI,Hitter Fantasy Score,7.0,TOR,base,Sun 1:35 PM
+Ronald Acuna,OF,ATL,Hitter Fantasy Score,9.5,COL,base,Sun 1:35 PM
+Austin Riley,IF,ATL,Hitter Fantasy Score,6.5,COL,base,Sun 1:35 PM
+Matt Olson,IF,ATL,Hitter Fantasy Score,6.5,COL,base,Sun 1:35 PM
+Marcell Ozuna,DH,ATL,Hitter Fantasy Score,6.5,COL,base,Sun 1:35 PM
+Ozzie Albies,IF,ATL,Hitter Fantasy Score,4.5,COL,base,Sun 1:35 PM
+Eli White,OF,ATL,Hitter Fantasy Score,3.5,COL,base,Sun 1:35 PM
+Brenton Doyle,OF,COL,Hitter Fantasy Score,5.0,ATL,base,Sun 1:35 PM
+Hunter Goodman,C,COL,Hitter Fantasy Score,4.5,ATL,base,Sun 1:35 PM
+Jordan Beck,OF,COL,Hitter Fantasy Score,5.5,ATL,base,Sun 1:35 PM
+Nick Allen,IF,ATL,Hitter Fantasy Score,3.0,COL,base,Sun 1:35 PM
+Thairo Estrada,IF,COL,Hitter Fantasy Score,4.5,ATL,base,Sun 1:35 PM
+Rafael Devers,IF,BOS,Hitter Fantasy Score,5.5,NYY,base,Sun 1:35 PM
+Aaron Judge,OF,NYY,Hitter Fantasy Score,9.5,BOS,base,Sun 1:35 PM
+Jarren Duran,OF,BOS,Hitter Fantasy Score,6.5,NYY,base,Sun 1:35 PM
+Anthony Volpe,IF,NYY,Hitter Fantasy Score,5.0,BOS,base,Sun 1:35 PM
+Ceddanne Rafaela,IF,BOS,Hitter Fantasy Score,3.5,NYY,base,Sun 1:35 PM
+Ben Rice,IF,NYY,Hitter Fantasy Score,6.5,BOS,base,Sun 1:35 PM
+Paul Goldschmidt,IF,NYY,Hitter Fantasy Score,6.5,BOS,base,Sun 1:35 PM
+Cody Bellinger,OF,NYY,Hitter Fantasy Score,6.5,BOS,base,Sun 1:35 PM
+Kristian Campbell,IF,BOS,Hitter Fantasy Score,3.5,NYY,base,Sun 1:35 PM
+Mike Trout,OF,LAA,Hitter Fantasy Score,7.0,BAL,base,Sun 1:35 PM
+Taylor Ward,OF,LAA,Hitter Fantasy Score,5.5,BAL,base,Sun 1:35 PM
+Jo Adell,OF,LAA,Hitter Fantasy Score,4.5,BAL,base,Sun 1:35 PM
+Adley Rutschman,C,BAL,Hitter Fantasy Score,5.5,LAA,base,Sun 1:35 PM
+Luis Rengifo,IF,LAA,Hitter Fantasy Score,3.5,BAL,base,Sun 1:35 PM
+Gunnar Henderson,IF,BAL,Hitter Fantasy Score,7.0,LAA,base,Sun 1:35 PM
+Ramon Urias,IF,BAL,Hitter Fantasy Score,3.5,LAA,base,Sun 1:35 PM
+Zach Neto,IF,LAA,Hitter Fantasy Score,6.5,BAL,base,Sun 1:35 PM
+Nolan Schanuel,IF,LAA,Hitter Fantasy Score,5.5,BAL,base,Sun 1:35 PM
+Jackson Holliday,IF,BAL,Hitter Fantasy Score,6.5,LAA,base,Sun 1:35 PM
+Jorge Soler,OF,LAA,Hitter Fantasy Score,4.5,BAL,base,Sun 1:35 PM
+CJ Abrams,IF,WSH,Hitter Fantasy Score,7.5,MIA,base,Sun 1:35 PM
+Xavier Edwards,IF,MIA,Hitter Fantasy Score,6.5,WSH,base,Sun 1:35 PM
+Otto Lopez,IF,MIA,Hitter Fantasy Score,5.5,WSH,base,Sun 1:35 PM
+James Wood,OF,WSH,Hitter Fantasy Score,7.5,MIA,base,Sun 1:35 PM
+Agustin Ramirez,C,MIA,Hitter Fantasy Score,5.0,WSH,base,Sun 1:35 PM
+Yandy Diaz,IF,TB,Hits+Runs+RBIs,1.5,NYM,base,Sun 1:40 PM
+Pete Alonso,IF,NYM,Hits+Runs+RBIs,1.5,TB,base,Sun 1:40 PM
+Francisco Lindor,IF,NYM,Hits+Runs+RBIs,1.5,TB,base,Sun 1:40 PM
+Francisco Lindor,IF,NYM,Runs,0.5,TB,base,Sun 1:40 PM
+Josh Lowe,OF,TB,Hits+Runs+RBIs,1.5,NYM,base,Sun 1:40 PM
+Shane Baz,P,TB,Pitcher Strikeouts,5.0,NYM,base,Sun 1:40 PM
+Shane Baz,P,TB,Pitching Outs,15.5,NYM,base,Sun 1:40 PM
+Brandon Nimmo,OF,NYM,Hits+Runs+RBIs,1.5,TB,base,Sun 1:40 PM
+Jeff Mcneil,IF,NYM,Hits+Runs+RBIs,1.5,TB,base,Sun 1:40 PM
+Brett Baty,IF,NYM,Total Bases,0.5,TB,base,Sun 1:40 PM
+Brett Baty,IF,NYM,Hits,0.5,TB,base,Sun 1:40 PM
+Junior Caminero,IF,TB,Hits+Runs+RBIs,1.5,NYM,base,Sun 1:40 PM
+Griffin Canning,P,NYM,Pitcher Strikeouts,5.0,TB,base,Sun 1:40 PM
+Griffin Canning,P,NYM,Pitches Thrown,90.5,TB,base,Sun 1:40 PM
+Griffin Canning,P,NYM,Hits Allowed,4.5,TB,base,Sun 1:40 PM
+Griffin Canning,P,NYM,Pitching Outs,17.5,TB,base,Sun 1:40 PM
+Juan Soto,OF,NYM,Runs,0.5,TB,base,Sun 1:40 PM
+Juan Soto,OF,NYM,Hits+Runs+RBIs,1.5,TB,base,Sun 1:40 PM
+Danny Jansen,C,TB,Total Bases,0.5,NYM,base,Sun 1:40 PM
+Danny Jansen,C,TB,Hits,0.5,NYM,base,Sun 1:40 PM
+Kameron Misner,OF,TB,Total Bases,0.5,NYM,base,Sun 1:40 PM
+Kameron Misner,OF,TB,Hits,0.5,NYM,base,Sun 1:40 PM
+Jake Mangum,OF,TB,Hitter Strikeouts,0.5,NYM,base,Sun 1:40 PM
+Jared Young,IF,NYM,Hits,0.5,TB,base,Sun 1:40 PM
+Jared Young,IF,NYM,Total Bases,0.5,TB,base,Sun 1:40 PM
+Yandy Diaz,IF,TB,Hitter Fantasy Score,6.5,NYM,base,Sun 1:40 PM
+Pete Alonso,IF,NYM,Hitter Fantasy Score,6.0,TB,base,Sun 1:40 PM
+Francisco Lindor,IF,NYM,Hitter Fantasy Score,7.0,TB,base,Sun 1:40 PM
+Josh Lowe,OF,TB,Hitter Fantasy Score,5.5,NYM,base,Sun 1:40 PM
+Brandon Lowe,IF,TB,Hitter Fantasy Score,5.5,NYM,base,Sun 1:40 PM
+Jonathan Aranda,IF,TB,Hitter Fantasy Score,5.0,NYM,base,Sun 1:40 PM
+Junior Caminero,IF,TB,Hitter Fantasy Score,5.0,NYM,base,Sun 1:40 PM
+Juan Soto,OF,NYM,Hitter Fantasy Score,7.5,TB,base,Sun 1:40 PM
+Ivan Herrera,C,STL,Hits+Runs+RBIs,1.5,MIL,base,Sun 2:10 PM
+Miles Mikolas,P,STL,Pitcher Strikeouts,3.0,MIL,base,Sun 2:10 PM
+Miles Mikolas,P,STL,Pitching Outs,16.5,MIL,base,Sun 2:10 PM
+Miles Mikolas,P,STL,Hits Allowed,5.5,MIL,base,Sun 2:10 PM
+Brendan Donovan,IF,STL,Hitter Strikeouts,0.5,MIL,base,Sun 2:10 PM
+Alec Burleson,IF,STL,Hits+Runs+RBIs,1.5,MIL,base,Sun 2:10 PM
+Brice Turang,IF,MIL,Hitter Strikeouts,0.5,STL,base,Sun 2:10 PM
+William Contreras,C,MIL,Hits+Runs+RBIs,1.5,STL,base,Sun 2:10 PM
+Willson Contreras,IF,STL,Hits+Runs+RBIs,1.5,MIL,base,Sun 2:10 PM
+Sal Frelick,OF,MIL,Hits+Runs+RBIs,1.5,STL,base,Sun 2:10 PM
+Victor Scott,OF,STL,Total Bases,0.5,MIL,base,Sun 2:10 PM
+Victor Scott,OF,STL,Hits,0.5,MIL,base,Sun 2:10 PM
+Jackson Chourio,OF,MIL,Hitter Strikeouts,0.5,STL,base,Sun 2:10 PM
+Quinn Priester,P,MIL,Hits Allowed,5.5,STL,base,Sun 2:10 PM
+Quinn Priester,P,MIL,Pitcher Strikeouts,3.5,STL,base,Sun 2:10 PM
+Quinn Priester,P,MIL,Pitching Outs,16.5,STL,base,Sun 2:10 PM
+Quinn Priester,P,MIL,Walks Allowed,1.5,STL,base,Sun 2:10 PM
+Vinnie Pasquantino,IF,KC,Hitter Strikeouts,0.5,OAK,base,Sun 2:10 PM
+Freddy Fermin,C,KC,Hits+Runs+RBIs,1.5,OAK,base,Sun 2:10 PM
+Jonathan India,IF,KC,Runs,0.5,OAK,base,Sun 2:10 PM
+Noah Cameron,P,KC,Earned Runs Allowed,2.5,OAK,base,Sun 2:10 PM
+Noah Cameron,P,KC,Pitches Thrown,90.5,OAK,base,Sun 2:10 PM
+Noah Cameron,P,KC,Pitcher Strikeouts,5.0,OAK,base,Sun 2:10 PM
+Noah Cameron,P,KC,Hits Allowed,5.5,OAK,base,Sun 2:10 PM
+Jose Altuve,OF,HOU,Hitter Strikeouts,0.5,MIN,base,Sun 2:10 PM
+Jeremy Pena,IF,HOU,Total Bases,1.5,MIN,base,Sun 2:10 PM
+Jeremy Pena,IF,HOU,Runs,0.5,MIN,base,Sun 2:10 PM
+Ryan Jeffers,C,MIN,Runs,0.5,HOU,base,Sun 2:10 PM
+Ryan Jeffers,C,MIN,Hits+Runs+RBIs,1.5,HOU,base,Sun 2:10 PM
+Jake Meyers,OF,HOU,Hits+Runs+RBIs,1.5,MIN,base,Sun 2:10 PM
+Matt Wallner,OF,MIN,Total Bases,0.5,HOU,base,Sun 2:10 PM
+Matt Wallner,OF,MIN,Hits,0.5,HOU,base,Sun 2:10 PM
+Yainer Diaz,C,HOU,Total Bases,1.5,MIN,base,Sun 2:10 PM
+Willi Castro,IF,MIN,Hits+Runs+RBIs,1.5,HOU,base,Sun 2:10 PM
+Simeon Woods Richardson,P,MIN,Pitcher Strikeouts,4.0,HOU,base,Sun 2:10 PM
+Simeon Woods Richardson,P,MIN,Walks Allowed,1.5,HOU,base,Sun 2:10 PM
+Simeon Woods Richardson,P,MIN,Hits Allowed,5.5,HOU,base,Sun 2:10 PM
+Victor Caratini,C,HOU,Hits+Runs+RBIs,1.5,MIN,base,Sun 2:10 PM
+Christian Walker,IF,HOU,Hits+Runs+RBIs,1.5,MIN,base,Sun 2:10 PM
+Christian Walker,IF,HOU,Runs,0.5,MIN,base,Sun 2:10 PM
+Ty France,IF,MIN,Hits+Runs+RBIs,1.5,HOU,base,Sun 2:10 PM
+Cam Smith,IF,HOU,Hits+Runs+RBIs,1.5,MIN,base,Sun 2:10 PM
+Jonah Bride,IF,MIN,Hits,0.5,HOU,base,Sun 2:10 PM
+Jonah Bride,IF,MIN,Total Bases,0.5,HOU,base,Sun 2:10 PM
+Brandon Walter,P,HOU,Pitcher Strikeouts,4.0,MIN,base,Sun 2:10 PM
+Brandon Walter,P,HOU,Pitching Outs,15.5,MIN,base,Sun 2:10 PM
+Brandon Walter,P,HOU,Pitcher Strikeouts,4.0,MIN,base,Sun 2:10 PM
+Christian Yelich,OF,MIL,Hitter Fantasy Score,6.5,STL,base,Sun 2:10 PM
+Nolan Arenado,IF,STL,Hitter Fantasy Score,4.5,MIL,base,Sun 2:10 PM
+Lars Nootbaar,OF,STL,Hitter Fantasy Score,6.5,MIL,base,Sun 2:10 PM
+Alec Burleson,IF,STL,Hitter Fantasy Score,5.0,MIL,base,Sun 2:10 PM
+William Contreras,C,MIL,Hitter Fantasy Score,5.5,STL,base,Sun 2:10 PM
+Willson Contreras,IF,STL,Hitter Fantasy Score,5.0,MIL,base,Sun 2:10 PM
+Masyn Winn,IF,STL,Hitter Fantasy Score,5.5,MIL,base,Sun 2:10 PM
+Rhys Hoskins,IF,MIL,Hitter Fantasy Score,4.5,STL,base,Sun 2:10 PM
+Jackson Chourio,OF,MIL,Hitter Fantasy Score,6.5,STL,base,Sun 2:10 PM
+Bobby Witt,IF,KC,Hitter Fantasy Score,7.5,OAK,base,Sun 2:10 PM
+Vinnie Pasquantino,IF,KC,Hitter Fantasy Score,5.0,OAK,base,Sun 2:10 PM
+Salvador Perez,C,KC,Hitter Fantasy Score,5.0,OAK,base,Sun 2:10 PM
+Maikel Garcia,IF,KC,Hitter Fantasy Score,6.5,OAK,base,Sun 2:10 PM
+Jonathan India,IF,KC,Hitter Fantasy Score,6.5,OAK,base,Sun 2:10 PM
+Jac Caglianone,IF,KC,Hitter Fantasy Score,4.5,OAK,base,Sun 2:10 PM
+Carlos Correa,IF,MIN,Hitter Fantasy Score,5.5,HOU,base,Sun 2:10 PM
+Jose Altuve,OF,HOU,Hitter Fantasy Score,6.5,MIN,base,Sun 2:10 PM
+Jeremy Pena,IF,HOU,Hitter Fantasy Score,7.5,MIN,base,Sun 2:10 PM
+Ryan Jeffers,C,MIN,Hitter Fantasy Score,5.5,HOU,base,Sun 2:10 PM
+Jake Meyers,OF,HOU,Hitter Fantasy Score,4.5,MIN,base,Sun 2:10 PM
+Mauricio Dubon,OF,HOU,Hitter Fantasy Score,3.0,MIN,base,Sun 2:10 PM
+Yainer Diaz,C,HOU,Hitter Fantasy Score,5.5,MIN,base,Sun 2:10 PM
+Christian Walker,IF,HOU,Hitter Fantasy Score,5.0,MIN,base,Sun 2:10 PM
+Cam Smith,IF,HOU,Hitter Fantasy Score,4.5,MIN,base,Sun 2:10 PM
+Bryan Reynolds,OF,PIT,Hits+Runs+RBIs,1.5,CHC,base,Sun 2:20 PM
+Oneil Cruz,OF,PIT,Runs,0.5,CHC,base,Sun 2:20 PM
+Oneil Cruz,OF,PIT,Hits+Runs+RBIs,1.5,CHC,base,Sun 2:20 PM
+Ian Happ,OF,CHC,Hits+Runs+RBIs,1.5,PIT,base,Sun 2:20 PM
+Mitch Keller,P,PIT,Pitches Thrown,92.5,CHC,base,Sun 2:20 PM
+Mitch Keller,P,PIT,Walks Allowed,1.5,CHC,base,Sun 2:20 PM
+Mitch Keller,P,PIT,Pitcher Strikeouts,5.0,CHC,base,Sun 2:20 PM
+Nico Hoerner,IF,CHC,Hits+Runs+RBIs,1.5,PIT,base,Sun 2:20 PM
+Dansby Swanson,IF,CHC,Hits+Runs+RBIs,1.5,PIT,base,Sun 2:20 PM
+Andrew McCutchen,OF,PIT,Hits+Runs+RBIs,1.5,CHC,base,Sun 2:20 PM
+Nick Gonzales,IF,PIT,Hits+Runs+RBIs,1.5,CHC,base,Sun 2:20 PM
+Michael Busch,IF,CHC,Hits+Runs+RBIs,1.5,PIT,base,Sun 2:20 PM
+Colin Rea,P,CHC,Pitcher Strikeouts,4.5,PIT,base,Sun 2:20 PM
+Kyle Tucker,OF,CHC,Runs,0.5,PIT,base,Sun 2:20 PM
+Ke'Bryan Hayes,IF,PIT,Hitter Fantasy Score,4.5,CHC,base,Sun 2:20 PM
+Bryan Reynolds,OF,PIT,Hitter Fantasy Score,5.5,CHC,base,Sun 2:20 PM
+Oneil Cruz,OF,PIT,Hitter Fantasy Score,8.5,CHC,base,Sun 2:20 PM
+Ian Happ,OF,CHC,Hitter Fantasy Score,6.5,PIT,base,Sun 2:20 PM
+Seiya Suzuki,OF,CHC,Hitter Fantasy Score,6.0,PIT,base,Sun 2:20 PM
+Dansby Swanson,IF,CHC,Hitter Fantasy Score,5.0,PIT,base,Sun 2:20 PM
+Andrew McCutchen,OF,PIT,Hitter Fantasy Score,5.0,CHC,base,Sun 2:20 PM
+Henry Davis,C,PIT,Hitter Fantasy Score,3.5,CHC,base,Sun 2:20 PM
+Michael Busch,IF,CHC,Hitter Fantasy Score,4.5,PIT,base,Sun 2:20 PM
+Pete Crow-Armstrong,OF,CHC,Hitter Fantasy Score,6.5,PIT,base,Sun 2:20 PM
+Isiah Kiner-Falefa,IF,PIT,Hitter Fantasy Score,3.5,CHC,base,Sun 2:20 PM
+Kyle Tucker,OF,CHC,Hitter Fantasy Score,7.5,PIT,base,Sun 2:20 PM
+Matt Shaw,IF,CHC,Hitter Fantasy Score,3.5,PIT,base,Sun 2:20 PM
+Spencer Horwitz,IF,PIT,Hitter Fantasy Score,5.0,CHC,base,Sun 2:20 PM
+Corey Seager,IF,TEX,Total Bases,1.5,CWS,base,Sun 2:35 PM
+Corey Seager,IF,TEX,Runs,0.5,CWS,base,Sun 2:35 PM
+Marcus Semien,IF,TEX,Hitter Strikeouts,0.5,CWS,base,Sun 2:35 PM
+Marcus Semien,IF,TEX,Hits+Runs+RBIs,1.5,CWS,base,Sun 2:35 PM
+Josh Smith,IF,TEX,Runs,0.5,CWS,base,Sun 2:35 PM
+Josh Smith,IF,TEX,Hits+Runs+RBIs,1.5,CWS,base,Sun 2:35 PM
+Josh Jung,IF,TEX,Hits+Runs+RBIs,1.5,CWS,base,Sun 2:35 PM
+Andrew Benintendi,OF,CWS,Hits+Runs+RBIs,1.5,TEX,base,Sun 2:35 PM
+Wyatt Langford,OF,TEX,Runs,0.5,CWS,base,Sun 2:35 PM
+Kumar Rocker,P,TEX,Pitcher Strikeouts,4.5,CWS,base,Sun 2:35 PM
+Michael A Taylor,OF,CWS,Total Bases,0.5,TEX,base,Sun 2:35 PM
+Michael A Taylor,OF,CWS,Hits,0.5,TEX,base,Sun 2:35 PM
+Jake Burger,IF,TEX,Hits+Runs+RBIs,1.5,CWS,base,Sun 2:35 PM
+Chase Meidroth,IF,CWS,Hits+Runs+RBIs,1.5,TEX,base,Sun 2:35 PM
+Mike Tauchman,OF,CWS,Hits+Runs+RBIs,1.5,TEX,base,Sun 2:35 PM
+Mike Tauchman,OF,CWS,Walks,0.5,TEX,base,Sun 2:35 PM
+Vinny Capra,IF,CWS,Total Bases,0.5,TEX,base,Sun 2:35 PM
+Vinny Capra,IF,CWS,Hits,0.5,TEX,base,Sun 2:35 PM
+Aaron Civale,P,CWS,Pitcher Strikeouts,4.0,TEX,base,Sun 2:35 PM
+Corey Seager,IF,TEX,Hitter Fantasy Score,6.5,CWS,base,Sun 2:35 PM
+Marcus Semien,IF,TEX,Hitter Fantasy Score,6.0,CWS,base,Sun 2:35 PM
+Adolis Garcia,OF,TEX,Hitter Fantasy Score,3.5,CWS,base,Sun 2:35 PM
+Jonah Heim,C,TEX,Hitter Fantasy Score,3.5,CWS,base,Sun 2:35 PM
+Josh Smith,IF,TEX,Hitter Fantasy Score,7.5,CWS,base,Sun 2:35 PM
+Andrew Benintendi,OF,CWS,Hitter Fantasy Score,5.0,TEX,base,Sun 2:35 PM
+Wyatt Langford,OF,TEX,Hitter Fantasy Score,6.5,CWS,base,Sun 2:35 PM
+Miguel Vargas,IF,CWS,Hitter Fantasy Score,5.0,TEX,base,Sun 2:35 PM
+Chase Meidroth,IF,CWS,Hitter Fantasy Score,5.5,TEX,base,Sun 2:35 PM
+Mike Tauchman,OF,CWS,Hitter Fantasy Score,5.5,TEX,base,Sun 2:35 PM
+Xander Bogaerts,IF,SD,Hits+Runs+RBIs,1.5,AZ,base,Sun 4:10 PM
+Fernando Tatis,OF,SD,Total Bases,1.5,AZ,base,Sun 4:10 PM
+Merrill Kelly,P,AZ,Pitcher Strikeouts,4.5,SD,base,Sun 4:10 PM
+Merrill Kelly,P,AZ,Pitches Thrown,95.5,SD,base,Sun 4:10 PM
+Lourdes Gurriel,OF,AZ,Hits+Runs+RBIs,1.5,SD,base,Sun 4:10 PM
+Corbin Carroll,OF,AZ,Total Bases,1.5,SD,base,Sun 4:10 PM
+Ketel Marte,IF,AZ,Hits+Runs+RBIs,1.5,SD,base,Sun 4:10 PM
+Ketel Marte,IF,AZ,Walks,0.5,SD,base,Sun 4:10 PM
+Eugenio Suarez,IF,AZ,Hits+Runs+RBIs,1.5,SD,base,Sun 4:10 PM
+Alek Thomas,OF,AZ,Hitter Strikeouts,0.5,SD,base,Sun 4:10 PM
+Tyler Wade,IF,SD,Total Bases,0.5,AZ,base,Sun 4:10 PM
+Nick Pivetta,P,SD,Pitches Thrown,91.5,AZ,base,Sun 4:10 PM
+Nick Pivetta,P,SD,Pitcher Strikeouts,5.0,AZ,base,Sun 4:10 PM
+Nick Pivetta,P,SD,Pitching Outs,17.5,AZ,base,Sun 4:10 PM
+Nick Pivetta,P,SD,Earned Runs Allowed,2.5,AZ,base,Sun 4:10 PM
+Josh Naylor,IF,AZ,Hitter Strikeouts,0.5,SD,base,Sun 4:10 PM
+Gavin Sheets,IF,SD,Hits+Runs+RBIs,1.5,AZ,base,Sun 4:10 PM
+Jose Iglesias,IF,SD,Hits+Runs+RBIs,1.5,AZ,base,Sun 4:10 PM
+Jose Ramirez,IF,CLE,Hits+Runs+RBIs,1.5,SEA,base,Sun 4:10 PM
+JP Crawford,IF,SEA,Hits+Runs+RBIs,1.5,CLE,base,Sun 4:10 PM
+Cal Raleigh,C,SEA,Hits+Runs+RBIs,1.5,CLE,base,Sun 4:10 PM
+Cal Raleigh,C,SEA,Runs,0.5,CLE,base,Sun 4:10 PM
+Bo Naylor,C,CLE,Hits,0.5,SEA,base,Sun 4:10 PM
+Bo Naylor,C,CLE,Total Bases,0.5,SEA,base,Sun 4:10 PM
+Emerson Hancock,P,SEA,Pitching Outs,15.5,CLE,base,Sun 4:10 PM
+Emerson Hancock,P,SEA,Pitcher Strikeouts,3.5,CLE,base,Sun 4:10 PM
+Kyle Manzardo,IF,CLE,Hits+Runs+RBIs,1.5,SEA,base,Sun 4:10 PM
+Luis L Ortiz,P,CLE,Pitching Outs,16.5,SEA,base,Sun 4:10 PM
+Luis L Ortiz,P,CLE,Pitches Thrown,91.5,SEA,base,Sun 4:10 PM
+Luis L Ortiz,P,CLE,Pitcher Strikeouts,5.0,SEA,base,Sun 4:10 PM
+Rowdy Tellez,IF,SEA,Total Bases,0.5,CLE,base,Sun 4:10 PM
+Rowdy Tellez,IF,SEA,Hits,0.5,CLE,base,Sun 4:10 PM
+Miles Mastrobuoni,IF,SEA,Hitter Strikeouts,0.5,CLE,base,Sun 4:10 PM
+Miles Mastrobuoni,IF,SEA,Total Bases,0.5,CLE,base,Sun 4:10 PM
+Miles Mastrobuoni,IF,SEA,Hits,0.5,CLE,base,Sun 4:10 PM
+Cole Young,IF,SEA,Hits,0.5,CLE,base,Sun 4:10 PM
+Cole Young,IF,SEA,Total Bases,0.5,CLE,base,Sun 4:10 PM
+Manny Machado,IF,SD,Hitter Fantasy Score,6.5,AZ,base,Sun 4:10 PM
+Fernando Tatis,OF,SD,Hitter Fantasy Score,7.5,AZ,base,Sun 4:10 PM
+Lourdes Gurriel,OF,AZ,Hitter Fantasy Score,4.5,SD,base,Sun 4:10 PM
+Corbin Carroll,OF,AZ,Hitter Fantasy Score,6.5,SD,base,Sun 4:10 PM
+Ketel Marte,IF,AZ,Hitter Fantasy Score,5.5,SD,base,Sun 4:10 PM
+Eugenio Suarez,IF,AZ,Hitter Fantasy Score,4.5,SD,base,Sun 4:10 PM
+Geraldo Perdomo,IF,AZ,Hitter Fantasy Score,5.0,SD,base,Sun 4:10 PM
+Luis Arraez,IF,SD,Hitter Fantasy Score,6.5,AZ,base,Sun 4:10 PM
+Josh Naylor,IF,AZ,Hitter Fantasy Score,5.0,SD,base,Sun 4:10 PM
+Julio Rodriguez,OF,SEA,Hitter Fantasy Score,7.5,CLE,base,Sun 4:10 PM
+Jose Ramirez,IF,CLE,Hitter Fantasy Score,7.5,SEA,base,Sun 4:10 PM
+Steven Kwan,OF,CLE,Hitter Fantasy Score,6.5,SEA,base,Sun 4:10 PM
+JP Crawford,IF,SEA,Hitter Fantasy Score,5.5,CLE,base,Sun 4:10 PM
+Cal Raleigh,C,SEA,Hitter Fantasy Score,6.5,CLE,base,Sun 4:10 PM
+Dominic Canzone,OF,SEA,Hitter Fantasy Score,3.5,CLE,base,Sun 4:10 PM
+Randy Arozarena,OF,SEA,Hitter Fantasy Score,5.0,CLE,base,Sun 4:10 PM
+Carlos Santana,IF,CLE,Hitter Fantasy Score,5.0,SEA,base,Sun 4:10 PM
+Rowdy Tellez,IF,SEA,Hitter Fantasy Score,3.5,CLE,base,Sun 4:10 PM
+Ben Williamson,IF,SEA,Hitter Fantasy Score,3.5,CLE,base,Sun 4:10 PM
+Cole Young,IF,SEA,Hitter Fantasy Score,3.5,CLE,base,Sun 4:10 PM
+Mike Yastrzemski,OF,SF,Total Bases,0.5,LAD,base,Sun 7:10 PM
+Will Smith,C,LAD,Hits+Runs+RBIs,1.5,SF,base,Sun 7:10 PM
+Mookie Betts,IF,LAD,Hitter Strikeouts,0.5,SF,base,Sun 7:10 PM
+Dustin May,P,LAD,Pitches Thrown,89.5,SF,base,Sun 7:10 PM
+Dustin May,P,LAD,Pitcher Strikeouts,5.0,SF,base,Sun 7:10 PM
+Heliot Ramos,OF,SF,Hits+Runs+RBIs,1.5,LAD,base,Sun 7:10 PM
+Andy Pages,OF,LAD,Hits+Runs+RBIs,1.5,SF,base,Sun 7:10 PM
+Kyle Harrison,P,SF,Pitcher Strikeouts,4.5,LAD,base,Sun 7:10 PM
+Shohei Ohtani,P/DH,LAD,Hits+Runs+RBIs,2.5,SF,base,Sun 7:10 PM
+Teoscar Hernandez,OF,LAD,Runs,0.5,SF,base,Sun 7:10 PM
+Jung Hoo Lee,OF,SF,Hitter Strikeouts,0.5,LAD,base,Sun 7:10 PM
+Jung Hoo Lee,OF,SF,Hits+Runs+RBIs,1.5,LAD,base,Sun 7:10 PM
+Tommy Edman,OF,LAD,Hits+Runs+RBIs,1.5,SF,base,Sun 7:10 PM
+Tommy Edman,OF,LAD,Hitter Strikeouts,0.5,SF,base,Sun 7:10 PM
+Michael Conforto,OF,LAD,Hits,0.5,SF,base,Sun 7:10 PM
+Michael Conforto,OF,LAD,Total Bases,0.5,SF,base,Sun 7:10 PM
+Willy Adames,IF,SF,Hits+Runs+RBIs,1.5,LAD,base,Sun 7:10 PM
+Will Smith,C,LAD,Hitter Fantasy Score,5.5,SF,base,Sun 7:10 PM
+Mookie Betts,IF,LAD,Hitter Fantasy Score,7.5,SF,base,Sun 7:10 PM
+Heliot Ramos,OF,SF,Hitter Fantasy Score,5.5,LAD,base,Sun 7:10 PM
+Andy Pages,OF,LAD,Hitter Fantasy Score,4.5,SF,base,Sun 7:10 PM
+Shohei Ohtani,P/DH,LAD,Hitter Fantasy Score,9.5,SF,base,Sun 7:10 PM
+Teoscar Hernandez,OF,LAD,Hitter Fantasy Score,5.5,SF,base,Sun 7:10 PM
+Jung Hoo Lee,OF,SF,Hitter Fantasy Score,6.0,LAD,base,Sun 7:10 PM
