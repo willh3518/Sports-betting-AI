@@ -1,107 +1,109 @@
 // MLB_Dashboard/static/js/dashboard.js
 
+// MLB_Dashboard/static/js/dashboard.js
+
 // ── MLB Insights Dropdown Logic ───────────────────────────────
 let insightsData = {};
 
 function initInsights(insights) {
   insightsData = insights;
-  const typeSelect = document.getElementById('insights-select');
+  const propSelect = document.getElementById('insights-select');
   const dateSelect = document.getElementById('insights-date-select');
+  const display    = document.getElementById('insights-display');
 
-  // populate prop-type dropdown
+  // Populate prop dropdown
   Object.keys(insightsData).forEach(pt => {
-    typeSelect.appendChild(new Option(pt, pt));
+    propSelect.appendChild(new Option(pt, pt));
   });
 
-  // when prop type changes, populate dates
-  typeSelect.addEventListener('change', () => {
-    const display = document.getElementById('insights-display');
+  // When prop changes, build the date list
+  propSelect.addEventListener('change', () => {
+    const prop = propSelect.value;
     display.classList.add('d-none');
     display.textContent = '';
 
-    const pt = typeSelect.value;
+    // clear old dates
     dateSelect.innerHTML = '<option value="" selected>Select a date</option>';
 
-    if (!pt || !insightsData[pt]) {
-      dateSelect.disabled = true;
+    if (!prop || !insightsData[prop]?.length) {
+      dateSelect.classList.add('d-none');
       return;
     }
 
-    // fill date dropdown
-    insightsData[pt].forEach(ins => {
-      dateSelect.appendChild(new Option(ins.date, ins.date));
+    // sort insights by date ascending
+    const sorted = insightsData[prop]
+      .slice()
+      .sort((a,b) => new Date(a.date) - new Date(b.date));
+
+    // populate date dropdown
+    sorted.forEach(ins => {
+      const opt = new Option(ins.date, ins.date);
+      dateSelect.appendChild(opt);
     });
-    dateSelect.disabled = false;
 
-    // auto-select latest date
-    const lastDate = insightsData[pt].slice(-1)[0].date;
-    dateSelect.value = lastDate;
-    updateInsightDisplay(pt, lastDate);
+    dateSelect.classList.remove('d-none');
   });
 
-  // when date changes, update display
+  // When date changes, show that exact insight
   dateSelect.addEventListener('change', () => {
-    const pt   = typeSelect.value;
-    const dt   = dateSelect.value;
-    if (pt && dt) updateInsightDisplay(pt, dt);
+    const prop = propSelect.value;
+    const date = dateSelect.value;
+    if (!prop || !date) {
+      display.classList.add('d-none');
+      return;
+    }
+
+    const insight = insightsData[prop].find(ins => ins.date === date);
+    if (!insight) {
+      display.classList.add('d-none');
+      return;
+    }
+
+    const keyFactors = Array.isArray(insight.key_factors)
+      ? insight.key_factors.join(', ')
+      : insight.key_factors;
+
+    display.textContent =
+      `Date: ${insight.date}\n\n` +
+      `Strongest Insight:\n${insight.strongest_insight}\n\n` +
+      `Key Factors:\n${keyFactors}\n\n` +
+      `Pattern Analysis:\n${insight.pattern_analysis}`;
+
+    display.classList.remove('d-none');
   });
 }
 
-function updateInsightDisplay(propType, date) {
-  const display = document.getElementById('insights-display');
-  const arr     = insightsData[propType] || [];
-  const entry   = arr.find(ins => ins.date === date);
+document.addEventListener('DOMContentLoaded', () => {
+  showStatus("Loading dashboard data…");
 
-  if (!entry) {
-    display.classList.add('d-none');
-    return;
-  }
-
-  // handle key_factors array or string
-  const keyFactors = Array.isArray(entry.key_factors)
-    ? entry.key_factors.join(', ')
-    : entry.key_factors;
-
-  display.textContent =
-    `Date: ${entry.date}\n\n` +
-    `Strongest Insight:\n${entry.strongest_insight}\n\n` +
-    `Key Factors:\n${keyFactors}\n\n` +
-    `Pattern Analysis:\n${entry.pattern_analysis}`;
-
-  display.classList.remove('d-none');
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    showStatus("Loading dashboard data...");
-
-    // ── Load MLB Insights for dropdown ─────────────────────────────
-    fetch('/api/mlb-insights')
-    .then(res => res.json())
-    .then(data => {
-      if (data.success) initInsights(data.insights);
-      else console.error('Insights load error:', data.error);
+  // 1) load insights
+  fetch('/api/mlb-insights')
+    .then(r => r.json())
+    .then(res => {
+      if (res.success) initInsights(res.insights);
+      else console.error('Insights error:', res.error);
     })
-    .catch(err => console.error('Fetch insights failed:', err));
+    .catch(e => console.error('Fetch insights failed:', e));
 
-
-    fetch('/api/dashboard-data')
-        .then(r => {
-            if (!r.ok) throw new Error(`HTTP error! Status: ${r.status}`);
-            return r.json();
-        })
-        .then(r => {
-            if (r.success) {
-                hideStatus();
-                updateDashboard(r.data);
-            } else {
-                showStatus("Error: " + r.error, true);
-                console.error('Error loading data:', r.error);
-            }
-        })
-        .catch(e => {
-            showStatus("Error: " + e.message, true);
-            console.error('Fetch error:', e);
-        });
+  // 2) load main dashboard data
+  fetch('/api/dashboard-data')
+    .then(r => {
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      return r.json();
+    })
+    .then(r => {
+      if (r.success) {
+        hideStatus();
+        updateDashboard(r.data);
+      } else {
+        showStatus("Error: " + r.error, true);
+        console.error('Dashboard data error:', r.error);
+      }
+    })
+    .catch(e => {
+      showStatus("Error: " + e.message, true);
+      console.error('Fetch failed:', e);
+    });
 });
 
 function updateDashboard(data) {
@@ -158,39 +160,40 @@ function updatePropTypeTable(pt) {
 }
 
 function updateRecentPredictions(predictions) {
-    const tableBody = document.getElementById('recent-predictions-table');
-    tableBody.innerHTML = '';
+  const tbody = document.getElementById('recent-predictions-table');
+  tbody.innerHTML = '';
 
-    if (!predictions || predictions.length === 0) {
-        tableBody.innerHTML = '<tr><td colspan="6" class="text-center">No recent predictions available</td></tr>';
-    } else {
-        predictions.forEach(pred => {
-            const predText = pred.Prediction === 1 ? 'Over' : 'Under';
-            const confNum  = parseFloat(pred.Confidence) || 0;
-            const isCorrect = predText === pred.Result;
-            const resultMark = isCorrect ? '✓' : '✗';
+  const total   = predictions?.length || 0;
+  let correct = 0;
 
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-              <td>${pred.Player}</td>
-              <td>${pred['Prop Type']}</td>
-              <td>${pred['Prop Value']}</td>
-              <td>${predText}</td>
-              <td>${(confNum*100).toFixed(0)}%</td>
-              <td>${resultMark}</td>
-            `;
-            tableBody.appendChild(tr);
-        });
+  if (total > 0) {
+    predictions.forEach(pred => {
+      const predText  = pred.Prediction === 1 ? 'Over' : 'Under';
+      const confNum   = parseFloat(pred.Confidence) || 0;
+      const isCorrect = predText === pred.Actual_Result;
+      if (isCorrect) correct++;
 
-        const total   = predictions.length;
-        const correct = predictions.reduce((sum, pred) => {
-            const predText = pred.Prediction === 1 ? 'Over' : 'Under';
-            return sum + (predText === pred.Result ? 1 : 0);
-        }, 0);
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${pred.Player}</td>
+        <td>${pred['Prop Type']}</td>
+        <td>${pred['Prop Value']}</td>
+        <td>${pred['LLM_Prediction']}</td>
+        <td>${pred['RF_Confidence']}</td>
+        <td>${isCorrect ? '✓' : '✗'}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+  } else {
+    // still render a single row spanning all 6 columns
+    const tr = document.createElement('tr');
+    tr.innerHTML = '<td colspan="6" class="text-center">No recent predictions available</td>';
+    tbody.appendChild(tr);
+  }
 
-        const summaryEl = document.getElementById('recent-predictions-summary');
-        if (summaryEl) summaryEl.textContent = `${correct} / ${total}`;
-    }
+  // always update footer summary
+  document.getElementById('recent-predictions-summary')
+          .textContent = `${correct} / ${total}`;
 }
 
 function updateHistoricalTable(rows) {
@@ -292,41 +295,48 @@ function hideStatus() {
 }
 
 function updateBetslips(betslips) {
-    const container = document.getElementById('betslips-card-container');
-    container.innerHTML = '';
+  const container = document.getElementById('betslips-card-container');
+  container.innerHTML = '';
 
-    if (!betslips || betslips.length === 0) {
-        container.innerHTML = '<div class="text-center">No betslips generated yet.</div>';
-        return;
+  if (!betslips || betslips.length === 0) {
+    container.innerHTML = '<div class="text-center">No betslips generated yet.</div>';
+    return;
+  }
+
+  betslips.forEach((slip, i) => {
+    // ensure we have a legs array
+    if (!slip.legs || !Array.isArray(slip.legs)) {
+      console.warn(`Skipping invalid slip #${i+1}`, slip);
+      return;
     }
 
-    betslips.forEach((slip, i) => {
-        const slipCard = document.createElement('div');
-        slipCard.className = 'betslip-card';
+    const slipCard = document.createElement('div');
+    slipCard.className = 'betslip-card';
 
-        const legsHtml = slip.legs.map(leg => {
-            const pick = leg.Pick || 'Over';
-            const pickClass = pick === 'Over' ? 'pick-over' : 'pick-under';
-            return `
-                <div class="betslip-leg">
-                    <div class="player-name">${leg.Player}</div>
-                    <div class="prop">${leg["Prop Type"]} (${leg["Prop Value"]})</div>
-                    <div class="pick ${pickClass}">${pick}</div>
-                </div>
-            `;
-        }).join('');
+    // build legs HTML
+    const legsHtml = slip.legs.map(leg => {
+      const pick = leg.Pick || 'Over';
+      const pickClass = pick === 'Over' ? 'pick-over' : 'pick-under';
+      return `
+        <div class="betslip-leg">
+          <div class="player-name">${leg.Player}</div>
+          <div class="prop">${leg["Prop Type"]} (${leg["Prop Value"]})</div>
+          <div class="pick ${pickClass}">${pick}</div>
+        </div>
+      `;
+    }).join('');
 
-        slipCard.innerHTML = `
-            <div class="betslip-header">Slip ${i + 1}</div>
-            <div class="betslip-legs">${legsHtml}</div>
-            <div class="betslip-meta">
-                <span>Stake: $${slip.stake.toFixed(2)}</span>
-                <span>Multiplier: ${slip.payout_multiplier}×</span>
-                <span>Win Prob: ${(slip.win_probability * 100).toFixed(1)}%</span>
-                <span>Expected Return: $${slip.expected_return.toFixed(2)}</span>
-            </div>
-        `;
+    slipCard.innerHTML = `
+      <div class="betslip-header">Slip ${i + 1}</div>
+      <div class="betslip-legs">${legsHtml}</div>
+      <div class="betslip-meta">
+        <span>Stake: $${(slip.stake||0).toFixed(2)}</span>
+        <span>Multiplier: ${slip.payout_multiplier||'?'}×</span>
+        <span>Win Prob: ${((slip.win_probability||0)*100).toFixed(1)}%</span>
+        <span>Expected Return: $${(slip.expected_return||0).toFixed(2)}</span>
+      </div>
+    `;
 
-        container.appendChild(slipCard);
-    });
+    container.appendChild(slipCard);
+  });
 }

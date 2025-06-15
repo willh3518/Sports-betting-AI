@@ -1,4 +1,4 @@
- {
+{
   "prop_types": {
     "Hits+Runs+RBIs": [
       {
@@ -24,6 +24,12 @@
         "strongest_insight": "To improve future Hits+Runs+RBIs prop predictions, it would be beneficial to ensure that the data used for training the model is comprehensive, including information about opposing pitchers' performance against different handed batters and park factors for home runs. Additionally, utilizing a more advanced method of determining agreement between multiple predictive models could enhance prediction accuracy.",
         "key_factors": "- wOBA is an important factor in predicting Hits+Runs+RBIs props. Players with higher wOBA tend to have better chances of accumulating more hits, runs, and RBIs.\n- Recent form (AVG in the last 15 games) against a player's preferred pitcher type is also a significant factor in predicting Hits+Runs+RBIs props.\n- The park factor for home runs may have an impact on predictions as well, particularly if it is favorable for home runs (e.g., Fenway Park).",
         "pattern_analysis": "- Correct predictions generally involve players with higher wOBA (Weighted On-Base Average) than the league average, particularly when facing pitchers of their preferred handedness. The model's confidence in these predictions is often low or medium.\n- Incorrect predictions seem to be associated with a lack of agreement between the model and the Long-Term Linear Model for Recommendation (LLM_RF_Agreement). Additionally, the players who were incorrectly predicted had a strong recent form against their preferred pitcher type."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "The single most valuable insight for improving future Hits+Runs+RBIs prop predictions is to focus on the player-pitcher matchup and carefully consider the opposing pitcher's performance against different handed batters, as this can significantly impact a player's offensive production. Additionally, it is essential to balance the importance of park factors for home runs with other predictive factors such as wOBA and player form against the specific opponent.",
+        "key_factors": "The statistics or factors that appear most predictive for Hits+Runs+RBIs props include wOBA (both overall and vs. specific pitcher types), AVG (Average) against the opponent, barrel% and hard-hit %, K/BB%, and park factor for home runs.",
+        "pattern_analysis": "From the analysis of correct vs. incorrect predictions, it seems that accurate predictions tend to focus on players with a high wOBA (Weighted On-Base Average) compared to the league average and those who have a strong history against the opposing pitcher or at the specific park. Additionally, the model's predictions were more accurate when the player was facing a pitcher with a relatively high K/BB% (strikeout-to-walk ratio), as this could lead to more walks and opportunities for hits. On the other hand, incorrect predictions often overlooked the potential impact of opposing pitchers' performance against different handed batters and overestimated the effect of park factors such as home runs."
       }
     ],
     "Hitter Strikeouts": [
@@ -50,6 +56,12 @@
         "strongest_insight": "The single most valuable insight for improving future Hitter Strikeouts prop predictions is to carefully consider both a player's historical performance against RHP and their current form, while also taking into account the opposing pitcher's K% and the RF model's agreement and confidence level. When data is missing, it is important to exercise caution and avoid making strong predictions based on incomplete information.",
         "key_factors": "The most predictive factors for Hitter Strikeouts props appear to be the player's K% versus RHP, opposing pitcher's K%, recent form (last 15 games), and the model's agreement and confidence level.",
         "pattern_analysis": "The correct predictions seem to be based on a combination of player's strikeout rate (K%) versus right-handed pitchers (RHP), the opposing pitcher's strikeout rate, recent form, and the model's agreement and confidence level. Incorrect predictions often involved misjudging the player's performance in recent games, overlooking significant differences between performance against RHP and left-handed pitchers, or relying too heavily on missing data when the RF model's confidence was low."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "To improve future Hitter Strikeouts prop predictions, the model should prioritize gathering more comprehensive data on pitch mixes, game conditions, and performance against both LHP and RHP for all players. Furthermore, the model could benefit from a re-evaluation of its weighting system to give more importance to K% when it is higher for the opposing pitcher than the player in question.",
+        "key_factors": "The player's K%, recent form (Last 15 Games), and opposing pitcher's K% appear to be significant factors in predicting Hitter Strikeouts props. Additionally, plate discipline stats such as BB% vs RHP might also play a role in determining strikeout outcomes.",
+        "pattern_analysis": "Incorrect predictions seem to be more frequent when the model relies on sparse training data, missing data for some pitch types and game conditions, or has low confidence due to the inconsistency in performance against LHP. Additionally, incorrect predictions often involve players with a lower K% than the opposing pitcher's K%."
       }
     ],
     "Total Bases": [
@@ -76,6 +88,12 @@
         "strongest_insight": "The single most valuable insight for improving future Total Bases prop predictions is to ensure a thorough analysis of both the player's performance against the pitcher's handedness, as well as considering the park factor, crosswind conditions, and recent form when making predictions. It's essential to avoid relying too heavily on indicators like high barrel%/hard hit % without considering the overall context and statistics.",
         "key_factors": "The key factors that appear most predictive for Total Bases props are a player's wOBA, SLG, OBP, and average versus the pitcher's handedness, park factor, crosswind conditions, and recent form.",
         "pattern_analysis": "Correct predictions seem to be based on a combination of the player's performance against the pitcher's handedness, park factor, game conditions (weather), and recent form. Incorrect predictions often overlooked the player's overall stats versus the pitcher's handedness, or they were influenced by misleading indicators such as sparse training data or high barrel%/hard hit %."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "The single most valuable insight for improving future Total Bases prop predictions is to focus on a comprehensive analysis of the player's recent form against the pitcher's handedness and consider any contextual factors that may affect the game, such as park factor, wind conditions, and pitcher stats (e.g., BB/K rates). It's also crucial to be cautious when dealing with limited data availability for certain matchups.",
+        "key_factors": "Player wOBA and SLG against the pitcher's handedness, recent form (AVG, OBP), park factor, BB/K rates, and wind conditions appear to be key factors in predicting Total Bases props.",
+        "pattern_analysis": "Correct predictions seem to be based on a combination of factors such as the player's performance against the pitcher's handedness, recent form, and park factors. Incorrect predictions often stem from overconfidence in the player's statistics or overlooked aspects like the quality of data available for certain matchups."
       }
     ],
     "Hitter Fantasy Score": [
@@ -102,6 +120,12 @@
         "strongest_insight": "No strongest insight provided",
         "key_factors": "No key factors provided",
         "pattern_analysis": "No pattern analysis provided"
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "The single most valuable insight for improving future Hitter Fantasy Score prop predictions is to focus on a player's performance specifically against the opponent's pitcher's handedness, considering recent form and park factors that might influence their home run potential. Additionally, placing greater emphasis on high-confidence predictions with solid supporting evidence may lead to more accurate outcomes.",
+        "key_factors": "The following statistics or factors appear most predictive for Hitter Fantasy Score props:\n1. Player's average, OPS, SLG, and ISO against the pitcher's handedness.\n2. Recent form (e.g., last 15 games) of a player against the pitcher's handedness.\n3. Opponent's pitching statistics, such as strikeout percentage and park factor for home runs.\n4. Game conditions, such as weather conditions, park factors, and wind direction.",
+        "pattern_analysis": "Some patterns observed in correct vs. incorrect predictions include:\n1. Correct predictions often involved players with a history of good performance against the pitcher's handedness or specific strengths against the opponent's pitcher (e.g., Marcus Semien having a solid average against lefties and Wyatt Langford having a high ISO against lefties).\n2. Incorrect predictions frequently featured players with weak performance against the pitcher's handedness, especially when facing a strong lefty starter (e.g., Corey Seager's poor history against LHP).\n3. Correct predictions often had higher confidence levels than incorrect ones, though there were exceptions (e.g., the low-confidence prediction for Marcus Semien was correct).\n4. Incorrect predictions sometimes disregarded park factors that could potentially impact a player's performance, particularly when it came to home runs (e.g., Adolis Garcia and Josh Smith's predictions did not consider the HR-friendly park conditions at Globe Life Field)."
       }
     ],
     "Hits": [
@@ -128,6 +152,12 @@
         "strongest_insight": "To improve future Hits prop predictions, it is crucial to focus on analyzing a player's recent form against the type of pitcher they are facing and considering walk rates of the opposing pitcher. Wind conditions should also be taken into account, as they can significantly impact batted ball outcomes. It is essential to avoid relying solely on career stats or the model's confidence level without evaluating the current situation and adjusting the prediction accordingly.",
         "key_factors": "The most predictive factors for Hits props are a player's average against the type of pitcher they are facing, wOBA (weighted on-base average), recent form (last 15 games), and walk rates (BB/9) of the opposing pitcher.",
         "pattern_analysis": "The patterns observed in correct predictions include analyzing the player's stats against the type of pitcher they are facing, considering the opponent's K/9 rate as a significant factor affecting the chances of hits, and taking wind conditions into account. Incorrect predictions often overlooked the player's recent form (last 15 games) and relied too heavily on the model's confidence level or career stats without adjusting for the current situation."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "To improve future Hits prop predictions, it is crucial to focus on the player's performance against the specific pitcher's handedness, taking into account relevant park factors and recent form while avoiding confirmation bias and overreliance on season averages. A more granular analysis of a player's statistics against the opposing pitcher, particularly their BB% and K/9 rates, could also lead to improved predictions.",
+        "key_factors": "The key factors that appear most predictive for Hits props are the player's batting average, barrel%, hard-hit rate, and wOBA against the specific pitcher's handedness; the pitcher's BB% and K/9 rates; and park factors such as wind conditions.",
+        "pattern_analysis": "The correct predictions seem to be characterized by an analysis of the player's performance against the handedness of the pitcher, the pitcher's statistics (specifically BB% and K/9), and the park factors such as wind conditions. Incorrect predictions often involve a focus on the player's overall average or OBP rather than their performance against the specific pitcher, and underestimating the impact of a player's recent form compared to their season averages."
       }
     ],
     "Walks": [
@@ -142,6 +172,12 @@
         "strongest_insight": "To improve future Walks prop predictions, it would be beneficial to incorporate more training data from a variety of matchups and players, allowing the model to make more accurate assessments based on a larger dataset. Additionally, refining the logic used for recent game performance will help reduce bias towards short-term trends and focus on long-term statistics that are more predictive of Walks props.",
         "key_factors": "The most predictive factors for Walks props appear to be the player's BB% vs LHP, the opposing pitcher's BB/9 rate, and the player's power and quality metrics versus lefties (ISO, wOBA, xwOBA, Barrel%, Hard Hit %).",
         "pattern_analysis": "The correct predictions generally had a higher level of confidence (Medium) and agreement with the LLM_RF model, suggesting that when the AI system's prediction aligns with the Long-Term Model (LLM_RF), it is more likely to be accurate. Incorrect predictions often relied on sparse training data in similar matchups, indicating that the model may perform better with a larger and more diverse dataset."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "The single most valuable insight for improving future Walks prop predictions is to consider a comprehensive approach that takes into account both career statistics and recent form, specific matchups with opposing pitchers, park factors, and any trends or tendencies that could impact a player's likelihood of drawing walks. Additionally, it may be beneficial to prioritize models with high confidence levels when making predictions.",
+        "key_factors": "Key factors that appear predictive for Walks props include a player's wOBA against LHP, Hard Hit %, ISO vs LHP, and the opposing pitcher's BB/9 rate. Park Factors also seem to play a role in some instances.",
+        "pattern_analysis": "In the correct predictions, the model seems to have considered a combination of factors such as the player's performance against left-handed pitchers (LHP), park effects, and the opposing pitcher's tendencies (high BB/9 rate). On the other hand, in incorrect predictions, the model often relied too heavily on the player's career statistics rather than their recent form or the specific matchup with the opposing pitcher."
       }
     ],
     "Runs": [
@@ -168,6 +204,12 @@
         "strongest_insight": "The single most valuable insight for improving future Runs prop predictions is to emphasize the importance of a thorough analysis of both player and opposing pitcher statistics, paying close attention to their tendencies against each other (e.g., OPS, wOBA/xwOBA, K/9, BB/9) as well as park factors and wind conditions to make accurate and consistent predictions. Additionally, it is essential to maintain a high degree of confidence in the model's predictions and avoid relying too heavily on intuition or biases when making Runs prop bets.",
         "key_factors": "Player OPS, wOBA/xwOBA, Hard Hit % metrics, opposing pitcher's K/9 and BB/9 rates, park factor, and wind conditions appear to be the most predictive factors for Runs props.",
         "pattern_analysis": "The correct predictions tend to be based on a combination of strong player performance statistics against the opposing pitcher's type (LHP or RHP), the opponent's pitcher's propensity for striking out batters (K/9 rate) or walking them (BB/9 rate), and an evaluation of the park factors, such as ballparks that favor hitters or wind conditions. On the other hand, incorrect predictions often overlook these critical factors or overemphasize certain aspects, leading to inconsistent or biased assessments."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "The single most valuable insight for improving future Runs prop predictions is to incorporate more detailed context, including up-to-date performance metrics, opposing pitcher statistics, and park conditions. Additionally, using a comprehensive approach that considers both the player's overall stats and their recent form against the specific pitcher type may help reduce prediction errors.",
+        "key_factors": "Key factors that appear most predictive for Runs props include a player's OPS, wOBA, hard-hit metrics (like Hard Hit % and 4-seam FB HardHit%), and their performance against the pitcher type. Additionally, considering the opposing pitcher's strikeout and walk rates, park conditions, and game context seems important.",
+        "pattern_analysis": "The correct predictions seem to be based on a combination of several factors, including the player's past performance against the pitcher type (RHP or LHP), their overall stats like OPS and wOBA, the pitcher's strikeout and walk rates, and the park conditions. On the other hand, incorrect predictions often involve situations where the player's recent form is poor, limited training data for the model, or unspecified opponent stats, which suggests that considering more detailed context and up-to-date performance metrics could improve accuracy."
       }
     ],
     "Pitcher Strikeouts": [
@@ -194,6 +236,12 @@
         "strongest_insight": "To improve future Pitcher Strikeouts prop predictions, a thorough analysis of the opponent's K% against right-handed hitters and park factors should be prioritized. Additionally, increasing the model's ability to handle sparse training data and incorporate more detailed information about opponents could lead to improved accuracy.",
         "key_factors": "Key predictive factors for Pitcher Strikeouts props include K% against right-handed hitters (especially if it is significantly lower than the league average), park factor for strikeouts, recent form in terms of increased or decreased K%, and the opponent's K%.",
         "pattern_analysis": "A pattern observed in the correct predictions is a deeper analysis of relevant factors such as career and recent K% against right-handed hitters, park factors, and opponent's K%. Additionally, low model confidence (Low to Medium) seems to indicate more accurate predictions. On the other hand, incorrect predictions often lack critical information like opponent performance or have relied on sparse training data."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "To improve future Pitcher Strikeouts prop predictions, it is crucial to ensure that the model takes into account the most up-to-date statistics (recent form) and incorporates essential information such as park factors, opponent data, and specific pitch mix details. Additionally, using a consensus approach by combining multiple models' predictions (in this case, the LLM) can lead to more accurate outcomes.",
+        "key_factors": "Key factors that appear most predictive for Pitcher Strikeouts props include a player's K% against right-handed hitters, the opponent pitcher's K%, and park factor data. Considering both a player's career statistics and recent form is essential to make informed predictions.",
+        "pattern_analysis": "Incorrect predictions seem to occur when the model relies too heavily on sparse training data or lacks essential information such as park factors, opponent data, and specific pitch mix details. Additionally, overconfidence in assumptions about a player's performance based on career K% instead of considering recent form may lead to incorrect predictions. Correct predictions tend to consider both the model's prediction and the agreement with the large language model (LLM), demonstrating the importance of combining multiple factors when making predictions."
       }
     ],
     "Pitches Thrown": [
@@ -220,6 +268,12 @@
         "strongest_insight": "To improve future Pitches Thrown prop predictions, it is crucial to ensure that the model has access to complete and relevant data for both players involved in the game. Additionally, paying attention to a player's pitch velocity, K/BB ratio, and HardHit% against RHP will likely lead to more accurate predictions. It's also essential to take into account park factors and consider the model's confidence levels when making predictions.",
         "key_factors": "The most predictive factors for Pitches Thrown props appear to be a player's average pitch velocity, their K/BB ratio, and the HardHit% against right-handed pitchers (RHP). Park factor for HR also seems to play a role in certain cases.",
         "pattern_analysis": "Incorrect predictions seem to be more common when the model's confidence is low, and there is a lack of relevant data or complete information about the players involved in the game. Additionally, incorrect predictions were made when the player had an average pitch velocity around 91 mph, whereas correct predictions were often associated with lower-than-average pitch velocities for starting pitchers."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "To improve future Pitches Thrown prop predictions, it is essential to ensure that the model has access to complete and up-to-date data on a pitcher's average velocity, K/BB ratio, and HardHit% against RHP or LHP, as well as relevant information about the opposing pitcher. Additionally, increasing the model's confidence by using more sophisticated methods for handling incomplete data could help improve overall prediction accuracy.",
+        "key_factors": "The most predictive factors for Pitches Thrown props seem to be average pitch velocity, K/BB ratio, and HardHit% against right-handed pitchers (RHP) or left-handed pitchers (LHP), depending on the pitcher's handedness.",
+        "pattern_analysis": "From the analysis, it appears that correct predictions tend to be made when there is more data available about the pitcher's average velocity and key performance metrics such as K/BB ratio. Incorrect predictions often occur when there is a lack of relevant data or incomplete information about the players involved in the matchup."
       }
     ],
     "Pitching Outs": [
@@ -246,6 +300,12 @@
         "strongest_insight": "The single most valuable insight for improving future Pitching Outs prop predictions is a more comprehensive analysis of the pitcher's K%, BB%, and how their performance compares to the opponent. This, combined with considering other relevant factors like park factor and wind conditions, will help in making more accurate predictions. Furthermore, it is essential to account for the limitations of the available data and not overly rely on the model's confidence level when making predictions based on limited information.",
         "key_factors": "The key factors that appear most predictive for Pitching Outs props are K%, BB%, and the opponent's performance against the pitcher (RHP or LHP). Additional factors like HR/9, BABIP, park factor, and wind conditions can also influence the outcome but might be less consistently predictive.",
         "pattern_analysis": "The correct predictions often relied on a combination of the pitcher's strikeout percentage (K%) and walk rate (BB%), as well as the opponent's performance against that type of pitcher (RHP or LHP). Incorrect predictions seemed to be influenced by factors like limited data, opposing team statistics not being considered, and overconfidence in the model due to medium confidence levels."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "To improve future Pitching Outs prop predictions, it is essential to consider a comprehensive set of factors such as strikeout percentage (K%), walk rate (BB%), and opponent statistics like K-rate, batting average against the pitcher, and team's overall offensive performance. Additionally, utilizing machine learning models with higher confidence levels and incorporating more data points can help improve the accuracy of predictions. Furthermore, taking into account the impact of stadium conditions on batted ball outcomes will also enhance the prediction model's performance.",
+        "key_factors": "Key predictive factors appear to be a combination of pitcher's strikeout percentage (K%), walk rate (BB%), and the opposing team's K-rate. The stadium conditions, such as wind direction, also seem to impact the outcomes.",
+        "pattern_analysis": "Incorrect predictions seemed to be more frequent when the model's confidence was lower and there was limited data provided for either the pitcher or the opponent. In some cases, relying on a single statistic like strikeout percentage (K%) without considering other factors like walk rate or opponent statistics led to inaccurate predictions."
       }
     ],
     "Pitcher Fantasy Score": [
@@ -272,6 +332,12 @@
         "strongest_insight": "To improve future Pitcher Fantasy Score prop predictions, it is crucial to provide as much specific matchup information between the pitchers as possible and ensure that relevant statistics are given sufficient weight in the analysis. Building a more comprehensive database for batted-ball profiles and park factors could also enhance prediction accuracy. Furthermore, focusing on players with a larger body of data and considering their K-BB% as a primary indicator of their ability to limit scoring opportunities will lead to more accurate predictions.",
         "key_factors": "The most predictive factors for Pitcher Fantasy Score props appear to be a player's strikeout percentage (K%), walk rate (BB%), xwOBA against lefties and righties, and overall K-BB% as indicators of their ability to limit scoring opportunities. Park factor also plays a role in predicting the fantasy score, especially when it comes to home runs.",
         "pattern_analysis": "Incorrect predictions seem to be more frequent when the model's confidence is low, and there is a lack of specific matchup information against the opposing pitcher. Additionally, when there is insufficient data or limited batted-ball profile provided for comparison, the model struggles to make accurate predictions."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "To improve future Pitcher Fantasy Score prop predictions, it is essential to ensure that the model has access to as much data as possible, including pitcher statistics and opponent pitcher matchup information. Additionally, incorporating park factors, team OBP/wOBA against the pitcher's handedness, and K% into the prediction process will help enhance the model's accuracy in predicting Pitcher Fantasy Score props.",
+        "key_factors": "- Strikeout Rate (K%) and xwOBA are important factors for predicting Pitcher Fantasy Score props, as they can indicate a pitcher's ability to limit scoring opportunities and their opponents' offensive potential, respectively.\n- Opponent team performance data, such as OBP and wOBA against the pitcher's handedness, provides valuable context for assessing matchups.\n- Park factors play a crucial role in predicting Pitcher Fantasy Score props, as they can significantly impact a pitcher's ability to limit home runs and strikeouts.",
+        "pattern_analysis": "- Correct Predictions: The majority of correct predictions were made when the model had sufficient data available, including pitcher statistics and opponent pitcher matchup data. In these cases, the model considered factors like park factors, team OBP/wOBA against the pitcher's handedness, and K% to predict under or over for Pitcher Fantasy Score props.\n- Incorrect Predictions: The majority of incorrect predictions were made when limited data was available, such as missing opponent pitcher matchup information or insufficient pitching statistics. These situations seem to cause the model to struggle in making accurate predictions."
       }
     ],
     "Earned Runs Allowed": [
@@ -298,6 +364,12 @@
         "strongest_insight": "The single most valuable insight for improving future Earned Runs Allowed prop predictions is to ensure that the analysis incorporates a comprehensive set of statistics, including walk rate, strikeout rate, and opponent batting averages, while also taking into account recent form, game conditions, and specific matchup data. Additionally, adhering to high confidence levels in the model's predictions can help minimize incorrect outcomes.",
         "key_factors": "Key factors that appear most predictive for Earned Runs Allowed props include pitcher's walk rate (BB/9), strikeout rate, opponent batting averages, and the pitcher's performance against specific types of batters (left or right-handed). Additionally, considering recent form (last 15 games) and game conditions can improve the accuracy of predictions.",
         "pattern_analysis": "The patterns observed in correct predictions are that the model tends to perform well when it considers factors such as pitcher's walk rate (BB/9), strikeout rate, and opponent batting averages. Incorrect predictions often result from relying on sparse or insufficient data about the pitcher or the opposing batter, low confidence levels in the model, and oversimplifying the analysis by focusing only on a few statistics without considering other important factors like game conditions and recent form."
+      },
+      {
+        "date": "2025-06-14",
+        "strongest_insight": "To improve future Earned Runs Allowed prop predictions, it is crucial to gather comprehensive data on both the pitcher and opposing hitter, including performance statistics, park factors, and recent form changes. Additionally, acknowledging the limitations of the model's development stage and sparse training data will help in making more informed decisions when interpreting predictions.",
+        "key_factors": "ERA, walk rates, strikeout rates, and opponent's performance against specific pitcher types (left-handed or right-handed) appear to be significant factors in predicting Earned Runs Allowed props. Additionally, information about the opposing pitcher can provide valuable context for these predictions.",
+        "pattern_analysis": "Correct predictions generally involved a solid understanding of the player's ERA and walk rates, as well as their performance against specific hitter types (left-handed or right-handed). Incorrect predictions often relied on incomplete data or assumptions about opposing hitters, such as averages without adjustments for park factors or recent form."
       }
     ]
   }
