@@ -118,6 +118,7 @@ function updateDashboard(data) {
     updatePropTypeTable(data.prop_types);
     updateRecentPredictions(data.recent_predictions);
     updateHistoricalTable(data.historical_data);
+    updateXgbTable(data.xgb_comparison);
     try {
         createHistoricalChart(data.historical_data);
     } catch (err) {
@@ -125,6 +126,41 @@ function updateDashboard(data) {
     }
 
     updateBetslips(data.betslips);
+
+    // ---- LOGGING FOR DEBUG ----
+    if (data.xgb_by_prop) {
+        console.log("xgb_by_prop keys:", Object.keys(data.xgb_by_prop));
+        if (data.xgb_by_prop['Hits+Runs+RBIs']) {
+            console.log("Hits+Runs+RBIs entry:", data.xgb_by_prop['Hits+Runs+RBIs']);
+        } else {
+            console.warn("No entry for Hits+Runs+RBIs in xgb_by_prop!");
+        }
+    } else {
+        console.error("No xgb_by_prop in API response");
+    }
+    // --------------------------
+
+    // NEW: Initialize XGB by-prop-type dropdown/table
+    if (data.xgb_by_prop) {
+        initXgbPropTypeSection(data.xgb_by_prop);
+
+        // Also log what the dropdown options are
+        const select = document.getElementById('xgb-prop-select');
+        if (select) {
+            let opts = [];
+            for (let i = 0; i < select.options.length; i++) {
+                opts.push({label: select.options[i].text, value: select.options[i].value});
+            }
+            console.log("Dropdown options:", opts);
+        }
+
+        // Auto-select first prop type on load (to show real values)
+        if (select && select.options.length > 1) {
+            select.selectedIndex = 1;
+            console.log("Auto-selecting prop:", select.value);
+            select.dispatchEvent(new Event('change'));
+        }
+    }
 }
 
 function updateOverallMetrics(o) {
@@ -338,5 +374,80 @@ function updateBetslips(betslips) {
     `;
 
     container.appendChild(slipCard);
+  });
+}
+
+function updateXgbTable(rows) {
+  const body = document.getElementById('xgb-table-body');
+  body.innerHTML = '';
+  if (!rows || !rows.length) {
+    body.innerHTML = '<tr><td colspan="4" class="text-center">No XGBoost data available</td></tr>';
+    return;
+  }
+  rows.slice().reverse().forEach(r => {
+    const date = r.Date || r.date || '';
+    const total = r.XGB_Total ?? r.total ?? '';
+    const correct = r.XGB_Correct ?? r.xgb_correct ?? '';
+    let acc = r.XGB_Accuracy ?? r.xgb_accuracy;
+    if (acc !== undefined && acc !== null && acc !== '') {
+      acc = acc > 1 ? acc.toFixed(1) + '%' : (acc * 100).toFixed(1) + '%';
+    } else {
+      acc = '-';
+    }
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${date}</td>
+      <td>${total}</td>
+      <td>${correct}</td>
+      <td>${acc}</td>
+    `;
+    body.appendChild(tr);
+  });
+}
+
+function initXgbPropTypeSection(xgb_by_prop) {
+  const select = document.getElementById('xgb-prop-select');
+  const tbody = document.getElementById('xgb-prop-table-body');
+  if (!select || !tbody || !xgb_by_prop) return;
+
+  // Populate dropdown
+  select.innerHTML = '<option value="">Select prop type</option>';
+  Object.keys(xgb_by_prop).forEach(prop => {
+    select.appendChild(new Option(prop.replace(/_/g,' '), prop));
+  });
+
+  // When changed, update table
+  select.addEventListener('change', () => {
+    const prop = select.value;
+    tbody.innerHTML = '';
+    if (!prop || !xgb_by_prop[prop]) return;
+
+    // Sort most recent first
+    let propRows = xgb_by_prop[prop].slice().reverse();
+    if (!propRows.length) {
+      tbody.innerHTML = '<tr><td colspan="4" class="text-center">No data for this prop type</td></tr>';
+      return;
+    }
+    propRows.forEach(r => {
+      const date = r.date || '';
+      let count = r.count ?? '-';
+      let correct = r.xgb_correct ?? '-';
+      let acc = r.xgb_accuracy;
+
+      if (acc !== undefined && acc !== null && acc !== '') {
+        acc = acc > 1 ? acc.toFixed(1) + '%' : (acc * 100).toFixed(1) + '%';
+      } else {
+        acc = '-';
+      }
+
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${date}</td>
+        <td>${count}</td>
+        <td>${correct}</td>
+        <td>${acc}</td>
+      `;
+      tbody.appendChild(tr);
+    });
   });
 }

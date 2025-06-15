@@ -74,6 +74,43 @@
           </table>
         </div>
 
+        <!-- XGBoost Model Accuracy -->
+        <div class="table-container mb-4" style="max-height:200px; overflow-y:auto;">
+          <h5>XGBoost Model Accuracy</h5>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Total</th>
+                <th>XGB Correct</th>
+                <th>XGB Accuracy</th>
+              </tr>
+            </thead>
+            <tbody id="xgb-table-body"></tbody>
+          </table>
+        </div>
+
+         <div class="table-container mb-4">
+  <h5>XGBoost Accuracy by Prop Type</h5>
+  <div style="display:flex; gap:1rem; align-items:center;">
+    <label for="xgb-prop-select" style="margin-bottom:0;">Prop Type:</label>
+    <select id="xgb-prop-select" class="form-select" style="width:auto; display:inline-block;">
+      <option value="">Select prop type</option>
+    </select>
+  </div>
+  <table class="table table-sm mt-2">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Total</th>
+        <th>Correct</th>
+        <th>Accuracy</th>
+      </tr>
+    </thead>
+    <tbody id="xgb-prop-table-body"></tbody>
+  </table>
+</div>
+
         <!-- Today's Betslips + Insights -->
         <div class="table-container">
           <h5>Today's Betslips</h5>
