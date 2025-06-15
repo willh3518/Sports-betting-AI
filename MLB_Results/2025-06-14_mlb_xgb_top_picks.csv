@@ -1,0 +1,11 @@
+Player,Prop Type,Prop Value,Start Time,XGB_Prediction,XGB_Confidence,Model_Type,LLM_Prediction,LLM_XGB_Agreement,LLM_Confidence,LLM_Justification,Actual_Stat,Actual_Result,Reflection
+juan soto,Hitter Fantasy Score,7.5,Sat 4:10 PM,1,0.9930298,hitter,,,,,,,
+trent grisham,Hitter Fantasy Score,6.5,Sat 7:15 PM,1,0.9925563,hitter,,,,,,,
+aaron judge,Hitter Fantasy Score,9.5,Sat 7:15 PM,1,0.9907369,hitter,,,,,,,
+jackson merrill,Hitter Fantasy Score,6.5,Sat 7:15 PM,1,0.9896945,hitter,,,,,,,
+will smith,Hitter Fantasy Score,4.5,Sat 10:10 PM,1,0.98593765,hitter,,,,,,,
+jt realmuto,Hitter Fantasy Score,4.5,Sat 4:05 PM,1,0.9846038,hitter,,,,,,,
+juan soto,Hits+Runs+RBIs,1.5,Sat 4:10 PM,1,0.9845793,hitter,,,,,,,
+will benson,Hits+Runs+RBIs,0.5,Sat 1:10 PM,1,0.9843166,hitter,,,,,,,
+abraham toro,Hitter Fantasy Score,4.5,Sat 7:15 PM,1,0.9804159,hitter,,,,,,,
+austin wells,Hits+Runs+RBIs,1.5,Sat 7:15 PM,1,0.9801529,hitter,,,,,,,

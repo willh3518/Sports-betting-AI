@@ -1,0 +1,304 @@
+2025-06-14 19:39:11,907 - INFO - Starting weekly model training
+2025-06-14 19:39:11,908 - INFO - Loading training datasets...
+2025-06-14 19:39:11,920 - INFO - Added hitter data from 6:12:25-hitter_training_data.csv. Current shape: (167, 191)
+2025-06-14 19:39:11,927 - INFO - Added hitter data from 6:9:25-hitter_training_data.csv. Current shape: (429, 191)
+2025-06-14 19:39:11,934 - INFO - Added hitter data from 6:10:25-hitter_training_data.csv. Current shape: (793, 191)
+2025-06-14 19:39:11,936 - INFO - Added pitcher data from 6:9:25-pitcher_training_data.csv. Current shape: (63, 76)
+2025-06-14 19:39:11,939 - INFO - Added pitcher data from 6:12:25-pitcher_training_data.csv. Current shape: (90, 77)
+2025-06-14 19:39:11,941 - INFO - Added pitcher data from 6:13:25-pitcher_training_data.csv. Current shape: (180, 77)
+2025-06-14 19:39:11,944 - INFO - Added pitcher data from 6:10:25-pitcher_training_data.csv. Current shape: (281, 77)
+2025-06-14 19:39:11,947 - INFO - Added pitcher data from 6:11:25-.pitcher_training_data.csv. Current shape: (372, 77)
+2025-06-14 19:39:11,958 - INFO - Removed 3 duplicate pitcher rows
+2025-06-14 19:39:11,958 - INFO - Training hitter model with 793 samples
+2025-06-14 19:39:11,958 - INFO - Performing feature engineering for hitter data...
+2025-06-14 19:39:11,959 - INFO - Converted percentage column Game-Time Humidity (%) to float
+2025-06-14 19:39:11,959 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-14 19:39:11,959 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-14 19:39:11,960 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-14 19:39:11,960 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-14 19:39:11,960 - INFO - Converted percentage column Barrel% to float
+2025-06-14 19:39:11,960 - INFO - Converted percentage column Hard Hit % to float
+2025-06-14 19:39:11,961 - INFO - Converted percentage column 4seam_fastball_HardHit% to float
+2025-06-14 19:39:11,961 - INFO - Converted percentage column changeup_HardHit% to float
+2025-06-14 19:39:11,962 - INFO - Converted percentage column curveball_HardHit% to float
+2025-06-14 19:39:11,962 - INFO - Converted percentage column cutter_HardHit% to float
+2025-06-14 19:39:11,962 - INFO - Converted percentage column sinker_HardHit% to float
+2025-06-14 19:39:11,963 - INFO - Converted percentage column slider_HardHit% to float
+2025-06-14 19:39:11,963 - INFO - Converted percentage column sweeper_HardHit% to float
+2025-06-14 19:39:11,964 - INFO - Encoded categorical column Prop Type into 8 features
+2025-06-14 19:39:11,964 - INFO - Encoded categorical column Pitcher Handedness into 2 features
+2025-06-14 19:39:11,965 - INFO - Encoded categorical column Game-Time Effect on Hitters into 3 features
+2025-06-14 19:39:11,965 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:39:16,746 - INFO - Best parameters: {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'scale_pos_weight': 3, 'subsample': 0.8}
+2025-06-14 19:39:16,746 - INFO - Best cross-validation score: 0.565
+2025-06-14 19:39:16,748 - INFO - Model saved to MLB_Models/mlb_hitter_xgb_model.pkl
+2025-06-14 19:39:16,748 - INFO - Training pitcher model with 369 samples
+2025-06-14 19:39:16,748 - INFO - Performing feature engineering for pitcher data...
+2025-06-14 19:39:16,749 - INFO - Converted percentage column K% to float
+2025-06-14 19:39:16,749 - INFO - Converted percentage column BB% to float
+2025-06-14 19:39:16,749 - INFO - Converted percentage column K-BB% to float
+2025-06-14 19:39:16,750 - INFO - Converted percentage column LOB% to float
+2025-06-14 19:39:16,750 - INFO - Encoded categorical column Prop Type into 7 features
+2025-06-14 19:39:16,750 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:44:34,486 - INFO - Starting weekly model training
+2025-06-14 19:44:34,486 - INFO - Loading training datasets...
+2025-06-14 19:44:34,495 - INFO - Added hitter data from 6:12:25-hitter_training_data.csv. Current shape: (167, 191)
+2025-06-14 19:44:34,502 - INFO - Added hitter data from 6:9:25-hitter_training_data.csv. Current shape: (429, 191)
+2025-06-14 19:44:34,509 - INFO - Added hitter data from 6:10:25-hitter_training_data.csv. Current shape: (793, 191)
+2025-06-14 19:44:34,512 - INFO - Added pitcher data from 6:9:25-pitcher_training_data.csv. Current shape: (63, 76)
+2025-06-14 19:44:34,514 - INFO - Added pitcher data from 6:12:25-pitcher_training_data.csv. Current shape: (90, 77)
+2025-06-14 19:44:34,516 - INFO - Added pitcher data from 6:13:25-pitcher_training_data.csv. Current shape: (180, 77)
+2025-06-14 19:44:34,518 - INFO - Added pitcher data from 6:10:25-pitcher_training_data.csv. Current shape: (281, 77)
+2025-06-14 19:44:34,521 - INFO - Added pitcher data from 6:11:25-.pitcher_training_data.csv. Current shape: (372, 77)
+2025-06-14 19:44:34,531 - INFO - Removed 3 duplicate pitcher rows
+2025-06-14 19:44:34,531 - INFO - Training hitter model with 793 samples
+2025-06-14 19:44:34,531 - INFO - Performing feature engineering for hitter data...
+2025-06-14 19:44:34,532 - INFO - Converted percentage column Game-Time Humidity (%) to float
+2025-06-14 19:44:34,532 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-14 19:44:34,532 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-14 19:44:34,533 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-14 19:44:34,533 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-14 19:44:34,533 - INFO - Converted percentage column Barrel% to float
+2025-06-14 19:44:34,534 - INFO - Converted percentage column Hard Hit % to float
+2025-06-14 19:44:34,534 - INFO - Converted percentage column 4seam_fastball_HardHit% to float
+2025-06-14 19:44:34,534 - INFO - Converted percentage column changeup_HardHit% to float
+2025-06-14 19:44:34,535 - INFO - Converted percentage column curveball_HardHit% to float
+2025-06-14 19:44:34,535 - INFO - Converted percentage column cutter_HardHit% to float
+2025-06-14 19:44:34,536 - INFO - Converted percentage column sinker_HardHit% to float
+2025-06-14 19:44:34,536 - INFO - Converted percentage column slider_HardHit% to float
+2025-06-14 19:44:34,536 - INFO - Converted percentage column sweeper_HardHit% to float
+2025-06-14 19:44:34,537 - INFO - Encoded categorical column Prop Type into 8 features
+2025-06-14 19:44:34,537 - INFO - Encoded categorical column Pitcher Handedness into 2 features
+2025-06-14 19:44:34,538 - INFO - Encoded categorical column Game-Time Effect on Hitters into 3 features
+2025-06-14 19:44:34,538 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:44:34,543 - INFO - Hitter target unique values: [0 1]
+2025-06-14 19:44:39,037 - INFO - Best parameters: {'colsample_bytree': 0.8, 'learning_rate': 0.01, 'max_depth': 3, 'n_estimators': 100, 'scale_pos_weight': 3, 'subsample': 0.8}
+2025-06-14 19:44:39,037 - INFO - Best cross-validation score: 0.565
+2025-06-14 19:44:39,038 - INFO - Model saved to MLB_Models/mlb_hitter_xgb_model.pkl
+2025-06-14 19:44:39,038 - INFO - Training pitcher model with 369 samples
+2025-06-14 19:44:39,038 - INFO - Performing feature engineering for pitcher data...
+2025-06-14 19:44:39,039 - INFO - Converted percentage column K% to float
+2025-06-14 19:44:39,039 - INFO - Converted percentage column BB% to float
+2025-06-14 19:44:39,040 - INFO - Converted percentage column K-BB% to float
+2025-06-14 19:44:39,040 - INFO - Converted percentage column LOB% to float
+2025-06-14 19:44:39,040 - INFO - Encoded categorical column Prop Type into 7 features
+2025-06-14 19:44:39,041 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:44:39,043 - INFO - Pitcher target unique values: [0 1]
+2025-06-14 19:44:40,921 - INFO - Best parameters: {'colsample_bytree': 0.8, 'learning_rate': 0.3, 'max_depth': 10, 'n_estimators': 100, 'scale_pos_weight': 1, 'subsample': 0.8}
+2025-06-14 19:44:40,921 - INFO - Best cross-validation score: 0.607
+2025-06-14 19:44:40,923 - INFO - Model saved to MLB_Models/mlb_pitcher_xgb_model.pkl
+2025-06-14 19:44:40,923 - INFO - Weekly model training completed
+2025-06-14 19:44:57,630 - INFO - Starting daily prediction pipeline
+2025-06-14 19:44:57,630 - INFO - Loading master datasets for prediction...
+2025-06-14 19:44:57,640 - INFO - Loaded hitter master data with shape: (362, 170)
+2025-06-14 19:44:57,642 - INFO - Loaded pitcher master data with shape: (65, 61)
+2025-06-14 19:44:57,643 - INFO - Preprocessing hitter data...
+2025-06-14 19:44:57,643 - INFO - Performing feature engineering for hitter data...
+2025-06-14 19:44:57,644 - INFO - Converted percentage column Game-Time Humidity (%) to float
+2025-06-14 19:44:57,645 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-14 19:44:57,646 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-14 19:44:57,646 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-14 19:44:57,646 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-14 19:44:57,647 - INFO - Converted percentage column Barrel% to float
+2025-06-14 19:44:57,647 - INFO - Converted percentage column Hard Hit % to float
+2025-06-14 19:44:57,647 - INFO - Converted percentage column 4seam_fastball_HardHit% to float
+2025-06-14 19:44:57,648 - INFO - Converted percentage column changeup_HardHit% to float
+2025-06-14 19:44:57,648 - INFO - Converted percentage column curveball_HardHit% to float
+2025-06-14 19:44:57,648 - INFO - Converted percentage column cutter_HardHit% to float
+2025-06-14 19:44:57,649 - INFO - Converted percentage column sinker_HardHit% to float
+2025-06-14 19:44:57,649 - INFO - Converted percentage column slider_HardHit% to float
+2025-06-14 19:44:57,650 - INFO - Converted percentage column sweeper_HardHit% to float
+2025-06-14 19:44:57,650 - INFO - Encoded categorical column Prop Type into 7 features
+2025-06-14 19:44:57,651 - INFO - Encoded categorical column Pitcher Handedness into 2 features
+2025-06-14 19:44:57,651 - INFO - Encoded categorical column Game-Time Effect on Hitters into 3 features
+2025-06-14 19:44:57,652 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:44:57,658 - INFO - Model features: ['Prop Value', 'Game-Time Humidity (%)', 'Game-Time Wind Speed (mph)', 'AVG_vs_rhp', 'OBP_vs_rhp', 'SLG_vs_rhp', 'OPS_vs_rhp', 'AVG_vs_lhp', 'OBP_vs_lhp', 'SLG_vs_lhp', 'OPS_vs_lhp', 'xwOBA', 'Barrel%', 'Hard Hit %', 'prop_Hits', 'prop_Hits+Runs+RBIs', 'prop_Hitter Fantasy Score', 'prop_Hitter Strikeouts', 'prop_RBIs', 'prop_Runs', 'prop_Total Bases', 'prop_Walks']
+2025-06-14 19:44:57,658 - INFO - Prediction features: ['Prop Value', 'Game-Time Humidity (%)', 'Game-Time Wind Speed (mph)', 'AVG_vs_rhp', 'OBP_vs_rhp', 'SLG_vs_rhp', 'OPS_vs_rhp', 'AVG_vs_lhp', 'OBP_vs_lhp', 'SLG_vs_lhp', 'OPS_vs_lhp', 'xwOBA', 'Barrel%', 'Hard Hit %', 'prop_Hits', 'prop_Hits+Runs+RBIs', 'prop_Hitter Fantasy Score', 'prop_Hitter Strikeouts', 'prop_Runs', 'prop_Total Bases', 'prop_Walks']
+2025-06-14 19:44:57,661 - INFO - Generated 362 hitter predictions
+2025-06-14 19:44:57,662 - INFO - Preprocessing pitcher data...
+2025-06-14 19:44:57,662 - INFO - Performing feature engineering for pitcher data...
+2025-06-14 19:44:57,662 - INFO - Converted percentage column K% to float
+2025-06-14 19:44:57,662 - INFO - Converted percentage column BB% to float
+2025-06-14 19:44:57,663 - INFO - Converted percentage column K-BB% to float
+2025-06-14 19:44:57,663 - INFO - Converted percentage column LOB% to float
+2025-06-14 19:44:57,663 - INFO - Encoded categorical column Prop Type into 7 features
+2025-06-14 19:44:57,664 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:44:57,666 - INFO - Model features: ['Prop Value', 'ERA', 'WHIP', 'K/9', 'BB/9', 'K/BB', 'HR/9', 'K%', 'BB%', 'K-BB%', 'LOB%', 'prop_Earned Runs Allowed', 'prop_Hits Allowed', 'prop_Pitcher Fantasy Score', 'prop_Pitcher Strikeouts', 'prop_Pitches Thrown', 'prop_Pitching Outs', 'prop_Walks Allowed']
+2025-06-14 19:44:57,666 - INFO - Prediction features: ['Prop Value', 'ERA', 'WHIP', 'K/9', 'BB/9', 'K/BB', 'HR/9', 'K%', 'BB%', 'K-BB%', 'LOB%', 'prop_Earned Runs Allowed', 'prop_Hits Allowed', 'prop_Pitcher Fantasy Score', 'prop_Pitcher Strikeouts', 'prop_Pitches Thrown', 'prop_Pitching Outs', 'prop_Walks Allowed']
+2025-06-14 19:44:57,668 - INFO - Generated 65 pitcher predictions
+2025-06-14 19:44:57,671 - INFO - Predictions saved to MLB_Results/2025-06-14_mlb_xgb_predictions.csv
+2025-06-14 19:44:57,672 - INFO - Top 10 picks saved to MLB_Results/2025-06-14_mlb_xgb_top_picks.csv
+2025-06-14 19:44:57,673 - INFO - Daily prediction pipeline completed
+2025-06-14 19:51:33,262 - INFO - Starting weekly model training
+2025-06-14 19:51:33,262 - INFO - Loading training datasets...
+2025-06-14 19:51:33,268 - INFO - Added hitter data from 6:12:25-hitter_training_data.csv. Current shape: (167, 191)
+2025-06-14 19:51:33,273 - INFO - Added hitter data from 6:9:25-hitter_training_data.csv. Current shape: (429, 191)
+2025-06-14 19:51:33,280 - INFO - Added hitter data from 6:10:25-hitter_training_data.csv. Current shape: (793, 191)
+2025-06-14 19:51:33,282 - INFO - Added pitcher data from 6:9:25-pitcher_training_data.csv. Current shape: (63, 76)
+2025-06-14 19:51:33,285 - INFO - Added pitcher data from 6:12:25-pitcher_training_data.csv. Current shape: (90, 77)
+2025-06-14 19:51:33,287 - INFO - Added pitcher data from 6:13:25-pitcher_training_data.csv. Current shape: (180, 77)
+2025-06-14 19:51:33,290 - INFO - Added pitcher data from 6:10:25-pitcher_training_data.csv. Current shape: (281, 77)
+2025-06-14 19:51:33,292 - INFO - Added pitcher data from 6:11:25-.pitcher_training_data.csv. Current shape: (372, 77)
+2025-06-14 19:51:33,304 - INFO - Removed 3 duplicate pitcher rows
+2025-06-14 19:51:33,304 - INFO - Training hitter model with 793 samples
+2025-06-14 19:51:33,304 - INFO - Performing feature engineering for hitter data...
+2025-06-14 19:51:33,305 - INFO - Converted percentage column Game-Time Humidity (%) to float
+2025-06-14 19:51:33,305 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-14 19:51:33,305 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-14 19:51:33,306 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-14 19:51:33,306 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-14 19:51:33,306 - INFO - Converted percentage column Barrel% to float
+2025-06-14 19:51:33,307 - INFO - Converted percentage column Hard Hit % to float
+2025-06-14 19:51:33,307 - INFO - Converted percentage column 4seam_fastball_HardHit% to float
+2025-06-14 19:51:33,307 - INFO - Converted percentage column changeup_HardHit% to float
+2025-06-14 19:51:33,308 - INFO - Converted percentage column curveball_HardHit% to float
+2025-06-14 19:51:33,308 - INFO - Converted percentage column cutter_HardHit% to float
+2025-06-14 19:51:33,309 - INFO - Converted percentage column sinker_HardHit% to float
+2025-06-14 19:51:33,309 - INFO - Converted percentage column slider_HardHit% to float
+2025-06-14 19:51:33,310 - INFO - Converted percentage column sweeper_HardHit% to float
+2025-06-14 19:51:33,311 - INFO - Encoded categorical column Prop Type into 8 features
+2025-06-14 19:51:33,311 - INFO - Encoded categorical column Pitcher Handedness into 2 features
+2025-06-14 19:51:33,312 - INFO - Encoded categorical column Game-Time Effect on Hitters into 3 features
+2025-06-14 19:51:33,312 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:51:33,317 - INFO - Hitter target unique values: [0 1]
+2025-06-14 19:51:33,317 - INFO - Hitter class distribution - 0: 343, 1: 450
+2025-06-14 19:51:33,317 - INFO - Class distribution - 0: 343, 1: 450
+2025-06-14 19:51:33,317 - INFO - Class weights: {0: 1.1559766763848396, 1: 0.8811111111111111}
+2025-06-14 19:51:39,890 - INFO - Best parameters: {'colsample_bytree': 1.0, 'learning_rate': 0.3, 'max_depth': 3, 'n_estimators': 100, 'scale_pos_weight': 5, 'subsample': 1.0}
+2025-06-14 19:51:39,890 - INFO - Best cross-validation score: 0.805
+2025-06-14 19:51:39,893 - INFO - Validation accuracy: 0.730
+2025-06-14 19:51:39,894 - INFO - Validation AUC: 0.815
+2025-06-14 19:51:39,894 - INFO - Validation confusion matrix:
+[[36 33]
+ [10 80]]
+2025-06-14 19:51:39,896 - INFO - Validation classification report:
+              precision    recall  f1-score   support
+
+           0       0.78      0.52      0.63        69
+           1       0.71      0.89      0.79        90
+
+    accuracy                           0.73       159
+   macro avg       0.75      0.71      0.71       159
+weighted avg       0.74      0.73      0.72       159
+
+2025-06-14 19:51:39,896 - INFO - Prediction distribution - 0: 46, 1: 113
+2025-06-14 19:51:39,897 - INFO - Model saved to MLB_Models/mlb_hitter_xgb_model.pkl
+2025-06-14 19:51:39,897 - INFO - Training pitcher model with 369 samples
+2025-06-14 19:51:39,897 - INFO - Performing feature engineering for pitcher data...
+2025-06-14 19:51:39,898 - INFO - Converted percentage column K% to float
+2025-06-14 19:51:39,898 - INFO - Converted percentage column BB% to float
+2025-06-14 19:51:39,899 - INFO - Converted percentage column K-BB% to float
+2025-06-14 19:51:39,899 - INFO - Converted percentage column LOB% to float
+2025-06-14 19:51:39,899 - INFO - Encoded categorical column Prop Type into 7 features
+2025-06-14 19:51:39,900 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:51:39,901 - INFO - Pitcher target unique values: [0 1]
+2025-06-14 19:51:39,902 - INFO - Pitcher class distribution - 0: 207, 1: 162
+2025-06-14 19:51:39,902 - INFO - Class distribution - 0: 207, 1: 162
+2025-06-14 19:51:39,902 - INFO - Class weights: {0: 0.8913043478260869, 1: 1.1388888888888888}
+2025-06-14 19:51:43,072 - INFO - Best parameters: {'colsample_bytree': 1.0, 'learning_rate': 0.01, 'max_depth': 10, 'n_estimators': 200, 'scale_pos_weight': 1, 'subsample': 1.0}
+2025-06-14 19:51:43,072 - INFO - Best cross-validation score: 0.665
+2025-06-14 19:51:43,075 - INFO - Validation accuracy: 0.716
+2025-06-14 19:51:43,075 - INFO - Validation AUC: 0.751
+2025-06-14 19:51:43,076 - INFO - Validation confusion matrix:
+[[33  9]
+ [12 20]]
+2025-06-14 19:51:43,078 - INFO - Validation classification report:
+              precision    recall  f1-score   support
+
+           0       0.73      0.79      0.76        42
+           1       0.69      0.62      0.66        32
+
+    accuracy                           0.72        74
+   macro avg       0.71      0.71      0.71        74
+weighted avg       0.71      0.72      0.71        74
+
+2025-06-14 19:51:43,078 - INFO - Prediction distribution - 0: 45, 1: 29
+2025-06-14 19:51:43,080 - INFO - Model saved to MLB_Models/mlb_pitcher_xgb_model.pkl
+2025-06-14 19:51:43,080 - INFO - Weekly model training completed
+2025-06-14 19:52:51,834 - INFO - Starting daily prediction pipeline
+2025-06-14 19:52:51,835 - INFO - Loading master datasets for prediction...
+2025-06-14 19:52:51,841 - INFO - Loaded hitter master data with shape: (362, 170)
+2025-06-14 19:52:51,843 - INFO - Loaded pitcher master data with shape: (65, 61)
+2025-06-14 19:52:51,843 - INFO - Preprocessing hitter data...
+2025-06-14 19:52:51,843 - INFO - Performing feature engineering for hitter data...
+2025-06-14 19:52:51,844 - INFO - Converted percentage column Game-Time Humidity (%) to float
+2025-06-14 19:52:51,844 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-14 19:52:51,845 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-14 19:52:51,845 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-14 19:52:51,845 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-14 19:52:51,846 - INFO - Converted percentage column Barrel% to float
+2025-06-14 19:52:51,846 - INFO - Converted percentage column Hard Hit % to float
+2025-06-14 19:52:51,847 - INFO - Converted percentage column 4seam_fastball_HardHit% to float
+2025-06-14 19:52:51,847 - INFO - Converted percentage column changeup_HardHit% to float
+2025-06-14 19:52:51,848 - INFO - Converted percentage column curveball_HardHit% to float
+2025-06-14 19:52:51,848 - INFO - Converted percentage column cutter_HardHit% to float
+2025-06-14 19:52:51,848 - INFO - Converted percentage column sinker_HardHit% to float
+2025-06-14 19:52:51,849 - INFO - Converted percentage column slider_HardHit% to float
+2025-06-14 19:52:51,849 - INFO - Converted percentage column sweeper_HardHit% to float
+2025-06-14 19:52:51,850 - INFO - Encoded categorical column Prop Type into 7 features
+2025-06-14 19:52:51,851 - INFO - Encoded categorical column Pitcher Handedness into 2 features
+2025-06-14 19:52:51,851 - INFO - Encoded categorical column Game-Time Effect on Hitters into 3 features
+2025-06-14 19:52:51,852 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:52:51,859 - INFO - Model features: ['Prop Value', 'Game-Time Humidity (%)', 'Game-Time Wind Speed (mph)', 'AVG_vs_rhp', 'OBP_vs_rhp', 'SLG_vs_rhp', 'OPS_vs_rhp', 'AVG_vs_lhp', 'OBP_vs_lhp', 'SLG_vs_lhp', 'OPS_vs_lhp', 'xwOBA', 'Barrel%', 'Hard Hit %', 'prop_Hits', 'prop_Hits+Runs+RBIs', 'prop_Hitter Fantasy Score', 'prop_Hitter Strikeouts', 'prop_RBIs', 'prop_Runs', 'prop_Total Bases', 'prop_Walks']
+2025-06-14 19:52:51,860 - INFO - Prediction features: ['Prop Value', 'Game-Time Humidity (%)', 'Game-Time Wind Speed (mph)', 'AVG_vs_rhp', 'OBP_vs_rhp', 'SLG_vs_rhp', 'OPS_vs_rhp', 'AVG_vs_lhp', 'OBP_vs_lhp', 'SLG_vs_lhp', 'OPS_vs_lhp', 'xwOBA', 'Barrel%', 'Hard Hit %', 'prop_Hits', 'prop_Hits+Runs+RBIs', 'prop_Hitter Fantasy Score', 'prop_Hitter Strikeouts', 'prop_Runs', 'prop_Total Bases', 'prop_Walks']
+2025-06-14 19:52:51,860 - INFO - Using prediction threshold: 0.5
+2025-06-14 19:52:51,861 - INFO - Prediction distribution - 0: 73, 1: 289
+2025-06-14 19:52:51,861 - INFO - Generated 362 hitter predictions
+2025-06-14 19:52:51,862 - INFO - Preprocessing pitcher data...
+2025-06-14 19:52:51,862 - INFO - Performing feature engineering for pitcher data...
+2025-06-14 19:52:51,862 - INFO - Converted percentage column K% to float
+2025-06-14 19:52:51,862 - INFO - Converted percentage column BB% to float
+2025-06-14 19:52:51,863 - INFO - Converted percentage column K-BB% to float
+2025-06-14 19:52:51,863 - INFO - Converted percentage column LOB% to float
+2025-06-14 19:52:51,863 - INFO - Encoded categorical column Prop Type into 7 features
+2025-06-14 19:52:51,863 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:52:51,867 - INFO - Model features: ['Prop Value', 'ERA', 'WHIP', 'K/9', 'BB/9', 'K/BB', 'HR/9', 'K%', 'BB%', 'K-BB%', 'LOB%', 'prop_Earned Runs Allowed', 'prop_Hits Allowed', 'prop_Pitcher Fantasy Score', 'prop_Pitcher Strikeouts', 'prop_Pitches Thrown', 'prop_Pitching Outs', 'prop_Walks Allowed']
+2025-06-14 19:52:51,867 - INFO - Prediction features: ['Prop Value', 'ERA', 'WHIP', 'K/9', 'BB/9', 'K/BB', 'HR/9', 'K%', 'BB%', 'K-BB%', 'LOB%', 'prop_Earned Runs Allowed', 'prop_Hits Allowed', 'prop_Pitcher Fantasy Score', 'prop_Pitcher Strikeouts', 'prop_Pitches Thrown', 'prop_Pitching Outs', 'prop_Walks Allowed']
+2025-06-14 19:52:51,867 - INFO - Using prediction threshold: 0.5
+2025-06-14 19:52:51,869 - INFO - Prediction distribution - 0: 43, 1: 22
+2025-06-14 19:52:51,869 - INFO - Generated 65 pitcher predictions
+2025-06-14 19:56:50,350 - INFO - Starting daily prediction pipeline
+2025-06-14 19:56:50,350 - INFO - Loading master datasets for prediction...
+2025-06-14 19:56:50,359 - INFO - Loaded hitter master data with shape: (362, 170)
+2025-06-14 19:56:50,360 - INFO - Loaded pitcher master data with shape: (65, 61)
+2025-06-14 19:56:50,360 - INFO - Preprocessing hitter data...
+2025-06-14 19:56:50,360 - INFO - Performing feature engineering for hitter data...
+2025-06-14 19:56:50,361 - INFO - Converted percentage column Game-Time Humidity (%) to float
+2025-06-14 19:56:50,361 - INFO - Converted percentage column BB%_vs_rhp to float
+2025-06-14 19:56:50,362 - INFO - Converted percentage column K%_vs_rhp to float
+2025-06-14 19:56:50,362 - INFO - Converted percentage column BB%_vs_lhp to float
+2025-06-14 19:56:50,362 - INFO - Converted percentage column K%_vs_lhp to float
+2025-06-14 19:56:50,362 - INFO - Converted percentage column Barrel% to float
+2025-06-14 19:56:50,363 - INFO - Converted percentage column Hard Hit % to float
+2025-06-14 19:56:50,363 - INFO - Converted percentage column 4seam_fastball_HardHit% to float
+2025-06-14 19:56:50,363 - INFO - Converted percentage column changeup_HardHit% to float
+2025-06-14 19:56:50,364 - INFO - Converted percentage column curveball_HardHit% to float
+2025-06-14 19:56:50,364 - INFO - Converted percentage column cutter_HardHit% to float
+2025-06-14 19:56:50,364 - INFO - Converted percentage column sinker_HardHit% to float
+2025-06-14 19:56:50,364 - INFO - Converted percentage column slider_HardHit% to float
+2025-06-14 19:56:50,365 - INFO - Converted percentage column sweeper_HardHit% to float
+2025-06-14 19:56:50,365 - INFO - Encoded categorical column Prop Type into 7 features
+2025-06-14 19:56:50,366 - INFO - Encoded categorical column Pitcher Handedness into 2 features
+2025-06-14 19:56:50,366 - INFO - Encoded categorical column Game-Time Effect on Hitters into 3 features
+2025-06-14 19:56:50,366 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:56:50,374 - INFO - Model features: ['Prop Value', 'Game-Time Humidity (%)', 'Game-Time Wind Speed (mph)', 'AVG_vs_rhp', 'OBP_vs_rhp', 'SLG_vs_rhp', 'OPS_vs_rhp', 'AVG_vs_lhp', 'OBP_vs_lhp', 'SLG_vs_lhp', 'OPS_vs_lhp', 'xwOBA', 'Barrel%', 'Hard Hit %', 'prop_Hits', 'prop_Hits+Runs+RBIs', 'prop_Hitter Fantasy Score', 'prop_Hitter Strikeouts', 'prop_RBIs', 'prop_Runs', 'prop_Total Bases', 'prop_Walks']
+2025-06-14 19:56:50,374 - INFO - Prediction features: ['Prop Value', 'Game-Time Humidity (%)', 'Game-Time Wind Speed (mph)', 'AVG_vs_rhp', 'OBP_vs_rhp', 'SLG_vs_rhp', 'OPS_vs_rhp', 'AVG_vs_lhp', 'OBP_vs_lhp', 'SLG_vs_lhp', 'OPS_vs_lhp', 'xwOBA', 'Barrel%', 'Hard Hit %', 'prop_Hits', 'prop_Hits+Runs+RBIs', 'prop_Hitter Fantasy Score', 'prop_Hitter Strikeouts', 'prop_Runs', 'prop_Total Bases', 'prop_Walks']
+2025-06-14 19:56:50,374 - INFO - Using prediction threshold: 0.5
+2025-06-14 19:56:50,376 - INFO - Prediction distribution - 0: 73, 1: 289
+2025-06-14 19:56:50,376 - INFO - Generated 362 hitter predictions
+2025-06-14 19:56:50,377 - INFO - Preprocessing pitcher data...
+2025-06-14 19:56:50,377 - INFO - Performing feature engineering for pitcher data...
+2025-06-14 19:56:50,377 - INFO - Converted percentage column K% to float
+2025-06-14 19:56:50,378 - INFO - Converted percentage column BB% to float
+2025-06-14 19:56:50,378 - INFO - Converted percentage column K-BB% to float
+2025-06-14 19:56:50,378 - INFO - Converted percentage column LOB% to float
+2025-06-14 19:56:50,379 - INFO - Encoded categorical column Prop Type into 7 features
+2025-06-14 19:56:50,379 - INFO - Encoded categorical column Odds Category into 1 features
+2025-06-14 19:56:50,383 - INFO - Model features: ['Prop Value', 'ERA', 'WHIP', 'K/9', 'BB/9', 'K/BB', 'HR/9', 'K%', 'BB%', 'K-BB%', 'LOB%', 'prop_Earned Runs Allowed', 'prop_Hits Allowed', 'prop_Pitcher Fantasy Score', 'prop_Pitcher Strikeouts', 'prop_Pitches Thrown', 'prop_Pitching Outs', 'prop_Walks Allowed']
+2025-06-14 19:56:50,383 - INFO - Prediction features: ['Prop Value', 'ERA', 'WHIP', 'K/9', 'BB/9', 'K/BB', 'HR/9', 'K%', 'BB%', 'K-BB%', 'LOB%', 'prop_Earned Runs Allowed', 'prop_Hits Allowed', 'prop_Pitcher Fantasy Score', 'prop_Pitcher Strikeouts', 'prop_Pitches Thrown', 'prop_Pitching Outs', 'prop_Walks Allowed']
+2025-06-14 19:56:50,383 - INFO - Using prediction threshold: 0.5
+2025-06-14 19:56:50,384 - INFO - Prediction distribution - 0: 43, 1: 22
+2025-06-14 19:56:50,384 - INFO - Generated 65 pitcher predictions
+2025-06-14 19:56:50,388 - INFO - Predictions saved to MLB_Results/2025-06-14_mlb_xgb_predictions.csv
+2025-06-14 19:56:50,388 - INFO - Top 10 picks saved to MLB_Results/2025-06-14_mlb_xgb_top_picks.csv
+2025-06-14 19:56:50,389 - INFO - Daily prediction pipeline completed
