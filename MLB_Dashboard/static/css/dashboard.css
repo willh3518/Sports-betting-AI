@@ -260,3 +260,68 @@ canvas {
     color: #ccc;
     flex-wrap: wrap;
 }
+
+#bankroll-history-table td, #bankroll-history-table th {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.97em;
+}
+
+#bankroll-history-table th {
+    font-weight: 600;
+}
+
+.bankroll-summary-bar {
+  display: flex;
+  gap: 2em;
+  font-size: 1.08em;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.bankroll-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.98em;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bankroll-history-table th {
+  text-align: left;
+  font-weight: 700;
+  padding: 8px 4px;
+  background: #f9f9fb;
+}
+
+.bankroll-history-table td {
+  padding: 8px 4px;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.bankroll-history-table tbody tr:nth-child(even) {
+  background: #f5f6fa;
+}
+
+.pnl-neg {
+  color: #c83d3d;
+  font-weight: bold;
+}
+
+.pnl-pos {
+  color: #29a96b;
+  font-weight: bold;
+}
+
+/* ---- Compact styling for All-Time Prop Accuracy ---- */
+.table-container.alltime-prop-accuracy .table-sm {
+  font-size: 0.88em;
+}
+
+.table-container.alltime-prop-accuracy .table-sm th,
+
+.table-container.alltime-prop-accuracy .table-sm td {
+  padding: 4px 8px;
+}

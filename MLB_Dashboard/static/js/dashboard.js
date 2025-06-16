@@ -119,11 +119,25 @@ function updateDashboard(data) {
     updateRecentPredictions(data.recent_predictions);
     updateHistoricalTable(data.historical_data);
     updateXgbTable(data.xgb_comparison);
+    updateAllTimePropAccuracyTable(data);
     try {
         createHistoricalChart(data.historical_data);
     } catch (err) {
         console.error('Chart error:', err);
     }
+    try {
+        createBankrollChart(data.bankroll_history);
+    } catch (err) {
+        console.error('Bankroll chart error:', err);
+    }
+    try {
+        createBankrollChart(data.bankroll_history);
+        updateBankrollHistoryTable(data.bankroll_history);
+    } catch (err) {
+        console.error('Bankroll chart/table error:', err);
+    }
+
+
 
     updateBetslips(data.betslips);
 
@@ -161,6 +175,13 @@ function updateDashboard(data) {
             select.dispatchEvent(new Event('change'));
         }
     }
+
+    // *** in updateDashboard(data) ***
+    if (data.confidence_accuracy) {
+        createConfidenceChart(data.confidence_accuracy);
+    }
+
+
 }
 
 function updateOverallMetrics(o) {
@@ -449,5 +470,179 @@ function initXgbPropTypeSection(xgb_by_prop) {
       `;
       tbody.appendChild(tr);
     });
+  });
+}
+
+function createBankrollChart(history) {
+    if (!history || !history.length) return;
+
+    // Sort and prep data
+    history.sort((a, b) => new Date(a.date) - new Date(b.date));
+    const startRow = history.find(d => d.num_slips === 0);
+    const firstBetIdx = history.findIndex(d => d.num_slips > 0);
+
+    let labels = [], bankrolls = [];
+
+    // Show initial bankroll point
+    if (startRow && firstBetIdx >= 0) {
+        labels.push(history[firstBetIdx].date + ' (start)');
+        bankrolls.push(startRow.bankroll);
+    }
+
+    // Actual bet days
+    history.forEach(d => {
+        if (d.num_slips > 0) {
+            labels.push(d.date);
+            bankrolls.push(d.bankroll);
+        }
+    });
+
+    // Chart.js destroy old chart
+    if (window.bankrollChart) window.bankrollChart.destroy();
+
+    const ctx = document.getElementById('bankroll-chart').getContext('2d');
+    window.bankrollChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels,
+            datasets: [
+                {
+                    label: 'Bankroll',
+                    data: bankrolls,
+                    borderColor: '#1c7',
+                    tension: 0.2,
+                    fill: false,
+                    pointRadius: 3,
+                    pointBackgroundColor: '#1c7'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { title: { display: true, text: 'Date' } },
+                y: { title: { display: true, text: 'Bankroll ($)' }, beginAtZero: false }
+            },
+            plugins: { legend: { position: 'top' } }
+        }
+    });
+
+    // Modern summary bar below chart
+    const summaryBar = document.getElementById('bankroll-summary-bar');
+    const start = startRow ? startRow.bankroll : bankrolls[0] || 0;
+    const end = bankrolls[bankrolls.length-1] || 0;
+    const max = Math.max(...bankrolls, start);
+    const min = Math.min(...bankrolls, start);
+    const pnl = end - start;
+    const pnlClass = pnl > 0 ? "pnl-pos" : (pnl < 0 ? "pnl-neg" : "");
+
+}
+
+function updateBankrollHistoryTable(history) {
+    const tbody = document.getElementById('bankroll-history-table');
+    if (!tbody || !history || !history.length) return;
+    tbody.innerHTML = '';
+    history.forEach(row => {
+        if (row.num_slips === 0) return; // skip the start row
+        const netVal = row.net_result === null ? '' :
+            `<span style="color:${row.net_result >= 0 ? 'green':'red'};">
+                ${row.net_result >= 0 ? '+' : ''}$${(row.net_result||0).toFixed(2)}
+            </span>`;
+        const returnedVal = row.total_returned === null ? '' : `$${(row.total_returned||0).toFixed(2)}`;
+        const stakedVal = row.total_staked === null ? '' : `$${(row.total_staked||0).toFixed(2)}`;
+        const slipsVal = row.num_slips || '';
+        tbody.innerHTML += `
+            <tr>
+                <td>${row.date}</td>
+                <td>${slipsVal}</td>
+                <td>${stakedVal}</td>
+                <td>${returnedVal}</td>
+                <td>${netVal}</td>
+            </tr>
+        `;
+    });
+}
+
+function updateAllTimePropAccuracyTable(data) {
+  const tbody = document.getElementById('alltime-prop-accuracy-table');
+  if (!tbody || !data.alltime_prop_accuracy) return;
+  tbody.innerHTML = '';
+
+  // Turn the dict into an array of [key, obj]
+  const entries = Object.entries(data.alltime_prop_accuracy)
+    .map(([key, obj]) => {
+      // obj.accuracy might be a fraction (0.4789) or already a percent string ('47.9%')
+      let raw = obj.accuracy;
+      let numPct;
+      if (typeof raw === 'string' && raw.trim().endsWith('%')) {
+        numPct = parseFloat(raw);
+      } else {
+        numPct = parseFloat(raw) * 100;
+      }
+      return {
+        prop_type: obj.prop_type,
+        total: obj.total,
+        pct: numPct
+      };
+    })
+    // sort by descending pct
+    .sort((a, b) => b.pct - a.pct);
+
+  // build table rows
+  entries.forEach(({prop_type, total, pct}) => {
+    const formatted = pct.toFixed(1) + '%';
+    // getAccuracyClass expects a number/string without '%'
+    const cls = getAccuracyClass(pct);
+    tbody.innerHTML += `
+      <tr>
+        <td>${prop_type}</td>
+        <td>${total}</td>
+        <td class="${cls}">${formatted}</td>
+      </tr>
+    `;
+  });
+}
+
+function createConfidenceChart(bandArr) {
+  // bandArr is now an array of {band, total, correct, accuracy}
+  const labels = bandArr.map(d => d.band);
+  const dataPts= bandArr.map(d => +(d.accuracy * 100).toFixed(1));
+
+  const ctx = document.getElementById('confidence-chart').getContext('2d');
+  if (window.confidenceChart) window.confidenceChart.destroy();
+
+  window.confidenceChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'RF Accuracy (%)',
+        data: dataPts,
+        backgroundColor: '#0d6efd'
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100,
+          title: { display: true, text: 'Accuracy (%)' }
+        }
+      },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              const d = bandArr[ctx.dataIndex];
+              return d.total
+                ? `Accuracy: ${dataPts[ctx.dataIndex]}% (${d.correct}/${d.total})`
+                : 'No predictions';
+            }
+          }
+        }
+      }
+    }
   });
 }

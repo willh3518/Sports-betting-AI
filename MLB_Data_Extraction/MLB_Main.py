@@ -10,6 +10,8 @@ EXTENSION = ".py"
 PRIZEPICKS_SCRIPT = "mlb_prizepicks.py"
 MERGE_SCRIPTS = {"hitter_stats_merge.py", "pitcher_stats_merge.py"}
 EXCLUDE_SCRIPTS = {
+    "mlb_hitter_advanced_stats.py",
+    "mlb_pitcher_advanced_stats.py"
     "Overall_MLB_Stats.py",
     "MLB_Main.py",
     "Config.py",
@@ -36,7 +38,7 @@ if __name__ == "__main__":
     start_time = time.time()
 
     # Step 1: Run mlb_prizepicks.py
-    run_script(os.path.join(SCRIPT_DIR, PRIZEPICKS_SCRIPT))
+    #run_script(os.path.join(SCRIPT_DIR, PRIZEPICKS_SCRIPT))
 
     # Step 2: Run all other scripts (excluding special/merge/excluded)
     all_scripts = sorted([

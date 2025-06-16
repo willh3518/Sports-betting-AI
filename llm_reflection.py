@@ -276,34 +276,41 @@ def calculate_accuracy_metrics(df):
     }
 
 def update_accuracy_csv(date, overall_metrics, prop_type_metrics):
-    """Update the accuracy CSV with new metrics"""
+    """Update the accuracy CSV with new metrics (including per‐prop agreement)."""
     new_row = {
         "Date": date,
         "Total_Predictions": overall_metrics["total_predictions"],
         "RF_Accuracy": overall_metrics["rf_accuracy"],
         "LLM_Accuracy": overall_metrics["llm_accuracy"],
         "Agreement_Accuracy": overall_metrics["agreement_accuracy"],
-        "Agreement_Count": overall_metrics["agreement_count"]
+        "Agreement_Count": overall_metrics["agreement_count"],
     }
+
+    # now include per‐prop RF, LLM AND Agreement metrics
     for prop_type, metrics in prop_type_metrics.items():
-        safe_prop_type = prop_type.replace(" ", "_")
-        new_row[f"{safe_prop_type}_Count"] = metrics["total_predictions"]
-        new_row[f"{safe_prop_type}_RF_Accuracy"] = metrics["rf_accuracy"]
-        new_row[f"{safe_prop_type}_LLM_Accuracy"] = metrics["llm_accuracy"]
+        safe = prop_type.replace(" ", "_")
+        new_row[f"{safe}_Count"]             = metrics["total_predictions"]
+        new_row[f"{safe}_RF_Accuracy"]       = metrics["rf_accuracy"]
+        new_row[f"{safe}_LLM_Accuracy"]      = metrics["llm_accuracy"]
+        new_row[f"{safe}_Agreement_Accuracy"]= metrics["agreement_accuracy"]
+        new_row[f"{safe}_Agreement_Count"]   = metrics["agreement_count"]
 
+    # load or create the CSV
     if os.path.exists(ACCURACY_CSV_PATH):
-        accuracy_df = pd.read_csv(ACCURACY_CSV_PATH)
-        if date in accuracy_df["Date"].values:
-            idx = accuracy_df.index[accuracy_df["Date"] == date][0]
+        df = pd.read_csv(ACCURACY_CSV_PATH)
+        # if this date already exists, overwrite its row
+        if date in df["Date"].values:
+            idx = df.index[df["Date"] == date][0]
             for k, v in new_row.items():
-                accuracy_df.at[idx, k] = v
+                df.at[idx, k] = v
         else:
-            accuracy_df = pd.concat([accuracy_df, pd.DataFrame([new_row])], ignore_index=True)
+            df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
     else:
-        accuracy_df = pd.DataFrame([new_row])
+        df = pd.DataFrame([new_row])
 
-    accuracy_df = accuracy_df.round(3)
-    accuracy_df.to_csv(ACCURACY_CSV_PATH, index=False)
+    # round float columns to 3 decimals
+    df = df.round(3)
+    df.to_csv(ACCURACY_CSV_PATH, index=False)
     logger.info(f"Updated accuracy metrics in {ACCURACY_CSV_PATH}")
 
 def calculate_xgboost_accuracy(date=None):
@@ -362,7 +369,6 @@ def calculate_xgboost_accuracy(date=None):
     logger.info(f"Saved XGBoost summary to {summary_path}")
 
     return summary_row
-
 
 def main(date=None):
     """Main function to run the reflection pipeline"""

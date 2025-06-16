@@ -714,6 +714,12 @@ def daily_predictions():
         if col not in all_predictions.columns:
             all_predictions[col] = None
 
+    # Remove duplicates based on Player, Prop Type, and Prop Value before saving
+    all_predictions = all_predictions.drop_duplicates(
+        subset=["Player", "Prop Type", "Prop Value"],
+        keep="first"
+    )
+
     # Save predictions if we have any
     if not all_predictions.empty:
         # Save all predictions

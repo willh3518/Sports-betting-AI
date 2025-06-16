@@ -202,7 +202,7 @@ You will be given:
 3. Give a **1-to-3-sentence** justification (≤ 40 words) with concrete stats
 4. Tag your confidence level
 
-🛠️ **Important**: The RF model is in early development with sparse training data. Treat its output skeptically.
+🛠️ **Important**: The RF model now has a week's worth of training data, treat it as such. A week in this context is roughly 2200 rows of data.
 
 ### Reasoning mode
 Think step-by-step **internally**. Do **not** expose your chain-of-thought.  

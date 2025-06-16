@@ -1,175 +1,129 @@
 #!/usr/bin/env python3
 """
-mlb_pitcher_advanced_stats.py
-Fetches advanced pitching statistics from FanGraphs for pitchers in PrizePicks list.
+mlb_pitcher_advanced_stats_pybb.py
+Uses pybaseball.statcast_pitcher to pull each MLB pitcher's plate
+appearances for 2025, then computes K%, BB%, K–BB%, AVG, BABIP & WHIP.
 """
 
 import os
 import time
-import requests
 import pandas as pd
-from bs4 import BeautifulSoup
+from pybaseball import statcast_pitcher
 from mlb_utils import normalize_name
 
-# File paths
-ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-CSV_FOLDER = os.path.join(ROOT, "MLB_Prop_Data_CSV")
-PRIZEPICKS_CSV = os.path.join(CSV_FOLDER, "mlb_prizepicks.csv")
-PLAYER_IDS_CSV = os.path.join(CSV_FOLDER, "player_fg_ids.csv")
+# ── CONFIG ─────────────────────────────────────────────────────────────────────
+ROOT               = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+CSV_FOLDER         = os.path.join(ROOT, "MLB_Prop_Data_CSV")
+PRIZEPICKS_CSV     = os.path.join(CSV_FOLDER, "mlb_prizepicks.csv")
+PLAYER_IDS_CSV     = os.path.join(CSV_FOLDER, "player_fg_ids.csv")
 OUTPUT_PITCHER_CSV = os.path.join(CSV_FOLDER, "mlb_pitcher_advanced_stats.csv")
 
-# Configuration
-USER_AGENT = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-    "AppleWebKit/537.36 (KHTML, like Gecko) "
-    "Chrome/136.0.0.0 Safari/537.36"
-)
-REQUEST_DELAY = 1.0  # seconds between each FanGraphs request
+SEASON_START       = "2025-03-01"
+SEASON_END         = "2025-10-01"
+REQUEST_DELAY      = 1.0  # seconds between each API call
 
-def slugify(name: str) -> str:
-    """Turn player name into URL-friendly slug."""
-    import re
-    s = name.lower().strip()
-    s = s.replace(" ", "-")
-    s = s.replace("", "").replace("'", "")
-    s = s.replace(".", "")
-    s = re.sub(r"[^a-z0-9\-]", "", s)
-    return s
+# ── METRIC COMPUTATION ─────────────────────────────────────────────────────────
+def compute_pitcher_advanced(df_pa):
+    """
+    Input: raw statcast_pitcher DataFrame (pitch-level).
+    Returns dict of K%, BB%, K–BB%, AVG, BABIP, WHIP for that pitcher-season.
+    """
+    # collapse to one row per PA
+    df_pa = (
+        df_pa
+        .dropna(subset=["events"])
+        .groupby(["game_pk", "at_bat_number"], as_index=False)
+        .last()
+    )
+    PA  = len(df_pa)
+    BB  = (df_pa["events"] == "walk").sum()
+    K   = (df_pa["events"] == "strikeout").sum()
+    H1  = (df_pa["events"] == "single").sum()
+    H2  = (df_pa["events"] == "double").sum()
+    H3  = (df_pa["events"] == "triple").sum()
+    HR  = (df_pa["events"] == "home_run").sum()
+    H   = H1 + H2 + H3 + HR
+    SF  = (df_pa["events"] == "sac_fly").sum()
+    HBP = (df_pa["events"] == "hit_by_pitch").sum()
+    AB  = PA - BB - HBP - SF
+    # total baserunners allowed for WHIP
+    WH  = BB + H
+    # innings pitched ≈ outs recorded / 3
+    # statcast_pitcher gives 'outs_when_up' at start, but we can infer outs per PA by:
+    #   outs recorded this PA = delta in outs_when_up?  simpler: count 'events' that produce an out:
+    out_events = {
+        "strikeout","field_out","force_out","grounded_into_double_play",
+        "sac_fly","pop_out","lineout"
+    }
+    outs = df_pa["events"].isin(out_events).sum()
+    IP = round(outs / 3, 2) if outs else 0
 
-def fetch_pitcher_advanced(player_slug: str, fg_id: str) -> pd.DataFrame:
-    """Fetch advanced pitching stats from FanGraphs."""
-    url = f"https://www.fangraphs.com/players/{player_slug}/{fg_id}/stats?position=P"
-    headers = {"User-Agent": USER_AGENT}
-    resp = requests.get(url, headers=headers, timeout=15)
-    if resp.status_code != 200:
-        raise RuntimeError(f"[{fg_id}] HTTP {resp.status_code} at URL: {url}")
+    return {
+        "PA":      PA,
+        "K%":      round(K/PA,3) if PA else None,
+        "BB%":     round(BB/PA,3) if PA else None,
+        "K-BB%":   round((K - BB)/PA,3) if PA else None,
+        "AVG":     round(H/AB,3) if AB>0 else None,
+        "BABIP":   round((H - HR)/(AB - K - HR + SF),3)
+                    if (AB - K - HR + SF)>0 else None,
+        "WHIP":    round(WH/IP,3) if IP>0 else None,
+        "IP":      IP
+    }
 
-    soup = BeautifulSoup(resp.text, "html.parser")
-    adv_div = soup.find("div", id="advanced")
-    if adv_div is None:
-        raise RuntimeError(f"[{fg_id}] No <div id='advanced'> found on page.")
-
-    table_tag = adv_div.find("table")
-    if table_tag is None:
-        raise RuntimeError(f"[{fg_id}] Found <div id='advanced'> but no <table> inside it.")
-
-    df_list = pd.read_html(str(table_tag))
-    if not df_list:
-        raise RuntimeError(f"[{fg_id}] pd.read_html failed to extract any table from <div id='advanced'>.")
-    df = df_list[0]
-
-    df.columns = [str(c).strip() for c in df.columns]
-    return df
-
+# ── MAIN ────────────────────────────────────────────────────────────────────────
 def main():
-    # Read PrizePicks CSV
-    if not os.path.isfile(PRIZEPICKS_CSV):
-        raise SystemExit(f"Cannot find PrizePicks CSV at: {PRIZEPICKS_CSV}")
+    # load PrizePicks hitters
+    df_pp = pd.read_csv(PRIZEPICKS_CSV, dtype=str)
+    if "Player" not in df_pp.columns:
+        raise SystemExit("mlb_prizepicks.csv needs a 'Player' column.")
+    df_pp["Player"] = df_pp["Player"].map(normalize_name)
 
-    df_prizepicks = pd.read_csv(PRIZEPICKS_CSV, dtype=str)
-    df_prizepicks["Player"] = df_prizepicks["Player"].map(normalize_name)
-    if "Player" not in df_prizepicks.columns:
-        raise SystemExit("`mlb_prizepicks.csv` must have at least a `Player` column.")
-
-    # Read player IDs CSV
-    if not os.path.isfile(PLAYER_IDS_CSV):
-        raise SystemExit(f"Cannot find player IDs CSV at: {PLAYER_IDS_CSV}")
-
+    # load your FG ID map (which has MLB_ID and FG_Position)
     df_ids = pd.read_csv(PLAYER_IDS_CSV, dtype=str)
     df_ids["Player"] = df_ids["Player"].map(normalize_name)
-    required_cols = {"Player", "FG_ID", "FG_Position"}
-    if not required_cols.issubset(df_ids.columns):
-        raise SystemExit("`player_fg_ids.csv` must have columns: Player, FG_ID, FG_Position.")
-
-    # Merge PrizePicks with FG IDs
-    df_merged = pd.merge(
-        df_prizepicks[["Player"]].drop_duplicates(),
-        df_ids[["Player", "FG_ID", "FG_Position"]],
-        on="Player",
-        how="left"
+    # keep only pitchers
+    df_pitch = (
+        df_ids
+        .merge(df_pp[["Player"]].drop_duplicates(), on="Player", how="inner")
+        .query("FG_Position == 'P'")
+        .dropna(subset=["MLB_ID"])
     )
+    if df_pitch.empty:
+        raise SystemExit("No pitchers found in your PrizePicks list.")
 
-    # Check for missing FG IDs
-    missing_fg = df_merged[df_merged["FG_ID"].isna()]["Player"].unique()
-    if len(missing_fg) > 0:
-        print("  The following PrizePicks players were not found in player_fg_ids.csv and will be skipped:")
-        for p in missing_fg:
-            print(f"     {p}")
-        print()
+    rows = []
+    for _, row in df_pitch.iterrows():
+        player  = row["Player"]
+        mlb_id  = int(row["MLB_ID"])
+        fg_id   = row["FG_ID"]
+        print(f"▶ {player} ({mlb_id})…", end=" ", flush=True)
 
-    # Filter to pitchers only
-    df_pitchers = df_merged[
-        (df_merged["FG_Position"] == "P") & (df_merged["FG_ID"].notna())
-    ].copy()
-
-    if df_pitchers.empty:
-        raise SystemExit("No pitchers (FG_Position == 'P') found after merging. Exiting.")
-
-    all_pitcher_dfs = []
-
-    for _, row in df_pitchers.iterrows():
-        player_name = row["Player"]
-        fg_id = row["FG_ID"]
-        player_slug = slugify(player_name)
-
-        print(f" Fetching advanced stats for {player_name} (FG_ID={fg_id})", end=" ")
         try:
-            df_adv = fetch_pitcher_advanced(player_slug, fg_id)
-
-            # Filter to 2025 MLB
-            df_adv["Season"] = df_adv["Season"].astype(str).str.strip()
-            df_adv["Level"] = df_adv["Level"].astype(str).str.strip()
-            df_2025_mlb = df_adv[
-                (df_adv["Season"] == "2025") &
-                (df_adv["Level"] == "MLB")
-            ].copy()
-
-            if df_2025_mlb.empty:
-                raise RuntimeError(f"[{fg_id}] No 2025MLB row found in Advanced table.")
-
-            # Keep only relevant columns
-            keep_prefixes = [
-                "K%", "BB%", "K-BB%", "AVG", "WHIP", "BABIP",
-                "LOB%", "ERA-", "FIP-", "FIP"
-            ]
-
-            final_cols = ["Player", "FG_ID"]
-            for col in df_2025_mlb.columns:
-                lower = str(col).lower()
-                if "divider" in lower:
-                    continue
-                for prefix in keep_prefixes:
-                    if str(col).startswith(prefix):
-                        final_cols.append(col)
-                        break
-
-            df_2025_mlb.insert(0, "FG_ID", fg_id)
-            df_2025_mlb.insert(0, "Player", player_name)
-
-            final_cols = [c for c in final_cols if c in df_2025_mlb.columns]
-            df_trimmed = df_2025_mlb[final_cols].copy()
-            all_pitcher_dfs.append(df_trimmed)
-
+            df_raw = statcast_pitcher(SEASON_START, SEASON_END, mlb_id)
         except Exception as e:
-            print(f"[error] {e}")
-        else:
-            print("done.")
+            print(f"ERROR({e})")
+            time.sleep(REQUEST_DELAY)
+            continue
 
+        if df_raw.empty:
+            print("no data.")
+            time.sleep(REQUEST_DELAY)
+            continue
+
+        metrics = compute_pitcher_advanced(df_raw)
+        metrics.update({
+            "Player": player,
+            "FG_ID":  fg_id
+        })
+        rows.append(metrics)
+        print("done.")
         time.sleep(REQUEST_DELAY)
 
-    # Combine results
-    if not all_pitcher_dfs:
-        print("  No 2025MLB pitcher rows were fetched; exiting without writing CSV.")
-        return
-
-    df_combined = pd.concat(all_pitcher_dfs, ignore_index=True)
-    df_combined = df_combined.loc[:, df_combined.columns]
-
-    # Write output
+    # dump CSV
+    df_out = pd.DataFrame(rows)
     os.makedirs(os.path.dirname(OUTPUT_PITCHER_CSV), exist_ok=True)
-    df_combined.to_csv(OUTPUT_PITCHER_CSV, index=False)
-    print(f" Wrote pitcher advanced stats CSV: {OUTPUT_PITCHER_CSV} ({len(df_combined)} rows)")
-    print(" All done.")
+    df_out.to_csv(OUTPUT_PITCHER_CSV, index=False)
+    print(f"\nWrote {len(df_out)} pitchers to {OUTPUT_PITCHER_CSV}")
 
 if __name__ == "__main__":
     main()

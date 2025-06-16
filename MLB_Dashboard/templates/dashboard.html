@@ -54,6 +54,31 @@
             <tbody id="prop-types-table"></tbody>
           </table>
         </div>
+
+        <!-- Bankroll Tracker -->
+        <div class="chart-container mb-4">
+  <h5>Bankroll Tracker</h5>
+  <canvas id="bankroll-chart" height="180"></canvas>
+  <!-- Modern summary bar -->
+  <div id="bankroll-summary-bar" class="bankroll-summary-bar mb-2"></div>
+</div>
+
+        <div class="table-container mb-4">
+  <h6>Daily Bet Summary</h6>
+  <table class="bankroll-history-table">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Slips</th>
+        <th>Staked ($)</th>
+        <th>Returned ($)</th>
+        <th>Net Result ($)</th>
+      </tr>
+    </thead>
+    <tbody id="bankroll-history-table"></tbody>
+  </table>
+</div>
+
       </div>
 
       <!-- Middle column -->
@@ -134,22 +159,55 @@
 
       <!-- Right column -->
       <div class="col-md-4">
-        <div class="table-container full-height">
-          <h5>Recent High Confidence Predictions<br/><small>(RF ≥75%, RF & LLM Agree, LLM ≥Medium)</small></h5>
-          <table class="table table-sm">
-            <thead>
-              <tr><th>Player</th><th>Prop</th><th>Value</th><th>Pred</th><th>Conf</th><th>Result</th></tr>
-            </thead>
-            <tbody id="recent-predictions-table"></tbody>
-            <tfoot>
-              <tr>
-                <td colspan="5" class="text-end"><strong>Correct:</strong></td>
-                <td id="recent-predictions-summary">-- / --</td>
-              </tr>
-            </tfoot>
-          </table>
-        </div>
+        <!-- High Confidence Predictions -->
+        <div class="table-container mb-4">
+    <h5>Recent High Confidence Predictions<br/>
+      <small>(RF ≥ 80%, RF &amp; LLM Agree, LLM ≥Medium)</small>
+    </h5>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Prop</th>
+          <th>Value</th>
+          <th>Pred</th>
+          <th>Conf</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody id="recent-predictions-table"></tbody>
+      <tfoot>
+        <tr>
+          <td colspan="5" class="text-end"><strong>Correct:</strong></td>
+          <td id="recent-predictions-summary">-- / --</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+        <!-- All-Time Prop Type Accuracy -->
+        <div class="table-container mb-4 alltime-prop-accuracy">
+    <h6>All-Time Prop Type Accuracy (On Props the LLM and RF agree on)</h6>
+    <table class="table table-sm">
+      <thead>
+        <tr>
+          <th>Prop Type</th>
+          <th>Total</th>
+          <th>Accuracy</th>
+        </tr>
+      </thead>
+      <tbody id="alltime-prop-accuracy-table"></tbody>
+    </table>
+  </div>
+
+<div class="chart-container mb-4">
+  <h5>RF Accuracy by Confidence Band</h5>
+  <canvas id="confidence-chart" height="200"></canvas>
+</div>
+
+
       </div>
+
     </div>
 
     <div id="status-message" class="status-message"></div>

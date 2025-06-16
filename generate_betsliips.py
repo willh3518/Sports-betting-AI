@@ -1,5 +1,5 @@
 import pandas as pd
-import json
+import json, requests
 import os
 import re
 from datetime import datetime
@@ -11,25 +11,57 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Initialize OpenAI client
-client = OpenAI(api_key="")
+client = OpenAI(api_key="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")
 
 def load_top_picks(path: str) -> pd.DataFrame:
     if not os.path.exists(path):
         raise FileNotFoundError(f"Top picks file not found: {path}")
     return pd.read_csv(path)
 
-def build_prompt(picks: pd.DataFrame, bankroll: float) -> str:
+def get_bankroll_info(api_url="http://127.0.0.1:5001/api/bankroll-llm"):
+    resp = requests.get(api_url)
+    resp.raise_for_status()
+    info = resp.json()
+    return info["bankroll"], info["net_result_yesterday"], info["yesterday_date"]
+
+def build_prompt(picks: pd.DataFrame, bankroll: float, net_result_yesterday, yesterday_date):
     picks_json = json.dumps(picks.to_dict(orient="records"), indent=2)
+    max_stake = int(bankroll * 0.10)
+    if max_stake < 1:
+        max_stake = 1
 
-    return f"""You are a PrizePicks betting strategist.
+    # Summary for the LLM
+    if net_result_yesterday is not None and yesterday_date:
+        net_str = f"Yesterday ({yesterday_date}), your net result was ${net_result_yesterday:+.2f}."
+    else:
+        net_str = "This is your first day. No results yet."
 
-You are given a list of player props and a total bankroll of ${bankroll:.2f}. Your job is to generate the most **mathematically optimal 2–3 leg Power Play slips** possible. Follow the instructions exactly.
+    return f"""{net_str} Your current bankroll is ${bankroll:.2f}.
+You must not risk more than ${max_stake} total across all slips today (10% of your bankroll, rounded down).
+
+-----
+**BETTING PHILOSOPHY AND RULES (READ CAREFULLY):**
+- **Quality Over Quantity:** Only bet when you have a clear edge—do NOT force action for the sake of volume. Fewer, high-quality bets are always better than forced volume.
+- **Unit Sizing & Risk:** Use small, consistent unit sizes (e.g. 1–2% of bankroll per slip) and NEVER exceed ${max_stake} total staked in a single day (10% of bankroll).
+- **Slate-Driven, Not Forced:** The number of bets is determined by value, NOT by the size of the slate. If only 1–2 bets have a real edge, only play those. Some days, no bet is the sharp move.
+- **No Chasing or Tilt:** Every bet stands alone. Never increase bet count after losses. Never bet to “catch up.”
+- **Market Efficiency:** Prefer picks in soft markets/props where models outperform and oddsmakers are weaker. Avoid main/efficient markets unless the model edge is clear.
+- **No Arbitrary Quota:** You are NOT required to risk the full daily cap. On low-confidence days, bet less—or skip. Maximize EV, not action.
+- **Line Shopping Logic:** Only generate a slip if the value is there; if you wouldn’t make this bet at the given line, skip it.
+-----
+
+You are a PrizePicks betting strategist.
+
+You are given a list of player props and a total bankroll of ${bankroll:.2f}.
+Your job is to generate the most **mathematically optimal 2–3 leg Power Play slips** possible, following the philosophy above. If nothing is high-value, generate 0–1 slip with minimum stake, or skip completely. **Never force bets on weak edges.**
+
+🚨 **IMPORTANT:** Never exceed the ${max_stake} daily risk limit. The sum of all "stake" values must be ≤ ${max_stake} today. Fewer slips and lower stakes are OK.
 
 🎯 OBJECTIVE:
 Maximize **total expected return** across all slips. Use high-confidence, high-EV combinations only. No randomness. No diversity. Only value.
 
 🚫 NON-NEGOTIABLE RULES (MUST FOLLOW EXACTLY):
-- Spend **exactly ${bankroll:.2f}** total across all slips (no rounding errors)
+- Spend at most ${max_stake} total across all slips today; less is fine if confidence is low.
 - Each slip must contain **2 or 3 different players**
 - No player may appear in more than one slip
 - No 1-leg slips, no 4+ leg slips
@@ -37,7 +69,7 @@ Maximize **total expected return** across all slips. Use high-confidence, high-E
 - Fixed payout multipliers:
   - 2-leg = 3×
   - 3-leg = 6×
-- Each slip’s "stake" must be ≥ 1.00
+- Each slip’s "stake" must be ≥ 1.00 and ≤ bankroll/2
 - Do **not** use any variables, math expressions, or placeholder logic
 - Do **not** output markdown, commentary, or explanation
 - Do **not** include invalid JSON — only raw output
@@ -49,7 +81,7 @@ Maximize **total expected return** across all slips. Use high-confidence, high-E
 - win_probability = product of "RF_Confidence" values, rounded to 4 decimals
 - expected_return = stake × multiplier × win_probability, rounded to 2 decimals
 - Allocate more stake to slips with better expected_return
-- Stake amounts must sum to exactly ${bankroll:.2f} (round to nearest cent)
+- Stake amounts must sum to **the total you decide to risk for today** (but ≤ ${max_stake} max; less is OK!)
 
 📦 OUTPUT FORMAT (STRICT RAW JSON ONLY):
 Return a **JSON array** of betslip objects. Each object must include:
@@ -105,26 +137,20 @@ def main():
     # Load picks
     df = load_top_picks(input_path)
 
-    # Ask user for bankroll
+    # Get bankroll and yesterday result from dashboard API
     try:
-        bankroll = float(input("Enter total bankroll (e.g. 25): ").strip())
-    except ValueError:
-        logger.warning("Invalid bankroll input. Defaulting to $25.")
-        bankroll = 25.0
+        bankroll, net_result_yesterday, yesterday_date = get_bankroll_info()
+        logger.info(f"Fetched bankroll: ${bankroll:.2f}, yesterday result: {net_result_yesterday}")
+    except Exception as e:
+        logger.warning(f"Failed to fetch bankroll info from API: {e}")
+        bankroll, net_result_yesterday, yesterday_date = 500.0, None, None
 
-    # Build and send prompt
-    prompt = build_prompt(df, bankroll)
-
+    prompt = build_prompt(df, bankroll, net_result_yesterday, yesterday_date)
     response = query_llm(prompt)
     logger.info("LLM responded. Parsing slips...")
 
     slips = clean_and_parse_json(response)
     logger.info(f"Parsed {len(slips)} slips")
-
-    # Optional validation
-    total_stake = round(sum(slip.get("stake", 0) for slip in slips), 2)
-    if total_stake != round(bankroll, 2):
-        logger.warning(f"⚠️ Total stake = ${total_stake}, expected ${bankroll:.2f}")
 
     # Save result
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
