@@ -4,7 +4,6 @@ import sys
 import math
 import json
 from datetime import datetime
-
 import pandas as pd
 from flask import Flask, render_template, jsonify
 
@@ -321,6 +320,34 @@ def mlb_insights():
         return jsonify(success=True, insights=db.get("prop_types", {}))
     except Exception as e:
         app.logger.error(f"Error loading insights: {e}")
+        return jsonify(success=False, error=str(e)), 500
+
+
+@app.route('/api/bankroll-llm')
+def bankroll_llm():
+    try:
+        # get full history
+        history = calc_bankroll_history()  # uses default starting_bankroll & start_date
+        today = datetime.now().strftime("%Y-%m-%d")
+        # pick the last entry _before_ today
+        past = [h for h in history if h["date"] < today]
+        if past:
+            last = past[-1]
+            return jsonify(
+                success=True,
+                bankroll=last["bankroll"],
+                net_result_yesterday=last["net_result"],
+                yesterday_date=last["date"]
+            )
+        # no prior days
+        return jsonify(
+            success=True,
+            bankroll=history[0]["bankroll"],
+            net_result_yesterday=None,
+            yesterday_date=None
+        )
+    except Exception as e:
+        app.logger.error(f"bankroll-llm error: {e}")
         return jsonify(success=False, error=str(e)), 500
 
 
