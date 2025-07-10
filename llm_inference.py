@@ -58,6 +58,7 @@ def load_master_data():
 
     return master_hitter, master_pitcher
 
+
 def load_predictions():
     """Load the predictions CSV file"""
     logger.info(f"Loading predictions from {PREDICTIONS_PATH}")
@@ -71,6 +72,7 @@ def load_predictions():
     except Exception as e:
         logger.error(f"Error loading predictions: {e}")
         return pd.DataFrame()
+
 
 def load_insights_database():
     """Load the MLB insights database"""
@@ -87,6 +89,7 @@ def load_insights_database():
     except Exception as e:
         logger.error(f"Error loading insights database: {e}")
         return {"hitter": [], "pitcher": []}
+
 
 def enrich_predictions_with_master_data(predictions_df, master_hitter, master_pitcher):
     """Enrich predictions with additional data from master files"""
@@ -150,6 +153,7 @@ def enrich_predictions_with_master_data(predictions_df, master_hitter, master_pi
 
     logger.info(f"Enrichment complete. DataFrame now has {len(enriched_df.columns)} columns")
     return enriched_df
+
 
 def build_prompt(row, insights_db=None, pitcher_df=None):
     """Build a prompt for the LLM based on the row data and insights"""
@@ -372,6 +376,7 @@ LLM_Justification: [Short reasoning using stats, matchup info, or game condition
 """.strip()
     return prompt
 
+
 def query_llm(prompt):
     logger.info("Querying LLM...")
     try:
@@ -403,6 +408,7 @@ def query_llm(prompt):
         logger.error(f"Error querying LLM: {e}")
         return f"Error: {str(e)}"
 
+
 def parse_llm_response(response, rf_prediction):
     """Parse LLM response and derive agreement with RF prediction"""
     try:
@@ -432,6 +438,7 @@ def parse_llm_response(response, rf_prediction):
 
     except Exception as e:
         return "Unknown", "Unknown", f"Error parsing response: {str(e)}", "Unknown"
+
 
 def main():
     """Main function to run the LLM inference pipeline"""
@@ -558,6 +565,7 @@ def main():
 
 
     logger.info("LLM inference pipeline completed")
+
 
 if __name__ == "__main__":
     main()

@@ -188,14 +188,19 @@ def compute_hitter_score(r):
     )
 
 def compute_pitcher_score(r):
-    ip         = safe_float(r.get("IP"))
-    innings    = int(ip)
-    outs       = int(round((ip - innings)*10))
-    total_outs = innings*3 + outs
-    win   = 6 if r.get("DEC")=="W" else 0
-    qs    = 4 if (innings>=6 and safe_float(r.get("ER"))<=3) else 0
-    er_pts= safe_float(r.get("ER")) * -3
-    so_pts= safe_float(r.get("SO")) * 3
+    ip = safe_float(r.get("IP"))
+    if pd.isna(ip):
+        return -999.0  # skip broken row safely
+
+    innings = int(ip)
+    outs = int(round((ip - innings)*10))
+    total_outs = innings * 3 + outs
+
+    win = 6 if r.get("DEC") == "W" else 0
+    qs = 4 if (innings >= 6 and safe_float(r.get("ER")) <= 3) else 0
+    er_pts = safe_float(r.get("ER")) * -3
+    so_pts = safe_float(r.get("SO")) * 3
+
     return win + qs + er_pts + so_pts + total_outs
 
 # ─── fetch + parse StatMuse ───

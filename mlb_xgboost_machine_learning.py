@@ -69,53 +69,62 @@ def get_model_features(df):
 def train_all():
     hit_df, pit_df = load_training_data()
     master = pd.concat([hit_df, pit_df], ignore_index=True)
-    master = feature_engineering(master)
+    # don't fillna here—do it inside the loop so you don't screw with your labels
 
     for prop in prop_list + pitcher_list:
-        subset = master[master['Prop Type'] == prop]
+        subset = master[master['Prop Type'] == prop].copy()
+        # drop anything that's not a valid 0/1 label
+        subset = subset[subset['Hit'].isin([0, 1])]
         if subset.empty:
-            logger.warning(f"No data for {prop}, skipping.")
+            logger.warning(f"No valid data for {prop}, skipping.")
             continue
 
         y = subset['Hit'].astype(int)
-        n = len(y)
-        if n < 2 or len(np.unique(y)) < 2:
-            logger.warning(f"{prop} has only one class or not enough samples, skipping.")
+        counts = y.value_counts()
+        min_count = counts.min()
+        # pick folds = min(3, fewest‐class count)
+        cv = min(3, min_count)
+        if cv < 2:
+            logger.warning(
+                f"Not enough samples per class for CV in {prop} (min_count={min_count}), skipping."
+            )
             continue
 
-        X = get_model_features(subset)
+        # now engineer features ONLY on this subset (won't touch 'Hit')
+        df_fe = feature_engineering(subset)
+        X = get_model_features(df_fe)
 
-        # Class weighting for imbalanced data
-        classes = np.unique(y)
-        class_weights = compute_class_weight('balanced', classes=classes, y=y)
-        weight_dict = {k: v for k, v in zip(classes, class_weights)}
+        # compute proper scale_pos_weight = #negatives / #positives
+        neg, pos = counts.get(0, 0), counts.get(1, 0)
+        scale_pos_weight = (neg / pos) if pos > 0 else 1.0
 
         xgb = XGBClassifier(
             random_state=42,
-            use_label_encoder=False,
-            eval_metric='logloss',
             objective='binary:logistic',
-            scale_pos_weight=weight_dict.get(0, 1)/weight_dict.get(1, 1) if 1 in weight_dict else 1
+            eval_metric='logloss',
+            scale_pos_weight=scale_pos_weight
         )
         param_grid = {
-            'n_estimators': [100, 200],
-            'max_depth':    [6, 10],
-            'learning_rate':[0.01, 0.1],
-            'subsample':    [0.8, 1.0],
-            'colsample_bytree': [0.8, 1.0]
+            'n_estimators':    [100, 200],
+            'max_depth':       [6, 10],
+            'learning_rate':   [0.01, 0.1],
+            'subsample':       [0.8, 1.0],
+            'colsample_bytree':[0.8, 1.0],
         }
-        cv = 3 if n >= 4 else 2
         gs = GridSearchCV(
-            xgb, param_grid=param_grid, cv=cv,
-            scoring='roc_auc', n_jobs=-1
+            xgb,
+            param_grid=param_grid,
+            cv=cv,
+            scoring='roc_auc',
+            n_jobs=-1
         )
         gs.fit(X, y)
         logger.info(f"{prop} best params: {gs.best_params_}, AUC={gs.best_score_:.4f}")
 
-        # Save model with required columns
-        path = os.path.join(MODEL_DIR, f"{prop.replace(' ','_')}_xgb.pkl")
+        # save the tuned model + feature list
+        path = os.path.join(MODEL_DIR, f"{prop.replace(' ', '_')}_xgb.pkl")
         joblib.dump({
-            'model': gs.best_estimator_,
+            'model':    gs.best_estimator_,
             'features': X.columns.tolist()
         }, path)
         logger.info(f"Saved {prop} XGB model to {path}")

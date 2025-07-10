@@ -73,24 +73,31 @@ def get_model_features(df):
 def train_all():
     hit_df, pit_df = load_training_data()
     master = pd.concat([hit_df, pit_df], ignore_index=True)
-    master = feature_engineering(master)
 
     for prop in prop_list + pitcher_list:
-        subset = master[master['Prop Type'] == prop]
+        # select raw data and drop any non-0/1 'Hit' labels
+        subset = master[master['Prop Type'] == prop].copy()
+        subset = subset[subset['Hit'].isin([0, 1])]
         if subset.empty:
-            logger.warning(f"No data for {prop}, skipping.")
+            logger.warning(f"No valid data for {prop}, skipping.")
             continue
 
-        X = get_model_features(subset)
+        # engineer _only_ features here (won't touch the 'Hit' column)
+        df_fe = feature_engineering(subset)
+        X = get_model_features(df_fe)
         y = subset['Hit'].astype(int)
 
-        # skip single‐class problems
+        # still skip if one class
         if y.nunique() < 2:
             logger.warning(f"{prop} has only one class {y.unique().tolist()}, skipping.")
             continue
 
-        n = len(y)
-        cv = 3 if n >= 4 else 2  # require at least 2 folds
+        # decide CV folds by smallest class count
+        min_count = y.value_counts().min()
+        cv = min(3, min_count)
+        if cv < 2:
+            logger.warning(f"Not enough samples per class for CV in {prop} (min_count={min_count}), skipping.")
+            continue
 
         # grid‐search on full data
         rf = RandomForestClassifier(random_state=42)
@@ -99,7 +106,7 @@ def train_all():
             param_grid={
                 'n_estimators':    [100, 200],
                 'max_depth':       [10, 20],
-                'min_samples_leaf': [1, 2],
+                'min_samples_leaf':[1, 2],
                 'max_features':    ['sqrt']
             },
             cv=cv,
@@ -107,13 +114,20 @@ def train_all():
             n_jobs=-1
         )
         gs.fit(X, y)
-        logger.info(f"{prop} best params: {gs.best_params_}, log-loss={-gs.best_score_:.4f}")
+        logger.info(f"{prop} best params: {gs.best_params_}, log-loss={-gs.best_score_ * -1:.4f}")
 
-        # calibrate on same data folds
-        calib = CalibratedClassifierCV(gs.best_estimator_, method='isotonic', cv=cv)
-        calib.fit(X, y)
+        # calibrate; if not enough data for a proper CV, fall back to 'prefit'
+        best = gs.best_estimator_
+        try:
+            calib = CalibratedClassifierCV(best, method='isotonic', cv=cv)
+            calib.fit(X, y)
+        except ValueError:
+            logger.warning(f"Calibration CV={cv} failed for {prop}, switching to prefit.")
+            calib = CalibratedClassifierCV(best, method='isotonic', cv='prefit')
+            calib.fit(X, y)
 
-        path = os.path.join(MODEL_DIR, f"{prop.replace(' ','_')}_rf.pkl")
+        # save
+        path = os.path.join(MODEL_DIR, f"{prop.replace(' ', '_')}_rf.pkl")
         joblib.dump({
             'model':    calib,
             'features': X.columns.tolist()
