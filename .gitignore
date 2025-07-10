@@ -1,0 +1,8 @@
+MLB_Results/
+*.csv
+*.json
+*.log
+__pycache__/
+.env
+.DS_Store
+
